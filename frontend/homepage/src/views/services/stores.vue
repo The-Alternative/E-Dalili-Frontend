@@ -1,0 +1,16 @@
+<template>
+  <div class="our-help">
+    <BodyStore />
+    
+  </div>
+</template>
+
+<script>
+import BodyStore from "@/components/body/BodyStore.vue";
+export default {
+  name: "stores",
+  components:{
+    BodyStore
+  }
+};
+</script>
