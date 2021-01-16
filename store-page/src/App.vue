@@ -6,7 +6,6 @@
 
 <script>
 import BodyStore from './components/BodyStore.vue';
-
 export default {
     name: 'app',
     components: {
