@@ -1,9 +1,9 @@
 <template>
         <div class="show-prod">
                     <div class="container">
-                <div class="text-right mini">صدر حدیثا</div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+
+                <div class="row ">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
                       <div class="content-pro text-center">
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">play</div>
@@ -20,7 +20,7 @@
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                     </div>
-                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
                       <div class="content-pro text-center">
                         <img src="@/assets/fgfg.jpg" class="new">
                         <div class="name-prod"> NYX طلاء أظافر من</div>
@@ -37,8 +37,8 @@
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                     </div>
-                  <div class="col-lg-3 col-md-4 col-sm-4">
-                      <div class="content-pro text-center KAIDISI">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                      <div class="content-pro text-center">
                         <img src="@/assets/as.jpg" class="new">
                         <div class="name-prod"> لون12علبة الوان مائیة جافة</div>
                         <div class="color-prod">KAIDISI</div>
@@ -54,8 +54,8 @@
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                     </div>
-                   <div class="col-lg-3">
-                      <div class="content-pro text-center NYX">
+                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                      <div class="content-pro text-center">
                         <img src="@/assets/rt.jpg" class="new">
                         <div class="name-prod">NYX كونسلیر</div>
                         <div class="color-prod">201اللون : كریمي رقم </div>
@@ -90,6 +90,9 @@ export default {
     border-radius: 7px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
 }
+.show-prod .row {
+    justify-content: center;
+}
 .show-prod .mini {
     font-size: 20px;
     color: #655f5f;
@@ -99,7 +102,7 @@ export default {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     height: 460px;
     margin-top: 10vh;
-    margin-bottom: 10vh;  
+    margin-bottom: 10vh;
 }
 .show-prod .row .content-pro .new {
     width: 100%
@@ -125,11 +128,8 @@ export default {
     border-radius: 13px;
     font-weight: 1;
 }
-/* Extra small devices (portrait phones, less than 576px) */ 
-@media (max-width: 575.98px) { 
-.NYX,.KAIDISI {
-    display: none
-    }
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
 .show-prod .row .content-pro {
     font-size: 16px;
 }
@@ -140,33 +140,46 @@ export default {
     font-weight: 1;
 }
 .show-prod .row .col-xs-6{
-    flex: 0 0 33%;
-    max-width: 40%;
-    margin: 0 2vh;
+    flex: 0 0 50%;
+    max-width: 50%;
     }
 .show-prod .content-pro button {
-    width: 100px;
+    width: auto;
     margin-top: 10px;
     border-radius: 13px;
     font-weight: 1;
 }
-
+.show-prod .row .coler:nth-child(1){
+    display: none;
+}
+.show-prod .row .coler:nth-child(2){
+    display: none;
+}
 
 }
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { 
-.NYX,.KAIDISI{
-    display: none
-    }
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .show-prod .row .coler:nth-child(1){
+    display: none;
+}
+.show-prod .row .coler:nth-child(2){
+    display: none;
+}
+.show-prod .content-pro button {
+    width: 110px;
+}
 }
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
+@media (min-width: 768px) and (max-width: 991.98px) {
 .show-prod .row .content-pro {
-    margin-top: -10px 
+    margin-top: -10px
     }
-.NYX{
-    display: none
-    }
+.show-prod .row .coler:last-child {
+    display: none;
+}
+.show-prod .content-pro button {
+    width: 110px;
+}
 }
 
 </style>

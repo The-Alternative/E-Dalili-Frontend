@@ -1,10 +1,10 @@
 <template>
     <div class="carousel-item">
-        <div class="show-prod">
+         <div class="show-prod">
                     <div class="container">
-                <div class="text-right mini">صدر حدیثا</div>
+
                 <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
                       <div class="content-pro text-center">
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">play</div>
@@ -21,7 +21,7 @@
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                     </div>
-                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
                       <div class="content-pro text-center">
                         <img src="@/assets/fgfg.jpg" class="new">
                         <div class="name-prod"> NYX طلاء أظافر من</div>
@@ -38,8 +38,8 @@
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                     </div>
-                  <div class="col-lg-3 col-md-4 col-sm-4">
-                      <div class="content-pro text-center KAIDISI">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                      <div class="content-pro text-center">
                         <img src="@/assets/as.jpg" class="new">
                         <div class="name-prod"> لون12علبة الوان مائیة جافة</div>
                         <div class="color-prod">KAIDISI</div>
@@ -55,8 +55,8 @@
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                     </div>
-                   <div class="col-lg-3">
-                      <div class="content-pro text-center NYX">
+                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                      <div class="content-pro text-center">
                         <img src="@/assets/rt.jpg" class="new">
                         <div class="name-prod">NYX كونسلیر</div>
                         <div class="color-prod">201اللون : كریمي رقم </div>
@@ -101,7 +101,7 @@ export default {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     height: 460px;
     margin-top: 10vh;
-    margin-bottom: 10vh;  
+    margin-bottom: 10vh;
 }
 .show-prod .row .content-pro .new {
     width: 100%
@@ -127,8 +127,8 @@ export default {
     border-radius: 13px;
     font-weight: 1;
 }
-/* Extra small devices (portrait phones, less than 576px) */ 
-@media (max-width: 575.98px) { 
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
 .NYX,.KAIDISI {
     display: none
     }
@@ -156,19 +156,15 @@ export default {
 
 }
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { 
-.NYX,.KAIDISI{
-    display: none
-    }
+@media (min-width: 576px) and (max-width: 767.98px) {
+
 }
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
+@media (min-width: 768px) and (max-width: 991.98px) {
 .show-prod .row .content-pro {
-    margin-top: -10px 
+    margin-top: -10px
     }
-.NYX{
-    display: none
-    }
+
 }
 
 </style>

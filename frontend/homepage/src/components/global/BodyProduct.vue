@@ -1,8 +1,6 @@
 <template>
-  <div class="BodyProduct">
-  
-    
-      <div class="content-pro text-center" >
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                    <div class="content-pro text-center" >
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">{{name}}</div>
                         <div class="category">201اللون : كریمي رقم </div>
@@ -17,8 +15,9 @@
                           <div class="avilble"><div  style="display: inline-block">متوفر في {{number}} متاجر</div><span class="fa fa-check-circle"></span></div>
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
+                </div>
 
-        </div>
+
 </template>
 
 <script>
@@ -35,7 +34,7 @@ export default {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     height: auto;
     margin-top: 10vh;
-    margin-bottom: 10vh;  
+    margin-bottom: 10vh;
 }
 .show-prod .row .content-pro .new {
     width: 100%
@@ -61,8 +60,8 @@ export default {
     border-radius: 13px;
     font-weight: 1;
 }
-/* Extra small devices (portrait phones, less than 576px) */ 
-@media (max-width: 575.98px) { 
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
 .show-prod .row .content-pro {
     font-size: 16px;
 }
