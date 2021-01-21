@@ -1,15 +1,15 @@
 <template>
     <div id="app">
-        <BodyStore />
+        <Stores />
     </div>
 </template>
 
 <script>
-import BodyStore from './components/BodyStore.vue';
+import Stores from './view/Stores';
 export default {
     name: 'app',
     components: {
-        BodyStore,
+        Stores,
     },
 };
 </script>
