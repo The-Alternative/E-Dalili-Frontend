@@ -2,8 +2,8 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
                     <div class="content-pro text-center" >
                         <img src="@/assets/w.jpg" class="new">
-                        <div class="name-prod">{{name}}</div>
-                        <div class="category">201اللون : كریمي رقم </div>
+                        <div class="name-prod">{{title}}</div>
+                        <div class="category">{{description}}</div>
                         <div class="stars">
                           <span class="fa fa-star  checked" id="one"></span>
                           <span class="fa fa-star checked" id="two"></span>
@@ -11,8 +11,8 @@
                           <span class="fa fa-star checked" id="four"></span>
                           <span class="fa fa-star" id="five"></span>
                           </div>
-                         <div> <span>ل.س</span>  <div class="price" style="display: inline-block"> {{price}}</div> </div>
-                          <div class="avilble"><div  style="display: inline-block">متوفر في {{number}} متاجر</div><span class="fa fa-check-circle"></span></div>
+                         <div> <span>ل.س</span>  <div class="price" style="display: inline-block"> </div> </div>
+                          <div class="avilble"><div  style="display: inline-block">متوفر في  متاجر</div><span class="fa fa-check-circle"></span></div>
                           <button type="button" class="btn btn-light">اختیار</button>
                       </div>
                 </div>
@@ -22,8 +22,8 @@
 
 <script>
 export default {
-  props: ["name","price","number"],
   name: "Prods",
+  props: ["title","description"],
 };
 </script>
 
@@ -63,15 +63,14 @@ export default {
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 .show-prod .row .content-pro {
-    font-size: 16px;
+    font-size: 15px;
 }
-.show-prod .row .col-xs-6{
-    flex: 0 0 33%;
-    max-width: 40%;
-    margin: 0 2vh;
+.show-prod .reower .col-xs-6{
+    flex: 1 0 50%;
+    max-width: 50%;
     }
 .show-prod .content-pro button {
-    width: 100px;
+    width: 80px;
     margin-top: 10px;
     border-radius: 13px;
     font-weight: 1;
