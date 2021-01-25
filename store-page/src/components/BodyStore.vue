@@ -14,12 +14,6 @@
         <!--     coulome middel stors group   -->
         <div class="card pl-1 pr-1 col-lg-6 col-md-7 col-sm-8 col-xs-8 stors">
             <!--          store 1-->
-            <!--            <span class="slide text-right">-->
-            <!--                <a href="#" @click="openSlideMenu()">-->
-            <!--                    <i class="fa fa-bars"></i>-->
-            <!--                </a>-->
-            <!--            </span>-->
-
             <div class="store" v-for="store in stores" :key="store.id">
                 <div class="card-title row justify-content-lg-end">
                     <div class="d-flex flex-row">
@@ -108,9 +102,6 @@
             class="card pl-0 pr-3 mr-4 col-lg-3 col-md-3 col-sm-4 col-xs-4 categores"
             id="menu"
         >
-            <!--            <a href="#" class="close text-right" @click="closeSlideMenu()">-->
-            <!--                <i class="fas fa-times"></i>-->
-            <!--            </a>-->
             <div class="backdrop"></div>
             <div class="card text-right checked-all open" id="all">
                 <span class="text-center span-text text">عرض العروضات حسب</span>
