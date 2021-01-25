@@ -1,8 +1,9 @@
 {
-    "todos": [
+    "stores": [
         {
             "id": 1,
             "title": "Jania",
+            "rate": 0,
             "is-active": true,
             "phonenumber": 1,
             "address": "156.209.67.86",
@@ -12,6 +13,8 @@
         {
             "id": 2,
             "title": "Shanon",
+            "space": "يبعد500م",
+            "rate": 0,
             "is-active": true,
             "phonenumber": 2,
             "address": "64.130.101.222",
@@ -21,6 +24,8 @@
         {
             "i}d": 3,
             "title": "Harold",
+            "space": "يبعد500م",
+            "rate": 0,
             "is-active": false,
             "phonenumber": 3,
             "address": "190.152.66.83",
@@ -30,6 +35,8 @@
         {
             "id": 4,
             "title": "Taylor",
+            "space": "يبعد500م",
+            "rate": 0,
             "is-active": false,
             "phonenumber": 4,
             "address": "67.111.152.16",
@@ -39,6 +46,8 @@
         {
             "id": 5,
             "title": "Thornie",
+            "space": "يبعد500م",
+            "rate": 0,
             "is-active": true,
             "phonenumber": 5,
             "address": "225.98.158.3",
@@ -48,6 +57,8 @@
         {
             "id": 6,
             "title": "Reinwald",
+            "space": "يبعد500م",
+            "rate": 0,
             "is-active": false,
             "phonenumber": 6,
             "address": "65.121.251.227",
