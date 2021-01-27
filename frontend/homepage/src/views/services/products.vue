@@ -4,12 +4,10 @@
     <div class="show-img">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 img">
-            <img src="@/assets/S1.png" />
+          <div class="col-md-6 img" v-for="brand in brands.slice(0,2)" :key="brand.id" :image="brand.image">
+            <img :src="'{{brand.image}}'"/>
           </div>
-          <div class="col-md-6 img">
-            <img src="@/assets/S2.png" />
-          </div>
+          
         </div>
       </div>
     </div>
@@ -52,12 +50,10 @@
     <div class="show-der">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 img text-center">
-            <img src="@/assets/banner-2.jpg" />
+          <div class="col-lg-6 img text-center" v-for="brand in brands.slice(2,4)" :key="brand.id" :image="brand.image">
+            <img :src="'{{brand.image}}'" />
           </div>
-          <div class="col-lg-6 img text-center">
-            <img src="@/assets/banner-1.jpg" />
-          </div>
+         
         </div>
       </div>
     </div>
@@ -71,15 +67,11 @@
             <div>
               <span class="last">اخر المشتركین</span>
               <div class="last-subscriber">
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
-                <Subscriber />
+                <Subscriber v-for="Store in lastStores" :key="Store.id"
+                :title="Store.title"
+                :location="Store.location"
+                />
+                
               </div>
             </div>
           </div>
@@ -142,11 +134,12 @@
             </a>
             <!-- ------------------------------------------------------------ -->
             <div class="col-sm-3 imges">
-              <img src="@/assets/gasses.jpg" />
-              <img src="@/assets/home.jpg" />
+              <img :src="'{{brand.image}}'" v-for="brand in brands.slice(4,6)" :key="brand.id" :image="brand.image"
+              />
+              
             </div>
             <div class="col-sm-9 imgs">
-              <img src="@/assets/HEADPHONES.jpg" style="width: 100%" />
+              <img :src="'{{brand.image}}'" v-for="brand in brands.slice(6,7)" :key="brand.id" :image="brand.image" style="width: 100%" />
             </div>
           </div>
         </div>
@@ -223,14 +216,21 @@
 <script>
 import BodyProduct from "@/components/global/BodyProduct.vue";
 import Subscriber from "@/components/global/Subscriber.vue";
+import jeson from "@/jeson/MOCK_DATA.json";
 
 
-
-import axios from "axios";
+ //import axios from "axios";
 export default {
   data() {
     return {
-      Product: [] ,
+     Product: jeson[0].Products ,
+    lastStores: jeson[0].lastStores,
+     brands: jeson[0].brands,
+
+    //  Product:[],
+     // lastStores:[],
+    //  brands:[]
+      
     };
   },
   name: "products",
@@ -238,15 +238,19 @@ export default {
     BodyProduct,
     Subscriber,
   },
-  created(){
+  /* created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {
       this.Product = response.data[0].Products;
     })
     .then(response => {
-      console.log(response.data[0].Products);
+      this.lastStores = response.data[0].lastStores;
+    })
+    .then(response => {
+      this.brands = response.data[0].brands;
     })
   }
+  */
 };
 
 </script>

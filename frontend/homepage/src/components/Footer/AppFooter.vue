@@ -182,7 +182,7 @@ export default {
 /* Extra small devices (portrait phones, less than 576px) */ 
 @media (max-width: 575.98px) { 
 .about-us {
-      height: 920px  
+      height: 940px  
     }
 .about-us h3{
     font-size: 20px;

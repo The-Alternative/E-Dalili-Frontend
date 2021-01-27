@@ -9,48 +9,29 @@
           <div class="customer-select sel4">
             <select>
               <option>العربية</option>
-              <option value="1"></option>
-              <option value="2"></option>
-              <option value="3"></option>
-              <option value="4"></option>
+              <option ></option>
             </select>
           </div>
           <span class="lang2">نطاق البحث</span>
           <div class="customer-select sel1">
             <select>
-              <option>المحافظة</option>
-              <option value="1">دمشق</option>
-              <option value="2">ريف دمشق</option>
-              <option value="3">السويداء</option>
-              <option value="4">الحسكة</option>
-              <option value="5">حمص</option>
-              <option value="6">حلب</option>
-              <option value="7">طرطوس</option>
-              <option value="8">دير الزور</option>
-              <option value="9">اللاذقية</option>
-              <option value="10">درعا</option>
-              <option value="11">القنيطرة</option>
-              <option value="12">إدلب</option>
-              <option value="13">الرقة</option>
-              <option value="14">حماه</option>
+              <option disabled>المحافظة</option>
+              <option v-for="gover in governorates" :key="gover.id">{{gover.name}}</option>
+             
             </select>
           </div>
 
           <div class="customer-select sel2">
             <select>
-              <option>المدینة/القریة</option>
-              <option value="1"> </option>
-              <option value="2"></option>
-              <option value="3"></option>
+              <option disabled>المدینة/القریة</option>
+              <option v-for="city in cities" :key="city.id">{{city.name}} </option>
             </select>
           </div>
           <div class="customer-select sel3">
             <select>
-              <option>الحي</option>
-              <option value="1"></option>
-              <option value="2"></option>
-              <option value="3"></option>
-              <option value="4"></option>
+              <option disabled>الحي</option>
+              <option v-for="street in streets" :key="street.id">{{street.name}}</option>
+              
             </select>
           </div>
           <span class="lang">اللغة</span><i class="fa fa-map-marker"></i>
@@ -90,198 +71,281 @@
           <div class=" col-lg-12" style="padding: 0">
             <div>
               <router-link to="/instrc" exact>
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>مصانع</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/company">
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>شركات</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/professional">
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>مھنیون وفنیون</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/medic">
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>صیدلیات وأدویة</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/doctors">
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>أطباء</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/resturants">
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>مطاعم ومقاھي</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/festival">
-              <button type="button" class="btn btn-light sell">
+                <button type="button" class="btn btn-light sell">
                   <a>مھرجان العروضات والتخفیضات</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <img src="@/assets/icon-button.png" />
             <div>
               <router-link to="/stores">
-              <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light">
                   <a>متاجر</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
             <div>
               <router-link to="/">
-              <button type="button" class="btn btn-light products">
+                <button type="button" class="btn btn-light products">
                   <a>منتجات</a>
-                </button></router-link>
+                </button></router-link
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- End Naver -->
-<!-- Start Section-->
+    <!-- Start Section-->
 
-       <div class="section">
-       <div class="responsive">
-         <div class="gallery">
-             <router-link to="/">
-           <a target="_blank" href="@/assets/S1.png">
-             <img src="@/assets/S1.png" alt="Cinque Terre" width="600" height="400">
-           </a>
-             </router-link>
-           <div class="desc">
-              كمبیوترات واكسسواراتھا
-            </div>
-         </div>
-       </div>
-
-
-       <div class="responsive">
-         <div class="gallery">
-             <router-link to="/">
-           <a target="_blank" href="@/assets/S1.png">
-             <img src="@/assets/S1.png" alt="Forest" width="600" height="400">
-           </a>
-           </router-link>
-           <div class="desc">موبایلات واكسسواراتھا</div>
-         </div>
-       </div>
-
-       <div class="responsive">
-         <div class="gallery">
-             <router-link to="/">
-           <a target="_blank" href="@/assets/S1.png">
-             <img src="@/assets/S1.png" alt="Northern Lights" width="600" height="400">
-           </a>
-           </router-link>
-           <div class="desc">
-            البقالة
-            </div>
-         </div>
-       </div>
-
-       <div class="responsive">
-         <div class="gallery">
-             <router-link to="/">
-           <a target="_blank" href="@/assets/S1.png">
-             <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-           </a>
-           </router-link>
-           <div class="desc">
-            لجمال والعنایة الشخصیة
-            </div>
-         </div>
-       </div>
-       <div class="responsive">
+    <div class="section">
+      <div class="responsive">
         <div class="gallery">
-            <router-link to="/">
-          <a target="_blank" href="@/assets/S1.png">
-            <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-          </a>
+          <router-link to="/">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Cinque Terre"
+                width="600"
+                height="400"
+              />
+            </a>
+          </router-link>
+          <div class="desc">
+            كمبیوترات واكسسواراتھا
+          </div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <router-link to="/mobile">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Forest"
+                width="600"
+                height="400"
+              />
+            </a>
+          </router-link>
+          <div class="desc">موبایلات واكسسواراتھا</div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <router-link to="/market">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Northern Lights"
+                width="600"
+                height="400"
+              />
+            </a>
+          </router-link>
+          <div class="desc">
+            البقالة
+          </div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <router-link to="/buty">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
+          </router-link>
+          <div class="desc">
+            الجمال والعنایة الشخصیة
+          </div>
+        </div>
+      </div>
+      <div class="responsive">
+        <div class="gallery">
+          <router-link to="/allsection">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
           </router-link>
           <div class="desc">جمیع الأقسام</div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
-            <router-link to="/">
-          <a target="_blank" href="@/assets/S1.png">
-            <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-          </a>
+          <router-link to="/">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
           </router-link>
           <div class="desc">
             عالم الطفل
-            </div>
+          </div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
-            <router-link to="/">
-          <a target="_blank" href="@/assets/S1.png">
-            <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-          </a>
+          <router-link to="/">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
           </router-link>
           <div class="desc">
             دیكور و مفروشات
-            </div>
+          </div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
-            <router-link to="/">
-          <a target="_blank" href="@/assets/S1.png">
-            <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-          </a>
+          <router-link to="/">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
           </router-link>
           <div class="desc">
             قرطاسیة وتعلیم
-            </div>
+          </div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
-            <router-link to="/">
-          <a target="_blank" href="@/assets/S1.png">
-            <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-          </a>
+          <router-link to="/">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
           </router-link>
           <div class="desc">
             المنزل والمطبخ
-            </div>
+          </div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
-            <router-link to="/">
-          <a target="_blank" href="@/assets/S1.png">
-            <img src="@/assets/S1.png" alt="Mountains" width="600" height="400">
-          </a>
-            </router-link>
+          <router-link to="/">
+            <a target="_blank" href="@/assets/S1.png">
+              <img
+                src="@/assets/S1.png"
+                alt="Mountains"
+                width="600"
+                height="400"
+              />
+            </a>
+          </router-link>
           <div class="desc">
             أجھزة كھربائیة والكترونیة
-            </div>
+          </div>
         </div>
       </div>
-
-       </div>
-       <!-- End Section-->
+    </div>
+    <!-- End Section-->
   </div>
 </template>
 
 <script>
+import jeson from "@/jeson/MOCK_DATA.json";
+// import axios from "axios";
+
 export default {
   name: "AppHeader",
-}
-
+  data() {
+    return {
+    cities: jeson[0].cities,
+    governorates :  jeson[0].governorates,
+    streets : jeson[0].streets
+    // cities:[],
+    // governorates:[],
+    // streets:[]
+    };
+  },
+/*
+   created(){
+    axios.get("http://edalili.e-dalely.com")
+    .then(response => {
+      this.cities = response.data[0].cities;
+    })
+    .then(response => {
+      this.governorates = response.data[0].governorates;
+    })
+    .then(response => {
+      this.streets = response.data[0].streets;
+    })
+    }
+    */
+};
 </script>
 
 <style scoped>
@@ -313,15 +377,16 @@ export default {
   -o-appearance: none;
   background-color: transparent;
   color: #fff;
-  padding: 3px 25px;
+  padding: 3px 30px;
   z-index: 2;
   font-size: 13px;
   position: relative;
+  height: 30px;
 }
 .upper-bar .sel1:after {
   position: absolute;
   content: ">";
-  top: -2px;
+  top: 0;
   left: 14px;
   background-color: transparent;
   color: #fff;
@@ -333,7 +398,7 @@ export default {
 .upper-bar .sel2:after {
   position: absolute;
   content: ">";
-  top: -2px;
+  top: 0;
   left: 14px;
   background-color: transparent;
   color: #fff;
@@ -345,7 +410,7 @@ export default {
 .upper-bar .sel3:after {
   position: absolute;
   content: ">";
-  top: -2px;
+  top: 0;
   left: 14px;
   background-color: transparent;
   color: #fff;
@@ -357,7 +422,7 @@ export default {
 .upper-bar .sel4:after {
   position: absolute;
   content: ">";
-  top: -2px;
+  top: 0;
   left: 14px;
   background-color: transparent;
   color: #fff;
@@ -792,79 +857,78 @@ export default {
 /* End Naver*/
 
 /* Start Section  */
-.section{
-    height: 400px;
+.section {
+  height: 400px;
 }
- div.gallery {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
+div.gallery {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
 
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
+div.gallery:hover {
+  border: 1px solid #777;
+}
 
-  div.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+div.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
-  div.desc {
+div.desc {
+  text-align: center;
+}
 
-    text-align: center;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  * {
-    box-sizing: border-box;
-  }
-
-  .responsive {
-    padding: 0;
-    float: left;
-    width: 18%;
-    margin: 1%;
-  }
-  /* Large devices (desktops, 992px and up) */
+.responsive {
+  padding: 0;
+  float: left;
+  width: 18%;
+  margin: 1%;
+}
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .section{
+  .section {
     height: 350px;
+  }
 }
-}
-  /*  Medium devices (tablets, 768px and up)  */
+/*  Medium devices (tablets, 768px and up)  */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    div.desc {
+  div.desc {
     font-size: 12px;
-      }
-    .section{
+  }
+  .section {
     height: 300px;
+  }
 }
- }
 
- /* Small devices (landscape phones, 576px and up)   */
+/* Small devices (landscape phones, 576px and up)   */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .responsive {
+  .responsive {
     width: 18%;
-    }
-    div.desc {
-        font-size: 9px;
-          }
-    .section{
+  }
+  div.desc {
+    font-size: 9px;
+  }
+  .section {
     height: 240px;
-}
   }
+}
 
-  /* Extra small devices (portrait phones, less than 576px) */
+/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .responsive {
-      width: 18%;
-    }
-    div.desc {
-        font-size: 6px;
-          }
-   .section{
-    height: 150px;
-}
+  .responsive {
+    width: 18%;
   }
-  /* End Section */
+  div.desc {
+    font-size: 6px;
+  }
+  .section {
+    height: 150px;
+  }
+}
+/* End Section */
 </style>

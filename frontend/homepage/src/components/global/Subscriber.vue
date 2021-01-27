@@ -1,16 +1,17 @@
 <template>
     <div class="subscriber text-center">
-        <div class="name-market">الریم سنتر-سوبر ماركت</div>
+        <div class="name-market">{{title}}</div>
         <img src="">
-        <div class="postion-market">السویداء</div>
+        <div class="postion-market">{{location}}</div>
         <button type="button" class="btn btn-light">زیارة</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Subscriber"
-}
+  name: "Subscriber",
+  props: ["title","location"],
+};
 </script>
 
 <style scoped>
