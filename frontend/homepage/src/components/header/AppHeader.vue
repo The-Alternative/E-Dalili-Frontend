@@ -141,9 +141,9 @@
     <!-- Start Section-->
 
     <div class="section">
-      <div class="responsive">
+      <div class="responsive" v-for="catog in categories" :key="catog.id" :slug="catog.slug" :name="catog.name">
         <div class="gallery">
-          <router-link to="/computer">
+          <router-link :to="`/${catog.slug}`">
               <img
                 src="@/assets/S1.png"
                 width="600"
@@ -151,137 +151,11 @@
               />
           </router-link>
           <div class="desc">
-            كمبیوترات واكسسواراتھا
+             {{catog.name}}
           </div>
         </div>
       </div>
 
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/mobile">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">موبایلات واكسسواراتھا</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/market">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">
-            البقالة
-          </div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/buty">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">
-            الجمال والعنایة الشخصیة
-          </div>
-        </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/allsection">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">جمیع الأقسام</div>
-        </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/child">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">
-            عالم الطفل
-          </div>
-        </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/furniture">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">
-            دیكور و مفروشات
-          </div>
-        </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/education">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">
-            قرطاسیة وتعلیم
-          </div>
-        </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/kitchen">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-            
-          </router-link>
-          <div class="desc">
-            المنزل والمطبخ
-          </div>
-        </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <router-link to="/elctronic">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-           
-          </router-link>
-          <div class="desc">
-            أجھزة كھربائیة والكترونیة
-          </div>
-        </div>
-      </div>
     </div>
     <!-- End Section-->
   </div>
@@ -295,12 +169,15 @@ export default {
   name: "AppHeader",
   data() {
     return {
+    urll: "http://edalili.e-dalely.com",
     cities: jeson[0].cities,
     governorates :  jeson[0].governorates,
-    streets : jeson[0].streets
+    streets : jeson[0].streets,
+    categories: jeson[0].categories
     // cities:[],
     // governorates:[],
     // streets:[]
+    // categories:[]
     };
   },
 /*
@@ -314,6 +191,9 @@ export default {
     })
     .then(response => {
       this.streets = response.data[0].streets;
+    })
+    .then(response => {
+      this.categories = response.data[0].categories;
     })
     }
     */
