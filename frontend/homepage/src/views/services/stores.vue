@@ -1,5 +1,5 @@
 <template>
-  <div class="our-help">
+  <div>
     <BodyStore />
     
   </div>

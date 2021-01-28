@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <h1>شركات</h1>
     
   </div>

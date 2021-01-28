@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <h1>الجمال والعناية الشخصية</h1>
     
   </div>

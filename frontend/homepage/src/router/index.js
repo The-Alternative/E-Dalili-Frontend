@@ -15,7 +15,13 @@ import allsection from "../views/section/allsection.vue";
 import buty from "../views/section/buty.vue";
 import market from "../views/section/market.vue";
 import mobile from "../views/section/mobile.vue";
-
+import computer from "../views/section/computer.vue";
+import elctronic from "../views/section/elctronic.vue";
+import kitchen from "../views/section/kitchen.vue";
+import education from "../views/section/education.vue";
+import furniture from "../views/section/furniture.vue";
+import child from "../views/section/child.vue";
+   
 Vue.use(VueRouter);
 
 const routes = [
@@ -86,6 +92,36 @@ const routes = [
     name: "mobile",
     component: mobile
   },
+  {
+    path: "/computer",
+    name: "computer",
+    component: computer
+  },
+  {
+    path: "/elctronic",
+    name: "elctronic",
+    component: elctronic
+  },
+  {
+    path: "/kitchen",
+    name: "kitchen",
+    component: kitchen
+  },
+  {
+    path: "/education",
+    name: "education",
+    component: education
+  },
+  {
+    path: "/furniture",
+    name: "furniture",
+    component: furniture
+  },
+  {
+    path: "/child",
+    name: "child",
+    component: child
+  }
 ];
 
 const router = new VueRouter({

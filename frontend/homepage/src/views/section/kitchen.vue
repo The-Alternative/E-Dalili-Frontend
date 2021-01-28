@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>البقالة</h1>
+    <h1>المنزل والمطبخ</h1>
     
   </div>
 </template>
@@ -10,7 +10,7 @@
 
 
 export default {
-  name: "market",
+  name: "kitchen",
   
 };
 </script>

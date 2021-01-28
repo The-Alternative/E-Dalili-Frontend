@@ -1,5 +1,5 @@
 <template>
-  <div class="our-help">
+  <div>
     <h1>مهنيون وفنيون</h1>
     
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="our-help">
+  <div>
     <h1>مهرجان العروض والتخفيضات</h1>
     
   </div>

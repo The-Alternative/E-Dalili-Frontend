@@ -1,5 +1,5 @@
 <template>
-  <div class="our-help">
+  <div>
     <h1>مطاعم ومقاهي</h1>
     
   </div>

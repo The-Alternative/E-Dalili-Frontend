@@ -1,5 +1,5 @@
 <template>
-  <div class="our-medic">
+  <div>
     <h1>صيدليات</h1>
     
   </div>

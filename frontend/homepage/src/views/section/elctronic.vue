@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>البقالة</h1>
+    <h1>أجھزة كھربائیة والكترونیة</h1>
     
   </div>
 </template>
@@ -10,7 +10,7 @@
 
 
 export default {
-  name: "market",
+  name: "elctronic",
   
 };
 </script>
