@@ -1,8 +1,8 @@
 <template>
     <div>
-        <a href="#"
+        <router-link to="/location"
             ><img class="location" src="../../assets/location.png" height="20"
-        /></a>
+        /></router-link>
     </div>
 </template>
 
