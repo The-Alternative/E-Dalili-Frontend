@@ -1,31 +1,38 @@
 <template>       
-            
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
-                  
+           
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler"> 
                     <div class="content-pro text-center" >
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">{{title}}</div>
                         <div class="category">{{description}}</div>
                         <div class="stars">
-                          <span class="fa fa-star  checked" id="one"></span>
-                          <span class="fa fa-star checked" id="two"></span>
-                          <span class="fa fa-star checked" id="three"></span>
-                          <span class="fa fa-star checked" id="four"></span>
-                          <span class="fa fa-star" id="five"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
                           </div>
                          <div> <span>ل.س</span>  <div class="price" style="display: inline-block"> </div> </div>
                           <div class="avilble"><div  style="display: inline-block">متوفر في  متاجر</div><span class="fa fa-check-circle"></span></div>
-                        <router-link class="rot" :to="`/productdetils/${index}`"> <button type="button" class="btn btn-light">اختیار</button> </router-link>
+                        <router-link class="rot" :to="`/ProductDetalis/${index}`"> <button type="button" class="btn btn-light">اختیار</button> </router-link>
                       </div>
-                     
                 </div>
             
 </template>
 
 <script>
+import jeson from "@/jeson/MOCK_DATA.json";
 export default {
-  name: "Prods",
-  props: ["title","description"]
+  name: "Products",
+  props: ["title","description"],
+ data(){
+     return{
+       Product: jeson[0].Products ,
+      
+           id: jeson[0].Products.id,
+     }
+ }
+ 
 };
 </script>
 

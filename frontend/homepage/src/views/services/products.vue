@@ -16,11 +16,13 @@
       <div class="container">
         <div class="row reower">
           <BodyProduct
-            v-for="(Prod,index) in Product.slice(0,4)"
+             v-for="(Prod,index) in Product.slice(0,4)"
             :key="index"
             :title="Prod.title"
-            :description="Prod.description"
-          />
+            :description="Prod.description">
+           
+          </BodyProduct>
+           
         </div>
       </div>
     </div>
@@ -36,12 +38,7 @@
     <div class="show-prod">
       <div class="container">
         <div class="row reower">
-          <BodyProduct
-            v-for="Prod in Product.slice(4,8)"
-            :key="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description"
-          />
+         
         </div>
       </div>
     </div>
@@ -81,12 +78,7 @@
                 <div class="show-prod">
               <div class="container">
                 <div class="row">
-                 <BodyProduct
-                 v-for="Prod in Product.slice(0,4)"
-                :key="Prod.id"
-                :title="Prod.title"
-                :description="Prod.description"
-                />
+                
               </div>
             </div>
           </div>
@@ -96,12 +88,7 @@
                 <div class="show-prod">
                   <div class="container">
                     <div class="row">
-                      <BodyProduct
-                      v-for="Prod in Product.slice(4,8)"
-                      :key="Prod.id"
-                      :title="Prod.title"
-                      :description="Prod.description"
-                      />
+                     
                     </div>
                   </div>
                 </div>
@@ -111,12 +98,7 @@
               <div class="show-prod">
                 <div class="container">
                   <div class="row">
-                    <BodyProduct
-                    v-for="Prod in Product.slice(8,12)"
-                    :key="Prod.id"
-                    :title="Prod.title"
-                    :description="Prod.description"
-                    />
+                    
                   </div>
                 </div>
              </div>
@@ -159,12 +141,7 @@
             <div class="show-prod">
               <div class="container">
                 <div class="row">
-                 <BodyProduct
-                 v-for="Prod in Product.slice(0,4)"
-                :key="Prod.id"
-                :title="Prod.title"
-                :description="Prod.description"
-                />
+                
               </div>
             </div>
           </div>
@@ -174,12 +151,7 @@
              <div class="show-prod">
               <div class="container">
                 <div class="row">
-                 <BodyProduct
-                 v-for="Prod in Product.slice(4,8)"
-                :key="Prod.id"
-                :title="Prod.title"
-                :description="Prod.description"
-                />
+                 
               </div>
             </div>
           </div>
@@ -189,13 +161,7 @@
              <div class="show-prod">
               <div class="container">
                 <div class="row">
-                 <BodyProduct
-                 v-for="Prod in Product.slice(8,12)"
-                :key="Prod.id"
-                :title="Prod.title"
-                :description="Prod.description"
-                @click="send()"
-                />
+                 
               </div>
             </div>
           </div>
@@ -228,6 +194,8 @@ export default {
      Product: jeson[0].Products ,
     lastStores: jeson[0].lastStores,
      brands: jeson[0].brands,
+       index: jeson[0].Products.id,
+
 
     //  Product:[],
      // lastStores:[],
@@ -237,6 +205,7 @@ export default {
   },
    
   name: "products",
+  props: ["title","description"],
   components: {
     BodyProduct,
     Subscriber,
