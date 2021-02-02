@@ -1,5 +1,7 @@
-<template>
+<template>       
+            
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                  
                     <div class="content-pro text-center" >
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">{{title}}</div>
@@ -13,23 +15,27 @@
                           </div>
                          <div> <span>ل.س</span>  <div class="price" style="display: inline-block"> </div> </div>
                           <div class="avilble"><div  style="display: inline-block">متوفر في  متاجر</div><span class="fa fa-check-circle"></span></div>
-                          <button type="button" class="btn btn-light">اختیار</button>
+                        <router-link class="rot" :to="`/productdetils/${index}`"> <button type="button" class="btn btn-light">اختیار</button> </router-link>
                       </div>
+                     
                 </div>
-
-
+            
 </template>
 
 <script>
 export default {
   name: "Prods",
-  props: ["title","description"],
+  props: ["title","description"]
 };
 </script>
 
 <style scoped>
 /* body of products */
-  /* style for product */
+.coler .rot {
+    color: #585b5e;
+    text-decoration: none;
+}
+
 .show-prod .row .content-pro {
     font-size: 18px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);

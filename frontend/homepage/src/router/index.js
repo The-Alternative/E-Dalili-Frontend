@@ -21,10 +21,17 @@ import kitchen from "../views/section/kitchen.vue";
 import education from "../views/section/education.vue";
 import furniture from "../views/section/furniture.vue";
 import child from "../views/section/child.vue";
+import productdetils from "../views/productdetils.vue";
    
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/productdetils/:id",
+    name: "productdetils",
+    component: productdetils,
+    props:true
+  },
   // services
   {
     path: "/",

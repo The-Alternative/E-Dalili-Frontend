@@ -16,8 +16,8 @@
       <div class="container">
         <div class="row reower">
           <BodyProduct
-            v-for="Prod in Product.slice(0,4)"
-            :key="Prod.id"
+            v-for="(Prod,index) in Product.slice(0,4)"
+            :key="index"
             :title="Prod.title"
             :description="Prod.description"
           />
@@ -194,6 +194,7 @@
                 :key="Prod.id"
                 :title="Prod.title"
                 :description="Prod.description"
+                @click="send()"
                 />
               </div>
             </div>
@@ -234,11 +235,13 @@ export default {
       
     };
   },
+   
   name: "products",
   components: {
     BodyProduct,
     Subscriber,
   },
+
   /* created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {
