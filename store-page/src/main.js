@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueGeolocation from 'vue-browser-geolocation';
 import * as VueGoogleMaps from 'vue2-google-maps';
+import SuiVue from 'semantic-ui-vue';
+// import '../semantic/dist/semantic.min.css'
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -18,10 +20,11 @@ Vue.config.productionTip = false;
 Vue.use(VueGeolocation);
 Vue.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyBgaMeY1PRIU8R3ceggZx1-vsgOTUZ5vH8',
+        key: 'AIzaSyDjjb4f0kJ19pYIRiosKb-MOofau97t80A',
     },
     installComponents: false,
 });
+Vue.use(SuiVue);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueRouter);
