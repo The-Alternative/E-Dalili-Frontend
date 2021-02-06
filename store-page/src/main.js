@@ -24,6 +24,7 @@ Vue.use(VueGoogleMaps, {
     },
     installComponents: false,
 });
+//
 Vue.use(SuiVue);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
