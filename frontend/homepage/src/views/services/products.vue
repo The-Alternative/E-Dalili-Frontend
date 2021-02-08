@@ -1,5 +1,6 @@
 <template>
   <div class="products">
+   <Cartmini />
     <!--  show img  -->
     <div class="show-img">
       <div class="container">
@@ -16,13 +17,14 @@
       <div class="container">
         <div class="row reower">
           <BodyProduct
-             v-for="Prod in Product.slice(0,4)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+             v-for="items in Product.slice(0,4)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
+            
            
         </div>
       </div>
@@ -39,13 +41,13 @@
     <div class="show-prod">
       <div class="container">
         <div class="row reower">
-         <BodyProduct
-             v-for="Prod in Product.slice(4,8)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+          <BodyProduct
+             v-for="items in Product.slice(4,8)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
         </div>
       </div>
@@ -86,13 +88,13 @@
                 <div class="show-prod">
               <div class="container">
                 <div class="row">
-                <BodyProduct
-             v-for="Prod in Product.slice(0,4)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+                  <BodyProduct
+             v-for="items in Product.slice(0,3)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
               </div>
             </div>
@@ -103,13 +105,13 @@
                 <div class="show-prod">
                   <div class="container">
                     <div class="row">
-                     <BodyProduct
-             v-for="Prod in Product.slice(4,8)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+                      <BodyProduct
+             v-for="items in Product.slice(3,6)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
                     </div>
                   </div>
@@ -121,12 +123,12 @@
                 <div class="container">
                   <div class="row">
                     <BodyProduct
-             v-for="Prod in Product.slice(8,12)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+             v-for="items in Product.slice(6,9)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
                   </div>
                 </div>
@@ -170,13 +172,13 @@
             <div class="show-prod">
               <div class="container">
                 <div class="row">
-                <BodyProduct
-             v-for="Prod in Product.slice(0,4)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+            <BodyProduct
+             v-for="items in Product.slice(0,4)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
               </div>
             </div>
@@ -187,13 +189,13 @@
              <div class="show-prod">
               <div class="container">
                 <div class="row">
-                 <BodyProduct
-             v-for="Prod in Product.slice(4,8)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+            <BodyProduct
+             v-for="items in Product.slice(4,8)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
               </div>
             </div>
@@ -204,13 +206,13 @@
              <div class="show-prod">
               <div class="container">
                 <div class="row">
-                 <BodyProduct
-             v-for="Prod in Product.slice(8,12)"
-            :key="Prod.br"
-            :id="Prod.id"
-            :title="Prod.title"
-            :description="Prod.description">
-           
+               <BodyProduct
+             v-for="items in Product.slice(8,12)"
+            :key="items.pr"
+            :id="items.id"
+             :price="items.price"
+            :title="items.title"
+            :description="items.description" @click="goto(items)">
           </BodyProduct>
               </div>
             </div>
@@ -233,7 +235,8 @@
 <script>
 import BodyProduct from "@/components/global/BodyProduct.vue";
 import Subscriber from "@/components/global/Subscriber.vue";
-import jeson from "@/jeson/MOCK_DATA.json";
+import Cartmini from "@/components/cart/Cartmini.vue";
+
 
 
  //import axios from "axios";
@@ -241,25 +244,27 @@ export default {
   data() {
     return {
       urll: "http://edalili.e-dalely.com",
-     Product: jeson[0].Products ,
-    lastStores: jeson[0].lastStores,
-     brands: jeson[0].brands,
-      
-
     //  Product:[],
      // lastStores:[],
-    //  brands:[]
-      
+    //  brands:[]  
     };
-  },
-   
+  }, 
   name: "products",
-
   components: {
     BodyProduct,
     Subscriber,
-  },
-
+    Cartmini
+  },computed:{
+    Product(){
+      return this.$store.state.Product;
+    },
+    lastStores(){
+      return this.$store.state.lastStores;
+    },
+    brands(){
+      return this.$store.state.brands;
+    },
+  }
   /* created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {
@@ -271,8 +276,10 @@ export default {
     .then(response => {
       this.brands = response.data[0].brands;
     })
-  }
+  },
   */
+    
+  
 };
 
 </script>

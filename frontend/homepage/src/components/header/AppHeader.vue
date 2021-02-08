@@ -50,13 +50,17 @@
           <div class="col-lg-12 fet">
             <div class="featuers">
               <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
+             <div @click="gotocart">
               <i class="fa fa-shopping-cart"></i>
+              <span class="cart-count">{{cartItemCount}}</span>
               <div class="shopping">عربة التسوق</div>
+             </div>
               <i class="fa fa-map-marker"></i>
               <div class="map">حدد موقعك</div>
 
               <i class="fa fa-user-circle "> </i>
               <div class="user">تسجیل الدخول</div>
+             
             </div>
           </div>
         </div>
@@ -167,8 +171,10 @@ import jeson from "@/jeson/MOCK_DATA.json";
 
 export default {
   name: "AppHeader",
+  props: ["title","description","id","price"],
   data() {
     return {
+        details: {id:this.id,title:this.title,description:this.description,price:this.price},
     urll: "http://edalili.e-dalely.com",
     cities: jeson[0].cities,
     governorates :  jeson[0].governorates,
@@ -178,8 +184,20 @@ export default {
     // governorates:[],
     // streets:[]
     // categories:[]
+    
     };
-  },
+  }
+  ,computed: {
+    cartItemCount() {
+      return this.$store.state.cartItemCount;
+    }
+  },methods:{
+    gotocart:function(){ 
+         this.$router.push(`/Cart`)
+     }
+  }
+  
+  
 /*
    created(){
     axios.get("http://edalili.e-dalely.com")
@@ -201,6 +219,19 @@ export default {
 </script>
 
 <style scoped>
+/* ____________________________________ cart icon _______________________________ */
+.cart-count{
+font-size: 15px;
+color: #ba8b00;
+padding: 0px 5px;
+margin-left: -13px;
+background: #ffffff;
+height: 22px;
+border-radius: 50%;
+width: 21px;
+position: absolute;
+margin-top: -10px;;
+}
 /* ____________________________________app header _______________________________ */
 .row {
     justify-content: center;

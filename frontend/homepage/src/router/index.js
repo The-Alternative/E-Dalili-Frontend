@@ -22,12 +22,21 @@ import education from "../views/section/education.vue";
 import furniture from "../views/section/furniture.vue";
 import child from "../views/section/child.vue";
 import ProductDetalis from "../components/global/ProductDetalis.vue";
-   
+import Cart from "../components/cart/Cart.vue";
+
 Vue.use(VueRouter);
 
+
 const routes = [
+// cart shop
   {
-    path: "/ProductDetalis/:id",
+    path: "/Cart",
+    component: Cart,
+    props:true
+  },
+  // ProductDetalis
+  {
+    path: "/ProductDetalis/:id/:title/:description/:price",
     component: ProductDetalis,
     props:true
   },

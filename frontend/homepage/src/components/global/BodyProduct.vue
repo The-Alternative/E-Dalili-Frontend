@@ -1,6 +1,6 @@
 <template>       
            
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+                <div  class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
                     <div class="content-pro text-center" >
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">{{title}}</div>
@@ -12,11 +12,16 @@
                           <span class="fa fa-star checked"></span>
                           <span class="fa fa-star"></span>
                           </div>
-                         <div> <span>ل.س </span>  <div class="price" style="display: inline-block"> </div> </div>
+                         <div> <span>ل.س{{price}} </span>  <div class="price" style="display: inline-block"> </div> </div>
                           <div class="avilble"><div  style="display: inline-block">متوفر في  متاجر</div><span class="fa fa-check-circle"></span></div>
-                        <router-link class="rot" :to="`/ProductDetalis/${id}`"> <button type="button" class="btn btn-light">اختیار</button> </router-link>
+                         <button @click="goto(id,title,description,price)" type="button" class="btn btn-light">اختیار</button>
+                         <span @click="addToCart" class="cartshop"><i class="fa fa-shopping-cart"></i></span>
                       </div>
+                      
+                             
+                         
                 </div>
+                
             
 </template>
 
@@ -24,18 +29,46 @@
 
 export default {
   name: "Products",
-  props: ["title","description","id"],
+  props: ["id","title","description","price"],
  data(){
-     return{  
-           
-     }
- }
- 
+     return{    
+       details: {
+        id :   this.id,
+        title: this.title,
+       description:this.description,
+       price:this.price
+                }
+            }
+ },
+ methods:{
+     
+     goto:function(i,t,d,p){ 
+         this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`)
+     },
+     addToCart() {
+        this.$store.dispatch("addToCart", this.details);
+        
+       }
+ },computed: {
+    count() {
+      return this.$store.state.count;
+    }
+  }
 };
 </script>
 
 <style scoped>
 /* body of products */
+.cartshop{
+    margin: 0px 20px ;
+    background-color: #ccc;
+    width: 20px;
+    padding: 11px;
+    border-radius: 50%
+}
+.cartshop:hover{
+     background-color: #d3b85f;
+}
 .coler .rot {
     color: #585b5e;
     text-decoration: none;
@@ -44,7 +77,6 @@ export default {
 .show-prod .row .content-pro {
     font-size: 18px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
-    height: auto;
     margin-top: 10vh;
     margin-bottom: 10vh;
 }
@@ -65,12 +97,13 @@ export default {
 }
 .show-prod .content-pro button {
     background-color: #a5abac;
-    width: 130px;
+    width: auto;
     color: #fff;
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 13px;
     font-weight: 1;
+    padding: 10px 20px;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
