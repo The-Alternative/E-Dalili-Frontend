@@ -10,16 +10,32 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "normalize.css";
 import "../public/fontawesome-free-5.15.1-web/css/all.css";
 
+import '@/js/store.js';
+import VueGeolocation from 'vue-browser-geolocation';
+import * as VueGoogleMaps from 'vue2-google-maps';
+import SuiVue from 'semantic-ui-vue';
+// import '../semantic/dist/semantic.min.css'
 
 Vue.config.productionTip = false;
+Vue.use(SuiVue);
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-
-
+Vue.use(VueGeolocation);
+Vue.use(VueGoogleMaps, {
+  load: {
+      key: 'AIzaSyDjjb4f0kJ19pYIRiosKb-MOofau97t80A',
+  },
+  installComponents: false,
+});
 new Vue({
   router,
   store,
   render: (h) => h(App),
 }).$mount("#app");
+
+
+
+
+
 

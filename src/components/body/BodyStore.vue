@@ -1,19 +1,20 @@
 <template>
     <!--  all coulome body  -->
     <div
-        class="card-group col-sm-12 "
+        class="card-group col-sm-12 wrapper"
+        id="wrapper"
         style="display: flex; justify-content: center; padding: 0"
     >
         <!--      coulome one left -->
-        <div class="card pl-1 pr-0 col-3 coulom-img">
-            <!--        <div class="card pr-0 pl-0 mt-3 col-3 colom-img">-->
-            <img class="mb-2" src="@/assets/img1.png" height="50%" />
+        <div class="card pl-3 pr-0 col-lg-3 col-md-2 col-sm-6 coulom-img">
+            <img class="mb-3" src="@/assets/img1.png" height="50%" />
             <img class="" src="@/assets/img.png" height="50%" />
         </div>
+
         <!--     coulome middel stors group   -->
-        <div class="card pl-1 pr-1  col-7 stors">
+        <div class="card pl-1 pr-1 col-lg-6 col-md-7 col-sm-8 col-xs-8 stors ">
             <!--          store 1-->
-            <div class="store">
+            <div class="store" v-for="store in stores" :key="store.id">
                 <div class="card-title row justify-content-lg-end">
                     <div class="d-flex flex-row">
                         <img
@@ -21,101 +22,25 @@
                             src="@/assets/open.png"
                             height="40"
                         />
-                        <div class="text-muted">
-                            يبعد 500 م
-                        </div>
+                        <div class="text-muted">{{ store.space }}</div>
                         <div>
                             <div class="title">
-                                الريم سنتر - سوبر ماركت
+                                {{ store.title }}
                                 <div class="stars text-right">
-                                    <span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star disabled"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            class="rounded-circle"
-                            src="@/assets/img2.jpg"
-                            height="60"
-                        />
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li>
-                            ألعاب وهدايا
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            المنزل والمطبخ
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            الجمال والعناية الشخصية
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            مخابز وحلويات
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>البقالة</li>
-                    </ul>
-                    <div class="row img-button">
-                        <img
-                            class="Group"
-                            src="@/assets/Group.png"
-                            height="20"
-                        />
-                        <img
-                            class="MaskGroup"
-                            src="@/assets/MaskGroup.png"
-                            height="20"
-                        />
-                        <button type="button" class="btn w-25">
-                            <b>زيارة</b>
-                        </button>
-                        <img
-                            class="location"
-                            src="@/assets/location.png"
-                            height="20"
-                        />
-                        <img
-                            class="phone"
-                            src="@/assets/phone.png"
-                            height="20"
-                        />
-                        <img
-                            class="whatsapp"
-                            src="@/assets/whatsapp.png"
-                            height="20"
-                        />
-                    </div>
-                </div>
-            </div>
-            <!--          store 2  -->
-            <div class="store">
-                <div class="card-title row justify-content-lg-end">
-                    <div class="d-flex flex-row">
-                        <img
-                            class="img-open"
-                            src="@/assets/open.png"
-                            height="40"
-                        />
-                        <div class="text-muted">
-                            يبعد 500 م
-                        </div>
-                        <div>
-                            <div class="title">
-                                سنتر المصري-سوبر ماركت
-                                <div class="stars text-right">
-                                    <span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span>
+                                    <span
+                                        @click="store.rate = item"
+                                        v-for="item in parseInt(store.rate)"
+                                        :key="item"
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></span>
+                                    <span
+                                        @click="store.rate = item + store.rate"
+                                        v-for="item in 5 - store.rate"
+                                        :key="item"
+                                        class="far fa-star"
+                                        aria-hidden="true"
+                                    ></span>
                                 </div>
                             </div>
                         </div>
@@ -128,23 +53,9 @@
                 </div>
                 <div class="card-footer">
                     <ul class="flex-row d-inline-flex">
-                        <li>
-                            ألعاب وهدايا
+                        <li class="categorystore">
+                            {{ store.categories }}
                         </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            المنزل والمطبخ
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            الجمال والعناية الشخصية
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            مخابز وحلويات
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>البقالة</li>
                     </ul>
                     <div class="row img-button">
                         <img
@@ -157,529 +68,158 @@
                             src="@/assets/MaskGroup.png"
                             height="20"
                         />
-                        <button type="button" class="btn btn-success w-25">
-                            <b>زيارة</b>
-                        </button>
-                        <img
-                            class="location"
-                            src="@/assets/location.png"
-                            height="20"
-                        />
-                        <img
-                            class="phone"
-                            src="@/assets/phone.png"
-                            height="20"
-                        />
-                        <img
-                            class="whatsapp"
-                            src="@/assets/whatsapp.png"
-                            height="20"
-                        />
-                    </div>
-                </div>
-            </div>
-            <!--    store 3      -->
-            <div class="store">
-                <div class="card-title row justify-content-lg-end">
-                    <div class="d-flex flex-row">
-                        <img
-                            class="img-open"
-                            src="@/assets/open.png"
-                            height="40"
-                        />
-                        <div class="text-muted">
-                            يبعد 500 م
-                        </div>
-                        <div>
-                            <div class="title">
-                                سنتر خالد - سوبر ماركت
-                                <div class="stars text-right">
-                                    <span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            class="rounded-circle"
-                            src="@/assets/market-logo.png"
-                            height="60"
-                        />
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li>
-                            ألعاب وهدايا
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            المنزل والمطبخ
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            الجمال والعناية الشخصية
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            مخابز وحلويات
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>البقالة</li>
-                    </ul>
-                    <div class="row img-button">
-                        <img
-                            class="Group"
-                            src="@/assets/Group.png"
-                            height="20"
-                        />
-                        <img
-                            class="MaskGroup"
-                            src="@/assets/MaskGroup.png"
-                            height="20"
-                        />
-                        <button type="button" class="btn btn-success w-25">
-                            <b>زيارة</b>
-                        </button>
-                        <img
-                            class="location"
-                            src="@/assets/location.png"
-                            height="20"
-                        />
-                        <img
-                            class="phone"
-                            src="@/assets/phone.png"
-                            height="20"
-                        />
-                        <img
-                            class="whatsapp"
-                            src="@/assets/whatsapp.png"
-                            height="20"
-                        />
-                    </div>
-                </div>
-            </div>
-            <!--          store 4 -->
-            <div class="store">
-                <div class="card-title row justify-content-lg-end">
-                    <div class="d-flex flex-row">
-                        <img
-                            class="img-open"
-                            src="@/assets/close.png"
-                            height="40"
-                        />
-                        <div class="text-muted">
-                            يبعد 500 م
-                        </div>
-                        <div>
-                            <div class="title">
-                                سنتر البتول - سوبر ماركت
-                                <div class="stars text-right">
-                                    <span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            class="rounded-circle"
-                            src="@/assets/market-logo.png"
-                            height="60"
-                        />
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li>
-                            ألعاب وهدايا
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            المنزل والمطبخ
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            الجمال والعناية الشخصية
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            مخابز وحلويات
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>البقالة</li>
-                    </ul>
-                    <div class="row img-button">
-                        <img
-                            class="Group"
-                            src="@/assets/Group.png"
-                            height="20"
-                        />
-                        <img
-                            class="MaskGroup"
-                            src="@/assets/MaskGroup.png"
-                            height="20"
-                        />
-                        <button type="button" class="btn btn-success w-25">
-                            <b>زيارة</b>
-                        </button>
-                        <img
-                            class="location"
-                            src="@/assets/location.png"
-                            height="20"
-                        />
-                        <img
-                            class="phone"
-                            src="@/assets/phone.png"
-                            height="20"
-                        />
-                        <img
-                            class="whatsapp"
-                            src="@/assets/whatsapp.png"
-                            height="20"
-                        />
-                    </div>
-                </div>
-            </div>
-            <!--    store 5      -->
-            <div class="store">
-                <div class="card-title row justify-content-lg-end">
-                    <div class="d-flex flex-row">
-                        <img
-                            class="img-open"
-                            src="@/assets/open.png"
-                            height="40"
-                        />
-                        <div class="text-muted">
-                            يبعد 500 م
-                        </div>
-                        <div>
-                            <div class="title">
-                                سنتر المحيط - سوبر ماركت
-                                <div class="stars text-right">
-                                    <span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            class="rounded-circle"
-                            src="@/assets/image.png"
-                            height="60"
-                        />
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li>
-                            ألعاب وهدايا
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            المنزل والمطبخ
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            الجمال والعناية الشخصية
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            مخابز وحلويات
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>البقالة</li>
-                    </ul>
-                    <div class="row img-button">
-                        <img
-                            class="Group"
-                            src="@/assets/Group.png"
-                            height="20"
-                        />
-                        <img
-                            class="MaskGroup"
-                            src="@/assets/MaskGroup.png"
-                            height="20"
-                        />
-                        <button type="button" class="btn btn-success w-25">
-                            <b>زيارة</b>
-                        </button>
-                        <img
-                            class="location"
-                            src="@/assets/location.png"
-                            height="20"
-                        />
-                        <img
-                            class="phone"
-                            src="@/assets/phone.png"
-                            height="20"
-                        />
-                        <img
-                            class="whatsapp"
-                            src="@/assets/whatsapp.png"
-                            height="20"
-                        />
-                    </div>
-                </div>
-            </div>
-            <!--    store 6      -->
-            <div class="store">
-                <div class="card-title row justify-content-lg-end">
-                    <div class="d-flex flex-row">
-                        <img
-                            class="img-open"
-                            src="@/assets/open.png"
-                            height="40"
-                        />
-                        <div class="text-muted">
-                            يبعد 500 م
-                        </div>
-                        <div>
-                            <div class="title">
-                                سنتر المحيط - سوبر ماركت
-                                <div class="stars text-right">
-                                    <span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span
-                                    ><span class="fa fa-star"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <img
-                            class="rounded-circle"
-                            src="@/assets/image.png"
-                            height="60"
-                        />
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li>
-                            ألعاب وهدايا
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            المنزل والمطبخ
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            الجمال والعناية الشخصية
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>
-                            مخابز وحلويات
-                        </li>
-                        &nbsp;&nbsp; | &nbsp;&nbsp;
-                        <li>البقالة</li>
-                    </ul>
-                    <div class="row img-button">
-                        <img
-                            class="Group"
-                            src="@/assets/Group.png"
-                            height="20"
-                        />
-                        <img
-                            class="MaskGroup"
-                            src="@/assets/MaskGroup.png"
-                            height="20"
-                        />
-                        <button type="button" class="btn btn-success w-25">
-                            <b>زيارة</b>
-                        </button>
-                        <img
-                            class="location"
-                            src="@/assets/location.png"
-                            height="20"
-                        />
-                        <img
-                            class="phone"
-                            src="@/assets/phone.png"
-                            height="20"
-                        />
-                        <img
-                            class="whatsapp"
-                            src="@/assets/whatsapp.png"
-                            height="20"
-                        />
+                        <btnvisit-store></btnvisit-store>
+                        <location-store></location-store>
+                        <phone-store></phone-store>
+                        <whatsapp-store></whatsapp-store>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--      check box     -->
-        <div class="card pl-0 pr-0 col-2 categores">
-            <div class="card text-right checked-all">
-                <span class="text-center span-text">عرض العروضات حسب</span>
+        <!--              check box     -->
+        <span class="slide" id="btn">
+            <a href="#">
+                <i class="fa fa-bars" @click="btnbar"></i>
+            </a>
+        </span>
+
+        <div
+            class="card pl-0 pr-3 mr-4 col-lg-3 col-md-3 col-sm-4 col-xs-4 categores"
+            id="menu"
+        >
+            <div class="backdrop"></div>
+            <div class="card text-right checked-all open" id="all">
+                <span class="text-center span-text text">عرض العروضات حسب</span>
                 <span class="text-center bgcolor">حسب القسم</span>
                 <div class="checklist">
-                    <div class="">
-                        <label for="check1">الكل</label>&nbsp;
-                        <input type="checkbox" id="check1" />
-                    </div>
-                    <div class="">
-                        <label for="check2">البقالة</label>&nbsp;
-                        <input type="checkbox" id="check2" />
-                    </div>
-                    <div class="">
-                        <label for="check3">خضار و فواكه</label>&nbsp;
-                        <input type="checkbox" id="check3" />
-                    </div>
-                    <div class="">
-                        <label for="check4">مخابز و حلويات</label>&nbsp;
-                        <input type="checkbox" id="check4" />
-                    </div>
-                    <div class="">
-                        <label for="check5">الجمال والعناية الشخصية</label
-                        >&nbsp;
-
-                        <input type="checkbox" id="check5" />
-                    </div>
-                    <div class="">
-                        <label for="check6">موبايلات واكسسواراتها</label>&nbsp;
-
-                        <input type="checkbox" id="check6" />
-                    </div>
-                    <div class="">
-                        <label for="check7">كمبيوترات واكسسواراتها</label>&nbsp;
-
-                        <input type="checkbox" id="check7" />
-                    </div>
-                    <div class="">
-                        <label for="check8">أجهزة كهربائية والكترونية</label
-                        >&nbsp;
-
-                        <input type="checkbox" id="check8" />
-                    </div>
-                    <div class="">
-                        <label for="check9">المنزل والمطبخ</label>&nbsp;
-                        <input type="checkbox" id="check9" />
-                    </div>
-                    <div class="">
-                        <label for="check10">قرطاسية وتعليم</label>&nbsp;
-                        <input type="checkbox" id="check10" />
-                    </div>
-                    <div class="">
-                        <label for="check11">أزياء</label>&nbsp;
-                        <input type="checkbox" id="check11" />
-                    </div>
-                    <div class="">
-                        <label for="check12">أحذية</label>&nbsp;
-                        <input type="checkbox" id="check12" />
-                    </div>
-                    <div class="">
-                        <label for="check13">ديكور ومفروشات</label>&nbsp;
-                        <input type="checkbox" id="check13" />
-                    </div>
-                    <div class="">
-                        <label for="check14">عالم الأطفال</label>&nbsp;
-                        <input type="checkbox" id="check14" />
-                    </div>
-                    <div class="">
-                        <label for="check15">لوازم و أجهزة طبية صغيرة</label
-                        >&nbsp;
-
-                        <input type="checkbox" id="check15" />
-                    </div>
-                    <div class="">
-                        <label for="check16">ألعاب وهدايا</label>&nbsp;
-                        <input type="checkbox" id="check16" />
-                    </div>
-                    <div class="">
-                        <label for="check17">أصباغ ومواد ديكور</label>&nbsp;
-                        <input type="checkbox" id="check17" />
-                    </div>
-                    <div class="">
-                        <label for="check18">عالم الموسيقا</label>&nbsp;
-                        <input type="checkbox" id="check18" />
-                    </div>
-                    <div class="">
-                        <label for="check19">عدد ومستلزمات بناء</label>&nbsp;
-                        <input type="checkbox" id="check19" />
-                    </div>
-                    <div class="">
-                        <label for="check20">مواد بناء</label>&nbsp;
-                        <input type="checkbox" id="check20" />
-                    </div>
-                    <div class="">
-                        <label for="check21">مجوهرات واكسسوارات</label>&nbsp;
-                        <input type="checkbox" id="check21" />
-                    </div>
-                    <div class="">
-                        <label for="check22"
-                            >مستلزمات واكسسوارات السيارات</label
+                    <label class="textcheck" for="check4">الكل</label
+                    ><input
+                        class="categories"
+                        type="checkbox"
+                        @click="CheckAll()"
+                        v-model="IsCheckAll"
+                        id="check4"
+                    />
+                    <ul>
+                        <li
+                            class="textcheck"
+                            v-for="category in categories"
+                            :key="category"
                         >
-                        <input type="checkbox" id="check22" />
-                    </div>
-                    <div class="">
-                        <label for="check23">أنتيك وأعمال فنية</label>&nbsp;
-                        <input type="checkbox" id="check23" />
-                    </div>
-                    <div class="">
-                        <label for="check24">كتب</label>&nbsp;
-                        <input type="checkbox" id="check24" />
-                    </div>
-                    <div class="">
-                        <label for="check25">بصريات</label>&nbsp;
-                        <input type="checkbox" id="check25" />
-                    </div>
-                    <div class="">
-                        <label for="check26">مستلزمات بيطرية</label>&nbsp;
-                        <input type="checkbox" id="check26" />
-                    </div>
-                    <div class="m">
-                        <label for="check27">مستلزمات زراعية</label>&nbsp;
-
-                        <input type="checkbox" id="check27" />
-                    </div>
+                            {{ category }}
+                            <input
+                                class="categories"
+                                :click="printvalues()"
+                                type="checkbox"
+                                v-bind:value="category"
+                                v-model="languages"
+                                @change="updateCheckall()"
+                            />
+                        </li>
+                    </ul>
                 </div>
                 <span class="text-center bgcolor">حسب المتجر أو الشركة</span>
                 <div class="checklist">
                     <div class="">
-                        <label for="check1">سوبر ماركت شوبيكو</label>&nbsp;
-                        <input type="checkbox" id="check28" />
-                    </div>
-                    <div class="">
-                        <label for="check2">أميرة سنتر</label>&nbsp;
-                        <input type="checkbox" id="check29" />
-                    </div>
-                    <div class="">
-                        <label for="check3">شركة الصفدي للإلكترونيات</label
+                        <label class="textcheck" for="check1"
+                            >سوبر ماركت شوبيكو</label
                         >&nbsp;
-                        <input type="checkbox" id="check30" />
+                        <input class="categories" type="checkbox" id="check1" />
+                    </div>
+                    <div class="">
+                        <label class="textcheck" for="check2">أميرة سنتر</label
+                        >&nbsp;
+                        <input class="categories" type="checkbox" id="check2" />
+                    </div>
+                    <div class="">
+                        <label class="textcheck" for="check3"
+                            >شركة الصفدي للإلكترونيات</label
+                        >&nbsp;
+                        <input class="categories" type="checkbox" id="check3" />
                     </div>
                 </div>
                 <span class="text-center bgcolor">حسب التقييم</span>
-                <div class="checklist">
+                <div class="checklist stars">
                     <div class="row star-right">
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star " aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star " aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
+                        <span
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
+                            :key="item"
+                            class="fa fa-star"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            @click="rate = item + rate"
+                            v-for="item in 5 - rate"
+                            :key="item"
+                            class="far fa-star "
+                            aria-hidden="true"
+                        ></span>
                     </div>
                     <div class="row star-right2">
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
+                        <span
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
+                            :key="item"
+                            class="fa fa-star"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            @click="rate = item + rate"
+                            v-for="item in 4 - rate"
+                            :key="item"
+                            class="far fa-star "
+                            aria-hidden="true"
+                        ></span>
                     </div>
                     <div class="row star-right3">
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
+                        <span
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
+                            :key="item"
+                            class="fa fa-star"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            @click="rate = item + rate"
+                            v-for="item in 3 - rate"
+                            :key="item"
+                            class="far fa-star "
+                            aria-hidden="true"
+                        ></span>
                     </div>
                     <div class="row star-right4">
-                        <span class="far fa-star" aria-hidden="true"></span>
-                        <span class="far fa-star" aria-hidden="true"></span>
+                        <span
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
+                            :key="item"
+                            class="fa fa-star"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            @click="rate = item + rate"
+                            v-for="item in 2 - rate"
+                            :key="item"
+                            class="far fa-star "
+                            aria-hidden="true"
+                        ></span>
                     </div>
                     <div class="row star-right5">
-                        <span class="far fa-star" aria-hidden="true"></span>
+                        <span
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
+                            :key="item"
+                            class="fa fa-star"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            @click="rate = item + rate"
+                            v-for="item in 1 - rate"
+                            :key="item"
+                            class="far fa-star "
+                            aria-hidden="true"
+                        ></span>
                     </div>
                 </div>
             </div>
@@ -687,17 +227,196 @@
     </div>
 </template>
 
-<script>
-export default {
-  name: "BodyStore",
-};
-</script>
+<script src="@/js/store.js"></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media (min-width: 575.98px) and (max-width: 767px) {
+@media (max-width: 598px) {
+    .checked-all {
+        font-size: 12px;
+        color: #000000;
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .categories {
+        height: 10px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000000;
+        list-style: none;
+        margin-bottom: 10px;
+    }
+    .textcheck {
+        font-weight: bold;
+        list-style: none;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #000000;
+    }
+    .checked-all .listcategories .categories {
+        color: #000000;
+    }
+    .span-text {
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .bgcolor {
+        background-color: #e0e0d1;
+        border-radius: 3px;
+        border: 1px solid #e0e0d1;
+        font-size: 12px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+    .star-right {
+        margin-top: 8px;
+        font-size: 10px;
+        margin-left: 90px;
+    }
+    .star-right2 {
+        margin-top: 8px;
+        font-size: 10px;
+        margin-left: 102px;
+    }
+    .star-right3 {
+        margin-top: 8px;
+        font-size: 10px;
+        margin-left: 112px;
+    }
+    .star-right4 {
+        margin-top: 8px;
+        font-size: 10px;
+        margin-left: 122px;
+    }
+    .star-right5 {
+        margin-top: 8px;
+        font-size: 10px;
+        margin-left: 134px;
+    }
+    /*...................*/
+    .categores {
+        margin-right: 0;
+        color: #000000;
+        position: fixed;
+        width: 200px;
+        right: -400px;
+        height: 100%;
+        transition: right 0.4s ease;
+    }
+    .categores.show {
+        right: 0;
+    }
+    .slide {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        transition: right 0.4s ease;
+    }
+    .slide.click {
+        right: 260px;
+    }
+    .slide .fa-bars {
+        color: #000000;
+    }
+    .slide.click .fa-bars:before {
+        content: '\f00d';
+    }
+    .coulom-img {
+        display: none;
+    }
     .card {
-        column-width: 100px;
+        margin-top: 20px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .card-footer {
+        text-align: center;
+    }
+    .img-open {
+        height: 20px;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    .rounded-circle {
+        height: 30px;
+    }
+    /*!*!*space store*!*!*/
+    .text-muted {
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 60px;
+        margin-right: 120px;
+        font-size: 9px;
+    }
+    /*!*!*!*!*name store*!*!*!*!*/
+    .title {
+        margin-top: 10px;
+        margin-right: 10px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .stars {
+        color: #ffd200;
+        list-style: none;
+    }
+
+    /*!*!*!*!*type of goods*!*!*!*!*/
+    .categorystore {
+        font-weight: bold;
+        margin-top: 5px;
+        list-style: none;
+        font-size: 12px;
+        color: #751aff;
+        text-align: center;
+    }
+
+    /*!*!*!*!*button visit store*!*!*!*!*/
+    .btn {
+        font-weight: bold;
+        font-size: 12px;
+        height: 30px;
+        width: 8px;
+        margin-left: 100px;
+    }
+    .img-button {
+        margin-top: 5px;
+    }
+    .location {
+        height: 15px;
+        margin-left: 80px;
+        margin-right: 10px;
+    }
+    .phone {
+        height: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .whatsapp {
+        color: #25d366;
+        margin-left: 10px;
+        height: 20px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .Group {
+        margin-left: 10px;
+        height: 15px;
+    }
+    .MaskGroup {
+        height: 15px;
+    }
+    .stors {
+        width: 100%;
+    }
+}
+@media (min-width: 599px) and (max-width: 767px) {
+    .coulom-img {
+        display: none;
+    }
+    .card {
         margin-top: 20px;
         margin-right: 0;
         margin-left: 0;
@@ -712,45 +431,45 @@ export default {
     }
     /*!*!*space store*!*!*/
     .text-muted {
-        margin-right: 90px;
+        font-weight: bold;
+        margin-right: 60px;
         margin-left: 30px;
         margin-top: 10px;
-        font-size: 6px;
+        font-size: 9px;
     }
     /*!*!*!*!*name store*!*!*!*!*/
     .title {
-        /*margin-right: 5px;*/
-        /*margin-left: 10px;*/
-        font-size: 8px;
+        margin-right: 5px;
+        font-size: 12px;
+        font-weight: bold;
     }
     .stars {
         color: #ffd200;
         list-style: none;
     }
-    .stars span.disabled {
-        font-size: 6px;
-        color: rgba(0, 0, 0, 0.2);
-    }
+
     /*!*!*!*!*type of goods*!*!*!*!*/
-    ul {
+    .categorystore {
+        font-weight: bold;
         margin-top: 5px;
         list-style: none;
-        font-size: 7px;
+        font-size: 10px;
         color: #751aff;
     }
     /*!*!*!*!*button visit store*!*!*!*!*/
     .btn {
+        font-weight: bold;
         font-size: 10px;
         height: 25px;
         width: 8px;
-        margin-left: 30px;
+        margin-left: 70px;
     }
     .img-button {
         margin-top: 5px;
     }
     .location {
         height: 15px;
-        margin-left: 50px;
+        margin-left: 60px;
         margin-right: 10px;
     }
     .phone {
@@ -759,8 +478,11 @@ export default {
         margin-right: 10px;
     }
     .whatsapp {
+        color: #25d366;
+        margin-left: 5px;
         height: 15px;
-        margin-left: 10px;
+        padding-top: 0;
+        margin-bottom: 15px;
     }
     .Group {
         height: 15px;
@@ -768,51 +490,62 @@ export default {
     .MaskGroup {
         height: 15px;
     }
-    input {
-        height: 6px;
+
+    .textcheck {
+        font-weight: bold;
+        list-style: none;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #000000;
     }
-    label {
-        font-size: 7px;
+    .categories {
+        height: 15px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000000;
+        list-style: none;
+        margin-bottom: 10px;
     }
     .span-text {
-        font-size: 9px;
+        font-weight: bold;
+
+        font-size: 15px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 8px;
+        font-size: 9px;
         margin-top: 5px;
+        font-weight: bold;
     }
     .star-right {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 20px;
-        margin-right: 5px;
+        margin-left: 90px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 32px;
-        margin-right: 5px;
+        margin-left: 102px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 44px;
-        margin-right: 5px;
+        margin-left: 112px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 56px;
-        margin-right: 5px;
+        margin-left: 122px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 68px;
-        margin-right: 5px;
+        margin-left: 134px;
+    }
+    .slide {
+        display: none;
     }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -832,13 +565,15 @@ export default {
     }
     /*!*space store*!*/
     .text-muted {
-        margin-right: 100px;
+        font-weight: bold;
+        margin-right: 80px;
         margin-left: 30px;
         margin-top: 20px;
         font-size: 10px;
     }
     /*!*!*!*name store*!*!*!*/
     .title {
+        font-weight: bold;
         margin-right: 20px;
         margin-left: 20px;
         font-size: 12px;
@@ -847,19 +582,17 @@ export default {
         color: #ffd200;
         list-style: none;
     }
-    .stars span.disabled {
-        font-size: 15px;
-        color: rgba(0, 0, 0, 0.2);
-    }
     /*!*!*!*type of goods*!*!*!*/
-    li {
+    .categorystore {
+        font-weight: bold;
         list-style: none;
-        font-size: 10px;
+        font-size: 12px;
         color: #751aff;
     }
     /*!*!*!*button visit store*!*!*!*/
     .btn {
         margin-left: 70px;
+        height: 30px;
     }
     .img-button {
         margin-top: 10px;
@@ -873,18 +606,36 @@ export default {
         margin-right: 10px;
     }
     .whatsapp {
+        color: #25d366;
         margin-left: 10px;
+        height: 20px;
+        font-size: 20px;
     }
-    input {
-        height: 8px;
+    .categories {
+        height: 15px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000000;
+        list-style: none;
+        margin-bottom: 10px;
     }
-    label {
+    .textcheck {
+        font-weight: bold;
+        list-style: none;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #000000;
+    }
+    .checked-all {
         font-size: 9px;
     }
+
     .span-text {
+        font-weight: bold;
         font-size: 15px;
     }
     .bgcolor {
+        font-weight: bold;
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
@@ -894,32 +645,30 @@ export default {
     .star-right {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 30px;
-        margin-right: 5px;
+        margin-left: 60px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 48px;
-        margin-right: 5px;
+        margin-left: 78px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 64px;
-        margin-right: 5px;
+        margin-left: 94px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 82px;
-        margin-right: 5px;
+        margin-left: 110px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 100px;
-        margin-right: 5px;
+        margin-left: 128px;
+    }
+    .slide {
+        display: none;
     }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -937,43 +686,45 @@ export default {
         height: 40px;
         /*margin-top: 10px;*/
     }
+    .span-text {
+        font-weight: bold;
+    }
     /*space store*/
     .text-muted {
-        margin-right: 100px;
+        font-weight: bold;
+        margin-right: 90px;
         margin-left: 30px;
         margin-top: 20px;
-        font-size: 10px;
+        font-size: 12px;
     }
     /*!*!*name store*!*!*/
     .title {
+        font-weight: bold;
         margin-right: 20px;
         margin-left: 20px;
-        font-size: 12px;
+        font-size: 15px;
     }
     .stars {
         color: #ffd200;
         list-style: none;
     }
-    .stars span.disabled {
-        font-size: 15px;
-        color: rgba(0, 0, 0, 0.2);
-    }
     /*!*!*type of goods*!*!*/
-    li {
+    .categorystore {
+        font-weight: bold;
         list-style: none;
-        font-size: 10px;
+        font-size: 14px;
         color: #751aff;
     }
     /*!*!*button visit store*!*!*/
     .btn {
-        margin-left: 100px;
+        margin-left: 90px;
         width: 20px;
     }
     .img-button {
         margin-top: 20px;
     }
     .location {
-        margin-left: 120px;
+        margin-left: 80px;
         margin-right: 10px;
     }
     .phone {
@@ -981,84 +732,105 @@ export default {
         margin-right: 10px;
     }
     .whatsapp {
+        color: #25d366;
         margin-left: 10px;
+        height: 20px;
+        font-size: 20px;
     }
-    input {
-        height: 9px;
+    .textcheck {
+        font-weight: bold;
+        list-style: none;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #000000;
     }
-    label {
-        font-size: 9px;
+    .categories {
+        height: 15px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000000;
+        list-style: none;
+        margin-bottom: 10px;
     }
     .span-text {
+        font-weight: bold;
         font-size: 15px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 10px;
+        font-size: 15px;
         margin-top: 5px;
+        font-weight: bold;
     }
     .star-right {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 30px;
-        margin-right: 5px;
+        margin-left: 80px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 48px;
-        margin-right: 5px;
+        margin-left: 98px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 64px;
-        margin-right: 5px;
+        margin-left: 115px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 82px;
-        margin-right: 5px;
+        margin-left: 132px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 100px;
-        margin-right: 5px;
+        margin-left: 150px;
+    }
+    .slide {
+        display: none;
     }
 }
 @media (min-width: 1200px) {
+    .menu {
+        display: none;
+    }
     .img-open {
-        margin-right: 10px;
+        margin-right: 50px;
         margin-top: 10px;
+    }
+    .textcheck {
+        font-weight: bold;
+        list-style: none;
+        margin-bottom: 10px;
+        font-size: 15px;
+        color: #000000;
+    }
+    .span-text {
+        font-weight: bold;
     }
     /*space store*/
     .text-muted {
-        margin-right: 200px;
+        font-weight: bold;
+        margin-right: 120px;
         margin-left: 30px;
         margin-top: 20px;
     }
     /*name store*/
     .title {
-        margin-right: 20px;
+        font-weight: bold;
         margin-left: 20px;
-    }
-    .stars {
-        color: #ffd200;
-        list-style: none;
-    }
-    .stars span.disabled {
-        font-size: 20px;
-        color: rgba(0, 0, 0, 0.2);
+        margin-right: 10px;
     }
     /*type of goods*/
-    li {
+    .categorystore {
+        font-weight: bold;
         list-style: none;
         font-size: 15px;
         color: #751aff;
+        margin-top: 10px;
     }
     /*button visit store*/
     .btn {
@@ -1069,7 +841,7 @@ export default {
         margin-top: 30px;
     }
     .location {
-        margin-left: 130px;
+        margin-left: 190px;
         margin-right: 10px;
     }
     .phone {
@@ -1077,7 +849,10 @@ export default {
         margin-right: 10px;
     }
     .whatsapp {
+        color: #25d366;
         margin-left: 10px;
+        height: 20px;
+        font-size: 20px;
     }
     /*    check list   */
     .bgcolor {
@@ -1085,12 +860,15 @@ export default {
         border-radius: 3px;
         border: 1px solid #e0e0d1;
         font-size: 15px;
+        font-weight: bold;
     }
-    input {
-        height: 10px;
-    }
-    label {
-        font-size: 12px;
+    .categories {
+        height: 15px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000000;
+        list-style: none;
+        margin-bottom: 10px;
     }
     .card {
         margin-top: 20px;
@@ -1099,32 +877,31 @@ export default {
     }
     .star-right {
         font-size: 20px;
-        margin-left: 30px;
-        margin-right: 10px;
+        margin-left: 100px;
     }
     .star-right2 {
         font-size: 20px;
-        margin-left: 52px;
+        margin-left: 122px;
         margin-top: 10px;
-        margin-right: 10px;
     }
     .star-right3 {
         font-size: 20px;
-        margin-left: 74px;
+        margin-left: 144px;
         margin-top: 10px;
-        margin-right: 10px;
     }
     .star-right4 {
         font-size: 20px;
-        margin-left: 98px;
+        margin-left: 166px;
         margin-top: 10px;
-        margin-right: 10px;
     }
     .star-right5 {
         font-size: 20px;
-        margin-left: 120px;
+        margin-left: 188px;
         margin-top: 10px;
         margin-right: 10px;
+    }
+    .slide {
+        display: none;
     }
 }
 
@@ -1135,6 +912,7 @@ export default {
 }
 body {
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 /*div loop store*/
 .store {
@@ -1143,6 +921,10 @@ body {
     margin-bottom: 10px;
     border-radius: 7px;
     box-shadow: 3px 3px 3px 3px #7a7a52;
+}
+.stars {
+    color: #ffd200;
+    list-style: none;
 }
 .store:hover {
     border-radius: 0;
@@ -1165,6 +947,8 @@ body {
     background-color: #ccccb3;
 }
 .checklist {
+    font-weight: bold;
+    font-size: 15px;
     margin-top: 20px;
     background-color: #f5f5f0;
     border: 1px solid #f5f5f0;
@@ -1180,6 +964,8 @@ body {
     background-color: #00cc44;
     color: #ffffff;
 }
-
-/**/
+.card-footer {
+    margin-top: 10px;
+    text-align: center;
+}
 </style>

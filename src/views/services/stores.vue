@@ -1,15 +1,16 @@
 <template>
-  <div>
     <BodyStore />
-  </div>
 </template>
 
 <script>
-import BodyStore from "@/components/body/BodyStore.vue";
+import BodyStore from '@/components/body/BodyStore';
+
 export default {
-  name: "stores",
-  components:{
-    BodyStore
-  }
+    name: 'Stores',
+    components: {
+        BodyStore,
+    },
 };
 </script>
+
+<style scoped></style>
