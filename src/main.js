@@ -3,6 +3,8 @@ import App from "./App.vue";
 import VueRouter from 'vue-router'
 import router from "./router";
 import store from "./store/Store";
+import rahaf from "./store/rahaf";
+
 import "bootstrap";
 import {BootstrapVue,IconsPlugin} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -21,6 +23,7 @@ Vue.use(IconsPlugin)
 new Vue({
   router,
   store,
+  rahaf,
   render: (h) => h(App),
 }).$mount("#app");
 
