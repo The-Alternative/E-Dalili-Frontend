@@ -10,7 +10,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "normalize.css";
 import "../public/fontawesome-free-5.15.1-web/css/all.css";
 
-import '@/js/store.js';
 import VueGeolocation from 'vue-browser-geolocation';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import SuiVue from 'semantic-ui-vue';

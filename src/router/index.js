@@ -1,8 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import UserLocation from '../pages/UserLocation';
-import stores from "../views/services/stores.vue";
 // import services
+import stores from "../views/services/stores.vue";
 import instrc from "../views/services/instrc.vue";
 import company from "../views/services/company.vue";
 import professional from "../views/services/professional.vue";
@@ -26,43 +25,22 @@ import ProductDetalis from "../components/global/ProductDetalis.vue";
 import Cart from "../components/cart/Cart.vue";
 
 Vue.use(VueRouter);
-Vue.component(
-  'whatsapp-store',
-  require('@/components/body/whatsapp-store').default
-);
-Vue.component(
-  'location-store',
-  require('@/components/body/location-store').default
-);
-Vue.component(
-  'phone-store',
-  require('@/components/body/phone-store').default
-);
-Vue.component(
-  'btnvisit-store',
-  require('@/components/body/btnvisit-store').default
-);
-Vue.component('UserLocation', require('@/pages/UserLocation'));
-Vue.component('stores', require('@/views/services/stores.vue'));
 
 const routes = [
-// cart shop
+  // cart shop
   {
     path: "/Cart",
     component: Cart,
-    props:true
+    props: true
   },
   // ProductDetalis
   {
     path: "/ProductDetalis/:id/:title/:description/:price",
     component: ProductDetalis,
-    props:true
+    props: true
   },
   // services
-  {
-    path: '/location', component: UserLocation 
-  },
-  
+
   {
     path: "/",
     name: "products",
