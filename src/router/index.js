@@ -24,9 +24,15 @@ import child from "../views/section/child.vue";
 import ProductDetalis from "../components/global/ProductDetalis.vue";
 import Cart from "../components/cart/Cart.vue";
 
+import UserLocation from "../pages/UserLocation";
+
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/location",
+    component: UserLocation
+  },
   /* cart shop */
   {
     path: "/Cart",
@@ -136,7 +142,7 @@ const routes = [
     path: "/child",
     name: "child",
     component: child
-  }
+  },
 ];
 
 const router = new VueRouter({
