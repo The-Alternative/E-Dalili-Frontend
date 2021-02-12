@@ -182,7 +182,7 @@ export default {
 /* Extra small devices (portrait phones, less than 576px) */ 
 @media (max-width: 575.98px) { 
 .about-us {
-      height: 940px  
+      height: 1030px  
     }
 .about-us h3{
     font-size: 20px;
@@ -203,18 +203,23 @@ export default {
 .about-us .visiter ul {
     margin: 10px
     }
+.about-us .visiter li {
+    width: 13px;
+}
 .about-us .work-us {
-   margin: 0 0 20px 150px
+   margin: 0 0 20px 60px
     }
 .about-us .work-us img {
-   left: 170px
+   left: 85px
     }
 .about-us .dlely-card{
-    margin-left: 140px;
-    margin-bottom: 20px
+    margin-left: 60px;
+    margin-bottom: 20px;
+    margin-top: 60px
     }
 .about-us .dlely-card img {
-    left: 160px;
+    left: 80px;
+    top: 64px;
     }
 .about-us .imag img {
     left: 25px
