@@ -1,3 +1,4 @@
+
 <template>
     <!--  all coulome body  -->
     <div
@@ -227,8 +228,7 @@
     </div>
 </template>
 
-<script src="../../js/Store.js"></script>
-
+<script src="@/store/rahaf.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @media (max-width: 598px) {
@@ -362,7 +362,6 @@
         color: #ffd200;
         list-style: none;
     }
-
     /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
         font-weight: bold;
@@ -372,7 +371,6 @@
         color: #751aff;
         text-align: center;
     }
-
     /*!*!*!*!*button visit store*!*!*!*!*/
     .btn {
         font-weight: bold;
@@ -447,7 +445,6 @@
         color: #ffd200;
         list-style: none;
     }
-
     /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
         font-weight: bold;
@@ -490,7 +487,6 @@
     .MaskGroup {
         height: 15px;
     }
-
     .textcheck {
         font-weight: bold;
         list-style: none;
@@ -508,7 +504,6 @@
     }
     .span-text {
         font-weight: bold;
-
         font-size: 15px;
     }
     .bgcolor {
@@ -629,7 +624,6 @@
     .checked-all {
         font-size: 9px;
     }
-
     .span-text {
         font-weight: bold;
         font-size: 15px;
@@ -904,7 +898,6 @@
         display: none;
     }
 }
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -942,7 +935,6 @@ body {
 .card-title {
     margin: 20px;
 }
-
 .card-group {
     background-color: #ccccb3;
 }
@@ -969,3 +961,6 @@ body {
     text-align: center;
 }
 </style>
+
+
+

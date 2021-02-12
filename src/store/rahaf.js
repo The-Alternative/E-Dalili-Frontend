@@ -1,6 +1,5 @@
-import data from '../jeson/data.json';
-
-export default {
+import data from '@/jeson/data.json';
+export default{
     data() {
         return {
             stores: data.stores,
@@ -11,12 +10,12 @@ export default {
             rate: 0,
         };
     },
-
+    
     methods: {
         CheckAll: function() {
             this.IsCheckAll = !this.IsCheckAll;
             this.languages = [];
-
+    
             if (this.IsCheckAll) {
                 for (var key in this.categories) {
                     this.languages.push(this.categories[key]);
@@ -41,4 +40,4 @@ export default {
             document.getElementById('menu').classList.toggle('show');
         },
     },
-};
+}

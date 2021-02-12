@@ -3,9 +3,10 @@
 </template>
 
 <script>
-import BodyStore from '../../components/body/BodyStore';
+import BodyStore from '@/components/body/BodyStore';
+
 export default {
-    name: 'Stores',
+    name: 'stores',
     components: {
         BodyStore,
     },

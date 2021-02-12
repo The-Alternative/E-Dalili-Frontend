@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <h1>مطاعم ومقاهي</h1>
+    
+  </div>
+</template>
+
+<script>
+export default {
+  name: "resturants",
+};
+</script>

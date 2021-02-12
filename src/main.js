@@ -1,40 +1,36 @@
-import Vue from 'vue';
-import VueGeolocation from 'vue-browser-geolocation';
-import * as VueGoogleMaps from 'vue2-google-maps';
-import SuiVue from 'semantic-ui-vue';
-// import '../semantic/dist/semantic.min.css'
+import Vue from "vue";
+import App from "./App.vue";
+import VueRouter from 'vue-router'
+import router from "./router";
+import store from "./store/Store";
+import rahaf from "./store/rahaf";
 
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap";
+import {BootstrapVue,IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import "normalize.css";
+import main from "../src/assets/css/main.css";
+import "../public/fontawesome-free-5.15.1-web/css/all.css";
 
-import VueRouter from 'vue-router';
-import Routes from './router/index';
-
-import App from './App.vue';
-import './js/Store.js';
+/* import '../semantic/dist/semantic.min.css' */
 
 Vue.config.productionTip = false;
 
-Vue.use(VueGeolocation);
-Vue.use(VueGoogleMaps, {
-    load: {
-        key: 'AIzaSyDjjb4f0kJ19pYIRiosKb-MOofau97t80A',
-    },
-    installComponents: false,
-});
-
-Vue.use(SuiVue);
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-    routes: Routes,
-    mode: 'history',
-});
+Vue.use(VueRouter)
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 new Vue({
-    render: (h) => h(App),
-    router: router,
-}).$mount('#app');
+  router,
+  store,
+  rahaf,
+  main,
+  render: (h) => h(App),
+}).$mount("#app");
+
+
+
+
+
+
