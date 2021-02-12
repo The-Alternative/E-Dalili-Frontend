@@ -79,7 +79,7 @@
 
     <!--              check box     -->
     <span class="slide" id="btn">
-            <a href="#">
+            <a>
                 <i class="fa fa-bars" @click="btnbar()"></i>
             </a>
         </span>
