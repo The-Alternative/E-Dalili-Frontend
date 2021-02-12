@@ -145,7 +145,8 @@
     <!-- Start Section-->
 
     <div class="section">
-      <div class="responsive" v-for="catog in categories" :key="catog.id" :slug="catog.slug" :name="catog.name">
+      <div class="row">
+      <div class="col-xs-6 responsive" v-for="catog in categories" :key="catog.id" :slug="catog.slug" :name="catog.name">
         <div class="gallery">
           <router-link :to="`/${catog.slug}`">
               <img
@@ -160,6 +161,7 @@
         </div>
       </div>
 
+    </div>
     </div>
     <!-- End Section-->
   </div>
@@ -219,6 +221,7 @@ export default {
 </script>
 
 <style scoped>
+
 /* ____________________________________ cart icon _______________________________ */
 .cart-count{
 font-size: 15px;
@@ -317,9 +320,11 @@ margin-top: -10px;;
   .upper-bar .fa-map-marker {
     margin-left: 1vh;
   }
+  
   /* Extra small devices (portrait phones, less than 576px) */
   @media (max-width: 575.98px) {
-    .upper-bar .imag img {
+  
+   .upper-bar .imag img {
       margin-top: -15px;
       margin-bottom: 10px;
     }
@@ -328,10 +333,10 @@ margin-top: -10px;;
       text-align: center;
     }
     .upper-bar .selo {
-      width: 34%;
+      width: 50%;
     }
     .upper-bar .customer-select {
-      width: 90px;
+      width: 64px;
       display: block;
       margin-bottom: 2vh;
     }
@@ -345,8 +350,8 @@ margin-top: -10px;;
     .upper-bar .fa-map-marker {
       font-size: 10px;
       position: absolute;
-      left: 110px;
-      top: 42px;
+      left: 85px;
+      top: 45px;
     }
     .upper-bar .sel1:after {
       left: 5px;
@@ -371,12 +376,12 @@ margin-top: -10px;;
     .upper-bar .lang {
       position: absolute;
       top: 3px;
-      left: 130px;
+      left: 110px;
     }
     .upper-bar .lang2 {
       position: absolute;
-      top: 40px;
-      left: 125px;
+      top: 45px;
+      left: 98px;
       width: 60px;
     }
   }
@@ -540,7 +545,14 @@ margin-top: -10px;;
   @media (max-width: 575.98px) {
     .jumbotron {
       height: 300px;
+      width: 100%;
     }
+     .jumbotron .search  {
+      width: 100%;
+      
+     
+    }
+  
     .jumbotron .search input {
       width: 50%;
       padding: 4px 10px;
@@ -562,12 +574,13 @@ margin-top: -10px;;
       display: inline-block;
     }
     .jumbotron .fet {
-      width: 63%;
+      width: 100%;
     }
     .jumbotron .featuers {
-      width: 220px;
+      width: 200px;
+      margin-left: -12px;
       margin-top: 11vh;
-      font-size: 12px;
+      font-size: 11px;
       border-radius: 20px;
     }
     .jumbotron .featuers i {
@@ -667,7 +680,7 @@ margin-top: -10px;;
       display: none;
     }
     .naver .row .sell {
-      width: 22vh;
+      width: 20vh;
       font-size: 9px;
       padding-left: 5px;
     }
@@ -804,13 +817,14 @@ margin-top: -10px;;
   /* Extra small devices (portrait phones, less than 576px) */
   @media (max-width: 575.98px) {
     .responsive {
-      width: 18%;
+     flex: 1 0 50%;
+     max-width: 43%;
     }
     div.desc {
-      font-size: 6px;
+      font-size: 10px;
     }
     .section {
-      height: 150px;
+      height: 400px;
     }
   }
   /* End Section */

@@ -10,6 +10,7 @@ import {BootstrapVue,IconsPlugin} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "normalize.css";
+import main from "../src/assets/css/main.css";
 import "../public/fontawesome-free-5.15.1-web/css/all.css";
 
 /* import '../semantic/dist/semantic.min.css' */
@@ -24,6 +25,7 @@ new Vue({
   router,
   store,
   rahaf,
+  main,
   render: (h) => h(App),
 }).$mount("#app");
 
