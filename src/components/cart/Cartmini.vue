@@ -17,15 +17,15 @@
             </div>
            <div v-for="items in cartItems" :key="items.id" class="row border-top border-bottom" style="padding: 10px 0">
     
-        <div class="cart-items" style="display: inline-flex;width:100%">
-            <div class="col-2"><img class="img-fluid" src="@/assets/w.jpg"></div>
-            <div class="col-3" style="margin-top: 5vh;">{{items.title}}</div>
-            <div class="col-3" style="margin-top: 5vh;">{{items.description}}</div>
-        <div class="col-2" style="margin-top: 5vh;"> 
+        <div class="cart-items">
+            <div class="col-sm-2 col-xs-12"><img class="img" src="@/assets/w.jpg"></div>
+            <div class="col-sm-2 col-xs-3">{{items.title}}</div>
+            <div class="col-sm-2 col-xs-3">{{items.description}}</div>
+        <div class="col-sm-3"> 
         <button class="btnn" @click="removeItem(items)">-</button>  
         <a  href="#" class="border"> <span class="cart-quantity">{{items.quantity}}</span></a>
         <button class="btnn" @click="addItem(items)">+</button> </div>
-        <div :totalPrice="totalPrice" class="col-2" style="margin-top: 5vh;">{{totalPrice}}<span @click="removeFromCart(items)" class="close">&#10005;</span></div>
+        <div class="col-sm-2 col-xs-3">{{items.price * items.quantity}}<span style="margin-top: 0;margin-right: -15vh;" @click="removeFromCart(items)" class="close">&#10005;</span></div>
             </div>
 
                 </div>
@@ -290,5 +290,10 @@ a:hover {
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center
+}
+@media (max-width: 575.98px) {
+.cart-shop-icon {
+    display: none;
+}
 }
 </style>

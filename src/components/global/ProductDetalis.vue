@@ -2,7 +2,7 @@
   <div class="ProductDetalis">
     <Cartmini />
     <div class="row">
-      <div class="col-6">
+      <div class="col-sm-6 col-xs-12">
         <div class="container mt-5" style="max-width:380px">
           <div class="carousel-container position-relative row">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -111,7 +111,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-sm-6 col-xs-12">
         <div class="content-pro text-center">
           <div class="name-prod">Name Product: {{ details.title }}</div>
           <div class="category">description: {{ details.description }}</div>
@@ -277,5 +277,14 @@ export default {
     border-radius: 13px;
     font-weight: 1;
   }
+  .content-pro {
+    margin-top: 2vh
+}
+.content-pro div {
+  margin: 1vh 0;
+}
+.content-pro button{
+  margin: 5px 0;
+}
 }
 </style>

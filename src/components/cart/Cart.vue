@@ -2,10 +2,10 @@
 
 <div class="card">
     <div class="row">
-        <div class="col-md-8 cart">
+        <div class="col-sm-8 col-xs-12 cart">
             <div class="title">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-12">
                         <h4><b>عربة التسوق</b></h4>
                     </div>
                   
@@ -14,22 +14,22 @@
             
 <div v-for="items in cartItems" :key="items.id" class="row border-top border-bottom" style="padding: 10px 0">
     
-        <div class="cart-items" style="display: inline-flex;width:100%">
-            <div class="col-2"><img class="img-fluid" src="@/assets/w.jpg"></div>
-            <div class="col-2" style="margin-top: 6vh;">{{items.title}}</div>
-            <div class="col-2" style="margin-top: 6vh;">{{items.description}}</div>
-        <div class="col-2" style="margin-top: 6vh;"> 
+        <div class="cart-items">
+            <div class="col-sm-2 col-xs-12"><img class="img" src="@/assets/w.jpg"></div>
+            <div class="col-sm-2 col-xs-3">{{items.title}}</div>
+            <div class="col-sm-2 col-xs-3">{{items.description}}</div>
+        <div class="col-sm-3"> 
         <button class="btnn" @click="removeItem(items)">-</button>  
         <a  href="#" class="border"> <span class="cart-quantity">{{items.quantity}}</span></a>
         <button class="btnn" @click="addItem(items)">+</button> </div>
-        <div class="col-2" style="margin-top: 6vh;">{{items.price * items.quantity}}<span style="margin-top: 0;margin-right: -15vh;" @click="removeFromCart(items)" class="close">&#10005;</span></div>
+        <div class="col-sm-2 col-xs-3">{{items.price * items.quantity}}<span @click="removeFromCart(items)" class="close">&#10005;</span></div>
             </div>
 
 </div>
           
            
         </div>
-        <div class="col-md-4 summary" v-if="totalPrice !==0" >
+        <div class="col-sm-4 col-xs-12 summary" v-if="totalPrice !==0" >
             <div>
                 <h5><b>أسم المتجر</b></h5>
             </div>
@@ -38,7 +38,7 @@
                 <div :totalPrice="totalPrice" class="col text-right">{{totalPrice}} S.P</div>
                 <div class="col" style="padding-left:0;">:السعر</div>
             </div>
-            <form style="margin-top: 10vh;">
+            <form class="fo">
                 <p>طريقة الدفع</p>
                 <p> تكاليف الشحن 500 ل.س</p>     
             </form>
@@ -105,7 +105,16 @@ export default {
     border-radius: 1rem;
     border: transparent
 }
-
+.cart-items div {
+    margin: auto;
+}
+.cart-items{
+    display: inline-flex;
+    width:100%
+}
+.fo{
+    margin-top: 10vh;
+}
 @media(max-width:767px) {
     .card {
         margin: 3vh auto
@@ -262,5 +271,30 @@ a:hover {
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center
+}
+@media (max-width: 575.98px) {
+.title {
+    margin: .5vh
+}
+.cart{
+    padding: 0;
+    font-size: 12px;
+}
+.cart-items{
+    display: inline-block;
+    width:100%
+}
+.cart-items div{
+    margin-bottom: 1vh;
+}
+.cart-items .img-fluid {
+    max-width: -1px;
+}
+.fo{
+    margin-top: 1vh;
+}
+.btn {
+    margin-top: 1vh;
+}
 }
 </style>

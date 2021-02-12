@@ -5,12 +5,14 @@
                         <img src="@/assets/w.jpg" class="new">
                         <div class="name-prod">{{title}}</div>
                         <div class="category">{{description}}</div>
+                        
                         <div class="stars">
                           <span class="fa fa-star  checked"></span>
                           <span class="fa fa-star checked"></span>
                           <span class="fa fa-star checked"></span>
                           <span class="fa fa-star checked"></span>
                           <span class="fa fa-star"></span>
+                          
                           </div>
                          <div> <span>ل.س{{price}} </span>  <div class="price" style="display: inline-block"> </div> </div>
                           <div class="avilble"><div  style="display: inline-block">متوفر في  متاجر</div><span class="fa fa-check-circle"></span></div>
@@ -60,7 +62,7 @@ export default {
 <style scoped>
 /* body of products */
 .cartshop{
-    margin: 0px 20px ;
+    
     background-color: #ccc;
     width: 20px;
     padding: 11px;
@@ -97,28 +99,40 @@ export default {
 }
 .show-prod .content-pro button {
     background-color: #a5abac;
-    width: auto;
     color: #fff;
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 13px;
     font-weight: 1;
     padding: 10px 20px;
+    width: 80px;
+    font-size: 14px;
+}
+.show-prod .content-pro button:hover{
+    background-color: #d3b85f
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 .show-prod .row .content-pro {
-    font-size: 15px;
+    font-size: 10px;
+    height: auto;
+    margin-top: 5vh
 }
+.show-prod .row .content-pro .name-prod{
+    margin-bottom: 10px;
+}
+
 .show-prod .reower .col-xs-6{
     flex: 1 0 50%;
     max-width: 50%;
     }
 .show-prod .content-pro button {
-    width: 80px;
-    margin-top: 10px;
+    margin-top: 12px;
     border-radius: 13px;
     font-weight: 1;
+    padding: 5px 10px;
+    width: 50px;
 }
+
 }
 </style>
