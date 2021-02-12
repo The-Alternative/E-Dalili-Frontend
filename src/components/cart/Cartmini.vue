@@ -136,7 +136,9 @@ z-index: 999;
     border-radius: 1rem;
     border: transparent;
 }
-
+.cart-items{
+    display: inline-flex;
+}
 @media(max-width:767px) {
     .card {
         margin: 3vh auto
