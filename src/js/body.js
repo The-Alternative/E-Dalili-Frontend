@@ -1,11 +1,17 @@
 import data from '../jeson/data.json';
-import BtnvisitStore from "../components/body/btnvisit-store";
-import LocationStore from "../components/body/location-store";
-import PhoneStore from "../components/body/phone-store";
-import WhatsappStore from "../components/body/whatsapp-store";
-import UserLocation from "../pages/UserLocation";
+import BtnvisitStore from '../components/body/btnvisit-store';
+import LocationStore from '../components/body/location-store';
+import PhoneStore from '../components/body/phone-store';
+import WhatsappStore from '../components/body/whatsapp-store';
+import UserLocation from '../pages/UserLocation';
 export default {
-    components: {UserLocation,WhatsappStore, PhoneStore, LocationStore, BtnvisitStore},
+    components: {
+        UserLocation,
+        WhatsappStore,
+        PhoneStore,
+        LocationStore,
+        BtnvisitStore,
+    },
     data() {
         return {
             stores: data.stores,
@@ -46,4 +52,4 @@ export default {
             document.getElementById('menu').classList.toggle('show');
         },
     },
-}
+};

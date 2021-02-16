@@ -1,206 +1,207 @@
 <template>
-  <div class="header">
-    <div class="upper-bar">
-      <div class="row">
-        <div class="col-md-2 col-sm-12 col-xs-12 imag">
-          <img src="@/assets/logo-4.png" />
-        </div>
-        <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
-          <div class="customer-select sel4">
-            <select>
-              <option>العربية</option>
-              <option ></option>
-            </select>
-          </div>
-          <span class="lang2">نطاق البحث</span>
-          <div class="customer-select sel1">
-            <select>
-              <option disabled>المحافظة</option>
-              <option v-for="gover in governorates" :key="gover.id">{{gover.name}}</option>
-             
-            </select>
-          </div>
+    <div class="header">
+        <div class="upper-bar">
+            <div class="row">
+                <div @click="goto" class="col-md-2 col-sm-12 col-xs-12 imag">
+                    <img src="@/assets/logo-4.png" />
+                </div>
+                <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
+                    <div class="customer-select sel4">
+                        <select>
+                            <option>العربية</option>
+                            <option></option>
+                        </select>
+                    </div>
+                    <span class="lang2">نطاق البحث</span>
+                    <div class="customer-select sel1">
+                        <select>
+                            <option disabled>المحافظة</option>
+                            <option
+                                v-for="gover in governorates"
+                                :key="gover.id"
+                                >{{ gover.name }}</option
+                            >
+                        </select>
+                    </div>
 
-          <div class="customer-select sel2">
-            <select>
-              <option disabled>المدینة/القریة</option>
-              <option v-for="city in cities" :key="city.id">{{city.name}} </option>
-            </select>
-          </div>
-          <div class="customer-select sel3">
-            <select>
-              <option disabled>الحي</option>
-              <option v-for="street in streets" :key="street.id">{{street.name}}</option>
-              
-            </select>
-          </div>
-          <span class="lang">اللغة</span><i class="fa fa-map-marker"></i>
+                    <div class="customer-select sel2">
+                        <select>
+                            <option disabled>المدینة/القریة</option>
+                            <option v-for="city in cities" :key="city.id"
+                                >{{ city.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="customer-select sel3">
+                        <select>
+                            <option disabled>الحي</option>
+                            <option
+                                v-for="street in streets"
+                                :key="street.id"
+                                >{{ street.name }}</option
+                            >
+                        </select>
+                    </div>
+                    <span class="lang">اللغة</span
+                    ><i class="fa fa-map-marker"></i>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- End Upper Bar -->
-    <!-- Start landing -->
-    <div class="jumbotron">
-      <div class="container">
-        <div class="row">
-          <div class="search col-lg-12">
-            <i class="fa fa-search"></i
-            ><input class="input" type="search" placeholder="بحث" />
-          </div>
-          <div class="col-lg-12 fet">
-            <div class="featuers">
-              <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
-             <div @click="gotocart">
-              <i class="fa fa-shopping-cart"></i>
-              <span class="cart-count">{{cartItemCount}}</span>
-              <div class="shopping">عربة التسوق</div>
-             </div>
-              <i class="fa fa-map-marker"></i>
-              <div class="map">حدد موقعك</div>
+        <!-- End Upper Bar -->
+        <!-- Start landing -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="search col-lg-12">
+                        <i class="fa fa-search"></i
+                        ><input class="input" type="search" placeholder="بحث" />
+                    </div>
+                    <div class="col-lg-12 fet">
+                        <div class="featuers">
+                            <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
+                            <div @click="gotocart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="cart-count">{{
+                                    cartItemCount
+                                }}</span>
+                                <div class="shopping">عربة التسوق</div>
+                            </div>
+                            <i class="fa fa-map-marker"></i>
+                            <div class="map">حدد موقعك</div>
 
-              <i class="fa fa-user-circle "> </i>
-              <div class="user">تسجیل الدخول</div>
-             
+                            <i class="fa fa-user-circle "> </i>
+                            <div class="user">تسجیل الدخول</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- End landing -->
+        <!-- End landing -->
 
-    <!-- Start navbar-->
-    <div id="nav" class="naver">
-      <div class="container">
-        <div class="row text-center">
-          <div class=" col-lg-12" style="padding: 0">
-            <div>
-              <router-link to="/instrc" exact>
-                <button type="button" class="btn btn-light">
-                  <a>مصانع</a>
-                </button></router-link
-              >
+        <!-- Start navbar-->
+        <div id="nav" class="naver">
+            <div class="container">
+                <div class="row text-center">
+                    <div class=" col-lg-12" style="padding: 0">
+                        <div>
+                            <router-link to="/instrc" exact>
+                                <button type="button" class="btn btn-light">
+                                    <a>مصانع</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/company">
+                                <button type="button" class="btn btn-light">
+                                    <a>شركات</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/professional">
+                                <button type="button" class="btn btn-light">
+                                    <a>مھنیون وفنیون</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/medic">
+                                <button
+                                    type="button"
+                                    class="btn btn-light medic"
+                                >
+                                    <a>صیدلیات وأدویة</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/doctors">
+                                <button type="button" class="btn btn-light">
+                                    <a>أطباء</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/resturants">
+                                <button type="button" class="btn btn-light">
+                                    <a>مطاعم ومقاھي</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div class="img">
+                            <router-link to="/festival">
+                                <button
+                                    type="button"
+                                    class="btn btn-light sell"
+                                >
+                                    <a>مھرجان العروضات </a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/stores">
+                                <button type="button" class="btn btn-light">
+                                    <a>متاجر</a>
+                                </button></router-link
+                            >
+                        </div>
+                        <div>
+                            <router-link to="/">
+                                <button
+                                    type="button"
+                                    class="btn btn-light products"
+                                >
+                                    <a>منتجات</a>
+                                </button></router-link
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <router-link to="/company">
-                <button type="button" class="btn btn-light">
-                  <a>شركات</a>
-                </button></router-link
-              >
-            </div>
-            <div>
-              <router-link to="/professional">
-                <button type="button" class="btn btn-light">
-                  <a>مھنیون وفنیون</a>
-                </button></router-link
-              >
-            </div>
-            <div>
-              <router-link to="/medic">
-                <button type="button" class="btn btn-light">
-                  <a>صیدلیات وأدویة</a>
-                </button></router-link
-              >
-            </div>
-            <div>
-              <router-link to="/doctors">
-                <button type="button" class="btn btn-light">
-                  <a>أطباء</a>
-                </button></router-link
-              >
-            </div>
-            <div>
-              <router-link to="/resturants">
-                <button type="button" class="btn btn-light">
-                  <a>مطاعم ومقاھي</a>
-                </button></router-link
-              >
-            </div>
-            <div>
-              <router-link to="/festival">
-                <button type="button" class="btn btn-light sell">
-                  <a>مھرجان العروضات والتخفیضات</a>
-                </button></router-link
-              >
-            </div>
-            <img src="@/assets/icon-button.png" />
-            <div>
-              <router-link to="/stores">
-                <button type="button" class="btn btn-light">
-                  <a>متاجر</a>
-                </button></router-link
-              >
-            </div>
-            <div>
-              <router-link to="/">
-                <button type="button" class="btn btn-light products">
-                  <a>منتجات</a>
-                </button></router-link
-              >
-            </div>
-          </div>
         </div>
-      </div>
+        <!-- End Naver -->
     </div>
-    <!-- End Naver -->
-    <!-- Start Section-->
-
-    <div class="section">
-      <div class="row">
-      <div class="col-xs-6 responsive" v-for="catog in categories" :key="catog.id" :slug="catog.slug" :name="catog.name">
-        <div class="gallery">
-          <router-link :to="`/${catog.slug}`">
-              <img
-                src="@/assets/S1.png"
-                width="600"
-                height="400"
-              />
-          </router-link>
-          <div class="desc">
-             {{catog.name}}
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </div>
-    <!-- End Section-->
-  </div>
 </template>
-
+<script src="../../js/proj.js"></script>
 <script>
-import jeson from "@/jeson/MOCK_DATA.json";
+import jeson from '@/jeson/MOCK_DATA.json';
 // import axios from "axios";
 
 export default {
-  name: "AppHeader",
-  props: ["title","description","id","price"],
-  data() {
-    return {
-        details: {id:this.id,title:this.title,description:this.description,price:this.price},
-    urll: "http://edalili.e-dalely.com",
-    cities: jeson[0].cities,
-    governorates :  jeson[0].governorates,
-    streets : jeson[0].streets,
-    categories: jeson[0].categories
-    // cities:[],
-    // governorates:[],
-    // streets:[]
-    // categories:[]
-    
-    };
-  }
-  ,computed: {
-    cartItemCount() {
-      return this.$store.state.cartItemCount;
-    }
-  },methods:{
-    gotocart:function(){ 
-         this.$router.push(`/Cart`)
-     }
-  }
-  
-  
-/*
+    name: 'AppHeader',
+    props: ['title', 'description', 'id', 'price'],
+    data() {
+        return {
+            details: {
+                id: this.id,
+                title: this.title,
+                description: this.description,
+                price: this.price,
+            },
+            urll: 'http://edalili.e-dalely.com',
+            cities: jeson[0].cities,
+            governorates: jeson[0].governorates,
+            streets: jeson[0].streets,
+            // cities:[],
+            // governorates:[],
+            // streets:[]
+        };
+    },
+    computed: {
+        cartItemCount() {
+            return this.$store.state.cartItemCount;
+        },
+    },
+    methods: {
+        gotocart: function() {
+            this.$router.push(`/Cart`);
+        },
+        goto: function() {
+            this.$router.push(`/`);
+        },
+    },
+
+    /*
    created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {
@@ -221,41 +222,39 @@ export default {
 </script>
 
 <style scoped>
-
 /* ____________________________________ cart icon _______________________________ */
-.cart-count{
-font-size: 15px;
-color: #ba8b00;
-padding: 0px 5px;
-margin-left: -13px;
-background: #ffffff;
-height: 22px;
-border-radius: 50%;
-width: 21px;
-position: absolute;
-margin-top: -10px;;
+.cart-count {
+    font-size: 15px;
+    color: #ba8b00;
+    padding: 0px 5px;
+    margin-left: -13px;
+    background: #ffffff;
+    height: 22px;
+    border-radius: 50%;
+    width: 21px;
+    position: absolute;
+    margin-top: -10px;
 }
 /* ____________________________________app header _______________________________ */
-.row {
-    justify-content: center;
-    margin: 0;
-  }
-  .upper-bar {
+.upper-bar .imag img {
+    cursor: pointer;
+}
+.upper-bar {
     background-color: #9b9a9a;
     color: #fff;
     padding: 20px;
     width: 100%;
-  }
-  
-  .upper-bar .customer-select {
+}
+
+.upper-bar .customer-select {
     display: inline-block;
     border: none;
     background-color: #878080;
     width: 110px;
     border-radius: 15px;
     position: relative;
-  }
-  .upper-bar .customer-select select {
+}
+.upper-bar .customer-select select {
     border: none;
     appearance: none;
     -webkit-appearance: none;
@@ -268,10 +267,10 @@ margin-top: -10px;;
     font-size: 13px;
     position: relative;
     height: 30px;
-  }
-  .upper-bar .sel1:after {
+}
+.upper-bar .sel1:after {
     position: absolute;
-    content: ">";
+    content: '>';
     top: 0;
     left: 14px;
     background-color: transparent;
@@ -280,10 +279,10 @@ margin-top: -10px;;
     font-size: 17px;
     z-index: 1;
     font-size: 20px;
-  }
-  .upper-bar .sel2:after {
+}
+.upper-bar .sel2:after {
     position: absolute;
-    content: ">";
+    content: '>';
     top: 0;
     left: 14px;
     background-color: transparent;
@@ -292,10 +291,10 @@ margin-top: -10px;;
     font-size: 17px;
     z-index: 1;
     font-size: 20px;
-  }
-  .upper-bar .sel3:after {
+}
+.upper-bar .sel3:after {
     position: absolute;
-    content: ">";
+    content: '>';
     top: 0;
     left: 14px;
     background-color: transparent;
@@ -304,10 +303,10 @@ margin-top: -10px;;
     font-size: 17px;
     z-index: 1;
     font-size: 20px;
-  }
-  .upper-bar .sel4:after {
+}
+.upper-bar .sel4:after {
     position: absolute;
-    content: ">";
+    content: '>';
     top: 0;
     left: 14px;
     background-color: transparent;
@@ -316,138 +315,170 @@ margin-top: -10px;;
     font-size: 17px;
     z-index: 1;
     font-size: 20px;
-  }
-  .upper-bar .fa-map-marker {
+}
+.upper-bar .fa-map-marker {
     margin-left: 1vh;
-  }
-  
-  /* Extra small devices (portrait phones, less than 576px) */
-  @media (max-width: 575.98px) {
-  
-   .upper-bar .imag img {
-      margin-top: -15px;
-      margin-bottom: 10px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .upper-bar .imag img {
+        margin-top: -15px;
+        margin-bottom: 10px;
     }
     .upper-bar .row .col-sm-12 {
-      margin-top: 2vh;
-      text-align: center;
+        margin-top: 2vh;
+        text-align: center;
     }
     .upper-bar .selo {
-      width: 50%;
+        width: 50%;
     }
     .upper-bar .customer-select {
-      width: 64px;
-      display: block;
-      margin-bottom: 2vh;
+        width: 64px;
+        display: block;
+        margin-bottom: 2vh;
     }
     .upper-bar .customer-select select {
-      font-size: 11px;
-      padding-left: 14px;
+        font-size: 11px;
+        padding-left: 14px;
     }
     .upper-bar .row span {
-      font-size: 10px;
+        font-size: 10px;
     }
     .upper-bar .fa-map-marker {
-      font-size: 10px;
-      position: absolute;
-      left: 85px;
-      top: 45px;
+        font-size: 10px;
+        position: absolute;
+        left: 85px;
+        top: 45px;
     }
     .upper-bar .sel1:after {
-      left: 5px;
-      top: 2px;
-      font-size: 15px;
+        left: 5px;
+        top: 2px;
+        font-size: 15px;
     }
     .upper-bar .sel2:after {
-      left: 5px;
-      top: 2px;
-      font-size: 15px;
+        left: 5px;
+        top: 2px;
+        font-size: 15px;
     }
     .upper-bar .sel3:after {
-      left: 5px;
-      top: 2px;
-      font-size: 15px;
+        left: 5px;
+        top: 2px;
+        font-size: 15px;
     }
     .upper-bar .sel4:after {
-      left: 5px;
-      top: 2px;
-      font-size: 15px;
+        left: 5px;
+        top: 2px;
+        font-size: 15px;
     }
     .upper-bar .lang {
-      position: absolute;
-      top: 3px;
-      left: 110px;
+        position: absolute;
+        top: 3px;
+        left: 110px;
     }
     .upper-bar .lang2 {
-      position: absolute;
-      top: 45px;
-      left: 98px;
-      width: 60px;
+        position: absolute;
+        top: 45px;
+        left: 98px;
+        width: 60px;
     }
-  }
-  
-  /* Small devices (landscape phones, 576px and up) */
-  @media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
     .upper-bar .imag img {
-      margin-top: -15px;
-      margin-bottom: 10px;
+        margin-top: -15px;
+        margin-bottom: 10px;
     }
     .upper-bar .row .col-sm-12 {
-      margin-top: 2vh;
-      text-align: center;
+        margin-top: 2vh;
+        text-align: center;
     }
     .upper-bar .customer-select {
-      width: 95px;
+        width: 95px;
     }
     .upper-bar .customer-select select {
-      font-size: 11px;
+        font-size: 11px;
     }
     .upper-bar .row span {
-      font-size: 14px;
+        font-size: 14px;
     }
     .upper-bar .fa-map-marker {
-      font-size: 13px;
+        font-size: 13px;
     }
-    .upper-bar .sel3 {
-      margin-left: 2vh;
-    }
-  }
-  
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .upper-bar .row .col-md-10 {
-      margin-top: 2vh;
-    }
-    .upper-bar .sel3 {
-      margin-left: 2vh;
-    }
-  
-    .upper-bar .customer-select {
-      width: 105px;
-    }
-  }
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .upper-bar .row .col-md-10 {
-      margin-top: 2vh;
+    .upper-bar .sel2 {
+        margin: 0 1vh;
     }
     .upper-bar .sel1 {
-      margin-left: 10vh;
+        margin-right: 4px;
     }
-  }
-  /* Extra large devices (large desktops, 1200px and up) */
-  @media (min-width: 1200px) {
+    .upper-bar .sel4 {
+        margin-right: 4px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
     .upper-bar .row .col-md-10 {
-      margin-top: 2vh;
+        margin-top: 2vh;
     }
     .upper-bar .sel3 {
-      margin-left: 50vh;
+        margin-left: 2vh;
     }
-  }
-  /* End Upper Bar */
-  
-  /* Start landing */
-  .jumbotron {
+
+    .upper-bar .customer-select {
+        width: 95px;
+    }
+    .upper-bar .sel2 {
+        margin: 0 1vh;
+    }
+    .upper-bar .sel1 {
+        margin-right: 4px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 4px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .upper-bar .row .col-md-10 {
+        margin-top: 2vh;
+    }
+    .upper-bar .sel3 {
+        margin-left: 25vh;
+    }
+    .upper-bar .sel2 {
+        margin: 0 2vh;
+    }
+    .upper-bar .sel1 {
+        margin-right: 5px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 5px;
+    }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .upper-bar .row .col-md-10 {
+        margin-top: 2vh;
+    }
+    .upper-bar .sel3 {
+        margin-left: 50vh;
+    }
+    .upper-bar .sel2 {
+        margin: 0 2vh;
+    }
+    .upper-bar .sel1 {
+        margin-right: 5px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 5px;
+    }
+}
+/* End Upper Bar */
+
+/* Start landing */
+.jumbotron {
     text-align: center;
     position: relative;
     height: 560px;
@@ -458,17 +489,17 @@ margin-top: -10px;;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
-  
-  .jumbotron .input {
+}
+
+.jumbotron .input {
     border: none;
     width: 400px;
     padding: 4px 10px 5px 10px;
     height: 34px;
-  }
-  .jumbotron .search:after {
+}
+.jumbotron .search:after {
     position: absolute;
-    content: ">";
+    content: '>';
     top: 0;
     background-color: #87948b;
     width: 34px;
@@ -478,8 +509,8 @@ margin-top: -10px;;
     font-size: 17px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-  }
-  .jumbotron .search i {
+}
+.jumbotron .search i {
     background-color: #87948b;
     padding: 9px 10px;
     border-bottom-left-radius: 4px;
@@ -488,172 +519,162 @@ margin-top: -10px;;
     height: 34px;
     color: aliceblue;
     cursor: pointer;
-  }
-  .jumbotron .featuers {
+}
+.jumbotron .featuers {
     width: 800px;
     margin: auto;
     margin-top: 63vh;
     background-color: #bfc0c2;
     padding: 10px 20px;
     color: #635f5f;
-  }
-  .jumbotron .featuers span {
+}
+.jumbotron .featuers span {
     font-weight: bold;
-  }
-  .jumbotron .featuers div {
+}
+.jumbotron .featuers div {
     display: inline-block;
     position: relative;
     cursor: pointer;
-  }
-  .jumbotron .featuers div:hover {
+}
+.jumbotron .featuers div:hover {
     color: aliceblue;
-  }
-  
-  .jumbotron .featuers i {
+}
+
+.jumbotron .featuers i {
     margin: 0 10px 0 60px;
     color: #635f5f;
     font-size: 20px;
-  }
-  .jumbotron .featuers .shopping:after {
+}
+.jumbotron .featuers .shopping:after {
     position: absolute;
-    content: "";
+    content: '';
     top: -5px;
     left: -60px;
     height: 33px;
     width: 1px;
     background-color: #8d8d8d;
-  }
-  .jumbotron .featuers .map:after {
+}
+.jumbotron .featuers .map:after {
     position: absolute;
-    content: "";
+    content: '';
     top: -5px;
     left: -60px;
     height: 33px;
     width: 1px;
     background-color: #8d8d8d;
-  }
-  .jumbotron .featuers .user:after {
+}
+.jumbotron .featuers .user:after {
     position: absolute;
-    content: "";
+    content: '';
     top: -5px;
     left: -60px;
     height: 33px;
     width: 1px;
     background-color: #8d8d8d;
-  }
-  /* Extra small devices (portrait phones, less than 576px) */
-  @media (max-width: 575.98px) {
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
     .jumbotron {
-      height: 300px;
-      width: 100%;
+        height: 300px;
+        width: 100%;
     }
-     .jumbotron .search  {
-      width: 100%;
-      
-     
+    .jumbotron .search {
+        width: 100%;
     }
-  
+
     .jumbotron .search input {
-      width: 50%;
-      padding: 4px 10px;
-      height: 35px;
+        width: 50%;
+        padding: 4px 10px;
+        height: 35px;
     }
-  
     .jumbotron .search i {
-      height: 35px;
-      width: 34px;
-      padding: 10px 10px;
+        height: 35px;
+        width: 34px;
+        padding: 10px 10px;
     }
     .jumbotron .search:after {
-      width: 34px;
-      height: 34px;
-      top: 0;
+        width: 34px;
+        height: 34px;
+        top: 0;
     }
     .jumbotron .featuers div {
-      margin-bottom: 10px;
-      display: inline-block;
+        margin-bottom: 10px;
+        display: inline-block;
     }
     .jumbotron .fet {
-      width: 100%;
+        width: 100%;
     }
     .jumbotron .featuers {
-      width: 200px;
-      margin-left: -12px;
-      margin-top: 11vh;
-      font-size: 11px;
-      border-radius: 20px;
+        width: 200px;
+        margin-top: 9vh;
+        font-size: 11px;
+        border-radius: 20px;
     }
     .jumbotron .featuers i {
-      font-size: 17px;
+        font-size: 17px;
     }
-  
+
     .jumbotron .featuers .shopping:after,
     .jumbotron .featuers .map:after,
     .jumbotron .featuers .user:after {
-      display: none;
+        display: none;
     }
-  }
-  /* Small devices (landscape phones, 576px and up) */
-  @media (min-width: 576px) and (max-width: 767.98px) {
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
     .jumbotron {
-      height: 430px;
+        height: 430px;
     }
-  
+
     .jumbotron .featuers div {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
     .jumbotron .featuers {
-      width: 375px;
-      margin-top: 200px;
-      font-size: 12px;
-      border-radius: 20px;
+        width: 375px;
+        margin-top: 200px;
+        font-size: 12px;
+        border-radius: 20px;
     }
-  
+
     .jumbotron .featuers .shopping:after,
     .jumbotron .featuers .map:after,
     .jumbotron .featuers .user:after {
-      display: none;
+        display: none;
     }
-  }
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) and (max-width: 991.98px) {
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
     .jumbotron .featuers {
-      width: 700px;
-      margin-top: 399px;
-      font-size: 12px;
+        width: 700px;
+        margin-top: 399px;
+        font-size: 12px;
     }
     .jumbotron .featuers .shopping:after,
     .jumbotron .featuers .map:after,
     .jumbotron .featuers .user:after {
-      top: -8px;
+        top: -8px;
     }
-  }
-  /* End landing */
-  
-  /* Start Naver*/
-  .naver {
+}
+/* End landing */
+
+/* Start Naver*/
+.naver {
     background-color: #a7a6a6;
     padding: 5px 0 5px 0;
     margin: 10px 0 10px 0;
-  }
-  .naver img {
-    position: absolute;
-    top: 1px;
-    right: 66vh;
-  }
-  
-  .naver .row .col-lg-12 div {
+}
+.naver .row .col-lg-12 div {
     margin: 0 5px;
     display: inline-block;
-  }
-  .naver .row .btn-light {
+}
+.naver .row .btn-light {
     min-width: 70px;
-    height: 28px;
+    height: 29px;
     border-radius: 15px;
     color: #635f5f;
     padding: 0 5px;
-  }
-  .naver .row .products {
+}
+.naver .row .products {
     border-radius: 50px;
     height: 28px;
     font-size: 15px;
@@ -662,172 +683,101 @@ margin-top: -10px;;
     color: #fff;
     width: 100px;
     border-color: #cc0808;
-  }
-  .naver .row .sell {
+}
+.naver .img::before {
+    content: url(../../assets/icon-button.png);
+    position: absolute;
+    top: -1px;
+    right: 395px;
+}
+.naver .row .sell {
     background-color: #f6ef19;
     border-color: #f6ef19;
-    padding-left: 35px;
-  }
-  
-  /* Extra small devices (portrait phones, less than 576px) */
-  @media (max-width: 575.98px) {
+    margin-left: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 29px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
     .naver .row .btn-light {
-      min-width: 40px;
-      font-size: 12px;
-      margin-bottom: 2vh;
-    }
-    .naver img {
-      display: none;
+        width: 85px;
+        height: 29px;
+        margin-bottom: 10px;
+        font-size: 11px;
     }
     .naver .row .sell {
-      width: 20vh;
-      font-size: 9px;
-      padding-left: 5px;
+        height: 29px;
+        font-size: 9px;
     }
-    .naver .row .col-lg-12 {
-      padding: 0;
-    }
-  }
-  /* Small devices (landscape phones, 576px and up) */
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    .naver img {
-      display: none;
-    }
-    .naver .row .btn-light {
-      min-width: 77px;
-      height: 25px;
-      margin-bottom: 10px;
-      font-size: 14px;
+    .naver .img::before {
+        top: 77px;
+        right: 267px;
     }
     .naver .row .products {
-      width: 13vh;
+        width: 60px;
+    }
+    .naver .row .medic {
+        width: 90px;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .naver .row .btn-light {
+        width: 122px;
+        height: 29px;
+        margin-bottom: 10px;
+        font-size: 14px;
     }
     .naver .row .sell {
-      width: 22vh;
-      font-size: 9px;
-      padding-left: 5px;
+        height: 29px;
     }
-    .naver .row .col-lg-12 {
-      padding: 0;
+    .naver .img::before {
+        top: 77px;
+        right: 407px;
     }
-  }
-  
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .naver img {
-      display: none;
-    }
-    .naver .row .btn-light {
-      min-width: 20px;
-      height: 25px;
-      margin-bottom: 10px;
-      font-size: 10px;
-    }
-  
     .naver .row .products {
-      width: 9vh;
-      font-size: 12px;
+        width: 60px;
+    }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .naver .row .btn-light {
+        width: 122px;
+        height: 29px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .naver .row .sell {
+        height: 29px;
+    }
+    .naver .img::before {
+        top: 38px;
+        right: 425px;
+    }
+    .naver .row .products {
+        width: 60px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .naver .row .btn-light {
+        min-width: 35px;
+        height: 25px;
+        margin-bottom: 10px;
+        font-size: 13px;
     }
     .naver .row .sell {
-      width: 22vh;
-      font-size: 9px;
-      padding-left: 5px;
+        height: 29px;
     }
-    .naver .row .col-lg-12 {
-      padding: 0;
+    .naver .img::before {
+        top: -1px;
+        right: 340px;
     }
-  }
-  
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .naver .row .btn-light {
-      min-width: 35px;
-      height: 25px;
-      margin-bottom: 10px;
-      font-size: 13px;
-    }
-    .naver img {
-      right: 57vh;
-    }
-  }
-  /* End Naver*/
-  
-  /* Start Section  */
-  .section {
-    height: 400px;
-  }
-  div.gallery {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  div.desc {
-    text-align: center;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .responsive {
-    padding: 0;
-    float: left;
-    width: 18%;
-    margin: 1%;
-  }
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .section {
-      height: 350px;
-    }
-  }
-  /*  Medium devices (tablets, 768px and up)  */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    div.desc {
-      font-size: 12px;
-    }
-    .section {
-      height: 300px;
-    }
-  }
-  
-  /* Small devices (landscape phones, 576px and up)   */
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    .responsive {
-      width: 18%;
-    }
-    div.desc {
-      font-size: 9px;
-    }
-    .section {
-      height: 240px;
-    }
-  }
-  
-  /* Extra small devices (portrait phones, less than 576px) */
-  @media (max-width: 575.98px) {
-    .responsive {
-     flex: 1 0 50%;
-     max-width: 43%;
-    }
-    div.desc {
-      font-size: 10px;
-    }
-    .section {
-      height: 400px;
-    }
-  }
-  /* End Section */
-  
-  /* End header */
+}
+/* End Naver*/
+/* End header */
 </style>
