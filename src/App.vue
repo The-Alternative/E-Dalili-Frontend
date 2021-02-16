@@ -1,34 +1,29 @@
 <template>
-  <div id="app">
-    <!-- Header -->
-    <AppHeader />
-    <router-view /> 
-       
+    <div id="app">
+        <!-- Header -->
+        <AppHeader />
+        <router-view />
 
-       <!-- Fotter -->
-     <AppFooter />
-  </div>
+        <!-- Fotter -->
+        <AppFooter />
+    </div>
 </template>
 
 <script>
-
-import AppHeader from "@/components/header/AppHeader.vue";
-import AppFooter from "@/components/Footer/AppFooter.vue";
+import AppHeader from '@/components/header/AppHeader.vue';
+import AppFooter from '@/components/Footer/AppFooter.vue';
 
 export default {
-    name :"App",
+    name: 'App',
     components: {
         AppHeader,
-        AppFooter
-    }
-}
-
+        AppFooter,
+    },
+};
 </script>
 
 <style lang="scss">
 #app {
-  text-align: center;
+    text-align: center;
 }
-
 </style>
-

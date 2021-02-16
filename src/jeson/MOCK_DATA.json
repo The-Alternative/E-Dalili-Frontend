@@ -10,16 +10,14 @@
     {"id":1,"name":"\u0627\u0644\u0628\u0631\u062c","city_id":3,"is_active":1,"longitude":"5863758","latitude":"536758367","created_at":null,"updated_at":null},{"id":2,"name":"\u0627\u0644\u062a\u062c\u0627\u0631\u0629","city_id":3,"is_active":1,"longitude":"57637","latitude":"4563456","created_at":null,"updated_at":null}
         ],
 "categories":[
-    {"id":5,"name":"جميع الأقسام","slug":"allsection","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":4,"name":"لجمال والعنایة الشخصیة","slug":"buty","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":3,"name":"البقالة","slug":"market","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":2,"name":"موبایلات واكسسواراتھا","slug":"mobile","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":1,"name":"كمبیوترات واكسسواراتھا","slug":"computer","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":10,"name":"أجھزة كھربائیة والكترونیة","slug":"elctronic","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":9,"name":"المنزل والمطبخ","slug":"kitchen","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":8,"name":"قرطاسية وتعليم","slug":"education","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":7,"name":"ديكور و مفروشات","slug":"furniture","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
-    ,{"id":6,"name":"عالم الطفل","slug":"child","is_active":1,"parent_id":0,"image":"","created_at":null,"updated_at":null}
+    {"id":1,"name":"الجمال والعنایة الشخصیة","slug":"buty","is_active":1,"parent_id":0,"image":"/img/buty-icon.82d251f5.png","created_at":null,"updated_at":null}
+    ,{"id":2,"name":"موبایلات واكسسواراتھا","slug":"mobile","is_active":1,"parent_id":0,"image":"/img/mobile-icon.af9070b6.png","created_at":null,"updated_at":null}
+    ,{"id":3,"name":"كمبیوترات واكسسواراتھا","slug":"computer","is_active":1,"parent_id":0,"image":"/img/computer-icon.1aa8c6bc.png","created_at":null,"updated_at":null}
+    ,{"id":4,"name":"أجھزة كھربائیة والكترونیة","slug":"elctronic","is_active":1,"parent_id":0,"image":"/img/elctronic-icon.e6759577.png","created_at":null,"updated_at":null}
+    ,{"id":5,"name":"المنزل والمطبخ","slug":"kitchen","is_active":1,"parent_id":0,"image":"/img/kitchen-icon.a23884b5.png","created_at":null,"updated_at":null}
+    ,{"id":6,"name":"قرطاسية وتعليم","slug":"education","is_active":1,"parent_id":0,"image":"/img/education-icon.808378bf.png","created_at":null,"updated_at":null}
+    ,{"id":7,"name":"ديكور و مفروشات","slug":"furniture","is_active":1,"parent_id":0,"image":"/img/furniture-icon.789f0194.png","created_at":null,"updated_at":null}
+    ,{"id":8,"name":"عالم الطفل","slug":"child","is_active":1,"parent_id":0,"image":"/img/child-icon.231f56b5.png","created_at":null,"updated_at":null}
         ],
 "customs":[
     {"id":4,"name":"\u0627\u0644\u0644\u0648\u0646","is_active":1,"image":"","description":"","created_at":null,"updated_at":null},{"id":5,"name":"\u0627\u0644\u062d\u062c\u0645","is_active":1,"image":"","description":"","created_at":null,"updated_at":null},{"id":6,"name":"\u0627\u0644\u0633\u0639\u0629","is_active":1,"image":"","description":"","created_at":null,"updated_at":null}

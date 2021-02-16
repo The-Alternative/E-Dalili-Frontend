@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <h1>صيدليات</h1>
-    
-  </div>
+    <div>
+        <h1>صيدليات</h1>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "medic",
+    name: 'medic',
 };
 </script>

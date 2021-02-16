@@ -1,37 +1,36 @@
 <template>
-      <section class="ui two column grid locat">
-          <div class="column">
-              <form class="ui segment large form">
-                  <div class="ui message red" v-show="error">{{ error }}</div>
-                  <div class="ui segment">
-                      <div class="field">
-                          <div
-                              class="ui right icon input large"
-                              :class="{ loading: spinner }"
-                          >
-                              <input
-                                  type="text"
-                                  placeholder="Enter Your address"
-                                  v-model="address"
-                                  id="autocomplate"
-                              />
-                              <i
-                                  class="dot circle link icon"
-                                  @click="locatorButtonPressed"
-                              ></i>
-                          </div>
-                      </div>
-                      <button class="ui button">Go</button>
-                  </div>
-              </form>
-          </div>
-      </section>
+    <section class="ui two column grid locat">
+        <div class="column">
+            <form class="ui segment large form">
+                <div class="ui message red" v-show="error">{{ error }}</div>
+                <div class="ui segment">
+                    <div class="field">
+                        <div
+                            class="ui right icon input large"
+                            :class="{ loading: spinner }"
+                        >
+                            <input
+                                type="text"
+                                placeholder="Enter Your address"
+                                v-model="address"
+                                id="autocomplate"
+                            />
+                            <i
+                                class="dot circle link icon"
+                                @click="locatorButtonPressed"
+                            ></i>
+                        </div>
+                    </div>
+                    <button class="ui button">Go</button>
+                </div>
+            </form>
+        </div>
+    </section>
 </template>
 <script>
 export default {
-  name:"UserLocation",
-
-}
+    name: 'UserLocation',
+};
 </script>
 
 <!--<script>-->
