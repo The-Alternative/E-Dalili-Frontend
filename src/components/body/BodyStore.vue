@@ -14,7 +14,7 @@
         <!--     coulome middel stors group   -->
         <div class="card pl-1 pr-1 col-lg-6 col-md-7 col-sm-8 col-xs-8 stors ">
             <!--          store 1-->
-            <div class="store" v-for="store in stores" :key="store.id">
+            <div class="store" v-for="store in activeStores" :key="store.id">
                 <div class="card-title row justify-content-lg-end">
                     <div class="d-flex flex-row">
                         <img
@@ -102,12 +102,17 @@
                             class="textcheck"
                             v-for="category in categories"
                             :key="category"
+                            for="category"
                         >
                             {{ category }}
                             <input
                                 class="categories"
                                 type="checkbox"
                                 v-bind:value="category"
+                                 id="category"
+                                v-model="
+                                    selectedCategory
+                                "
                             />
                         </li>
                     </ul>
