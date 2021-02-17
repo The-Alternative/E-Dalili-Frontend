@@ -2,7 +2,6 @@
     <div class="products">
         <Cartmini />
         <!-- Start Section-->
-
         <div class="categores">
             <div class="row">
                 <div
@@ -59,7 +58,6 @@
         </div>
         <!-- show  products -->
         <div class="show-prod">
-            <div class="container">
                 <div class="row reower">
                     <BodyProduct
                         v-for="items in Product.slice(0, 4)"
@@ -72,7 +70,6 @@
                     >
                     </BodyProduct>
                 </div>
-            </div>
         </div>
         <!-- show market-->
         <div class="show-market">
@@ -84,7 +81,6 @@
         </div>
         <!-- show  products -->
         <div class="show-prod">
-            <div class="container">
                 <div class="row reower">
                     <BodyProduct
                         v-for="items in Product.slice(4, 8)"
@@ -97,7 +93,6 @@
                     >
                     </BodyProduct>
                 </div>
-            </div>
         </div>
 
         <!-- show der -->
@@ -138,7 +133,6 @@
                         <!-- carousel item 1 -->
                         <div class="carousel-item active">
                             <div class="show-prod">
-                                <div class="container">
                                     <div class="row">
                                         <BodyProduct
                                             v-for="items in Product.slice(0, 4)"
@@ -151,13 +145,11 @@
                                         >
                                         </BodyProduct>
                                     </div>
-                                </div>
                             </div>
                         </div>
                         <!-- carousel item 2 -->
                         <div class="carousel-item">
                             <div class="show-prod">
-                                <div class="container">
                                     <div class="row">
                                         <BodyProduct
                                             v-for="items in Product.slice(4, 8)"
@@ -170,13 +162,11 @@
                                         >
                                         </BodyProduct>
                                     </div>
-                                </div>
                             </div>
                         </div>
                         <!-- carousel item 3 -->
                         <div class="carousel-item">
                             <div class="show-prod">
-                                <div class="container">
                                     <div class="row">
                                         <BodyProduct
                                             v-for="items in Product.slice(
@@ -193,7 +183,6 @@
                                         </BodyProduct>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <!-- Left and right controls -->
@@ -241,7 +230,6 @@
                     <!-- carousel item 1 -->
                     <div class="carousel-item active">
                         <div class="show-prod">
-                            <div class="container">
                                 <div class="row">
                                     <BodyProduct
                                         v-for="items in Product.slice(0, 4)"
@@ -254,13 +242,11 @@
                                     >
                                     </BodyProduct>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <!-- carousel item 2 -->
                     <div class="carousel-item">
                         <div class="show-prod">
-                            <div class="container">
                                 <div class="row">
                                     <BodyProduct
                                         v-for="items in Product.slice(4, 8)"
@@ -273,13 +259,11 @@
                                     >
                                     </BodyProduct>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <!-- carousel item 3 -->
                     <div class="carousel-item">
                         <div class="show-prod">
-                            <div class="container">
                                 <div class="row">
                                     <BodyProduct
                                         v-for="items in Product.slice(8, 12)"
@@ -292,7 +276,6 @@
                                     >
                                     </BodyProduct>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -306,7 +289,7 @@
                 </a>
             </div>
         </div>
-    </div>
+        </div>
 </template>
 
 <script>
@@ -343,7 +326,7 @@ export default {
         brands() {
             return this.$store.state.brands;
         },
-    },
+    }
     /* created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {

@@ -674,6 +674,9 @@ export default {
     color: #635f5f;
     padding: 0 5px;
 }
+.btn:hover {
+  transform:  scale3d(1.1,1.1,1.1);
+}
 .naver .row .products {
     border-radius: 50px;
     height: 28px;
@@ -688,7 +691,7 @@ export default {
     content: url(../../assets/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 395px;
+    right: 399px;
 }
 .naver .row .sell {
     background-color: #f6ef19;

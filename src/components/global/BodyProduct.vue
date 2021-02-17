@@ -111,6 +111,10 @@ export default {
     margin-top: 10vh;
     margin-bottom: 10vh;
     border-radius: 5%;
+    transition: all;
+}
+.content-pro:hover {
+  transform:  scale3d(1.05,1.05,1);
 }
 .content-pro .new {
     width: 100%;

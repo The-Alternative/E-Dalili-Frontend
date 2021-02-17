@@ -94,7 +94,7 @@ export default {
             this.$store.dispatch('removeItem', items);
         },
         removeFromCart(item) {
-            this.$store.commit('removeFromCart', item);
+            this.$store.commit('removeFromCart', item)
         },
     },
     computed: {
