@@ -14,7 +14,7 @@
                 >
                     <div class="icon">
                         <img :src="`${catog.image}`" />
-                        
+
                         <!--      <img :src="`${urll}/${catog.image}`" />        -->
                     </div>
                     <div class="dropdowns">
@@ -58,18 +58,18 @@
         </div>
         <!-- show  products -->
         <div class="show-prod">
-                <div class="row reower">
-                    <BodyProduct
-                        v-for="items in Product.slice(0, 4)"
-                        :key="items.pr"
-                        :id="items.id"
-                        :price="items.price"
-                        :title="items.title"
-                        :description="items.description"
-                        @click="goto(items)"
-                    >
-                    </BodyProduct>
-                </div>
+            <div class="row reower">
+                <BodyProduct
+                    v-for="items in Product.slice(0, 4)"
+                    :key="items.pr"
+                    :id="items.id"
+                    :price="items.price"
+                    :title="items.title"
+                    :description="items.description"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
+            </div>
         </div>
         <!-- show market-->
         <div class="show-market">
@@ -81,18 +81,18 @@
         </div>
         <!-- show  products -->
         <div class="show-prod">
-                <div class="row reower">
-                    <BodyProduct
-                        v-for="items in Product.slice(4, 8)"
-                        :key="items.pr"
-                        :id="items.id"
-                        :price="items.price"
-                        :title="items.title"
-                        :description="items.description"
-                        @click="goto(items)"
-                    >
-                    </BodyProduct>
-                </div>
+            <div class="row reower">
+                <BodyProduct
+                    v-for="items in Product.slice(4, 8)"
+                    :key="items.pr"
+                    :id="items.id"
+                    :price="items.price"
+                    :title="items.title"
+                    :description="items.description"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
+            </div>
         </div>
 
         <!-- show der -->
@@ -133,56 +133,53 @@
                         <!-- carousel item 1 -->
                         <div class="carousel-item active">
                             <div class="show-prod">
-                                    <div class="row">
-                                        <BodyProduct
-                                            v-for="items in Product.slice(0, 4)"
-                                            :key="items.pr"
-                                            :id="items.id"
-                                            :price="items.price"
-                                            :title="items.title"
-                                            :description="items.description"
-                                            @click="goto(items)"
-                                        >
-                                        </BodyProduct>
-                                    </div>
+                                <div class="row">
+                                    <BodyProduct
+                                        v-for="items in Product.slice(0, 4)"
+                                        :key="items.pr"
+                                        :id="items.id"
+                                        :price="items.price"
+                                        :title="items.title"
+                                        :description="items.description"
+                                        @click="goto(items)"
+                                    >
+                                    </BodyProduct>
+                                </div>
                             </div>
                         </div>
                         <!-- carousel item 2 -->
                         <div class="carousel-item">
                             <div class="show-prod">
-                                    <div class="row">
-                                        <BodyProduct
-                                            v-for="items in Product.slice(4, 8)"
-                                            :key="items.pr"
-                                            :id="items.id"
-                                            :price="items.price"
-                                            :title="items.title"
-                                            :description="items.description"
-                                            @click="goto(items)"
-                                        >
-                                        </BodyProduct>
-                                    </div>
+                                <div class="row">
+                                    <BodyProduct
+                                        v-for="items in Product.slice(4, 8)"
+                                        :key="items.pr"
+                                        :id="items.id"
+                                        :price="items.price"
+                                        :title="items.title"
+                                        :description="items.description"
+                                        @click="goto(items)"
+                                    >
+                                    </BodyProduct>
+                                </div>
                             </div>
                         </div>
                         <!-- carousel item 3 -->
                         <div class="carousel-item">
                             <div class="show-prod">
-                                    <div class="row">
-                                        <BodyProduct
-                                            v-for="items in Product.slice(
-                                                8,
-                                                12
-                                            )"
-                                            :key="items.pr"
-                                            :id="items.id"
-                                            :price="items.price"
-                                            :title="items.title"
-                                            :description="items.description"
-                                            @click="goto(items)"
-                                        >
-                                        </BodyProduct>
-                                    </div>
+                                <div class="row">
+                                    <BodyProduct
+                                        v-for="items in Product.slice(8, 12)"
+                                        :key="items.pr"
+                                        :id="items.id"
+                                        :price="items.price"
+                                        :title="items.title"
+                                        :description="items.description"
+                                        @click="goto(items)"
+                                    >
+                                    </BodyProduct>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Left and right controls -->
@@ -230,52 +227,52 @@
                     <!-- carousel item 1 -->
                     <div class="carousel-item active">
                         <div class="show-prod">
-                                <div class="row">
-                                    <BodyProduct
-                                        v-for="items in Product.slice(0, 4)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :description="items.description"
-                                        @click="goto(items)"
-                                    >
-                                    </BodyProduct>
-                                </div>
+                            <div class="row">
+                                <BodyProduct
+                                    v-for="items in Product.slice(0, 4)"
+                                    :key="items.pr"
+                                    :id="items.id"
+                                    :price="items.price"
+                                    :title="items.title"
+                                    :description="items.description"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
+                            </div>
                         </div>
                     </div>
                     <!-- carousel item 2 -->
                     <div class="carousel-item">
                         <div class="show-prod">
-                                <div class="row">
-                                    <BodyProduct
-                                        v-for="items in Product.slice(4, 8)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :description="items.description"
-                                        @click="goto(items)"
-                                    >
-                                    </BodyProduct>
-                                </div>
+                            <div class="row">
+                                <BodyProduct
+                                    v-for="items in Product.slice(4, 8)"
+                                    :key="items.pr"
+                                    :id="items.id"
+                                    :price="items.price"
+                                    :title="items.title"
+                                    :description="items.description"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
+                            </div>
                         </div>
                     </div>
                     <!-- carousel item 3 -->
                     <div class="carousel-item">
                         <div class="show-prod">
-                                <div class="row">
-                                    <BodyProduct
-                                        v-for="items in Product.slice(8, 12)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :description="items.description"
-                                        @click="goto(items)"
-                                    >
-                                    </BodyProduct>
-                                </div>
+                            <div class="row">
+                                <BodyProduct
+                                    v-for="items in Product.slice(8, 12)"
+                                    :key="items.pr"
+                                    :id="items.id"
+                                    :price="items.price"
+                                    :title="items.title"
+                                    :description="items.description"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,7 +286,7 @@
                 </a>
             </div>
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -326,7 +323,7 @@ export default {
         brands() {
             return this.$store.state.brands;
         },
-    }
+    },
     /* created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {

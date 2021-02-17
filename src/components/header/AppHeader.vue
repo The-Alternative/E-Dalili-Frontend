@@ -159,7 +159,6 @@
                 </div>
             </div>
         </div>
-        <!-- End Naver -->
     </div>
 </template>
 <script src="../../js/proj.js"></script>
@@ -675,7 +674,7 @@ export default {
     padding: 0 5px;
 }
 .btn:hover {
-  transform:  scale3d(1.1,1.1,1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
 }
 .naver .row .products {
     border-radius: 50px;

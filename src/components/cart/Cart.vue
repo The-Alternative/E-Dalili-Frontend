@@ -94,7 +94,7 @@ export default {
             this.$store.dispatch('removeItem', items);
         },
         removeFromCart(item) {
-            this.$store.commit('removeFromCart', item)
+            this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
@@ -112,11 +112,11 @@ export default {
 };
 </script>
 <style scoped>
-.close:hover {
+<<<<<<< head ======= .close:hover {
     color: red;
     font-size: 20px;
 }
-.title {
+>>>>>>>29500ba2cd76a834f03a370b85fb039702aba24f .title {
     margin-bottom: 5vh;
 }
 

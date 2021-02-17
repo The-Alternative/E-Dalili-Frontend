@@ -13,9 +13,7 @@ export default {
 @media (min-width: 200px) and (max-width: 467px) {
     .whatsapp {
         color: #25d366;
-        margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
+        font-size: 15px;
         margin-bottom: 20px;
     }
 }
@@ -23,8 +21,7 @@ export default {
     .whatsapp {
         color: #25d366;
         margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
+        font-size: 15px;
         margin-bottom: 20px;
     }
 }

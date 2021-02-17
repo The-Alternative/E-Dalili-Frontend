@@ -15,11 +15,10 @@ export default {
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
     .btn {
-        font-weight: bold;
         font-size: 12px;
         height: 30px;
         width: 6px;
-        margin-left: 60px;
+        margin-left: 45px;
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
@@ -29,7 +28,7 @@ export default {
         font-size: 12px;
         height: 30px;
         width: 8px;
-        margin-left: 100px;
+        margin-left: 120px;
     }
 }
 @media (min-width: 599px) and (max-width: 767px) {

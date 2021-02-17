@@ -114,7 +114,7 @@ export default {
     transition: all;
 }
 .content-pro:hover {
-  transform:  scale3d(1.05,1.05,1);
+    transform: scale3d(1.05, 1.05, 1);
 }
 .content-pro .new {
     width: 100%;

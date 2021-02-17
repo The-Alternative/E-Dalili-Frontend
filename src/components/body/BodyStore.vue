@@ -22,7 +22,9 @@
                             src="../../assets/open.png"
                             height="40"
                         />
-                        <div class="text-muted">{{ store.space }}</div>
+                        <div class="text-muted">
+                            {{ store.space }}
+                        </div>
                         <div>
                             <div class="title">
                                 {{ store.title }}
@@ -94,13 +96,7 @@
                 <span class="text-center bgcolor">حسب القسم</span>
                 <div class="checklist">
                     <label class="textcheck" for="check4">الكل</label
-                    ><input
-                        class="categories"
-                        type="checkbox"
-                        @click="CheckAll()"
-                        v-model="IsCheckAll"
-                        id="check4"
-                    />
+                    ><input class="categories" type="checkbox" id="check4" />
                     <ul>
                         <li
                             class="textcheck"
@@ -110,11 +106,8 @@
                             {{ category }}
                             <input
                                 class="categories"
-                                :click="printvalues()"
                                 type="checkbox"
                                 v-bind:value="category"
-                                v-model="languages"
-                                @change="updateCheckall()"
                             />
                         </li>
                     </ul>
@@ -238,9 +231,7 @@
         white-space: nowrap;
     }
     .categories {
-        height: 10px;
-        font-weight: bold;
-        font-size: 15px;
+        height: 8px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
@@ -249,23 +240,23 @@
         font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
-        font-size: 12px;
+        font-size: 7px;
         color: #000000;
     }
     .checked-all .listcategories .categories {
         color: #000000;
+        margin-right: 10px;
+        display: none;
     }
     .span-text {
-        font-weight: bold;
-        font-size: 15px;
+        font-size: 10px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 12px;
+        font-size: 9px;
         margin-top: 5px;
-        font-weight: bold;
     }
     .star-right {
         margin-top: 8px;
@@ -296,9 +287,10 @@
     .categores {
         margin-right: 0;
         color: #000000;
-        width: 200px;
+        position: absolute;
+        width: 180px;
         right: -400px;
-        height: 100%;
+        height: 80%;
         transition: right 0.4s ease;
     }
     .categores.show {
@@ -343,41 +335,35 @@
     }
     /*!*!*space store*!*!*/
     .text-muted {
-        font-weight: bold;
         margin-top: 20px;
         margin-left: 10px;
-        margin-right: 40px;
+        margin-right: 20px;
         font-size: 9px;
     }
     /*!*!*!*!*name store*!*!*!*!*/
     .title {
         margin-top: 10px;
         margin-right: 10px;
-        font-size: 10px;
-        font-weight: bold;
+        font-size: 9px;
     }
     .stars {
         color: #ffd200;
         list-style: none;
     }
-
     /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
-        font-weight: bold;
         margin-top: 5px;
         list-style: none;
-        font-size: 12px;
+        font-size: 10px;
         color: #751aff;
         text-align: center;
     }
-
     /*!*!*!*!*button visit store*!*!*!*!*/
     .btn {
-        font-weight: bold;
         font-size: 12px;
         height: 30px;
         width: 8px;
-        margin-left: 100px;
+        margin-left: 20px;
     }
     .img-button {
         margin-top: 5px;
@@ -410,42 +396,40 @@
         width: 100%;
     }
 }
-@media (min-width: 468px) and (max-width: 598px) {
+@media (min-width: 468px) and (max-width: 598.99px) {
     .checked-all {
         font-size: 12px;
         color: #000000;
-        overflow-y: auto;
+        overflow-y: scroll;
         white-space: nowrap;
     }
     .categories {
         height: 10px;
-        font-weight: bold;
         font-size: 15px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
     }
     .textcheck {
-        font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
-        font-size: 12px;
+        font-size: 8px;
+        font-weight: bold;
         color: #000000;
     }
     .checked-all .listcategories .categories {
         color: #000000;
+        margin-right: 10px;
     }
     .span-text {
-        font-weight: bold;
-        font-size: 15px;
+        font-size: 12px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 12px;
+        font-size: 10px;
         margin-top: 5px;
-        font-weight: bold;
     }
     .star-right {
         margin-top: 8px;
@@ -476,9 +460,10 @@
     .categores {
         margin-right: 0;
         color: #000000;
+        position: absolute;
         width: 200px;
         right: -400px;
-        height: 100%;
+        height: 80%;
         transition: right 0.4s ease;
     }
     .categores.show {
@@ -523,18 +508,16 @@
     }
     /*!*!*space store*!*!*/
     .text-muted {
-        font-weight: bold;
         margin-top: 20px;
         margin-left: 60px;
-        margin-right: 120px;
-        font-size: 9px;
+        margin-right: 80px;
+        font-size: 10px;
     }
     /*!*!*!*!*name store*!*!*!*!*/
     .title {
         margin-top: 10px;
         margin-right: 10px;
-        font-size: 10px;
-        font-weight: bold;
+        font-size: 12px;
     }
     .stars {
         color: #ffd200;
@@ -543,7 +526,6 @@
 
     /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
-        font-weight: bold;
         margin-top: 5px;
         list-style: none;
         font-size: 12px;
@@ -553,7 +535,6 @@
 
     /*!*!*!*!*button visit store*!*!*!*!*/
     .btn {
-        font-weight: bold;
         font-size: 12px;
         height: 30px;
         width: 8px;
@@ -609,8 +590,7 @@
     }
     /*!*!*space store*!*!*/
     .text-muted {
-        font-weight: bold;
-        margin-right: 60px;
+        margin-right: 40px;
         margin-left: 30px;
         margin-top: 10px;
         font-size: 9px;
@@ -619,16 +599,13 @@
     .title {
         margin-right: 5px;
         font-size: 12px;
-        font-weight: bold;
     }
     .stars {
         color: #ffd200;
         list-style: none;
     }
-
     /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
-        font-weight: bold;
         margin-top: 5px;
         list-style: none;
         font-size: 10px;
@@ -636,7 +613,6 @@
     }
     /*!*!*!*!*button visit store*!*!*!*!*/
     .btn {
-        font-weight: bold;
         font-size: 10px;
         height: 25px;
         width: 8px;
@@ -644,6 +620,9 @@
     }
     .img-button {
         margin-top: 5px;
+    }
+    .Group {
+        margin-left: 10px;
     }
     .location {
         height: 15px;
@@ -670,23 +649,19 @@
     }
 
     .textcheck {
-        font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
-        font-size: 12px;
+        font-size: 8px;
+        font-weight: bold;
         color: #000000;
     }
     .categories {
-        height: 15px;
-        font-weight: bold;
-        font-size: 15px;
+        height: 10px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
     }
     .span-text {
-        font-weight: bold;
-
         font-size: 15px;
     }
     .bgcolor {
@@ -695,7 +670,6 @@
         border: 1px solid #e0e0d1;
         font-size: 9px;
         margin-top: 5px;
-        font-weight: bold;
     }
     .star-right {
         margin-top: 8px;
@@ -743,17 +717,14 @@
     }
     /*!*space store*!*/
     .text-muted {
-        font-weight: bold;
-        margin-right: 80px;
+        margin-right: 50px;
         margin-left: 30px;
         margin-top: 20px;
         font-size: 10px;
     }
     /*!*!*!*name store*!*!*!*/
     .title {
-        font-weight: bold;
         margin-right: 20px;
-        margin-left: 20px;
         font-size: 12px;
     }
     .stars {
@@ -762,7 +733,6 @@
     }
     /*!*!*!*type of goods*!*!*!*/
     .categorystore {
-        font-weight: bold;
         list-style: none;
         font-size: 12px;
         color: #751aff;
@@ -774,6 +744,9 @@
     }
     .img-button {
         margin-top: 10px;
+    }
+    .Group {
+        margin-left: 10px;
     }
     .location {
         margin-left: 80px;
@@ -790,9 +763,7 @@
         font-size: 20px;
     }
     .categories {
-        height: 15px;
-        font-weight: bold;
-        font-size: 15px;
+        height: 10px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
@@ -801,7 +772,7 @@
         font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
-        font-size: 12px;
+        font-size: 8px;
         color: #000000;
     }
     .checked-all {
@@ -809,11 +780,9 @@
     }
 
     .span-text {
-        font-weight: bold;
         font-size: 15px;
     }
     .bgcolor {
-        font-weight: bold;
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
@@ -864,22 +833,16 @@
         height: 40px;
         /*margin-top: 10px;*/
     }
-    .span-text {
-        font-weight: bold;
-    }
     /*space store*/
     .text-muted {
-        font-weight: bold;
-        margin-right: 90px;
+        margin-right: 60px;
         margin-left: 30px;
         margin-top: 20px;
         font-size: 12px;
     }
     /*!*!*name store*!*!*/
     .title {
-        font-weight: bold;
         margin-right: 20px;
-        margin-left: 20px;
         font-size: 15px;
     }
     .stars {
@@ -888,7 +851,6 @@
     }
     /*!*!*type of goods*!*!*/
     .categorystore {
-        font-weight: bold;
         list-style: none;
         font-size: 14px;
         color: #751aff;
@@ -900,6 +862,9 @@
     }
     .img-button {
         margin-top: 20px;
+    }
+    .Group {
+        margin-left: 10px;
     }
     .location {
         margin-left: 80px;
@@ -916,7 +881,6 @@
         font-size: 20px;
     }
     .textcheck {
-        font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
         font-size: 12px;
@@ -924,14 +888,12 @@
     }
     .categories {
         height: 15px;
-        font-weight: bold;
         font-size: 15px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
     }
     .span-text {
-        font-weight: bold;
         font-size: 15px;
     }
     .bgcolor {
@@ -940,32 +902,31 @@
         border: 1px solid #e0e0d1;
         font-size: 15px;
         margin-top: 5px;
-        font-weight: bold;
     }
     .star-right {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 80px;
+        margin-left: 140px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 98px;
+        margin-left: 156px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 115px;
+        margin-left: 174px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 132px;
+        margin-left: 190px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 150px;
+        margin-left: 202px;
     }
     .slide {
         display: none;
@@ -980,31 +941,24 @@
         margin-top: 10px;
     }
     .textcheck {
-        font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
         font-size: 15px;
         color: #000000;
     }
-    .span-text {
-        font-weight: bold;
-    }
     /*space store*/
     .text-muted {
-        font-weight: bold;
-        margin-right: 120px;
+        margin-right: 90px;
         margin-left: 30px;
         margin-top: 20px;
     }
     /*name store*/
     .title {
-        font-weight: bold;
         margin-left: 20px;
         margin-right: 10px;
     }
     /*type of goods*/
     .categorystore {
-        font-weight: bold;
         list-style: none;
         font-size: 15px;
         color: #751aff;
@@ -1017,6 +971,9 @@
     }
     .img-button {
         margin-top: 30px;
+    }
+    .Group {
+        margin-left: 10px;
     }
     .location {
         margin-left: 190px;
@@ -1038,11 +995,9 @@
         border-radius: 3px;
         border: 1px solid #e0e0d1;
         font-size: 15px;
-        font-weight: bold;
     }
     .categories {
         height: 15px;
-        font-weight: bold;
         font-size: 15px;
         color: #000000;
         list-style: none;
@@ -1055,26 +1010,26 @@
     }
     .star-right {
         font-size: 20px;
-        margin-left: 100px;
+        margin-left: 180px;
     }
     .star-right2 {
         font-size: 20px;
-        margin-left: 122px;
+        margin-left: 202px;
         margin-top: 10px;
     }
     .star-right3 {
         font-size: 20px;
-        margin-left: 144px;
+        margin-left: 224px;
         margin-top: 10px;
     }
     .star-right4 {
         font-size: 20px;
-        margin-left: 166px;
+        margin-left: 246px;
         margin-top: 10px;
     }
     .star-right5 {
         font-size: 20px;
-        margin-left: 188px;
+        margin-left: 270px;
         margin-top: 10px;
         margin-right: 10px;
     }
@@ -1120,12 +1075,10 @@ body {
 .card-title {
     margin: 20px;
 }
-
 .card-group {
-    background-color: #ccccb3;
+    background-color: #fefefe;
 }
 .checklist {
-    font-weight: bold;
     font-size: 15px;
     margin-top: 20px;
     background-color: #f5f5f0;

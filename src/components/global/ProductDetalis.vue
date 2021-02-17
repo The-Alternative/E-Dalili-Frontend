@@ -12,13 +12,13 @@
                         >
                             <div class="carousel-inner">
                                 <div
-                                    class="carousel-item active" 
+                                    class="carousel-item active"
                                     data-slide-number="0"
                                 >
-                                    <img 
+                                    <img
                                         src="@/assets/w.jpg"
                                         class="d-block w-100"
-                                        alt="..."  
+                                        alt="..."
                                     />
                                 </div>
                                 <div
@@ -211,16 +211,16 @@ export default {
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
             document.getElementById('myCarousel').animate(
-// keyframes
-                    { transform: 'scale(1,1)' },
-                    { transform: 'scale(1.1,1.1)' },
-                    { transform: 'scale(1,1)' },
-                    { transform: 'scale(1.1,1.1)' }
-            ,
+                // keyframes
+                { transform: 'scale(1,1)' },
+                { transform: 'scale(1.1,1.1)' },
+                { transform: 'scale(1,1)' },
+                { transform: 'scale(1.1,1.1)' },
                 {
-// timing options
+                    // timing options
                     duration: 500,
-                })
+                }
+            );
         },
     },
 };

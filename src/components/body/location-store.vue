@@ -26,14 +26,14 @@ export default {
 @media (min-width: 468px) and (max-width: 598px) {
     .location {
         height: 15px;
-        margin-left: 140px;
+        margin-left: 130px;
         margin-right: 10px;
     }
 }
 @media (min-width: 599px) and (max-width: 767px) {
     .location {
         height: 15px;
-        margin-left: 60px;
+        margin-left: 90px;
         margin-right: 10px;
     }
 }
@@ -45,7 +45,7 @@ export default {
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .location {
-        margin-left: 80px;
+        margin-left: 120px;
         margin-right: 10px;
     }
 }
