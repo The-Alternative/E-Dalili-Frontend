@@ -54,6 +54,32 @@ export default {
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
+            this.$el.animate(
+                [
+                    // keyframes
+                    {
+                        transform:
+                            'perspective(500px) translate3d(-200px, 1000px,-10000px)',
+                    },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
+            document.getElementById('cart').animate(
+                [
+                    // keyframes
+                    { transform: 'rotate(-20deg)' },
+                    { transform: 'rotate(20deg)' },
+                    { transform: 'scale(3,3)' },
+                    { transform: 'scale(1,1)' },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
         },
     },
     computed: {
@@ -79,29 +105,35 @@ export default {
     color: #585b5e;
     text-decoration: none;
 }
-
-.show-prod .row .content-pro {
-    font-size: 18px;
+.content-pro {
+    font-size: 16px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10vh;
     margin-bottom: 10vh;
+    border-radius: 5%;
+    transition: all;
 }
-.show-prod .row .content-pro .new {
+.content-pro:hover {
+    transform: scale3d(1.05, 1.05, 1);
+}
+.content-pro .new {
     width: 100%;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
 }
-.show-prod .row .content-pro .stars {
+.content-pro .stars {
     margin-top: 20px;
 }
-.show-prod .content-pro .checked {
+.content-pro .checked {
     color: #dcd741;
 }
-.show-prod .content-pro .avilble {
+.content-pro .avilble {
     color: #19e653;
 }
-.show-prod .content-pro .avilble div {
+.content-pro .avilble div {
     margin-right: 10px;
 }
-.show-prod .content-pro button {
+.content-pro button {
     background-color: #a5abac;
     color: #fff;
     margin-top: 10px;
@@ -112,25 +144,25 @@ export default {
     width: 80px;
     font-size: 14px;
 }
-.show-prod .content-pro button:hover {
+.content-pro button:hover {
     background-color: #d3b85f;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .show-prod .row .content-pro {
+    .content-pro {
         font-size: 10px;
         height: auto;
         margin-top: 5vh;
     }
-    .show-prod .row .content-pro .name-prod {
+    .content-pro .name-prod {
         margin-bottom: 10px;
     }
 
-    .show-prod .reower .col-xs-6 {
+    .reower .col-xs-6 {
         flex: 1 0 50%;
         max-width: 50%;
     }
-    .show-prod .content-pro button {
+    .content-pro button {
         margin-top: 12px;
         border-radius: 13px;
         font-weight: 1;

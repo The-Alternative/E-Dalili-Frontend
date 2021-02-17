@@ -2,7 +2,7 @@
     <div class="header">
         <div class="upper-bar">
             <div class="row">
-                <div class="col-md-2 col-sm-12 col-xs-12 imag">
+                <div @click="goto" class="col-md-2 col-sm-12 col-xs-12 imag">
                     <img src="@/assets/logo-4.png" />
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
@@ -106,7 +106,10 @@
                         </div>
                         <div>
                             <router-link to="/medic">
-                                <button type="button" class="btn btn-light">
+                                <button
+                                    type="button"
+                                    class="btn btn-light medic"
+                                >
                                     <a>صیدلیات وأدویة</a>
                                 </button></router-link
                             >
@@ -125,17 +128,16 @@
                                 </button></router-link
                             >
                         </div>
-                        <div>
+                        <div class="img">
                             <router-link to="/festival">
                                 <button
                                     type="button"
                                     class="btn btn-light sell"
                                 >
-                                    <a>مھرجان العروضات والتخفیضات</a>
+                                    <a>مھرجان العروضات </a>
                                 </button></router-link
                             >
                         </div>
-                        <img src="@/assets/icon-button.png" />
                         <div>
                             <router-link to="/stores">
                                 <button type="button" class="btn btn-light">
@@ -157,37 +159,9 @@
                 </div>
             </div>
         </div>
-        <!-- End Naver -->
-        <!-- Start Section-->
-
-        <div class="section">
-            <div class="row">
-                <div
-                    class="col-xs-6 responsive"
-                    v-for="catog in categories"
-                    :key="catog.id"
-                    :slug="catog.slug"
-                    :name="catog.name"
-                >
-                    <div class="gallery">
-                        <router-link :to="`/${catog.slug}`">
-                            <img
-                                src="@/assets/S1.png"
-                                width="600"
-                                height="400"
-                            />
-                        </router-link>
-                        <div class="desc">
-                            {{ catog.name }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Section-->
     </div>
 </template>
-
+<script src="../../js/proj.js"></script>
 <script>
 import jeson from '@/jeson/MOCK_DATA.json';
 // import axios from "axios";
@@ -207,11 +181,9 @@ export default {
             cities: jeson[0].cities,
             governorates: jeson[0].governorates,
             streets: jeson[0].streets,
-            categories: jeson[0].categories,
             // cities:[],
             // governorates:[],
             // streets:[]
-            // categories:[]
         };
     },
     computed: {
@@ -222,6 +194,9 @@ export default {
     methods: {
         gotocart: function() {
             this.$router.push(`/Cart`);
+        },
+        goto: function() {
+            this.$router.push(`/`);
         },
     },
 
@@ -260,9 +235,8 @@ export default {
     margin-top: -10px;
 }
 /* ____________________________________app header _______________________________ */
-.row {
-    justify-content: center;
-    margin: 0;
+.upper-bar .imag img {
+    cursor: pointer;
 }
 .upper-bar {
     background-color: #9b9a9a;
@@ -431,8 +405,14 @@ export default {
     .upper-bar .fa-map-marker {
         font-size: 13px;
     }
-    .upper-bar .sel3 {
-        margin-left: 2vh;
+    .upper-bar .sel2 {
+        margin: 0 1vh;
+    }
+    .upper-bar .sel1 {
+        margin-right: 4px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 4px;
     }
 }
 
@@ -446,7 +426,16 @@ export default {
     }
 
     .upper-bar .customer-select {
-        width: 105px;
+        width: 95px;
+    }
+    .upper-bar .sel2 {
+        margin: 0 1vh;
+    }
+    .upper-bar .sel1 {
+        margin-right: 4px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 4px;
     }
 }
 /* Large devices (desktops, 992px and up) */
@@ -454,8 +443,17 @@ export default {
     .upper-bar .row .col-md-10 {
         margin-top: 2vh;
     }
+    .upper-bar .sel3 {
+        margin-left: 25vh;
+    }
+    .upper-bar .sel2 {
+        margin: 0 2vh;
+    }
     .upper-bar .sel1 {
-        margin-left: 10vh;
+        margin-right: 5px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 5px;
     }
 }
 /* Extra large devices (large desktops, 1200px and up) */
@@ -465,6 +463,15 @@ export default {
     }
     .upper-bar .sel3 {
         margin-left: 50vh;
+    }
+    .upper-bar .sel2 {
+        margin: 0 2vh;
+    }
+    .upper-bar .sel1 {
+        margin-right: 5px;
+    }
+    .upper-bar .sel4 {
+        margin-right: 5px;
     }
 }
 /* End Upper Bar */
@@ -579,7 +586,6 @@ export default {
         padding: 4px 10px;
         height: 35px;
     }
-
     .jumbotron .search i {
         height: 35px;
         width: 34px;
@@ -599,8 +605,7 @@ export default {
     }
     .jumbotron .featuers {
         width: 200px;
-        margin-left: -12px;
-        margin-top: 11vh;
+        margin-top: 9vh;
         font-size: 11px;
         border-radius: 20px;
     }
@@ -657,22 +662,19 @@ export default {
     padding: 5px 0 5px 0;
     margin: 10px 0 10px 0;
 }
-.naver img {
-    position: absolute;
-    top: 1px;
-    right: 66vh;
-}
-
 .naver .row .col-lg-12 div {
     margin: 0 5px;
     display: inline-block;
 }
 .naver .row .btn-light {
     min-width: 70px;
-    height: 28px;
+    height: 29px;
     border-radius: 15px;
     color: #635f5f;
     padding: 0 5px;
+}
+.btn:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
 }
 .naver .row .products {
     border-radius: 50px;
@@ -684,78 +686,81 @@ export default {
     width: 100px;
     border-color: #cc0808;
 }
+.naver .img::before {
+    content: url(../../assets/icon-button.png);
+    position: absolute;
+    top: -1px;
+    right: 399px;
+}
 .naver .row .sell {
     background-color: #f6ef19;
     border-color: #f6ef19;
-    padding-left: 35px;
+    margin-left: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 29px;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .naver .row .btn-light {
-        min-width: 40px;
-        font-size: 12px;
-        margin-bottom: 2vh;
-    }
-    .naver img {
-        display: none;
+        width: 85px;
+        height: 29px;
+        margin-bottom: 10px;
+        font-size: 11px;
     }
     .naver .row .sell {
-        width: 20vh;
+        height: 29px;
         font-size: 9px;
-        padding-left: 5px;
     }
-    .naver .row .col-lg-12 {
-        padding: 0;
+    .naver .img::before {
+        top: 77px;
+        right: 267px;
+    }
+    .naver .row .products {
+        width: 60px;
+    }
+    .naver .row .medic {
+        width: 90px;
     }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .naver img {
-        display: none;
-    }
     .naver .row .btn-light {
-        min-width: 77px;
-        height: 25px;
+        width: 122px;
+        height: 29px;
         margin-bottom: 10px;
         font-size: 14px;
     }
-    .naver .row .products {
-        width: 13vh;
-    }
     .naver .row .sell {
-        width: 22vh;
-        font-size: 9px;
-        padding-left: 5px;
+        height: 29px;
     }
-    .naver .row .col-lg-12 {
-        padding: 0;
+    .naver .img::before {
+        top: 77px;
+        right: 407px;
+    }
+    .naver .row .products {
+        width: 60px;
     }
 }
-
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .naver img {
-        display: none;
-    }
     .naver .row .btn-light {
-        min-width: 20px;
-        height: 25px;
+        width: 122px;
+        height: 29px;
         margin-bottom: 10px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
-    .naver .row .products {
-        width: 9vh;
-        font-size: 12px;
-    }
     .naver .row .sell {
-        width: 22vh;
-        font-size: 9px;
-        padding-left: 5px;
+        height: 29px;
     }
-    .naver .row .col-lg-12 {
-        padding: 0;
+    .naver .img::before {
+        top: 38px;
+        right: 425px;
+    }
+    .naver .row .products {
+        width: 60px;
     }
 }
 
@@ -767,88 +772,14 @@ export default {
         margin-bottom: 10px;
         font-size: 13px;
     }
-    .naver img {
-        right: 57vh;
+    .naver .row .sell {
+        height: 29px;
+    }
+    .naver .img::before {
+        top: -1px;
+        right: 340px;
     }
 }
 /* End Naver*/
-
-/* Start Section  */
-.section {
-    height: 400px;
-}
-div.gallery {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
-div.gallery:hover {
-    border: 1px solid #777;
-}
-
-div.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-div.desc {
-    text-align: center;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.responsive {
-    padding: 0;
-    float: left;
-    width: 18%;
-    margin: 1%;
-}
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .section {
-        height: 350px;
-    }
-}
-/*  Medium devices (tablets, 768px and up)  */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    div.desc {
-        font-size: 12px;
-    }
-    .section {
-        height: 300px;
-    }
-}
-
-/* Small devices (landscape phones, 576px and up)   */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .responsive {
-        width: 18%;
-    }
-    div.desc {
-        font-size: 9px;
-    }
-    .section {
-        height: 240px;
-    }
-}
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .responsive {
-        flex: 1 0 50%;
-        max-width: 43%;
-    }
-    div.desc {
-        font-size: 10px;
-    }
-    .section {
-        height: 400px;
-    }
-}
-/* End Section */
-
 /* End header */
 </style>

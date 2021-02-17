@@ -1,6 +1,47 @@
 <template>
     <div class="products">
         <Cartmini />
+        <!-- Start Section-->
+        <div class="categores">
+            <div class="row">
+                <div
+                    class="col-xl-3 col-md-3 col-xs-6"
+                    v-for="catog in categories"
+                    :key="catog.id"
+                    :slug="catog.slug"
+                    :name="catog.name"
+                    style="width:50%"
+                >
+                    <div class="icon">
+                        <img :src="`${catog.image}`" />
+
+                        <!--      <img :src="`${urll}/${catog.image}`" />        -->
+                    </div>
+                    <div class="dropdowns">
+                        <button
+                            class="btn sec dropdown-toggle"
+                            type="button"
+                            data-toggle="dropdown"
+                        >
+                            {{ catog.name }} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <router-link :to="`/${catog.slug}`">
+                                <li><a href="#">1</a></li></router-link
+                            >
+                            <router-link :to="`/${catog.slug}`">
+                                <li><a href="#">2</a></li></router-link
+                            >
+                            <router-link :to="`/${catog.slug}`">
+                                <li><a href="#">3</a></li></router-link
+                            >
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Section-->
         <!--  show img  -->
         <div class="show-img">
             <div class="container">
@@ -9,28 +50,25 @@
                         class="col-md-6 img"
                         v-for="brand in brands.slice(0, 2)"
                         :key="brand.id"
-                        :image="brand.image"
                     >
-                        <img :src="`${urll}/${brand.image}`" />
+                        <img src="@/assets/S1.png" />
                     </div>
                 </div>
             </div>
         </div>
         <!-- show  products -->
         <div class="show-prod">
-            <div class="container">
-                <div class="row reower">
-                    <BodyProduct
-                        v-for="items in Product.slice(0, 4)"
-                        :key="items.pr"
-                        :id="items.id"
-                        :price="items.price"
-                        :title="items.title"
-                        :description="items.description"
-                        @click="goto(items)"
-                    >
-                    </BodyProduct>
-                </div>
+            <div class="row reower">
+                <BodyProduct
+                    v-for="items in Product.slice(0, 4)"
+                    :key="items.pr"
+                    :id="items.id"
+                    :price="items.price"
+                    :title="items.title"
+                    :description="items.description"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
             </div>
         </div>
         <!-- show market-->
@@ -43,19 +81,17 @@
         </div>
         <!-- show  products -->
         <div class="show-prod">
-            <div class="container">
-                <div class="row reower">
-                    <BodyProduct
-                        v-for="items in Product.slice(4, 8)"
-                        :key="items.pr"
-                        :id="items.id"
-                        :price="items.price"
-                        :title="items.title"
-                        :description="items.description"
-                        @click="goto(items)"
-                    >
-                    </BodyProduct>
-                </div>
+            <div class="row reower">
+                <BodyProduct
+                    v-for="items in Product.slice(4, 8)"
+                    :key="items.pr"
+                    :id="items.id"
+                    :price="items.price"
+                    :title="items.title"
+                    :description="items.description"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
             </div>
         </div>
 
@@ -69,159 +105,34 @@
                         :key="brand.id"
                         :image="brand.image"
                     >
-                        <img :src="`${urll}/${brand.image}`" />
+                        <img src="@/assets/banner-2.jpg" />
                     </div>
                 </div>
             </div>
         </div>
         <!-- --------------------------------------------- -->
         <div id="demo" class="carousel slide" data-ride="carousel">
-            <div class="container">
-                <!-- Indicators -->
-                <!-- The slideshow -->
-                <div class="row">
-                    <div class="col-lg-3 col-sm-4 col-xs-12">
-                        <div>
-                            <span class="last">اخر المشتركین</span>
-                            <div class="last-subscriber">
-                                <Subscriber
-                                    v-for="Store in lastStores"
-                                    :key="Store.id"
-                                    :title="Store.title"
-                                    :location="Store.location"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-sm-8 col-xs-12">
-                        <div class="carousel-inner carousel-inner1">
-                            <!-- carousel item 1 -->
-                            <div class="carousel-item active">
-                                <div class="show-prod">
-                                    <div class="container">
-                                        <div class="row">
-                                            <BodyProduct
-                                                v-for="items in Product.slice(
-                                                    0,
-                                                    4
-                                                )"
-                                                :key="items.pr"
-                                                :id="items.id"
-                                                :price="items.price"
-                                                :title="items.title"
-                                                :description="items.description"
-                                                @click="goto(items)"
-                                            >
-                                            </BodyProduct>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- carousel item 2 -->
-                            <div class="carousel-item">
-                                <div class="show-prod">
-                                    <div class="container">
-                                        <div class="row">
-                                            <BodyProduct
-                                                v-for="items in Product.slice(
-                                                    4,
-                                                    8
-                                                )"
-                                                :key="items.pr"
-                                                :id="items.id"
-                                                :price="items.price"
-                                                :title="items.title"
-                                                :description="items.description"
-                                                @click="goto(items)"
-                                            >
-                                            </BodyProduct>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- carousel item 3 -->
-                            <div class="carousel-item">
-                                <div class="show-prod">
-                                    <div class="container">
-                                        <div class="row">
-                                            <BodyProduct
-                                                v-for="items in Product.slice(
-                                                    8,
-                                                    12
-                                                )"
-                                                :key="items.pr"
-                                                :id="items.id"
-                                                :price="items.price"
-                                                :title="items.title"
-                                                :description="items.description"
-                                                @click="goto(items)"
-                                            >
-                                            </BodyProduct>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Left and right controls -->
-                        <a
-                            class="carousel-control-prev"
-                            href="#demo"
-                            data-slide="prev"
-                        >
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a
-                            class="carousel-control-next"
-                            href="#demo"
-                            data-slide="next"
-                        >
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                        <!-- ------------------------------------------------------------ -->
-                        <div
-                            class="col-sm-1.5 imges"
-                            style="top: 600px"
-                            v-for="brand in brands.slice(4, 5)"
-                            :key="brand.id"
-                            :image="brand.image"
-                        >
-                            <img :src="`${urll}/${brand.image}`" />
-                        </div>
-                        <div
-                            class="col-sm-1.5 imges"
-                            style="top: 800px"
-                            v-for="brand in brands.slice(5, 6)"
-                            :key="brand.id"
-                            :image="brand.image"
-                        >
-                            <img :src="`${urll}/${brand.image}`" />
-                        </div>
-                        <div class="col-sm-9 imgs">
-                            <img
-                                :src="`${urll}/${brand.image}`"
-                                style="width: 100%"
-                                v-for="brand in brands.slice(6, 7)"
-                                :key="brand.id"
-                                :image="brand.image"
+            <!-- Indicators -->
+            <!-- The slideshow -->
+            <div class="row">
+                <div class="col-lg-3 col-sm-4 col-xs-12">
+                    <div>
+                        <span class="last">اخر المشتركین</span>
+                        <div class="last-subscriber">
+                            <Subscriber
+                                v-for="Store in lastStores"
+                                :key="Store.id"
+                                :title="Store.title"
+                                :location="Store.location"
                             />
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- second Carousel -->
-        <div
-            id="deno"
-            class="carousel slide"
-            data-ride="carousel"
-            style="margin-top: 40px;"
-        >
-            <div class="col-sm-12">
-                <div class="carousel-inner">
-                    <!-- carousel item 1 -->
-                    <div class="carousel-item active">
-                        <div class="show-prod">
-                            <div class="container">
+                <div class="col-lg-9 col-sm-8 col-xs-12">
+                    <div class="carousel-inner carousel-inner1">
+                        <!-- carousel item 1 -->
+                        <div class="carousel-item active">
+                            <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
                                         v-for="items in Product.slice(0, 4)"
@@ -236,11 +147,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- carousel item 2 -->
-                    <div class="carousel-item">
-                        <div class="show-prod">
-                            <div class="container">
+                        <!-- carousel item 2 -->
+                        <div class="carousel-item">
+                            <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
                                         v-for="items in Product.slice(4, 8)"
@@ -255,11 +164,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- carousel item 3 -->
-                    <div class="carousel-item">
-                        <div class="show-prod">
-                            <div class="container">
+                        <!-- carousel item 3 -->
+                        <div class="carousel-item">
+                            <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
                                         v-for="items in Product.slice(8, 12)"
@@ -272,6 +179,99 @@
                                     >
                                     </BodyProduct>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a
+                        class="carousel-control-prev"
+                        href="#demo"
+                        data-slide="prev"
+                    >
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a
+                        class="carousel-control-next"
+                        href="#demo"
+                        data-slide="next"
+                    >
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="row">
+                        <div class="col-sm-9 imgs">
+                            <img
+                                src="@/assets/HEADPHONES.jpg"
+                                style="width: 100%"
+                            />
+                        </div>
+                        <div class="col-sm-1.5 imges1">
+                            <img src="@/assets/home.jpg" />
+                        </div>
+                        <div class="col-sm-1.5 imges2">
+                            <img src="@/assets/gasses.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- second Carousel -->
+        <div
+            id="deno"
+            class="carousel slide"
+            data-ride="carousel"
+            style="margin-top: 40px;"
+        >
+            <div class="col-sm-12" style="padding:0">
+                <div class="carousel-inner">
+                    <!-- carousel item 1 -->
+                    <div class="carousel-item active">
+                        <div class="show-prod">
+                            <div class="row">
+                                <BodyProduct
+                                    v-for="items in Product.slice(0, 4)"
+                                    :key="items.pr"
+                                    :id="items.id"
+                                    :price="items.price"
+                                    :title="items.title"
+                                    :description="items.description"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- carousel item 2 -->
+                    <div class="carousel-item">
+                        <div class="show-prod">
+                            <div class="row">
+                                <BodyProduct
+                                    v-for="items in Product.slice(4, 8)"
+                                    :key="items.pr"
+                                    :id="items.id"
+                                    :price="items.price"
+                                    :title="items.title"
+                                    :description="items.description"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- carousel item 3 -->
+                    <div class="carousel-item">
+                        <div class="show-prod">
+                            <div class="row">
+                                <BodyProduct
+                                    v-for="items in Product.slice(8, 12)"
+                                    :key="items.pr"
+                                    :id="items.id"
+                                    :price="items.price"
+                                    :title="items.title"
+                                    :description="items.description"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -293,15 +293,18 @@
 import BodyProduct from '@/components/global/BodyProduct.vue';
 import Subscriber from '@/components/global/Subscriber.vue';
 import Cartmini from '@/components/cart/Cartmini.vue';
+import jeson from '@/jeson/MOCK_DATA.json';
 
 //import axios from "axios";
 export default {
     data() {
         return {
-            urll: 'http://edalili.e-dalely.com',
+            urll: '/img/',
+            categories: jeson[0].categories,
             //  Product:[],
             // lastStores:[],
             //  brands:[]
+            // categories:[]
         };
     },
     name: 'products',
@@ -338,6 +341,62 @@ export default {
 </script>
 
 <style scoped>
+/* ____________________________ Start Section ____________________________ */
+.categores {
+    height: auto;
+    width: 100%;
+    color: #000000;
+    list-style: none;
+    background-color: #ccc;
+}
+
+.categores img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: width 0.5s ease;
+    transition: height 0.5s ease;
+}
+.categores img:hover {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+}
+.categores li {
+    text-align: center;
+    color: #a7a6a6;
+}
+.categores li:hover {
+    background-color: #ccc;
+}
+.categores li a {
+    text-decoration-line: none;
+    color: #292828;
+}
+
+.sec {
+    background-color: #ccc;
+    font-size: 15px;
+    margin: 0 1vh;
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .sec {
+        font-size: 12px;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+/* ____________________________ END Section ____________________________ */
+
 /* ____________________________ Start Products ________________________________ */
 .row {
     justify-content: center;
@@ -348,7 +407,7 @@ export default {
     height: 370px;
     border-radius: 7px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 5vh;
+    margin-top: 2vh;
 }
 
 .show-img .row .img {
@@ -360,7 +419,7 @@ export default {
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show-img {
-        height: 285px;
+        height: auto;
     }
     .show-img .img:last-child {
         display: none;
@@ -398,18 +457,6 @@ export default {
     }
 }
 /* style of product */
-.show-prod {
-    width: 100%;
-    height: 570px;
-    border-radius: 7px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
-}
-.show-prod .mini {
-    font-size: 20px;
-    color: #655f5f;
-    margin-bottom: 20px;
-}
-
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show-img {
@@ -445,7 +492,7 @@ export default {
     .show-img .img img {
         width: 50vh;
     }
-    .show-prod .row .content-pro {
+    .row .content-pro {
         height: 416px;
         margin-top: -10px;
     }
@@ -453,19 +500,19 @@ export default {
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .show-prod .row .coler:nth-child(1) {
+    .row .coler:nth-child(1) {
         display: none;
     }
-    .show-prod .row .coler:nth-child(2) {
+    .row .coler:nth-child(2) {
         display: none;
     }
     .carousel-inner {
         width: 105%;
     }
-    .carousel-inner .show-prod .row .coler:nth-child(3) {
+    .carousel-inner .row .coler:nth-child(3) {
         display: none;
     }
-    .carousel-inner .show-prod .row .col-xs-6 {
+    .carousel-inner .row .col-xs-6 {
         flex: 0 0 60%;
         max-width: 60%;
     }
@@ -473,23 +520,23 @@ export default {
 
 /* Small devices (landscape phones, 576px and up)   */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .show-prod .row .coler:nth-child(1) {
+    .row .coler:nth-child(1) {
         display: none;
     }
-    .show-prod .row .coler:nth-child(2) {
+    .row .coler:nth-child(2) {
         display: none;
     }
 }
 
 /*  Medium devices (tablets, 768px and up)  */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .show-prod .row .coler:last-child {
+    .row .coler:last-child {
         display: none;
     }
-    .carousel-inner1 .show-prod .row .coler:nth-child(1) {
+    .carousel-inner1 .row .coler:nth-child(1) {
         display: none;
     }
-    .carousel-inner1 .show-prod .row .col-xs-6 {
+    .carousel-inner1 .row .col-xs-6 {
         flex: 0 0 50%;
         max-width: 50%;
     }
@@ -497,10 +544,10 @@ export default {
 
 /*  Large devices (desktops, 992px and up)  */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .carousel-inner1 .show-prod .row .coler:nth-child(3) {
+    .carousel-inner1 .row .coler:nth-child(3) {
         display: none;
     }
-    .carousel-inner1 .show-prod .row .col-xs-6 {
+    .carousel-inner1 .row .col-xs-6 {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
     }
@@ -658,7 +705,7 @@ export default {
     }
 }
 .slide .last {
-    margin-left: 90px;
+    font-size: 16px;
     font-weight: bold;
     color: #5e4949;
 }
@@ -699,7 +746,7 @@ export default {
     }
     .last-subscriber {
         margin-bottom: 50px;
-        width: 110%;
+        width: 100%;
         text-align: center;
         margin-left: 0%;
     }
@@ -708,7 +755,7 @@ export default {
     }
     .last-subscriber .subscriber {
         width: 85%;
-        margin: 10px 0 -4px 15px;
+        margin: 10px 0 -4px 21px;
         font-size: 16px;
     }
     .last-subscriber .subscriber img {
@@ -763,56 +810,93 @@ export default {
 }
 /* ------------------------------------------ */
 
-.imges {
+.imges1 {
     position: absolute;
-    top: 660px;
-    left: 635px;
+    top: 630px;
+    right: 70px;
 }
-.imges img {
-    width: 100%;
+.imges2 {
+    position: absolute;
+    top: 820px;
+    right: 70px;
+}
+.imges1 img {
+    width: 170px;
+    margin-bottom: 15px;
+}
+.imges2 img {
+    width: 170px;
     margin-bottom: 15px;
 }
 .imgs {
     margin-top: 40px;
-    position: absolute;
+    margin-right: 290px;
+    max-width: 600px;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .imges,
+    .imges1,
+    .imges2 {
+        display: none;
+    }
     .imgs {
         display: none;
     }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .imges,
-    .imgs {
+    .imges1,
+    .imges2 {
         display: none;
+    }
+    .imgs {
+        margin: auto;
+        max-width: 600px;
+        margin-top: 10px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .imges {
-        top: 600px;
-        left: 370px;
+    .imges1 {
+        top: 640px;
+        right: 50px;
+    }
+    .imges2 {
+        top: 750px;
+        right: 50px;
+    }
+    .imges1 img {
+        width: 100px;
+    }
+    .imges2 img {
+        width: 100px;
+    }
+    .imgs {
+        margin-top: 40px;
+        margin-right: 200px;
+        max-width: 550px;
     }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .imges {
-        top: 660px;
-        left: 560px;
+    .imges1 {
+        top: 640px;
+        right: 70px;
     }
-    .imges img {
-        width: 80%;
-        margin-bottom: 15px;
+    .imges2 {
+        top: 800px;
+        right: 70px;
+    }
+    .imges1 img {
+        width: 150px;
+    }
+    .imges2 img {
+        width: 150px;
     }
     .imgs {
         margin-top: 40px;
-        position: absolute;
-    }
-    .imgs img {
-        width: 80%;
+        margin-right: 250px;
+        max-width: 550px;
     }
 }
 

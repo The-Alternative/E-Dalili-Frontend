@@ -1,37 +1,37 @@
 <template>
     <div>
-        <div class="cart-shop-icon" @click="showcart">
+        <div class="cart-shop-icon" @click="showcart" id="cart">
             <i class="fa fa-shopping-cart"></i>
             <span class="cart-count">{{ cartItemCount }}</span>
         </div>
         <div id="cartshop" class="cart-shop">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-12 cart">
-                        <div class="title">
-                            <div class="row">
-                                <div class="col">
-                                    <h4><b>عربة التسوق</b></h4>
-                                </div>
+            <div class="row">
+                <div class="col-md-12 cart">
+                    <div class="title">
+                        <div class="row">
+                            <div class="col">
+                                <h4><b>عربة التسوق</b></h4>
                             </div>
                         </div>
-                        <div
-                            v-for="items in cartItems"
-                            :key="items.id"
-                            class="row border-top border-bottom"
-                            style="padding: 10px 0"
-                        >
-                            <div class="cart-items">
-                                <div class="col-sm-2 col-xs-12">
+                    </div>
+                    <div
+                        v-for="items in cartItems"
+                        :key="items.id"
+                        class="row border-top border-bottom"
+                        style="padding: 10px 0"
+                    >
+                        <div class="cart-items">
+                            <div class="row" style="width:100%">
+                                <div class="col-md-2 col-xs-12">
                                     <img class="img" src="@/assets/w.jpg" />
                                 </div>
-                                <div class="col-sm-2 col-xs-3">
+                                <div class="col-md-3 col-xs-12">
                                     {{ items.title }}
                                 </div>
-                                <div class="col-sm-2 col-xs-3">
+                                <div class="col-md-3 col-xs-12">
                                     {{ items.description }}
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-md-2 col-xs-12">
                                     <button
                                         class="btnn"
                                         @click="removeItem(items)"
@@ -50,10 +50,9 @@
                                         +
                                     </button>
                                 </div>
-                                <div class="col-sm-2 col-xs-3">
+                                <div class="col-md-2 col-xs-12">
                                     {{ items.price * items.quantity
                                     }}<span
-                                        style="margin-top: 0;margin-right: -15vh;"
                                         @click="removeFromCart(items)"
                                         class="close"
                                         >&#10005;</span
@@ -111,6 +110,10 @@ export default {
 .close {
     cursor: pointer;
 }
+.close:hover {
+    color: red;
+    font-size: 20px;
+}
 .cart-count {
     font-size: 15px;
     color: #ba8b00;
@@ -150,16 +153,17 @@ export default {
 .title {
     margin-bottom: 5vh;
 }
-
-.card {
-    margin: 0;
-    max-width: 950px;
-    width: 120%;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
-    border: transparent;
+.cart-items {
+    display: inline-flex;
+    width: 100%;
 }
-
+.col-md-2,
+.col-md-3 {
+    margin: auto;
+}
+.col-xs-12 {
+    margin-top: 10px;
+}
 @media (max-width: 767px) {
     .card {
         margin: 3vh auto;
@@ -167,7 +171,7 @@ export default {
 }
 
 .cart {
-    background-color: #fff;
+    background-color: #f2f2f2;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
@@ -195,15 +199,6 @@ export default {
         border-bottom-left-radius: 1rem;
     }
 }
-
-.summary .col-2 {
-    padding: 0;
-}
-
-.summary .col-10 {
-    padding: 0;
-}
-
 .row {
     margin: 0;
 }
@@ -218,11 +213,6 @@ export default {
     width: 100%;
 }
 
-.col-2,
-.col {
-    padding: 0 1vh;
-}
-
 a {
     padding: 0 1vh;
 }
@@ -233,7 +223,7 @@ a {
 }
 
 img {
-    width: 15.5rem;
+    width: 6.5rem;
     border-radius: 50%;
 }
 
@@ -320,8 +310,15 @@ a:hover {
     background-position-y: center;
 }
 @media (max-width: 575.98px) {
-    .cart-shop-icon {
-        display: none;
+    .cart {
+        padding: 5px 2px 2px 0;
+    }
+    .close {
+        font-size: 15px;
+    }
+    .close:hover {
+        color: red;
+        font-size: 20px;
     }
 }
 </style>

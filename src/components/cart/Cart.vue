@@ -112,7 +112,11 @@ export default {
 };
 </script>
 <style scoped>
-.title {
+<<<<<<< head ======= .close:hover {
+    color: red;
+    font-size: 20px;
+}
+>>>>>>>29500ba2cd76a834f03a370b85fb039702aba24f .title {
     margin-bottom: 5vh;
 }
 

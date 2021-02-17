@@ -11,9 +11,7 @@ import resturants from '../views/services/resturants.vue';
 import products from '../views/services/products.vue';
 import festival from '../views/services/festival.vue';
 /* import section */
-import allsection from '../views/section/allsection.vue';
 import buty from '../views/section/buty.vue';
-import market from '../views/section/market.vue';
 import mobile from '../views/section/mobile.vue';
 import computer from '../views/section/computer.vue';
 import elctronic from '../views/section/elctronic.vue';
@@ -21,6 +19,7 @@ import kitchen from '../views/section/kitchen.vue';
 import education from '../views/section/education.vue';
 import furniture from '../views/section/furniture.vue';
 import child from '../views/section/child.vue';
+/* import cartshop */
 import ProductDetalis from '../components/global/ProductDetalis.vue';
 import Cart from '../components/cart/Cart.vue';
 
@@ -87,11 +86,6 @@ const routes = [
         name: 'stores',
         component: stores,
     },
-    {
-        path: '/allsection',
-        name: 'allsection',
-        component: allsection,
-    },
     /* section */
     {
         path: '/festival',
@@ -102,11 +96,6 @@ const routes = [
         path: '/buty',
         name: 'buty',
         component: buty,
-    },
-    {
-        path: '/market',
-        name: 'market',
-        component: market,
     },
     {
         path: '/mobile',

@@ -19,10 +19,6 @@
                                         src="@/assets/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
-                                        data-remote="https://source.unsplash.com/Pn6iimgM-wo/"
-                                        data-type="image"
-                                        data-toggle="lightbox"
-                                        data-gallery="example-gallery"
                                     />
                                 </div>
                                 <div
@@ -33,10 +29,6 @@
                                         src="@/assets/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
-                                        data-remote="https://source.unsplash.com/tXqVe7oO-go/"
-                                        data-type="image"
-                                        data-toggle="lightbox"
-                                        data-gallery="example-gallery"
                                     />
                                 </div>
                                 <div
@@ -47,10 +39,6 @@
                                         src="@/assets/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
-                                        data-remote="https://source.unsplash.com/qlYQb7B9vog/"
-                                        data-type="image"
-                                        data-toggle="lightbox"
-                                        data-gallery="example-gallery"
                                     />
                                 </div>
                                 <div
@@ -61,10 +49,6 @@
                                         src="@/assets/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
-                                        data-remote="https://source.unsplash.com/QfEfkWk1Uhk/"
-                                        data-type="image"
-                                        data-toggle="lightbox"
-                                        data-gallery="example-gallery"
                                     />
                                 </div>
                             </div>
@@ -226,6 +210,17 @@ export default {
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
+            document.getElementById('myCarousel').animate(
+                // keyframes
+                { transform: 'scale(1,1)' },
+                { transform: 'scale(1.1,1.1)' },
+                { transform: 'scale(1,1)' },
+                { transform: 'scale(1.1,1.1)' },
+                {
+                    // timing options
+                    duration: 500,
+                }
+            );
         },
     },
 };
@@ -237,6 +232,7 @@ export default {
 }
 .carousel {
     position: relative;
+    transition: ease-in all;
 }
 .carousel-item img {
     object-fit: cover;

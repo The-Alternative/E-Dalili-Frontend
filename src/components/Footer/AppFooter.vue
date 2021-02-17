@@ -100,9 +100,7 @@ export default {
 /* Start About-Us */
 .about-us {
     height: 420px;
-
     background-color: #656668;
-    margin-top: 15px;
 }
 .about-us h3 {
     color: #aca59b;
