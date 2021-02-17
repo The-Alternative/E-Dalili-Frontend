@@ -223,7 +223,7 @@
                         <div class="show-prod">
                             <div class="container">
                                 <div class="row">
-                                    <BodyProduct 
+                                    <BodyProduct
                                         v-for="items in Product.slice(0, 4)"
                                         :key="items.pr"
                                         :id="items.id"
@@ -469,7 +469,6 @@ export default {
         flex: 0 0 60%;
         max-width: 60%;
     }
-   
 }
 
 /* Small devices (landscape phones, 576px and up)   */
@@ -632,7 +631,6 @@ export default {
         .show-der .img:last-child {
             display: none;
         }
-    
     }
     /* Small devices (landscape phones, 576px and up) */
     @media (min-width: 576px) and (max-width: 767.98px) {
@@ -694,13 +692,11 @@ export default {
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  .carousel-control-next-icon,
-.carousel-control-prev-icon {
-
-    width: 40px;
-    height:50px;
- 
-}
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 40px;
+        height: 50px;
+    }
     .last-subscriber {
         margin-bottom: 50px;
         width: 110%;

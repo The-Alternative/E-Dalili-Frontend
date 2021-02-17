@@ -1,101 +1,119 @@
 <template>
-
-<div class="card">
-    <div class="row">
-        <div class="col-sm-8 col-xs-12 cart">
-            <div class="title">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h4><b>عربة التسوق</b></h4>
+    <div class="card">
+        <div class="row">
+            <div class="col-sm-8 col-xs-12 cart">
+                <div class="title">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4><b>عربة التسوق</b></h4>
+                        </div>
                     </div>
-                  
+                </div>
+
+                <div
+                    v-for="items in cartItems"
+                    :key="items.id"
+                    class="row border-top border-bottom"
+                    style="padding: 10px 0"
+                >
+                    <div class="cart-items">
+                        <div class="col-sm-2 col-xs-12">
+                            <img class="img" src="@/assets/w.jpg" />
+                        </div>
+                        <div class="col-sm-2 col-xs-3">{{ items.title }}</div>
+                        <div class="col-sm-2 col-xs-3">
+                            {{ items.description }}
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btnn" @click="removeItem(items)">
+                                -
+                            </button>
+                            <a href="#" class="border">
+                                <span class="cart-quantity">{{
+                                    items.quantity
+                                }}</span></a
+                            >
+                            <button class="btnn" @click="addItem(items)">
+                                +
+                            </button>
+                        </div>
+                        <div class="col-sm-2 col-xs-3">
+                            {{ items.price * items.quantity
+                            }}<span @click="removeFromCart(items)" class="close"
+                                >&#10005;</span
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-<div v-for="items in cartItems" :key="items.id" class="row border-top border-bottom" style="padding: 10px 0">
-    
-        <div class="cart-items">
-            <div class="col-sm-2 col-xs-12"><img class="img" src="@/assets/w.jpg"></div>
-            <div class="col-sm-2 col-xs-3">{{items.title}}</div>
-            <div class="col-sm-2 col-xs-3">{{items.description}}</div>
-        <div class="col-sm-3"> 
-        <button class="btnn" @click="removeItem(items)">-</button>  
-        <a  href="#" class="border"> <span class="cart-quantity">{{items.quantity}}</span></a>
-        <button class="btnn" @click="addItem(items)">+</button> </div>
-        <div class="col-sm-2 col-xs-3">{{items.price * items.quantity}}<span @click="removeFromCart(items)" class="close">&#10005;</span></div>
+            <div class="col-sm-4 col-xs-12 summary" v-if="totalPrice !== 0">
+                <div>
+                    <h5><b>أسم المتجر</b></h5>
+                </div>
+                <hr />
+                <div class="row">
+                    <div :totalPrice="totalPrice" class="col text-right">
+                        {{ totalPrice }} S.P
+                    </div>
+                    <div class="col" style="padding-left:0;">:السعر</div>
+                </div>
+                <form class="fo">
+                    <p>طريقة الدفع</p>
+                    <p>تكاليف الشحن 500 ل.س</p>
+                </form>
+                <div
+                    class="row"
+                    style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;"
+                >
+                    <div class="col text-right">{{ totalPrice + 500 }} S.P</div>
+                    <div class="col">:السعر مع تكاليف الشحن</div>
+                </div>
+                <button class="btn">CHECKOUT</button>
             </div>
-
-</div>
-          
-           
+            <EmptyCart v-else />
         </div>
-        <div class="col-sm-4 col-xs-12 summary" v-if="totalPrice !==0" >
-            <div>
-                <h5><b>أسم المتجر</b></h5>
-            </div>
-            <hr>
-            <div class="row">
-                <div :totalPrice="totalPrice" class="col text-right">{{totalPrice}} S.P</div>
-                <div class="col" style="padding-left:0;">:السعر</div>
-            </div>
-            <form class="fo">
-                <p>طريقة الدفع</p>
-                <p> تكاليف الشحن 500 ل.س</p>     
-            </form>
-            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                <div class="col text-right">{{totalPrice + 500}} S.P</div>
-                <div class="col">:السعر مع تكاليف الشحن</div>
-            </div> <button class="btn">CHECKOUT</button>
-        </div>
-        <EmptyCart v-else />
     </div>
-</div>
-   
 </template>
 
 <script>
-import EmptyCart from "@/components/cart/EmptyCart.vue";
+import EmptyCart from '@/components/cart/EmptyCart.vue';
 export default {
-   name: "Cart",
-   
-   data(){
-     return {
-        
-            }
-   },
-   components:{
-       EmptyCart
-   },
-   methods: {
- addItem(items) {
-    this.$store.dispatch("addToCart", items);
-  },
-  removeItem(items) {
-     this.$store.dispatch("removeItem", items);
-   },
-   removeFromCart(item) {
-        this.$store.commit('removeFromCart', item);
-    }
- },
-  computed:{
-    cartItems() {
-      return this.$store.state.cartItems;
-  },
-    totalPrice() {
-      let price = 0;
-     this.$store.state.cartItems.map(el => {
-        price += el["quantity"] * el["price"];
-      });
-     return price;
-    }
-}
-    
-}
+    name: 'Cart',
+
+    data() {
+        return {};
+    },
+    components: {
+        EmptyCart,
+    },
+    methods: {
+        addItem(items) {
+            this.$store.dispatch('addToCart', items);
+        },
+        removeItem(items) {
+            this.$store.dispatch('removeItem', items);
+        },
+        removeFromCart(item) {
+            this.$store.commit('removeFromCart', item);
+        },
+    },
+    computed: {
+        cartItems() {
+            return this.$store.state.cartItems;
+        },
+        totalPrice() {
+            let price = 0;
+            this.$store.state.cartItems.map((el) => {
+                price += el['quantity'] * el['price'];
+            });
+            return price;
+        },
+    },
+};
 </script>
 <style scoped>
-
 .title {
-    margin-bottom: 5vh
+    margin-bottom: 5vh;
 }
 
 .card {
@@ -103,21 +121,21 @@ export default {
     width: 100%;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1rem;
-    border: transparent
+    border: transparent;
 }
 .cart-items div {
     margin: auto;
 }
-.cart-items{
+.cart-items {
     display: inline-flex;
-    width:100%
+    width: 100%;
 }
-.fo{
+.fo {
     margin-top: 10vh;
 }
-@media(max-width:767px) {
+@media (max-width: 767px) {
     .card {
-        margin: 3vh auto
+        margin: 3vh auto;
     }
 }
 
@@ -125,14 +143,14 @@ export default {
     background-color: #fff;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem
+    border-top-left-radius: 1rem;
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
     .cart {
         padding: 4vh;
         border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem
+        border-top-right-radius: 1rem;
     }
 }
 
@@ -141,45 +159,45 @@ export default {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 4vh;
-    color: rgb(65, 65, 65)
+    color: rgb(65, 65, 65);
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
     .summary {
         border-top-right-radius: unset;
-        border-bottom-left-radius: 1rem
+        border-bottom-left-radius: 1rem;
     }
 }
 
 .summary .col-2 {
-    padding: 0
+    padding: 0;
 }
 
 .summary .col-10 {
-    padding: 0
+    padding: 0;
 }
 
 .row {
-    margin: 0
+    margin: 0;
 }
 
 .title b {
-    font-size: 1.5rem
+    font-size: 1.5rem;
 }
 
 .main {
     margin: 0;
     padding: 2vh 0;
-    width: 100%
+    width: 100%;
 }
 
 .col-2,
 .col {
-    padding: 0 1vh
+    padding: 0 1vh;
 }
 
 a {
-    padding: 0 1vh
+    padding: 0 1vh;
 }
 
 .close {
@@ -194,15 +212,15 @@ img {
 }
 
 h5 {
-    margin-top: 4vh
+    margin-top: 4vh;
 }
 
 hr {
-    margin-top: 1.25rem
+    margin-top: 1.25rem;
 }
 
 form {
-    padding: 2vh 0
+    padding: 2vh 0;
 }
 
 select {
@@ -211,7 +229,7 @@ select {
     margin-bottom: 4vh;
     outline: none;
     width: 100%;
-    background-color: rgb(247, 247, 247)
+    background-color: rgb(247, 247, 247);
 }
 
 input {
@@ -220,11 +238,11 @@ input {
     margin-bottom: 4vh;
     outline: none;
     width: 100%;
-    background-color: rgb(247, 247, 247)
+    background-color: rgb(247, 247, 247);
 }
 
 input:focus::-webkit-input-placeholder {
-    color: transparent
+    color: transparent;
 }
 
 .btn {
@@ -250,51 +268,56 @@ input:focus::-webkit-input-placeholder {
     color: white;
     -webkit-box-shadow: none;
     -webkit-user-select: none;
-    transition: none
+    transition: none;
 }
 
 .btn:hover {
-    color: white
+    color: white;
 }
 
 a {
-    color: black
+    color: black;
 }
 
 a:hover {
     color: black;
-    text-decoration: none
+    text-decoration: none;
 }
 
 #code {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.253),
+            rgba(255, 255, 255, 0.185)
+        ),
+        url('https://img.icons8.com/small/16/000000/long-arrow-right.png');
     background-repeat: no-repeat;
     background-position-x: 95%;
-    background-position-y: center
+    background-position-y: center;
 }
 @media (max-width: 575.98px) {
-.title {
-    margin: .5vh
-}
-.cart{
-    padding: 0;
-    font-size: 12px;
-}
-.cart-items{
-    display: inline-block;
-    width:100%
-}
-.cart-items div{
-    margin-bottom: 1vh;
-}
-.cart-items .img-fluid {
-    max-width: -1px;
-}
-.fo{
-    margin-top: 1vh;
-}
-.btn {
-    margin-top: 1vh;
-}
+    .title {
+        margin: 0.5vh;
+    }
+    .cart {
+        padding: 0;
+        font-size: 12px;
+    }
+    .cart-items {
+        display: inline-block;
+        width: 100%;
+    }
+    .cart-items div {
+        margin-bottom: 1vh;
+    }
+    .cart-items .img-fluid {
+        max-width: -1px;
+    }
+    .fo {
+        margin-top: 1vh;
+    }
+    .btn {
+        margin-top: 1vh;
+    }
 }
 </style>
