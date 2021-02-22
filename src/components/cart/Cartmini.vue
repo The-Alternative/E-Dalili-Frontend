@@ -105,7 +105,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 /* ____________________________ Start Cart Shop ________________________________ */
 .close {
@@ -146,7 +145,8 @@ export default {
     overflow-y: scroll;
     height: 200px;
     width: 100%;
-    box-shadow: 0px 4px 20px 0 rgb(235, 8, 8), 1px 6px 30px 0px rgba(196, 10, 10, 0.19);
+    box-shadow: 0px 4px 20px 0 rgb(235, 8, 8),
+        1px 6px 30px 0px rgba(196, 10, 10, 0.19);
     scrollbar-width: thin;
 }
 

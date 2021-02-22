@@ -7,8 +7,8 @@
     >
         <!--      coulome one left -->
         <div class="card pl-3 pr-0 col-lg-3 col-md-2 col-sm-6 coulom-img">
-            <img class="mb-3" src="../../assets/img1.png" height="50%" />
-            <img class="" src="../../assets/img.png" height="50%" />
+            <img class="mb-3 img1" src="../../assets/img1.png" height="50%" />
+            <img class="img2" src="../../assets/img.png" height="50%" />
         </div>
 
         <!--     coulome middel stors group   -->
@@ -95,8 +95,12 @@
                 <span class="text-center span-text text">عرض العروضات حسب</span>
                 <span class="text-center bgcolor">حسب القسم</span>
                 <div class="checklist">
-                    <label class="textcheck" for="check4">الكل</label
-                    ><input class="categories" type="checkbox" id="check4" />
+                    <label class="textcheck" for="check4">الكل</label>
+                    <input
+                        class="categories fa fa-check-square-o"
+                        type="checkbox"
+                        id="check4"
+                    />
                     <ul>
                         <li
                             class="textcheck"
@@ -109,10 +113,8 @@
                                 class="categories"
                                 type="checkbox"
                                 v-bind:value="category"
-                                 id="category"
-                                v-model="
-                                    selectedCategory
-                                "
+                                id="category"
+                                v-model="selectedCategory"
                             />
                         </li>
                     </ul>
@@ -240,6 +242,7 @@
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
+        transition: all 0.8s;
     }
     .textcheck {
         font-weight: bold;
@@ -247,6 +250,7 @@
         margin-bottom: 10px;
         font-size: 7px;
         color: #000000;
+        transition: all 0.8s;
     }
     .checked-all .listcategories .categories {
         color: #000000;
@@ -295,7 +299,7 @@
         position: absolute;
         width: 180px;
         right: -400px;
-        height: 80%;
+        height: 50%;
         transition: right 0.4s ease;
     }
     .categores.show {
@@ -334,6 +338,7 @@
         height: 20px;
         margin-top: 10px;
         margin-left: 10px;
+        transition: all 0.8s;
     }
     .rounded-circle {
         height: 30px;
@@ -363,35 +368,10 @@
         color: #751aff;
         text-align: center;
     }
-    /*!*!*!*!*button visit store*!*!*!*!*/
-    .btn {
-        font-size: 12px;
-        height: 30px;
-        width: 8px;
-        margin-left: 20px;
-    }
     .img-button {
         margin-top: 5px;
     }
-    .location {
-        height: 15px;
-        margin-left: 80px;
-        margin-right: 10px;
-    }
-    .phone {
-        height: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .whatsapp {
-        color: #25d366;
-        margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
     .Group {
-        margin-left: 10px;
         height: 15px;
     }
     .MaskGroup {
@@ -405,7 +385,7 @@
     .checked-all {
         font-size: 12px;
         color: #000000;
-        overflow-y: scroll;
+        overflow-y: auto;
         white-space: nowrap;
     }
     .categories {
@@ -414,6 +394,7 @@
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
+        transition: all 0.8s;
     }
     .textcheck {
         list-style: none;
@@ -421,6 +402,7 @@
         font-size: 8px;
         font-weight: bold;
         color: #000000;
+        transition: all 0.8s;
     }
     .checked-all .listcategories .categories {
         color: #000000;
@@ -468,7 +450,7 @@
         position: absolute;
         width: 200px;
         right: -400px;
-        height: 80%;
+        height: 50%;
         transition: right 0.4s ease;
     }
     .categores.show {
@@ -507,6 +489,7 @@
         height: 20px;
         margin-top: 10px;
         margin-left: 30px;
+        transition: all 0.8s;
     }
     .rounded-circle {
         height: 30px;
@@ -537,33 +520,8 @@
         color: #751aff;
         text-align: center;
     }
-
-    /*!*!*!*!*button visit store*!*!*!*!*/
-    .btn {
-        font-size: 12px;
-        height: 30px;
-        width: 8px;
-        margin-left: 100px;
-    }
     .img-button {
         margin-top: 5px;
-    }
-    .location {
-        height: 15px;
-        margin-left: 80px;
-        margin-right: 10px;
-    }
-    .phone {
-        height: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .whatsapp {
-        color: #25d366;
-        margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
-        margin-bottom: 20px;
     }
     .Group {
         margin-left: 10px;
@@ -589,6 +547,7 @@
         height: 20px;
         margin-right: 20px;
         margin-top: 5px;
+        transition: all 0.8s;
     }
     .rounded-circle {
         height: 30px;
@@ -616,35 +575,11 @@
         font-size: 10px;
         color: #751aff;
     }
-    /*!*!*!*!*button visit store*!*!*!*!*/
-    .btn {
-        font-size: 10px;
-        height: 25px;
-        width: 8px;
-        margin-left: 70px;
-    }
     .img-button {
         margin-top: 5px;
     }
     .Group {
         margin-left: 10px;
-    }
-    .location {
-        height: 15px;
-        margin-left: 60px;
-        margin-right: 10px;
-    }
-    .phone {
-        height: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .whatsapp {
-        color: #25d366;
-        margin-left: 5px;
-        height: 15px;
-        padding-top: 0;
-        margin-bottom: 15px;
     }
     .Group {
         height: 15px;
@@ -659,12 +594,20 @@
         font-size: 8px;
         font-weight: bold;
         color: #000000;
+        transition: all 0.8s;
     }
     .categories {
         height: 10px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
+        transition: all 0.8s;
+        /* position: relative; */
+    }
+    .categories[type='checkbox'] {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #000;
     }
     .span-text {
         font-size: 15px;
@@ -715,6 +658,7 @@
         height: 30px;
         margin-right: 20px;
         margin-top: 10px;
+        transition: all 0.8s;
     }
     .rounded-circle {
         height: 30px;
@@ -742,36 +686,15 @@
         font-size: 12px;
         color: #751aff;
     }
-    /*!*!*!*button visit store*!*!*!*/
-    .btn {
-        margin-left: 70px;
-        height: 30px;
-    }
     .img-button {
         margin-top: 10px;
-    }
-    .Group {
-        margin-left: 10px;
-    }
-    .location {
-        margin-left: 80px;
-        margin-right: 10px;
-    }
-    .phone {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .whatsapp {
-        color: #25d366;
-        margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
     }
     .categories {
         height: 10px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
+        transition: all 0.8s;
     }
     .textcheck {
         font-weight: bold;
@@ -779,6 +702,7 @@
         margin-bottom: 10px;
         font-size: 8px;
         color: #000000;
+        transition: all 0.8s;
     }
     .checked-all {
         font-size: 9px;
@@ -833,6 +757,7 @@
         height: 30px;
         margin-right: 20px;
         margin-top: 10px;
+        transition: all 0.8s;
     }
     .rounded-circle {
         height: 40px;
@@ -860,36 +785,18 @@
         font-size: 14px;
         color: #751aff;
     }
-    /*!*!*button visit store*!*!*/
-    .btn {
-        margin-left: 90px;
-        width: 20px;
-    }
     .img-button {
         margin-top: 20px;
     }
     .Group {
         margin-left: 10px;
     }
-    .location {
-        margin-left: 80px;
-        margin-right: 10px;
-    }
-    .phone {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .whatsapp {
-        color: #25d366;
-        margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
-    }
     .textcheck {
         list-style: none;
         margin-bottom: 10px;
         font-size: 12px;
         color: #000000;
+        transition: all 0.8s;
     }
     .categories {
         height: 15px;
@@ -897,6 +804,7 @@
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
+        transition: all 0.8s;
     }
     .span-text {
         font-size: 15px;
@@ -944,12 +852,14 @@
     .img-open {
         margin-right: 50px;
         margin-top: 10px;
+        transition: all 0.8s;
     }
     .textcheck {
         list-style: none;
         margin-bottom: 10px;
         font-size: 15px;
         color: #000000;
+        transition: all 0.8s;
     }
     /*space store*/
     .text-muted {
@@ -969,30 +879,11 @@
         color: #751aff;
         margin-top: 10px;
     }
-    /*button visit store*/
-    .btn {
-        margin-left: 150px;
-        background-color: #66ff66;
-    }
     .img-button {
         margin-top: 30px;
     }
     .Group {
         margin-left: 10px;
-    }
-    .location {
-        margin-left: 190px;
-        margin-right: 10px;
-    }
-    .phone {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .whatsapp {
-        color: #25d366;
-        margin-left: 10px;
-        height: 20px;
-        font-size: 20px;
     }
     /*    check list   */
     .bgcolor {
@@ -1007,6 +898,7 @@
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
+        transition: all 0.8s;
     }
     .card {
         margin-top: 20px;
@@ -1064,12 +956,17 @@ body {
     color: #ffd200;
     list-style: none;
 }
+.fa-star:hover {
+    color: #ffd200;
+    box-shadow: 0 0 40px #eebe22;
+}
 .store:hover {
     border-radius: 0;
-    box-shadow: 10px 10px 10px;
+    box-shadow: 10px 10px 10px #adad85;
 }
 /*coulome store*/
 .stors {
+    transition: all 0.35s ease-in-out;
     background-color: transparent;
     border: none;
 }
@@ -1096,12 +993,37 @@ body {
     border-radius: 7px;
     border: 1px solid #f5f5f0;
 }
-.btn {
-    background-color: #00cc44;
-    color: #ffffff;
-}
 .card-footer {
     margin-top: 10px;
     text-align: center;
+}
+.textcheck:hover {
+    color: #5a5957;
+    transform: translate(0, -5px);
+}
+.img-open:hover {
+    transform: translate(0, -5px);
+    cursor: pointer;
+}
+.title:hover {
+    font-weight: bold;
+}
+.text-muted:hover {
+    font-weight: bold;
+    transform: translate(-5px, 0);
+}
+.img1:hover {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px 3px #f3d160;
+}
+.img2:hover {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px 3px #f3d160;
 }
 </style>
