@@ -105,6 +105,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 /* ____________________________ Start Cart Shop ________________________________ */
 .close {
@@ -140,13 +141,15 @@ export default {
 .cart-shop {
     position: fixed;
     bottom: 0px;
-    left: 65px;
     visibility: hidden;
-    z-index: 999;
+    z-index: 998;
     overflow-y: scroll;
-    max-height: 400px;
-    width: 72%;
+    height: 200px;
+    width: 100%;
+    box-shadow: 0px 4px 20px 0 rgb(235, 8, 8), 1px 6px 30px 0px rgba(196, 10, 10, 0.19);
+    scrollbar-width: thin;
 }
+
 .vs {
     visibility: visible;
 }
@@ -161,9 +164,7 @@ export default {
 .col-md-3 {
     margin: auto;
 }
-.col-xs-12 {
-    margin-top: 10px;
-}
+
 @media (max-width: 767px) {
     .card {
         margin: 3vh auto;
@@ -171,17 +172,13 @@ export default {
 }
 
 .cart {
-    background-color: #f2f2f2;
+    background-color: #bdbdbd;
     padding: 4vh 5vh;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
 }
 
 @media (max-width: 767px) {
     .cart {
         padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem;
     }
 }
 

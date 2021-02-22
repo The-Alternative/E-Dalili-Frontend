@@ -690,7 +690,7 @@ export default {
     content: url(../../assets/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 399px;
+    right: 398px;
 }
 .naver .row .sell {
     background-color: #f6ef19;
