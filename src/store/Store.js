@@ -12,6 +12,7 @@ export default new Vuex.Store({
         Product: jeson[0].Products,
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,
+        categories: jeson[0].categories,
         cartItemCount: cartItemCount ? JSON.parse(cartItemCount) : 0,
         cartItems: cartItems ? JSON.parse(cartItems) : [],
     },
@@ -77,6 +78,7 @@ export default new Vuex.Store({
                 state.cartItemCount -= product.quantity;
 
                 state.cartItems.splice(index, 1);
+                document.getElementById('cartshop').classList.remove('vs');
                 this.commit('savedata');
             }
         },
