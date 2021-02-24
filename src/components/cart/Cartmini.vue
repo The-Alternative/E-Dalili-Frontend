@@ -12,6 +12,14 @@
                             <div class="col">
                                 <h4><b>عربة التسوق</b></h4>
                             </div>
+                             <div
+                            class="store"
+                        >
+                            <span
+                                >اسم
+                                المتجر</span
+                            >
+                        </div>
                         </div>
                     </div>
                     <div
@@ -31,15 +39,17 @@
                                 <div class="col-md-3 col-xs-12">
                                     {{ items.description }}
                                 </div>
-                                <div class="col-md-2 col-xs-12">
+                                <div class="col-md-2 col-xs-12 quantity-add">
                                     <button
                                         class="btnn"
                                         @click="removeItem(items)"
                                     >
-                                        -
+                                        <i
+                                        class="fa fa-angle-down"
+                                        ></i>
                                     </button>
-                                    <a href="#" class="border">
-                                        <span class="cart-quantity">{{
+                                    <a class="quantity">
+                                        <span class="cart-quantity price">{{
                                             items.quantity
                                         }}</span></a
                                     >
@@ -47,15 +57,18 @@
                                         class="btnn"
                                         @click="addItem(items)"
                                     >
-                                        +
+                                        <i
+                                        class="fa fa-angle-up"
+                                        ></i>
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-xs-12">
-                                    {{ items.price * items.quantity
-                                    }}<span
+                                    <span class="price">{{ items.price * items.quantity
+                                    }}</span>
+                                    <span
                                         @click="removeFromCart(items)"
-                                        class="close"
-                                        >&#10005;</span
+                                        class="close fa fa-trash"
+                                        ></span
                                     >
                                 </div>
                             </div>
@@ -169,17 +182,18 @@ export default {
     .card {
         margin: 3vh auto;
     }
+    .cart {
+        padding: 4vh;
+    }
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem;
+    }
 }
 
 .cart {
     background-color: #bdbdbd;
     padding: 4vh 5vh;
-}
-
-@media (max-width: 767px) {
-    .cart {
-        padding: 4vh;
-    }
 }
 
 .summary {
@@ -190,12 +204,6 @@ export default {
     color: rgb(65, 65, 65);
 }
 
-@media (max-width: 767px) {
-    .summary {
-        border-top-right-radius: unset;
-        border-bottom-left-radius: 1rem;
-    }
-}
 .row {
     margin: 0;
 }
@@ -222,8 +230,25 @@ a {
 img {
     width: 6.5rem;
     border-radius: 50%;
+    transition: 1s;
 }
-
+.img:hover {
+    transform: scale(1.3);
+    z-index: 2;
+}
+.store {
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+    border: 2px solid #fff;
+    height: 50px;
+    padding: 1vh;
+    background-color: darkcyan;
+}
+.store span {
+    margin-left: 10px;
+    color: #fff;
+}
 h5 {
     margin-top: 4vh;
 }
@@ -258,20 +283,30 @@ input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 .btnn {
+    color: #fff;
     background-color: transparent;
-    border: none;
+    background-color: darkcyan;
+    transition: all 0.3s ease-in-out;
 }
 .btn {
-    background-color: #000;
-    border-color: #000;
+    background-color: darkcyan;
     color: white;
     width: 100%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-top: 4vh;
     padding: 1vh;
-    border-radius: 0;
+    border-radius: 2px;
+    height: 50px;
+    margin-top: 5vh;
 }
-
+.quantity {
+    font-size: 2vh;
+    border-color: #fff;
+}
+.price {
+    font-weight: bold;
+    color: rgb(226, 176, 37);
+}
 .btn:focus {
     box-shadow: none;
     outline: none;

@@ -907,26 +907,26 @@
     }
     .star-right {
         font-size: 20px;
-        margin-left: 180px;
+        margin-left: 150px;
     }
     .star-right2 {
         font-size: 20px;
-        margin-left: 202px;
+        margin-left: 176px;
         margin-top: 10px;
     }
     .star-right3 {
         font-size: 20px;
-        margin-left: 224px;
+        margin-left: 194px;
         margin-top: 10px;
     }
     .star-right4 {
         font-size: 20px;
-        margin-left: 246px;
+        margin-left: 218px;
         margin-top: 10px;
     }
     .star-right5 {
         font-size: 20px;
-        margin-left: 270px;
+        margin-left: 250px;
         margin-top: 10px;
         margin-right: 10px;
     }
