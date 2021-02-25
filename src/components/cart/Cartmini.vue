@@ -20,6 +20,23 @@
                                 المتجر</span
                             >
                         </div>
+                <div class="col">
+                    <span class="mr-2 ml-4">السعر مع تكاليف الشحن</span>
+                        <span
+                            class="price"
+                        >
+                            {{
+                                totalPrice +
+                                    500
+                            }}</span
+                        >
+                            <button class="btn">
+                                CHECKOUT
+                            </button>
+                            <router-link to="/Cart"><button class="btn">
+                                CART
+                            </button></router-link>                            
+                        </div>
                         </div>
                     </div>
                     <div
@@ -291,13 +308,11 @@ input:focus::-webkit-input-placeholder {
 .btn {
     background-color: darkcyan;
     color: white;
-    width: 100%;
     font-size: 0.8rem;
-    margin-top: 4vh;
     padding: 1vh;
     border-radius: 2px;
     height: 50px;
-    margin-top: 5vh;
+    margin: 5vh;
 }
 .quantity {
     font-size: 2vh;
