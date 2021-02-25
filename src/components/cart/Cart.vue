@@ -100,7 +100,7 @@
                             class="col-sm-2 col-xs-3"
                         >
                             <span
-                                >price:
+                                >السعر:
                             </span>
                             <span
                                 class="price"
@@ -140,7 +140,7 @@
                                 totalPrice
                             }}</span
                         >
-                        S.P
+                        ل.س
                     </div>
                     <div
                         class="col"
@@ -170,7 +170,7 @@
                                     500
                             }}</span
                         >
-                        S.P
+                        ل.س
                     </div>
                     <div class="col">
                         :السعر مع تكاليف
@@ -178,7 +178,7 @@
                     </div>
                 </div>
                 <button class="btn">
-                    CHECKOUT
+                    متابعة
                 </button>
             </div>
             <EmptyCart v-else />
