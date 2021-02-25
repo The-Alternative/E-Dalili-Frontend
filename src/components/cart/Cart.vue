@@ -9,7 +9,7 @@
                         <div
                             class="col-sm-12"
                         >
-                            <h4>
+                            <h4 style="margin-bottom:5px">
                                 <b
                                     >عربة
                                     التسوق</b
@@ -157,7 +157,7 @@
                 </form>
                 <div
                     class="row"
-                    style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;"
+                    style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;margin-bottom: 40px"
                 >
                     <div
                         class="col text-right"
@@ -177,9 +177,13 @@
                         الشحن
                     </div>
                 </div>
-                <button class="btn">
-                    متابعة
-                </button>
+               <a class="cta" style="border:none">
+                <span>Check Out</span>
+                <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+                </a>
             </div>
             <EmptyCart v-else />
         </div>
@@ -190,7 +194,6 @@
 import EmptyCart from '@/components/cart/EmptyCart.vue';
 export default {
     name: 'Cart',
-
     data() {
         return {};
     },
@@ -236,6 +239,67 @@ export default {
     },
 };
 </script>
+<style lang="sass" scoped>
+$color: #111
+$primary: #FFAB9D
+
+html, body
+  height: 100%
+  
+body
+  display: grid
+  font-family: Avenir, sans-serif
+  color: $color
+  
+a
+  text-decoration: none
+  color: inherit
+  
+
+.cta
+  position: relative
+  margin: auto
+  padding: 19px 22px
+  transition: all .2s ease
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    border-radius: 28px
+    background: rgba($primary,.5)
+    width: 56px
+    height: 56px
+    transition: all .3s ease
+  span
+    position: relative
+    font-size: 16px
+    line-height: 18px
+    font-weight: 900
+    letter-spacing: .25em
+    text-transform: uppercase
+    vertical-align: middle
+  svg
+    position: relative
+    top: 0
+    margin-left: 10px
+    fill: none
+    stroke-linecap: round
+    stroke-linejoin: round
+    stroke: $color
+    stroke-width: 2
+    transform: translateX(-5px)
+    transition: all .3s ease
+  &:hover
+    &:before
+      width: 100%
+      background: #73a580
+    svg
+      transform: translateX(0)
+  &:active
+    transform: scale(.96)
+</style>
 <style scoped>
 @media (max-width: 767px) {
     .cart {
@@ -258,7 +322,6 @@ export default {
 .title {
     margin-bottom: 5vh;
 }
-
 .card {
     margin: 0;
     width: 100%;
@@ -280,7 +343,6 @@ export default {
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
 }
-
 .summary {
     background-color: #ddd;
     border-top-right-radius: 1rem;
@@ -288,45 +350,36 @@ export default {
     padding: 4vh;
     color: rgb(65, 65, 65);
 }
-
 .summary .col-2 {
     padding: 0;
 }
-
 .summary .col-10 {
     padding: 0;
 }
-
 .row {
     margin: 0;
 }
-
 .title b {
     font-size: 1.5rem;
 }
-
 .main {
     margin: 0;
     padding: 2vh 0;
     width: 100%;
 }
-
 .col-2,
 .col {
     padding: 0 1vh;
 }
-
 a {
     padding: 0 1vh;
     border: 1px solid;
 }
-
 .close {
     margin-left: auto;
     font-size: 0.7rem;
     cursor: pointer;
 }
-
 img {
     width: 5.5rem;
     border-radius: 50%;
@@ -335,15 +388,12 @@ img {
 h5 {
     margin-top: 4vh;
 }
-
 hr {
     margin-top: 1.25rem;
 }
-
 form {
     padding: 2vh 0;
 }
-
 select {
     border: 1px solid
         rgba(0, 0, 0, 0.137);
@@ -357,7 +407,6 @@ select {
         247
     );
 }
-
 input {
     border: 1px solid
         rgba(0, 0, 0, 0.137);
@@ -371,30 +420,28 @@ input {
         247
     );
 }
-
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
-
 .img:hover {
     transform: scale(1.3);
     z-index: 2;
 }
 .store {
-    font-size: 1rem;
-    text-align: left;
+    font-size: 1.5rem;
+    text-align: center;
     width: 100%;
     border: 2px solid #fff;
     height: 50px;
-    padding: 1vh;
-    background-color: darkcyan;
+    padding: 2vh;
+    background-color: #73a580;
 }
 .store span {
     margin-left: 10px;
     color: #fff;
 }
 .btn {
-    background-color: darkcyan;
+    background-color: #73a580;
     color: white;
     width: 100%;
     font-size: 0.8rem;
@@ -407,12 +454,17 @@ input:focus::-webkit-input-placeholder {
 .btnn {
     color: #fff;
     background-color: transparent;
-    background-color: darkcyan;
+    background-color: #73a580;
     transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 9px;
 }
 .quantity {
     font-size: 2vh;
     border-color: #fff;
+}
+.cart-quantity{
+    font-size: 13px;
 }
 .price {
     font-weight: bold;
@@ -430,7 +482,6 @@ input:focus::-webkit-input-placeholder {
 a {
     color: black;
 }
-
 a:hover {
     color: black;
     text-decoration: none;

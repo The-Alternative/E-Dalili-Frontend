@@ -7,38 +7,9 @@
         <div id="cartshop" class="cart-shop">
             <div class="row">
                 <div class="col-md-12 cart">
-                    <div class="title">
-                        <div class="row">
-                            <div class="col">
-                                <h4><b>عربة التسوق</b></h4>
-                            </div>
-                             <div
-                            class="store"
-                        >
-                            <span
-                                >اسم
-                                المتجر</span
-                            >
-                        </div>
-                <div class="col">
-                    <span class="mr-2 ml-4">السعر مع تكاليف الشحن</span>
-                        <span
-                            class="price"
-                        >
-                            {{
-                                totalPrice +
-                                    500
-                            }}</span
-                        >
-                            <button class="btn">
-                                متابعة
-                            </button>
-                            <router-link to="/Cart"><button class="btn">
-                                الذهاب لعربة التسوق
-                            </button></router-link>                            
-                        </div>
-                        </div>
-                    </div>
+                   
+               <!-- ____ -->
+                   
                     <div
                         v-for="items in cartItems"
                         :key="items.id"
@@ -88,6 +59,16 @@
                                         ></span
                                     >
                                 </div>
+                                 <div class="col">
+                    
+                            <button class="btn">
+                                أشتري الآن
+                            </button>
+                            <router-link to="/Cart"><button class="btn">
+                                الذهاب لعربة التسوق
+                            </button></router-link>                            
+                        
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -175,11 +156,9 @@ export default {
     overflow-y: scroll;
     height: 200px;
     width: 100%;
-    box-shadow: 0px 4px 20px 0 rgb(235, 8, 8),
-        1px 6px 30px 0px rgba(196, 10, 10, 0.19);
+    box-shadow: 0px 4px 20px 0 rgb(255, 216, 6), 1px 6px 30px 0px rgba(196, 10, 10, 0.19)
     scrollbar-width: thin;
 }
-
 .vs {
     visibility: visible;
 }
@@ -194,7 +173,6 @@ export default {
 .col-md-3 {
     margin: auto;
 }
-
 @media (max-width: 767px) {
     .card {
         margin: 3vh auto;
@@ -207,12 +185,10 @@ export default {
         border-bottom-left-radius: 1rem;
     }
 }
-
 .cart {
-    background-color: #bdbdbd;
+    background-color: #dddcdc;
     padding: 4vh 5vh;
 }
-
 .summary {
     background-color: #ddd;
     border-top-right-radius: 1rem;
@@ -220,30 +196,24 @@ export default {
     padding: 4vh;
     color: rgb(65, 65, 65);
 }
-
 .row {
     margin: 0;
 }
-
 .title b {
     font-size: 1.5rem;
 }
-
 .main {
     margin: 0;
     padding: 2vh 0;
     width: 100%;
 }
-
 a {
     padding: 0 1vh;
 }
-
 .close {
     margin-left: auto;
     font-size: 0.7rem;
 }
-
 img {
     width: 6.5rem;
     border-radius: 50%;
@@ -269,15 +239,12 @@ img {
 h5 {
     margin-top: 4vh;
 }
-
 hr {
     margin-top: 1.25rem;
 }
-
 form {
     padding: 2vh 0;
 }
-
 select {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1.5vh 1vh;
@@ -286,7 +253,6 @@ select {
     width: 100%;
     background-color: rgb(247, 247, 247);
 }
-
 input {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
@@ -295,7 +261,6 @@ input {
     width: 100%;
     background-color: rgb(247, 247, 247);
 }
-
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
@@ -304,6 +269,8 @@ input:focus::-webkit-input-placeholder {
     background-color: transparent;
     background-color: darkcyan;
     transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 9px;
 }
 .btn {
     background-color: darkcyan;
@@ -320,7 +287,8 @@ input:focus::-webkit-input-placeholder {
 }
 .price {
     font-weight: bold;
-    color: rgb(226, 176, 37);
+    color: rgb(202, 150, 6);
+    font-size: 16px;
 }
 .btn:focus {
     box-shadow: none;
@@ -331,20 +299,16 @@ input:focus::-webkit-input-placeholder {
     -webkit-user-select: none;
     transition: none;
 }
-
 .btn:hover {
     color: white;
 }
-
 a {
     color: black;
 }
-
 a:hover {
     color: black;
     text-decoration: none;
 }
-
 #code {
     background-image: linear-gradient(
             to left,
