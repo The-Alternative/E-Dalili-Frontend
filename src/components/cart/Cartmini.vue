@@ -31,10 +31,10 @@
                             }}</span
                         >
                             <button class="btn">
-                                CHECKOUT
+                                متابعة
                             </button>
                             <router-link to="/Cart"><button class="btn">
-                                CART
+                                الذهاب لعربة التسوق
                             </button></router-link>                            
                         </div>
                         </div>
