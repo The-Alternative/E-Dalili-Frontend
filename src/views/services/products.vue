@@ -45,15 +45,15 @@
         <!-- End Section-->
         <!--  show img  -->
         <div class="show-img">
-                <div class="row">
-                    <div
-                        class="col-md-6 img"
-                        v-for="brand in brands.slice(0, 2)"
-                        :key="brand.id"
-                    >
-                        <img :src="brand.image" />
-                    </div>
+            <div class="row">
+                <div
+                    class="col-md-6 img"
+                    v-for="brand in brands.slice(0, 2)"
+                    :key="brand.id"
+                >
+                    <img :src="brand.image" />
                 </div>
+            </div>
         </div>
         <!-- show  products -->
         <div class="show-prod">
@@ -72,11 +72,13 @@
         </div>
         <!-- show market-->
         <div class="mar">
-        <div class="show-market"
-         v-for="brand in brands.slice(2, 7)"
-                        :key="brand.id">
-            <img :src="brand.image" />
-        </div>
+            <div
+                class="show-market"
+                v-for="brand in brands.slice(2, 7)"
+                :key="brand.id"
+            >
+                <img :src="brand.image" />
+            </div>
         </div>
         <!-- show  products -->
         <div class="show-prod">
@@ -96,18 +98,16 @@
 
         <!-- show der -->
         <div class="show-der">
-           
-                <div class="row">
-                    <div
-                        class="col-lg-6 img text-center"
-                        v-for="brand in brands.slice(7, 9)"
-                        :key="brand.id"
-                        :image="brand.image"
-                    >
-                        <img :src="brand.image" />
-                    </div>
+            <div class="row">
+                <div
+                    class="col-lg-6 img text-center"
+                    v-for="brand in brands.slice(7, 9)"
+                    :key="brand.id"
+                    :image="brand.image"
+                >
+                    <img :src="brand.image" />
                 </div>
-            
+            </div>
         </div>
         <!-- --------------------------------------------- -->
         <div id="demo" class="carousel slide" data-ride="carousel">
@@ -198,7 +198,7 @@
                     </a>
                     <!-- ------------------------------------------------------------ -->
                     <div class="row">
-                        <div class="col-sm-9 imgs" >
+                        <div class="col-sm-9 imgs">
                             <img
                                 src="@/assets/HEADPHONES.jpg"
                                 style="width: 100%"
@@ -293,7 +293,6 @@ import BodyProduct from '@/components/global/BodyProduct.vue';
 import Subscriber from '@/components/global/Subscriber.vue';
 import Cartmini from '@/components/cart/Cartmini.vue';
 
-
 //import axios from "axios";
 export default {
     data() {
@@ -324,7 +323,7 @@ export default {
         categories() {
             return this.$store.state.categories;
         },
-    }
+    },
     /* created(){
     axios.get("http://edalili.e-dalely.com")
     .then(response => {
@@ -397,7 +396,6 @@ export default {
 }
 /* ____________________________ END Section ____________________________ */
 
-
 .row {
     justify-content: center;
 }
@@ -415,8 +413,7 @@ export default {
     transition: all 0.5s;
 }
 .show-img .row .img:hover {
-transform: scale3d(1.05, 1.05, 1);
-
+    transform: scale3d(1.05, 1.05, 1);
 }
 .show-img .row .img img {
     margin: 40px 0 40px 0;
@@ -470,7 +467,6 @@ transform: scale3d(1.05, 1.05, 1);
 }
 /* ____________________________ Start Products ________________________________ */
 
-
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .row .coler:nth-child(1) {
@@ -489,10 +485,9 @@ transform: scale3d(1.05, 1.05, 1);
         flex: 0 0 60%;
         max-width: 60%;
     }
-    .carousel-item{
-    margin-bottom: 40px;
+    .carousel-item {
+        margin-bottom: 40px;
     }
-    
 }
 
 /* Small devices (landscape phones, 576px and up)   */
@@ -543,9 +538,9 @@ transform: scale3d(1.05, 1.05, 1);
     margin-bottom: 100px;
     transition: all 0.5s;
 }
-     .show-der .img img:hover{
-transform: scale3d(1.05, 1.05, 1);
-     }
+.show-der .img img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show-der {
@@ -553,8 +548,7 @@ transform: scale3d(1.05, 1.05, 1);
     }
     .show-der .img img {
         width: 80%;
-         height: 180px;
-        
+        height: 180px;
     }
     .show-der .img:last-child {
         display: none;
@@ -586,7 +580,7 @@ transform: scale3d(1.05, 1.05, 1);
 }
 /*  show market  */
 /* show market */
-.mar{
+.mar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
 }
 .show-market {
@@ -651,11 +645,11 @@ transform: scale3d(1.05, 1.05, 1);
 
     /* --------------------------------------------- */
     .show-der .img img {
-    height: 200px;
-    width: 550px;
-    margin-top: 40px;
-    margin-bottom: 100px;
-    text-align: center;
+        height: 200px;
+        width: 550px;
+        margin-top: 40px;
+        margin-bottom: 100px;
+        text-align: center;
     }
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
@@ -818,21 +812,21 @@ transform: scale3d(1.05, 1.05, 1);
     margin-bottom: 15px;
     transition: all 0.5s;
 }
-.imges1 img:hover{
-transform: scale3d(1.05, 1.05, 1);
-     }
-.imges2 img:hover{
-transform: scale3d(1.05, 1.05, 1);
-     }
+.imges1 img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+}
+.imges2 img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+}
 .imgs {
     margin-top: 40px;
     margin-right: 290px;
     max-width: 600px;
 }
-.imgs img{
+.imgs img {
     transition: all 0.5s;
 }
-.imgs img:hover{
+.imgs img:hover {
     transform: scale3d(1.05, 1.05, 1);
 }
 /* Extra small devices (portrait phones, less than 576px) */
@@ -904,15 +898,15 @@ transform: scale3d(1.05, 1.05, 1);
 /* Extra large devices (large desktops, 1200px and up)  */
 @media (min-width: 1200px) {
     .imges1 {
-    top: 600px;
-    right: 100px;
+        top: 600px;
+        right: 100px;
     }
     .imges2 {
-    top: 800px;
-    right: 100px;
+        top: 800px;
+        right: 100px;
     }
     .imges1 img {
-        width:180px;
+        width: 180px;
     }
     .imges2 img {
         width: 180px;

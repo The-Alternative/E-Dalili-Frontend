@@ -210,13 +210,14 @@ export default {
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
-            document.getElementById('myCarousel').animate([
-                // keyframes
-                { transform: 'scale(1,1)' },
-                { transform: 'scale(1.1,1.1)' },
-                { transform: 'scale(1,1)' },
-                { transform: 'scale(1.1,1.1)' }
-            ],
+            document.getElementById('myCarousel').animate(
+                [
+                    // keyframes
+                    { transform: 'scale(1,1)' },
+                    { transform: 'scale(1.1,1.1)' },
+                    { transform: 'scale(1,1)' },
+                    { transform: 'scale(1.1,1.1)' },
+                ],
                 {
                     // timing options
                     duration: 500,
