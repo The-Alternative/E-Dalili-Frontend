@@ -7,13 +7,9 @@
         <div id="cartshop" class="cart-shop">
             <div class="row">
                 <div class="col-md-12 cart">
-                    <div class="title">
-                        <div class="row">
-                            <div class="col">
-                                <h4><b>عربة التسوق</b></h4>
-                            </div>
-                        </div>
-                    </div>
+                   
+               
+                   
                     <div
                         v-for="items in cartItems"
                         :key="items.id"
@@ -31,15 +27,17 @@
                                 <div class="col-md-3 col-xs-12">
                                     {{ items.description }}
                                 </div>
-                                <div class="col-md-2 col-xs-12">
+                                <div class="col-md-2 col-xs-12 quantity-add">
                                     <button
                                         class="btnn"
                                         @click="removeItem(items)"
                                     >
-                                        -
+                                        <i
+                                        class="fa fa-angle-down"
+                                        ></i>
                                     </button>
-                                    <a href="#" class="border">
-                                        <span class="cart-quantity">{{
+                                    <a class="quantity">
+                                        <span class="cart-quantity price">{{
                                             items.quantity
                                         }}</span></a
                                     >
@@ -47,17 +45,30 @@
                                         class="btnn"
                                         @click="addItem(items)"
                                     >
-                                        +
+                                        <i
+                                        class="fa fa-angle-up"
+                                        ></i>
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-xs-12">
-                                    {{ items.price * items.quantity
-                                    }}<span
+                                    <span class="price">{{ items.price * items.quantity
+                                    }}</span>
+                                    <span
                                         @click="removeFromCart(items)"
-                                        class="close"
-                                        >&#10005;</span
+                                        class="close fa fa-trash"
+                                        ></span
                                     >
                                 </div>
+                                 <div class="col">
+                    
+                            <button class="btn">
+                                أشتري الآن
+                            </button>
+                            <router-link to="/Cart"><button class="btn">
+                                الذهاب لعربة التسوق
+                            </button></router-link>                            
+                        
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -105,7 +116,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 /* ____________________________ Start Cart Shop ________________________________ */
 .close {
@@ -146,10 +156,10 @@ export default {
     overflow-y: scroll;
     height: 200px;
     width: 100%;
-    box-shadow: 0px 4px 20px 0 rgb(235, 8, 8), 1px 6px 30px 0px rgba(196, 10, 10, 0.19);
+    box-shadow: 0px 4px 20px 0 rgb(235, 8, 8),
+        1px 6px 30px 0px rgba(196, 10, 10, 0.19);
     scrollbar-width: thin;
 }
-
 .vs {
     visibility: visible;
 }
@@ -164,24 +174,22 @@ export default {
 .col-md-3 {
     margin: auto;
 }
-
 @media (max-width: 767px) {
     .card {
         margin: 3vh auto;
     }
+    .cart {
+        padding: 4vh;
+    }
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem;
+    }
 }
-
 .cart {
     background-color: #bdbdbd;
     padding: 4vh 5vh;
 }
-
-@media (max-width: 767px) {
-    .cart {
-        padding: 4vh;
-    }
-}
-
 .summary {
     background-color: #ddd;
     border-top-right-radius: 1rem;
@@ -189,53 +197,55 @@ export default {
     padding: 4vh;
     color: rgb(65, 65, 65);
 }
-
-@media (max-width: 767px) {
-    .summary {
-        border-top-right-radius: unset;
-        border-bottom-left-radius: 1rem;
-    }
-}
 .row {
     margin: 0;
 }
-
 .title b {
     font-size: 1.5rem;
 }
-
 .main {
     margin: 0;
     padding: 2vh 0;
     width: 100%;
 }
-
 a {
     padding: 0 1vh;
 }
-
 .close {
     margin-left: auto;
     font-size: 0.7rem;
 }
-
 img {
     width: 6.5rem;
     border-radius: 50%;
+    transition: 1s;
 }
-
+.img:hover {
+    transform: scale(1.3);
+    z-index: 2;
+}
+.store {
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+    border: 2px solid #fff;
+    height: 50px;
+    padding: 1vh;
+    background-color: darkcyan;
+}
+.store span {
+    margin-left: 10px;
+    color: #fff;
+}
 h5 {
     margin-top: 4vh;
 }
-
 hr {
     margin-top: 1.25rem;
 }
-
 form {
     padding: 2vh 0;
 }
-
 select {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1.5vh 1vh;
@@ -244,7 +254,6 @@ select {
     width: 100%;
     background-color: rgb(247, 247, 247);
 }
-
 input {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
@@ -253,25 +262,35 @@ input {
     width: 100%;
     background-color: rgb(247, 247, 247);
 }
-
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 .btnn {
+    color: #fff;
     background-color: transparent;
+    background-color: darkcyan;
+    transition: all 0.3s ease-in-out;
     border: none;
+    border-radius: 9px;
 }
 .btn {
-    background-color: #000;
-    border-color: #000;
+    background-color: darkcyan;
     color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
+    font-size: 0.8rem;
     padding: 1vh;
-    border-radius: 0;
+    border-radius: 2px;
+    height: 50px;
+    margin: 5vh;
 }
-
+.quantity {
+    font-size: 2vh;
+    border-color: #fff;
+}
+.price {
+    font-weight: bold;
+    color: rgb(202, 150, 6);
+    font-size: 16px;
+}
 .btn:focus {
     box-shadow: none;
     outline: none;
@@ -281,20 +300,16 @@ input:focus::-webkit-input-placeholder {
     -webkit-user-select: none;
     transition: none;
 }
-
 .btn:hover {
     color: white;
 }
-
 a {
     color: black;
 }
-
 a:hover {
     color: black;
     text-decoration: none;
 }
-
 #code {
     background-image: linear-gradient(
             to left,
