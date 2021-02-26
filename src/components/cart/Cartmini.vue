@@ -7,7 +7,6 @@
         <div id="cartshop" class="cart-shop">
             <div class="row">
                 <div class="col-md-12 cart">
-                   
                     <div
                         v-for="items in cartItems"
                         :key="items.id"
@@ -30,9 +29,7 @@
                                         class="btnn"
                                         @click="removeItem(items)"
                                     >
-                                        <i
-                                        class="fa fa-angle-down"
-                                        ></i>
+                                        <i class="fa fa-angle-down"></i>
                                     </button>
                                     <a class="quantity">
                                         <span class="cart-quantity price">{{
@@ -43,32 +40,30 @@
                                         class="btnn"
                                         @click="addItem(items)"
                                     >
-                                        <i
-                                        class="fa fa-angle-up"
-                                        ></i>
+                                        <i class="fa fa-angle-up"></i>
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-xs-12">
-                                    <span class="price">{{ items.price * items.quantity
+                                    <span class="price">{{
+                                        items.price * items.quantity
                                     }}</span>
                                     <span
                                         @click="removeFromCart(items)"
                                         class="close fa fa-trash"
-                                        ></span
-                                    >
+                                    ></span>
                                 </div>
-                                 <div class="col">
-                    
-                            <button class="btn">
-                                أشتري الآن
-                            </button>
-                            <router-link to="/Cart"><button class="btn">
-                                الذهاب لعربة التسوق
-                            </button></router-link>                            
-                        
-                        </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn">
+                            أشتري الآن
+                        </button>
+                        <router-link to="/Cart"
+                            ><button class="btn">
+                                الذهاب لعربة التسوق
+                            </button></router-link
+                        >
                     </div>
                 </div>
             </div>
@@ -154,7 +149,8 @@ export default {
     overflow-y: scroll;
     height: 200px;
     width: 100%;
-    box-shadow: 0px 4px 20px 0 rgb(255, 216, 6), 1px 6px 30px 0px rgba(90, 73, 73, 0.19);
+    box-shadow: 0px 4px 20px 0 rgb(255, 216, 6),
+        1px 6px 30px 0px rgba(196, 10, 10, 0.19);
     scrollbar-width: thin;
 }
 .vs {
