@@ -1,28 +1,16 @@
 <template>
     <div class="card">
         <div class="row">
-            <div
-                class="col-sm-9 col-xs-12 cart"
-            >
+            <div class="col-sm-9 col-xs-12 cart">
                 <div class="title">
                     <div class="row">
-                        <div
-                            class="col-sm-12"
-                        >
+                        <div class="col-sm-12">
                             <h4 style="margin-bottom:5px">
-                                <b
-                                    >عربة
-                                    التسوق</b
-                                >
+                                <b>عربة التسوق</b>
                             </h4>
                         </div>
-                        <div
-                            class="store"
-                        >
-                            <span
-                                >اسم
-                                المتجر</span
-                            >
+                        <div class="store">
+                            <span>اسم المتجر</span>
                         </div>
                     </div>
                 </div>
@@ -33,156 +21,75 @@
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-                    <div
-                        class="cart-items"
-                    >
-                        <div
-                            class="col-sm-2 col-xs-12"
-                        >
-                            <img
-                                class="img"
-                                src="@/assets/w.jpg"
-                            />
+                    <div class="cart-items">
+                        <div class="col-sm-2 col-xs-12">
+                            <img class="img" src="@/assets/w.jpg" />
                         </div>
-                        <div
-                            class="col-sm-2 col-xs-3"
-                        >
-                            {{
-                                items.title
-                            }}
+                        <div class="col-sm-2 col-xs-3">
+                            {{ items.title }}
                         </div>
-                        <div
-                            class="col-sm-2 col-xs-3"
-                        >
-                            {{
-                                items.description
-                            }}
+                        <div class="col-sm-2 col-xs-3">
+                            {{ items.description }}
                         </div>
-                        <div
-                            class="col-sm-3 quantity-add"
-                        >
-                            <button
-                                class="btnn"
-                                @click="
-                                    removeItem(
-                                        items
-                                    )
-                                "
-                            >
-                                <i
-                                    class="fa fa-angle-down"
-                                ></i>
+                        <div class="col-sm-3 quantity-add">
+                            <button class="btnn" @click="removeItem(items)">
+                                <i class="fa fa-angle-down"></i>
                             </button>
-                            <a
-                                class="quantity"
+                            <a class="quantity">
+                                <span class="cart-quantity">{{
+                                    items.quantity
+                                }}</span></a
                             >
-                                <span
-                                    class="cart-quantity"
-                                    >{{
-                                        items.quantity
-                                    }}</span
-                                ></a
-                            >
-                            <button
-                                class="btnn"
-                                @click="
-                                    addItem(
-                                        items
-                                    )
-                                "
-                            >
-                                <i
-                                    class="fa fa-angle-up"
-                                ></i>
+                            <button class="btnn" @click="addItem(items)">
+                                <i class="fa fa-angle-up"></i>
                             </button>
                         </div>
-                        <div
-                            class="col-sm-2 col-xs-3"
-                        >
+                        <div class="col-sm-2 col-xs-3">
+                            <span>السعر: </span>
+                            <span class="price">{{
+                                items.price * items.quantity
+                            }}</span>
                             <span
-                                >السعر:
-                            </span>
-                            <span
-                                class="price"
-                                >{{
-                                    items.price *
-                                        items.quantity
-                                }}</span
-                            >
-                            <span
-                                @click="
-                                    removeFromCart(
-                                        items
-                                    )
-                                "
-                               class="close fa fa-trash"
-                                ></span
-                            >
+                                @click="removeFromCart(items)"
+                                class="close fa fa-trash"
+                            ></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div
-                class="col-sm-3 col-xs-12 summary"
-                v-if="totalPrice !== 0"
-            >
+            <div class="col-sm-3 col-xs-12 summary" v-if="totalPrice !== 0">
                 <div class="row">
-                    <div
-                        :totalPrice="
-                            totalPrice
-                        "
-                        class="col text-right"
-                    >
-                        <span
-                            class="price"
-                        >
-                            {{
-                                totalPrice
-                            }}</span
-                        >
+                    <div :totalPrice="totalPrice" class="col text-right">
+                        <span class="price"> {{ totalPrice }}</span>
                         ل.س
                     </div>
-                    <div
-                        class="col"
-                        style="padding-left:0;"
-                    >
+                    <div class="col" style="padding-left:0;">
                         :السعر
                     </div>
                 </div>
                 <form class="fo">
                     <p>
-                        تكاليف الشحن 500
-                        ل.س
+                        تكاليف الشحن 500 ل.س
                     </p>
                 </form>
                 <div
                     class="row"
                     style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;margin-bottom: 40px"
                 >
-                    <div
-                        class="col text-right"
-                    >
-                        <span
-                            class="price"
-                        >
-                            {{
-                                totalPrice +
-                                    500
-                            }}</span
-                        >
+                    <div class="col text-right">
+                        <span class="price"> {{ totalPrice + 500 }}</span>
                         ل.س
                     </div>
                     <div class="col">
-                        :السعر مع تكاليف
-                        الشحن
+                        :السعر مع تكاليف الشحن
                     </div>
                 </div>
-               <a class="cta" style="border:none">
-                <span>Check Out</span>
-                <svg width="13px" height="10px" viewBox="0 0 13 10">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
+                <a class="cta" style="border:none">
+                    <span>Check Out</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
                 </a>
             </div>
             <EmptyCart v-else />
@@ -202,38 +109,24 @@ export default {
     },
     methods: {
         addItem(items) {
-            this.$store.dispatch(
-                'addToCart',
-                items
-            );
+            this.$store.dispatch('addToCart', items);
         },
         removeItem(items) {
-            this.$store.dispatch(
-                'removeItem',
-                items
-            );
+            this.$store.dispatch('removeItem', items);
         },
         removeFromCart(item) {
-            this.$store.commit(
-                'removeFromCart',
-                item
-            );
+            this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
         cartItems() {
-            return this.$store.state
-                .cartItems;
+            return this.$store.state.cartItems;
         },
         totalPrice() {
             let price = 0;
-            this.$store.state.cartItems.map(
-                (el) => {
-                    price +=
-                        el['quantity'] *
-                        el['price'];
-                }
-            );
+            this.$store.state.cartItems.map((el) => {
+                price += el['quantity'] * el['price'];
+            });
             return price;
         },
     },
@@ -245,16 +138,16 @@ $primary: #FFAB9D
 
 html, body
   height: 100%
-  
+
 body
   display: grid
   font-family: Avenir, sans-serif
   color: $color
-  
+
 a
   text-decoration: none
   color: inherit
-  
+
 
 .cta
   position: relative
@@ -325,8 +218,7 @@ a
 .card {
     margin: 0;
     width: 100%;
-    box-shadow: 0 6px 20px 0
-        rgba(0, 0, 0, 0.19);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1rem;
     border: transparent;
 }
@@ -395,30 +287,20 @@ form {
     padding: 2vh 0;
 }
 select {
-    border: 1px solid
-        rgba(0, 0, 0, 0.137);
+    border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1.5vh 1vh;
     margin-bottom: 4vh;
     outline: none;
     width: 100%;
-    background-color: rgb(
-        247,
-        247,
-        247
-    );
+    background-color: rgb(247, 247, 247);
 }
 input {
-    border: 1px solid
-        rgba(0, 0, 0, 0.137);
+    border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
     margin-bottom: 4vh;
     outline: none;
     width: 100%;
-    background-color: rgb(
-        247,
-        247,
-        247
-    );
+    background-color: rgb(247, 247, 247);
 }
 input:focus::-webkit-input-placeholder {
     color: transparent;
@@ -463,7 +345,7 @@ input:focus::-webkit-input-placeholder {
     font-size: 2vh;
     border-color: #fff;
 }
-.cart-quantity{
+.cart-quantity {
     font-size: 13px;
 }
 .price {

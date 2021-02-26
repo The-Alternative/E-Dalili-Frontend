@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-link to="/location"
-            ><img class="location" src="../../assets/location.png" height="20"
+            ><img class="location" src="../../../public/img/location.png" height="20"
         /></router-link>
     </div>
 </template>
