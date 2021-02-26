@@ -59,19 +59,17 @@
                                         ></span
                                     >
                                 </div>
-                                 <div class="col">
-                    
-                            <button class="btn">
-                                أشتري الآن
-                            </button>
-                            <router-link to="/Cart"><button class="btn">
-                                الذهاب لعربة التسوق
-                            </button></router-link>                            
-                        
-                        </div>
                             </div>
                         </div>
                     </div>
+                                <div class="col">
+                                    <button class="btn">
+                                        أشتري الآن
+                                    </button>
+                                    <router-link to="/Cart"><button class="btn">
+                                        الذهاب لعربة التسوق
+                                    </button></router-link>                            
+                                </div>
                 </div>
             </div>
         </div>
