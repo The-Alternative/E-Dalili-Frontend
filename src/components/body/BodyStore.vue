@@ -6,83 +6,44 @@
         style="display: flex; justify-content: center; padding: 0"
     >
         <!--      coulome one left -->
-        <div
-            class="card pl-3 pr-0 col-lg-3 col-md-2 col-sm-6 coulom-img"
-        >
+        <div class="card pl-3 pr-0 col-lg-3 col-md-2 col-sm-6 coulom-img">
             <img
                 class="mb-3 img1"
-                src="../../assets/img1.png"
+                src="../../../public/img/img1.png"
                 height="50%"
             />
-            <img
-                class="img2"
-                src="../../assets/img.png"
-                height="50%"
-            />
+            <img class="img2" src="../../../public/img/img.png" height="50%" />
         </div>
 
         <!--     coulome middel stors group   -->
-        <div
-            class="card pl-1 pr-1 col-lg-6 col-md-7 col-sm-8 col-xs-8 stors "
-        >
+        <div class="card pl-1 pr-1 col-lg-6 col-md-7 col-sm-8 col-xs-8 stors ">
             <!--          store 1-->
-            <div
-                class="store"
-                v-for="store in activeStores"
-                :key="store.id"
-            >
-                <div
-                    class="card-title row justify-content-lg-end"
-                >
-                    <div
-                        class="d-flex flex-row"
-                    >
+            <div class="store" v-for="store in activeStores" :key="store.id">
+                <div class="card-title row justify-content-lg-end">
+                    <div class="d-flex flex-row">
                         <img
                             class="img-open"
-                            src="../../assets/open.png"
+                            src="../../../public/img/open.png"
                             height="40"
                         />
-                        <div
-                            class="text-muted"
-                        >
-                            {{
-                                store.space
-                            }}
+                        <div class="text-muted">
+                            {{ store.space }}
                         </div>
                         <div>
-                            <div
-                                class="title"
-                            >
-                                {{
-                                    store.title
-                                }}
-                                <div
-                                    class="stars text-right"
-                                >
+                            <div class="title">
+                                {{ store.title }}
+                                <div class="stars text-right">
                                     <span
-                                        @click="
-                                            store.rate = item
-                                        "
-                                        v-for="item in parseInt(
-                                            store.rate
-                                        )"
-                                        :key="
-                                            item
-                                        "
+                                        @click="store.rate = item"
+                                        v-for="item in parseInt(store.rate)"
+                                        :key="item"
                                         class="fa fa-star"
                                         aria-hidden="true"
                                     ></span>
                                     <span
-                                        @click="
-                                            store.rate =
-                                                item +
-                                                store.rate
-                                        "
-                                        v-for="item in 5 -
-                                            store.rate"
-                                        :key="
-                                            item
-                                        "
+                                        @click="store.rate = item + store.rate"
+                                        v-for="item in 5 - store.rate"
+                                        :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
                                     ></span>
@@ -91,36 +52,26 @@
                         </div>
                         <img
                             class="rounded-circle"
-                            src="../../assets/market-logo.png"
+                            src="../../../public/img/market-logo.png"
                             height="60"
                         />
                     </div>
                 </div>
-                <div
-                    class="card-footer"
-                >
-                    <ul
-                        class="flex-row d-inline-flex"
-                    >
-                        <li
-                            class="categorystore"
-                        >
-                            {{
-                                store.categories
-                            }}
+                <div class="card-footer">
+                    <ul class="flex-row d-inline-flex">
+                        <li class="categorystore">
+                            {{ store.categories }}
                         </li>
                     </ul>
-                    <div
-                        class="row img-button"
-                    >
+                    <div class="row img-button">
                         <img
                             class="Group"
-                            src="../../assets/Group.png"
+                            src="../../../public/img/Group.png"
                             height="20"
                         />
                         <img
                             class="MaskGroup"
-                            src="../../assets/MaskGroup.png"
+                            src="../../../public/img/MaskGroup.png"
                             height="20"
                         />
                         <btnvisit-store></btnvisit-store>
@@ -135,10 +86,7 @@
         <!--              check box     -->
         <span class="slide" id="btn">
             <a>
-                <i
-                    class="fa fa-bars"
-                    @click="btnbar()"
-                ></i>
+                <i class="fa fa-bars" @click="btnbar()"></i>
             </a>
         </span>
 
@@ -147,25 +95,11 @@
             id="menu"
         >
             <div class="backdrop"></div>
-            <div
-                class="card text-right checked-all open"
-                id="all"
-            >
-                <span
-                    class="text-center span-text text"
-                    >عرض العروضات
-                    حسب</span
-                >
-                <span
-                    class="text-center bgcolor"
-                    >حسب القسم</span
-                >
+            <div class="card text-right checked-all open" id="all">
+                <span class="text-center span-text text">عرض العروضات حسب</span>
+                <span class="text-center bgcolor">حسب القسم</span>
                 <div class="checklist">
-                    <label
-                        class="textcheck"
-                        for="check4"
-                        >الكل</label
-                    >
+                    <label class="textcheck" for="check4">الكل</label>
                     <input
                         class="categories fa fa-check-square-o"
                         type="checkbox"
@@ -175,211 +109,117 @@
                         <li
                             class="textcheck"
                             v-for="category in categories"
-                            :key="
-                                category
-                            "
+                            :key="category"
                             for="category"
                         >
-                            {{
-                                category
-                            }}
+                            {{ category }}
                             <input
                                 class="categories"
                                 type="checkbox"
-                                v-bind:value="
-                                    category
-                                "
+                                v-bind:value="category"
                                 id="category"
-                                v-model="
-                                    selectedCategory
-                                "
+                                v-model="selectedCategory"
                             />
                         </li>
                     </ul>
                 </div>
-                <span
-                    class="text-center bgcolor"
-                    >حسب المتجر أو
-                    الشركة</span
-                >
+                <span class="text-center bgcolor">حسب المتجر أو الشركة</span>
                 <div class="checklist">
                     <div class="">
-                        <label
-                            class="textcheck"
-                            for="check1"
-                            >سوبر ماركت
-                            شوبيكو</label
+                        <label class="textcheck" for="check1"
+                            >سوبر ماركت شوبيكو</label
                         >&nbsp;
-                        <input
-                            class="categories"
-                            type="checkbox"
-                            id="check1"
-                        />
+                        <input class="categories" type="checkbox" id="check1" />
                     </div>
                     <div class="">
-                        <label
-                            class="textcheck"
-                            for="check2"
-                            >أميرة
-                            سنتر</label
+                        <label class="textcheck" for="check2">أميرة سنتر</label
                         >&nbsp;
-                        <input
-                            class="categories"
-                            type="checkbox"
-                            id="check2"
-                        />
+                        <input class="categories" type="checkbox" id="check2" />
                     </div>
                     <div class="">
-                        <label
-                            class="textcheck"
-                            for="check3"
-                            >شركة الصفدي
-                            للإلكترونيات</label
+                        <label class="textcheck" for="check3"
+                            >شركة الصفدي للإلكترونيات</label
                         >&nbsp;
-                        <input
-                            class="categories"
-                            type="checkbox"
-                            id="check3"
-                        />
+                        <input class="categories" type="checkbox" id="check3" />
                     </div>
                 </div>
-                <span
-                    class="text-center bgcolor"
-                    >حسب التقييم</span
-                >
-                <div
-                    class="checklist stars"
-                >
-                    <div
-                        class="row star-right"
-                    >
+                <span class="text-center bgcolor">حسب التقييم</span>
+                <div class="checklist stars">
+                    <div class="row star-right">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 5 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 5 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right2"
-                    >
+                    <div class="row star-right2">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 4 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 4 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right3"
-                    >
+                    <div class="row star-right3">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 3 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 3 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right4"
-                    >
+                    <div class="row star-right4">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 2 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 2 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right5"
-                    >
+                    <div class="row star-right5">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 1 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 1 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
@@ -416,9 +256,7 @@
         color: #000000;
         transition: all 0.8s;
     }
-    .checked-all
-        .listcategories
-        .categories {
+    .checked-all .listcategories .categories {
         color: #000000;
         margin-right: 10px;
         display: none;
@@ -570,9 +408,7 @@
         color: #000000;
         transition: all 0.8s;
     }
-    .checked-all
-        .listcategories
-        .categories {
+    .checked-all .listcategories .categories {
         color: #000000;
         margin-right: 10px;
     }

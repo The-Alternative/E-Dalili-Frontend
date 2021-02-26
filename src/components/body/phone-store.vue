@@ -1,7 +1,7 @@
 <template>
     <div>
         <a href="#"
-            ><img class="phone" src="../../assets/phone.png" height="20"
+            ><img class="phone" src="../../../public/img/phone.png" height="20"
         /></a>
         <!--    <a href="#"><i class="whatsapp fab fa-whatsapp"></i></a>-->
     </div>
