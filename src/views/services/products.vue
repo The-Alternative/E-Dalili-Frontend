@@ -14,27 +14,67 @@
                     style="width:50%"
                 >
                     <div class="icon">
-                        <img :src="catog.image" />
+                        <img
+                            :src="
+                                catog.image
+                            "
+                        />
 
                         <!--      <img :src="`${urll}/${catog.image}`" />        -->
                     </div>
-                    <div class="dropdowns">
+                    <div
+                        class="dropdowns"
+                    >
                         <button
                             class="btn sec dropdown-toggle"
                             type="button"
                             data-toggle="dropdown"
                         >
-                            {{ catog.name }} <span class="caret"></span>
+                            {{
+                                catog.name
+                            }}
+                            <span
+                                class="caret"
+                            ></span>
                         </button>
-                        <ul class="dropdown-menu">
-                            <router-link :to="`/${catog.slug}`">
-                                <li><a href="#">1</a></li></router-link
+                        <ul
+                            class="dropdown-menu"
+                        >
+                            <router-link
+                                :to="
+                                    `/${catog.slug}`
+                                "
                             >
-                            <router-link :to="`/${catog.slug}`">
-                                <li><a href="#">2</a></li></router-link
+                                <li>
+                                    <a
+                                        href="#"
+                                        >1</a
+                                    >
+                                </li></router-link
                             >
-                            <router-link :to="`/${catog.slug}`">
-                                <li><a href="#">3</a></li></router-link
+                            <router-link
+                                :to="
+                                    `/${catog.slug}`
+                                "
+                            >
+                                <li>
+                                    <a
+                                        href="#"
+                                        >2</a
+                                    >
+                                </li></router-link
+                            >
+                            <router-link
+                                :to="
+                                    `/${catog.slug}`
+                                "
+                            >
+                                <li>
+                                    <a
+                                        href="#"
+                                        >3</a
+                                    >
+                                </li></router-link
                             >
                         </ul>
                     </div>
@@ -48,10 +88,17 @@
             <div class="row">
                 <div
                     class="col-md-6 img"
-                    v-for="brand in brands.slice(0, 2)"
+                    v-for="brand in brands.slice(
+                        0,
+                        2
+                    )"
                     :key="brand.id"
                 >
-                    <img :src="brand.image" />
+                    <img
+                        :src="
+                            brand.image
+                        "
+                    />
                 </div>
             </div>
         </div>
@@ -59,12 +106,17 @@
         <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
+                    v-for="items in Product.slice(
+                        0,
+                        4
+                    )"
                     :key="items.pr"
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
-                    :description="items.description"
+                    :description="
+                        items.description
+                    "
                     @click="goto(items)"
                 >
                 </BodyProduct>
@@ -74,22 +126,32 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="brand in brands.slice(2, 7)"
+                v-for="brand in brands.slice(
+                    2,
+                    7
+                )"
                 :key="brand.id"
             >
-                <img :src="brand.image" />
+                <img
+                    :src="brand.image"
+                />
             </div>
         </div>
         <!-- show  products -->
         <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
-                    v-for="items in Product.slice(4, 8)"
+                    v-for="items in Product.slice(
+                        4,
+                        8
+                    )"
                     :key="items.pr"
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
-                    :description="items.description"
+                    :description="
+                        items.description
+                    "
                     @click="goto(items)"
                 >
                 </BodyProduct>
@@ -101,80 +163,178 @@
             <div class="row">
                 <div
                     class="col-lg-6 img text-center"
-                    v-for="brand in brands.slice(7, 9)"
+                    v-for="brand in brands.slice(
+                        7,
+                        9
+                    )"
                     :key="brand.id"
                     :image="brand.image"
                 >
-                    <img :src="brand.image" />
+                    <img
+                        :src="
+                            brand.image
+                        "
+                    />
                 </div>
             </div>
         </div>
         <!-- --------------------------------------------- -->
-        <div id="demo" class="carousel slide" data-ride="carousel">
+        <div
+            id="demo"
+            class="carousel slide"
+            data-ride="carousel"
+        >
             <!-- Indicators -->
             <!-- The slideshow -->
             <div class="row">
-                <div class="col-lg-3 col-sm-4 col-xs-12">
+                <div
+                    class="col-lg-3 col-sm-4 col-xs-12"
+                >
                     <div>
-                        <span class="last">اخر المشتركین</span>
-                        <div class="last-subscriber">
+                        <span
+                            class="last"
+                            >اخر
+                            المشتركین</span
+                        >
+                        <div
+                            class="last-subscriber"
+                        >
                             <Subscriber
                                 v-for="Store in lastStores"
-                                :key="Store.id"
-                                :title="Store.title"
-                                :location="Store.location"
+                                :key="
+                                    Store.id
+                                "
+                                :title="
+                                    Store.title
+                                "
+                                :location="
+                                    Store.location
+                                "
                             />
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-sm-8 col-xs-12">
-                    <div class="carousel-inner carousel-inner1">
+                <div
+                    class="col-lg-9 col-sm-8 col-xs-12"
+                >
+                    <div
+                        class="carousel-inner carousel-inner1"
+                    >
                         <!-- carousel item 1 -->
-                        <div class="carousel-item active">
-                            <div class="show-prod">
-                                <div class="row">
+                        <div
+                            class="carousel-item active"
+                        >
+                            <div
+                                class="show-prod"
+                            >
+                                <div
+                                    class="row"
+                                >
                                     <BodyProduct
-                                        v-for="items in Product.slice(0, 4)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :description="items.description"
-                                        @click="goto(items)"
+                                        v-for="items in Product.slice(
+                                            0,
+                                            4
+                                        )"
+                                        :key="
+                                            items.pr
+                                        "
+                                        :id="
+                                            items.id
+                                        "
+                                        :price="
+                                            items.price
+                                        "
+                                        :title="
+                                            items.title
+                                        "
+                                        :description="
+                                            items.description
+                                        "
+                                        @click="
+                                            goto(
+                                                items
+                                            )
+                                        "
                                     >
                                     </BodyProduct>
                                 </div>
                             </div>
                         </div>
                         <!-- carousel item 2 -->
-                        <div class="carousel-item">
-                            <div class="show-prod">
-                                <div class="row">
+                        <div
+                            class="carousel-item"
+                        >
+                            <div
+                                class="show-prod"
+                            >
+                                <div
+                                    class="row"
+                                >
                                     <BodyProduct
-                                        v-for="items in Product.slice(4, 8)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :description="items.description"
-                                        @click="goto(items)"
+                                        v-for="items in Product.slice(
+                                            4,
+                                            8
+                                        )"
+                                        :key="
+                                            items.pr
+                                        "
+                                        :id="
+                                            items.id
+                                        "
+                                        :price="
+                                            items.price
+                                        "
+                                        :title="
+                                            items.title
+                                        "
+                                        :description="
+                                            items.description
+                                        "
+                                        @click="
+                                            goto(
+                                                items
+                                            )
+                                        "
                                     >
                                     </BodyProduct>
                                 </div>
                             </div>
                         </div>
                         <!-- carousel item 3 -->
-                        <div class="carousel-item">
-                            <div class="show-prod">
-                                <div class="row">
+                        <div
+                            class="carousel-item"
+                        >
+                            <div
+                                class="show-prod"
+                            >
+                                <div
+                                    class="row"
+                                >
                                     <BodyProduct
-                                        v-for="items in Product.slice(8, 12)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :description="items.description"
-                                        @click="goto(items)"
+                                        v-for="items in Product.slice(
+                                            8,
+                                            12
+                                        )"
+                                        :key="
+                                            items.pr
+                                        "
+                                        :id="
+                                            items.id
+                                        "
+                                        :price="
+                                            items.price
+                                        "
+                                        :title="
+                                            items.title
+                                        "
+                                        :description="
+                                            items.description
+                                        "
+                                        @click="
+                                            goto(
+                                                items
+                                            )
+                                        "
                                     >
                                     </BodyProduct>
                                 </div>
@@ -187,28 +347,42 @@
                         href="#demo"
                         data-slide="prev"
                     >
-                        <span class="carousel-control-prev-icon"></span>
+                        <span
+                            class="carousel-control-prev-icon"
+                        ></span>
                     </a>
                     <a
                         class="carousel-control-next"
                         href="#demo"
                         data-slide="next"
                     >
-                        <span class="carousel-control-next-icon"></span>
+                        <span
+                            class="carousel-control-next-icon"
+                        ></span>
                     </a>
                     <!-- ------------------------------------------------------------ -->
                     <div class="row">
-                        <div class="col-sm-9 imgs">
+                        <div
+                            class="col-sm-9 imgs"
+                        >
                             <img
-                                src="@/assets/HEADPHONES.jpg"
+                                src="../../../public/img/HEADPHONES.jpg"
                                 style="width: 100%"
                             />
                         </div>
-                        <div class="col-sm-1.5 imges1">
-                            <img src="@/assets/home.jpg" />
+                        <div
+                            class="col-sm-1.5 imges1"
+                        >
+                            <img
+                                src="../../../public/img/home.jpg"
+                            />
                         </div>
-                        <div class="col-sm-1.5 imges2">
-                            <img src="@/assets/gasses.jpg" />
+                        <div
+                            class="col-sm-1.5 imges2"
+                        >
+                            <img
+                                src="../../../public/img/gasses.jpg"
+                            />
                         </div>
                     </div>
                 </div>
@@ -221,54 +395,128 @@
             data-ride="carousel"
             style="margin-top: 40px;"
         >
-            <div class="col-sm-12" style="padding:0">
-                <div class="carousel-inner">
+            <div
+                class="col-sm-12"
+                style="padding:0"
+            >
+                <div
+                    class="carousel-inner"
+                >
                     <!-- carousel item 1 -->
-                    <div class="carousel-item active">
-                        <div class="show-prod">
-                            <div class="row">
+                    <div
+                        class="carousel-item active"
+                    >
+                        <div
+                            class="show-prod"
+                        >
+                            <div
+                                class="row"
+                            >
                                 <BodyProduct
-                                    v-for="items in Product.slice(0, 4)"
-                                    :key="items.pr"
-                                    :id="items.id"
-                                    :price="items.price"
-                                    :title="items.title"
-                                    :description="items.description"
-                                    @click="goto(items)"
+                                    v-for="items in Product.slice(
+                                        0,
+                                        4
+                                    )"
+                                    :key="
+                                        items.pr
+                                    "
+                                    :id="
+                                        items.id
+                                    "
+                                    :price="
+                                        items.price
+                                    "
+                                    :title="
+                                        items.title
+                                    "
+                                    :description="
+                                        items.description
+                                    "
+                                    @click="
+                                        goto(
+                                            items
+                                        )
+                                    "
                                 >
                                 </BodyProduct>
                             </div>
                         </div>
                     </div>
                     <!-- carousel item 2 -->
-                    <div class="carousel-item">
-                        <div class="show-prod">
-                            <div class="row">
+                    <div
+                        class="carousel-item"
+                    >
+                        <div
+                            class="show-prod"
+                        >
+                            <div
+                                class="row"
+                            >
                                 <BodyProduct
-                                    v-for="items in Product.slice(4, 8)"
-                                    :key="items.pr"
-                                    :id="items.id"
-                                    :price="items.price"
-                                    :title="items.title"
-                                    :description="items.description"
-                                    @click="goto(items)"
+                                    v-for="items in Product.slice(
+                                        4,
+                                        8
+                                    )"
+                                    :key="
+                                        items.pr
+                                    "
+                                    :id="
+                                        items.id
+                                    "
+                                    :price="
+                                        items.price
+                                    "
+                                    :title="
+                                        items.title
+                                    "
+                                    :description="
+                                        items.description
+                                    "
+                                    @click="
+                                        goto(
+                                            items
+                                        )
+                                    "
                                 >
                                 </BodyProduct>
                             </div>
                         </div>
                     </div>
                     <!-- carousel item 3 -->
-                    <div class="carousel-item">
-                        <div class="show-prod">
-                            <div class="row">
+                    <div
+                        class="carousel-item"
+                    >
+                        <div
+                            class="show-prod"
+                        >
+                            <div
+                                class="row"
+                            >
                                 <BodyProduct
-                                    v-for="items in Product.slice(8, 12)"
-                                    :key="items.pr"
-                                    :id="items.id"
-                                    :price="items.price"
-                                    :title="items.title"
-                                    :description="items.description"
-                                    @click="goto(items)"
+                                    v-for="items in Product.slice(
+                                        8,
+                                        12
+                                    )"
+                                    :key="
+                                        items.pr
+                                    "
+                                    :id="
+                                        items.id
+                                    "
+                                    :price="
+                                        items.price
+                                    "
+                                    :title="
+                                        items.title
+                                    "
+                                    :description="
+                                        items.description
+                                    "
+                                    @click="
+                                        goto(
+                                            items
+                                        )
+                                    "
                                 >
                                 </BodyProduct>
                             </div>
@@ -277,11 +525,23 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#deno" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                <a
+                    class="carousel-control-prev"
+                    href="#deno"
+                    data-slide="prev"
+                >
+                    <span
+                        class="carousel-control-prev-icon"
+                    ></span>
                 </a>
-                <a class="carousel-control-next" href="#deno" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                <a
+                    class="carousel-control-next"
+                    href="#deno"
+                    data-slide="next"
+                >
+                    <span
+                        class="carousel-control-next-icon"
+                    ></span>
                 </a>
             </div>
         </div>
@@ -312,16 +572,20 @@ export default {
     },
     computed: {
         Product() {
-            return this.$store.state.Product;
+            return this.$store.state
+                .Product;
         },
         lastStores() {
-            return this.$store.state.lastStores;
+            return this.$store.state
+                .lastStores;
         },
         brands() {
-            return this.$store.state.brands;
+            return this.$store.state
+                .brands;
         },
         categories() {
-            return this.$store.state.categories;
+            return this.$store.state
+                .categories;
         },
     },
     /* created(){
@@ -400,11 +664,17 @@ export default {
     justify-content: center;
 }
 .show-img {
-    background-image: linear-gradient(180deg, #a6a6a6, #fff);
+    background-image: linear-gradient(
+        180deg,
+        #a6a6a6,
+        #fff
+    );
     width: 100%;
     height: 370px;
     border-radius: 7px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0
+            rgba(0, 0, 0, 0.2),
+        0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 2vh;
 }
 
@@ -478,7 +748,9 @@ export default {
     .carousel-inner {
         width: 105%;
     }
-    .carousel-inner .row .coler:nth-child(3) {
+    .carousel-inner
+        .row
+        .coler:nth-child(3) {
         display: none;
     }
     .carousel-inner .row .col-xs-6 {
@@ -505,7 +777,9 @@ export default {
     .row .coler:last-child {
         display: none;
     }
-    .carousel-inner1 .row .coler:nth-child(1) {
+    .carousel-inner1
+        .row
+        .coler:nth-child(1) {
         display: none;
     }
     .carousel-inner1 .row .col-xs-6 {
@@ -516,7 +790,9 @@ export default {
 
 /*  Large devices (desktops, 992px and up)  */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .carousel-inner1 .row .coler:nth-child(3) {
+    .carousel-inner1
+        .row
+        .coler:nth-child(3) {
         display: none;
     }
     .carousel-inner1 .row .col-xs-6 {
@@ -581,7 +857,9 @@ export default {
 /*  show market  */
 /* show market */
 .mar {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0
+            rgba(0, 0, 0, 0.2),
+        0 6px 30px 0 rgba(0, 0, 0, 0.19);
 }
 .show-market {
     background-color: #fff;
@@ -699,9 +977,14 @@ export default {
 }
 .carousel-inner {
     background-color: #ffff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0
+            rgba(0, 0, 0, 0.2),
+        0 6px 30px 0 rgba(0, 0, 0, 0.19);
 }
-.carousel-inner .show-prod .row .content-pro {
+.carousel-inner
+    .show-prod
+    .row
+    .content-pro {
     margin-top: 0;
 }
 .carousel-control-next,
