@@ -3,7 +3,7 @@
         <div class="upper-bar">
             <div class="row">
                 <div @click="goto" class="col-md-2 col-sm-12 col-xs-12 imag">
-                    <img src="@/assets/logo-4.png" />
+                    <img src="../../../public/img/logo-4.png" />
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
                     <div class="customer-select sel4">
@@ -483,7 +483,7 @@ export default {
     height: 560px;
     margin-bottom: 10px;
     width: 100%;
-    background-image: url(../../assets/Screenshot_2020-10-17%20E-DALELY%20Design.png);
+    background-image: url(../../../public/img/Screenshot_2020-10-17%20E-DALELY%20Design.png);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -687,7 +687,7 @@ export default {
     border-color: #cc0808;
 }
 .naver .img::before {
-    content: url(../../assets/icon-button.png);
+    content: url(../../../public/img/icon-button.png);
     position: absolute;
     top: -1px;
     right: 398px;

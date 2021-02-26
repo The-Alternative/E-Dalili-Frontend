@@ -18,7 +18,7 @@
                         <div class="cart-items">
                             <div class="row" style="width:100%">
                                 <div class="col-md-2 col-xs-12">
-                                    <img class="img" src="@/assets/w.jpg" />
+                                    <img class="img" src="../../../public/img/w.jpg" />
                                 </div>
                                 <div class="col-md-3 col-xs-12">
                                     {{ items.title }}
