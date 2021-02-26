@@ -8,8 +8,6 @@
             <div class="row">
                 <div class="col-md-12 cart">
                    
-               <!-- ____ -->
-                   
                     <div
                         v-for="items in cartItems"
                         :key="items.id"
@@ -156,7 +154,7 @@ export default {
     overflow-y: scroll;
     height: 200px;
     width: 100%;
-    box-shadow: 0px 4px 20px 0 rgb(255, 216, 6), 1px 6px 30px 0px rgba(196, 10, 10, 0.19)
+    box-shadow: 0px 4px 20px 0 rgb(255, 216, 6), 1px 6px 30px 0px rgba(90, 73, 73, 0.19);
     scrollbar-width: thin;
 }
 .vs {
