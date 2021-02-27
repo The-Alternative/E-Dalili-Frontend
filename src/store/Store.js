@@ -78,7 +78,6 @@ export default new Vuex.Store({
                 state.cartItemCount -= product.quantity;
 
                 state.cartItems.splice(index, 1);
-                document.getElementById('cartshop').classList.remove('vs');
                 this.commit('savedata');
             }
         },

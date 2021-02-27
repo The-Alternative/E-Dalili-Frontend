@@ -23,7 +23,7 @@
                 >
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
-                            <img class="img" src="@/assets/w.jpg" />
+                            <img class="img" src="../../../public/img/w.jpg" />
                         </div>
                         <div class="col-sm-2 col-xs-3">
                             {{ items.title }}

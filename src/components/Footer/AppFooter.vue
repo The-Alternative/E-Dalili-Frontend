@@ -42,26 +42,26 @@
                 </div>
                 <hr />
                 <div class="imag">
-                    <img src="@/assets/logo-3.png" />
+                    <img src="../../../public/img/logo-3.png" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2 col-sm-4  text-center">
                     <div class="dlely-card">
                         <div>E-DALELY Points</div>
-                        <img src="@/assets/icon-card.png" />
+                        <img src="../../../public/img/icon-card.png" />
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-4 text-center">
                     <div class="work-us">
                         <div><span>Get It On</span>Google Play</div>
-                        <img src="@/assets/icon-google-play.png" />
+                        <img src="../../../public/img/icon-google-play.png" />
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-4 text-center">
                     <div class="work-us" style="padding-top: 3px">
                         <div>App Store</div>
-                        <img src="@/assets/icon-appel.png" />
+                        <img src="../../../public/img/icon-appel.png" />
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 visiter text-center">

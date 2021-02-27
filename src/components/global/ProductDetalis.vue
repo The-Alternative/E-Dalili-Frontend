@@ -16,7 +16,7 @@
                                     data-slide-number="0"
                                 >
                                     <img
-                                        src="@/assets/w.jpg"
+                                        src="../../../public/img/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
                                     />
@@ -26,7 +26,7 @@
                                     data-slide-number="1"
                                 >
                                     <img
-                                        src="@/assets/w.jpg"
+                                        src="../../../public/img/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
                                     />
@@ -36,7 +36,7 @@
                                     data-slide-number="2"
                                 >
                                     <img
-                                        src="@/assets/w.jpg"
+                                        src="../../../public/img/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
                                     />
@@ -46,7 +46,7 @@
                                     data-slide-number="3"
                                 >
                                     <img
-                                        src="@/assets/w.jpg"
+                                        src="../../../public/img/w.jpg"
                                         class="d-block w-100"
                                         alt="..."
                                     />
@@ -73,7 +73,7 @@
                max-width: 25.667%;"
                                         >
                                             <img
-                                                src="@/assets/w.jpg"
+                                                src="../../../public/img/w.jpg"
                                                 class="img-fluid"
                                                 alt="..."
                                             />
@@ -87,7 +87,7 @@
                max-width: 25.667%;"
                                         >
                                             <img
-                                                src="@/assets/w.jpg"
+                                                src="../../../public/img/w.jpg"
                                                 class="img-fluid"
                                                 alt="..."
                                             />
@@ -101,7 +101,7 @@
                max-width: 25.667%;"
                                         >
                                             <img
-                                                src="@/assets/w.jpg"
+                                                src="../../../public/img/w.jpg"
                                                 class="img-fluid"
                                                 alt="..."
                                             />
@@ -115,7 +115,7 @@
                max-width: 25.667%;"
                                         >
                                             <img
-                                                src="@/assets/w.jpg"
+                                                src="../../../public/img/w.jpg"
                                                 class="img-fluid"
                                                 alt="..."
                                             />

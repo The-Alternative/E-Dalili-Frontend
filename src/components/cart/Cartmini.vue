@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="cart-shop-icon" @click="showcart" id="cart">
+        <div class="cart-shop-icon" @click="totalPrice !== 0 ? showcart() : hidecart()"  id="cart">
             <i class="fa fa-shopping-cart"></i>
             <span class="cart-count">{{ cartItemCount }}</span>
         </div>
@@ -16,7 +16,7 @@
                         <div class="cart-items">
                             <div class="row" style="width:100%">
                                 <div class="col-md-2 col-xs-12">
-                                    <img class="img" src="@/assets/w.jpg" />
+                                    <img class="img" src="../../../public/img/w.jpg" />
                                 </div>
                                 <div class="col-md-3 col-xs-12">
                                     {{ items.title }}
@@ -80,6 +80,10 @@ export default {
         showcart: function() {
             var cart = document.getElementById('cartshop');
             cart.classList.toggle('vs');
+        },
+         hidecart: function() {
+            var cart = document.getElementById('cartshop');
+            cart.classList.remove('vs');
         },
         addItem(items) {
             this.$store.dispatch('addToCart', items);

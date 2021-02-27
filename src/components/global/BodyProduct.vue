@@ -3,7 +3,7 @@
         <div class="content-pro text-center">
             <img
                 @click="goto(id, title, description, price)"
-                src="@/assets/w.jpg"
+                src="../../../public/img/w.jpg"
                 class="new"
             />
             <div @click="goto(id, title, description, price)" class="name-prod">
