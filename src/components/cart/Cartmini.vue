@@ -1,14 +1,12 @@
 <template>
     <div>
-        <div class="cart-shop-icon" @click="showcart" id="cart">
+        <div class="cart-shop-icon" @click="totalPrice !== 0 ? showcart() : hidecart()"  id="cart">
             <i class="fa fa-shopping-cart"></i>
             <span class="cart-count">{{ cartItemCount }}</span>
         </div>
         <div id="cartshop" class="cart-shop">
             <div class="row">
                 <div class="col-md-12 cart">
-                    <!-- ____ -->
-
                     <div
                         v-for="items in cartItems"
                         :key="items.id"
@@ -82,6 +80,10 @@ export default {
         showcart: function() {
             var cart = document.getElementById('cartshop');
             cart.classList.toggle('vs');
+        },
+         hidecart: function() {
+            var cart = document.getElementById('cartshop');
+            cart.classList.remove('vs');
         },
         addItem(items) {
             this.$store.dispatch('addToCart', items);
