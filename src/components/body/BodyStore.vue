@@ -402,7 +402,19 @@
     </div>
 </template>
 
-<script src="../../js/body.js"></script>
+<script src="../../js/body.js">
+export default{
+    data() {
+        return {
+            details: {
+                title:this.title,
+                address:this.address
+            },
+        }
+    },
+    props: ['title','address'],
+}
+</script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {

@@ -2,7 +2,7 @@
     <div>
        <div
             id="carouselExampleInterval"
-            class="carousel slide"
+            class="carousel slide mb-4"
             data-ride="carousel"
         >
             <div class="carousel-inner">
@@ -65,7 +65,7 @@
                 >
             </a>
         </div>
-        <div class="border col-sm-12" style="display: flex; justify-content: center; padding: 0">
+        <div class="border col-sm-12 mt-4" style="display: flex; justify-content: center; padding: 0">
             <div class="col-lg-3">
             <img
                 class="img-open isActive"
@@ -81,7 +81,7 @@
             />
             </div>
             <div class="col-lg-3">
-                <span>متجر تجزئة</span>
+                <div>متجر تجزئة</div>
                 <div>{{details.title}}</div>
             </div>
         </div>
@@ -106,13 +106,13 @@ export default {
 </script>
 <style scoped>
 .border {
-    margin:20px;
-    margin-right: 20px;
+    margin:auto;
     justify-content: center;
     align-content: center;
     border-radius: 40px 0 40px 0;
     border:2px solid #d66315;
     background-color: #fefefe;
+    max-width: 90%;
 }
 .profile {
     border-radius: 250px;
