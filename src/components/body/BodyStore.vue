@@ -30,6 +30,7 @@
                 class="store"
                 v-for="store in activeStores"
                 :key="store.id"
+                :address="store.address"
             >
                 <div
                     class="card-title row justify-content-lg-end"
@@ -129,7 +130,7 @@
                             @click="
                                 goto(
                                     title,
-                                    address
+                                    space
                                 )
                             "
                         >
@@ -404,15 +405,7 @@
 
 <script src="../../js/body.js">
 export default{
-    data() {
-        return {
-            details: {
-                title:this.title,
-                address:this.address
-            },
-        }
-    },
-    props: ['title','address'],
+      props: ['title','address'],
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

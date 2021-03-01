@@ -12,14 +12,10 @@ export default {
     },
     data() {
         return {
-            stores: data.stores,
             categories: data.categories,
             rate: 0,
             selectedCategory: [],
-            details: {
-                title:this.title,
-                address:this.address
-            },
+           
         };
     },
     props: ['title','address'],
@@ -39,6 +35,10 @@ export default {
             });
             return activeStores;
         },
+        stores() {
+                return this.$store.state
+                    .stores;
+            },
     },
     methods: {
         btnbar: function() {

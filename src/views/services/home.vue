@@ -90,8 +90,8 @@
      
 		</div>
 		<div class="layer row" data-scene="2" style="width:1330px">
-     <div class="col-2"><img src="../../../public/img/toys1.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/toys2.png" alt=""></div>
+     <div class="col-2"><img src="../../../public/img/toys2.png" alt=""></div>
+      <div class="col-2"><img src="../../../public/img/toys1.png" alt=""></div>
       <div class="col-2"><img src="../../../public/img/toys3.png" alt=""></div>
       <div class="col-2"><img src="../../../public/img/toys4.png" alt=""></div>
       <div class="col-2"><img src="../../../public/img/toys5.png" alt=""></div>
@@ -256,6 +256,7 @@ $percentage: var(--percentage);
 .layer{
   position: absolute;
 }
+    
 input[value='1']:checked ~ .site { --scene: 1; }
 input[value='2']:checked ~ .site { --scene: 2; }
 input[value='3']:checked ~ .site { --scene: 3; }

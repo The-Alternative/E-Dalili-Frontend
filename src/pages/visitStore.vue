@@ -82,23 +82,20 @@
             </div>
             <div class="col-lg-3">
                 <div>متجر تجزئة</div>
-                <div>{{details.title}}</div>
+                <div>{{title}}</div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import data from '../jeson/data'
+
 export default {
     name:'visitStore',
     data() {
         return {
-            stores: data.stores,
-            details: {
-                title:this.title,
-                address:this.address
-            },
+        
+          
         }
     },
     props: ['title','address'],

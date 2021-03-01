@@ -155,17 +155,18 @@
                                 </button></router-link
                             >
                         </div>
-                        <div>
-                            <router-link to="/">
-                                <button type="button" class="btn btn-light">
-                                    <a>جميع الأقسام</a>
-                                </button></router-link
-                            >
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+         <div class="all-section">
+                            <router-link to="/">
+                                <button type="button" class="btn btn-primry">
+                                    <a>جميع الأقسام</a>
+                                </button></router-link
+                            >
+                        </div>
     </div>
 </template>
 <script src="../../js/proj.js"></script>
@@ -715,7 +716,7 @@ export default {
     content: url(../../../public/img/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 449px;
+    right: 398px;
 }
 .naver .row .sell {
     background-color: #f6ef19;
@@ -806,5 +807,8 @@ export default {
     }
 }
 /* End Naver*/
+.all-section{
+    text-align: right;
+}
 /* End header */
 </style>
