@@ -2,131 +2,7 @@
     <div class="ProductDetalis">
         <Cartmini />
         <div class="row">
-            <div class="col-sm-6 col-xs-12">
-                <div class="container mt-5" style="max-width:380px">
-                    <div class="carousel-container position-relative row">
-                        <div
-                            id="myCarousel"
-                            class="carousel slide"
-                            data-ride="carousel"
-                        >
-                            <div class="carousel-inner">
-                                <div
-                                    class="carousel-item active"
-                                    data-slide-number="0"
-                                >
-                                    <img
-                                        src="../../../public/img/w.jpg"
-                                        class="d-block w-100"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div
-                                    class="carousel-item"
-                                    data-slide-number="1"
-                                >
-                                    <img
-                                        src="../../../public/img/w.jpg"
-                                        class="d-block w-100"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div
-                                    class="carousel-item"
-                                    data-slide-number="2"
-                                >
-                                    <img
-                                        src="../../../public/img/w.jpg"
-                                        class="d-block w-100"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div
-                                    class="carousel-item"
-                                    data-slide-number="3"
-                                >
-                                    <img
-                                        src="../../../public/img/w.jpg"
-                                        class="d-block w-100"
-                                        alt="..."
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Carousel Navigation -->
-                        <div
-                            id="carousel-thumbs"
-                            class="carousel slide"
-                            data-ride="carousel"
-                            style="padding: 0"
-                        >
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row mx-0">
-                                        <div
-                                            id="carousel-selector-0"
-                                            class="thumb col-4 col-sm-2 px-1 py-2 selected"
-                                            data-target="#myCarousel"
-                                            data-slide-to="0"
-                                            style="flex: 1 0 16.666667%;
-               max-width: 25.667%;"
-                                        >
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                class="img-fluid"
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div
-                                            id="carousel-selector-1"
-                                            class="thumb col-4 col-sm-2 px-1 py-2"
-                                            data-target="#myCarousel"
-                                            data-slide-to="1"
-                                            style="flex: 1 0 16.666667%;
-               max-width: 25.667%;"
-                                        >
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                class="img-fluid"
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div
-                                            id="carousel-selector-2"
-                                            class="thumb col-4 col-sm-2 px-1 py-2"
-                                            data-target="#myCarousel"
-                                            data-slide-to="2"
-                                            style="flex: 1 0 16.666667%;
-               max-width: 25.667%;"
-                                        >
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                class="img-fluid"
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div
-                                            id="carousel-selector-3"
-                                            class="thumb col-4 col-sm-2 px-1 py-2"
-                                            data-target="#myCarousel"
-                                            data-slide-to="3"
-                                            style="flex: 1 0 16.666667%;
-               max-width: 25.667%;"
-                                        >
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                class="img-fluid"
-                                                alt="..."
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <div class="col-sm-6 col-xs-12">
                 <div class="content-pro text-center">
                     <div class="name-prod">
@@ -146,33 +22,29 @@
                         <span>ل.س {{ price }}</span>
                         <div class="price" style="display: inline-block"></div>
                     </div>
-                    <div class="avilble">
-                        <div style="display: inline-block">متوفر في متاجر</div>
-                        <span class="fa fa-check-circle"></span>
-                    </div>
+                   
                     <div class="row">
                         <div class="col">
                             <button
                                 @click="addToCart"
-                                type="button"
-                                class="btn btn-primary"
+                                class="but1"
                             >
-                                add to cart
+                                <span>
+                                إضافة لعربة التسوق </span>
                             </button>
                         </div>
                         <div class="col">
-                            <button
-                                @click="gotocart"
-                                type="button"
-                                class="btn btn-primary"
-                            >
-                                go to cart
+                            <button @click="gotocart" class="but1">
+                                <span>
+                                الذهاب لعربة التسوق </span>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+     
+
     </div>
 </template>
 <script>
@@ -227,6 +99,10 @@ export default {
     },
 };
 </script>
+<style lang="scss" scoped>
+
+
+</style>
 <style scoped>
 .row {
     justify-content: center;
@@ -292,20 +168,44 @@ export default {
 .content-pro .checked {
     color: #dcd741;
 }
-.content-pro .avilble {
-    color: #19e653;
+.but1 {
+  border-radius: 4px;
+  background-color: #008b8b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: 190px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
-.content-pro .avilble div {
-    margin-right: 10px;
+
+.but1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
-.content-pro button {
-    background-color: #a5abac;
-    width: 130px;
-    color: #fff;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 13px;
-    font-weight: 1;
+
+.but1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  font-size: 30px;
+}
+
+.but1:hover span {
+  padding-right: 25px;
+}
+
+.but1:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

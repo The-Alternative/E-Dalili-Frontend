@@ -10,6 +10,7 @@ let cartItemCount = window.localStorage.getItem('cartItemCount');
 export default new Vuex.Store({
     state: {
         Product: jeson[0].Products,
+        stors: jeson[0].Products[0].stors,
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,
         categories: jeson[0].categories,

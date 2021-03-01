@@ -14,6 +14,10 @@ import 'normalize.css';
 import main from '../src/assets/css/main.css';
 import '../public/fontawesome-free-5.15.1-web/css/all.css';
 
+//const { JSDOM } = require( "jsdom" );
+//const { window } = new JSDOM( "" );
+// const $ = require( "jquery" )( window );
+
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);

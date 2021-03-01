@@ -45,6 +45,62 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'Products',
+    props: ['id', 'title', 'description', 'price'],
+    data() {
+        return {
+            details: {
+                id: this.id,
+                title: this.title,
+                description: this.description,
+                price: this.price,
+            },
+        };
+    },
+    methods: {
+        goto: function(i, t, d, p) {
+            this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
+        },
+        addToCart() {
+            this.$store.dispatch('addToCart', this.details);
+            this.$el.animate(
+                [
+                    // keyframes
+                    {
+                        transform:
+                            'perspective(500px) translate3d(-200px, 1000px,-10000px)',
+                    },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
+            document.getElementById('cart').animate(
+                [
+                    // keyframes
+                    { transform: 'rotate(-20deg)' },
+                    { transform: 'rotate(20deg)' },
+                    { transform: 'scale(3,3)' },
+                    { transform: 'scale(1,1)' },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
+        },
+    },
+    computed: {
+        count() {
+            return this.$store.state.count;
+        },
+    },
+};
+</script>
 <style lang="scss" scoped>
 .all {
     margin: 20px 0;
@@ -142,62 +198,6 @@
     align-items: center;
 }
 </style>
-<script>
-export default {
-    name: 'Products',
-    props: ['id', 'title', 'description', 'price'],
-    data() {
-        return {
-            details: {
-                id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
-            },
-        };
-    },
-    methods: {
-        goto: function(i, t, d, p) {
-            this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
-        },
-        addToCart() {
-            this.$store.dispatch('addToCart', this.details);
-            this.$el.animate(
-                [
-                    // keyframes
-                    {
-                        transform:
-                            'perspective(500px) translate3d(-200px, 1000px,-10000px)',
-                    },
-                ],
-                {
-                    // timing options
-                    duration: 1000,
-                }
-            );
-            document.getElementById('cart').animate(
-                [
-                    // keyframes
-                    { transform: 'rotate(-20deg)' },
-                    { transform: 'rotate(20deg)' },
-                    { transform: 'scale(3,3)' },
-                    { transform: 'scale(1,1)' },
-                ],
-                {
-                    // timing options
-                    duration: 1000,
-                }
-            );
-        },
-    },
-    computed: {
-        count() {
-            return this.$store.state.count;
-        },
-    },
-};
-</script>
-
 <style scoped>
 @media (max-width: 575.98px) {
     .left,
