@@ -24,6 +24,7 @@ import ProductDetalis from '../components/global/ProductDetalis.vue';
 import Cart from '../components/cart/Cart.vue';
 
 import UserLocation from '../pages/UserLocation';
+import visitStore from '../pages/visitStore';
 
 Vue.use(VueRouter);
 
@@ -31,6 +32,12 @@ const routes = [
     {
         path: '/location',
         component: UserLocation,
+    },
+    {
+        path: '/visitStore/:title/:address',
+        name:'visitStore',
+        component:visitStore,
+        props: true,
     },
     /* cart shop */
     {
