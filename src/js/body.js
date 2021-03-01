@@ -1,5 +1,4 @@
 import data from '../jeson/data.json';
-import BtnvisitStore from '../components/body/btnvisit-store';
 import LocationStore from '../components/body/location-store';
 import PhoneStore from '../components/body/phone-store';
 import WhatsappStore from '../components/body/whatsapp-store';
@@ -9,8 +8,7 @@ export default {
         UserLocation,
         WhatsappStore,
         PhoneStore,
-        LocationStore,
-        BtnvisitStore,
+        LocationStore
     },
     data() {
         return {
@@ -18,8 +16,13 @@ export default {
             categories: data.categories,
             rate: 0,
             selectedCategory: [],
+            details: {
+                title:this.title,
+                address:this.address
+            },
         };
     },
+    props: ['title','address'],
     computed: {
         activeStores: function() {
             if (this.selectedCategory.length == 0) return this.stores;
@@ -42,5 +45,8 @@ export default {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
+       goto: function(t,a) {
+            this.$router.push(`visitStore/${t}/${a}`);
+        }, 
     },
 };
