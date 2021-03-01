@@ -32,8 +32,7 @@ export default {
 @media (min-width: 468px) and (max-width: 598px) {
     .location {
         height: 15px;
-        margin-left: 130px;
-        margin-right: 10px;
+        margin-left: 100px;
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
@@ -46,7 +45,7 @@ export default {
 @media (min-width: 599px) and (max-width: 767px) {
     .location {
         height: 15px;
-        margin-left: 90px;
+        margin-left: 50px;
         border-radius: 50px;
         width: 15px;
         transition: all 0.8s;
@@ -70,8 +69,7 @@ export default {
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .location {
-        margin-left: 120px;
-        margin-right: 10px;
+        margin-left: 70px;
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
@@ -83,8 +81,7 @@ export default {
 }
 @media (min-width: 1200px) {
     .location {
-        margin-left: 190px;
-        margin-right: 10px;
+        margin-left: 90px;
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
