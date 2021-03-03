@@ -79,14 +79,14 @@
 			</div>
 		</nav>
 	</div>
-	<div class="">
+	<div class="cont-layer">
 		<div class="layer row" data-scene="1" style="width:1330px">
-			<div class="col-2"><img src="../../../public/img/quik1.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/quik2.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/quik3.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/quik4.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/quik5.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/quik1.png" alt=""></div>
+	  <div class="col"><img src="../../../public/img/quik1.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/quik2.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/quik3.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/quik4.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/quik5.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/quik1.png" alt=""></div>
      
 		</div>
 		<div class="layer row" data-scene="2" style="width:1330px">
@@ -98,20 +98,20 @@
       <div class="col-2"><img src="../../../public/img/toys1.png" alt=""></div>
 		</div>
 		<div class="layer row" data-scene="3" style="width:1270px">
-		<div class="col-2"><img src="../../../public/img/elc1.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/elc2.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/elc3.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/elc4.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/elc5.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/elc6.png" alt=""></div>
+		<div class="col"><img src="../../../public/img/elc1.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/elc2.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/elc3.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/elc4.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/elc5.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/elc6.png" alt=""></div>
 		</div>
 		<div class="layer row" data-scene="4" style="width:1330px">
-		<div class="col-2"><img src="../../../public/img/ocl1.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/ocl2.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/ocl3.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/ocl4.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/ocl5.png" alt=""></div>
-      <div class="col-2"><img src="../../../public/img/ocl1.png" alt=""></div>
+		<div class="col"><img src="../../../public/img/ocl1.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/ocl2.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/ocl3.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/ocl4.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/ocl5.png" alt=""></div>
+      <div class="col"><img src="../../../public/img/ocl1.png" alt=""></div>
 		</div>
 	</div>
 </main>
@@ -413,5 +413,26 @@ $nav-button-width: 5rem;
 *:after {
 	box-sizing: border-box;
 	position: relative;
+}
+</style>
+<style lang="postcss" scoped>
+.cont-layer{
+	height: 250px;
+}
+@media (max-width: 575.98px) {
+.page-number--tens{
+width: 180px;
+}	
+
+
+.layer .col:nth-child(5){
+	display: none;
+}
+.layer .col:nth-child(6){
+	display: none;
+}
+ .card .txt{
+    margin-top:4rem;
+	}
 }
 </style>

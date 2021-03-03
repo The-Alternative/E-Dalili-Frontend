@@ -37,7 +37,10 @@
                     "
                     @click="goto(items)"
                 >
+                
                 </BodyProduct>
+                
+                
             </div>
         </div>
         <!-- show market-->

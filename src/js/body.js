@@ -18,7 +18,7 @@ export default {
            
         };
     },
-    props: ['title','address'],
+    props: ['title','space'],
     computed: {
         activeStores: function() {
             if (this.selectedCategory.length == 0) return this.stores;
@@ -45,8 +45,8 @@ export default {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-       goto: function(t,a) {
+        goto: function(t,a) {
             this.$router.push(`visitStore/${t}/${a}`);
-        }, 
+        },
     },
 };
