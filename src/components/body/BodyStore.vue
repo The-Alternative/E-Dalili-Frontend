@@ -416,7 +416,7 @@ export default {
     },
     data() {
         return {
-            stores: data.stores,
+            stores:data.stores,
             categories: data.categories,
             rate: 0,
             selectedCategory: [],
