@@ -29,6 +29,7 @@
             <div
                 class="store"
                 v-for="store in activeStores"
+                v-bind:store="store"
                 :key="store.id"
             >
                 <div
@@ -127,9 +128,9 @@
                             type="button"
                             class="btn w-25"
                             @click="
-                                goto(
-                                    title,
-                                    address
+                                gotoview(
+                                    id,
+                                    title
                                 )
                             "
                         >
@@ -402,18 +403,58 @@
     </div>
 </template>
 
-<script src="../../js/body.js">
-export default{
+<script>
+import data from '../../jeson/data.json';
+import LocationStore from '../../components/body/location-store';
+import PhoneStore from '../../components/body/phone-store';
+import WhatsappStore from '../../components/body/whatsapp-store';
+export default {
+    components: {
+        WhatsappStore,
+        PhoneStore,
+        LocationStore
+    },
     data() {
         return {
-            details: {
+            stores: data.stores,
+            categories: data.categories,
+            rate: 0,
+            selectedCategory: [],
+            view: {
+                id:this.id,
                 title:this.title,
-                address:this.address
             },
-        }
+        };
     },
-    props: ['title','address'],
-}
+    props: ['id','title'],
+    computed: {
+        activeStores: function() {
+            if (this.selectedCategory.length == 0) return this.stores;
+            var activeStores = [];
+            var filters = this.selectedCategory;
+
+            this.stores.forEach(function(store) {
+                function storeContainsFilter(filter) {
+                    return store.categories.indexOf(filter) != -1;
+                }
+                if (filters.every(storeContainsFilter)) {
+                    activeStores.push(store);
+                }
+            });
+            return activeStores;
+        },
+    },
+    methods: {
+        btnbar: function() {
+            document.getElementById('btn').classList.toggle('click');
+            document.getElementById('menu').classList.toggle('show');
+        },
+        gotoview: function(i,t) {
+            this.$router.push(`visitStore/${i}/${t}`);
+        }, 
+    },
+};
+
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
