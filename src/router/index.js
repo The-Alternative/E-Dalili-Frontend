@@ -34,7 +34,7 @@ const routes = [
         component: UserLocation,
     },
     {
-        path: '/visitStore/:title/:address',
+        path: '/visitStore/:id/:title',
         name:'visitStore',
         component:visitStore,
         props: true,

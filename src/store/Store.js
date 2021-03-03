@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import jeson from '@/jeson/MOCK_DATA.json';
-
 Vue.use(Vuex);
 
 let cartItems = window.localStorage.getItem('cartItems');

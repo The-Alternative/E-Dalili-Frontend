@@ -5,7 +5,6 @@ import router from './router/index';
 import store from './store/Store';
 import 'jquery';
 
-import './js/body';
 import 'bootstrap';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
