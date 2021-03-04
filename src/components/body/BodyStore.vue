@@ -28,11 +28,9 @@
             <!--          store 1-->
             <div
                 class="store"
-                v-for="store in stores"
+                v-for="store in activeStores"
                 v-bind:store="store"
-                :key="store.pr"
-                :id="store.id"
-                :title="store.title"
+                :key="store.id"
                 :address="store.address"
             >
                 <div
@@ -58,7 +56,7 @@
                                 class="title"
                             >
                                 {{
-                                    title
+                                    store.title
                                 }}
                                 <div
                                     class="stars text-right"

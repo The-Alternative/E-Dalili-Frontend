@@ -1,5 +1,11 @@
 <template>
     <div class="home">
+      <div class="all-section">
+        <router-link to="/">
+        <button type="button" class="btn">
+        <a>جميع الأقسام</a>
+        </button></router-link>
+      </div>
   <div class="row align-middle" style="height: 750px;">
     <div class="col-md-6 col-lg-3 col-xs-6  column"   
         v-for="catog in categories"
@@ -249,6 +255,10 @@ export default {
 *{transition: .5s;}
 .home{
   background-color: #edefef;
+}
+.all-section{
+    text-align: right;
+    
 }
 .h-100{height: 100vh !important;}
 .align-middle{

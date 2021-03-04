@@ -160,13 +160,6 @@
                 </div>
             </div>
         </div>
-         <div class="all-section">
-                            <router-link to="/">
-                                <button type="button" class="btn">
-                                    <a>جميع الأقسام</a>
-                                </button></router-link
-                            >
-                        </div>
     </div>
 </template>
 <script src="../../js/proj.js"></script>
@@ -807,9 +800,5 @@ export default {
     }
 }
 /* End Naver*/
-.all-section{
-    text-align: right;
-    
-}
 /* End header */
 </style>
