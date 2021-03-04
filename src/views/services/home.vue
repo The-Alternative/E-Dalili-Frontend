@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-  <div class="row align-middle">
+  <div class="row align-middle" style="height: 750px;">
     <div class="col-md-6 col-lg-3 col-xs-6  column"   
         v-for="catog in categories"
         :key="catog.id"
@@ -80,7 +80,7 @@
 		</nav>
 	</div>
 	<div class="cont-layer">
-		<div class="layer row" data-scene="1" style="width:1330px">
+		<div class="layer row" data-scene="1" style="width:1300px">
 	  <div class="col"><img src="../../../public/img/quik1.png" alt=""></div>
       <div class="col"><img src="../../../public/img/quik2.png" alt=""></div>
       <div class="col"><img src="../../../public/img/quik3.png" alt=""></div>
@@ -89,7 +89,7 @@
       <div class="col"><img src="../../../public/img/quik1.png" alt=""></div>
      
 		</div>
-		<div class="layer row" data-scene="2" style="width:1330px">
+		<div class="layer row" data-scene="2" style="width:1300px">
      <div class="col-2"><img src="../../../public/img/toys2.png" alt=""></div>
       <div class="col-2"><img src="../../../public/img/toys1.png" alt=""></div>
       <div class="col-2"><img src="../../../public/img/toys3.png" alt=""></div>
@@ -97,25 +97,140 @@
       <div class="col-2"><img src="../../../public/img/toys5.png" alt=""></div>
       <div class="col-2"><img src="../../../public/img/toys1.png" alt=""></div>
 		</div>
-		<div class="layer row" data-scene="3" style="width:1270px">
+		<div class="layer row" data-scene="3" style="width:1300px">
 		<div class="col"><img src="../../../public/img/elc1.png" alt=""></div>
       <div class="col"><img src="../../../public/img/elc2.png" alt=""></div>
       <div class="col"><img src="../../../public/img/elc3.png" alt=""></div>
       <div class="col"><img src="../../../public/img/elc4.png" alt=""></div>
       <div class="col"><img src="../../../public/img/elc5.png" alt=""></div>
-      <div class="col"><img src="../../../public/img/elc6.png" alt=""></div>
+      
 		</div>
-		<div class="layer row" data-scene="4" style="width:1330px">
+		<div class="layer row" data-scene="4" style="width:1300px">
 		<div class="col"><img src="../../../public/img/ocl1.png" alt=""></div>
       <div class="col"><img src="../../../public/img/ocl2.png" alt=""></div>
       <div class="col"><img src="../../../public/img/ocl3.png" alt=""></div>
       <div class="col"><img src="../../../public/img/ocl4.png" alt=""></div>
       <div class="col"><img src="../../../public/img/ocl5.png" alt=""></div>
-      <div class="col"><img src="../../../public/img/ocl1.png" alt=""></div>
+      
 		</div>
 	</div>
 </main>
+<!-- __________________________________________________________________ -->
+	  <h2>Some Market</h2>
+  <div class="row align-middle" style="height: 700px;">
+    <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/quik1.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
 
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/elc1.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/ocl5.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/toys1.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/quik5.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/toys5.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/elc3.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+	 <div class="col-md-6 col-lg-3 col-xs-6  column"   
+        style="width:50%">
+  
+      <div class="card card-market">
+        <div class="txt">
+        </div>
+        <a href="#">more...</a>
+        <div class="ico-card">
+            <img class="img-market" src="../../../public/img/ocl4.png">
+        <i class="fa fa-rebel"></i>
+      </div>
+      </div>
+
+    </div>
+</div>
     </div>
 </template>
 
@@ -434,5 +549,13 @@ width: 180px;
  .card .txt{
     margin-top:4rem;
 	}
+}
+/* _____________________ market after slider _____________________________ */
+.card-market{
+border-radius: 50%;
+}
+.img-market{
+border-radius: 34%;
+margin-top: 14px;
 }
 </style>

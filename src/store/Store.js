@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import jeson from '@/jeson/MOCK_DATA.json';
+
 import data from '../jeson/data.json';
 
 Vue.use(Vuex);

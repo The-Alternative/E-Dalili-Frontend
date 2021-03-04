@@ -28,7 +28,8 @@
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
-            <div class="stage">
+            <div class="stage row">
+               <div @click="addToCart()" class="cart-ico"><button class="cart-button"><i class="fa fa-shopping-cart"></i></button></div>
             <div @click="heartlike()" id="heart" class="heart"></div>
         </div>
 
@@ -55,7 +56,7 @@ export default {
             this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
         }, 
         heartlike: function() {   
-           this.$el.lastChild.lastChild.firstChild.classList.toggle('is-active');
+           this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
            
         },
         addToCart() {
@@ -118,6 +119,9 @@ export default {
     }
 }
 /* body of products */
+.cart-ico{
+    margin: auto;
+}
 .cartshop {
     background-color: #ccc;
     width: 20px;
@@ -165,15 +169,13 @@ export default {
     margin-right: 10px;
 }
 .content-pro button {
-    background-color: #a5abac;
-    color: #fff;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 13px;
-    font-weight: 1;
-    padding: 10px 20px;
-    width: 80px;
-    font-size: 14px;
+    border-radius: 59%;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    padding: 0;
+    color: #5daaa6;
 }
 .content-pro button:hover {
     background-color: #d3b85f;
@@ -183,7 +185,7 @@ export default {
     .content-pro {
         font-size: 10px;
         height: auto;
-        margin-top: 5vh;
+        margin-top: 1vh;
     }
     .content-pro .name-prod {
         margin-bottom: 10px;
@@ -192,13 +194,6 @@ export default {
     .reower .col-xs-6 {
         flex: 1 0 50%;
         max-width: 50%;
-    }
-    .content-pro button {
-        margin-top: 12px;
-        border-radius: 13px;
-        font-weight: 1;
-        padding: 5px 10px;
-        width: 50px;
     }
 }
 </style>

@@ -716,7 +716,7 @@ export default {
     content: url(../../../public/img/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 398px;
+    right: 395px;
 }
 .naver .row .sell {
     background-color: #f6ef19;
