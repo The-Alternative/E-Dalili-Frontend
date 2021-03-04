@@ -31,6 +31,7 @@
                 v-for="store in activeStores"
                 v-bind:store="store"
                 :key="store.id"
+                :address="store.address"
             >
                 <div
                     class="card-title row justify-content-lg-end"
@@ -127,12 +128,7 @@
                         <button
                             type="button"
                             class="btn w-25"
-                            @click="
-                                gotoview(
-                                    id,
-                                    title
-                                )
-                            "
+                             @click="gotoview(id, title)"
                         >
                             <b>زيارة</b>
                         </button>
@@ -402,7 +398,6 @@
         </div>
     </div>
 </template>
-
 <script>
 import data from '../../jeson/data.json';
 import LocationStore from '../../components/body/location-store';
@@ -414,19 +409,15 @@ export default {
         PhoneStore,
         LocationStore
     },
+    props: ['id','title']  ,
+  
     data() {
         return {
-            stores:data.stores,
             categories: data.categories,
             rate: 0,
             selectedCategory: [],
-            view: {
-                id:this.id,
-                title:this.title,
-            },
         };
     },
-    props: ['id','title'],
     computed: {
         activeStores: function() {
             if (this.selectedCategory.length == 0) return this.stores;
@@ -443,18 +434,21 @@ export default {
             });
             return activeStores;
         },
+        stores() {
+            return this.$store.state
+                .stores;
+        },
     },
     methods: {
         btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
-        },
-        gotoview: function(i,t) {
-            this.$router.push(`visitStore/${i}/${t}`);
         }, 
+        gotoview: function(i, t) {
+            this.$router.push(`visitStore/${i}/${t}`);
+        },
     },
 };
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

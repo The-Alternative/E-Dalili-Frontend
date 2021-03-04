@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
                     <div class="textRight"><span>متجر تجزئة</span></div>
-                    <div>{{ view.title }}</div>
+                    <div>{{ title }}</div>
                     <div class="icons">
                         <div class="row telephone">
                             <span>016236253</span>
@@ -178,16 +178,15 @@
 import data from '../jeson/data';
 export default {
     name: 'visitStore',
+    props: ['id', 'title'],
     data() {
         return {
             stores: data.stores,
-            view: {
-                id: this.id,
-                title: this.title,
-            },
+           
         };
+
     },
-    props: ['id', 'title'],
+
 };
 </script>
 <style scoped>

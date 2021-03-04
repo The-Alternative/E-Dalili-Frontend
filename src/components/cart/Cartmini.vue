@@ -56,13 +56,11 @@
                         </div>
                     </div>
                     <div class="col">
-                        <button class="btn">
-                            أشتري الآن
-                        </button>
+                       <button class="button"><span>اشتري الآن </span></button>
                         <router-link to="/Cart"
-                            ><button class="btn">
-                                الذهاب لعربة التسوق
-                            </button></router-link
+                            > <button class="button but1"><span>
+                                الذهاب لعربة التسوق </span></button>
+                            </router-link
                         >
                     </div>
                 </div>
@@ -115,6 +113,46 @@ export default {
 
 <style scoped>
 /* ____________________________ Start Cart Shop ________________________________ */
+.button {
+  border-radius: 4px;
+  background-color: #008b8b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: 190px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.but1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  font-size: 30px;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 .close {
     cursor: pointer;
 }
@@ -170,6 +208,7 @@ export default {
 .col-md-2,
 .col-md-3 {
     margin: auto;
+    font-size: 17px;
 }
 @media (max-width: 767px) {
     .card {
@@ -329,5 +368,9 @@ a:hover {
         color: red;
         font-size: 20px;
     }
+    .col-md-2,
+.col-md-3 {
+    margin-top: 1vh;
+}
 }
 </style>
