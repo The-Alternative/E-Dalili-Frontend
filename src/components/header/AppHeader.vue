@@ -146,7 +146,7 @@
                             >
                         </div>
                         <div>
-                            <router-link to="/">
+                            <router-link to="/products">
                                 <button
                                     type="button"
                                     class="btn btn-light products"
@@ -155,6 +155,7 @@
                                 </button></router-link
                             >
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -244,7 +245,9 @@ export default {
     padding: 20px;
     width: 100%;
 }
-
+.upper-bar span{
+    font-size: 17px;
+}
 .upper-bar .customer-select {
     display: inline-block;
     border: none;
@@ -261,16 +264,19 @@ export default {
     -o-appearance: none;
     background-color: transparent;
     color: #fff;
-    padding: 3px 30px;
+    padding: auto;
     z-index: 2;
-    font-size: 13px;
+    font-size: 16px;
     position: relative;
-    height: 30px;
+    height: 35px;
+    line-height: 2.15;
+    
+    
 }
 .upper-bar .sel1:after {
     position: absolute;
     content: '>';
-    top: 0;
+    top: 4px;
     left: 14px;
     background-color: transparent;
     color: #fff;
@@ -282,7 +288,7 @@ export default {
 .upper-bar .sel2:after {
     position: absolute;
     content: '>';
-    top: 0;
+    top: 4px;
     left: 14px;
     background-color: transparent;
     color: #fff;
@@ -294,7 +300,7 @@ export default {
 .upper-bar .sel3:after {
     position: absolute;
     content: '>';
-    top: 0;
+    top: 4px;
     left: 14px;
     background-color: transparent;
     color: #fff;
@@ -303,10 +309,22 @@ export default {
     z-index: 1;
     font-size: 20px;
 }
+.upper-bar .sel1 select {
+   width: 46px;
+}
+.upper-bar .sel2 select {
+   width: 32px;
+}
+.upper-bar .sel3 select {
+   width: 35px;
+}
+.upper-bar .sel4 select {
+   width: 47px;
+}
 .upper-bar .sel4:after {
     position: absolute;
     content: '>';
-    top: 0;
+    top: 4px;
     left: 14px;
     background-color: transparent;
     color: #fff;
@@ -317,6 +335,7 @@ export default {
 }
 .upper-bar .fa-map-marker {
     margin-left: 1vh;
+    font-size: 16px;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -338,46 +357,46 @@ export default {
         margin-bottom: 2vh;
     }
     .upper-bar .customer-select select {
-        font-size: 11px;
-        padding-left: 14px;
+        font-size: 12px;
+        padding-left: 5px;
     }
     .upper-bar .row span {
-        font-size: 10px;
+        font-size: 12px;
     }
     .upper-bar .fa-map-marker {
-        font-size: 10px;
+        font-size: 12px;
         position: absolute;
-        left: 85px;
-        top: 45px;
+        left: 82px;
+        top: 57px;
     }
     .upper-bar .sel1:after {
-        left: 5px;
-        top: 2px;
+        left: 6px;
+        top: 7px;
         font-size: 15px;
     }
     .upper-bar .sel2:after {
-        left: 5px;
-        top: 2px;
+        left: 6px;
+        top: 7px;
         font-size: 15px;
     }
     .upper-bar .sel3:after {
-        left: 5px;
-        top: 2px;
+        left: 6px;
+        top: 7px;
         font-size: 15px;
     }
     .upper-bar .sel4:after {
-        left: 5px;
-        top: 2px;
+        left: 6px;
+        top: 7px;
         font-size: 15px;
     }
     .upper-bar .lang {
         position: absolute;
-        top: 3px;
+        top: 5px;
         left: 110px;
     }
     .upper-bar .lang2 {
         position: absolute;
-        top: 45px;
+        top: 55px;
         left: 98px;
         width: 60px;
     }
@@ -397,7 +416,7 @@ export default {
         width: 95px;
     }
     .upper-bar .customer-select select {
-        font-size: 11px;
+        font-size: 13px;
     }
     .upper-bar .row span {
         font-size: 14px;
@@ -522,7 +541,7 @@ export default {
 .jumbotron .featuers {
     width: 800px;
     margin: auto;
-    margin-top: 63vh;
+    margin-top: 400px;
     background-color: #bfc0c2;
     padding: 10px 20px;
     color: #635f5f;
@@ -605,7 +624,7 @@ export default {
     }
     .jumbotron .featuers {
         width: 200px;
-        margin-top: 9vh;
+        margin-top: 75px;
         font-size: 11px;
         border-radius: 20px;
     }
@@ -690,7 +709,7 @@ export default {
     content: url(../../../public/img/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 398px;
+    right: 395px;
 }
 .naver .row .sell {
     background-color: #f6ef19;
@@ -715,7 +734,7 @@ export default {
     }
     .naver .img::before {
         top: 77px;
-        right: 267px;
+        right: 220px;
     }
     .naver .row .products {
         width: 60px;

@@ -1,88 +1,6 @@
 <template>
     <div class="products">
         <Cartmini />
-        <!-- Start Section-->
-        <div class="categores">
-            <div class="row">
-                <div
-                    class="col-xl-3 col-md-3 col-xs-6"
-                    v-for="catog in categories"
-                    :key="catog.id"
-                    :slug="catog.slug"
-                    :name="catog.name"
-                    :image="catog.image"
-                    style="width:50%"
-                >
-                    <div class="icon">
-                        <img
-                            :src="
-                                catog.image
-                            "
-                        />
-
-                        <!--      <img :src="`${urll}/${catog.image}`" />        -->
-                    </div>
-                    <div
-                        class="dropdowns"
-                    >
-                        <button
-                            class="btn sec dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                        >
-                            {{
-                                catog.name
-                            }}
-                            <span
-                                class="caret"
-                            ></span>
-                        </button>
-                        <ul
-                            class="dropdown-menu"
-                        >
-                            <router-link
-                                :to="
-                                    `/${catog.slug}`
-                                "
-                            >
-                                <li>
-                                    <a
-                                        href="#"
-                                        >1</a
-                                    >
-                                </li></router-link
-                            >
-                            <router-link
-                                :to="
-                                    `/${catog.slug}`
-                                "
-                            >
-                                <li>
-                                    <a
-                                        href="#"
-                                        >2</a
-                                    >
-                                </li></router-link
-                            >
-                            <router-link
-                                :to="
-                                    `/${catog.slug}`
-                                "
-                            >
-                                <li>
-                                    <a
-                                        href="#"
-                                        >3</a
-                                    >
-                                </li></router-link
-                            >
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- End Section-->
         <!--  show img  -->
         <div class="show-img">
             <div class="row">
@@ -119,7 +37,10 @@
                     "
                     @click="goto(items)"
                 >
+                
                 </BodyProduct>
+                
+                
             </div>
         </div>
         <!-- show market-->
@@ -605,61 +526,6 @@ export default {
 </script>
 
 <style scoped>
-/* ____________________________ Start Section ____________________________ */
-.categores {
-    height: auto;
-    width: 100%;
-    color: #000000;
-    list-style: none;
-    background-color: #ccc;
-}
-
-.categores img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    opacity: 0.5;
-    transition: all 0.5s ease-in-out;
-}
-.categores img:hover {
-    width: 80px;
-    height: 80px;
-    opacity: 1;
-}
-.categores li {
-    text-align: center;
-    color: #a7a6a6;
-}
-.categores li:hover {
-    background-color: #ccc;
-}
-.categores li a {
-    text-decoration-line: none;
-    color: #292828;
-}
-
-.sec {
-    background-color: #ccc;
-    font-size: 15px;
-    margin: 0 1vh;
-}
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .sec {
-        font-size: 12px;
-    }
-}
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-}
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-}
-/* ____________________________ END Section ____________________________ */
-
 .row {
     justify-content: center;
 }

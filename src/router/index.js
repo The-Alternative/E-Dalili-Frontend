@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 /* import services */
+import home from '../views/services/home.vue';
 import stores from '../views/services/stores.vue';
 import instrc from '../views/services/instrc.vue';
 import company from '../views/services/company.vue';
@@ -55,6 +56,11 @@ const routes = [
 
     {
         path: '/',
+        name: 'home',
+        component: home,
+    },
+    {
+        path: '/products',
         name: 'products',
         component: products,
     },

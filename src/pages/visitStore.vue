@@ -81,7 +81,7 @@
                     <div class="icons mt-3">
                         <div class="row telephone mt-3">
                             <span>{{visit.phonenumber}}</span>
-                            <img
+                 <img
                                 class="ml-2"
                                 src="../../public/img/telephone.svg"
                                 height="20"
@@ -170,6 +170,7 @@
 import data from '../jeson/data';
 export default {
     name: 'visitStore',
+    props: ['id', 'title'],
     data() {
         return {
             stores: data.stores,
@@ -192,8 +193,9 @@ export default {
                 "categories": "البقالة"
             },
         };
+
     },
-    props: ['id', 'title'],
+
 };
 </script>
 <style scoped>
