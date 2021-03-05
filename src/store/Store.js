@@ -10,7 +10,6 @@ export default new Vuex.Store({
     state: {
         // MOCK_DATA json
         Product: jeson[0].Products,
-        stores: data.stores,
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,
         categories: jeson[0].categories,

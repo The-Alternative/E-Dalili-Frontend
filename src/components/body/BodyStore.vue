@@ -3,27 +3,10 @@
     <div
         class="card-group col-sm-12 wrapper"
         id="wrapper"
-        style="display: flex; justify-content: center;"
+        style="display: flex;"
     >
-        <!--      coulome one left -->
-        <!-- <div
-            class="card col-lg-2 col-md-2 coulom-img"
-        >
-            <img
-                class="mb-3 img1"
-                src="../../../public/img/img1.png"
-                height="50%"
-            />
-            <img
-                class="img2"
-                src="../../../public/img/img.png"
-                height="50%"
-            />
-        </div> -->
-
-        <!--     coulome middel stors group   -->
         <div
-            class="card col-lg-8 col-md-8 col-sm-9 col-xs-10 stors"
+            class="card col-lg-8 col-md-9 col-sm-12 col-xs-12 stors"
             style="display: flex;"
         >
             <!--          store 1-->
@@ -34,92 +17,55 @@
                 :key="store.id"
                 :address="store.address"
             >
-                <div
-                    class="card-title col"
-                >
-                    <div
-                        class="d-flex flex-col"
-                    >
+                <div class="card-title col">
+                    <div class="d-flex flex-col">
                         <div class="col">
                             <img
-                            class="img-open" 
-                            src="../../../public/img/open.png"
-                            height="40"
+                                class="img-open"
+                                src="../../../public/img/open.png"
+                                height="40"
                             />
                         </div>
-                        <div
-                            class="col text-muted"
-                        >
-                        {{
-                                store.space
-                            }}
+                        <div class="col text-muted">
+                            {{ store.space }}
                         </div>
                         <div class="col">
-                            <div
-                                class="row mt-3"
-                            >
-                                <div class="title">{{
-                                    store.title
-                                }}</div>
-                                <div
-                                    class="stars text-right"
-                                >
+                            <div class="row mt-3">
+                                <div class="title">{{ store.title }}</div>
+                                <div class="stars text-right">
                                     <span
-                                        @click="
-                                            store.rate = item
-                                        "
-                                        v-for="item in parseInt(
-                                            store.rate
-                                        )"
-                                        :key="
-                                            item
-                                        "
+                                        @click="store.rate = item"
+                                        v-for="item in parseInt(store.rate)"
+                                        :key="item"
                                         class="fa fa-star"
                                         aria-hidden="true"
                                     ></span>
                                     <span
-                                        @click="
-                                            store.rate =
-                                                item +
-                                                store.rate
-                                        "
-                                        v-for="item in 5 -
-                                            store.rate"
-                                        :key="
-                                            item
-                                        "
+                                        @click="store.rate = item + store.rate"
+                                        v-for="item in 5 - store.rate"
+                                        :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
                                     ></span>
                                 </div>
                             </div>
                         </div>
-                       <div class="col">
-                           <img
-                            class="rounded-circle"
-                            src="../../../public/img/market-logo.png"
-                            height="70"
+                        <div class="col">
+                            <img
+                                class="rounded-circle"
+                                src="../../../public/img/market-logo.png"
+                                height="70"
                             />
                         </div>
                     </div>
                 </div>
-                <div
-                    class="card-footer"
-                >
-                    <ul
-                        class="flex-row d-inline-flex"
-                    >
-                        <li
-                            class="categorystore"
-                        >
-                            {{
-                                store.categories
-                            }}
+                <div class="card-footer">
+                    <ul class="flex-row d-inline-flex">
+                        <li class="categorystore">
+                            {{ store.categories }}
                         </li>
                     </ul>
-                    <div
-                        class="row img-button"
-                    >
+                    <div class="row img-button">
                         <img
                             class="Group"
                             src="../../../public/img/Group.png"
@@ -133,7 +79,7 @@
                         <button
                             type="button"
                             class="btn w-25"
-                             @click="gotoview(id, title)"
+                            @click="gotoview(id, title)"
                         >
                             <b>زيارة</b>
                         </button>
@@ -148,38 +94,21 @@
         <!--              check box     -->
         <span class="slide" id="btn">
             <a>
-                <i
-                    class="fa fa-bars"
-                    @click="btnbar()"
-                ></i>
+                <i class="fa fa-bars" @click="btnbar()"></i>
             </a>
         </span>
 
         <div
-            class="card col-lg-3 col-md-3 col-sm-3 col-xs-3 categores"
+            class="card col-lg-3 col-md-3 col-sm-4 col-xs-4 categores"
             id="menu"
         >
             <div class="backdrop"></div>
-            <div
-                class="card text-right checked-all open"
-                id="all"
-            >
-                <span
-                    class="text-center span-text text"
-                    >عرض العروضات
-                    حسب</span
-                >
-                <span
-                    class="text-center bgcolor"
-                    >حسب القسم</span
-                >
+            <div class="card text-right checked-all open" id="all">
+                <span class="text-center span-text text">عرض العروضات حسب</span>
+                <span class="text-center bgcolor">حسب القسم</span>
                 <div class="checklist">
-                    <label
-                        class="textcheck"
-                        for="check4"
-                        >الكل</label
-                    >
-                    <input 
+                    <label class="textcheck" for="check4">الكل</label>
+                    <input
                         class="categories fa fa-check-square-o"
                         type="checkbox"
                         id="check4"
@@ -188,211 +117,117 @@
                         <li
                             class="textcheck"
                             v-for="category in categories"
-                            :key="
-                                category
-                            "
+                            :key="category"
                             for="category"
                         >
-                            {{
-                                category
-                            }}
+                            {{ category }}
                             <input
                                 class="categories"
                                 type="checkbox"
-                                v-bind:value="
-                                    category
-                                "
+                                v-bind:value="category"
                                 id="category"
-                                v-model="
-                                    selectedCategory
-                                "
+                                v-model="selectedCategory"
                             />
                         </li>
                     </ul>
                 </div>
-                <span
-                    class="text-center bgcolor"
-                    >حسب المتجر أو
-                    الشركة</span
-                >
+                <span class="text-center bgcolor">حسب المتجر أو الشركة</span>
                 <div class="checklist">
                     <div class="">
-                        <label
-                            class="textcheck"
-                            for="check1"
-                            >سوبر ماركت
-                            شوبيكو</label
+                        <label class="textcheck" for="check1"
+                            >سوبر ماركت شوبيكو</label
                         >&nbsp;
-                        <input
-                            class="categories"
-                            type="checkbox"
-                            id="check1"
-                        />
+                        <input class="categories" type="checkbox" id="check1" />
                     </div>
                     <div class="">
-                        <label
-                            class="textcheck"
-                            for="check2"
-                            >أميرة
-                            سنتر</label
+                        <label class="textcheck" for="check2">أميرة سنتر</label
                         >&nbsp;
-                        <input
-                            class="categories"
-                            type="checkbox"
-                            id="check2"
-                        />
+                        <input class="categories" type="checkbox" id="check2" />
                     </div>
                     <div class="">
-                        <label
-                            class="textcheck"
-                            for="check3"
-                            >شركة الصفدي
-                            للإلكترونيات</label
+                        <label class="textcheck" for="check3"
+                            >شركة الصفدي للإلكترونيات</label
                         >&nbsp;
-                        <input
-                            class="categories"
-                            type="checkbox"
-                            id="check3"
-                        />
+                        <input class="categories" type="checkbox" id="check3" />
                     </div>
                 </div>
-                <span
-                    class="text-center bgcolor"
-                    >حسب التقييم</span
-                >
-                <div
-                    class="checklist stars"
-                >
-                    <div
-                        class="row star-right"
-                    >
+                <span class="text-center bgcolor">حسب التقييم</span>
+                <div class="checklist stars">
+                    <div class="row star-right">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 5 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 5 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right2"
-                    >
+                    <div class="row star-right2">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 4 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 4 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right3"
-                    >
+                    <div class="row star-right3">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 3 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 3 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right4"
-                    >
+                    <div class="row star-right4">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 2 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 2 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
                         ></span>
                     </div>
-                    <div
-                        class="row star-right5"
-                    >
+                    <div class="row star-right5">
                         <span
-                            @click="
-                                rate = item
-                            "
-                            v-for="item in parseInt(
-                                rate
-                            )"
+                            @click="rate = item"
+                            v-for="item in parseInt(rate)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="
-                                rate =
-                                    item +
-                                    rate
-                            "
-                            v-for="item in 1 -
-                                rate"
+                            @click="rate = item + rate"
+                            v-for="item in 1 - rate"
                             :key="item"
                             class="far fa-star "
                             aria-hidden="true"
@@ -412,12 +247,13 @@ export default {
     components: {
         WhatsappStore,
         PhoneStore,
-        LocationStore
+        LocationStore,
     },
-    props: ['id','title']  ,
-  
+    props: ['id', 'title'],
+
     data() {
         return {
+            stores: data.stores,
             categories: data.categories,
             rate: 0,
             selectedCategory: [],
@@ -439,16 +275,12 @@ export default {
             });
             return activeStores;
         },
-        stores() {
-            return this.$store.state
-                .stores;
-        },
     },
     methods: {
         btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
-        }, 
+        },
         gotoview: function(i, t) {
             this.$router.push(`visitStore/${i}/${t}`);
         },
@@ -459,8 +291,11 @@ export default {
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
     .btn {
+        font-weight: bold;
         font-size: 10px;
-        height: 30px;
+        text-align: center;
+        align-items: center;
+        height: 20px;
         width: 6px;
         margin-left: 30px;
     }
@@ -472,25 +307,22 @@ export default {
     }
     .categories {
         height: 8px;
+        font-size: 8px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
         transition: all 0.8s;
     }
     .textcheck {
-        font-weight: bold;
         list-style: none;
         margin-bottom: 10px;
-        font-size: 7px;
+        font-size: 8px;
         color: #000000;
         transition: all 0.8s;
     }
-    .checked-all
-        .listcategories
-        .categories {
+    .checked-all .listcategories .categories {
         color: #000000;
         margin-right: 10px;
-        display: none;
     }
     .span-text {
         font-size: 10px;
@@ -499,7 +331,7 @@ export default {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 9px;
+        font-size: 8px;
         margin-top: 5px;
     }
     .star-right {
@@ -532,7 +364,7 @@ export default {
         margin-right: 0;
         color: #000000;
         position: absolute;
-        width: 180px;
+        width: 200px;
         right: -400px;
         height: 50%;
         transition: right 0.4s ease;
@@ -558,11 +390,8 @@ export default {
     .slide.click .fa-bars:before {
         content: '\f00d';
     }
-    .coulom-img {
-        display: none;
-    }
     .card {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-right: 0;
         margin-left: 0;
     }
@@ -578,22 +407,21 @@ export default {
         margin-top: 10px;
         height: 20px;
     }
-    /*!*!*space store*!*!*/
     .text-muted {
-        margin-top: 10px;
-        font-size: 7px;
+        margin-top: 20px;
+        font-size: 6px;
+        font-weight: bold;
     }
-    /*!*!*!*!*name store*!*!*!*!*/
     .title {
         font-size: 6px;
         font-weight: bold;
-   }
+    }
     .stars {
-        font-size: 5px;
+        font-weight: bold;
+        font-size: 6px;
         color: #ffd200;
         list-style: none;
     }
-    /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
         margin-top: 5px;
         list-style: none;
@@ -644,9 +472,7 @@ export default {
         color: #000000;
         transition: all 0.8s;
     }
-    .checked-all
-        .listcategories
-        .categories {
+    .checked-all .listcategories .categories {
         color: #000000;
         margin-right: 10px;
     }
@@ -716,11 +542,8 @@ export default {
     .slide.click .fa-bars:before {
         content: '\f00d';
     }
-    .coulom-img {
-        display: none;
-    }
     .card {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-right: 0;
         margin-left: 0;
     }
@@ -730,23 +553,17 @@ export default {
     .img-open {
         height: 20px;
         margin-top: 10px;
-        /* margin-left: 30px; */
         transition: all 0.8s;
     }
     .rounded-circle {
         margin-top: 10px;
         height: 30px;
     }
-    /*!*!*space store*!*!*/
     .text-muted {
         margin-top: 20px;
-        /* margin-left: 60px;
-        margin-right: 80px; */
         font-size: 8px;
     }
-    /*!*!*!*!*name store*!*!*!*!*/
     .title {
-        /* margin-right: 10px; */
         font-size: 8px;
     }
     .stars {
@@ -754,8 +571,6 @@ export default {
         color: #ffd200;
         list-style: none;
     }
-
-    /*!*!*!*!*type of goods*!*!*!*!*/
     .categorystore {
         margin-top: 5px;
         list-style: none;
@@ -778,98 +593,47 @@ export default {
     }
 }
 @media (min-width: 599px) and (max-width: 767px) {
-    .coulom-img {
-        display: none;
-    }
-    .card {
-        margin-top: 20px;
-        margin-right: 0;
-        margin-left: 0;
-    }
     .btn {
         font-weight: bold;
-        font-size: 10px;
-        height: 25px;
+        font-size: 12px;
+        height: 30px;
         width: 8px;
-        margin-left: 60px;
+        margin-left: 80px;
     }
-    .img-open {
-        height: 20px;
-        /* margin-right: 20px; */
-        margin-top: 5px;
+    .checked-all {
+        font-size: 12px;
+        color: #000000;
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .categories {
+        height: 10px;
+        font-size: 12px;
+        color: #000000;
+        list-style: none;
+        margin-bottom: 10px;
         transition: all 0.8s;
     }
-    .rounded-circle {
-        height: 30px;
-    }
-    /*!*!*space store*!*!*/
-    .text-muted {
-        /* margin-right: 40px;
-        margin-left: 30px; */
-        margin-top: 10px;
-        font-size: 8px;
-    }
-    /*!*!*!*!*name store*!*!*!*!*/
-    .title {
-        /* margin-right: 5px; */
-        font-size: 8px;
-    }
-    .stars {
-        font-size: 8px;
-        color: #ffd200;
-        list-style: none;
-    }
-    /*!*!*!*!*type of goods*!*!*!*!*/
-    .categorystore {
-        margin-top: 5px;
-        list-style: none;
-        font-size: 9px;
-        color: #751aff;
-    }
-    .img-button {
-        margin-top: 5px;
-    }
-    .Group {
-        margin-left: 10px;
-    }
-    .Group {
-        height: 15px;
-    }
-    .MaskGroup {
-        height: 15px;
-    }
-
     .textcheck {
         list-style: none;
         margin-bottom: 10px;
-        font-size: 6px;
+        font-size: 8px;
         font-weight: bold;
         color: #000000;
         transition: all 0.8s;
     }
-    .categories {
-        height: 6px;
-        font-size: 6px;
-        font-weight: bold;
+    .checked-all .listcategories .categories {
         color: #000000;
-        list-style: none;
-        margin-bottom: 10px;
-        transition: all 0.8s;
-        /* position: relative; */
+        margin-right: 10px;
     }
-    /* .categories[type='checkbox'] {
-        width: 7px;
-        height: 7px;
-        border: 1px solid #000;
-    } */
     .span-text {
-        font-size: 9px;
+        font-size: 12px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 8px;
+        font-size: 10px;
         margin-top: 5px;
     }
     .star-right {
@@ -897,48 +661,109 @@ export default {
         font-size: 10px;
         margin-left: 134px;
     }
+    .categores {
+        margin-right: 0;
+        color: #000000;
+        position: absolute;
+        width: 200px;
+        right: -400px;
+        height: 50%;
+        transition: right 0.4s ease;
+    }
+    .categores.show {
+        right: 0;
+    }
     .slide {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        transition: right 0.4s ease;
     }
-    .card-title {
+    .slide.click {
+        right: 260px;
+    }
+    .slide .fa-bars {
+        color: #000000;
+    }
+    .slide.click .fa-bars:before {
+        content: '\f00d';
+    }
+    .card {
+        margin-top: 10px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .card-footer {
+        text-align: center;
+    }
+    .img-open {
+        height: 20px;
+        margin-top: 10px;
+        transition: all 0.8s;
+    }
+    .rounded-circle {
+        margin-top: 10px;
+        height: 30px;
+    }
+    .text-muted {
         margin-top: 20px;
+        font-size: 8px;
     }
-    .card-group {
-        margin: 50px 20px 50px 20px;
-        justify-content: center;
-        justify-items: center;
+    .title {
+        font-size: 8px;
+    }
+    .stars {
+        font-size: 8px;
+        color: #ffd200;
+        list-style: none;
+    }
+    .categorystore {
+        margin-top: 5px;
+        list-style: none;
+        font-size: 10px;
+        color: #751aff;
+        text-align: center;
+    }
+    .img-button {
+        margin-top: 5px;
+    }
+    .Group {
+        margin-left: 10px;
+        height: 15px;
+    }
+    .MaskGroup {
+        height: 15px;
+    }
+    .stors {
+        width: 100%;
     }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     .card {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-right: 0;
         margin-left: 0;
     }
     .img-open {
         height: 30px;
-        /* margin-right: 20px; */
         margin-top: 10px;
         transition: all 0.8s;
     }
     .rounded-circle {
         height: 40px;
-        /*margin-top: 10px;*/
     }
     .btn {
         margin-left: 70px;
         height: 30px;
     }
-    /*!*space store*!*/
     .text-muted {
-        /* margin-right: 50px;
-        margin-left: 30px; */
         margin-top: 20px;
         font-size: 10px;
     }
-    /*!*!*!*name store*!*!*!*/
     .title {
-        /* margin-right: 20px; */
         font-size: 10px;
     }
     .stars {
@@ -946,7 +771,6 @@ export default {
         list-style: none;
         font-size: 10px;
     }
-    /*!*!*!*type of goods*!*!*!*/
     .categorystore {
         list-style: none;
         font-size: 12px;
@@ -961,9 +785,6 @@ export default {
         list-style: none;
         margin-bottom: 10px;
         transition: all 0.8s;
-    }
-    .coulom-img{
-        display: none;
     }
     .textcheck {
         font-weight: bold;
@@ -1019,20 +840,17 @@ export default {
         margin-top: 20px;
     }
     .card-group {
-        margin: 50px 20px 50px 20px;
         justify-content: center;
-        justify-items: center;
     }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .card {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-right: 0;
         margin-left: 0;
     }
     .img-open {
         height: 30px;
-        /* margin-right: 40px; */
         margin-top: 10px;
         transition: all 0.8s;
     }
@@ -1042,16 +860,11 @@ export default {
     }
     .rounded-circle {
         height: 50px;
-        /*margin-top: 10px;*/
     }
-    /*space store*/
     .text-muted {
-        /* margin-right: 60px;
-        margin-left: 30px; */
         margin-top: 20px;
         font-size: 10px;
     }
-    /*!*!*name store*!*!*/
     .card-title {
         font-size: 10px;
     }
@@ -1059,7 +872,6 @@ export default {
         color: #ffd200;
         list-style: none;
     }
-    /*!*!*type of goods*!*!*/
     .categorystore {
         list-style: none;
         font-size: 14px;
@@ -1085,7 +897,6 @@ export default {
         list-style: none;
         margin-bottom: 10px;
         transition: all 0.8s;
-        /* margin-right: 10px; */
     }
     .span-text {
         font-size: 12px;
@@ -1120,7 +931,7 @@ export default {
     .star-right5 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left:110px;
+        margin-left: 110px;
     }
     .slide {
         display: none;
@@ -1129,9 +940,7 @@ export default {
         margin-top: 20px;
     }
     .card-group {
-        margin: 50px 20px 50px 20px;
         justify-content: center;
-        justify-items: center;
     }
 }
 @media (min-width: 1200px) {
@@ -1140,8 +949,6 @@ export default {
     }
     .img-open {
         margin-left: 20px;
-        /* margin-right: 50px;
-        margin-top: 10px; */
         transition: all 0.8s;
     }
     .btn {
@@ -1156,17 +963,9 @@ export default {
         color: #000000;
         transition: all 0.8s;
     }
-    /*space store*/
     .text-muted {
-        /* margin-right: 90px;
-        margin-left: 30px; */
         margin-top: 20px;
     }
-    /*name store*/
-    /* .title {
-        margin-right: 0;    
-    } */
-    /*type of goods*/
     .categorystore {
         list-style: none;
         font-size: 15px;
@@ -1179,7 +978,6 @@ export default {
     .Group {
         margin-left: 10px;
     }
-    /*    check list   */
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
@@ -1195,7 +993,8 @@ export default {
         transition: all 0.8s;
     }
     .card {
-        margin-top: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         margin-right: 0;
         margin-left: 0;
     }
@@ -1228,12 +1027,10 @@ export default {
         display: none;
     }
     .card-title {
-         margin-top: 20px;
+        margin-top: 20px;
     }
     .card-group {
-        margin: 50px 20px 50px 20px;
         justify-content: center;
-        justify-items: center;
     }
 }
 
@@ -1246,26 +1043,25 @@ body {
     font-family: sans-serif;
     overflow-x: hidden;
 }
-/*div loop store*/
 .store {
+    background-color: #ffffff;
     margin-bottom: 10px;
     border-radius: 0;
     box-shadow: 10px 10px 10px #adad85;
-
 }
 .store:hover {
     border: 1px solid #ffffff;
     border-radius: 7px;
-    box-shadow: 3px 3px 3px 3px #7a7a52; 
+    box-shadow: 3px 3px 3px 3px #7a7a52;
 }
-.categores{
+.categores {
     border-radius: 0;
-    box-shadow: 10px 10px 10px #adad85;   
+    box-shadow: 10px 10px 10px #adad85;
 }
-.categores:hover{
+.categores:hover {
     border: 1px solid #ffffff;
     border-radius: 7px;
-    box-shadow: 3px 3px 3px 3px #7a7a52;    
+    box-shadow: 3px 3px 3px 3px #7a7a52;
 }
 .stars {
     color: #ffd200;
@@ -1275,21 +1071,13 @@ body {
     color: #ffd200;
     box-shadow: 0 0 40px #eebe22;
 }
-/*coulome store*/
 .stors {
     transition: all 0.35s ease-in-out;
     background-color: transparent;
     border: none;
 }
-.coulom-img {
-    background-color: transparent;
-    border: none;
-}
 .card-group {
-    background-color: #f5f5f5;
-    /* margin: 50px 20px 50px 20px;
-    justify-content: center;
-    justify-items: center; */
+    background-color: #edefef;
 }
 .checklist {
     font-size: 15px;
@@ -1325,38 +1113,19 @@ body {
 .text-muted:hover {
     font-weight: bold;
 }
-.img1:hover {
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    margin-bottom: 10px;
-    border-radius: 7px;
-}
-.img2:hover {
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    margin-bottom: 10px;
-    border-radius: 7px;
-}
 .btn {
     background-color: #00cc44;
     color: #ffffff;
     border-radius: 40px;
     box-shadow: -2px -2px 8px rgb(224, 223, 214),
-        -2px -2px 12px
-            rgba(221, 220, 212, 0.5),
-        inset 2px 2px 4px
-            rgba(207, 206, 200, 0.1),
-        2px 2px 8px
-            rgba(168, 168, 163, 0.15);
+        -2px -2px 12px rgba(221, 220, 212, 0.5),
+        inset 2px 2px 4px rgba(207, 206, 200, 0.1),
+        2px 2px 8px rgba(168, 168, 163, 0.15);
 }
 .btn:hover {
-    box-shadow: inset -2px -2px 8px
-            rgb(150, 148, 137),
-        inset -2px -2px 12px
-            rgba(104, 103, 99, 0.5),
-        inset 2px 2px 4px
-            rgba(109, 108, 104, 0.1),
-        inset 2px 2px 8px
-            rgba(216, 215, 211, 0.15);
+    box-shadow: inset -2px -2px 8px rgb(150, 148, 137),
+        inset -2px -2px 12px rgba(104, 103, 99, 0.5),
+        inset 2px 2px 4px rgba(109, 108, 104, 0.1),
+        inset 2px 2px 8px rgba(216, 215, 211, 0.15);
 }
 </style>
