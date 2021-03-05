@@ -19,10 +19,10 @@ export default {
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
     .location {
-        height: 15px;
-        margin-left: 40px;
+        height: 10px;
+        margin-left: 20px;
         border-radius: 50px;
-        width: 15px;
+        width: 10px;
         transition: all 0.8s;
     }
     .location:hover {
@@ -32,7 +32,7 @@ export default {
 @media (min-width: 468px) and (max-width: 598px) {
     .location {
         height: 15px;
-        margin-left: 100px;
+        margin-left: 80px;
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;

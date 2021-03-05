@@ -1,9 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import jeson from '@/jeson/MOCK_DATA.json';
-
-import data from '../jeson/data.json';
-
 Vue.use(Vuex);
 
 let cartItems = window.localStorage.getItem('cartItems');
@@ -11,6 +8,7 @@ let cartItemCount = window.localStorage.getItem('cartItemCount');
 
 export default new Vuex.Store({
     state: {
+        // MOCK_DATA json
         Product: jeson[0].Products,
         stores: data.stores,
         lastStores: jeson[0].lastStores,

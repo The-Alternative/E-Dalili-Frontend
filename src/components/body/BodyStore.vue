@@ -3,11 +3,11 @@
     <div
         class="card-group col-sm-12 wrapper"
         id="wrapper"
-        style="display: flex; justify-content: center; padding: 0"
+        style="display: flex; justify-content: center;"
     >
         <!--      coulome one left -->
-        <div
-            class="card pl-3 pr-0 col-lg-3 col-md-2 col-sm-6 coulom-img"
+        <!-- <div
+            class="card col-lg-2 col-md-2 coulom-img"
         >
             <img
                 class="mb-3 img1"
@@ -19,11 +19,12 @@
                 src="../../../public/img/img.png"
                 height="50%"
             />
-        </div>
+        </div> -->
 
         <!--     coulome middel stors group   -->
         <div
-            class="card pl-1 pr-1 col-lg-6 col-md-7 col-sm-8 col-xs-8 stors "
+            class="card col-lg-8 col-md-8 col-sm-9 col-xs-10 stors"
+            style="display: flex;"
         >
             <!--          store 1-->
             <div
@@ -34,30 +35,32 @@
                 :address="store.address"
             >
                 <div
-                    class="card-title row justify-content-lg-end"
+                    class="card-title col"
                 >
                     <div
-                        class="d-flex flex-row"
+                        class="d-flex flex-col"
                     >
-                        <img
-                            class="img-open"
+                        <div class="col">
+                            <img
+                            class="img-open" 
                             src="../../../public/img/open.png"
                             height="40"
-                        />
+                            />
+                        </div>
                         <div
-                            class="text-muted"
+                            class="col text-muted"
                         >
-                            {{
+                        {{
                                 store.space
                             }}
                         </div>
-                        <div>
+                        <div class="col">
                             <div
-                                class="title"
+                                class="row mt-3"
                             >
-                                {{
+                                <div class="title">{{
                                     store.title
-                                }}
+                                }}</div>
                                 <div
                                     class="stars text-right"
                                 >
@@ -91,11 +94,13 @@
                                 </div>
                             </div>
                         </div>
-                        <img
+                       <div class="col">
+                           <img
                             class="rounded-circle"
                             src="../../../public/img/market-logo.png"
-                            height="60"
-                        />
+                            height="70"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div
@@ -151,7 +156,7 @@
         </span>
 
         <div
-            class="card pl-0 pr-3 mr-4 col-lg-3 col-md-3 col-sm-4 col-xs-4 categores"
+            class="card col-lg-3 col-md-3 col-sm-3 col-xs-3 categores"
             id="menu"
         >
             <div class="backdrop"></div>
@@ -174,7 +179,7 @@
                         for="check4"
                         >الكل</label
                     >
-                    <input
+                    <input 
                         class="categories fa fa-check-square-o"
                         type="checkbox"
                         id="check4"
@@ -454,13 +459,13 @@ export default {
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
     .btn {
-        font-size: 12px;
+        font-size: 10px;
         height: 30px;
         width: 6px;
         margin-left: 30px;
     }
     .checked-all {
-        font-size: 12px;
+        font-size: 10px;
         color: #000000;
         overflow-y: auto;
         white-space: nowrap;
@@ -565,28 +570,26 @@ export default {
         text-align: center;
     }
     .img-open {
-        height: 20px;
+        height: 15px;
         margin-top: 10px;
-        margin-left: 10px;
         transition: all 0.8s;
     }
     .rounded-circle {
-        height: 30px;
+        margin-top: 10px;
+        height: 20px;
     }
     /*!*!*space store*!*!*/
     .text-muted {
-        margin-top: 20px;
-        margin-left: 10px;
-        margin-right: 20px;
-        font-size: 9px;
+        margin-top: 10px;
+        font-size: 7px;
     }
     /*!*!*!*!*name store*!*!*!*!*/
     .title {
-        margin-top: 10px;
-        margin-right: 10px;
-        font-size: 9px;
-    }
+        font-size: 6px;
+        font-weight: bold;
+   }
     .stars {
+        font-size: 5px;
         color: #ffd200;
         list-style: none;
     }
@@ -594,7 +597,7 @@ export default {
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 10px;
+        font-size: 8px;
         color: #751aff;
         text-align: center;
     }
@@ -602,10 +605,10 @@ export default {
         margin-top: 5px;
     }
     .Group {
-        height: 15px;
+        height: 10px;
     }
     .MaskGroup {
-        height: 15px;
+        height: 10px;
     }
     .stors {
         width: 100%;
@@ -617,7 +620,7 @@ export default {
         font-size: 12px;
         height: 30px;
         width: 8px;
-        margin-left: 100px;
+        margin-left: 80px;
     }
     .checked-all {
         font-size: 12px;
@@ -627,7 +630,7 @@ export default {
     }
     .categories {
         height: 10px;
-        font-size: 15px;
+        font-size: 12px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
@@ -727,26 +730,27 @@ export default {
     .img-open {
         height: 20px;
         margin-top: 10px;
-        margin-left: 30px;
+        /* margin-left: 30px; */
         transition: all 0.8s;
     }
     .rounded-circle {
+        margin-top: 10px;
         height: 30px;
     }
     /*!*!*space store*!*!*/
     .text-muted {
         margin-top: 20px;
-        margin-left: 60px;
-        margin-right: 80px;
-        font-size: 10px;
+        /* margin-left: 60px;
+        margin-right: 80px; */
+        font-size: 8px;
     }
     /*!*!*!*!*name store*!*!*!*!*/
     .title {
-        margin-top: 10px;
-        margin-right: 10px;
-        font-size: 12px;
+        /* margin-right: 10px; */
+        font-size: 8px;
     }
     .stars {
+        font-size: 8px;
         color: #ffd200;
         list-style: none;
     }
@@ -755,7 +759,7 @@ export default {
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 12px;
+        font-size: 10px;
         color: #751aff;
         text-align: center;
     }
@@ -791,7 +795,7 @@ export default {
     }
     .img-open {
         height: 20px;
-        margin-right: 20px;
+        /* margin-right: 20px; */
         margin-top: 5px;
         transition: all 0.8s;
     }
@@ -800,17 +804,18 @@ export default {
     }
     /*!*!*space store*!*!*/
     .text-muted {
-        margin-right: 40px;
-        margin-left: 30px;
+        /* margin-right: 40px;
+        margin-left: 30px; */
         margin-top: 10px;
-        font-size: 9px;
+        font-size: 8px;
     }
     /*!*!*!*!*name store*!*!*!*!*/
     .title {
-        margin-right: 5px;
-        font-size: 12px;
+        /* margin-right: 5px; */
+        font-size: 8px;
     }
     .stars {
+        font-size: 8px;
         color: #ffd200;
         list-style: none;
     }
@@ -818,7 +823,7 @@ export default {
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 10px;
+        font-size: 9px;
         color: #751aff;
     }
     .img-button {
@@ -837,32 +842,34 @@ export default {
     .textcheck {
         list-style: none;
         margin-bottom: 10px;
-        font-size: 8px;
+        font-size: 6px;
         font-weight: bold;
         color: #000000;
         transition: all 0.8s;
     }
     .categories {
-        height: 10px;
+        height: 6px;
+        font-size: 6px;
+        font-weight: bold;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
         transition: all 0.8s;
         /* position: relative; */
     }
-    .categories[type='checkbox'] {
-        width: 10px;
-        height: 10px;
+    /* .categories[type='checkbox'] {
+        width: 7px;
+        height: 7px;
         border: 1px solid #000;
-    }
+    } */
     .span-text {
-        font-size: 15px;
+        font-size: 9px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 9px;
+        font-size: 8px;
         margin-top: 5px;
     }
     .star-right {
@@ -893,6 +900,14 @@ export default {
     .slide {
         display: none;
     }
+    .card-title {
+        margin-top: 20px;
+    }
+    .card-group {
+        margin: 50px 20px 50px 20px;
+        justify-content: center;
+        justify-items: center;
+    }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     .card {
@@ -902,12 +917,12 @@ export default {
     }
     .img-open {
         height: 30px;
-        margin-right: 20px;
+        /* margin-right: 20px; */
         margin-top: 10px;
         transition: all 0.8s;
     }
     .rounded-circle {
-        height: 30px;
+        height: 40px;
         /*margin-top: 10px;*/
     }
     .btn {
@@ -916,19 +931,20 @@ export default {
     }
     /*!*space store*!*/
     .text-muted {
-        margin-right: 50px;
-        margin-left: 30px;
+        /* margin-right: 50px;
+        margin-left: 30px; */
         margin-top: 20px;
         font-size: 10px;
     }
     /*!*!*!*name store*!*!*!*/
     .title {
-        margin-right: 20px;
-        font-size: 12px;
+        /* margin-right: 20px; */
+        font-size: 10px;
     }
     .stars {
         color: #ffd200;
         list-style: none;
+        font-size: 10px;
     }
     /*!*!*!*type of goods*!*!*!*/
     .categorystore {
@@ -945,6 +961,9 @@ export default {
         list-style: none;
         margin-bottom: 10px;
         transition: all 0.8s;
+    }
+    .coulom-img{
+        display: none;
     }
     .textcheck {
         font-weight: bold;
@@ -996,6 +1015,14 @@ export default {
     .slide {
         display: none;
     }
+    .card-title {
+        margin-top: 20px;
+    }
+    .card-group {
+        margin: 50px 20px 50px 20px;
+        justify-content: center;
+        justify-items: center;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .card {
@@ -1005,7 +1032,7 @@ export default {
     }
     .img-open {
         height: 30px;
-        margin-right: 20px;
+        /* margin-right: 40px; */
         margin-top: 10px;
         transition: all 0.8s;
     }
@@ -1014,20 +1041,19 @@ export default {
         width: 20px;
     }
     .rounded-circle {
-        height: 40px;
+        height: 50px;
         /*margin-top: 10px;*/
     }
     /*space store*/
     .text-muted {
-        margin-right: 60px;
-        margin-left: 30px;
+        /* margin-right: 60px;
+        margin-left: 30px; */
         margin-top: 20px;
-        font-size: 12px;
+        font-size: 10px;
     }
     /*!*!*name store*!*!*/
-    .title {
-        margin-right: 20px;
-        font-size: 15px;
+    .card-title {
+        font-size: 10px;
     }
     .stars {
         color: #ffd200;
@@ -1048,55 +1074,64 @@ export default {
     .textcheck {
         list-style: none;
         margin-bottom: 10px;
-        font-size: 12px;
-        color: #000000;
+        font-size: 10px;
+        color: #0c0808;
         transition: all 0.8s;
     }
     .categories {
-        height: 15px;
-        font-size: 15px;
+        height: 10px;
+        font-size: 10px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
         transition: all 0.8s;
+        /* margin-right: 10px; */
     }
     .span-text {
-        font-size: 15px;
+        font-size: 12px;
     }
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
         border: 1px solid #e0e0d1;
-        font-size: 15px;
+        font-size: 12px;
         margin-top: 5px;
     }
     .star-right {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 140px;
+        margin-left: 40px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 156px;
+        margin-left: 58px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 174px;
+        margin-left: 76px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 190px;
+        margin-left: 94px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 15px;
-        margin-left: 202px;
+        margin-left:110px;
     }
     .slide {
         display: none;
+    }
+    .card-title {
+        margin-top: 20px;
+    }
+    .card-group {
+        margin: 50px 20px 50px 20px;
+        justify-content: center;
+        justify-items: center;
     }
 }
 @media (min-width: 1200px) {
@@ -1104,8 +1139,9 @@ export default {
         display: none;
     }
     .img-open {
-        margin-right: 50px;
-        margin-top: 10px;
+        margin-left: 20px;
+        /* margin-right: 50px;
+        margin-top: 10px; */
         transition: all 0.8s;
     }
     .btn {
@@ -1116,21 +1152,20 @@ export default {
     .textcheck {
         list-style: none;
         margin-bottom: 10px;
-        font-size: 15px;
+        font-size: 12px;
         color: #000000;
         transition: all 0.8s;
     }
     /*space store*/
     .text-muted {
-        margin-right: 90px;
-        margin-left: 30px;
+        /* margin-right: 90px;
+        margin-left: 30px; */
         margin-top: 20px;
     }
     /*name store*/
-    .title {
-        margin-left: 20px;
-        margin-right: 10px;
-    }
+    /* .title {
+        margin-right: 0;    
+    } */
     /*type of goods*/
     .categorystore {
         list-style: none;
@@ -1152,8 +1187,8 @@ export default {
         font-size: 15px;
     }
     .categories {
-        height: 15px;
-        font-size: 15px;
+        height: 12px;
+        font-size: 12px;
         color: #000000;
         list-style: none;
         margin-bottom: 10px;
@@ -1166,31 +1201,39 @@ export default {
     }
     .star-right {
         font-size: 20px;
-        margin-left: 150px;
+        margin-left: 60px;
     }
     .star-right2 {
         font-size: 20px;
-        margin-left: 176px;
+        margin-left: 80px;
         margin-top: 10px;
     }
     .star-right3 {
         font-size: 20px;
-        margin-left: 194px;
+        margin-left: 104px;
         margin-top: 10px;
     }
     .star-right4 {
         font-size: 20px;
-        margin-left: 218px;
+        margin-left: 125px;
         margin-top: 10px;
     }
     .star-right5 {
         font-size: 20px;
-        margin-left: 250px;
+        margin-left: 160px;
         margin-top: 10px;
         margin-right: 10px;
     }
     .slide {
         display: none;
+    }
+    .card-title {
+         margin-top: 20px;
+    }
+    .card-group {
+        margin: 50px 20px 50px 20px;
+        justify-content: center;
+        justify-items: center;
     }
 }
 
@@ -1205,11 +1248,24 @@ body {
 }
 /*div loop store*/
 .store {
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
     margin-bottom: 10px;
+    border-radius: 0;
+    box-shadow: 10px 10px 10px #adad85;
+
+}
+.store:hover {
+    border: 1px solid #ffffff;
     border-radius: 7px;
-    box-shadow: 3px 3px 3px 3px #7a7a52;
+    box-shadow: 3px 3px 3px 3px #7a7a52; 
+}
+.categores{
+    border-radius: 0;
+    box-shadow: 10px 10px 10px #adad85;   
+}
+.categores:hover{
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px 3px #7a7a52;    
 }
 .stars {
     color: #ffd200;
@@ -1218,10 +1274,6 @@ body {
 .fa-star:hover {
     color: #ffd200;
     box-shadow: 0 0 40px #eebe22;
-}
-.store:hover {
-    border-radius: 0;
-    box-shadow: 10px 10px 10px #adad85;
 }
 /*coulome store*/
 .stors {
@@ -1233,11 +1285,11 @@ body {
     background-color: transparent;
     border: none;
 }
-.card-title {
-    margin: 20px;
-}
 .card-group {
-    background-color: #fefefe;
+    background-color: #f5f5f5;
+    /* margin: 50px 20px 50px 20px;
+    justify-content: center;
+    justify-items: center; */
 }
 .checklist {
     font-size: 15px;
@@ -1278,14 +1330,12 @@ body {
     border: 1px solid #ffffff;
     margin-bottom: 10px;
     border-radius: 7px;
-    box-shadow: 3px 3px 3px 3px #f3d160;
 }
 .img2:hover {
     background-color: #ffffff;
     border: 1px solid #ffffff;
     margin-bottom: 10px;
     border-radius: 7px;
-    box-shadow: 3px 3px 3px 3px #f3d160;
 }
 .btn {
     background-color: #00cc44;

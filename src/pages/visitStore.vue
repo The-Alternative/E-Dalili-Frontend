@@ -6,14 +6,7 @@
             data-ride="carousel"
         >
             <div class="carousel-inner">
-                <div class="carousel-item active" data-interval="10000">
-                    <img
-                        src="../../public/img/IMG-20200914-WA0002.jpg"
-                        class="d-block w-100"
-                        alt="..."
-                    />
-                </div>
-                <div class="carousel-item" data-interval="2000">
+                <div class="carousel-item active" data-interval="2000">
                     <img
                         src="../../public/img/banner-2.jpg"
                         class="d-block w-100"
@@ -61,18 +54,18 @@
                         src="../../public/img/open.png"
                         height="40"
                     />
-                    <div class="mt-4">السبت - الجمعة</div>
+                    <div class="mt-4">{{visit.workDays}}</div>
                     <div class="mt-3 row">
                         <div class="row">
                             <span>م</span>
-                            <div class="mr-2">10:00</div>
+                            <div class="mr-2">{{visit.endTime}}</div>
                         </div>
                         <div class="row">
                             <span class="">ص</span>
-                            <div>06:00</div>
+                            <div>{{visit.startTime}}</div>
                         </div>
                     </div>
-                    <div class="mt-5">السويداء - جانب مشفى العناية الخاص</div>
+                    <div class="mt-5">{{visit.address}}</div>
                     <hr class="hr" />
                 </div>
                 <div class="col-lg-6">
@@ -81,22 +74,21 @@
                         src="../../public/img/market-logo.png"
                         height="100"
                     />
-                    <div class="mt-4">سوبر ماركت الريم</div>
+                    <div class="mt-4">{{visit.title}}</div>
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
                     <div class="textRight"><span>متجر تجزئة</span></div>
-                    <div>{{ title }}</div>
-                    <div class="icons">
-                        <div class="row telephone">
-                            <span>016236253</span>
-                            <img
+                    <div class="icons mt-3">
+                        <div class="row telephone mt-3">
+                            <span>{{visit.phonenumber}}</span>
+                 <img
                                 class="ml-2"
                                 src="../../public/img/telephone.svg"
                                 height="20"
                             />
                         </div>
                         <div class="row mt-2 mb-2 phone">
-                            <span>093012542</span>
+                            <span>{{visit.mobilephone}}</span>
                             <img
                                 class="ml-2"
                                 src="../../public/img/mobile-phone.svg"
@@ -182,7 +174,24 @@ export default {
     data() {
         return {
             stores: data.stores,
-           
+            visit: {
+                "id": 1,
+                "image":"img/S1.png",
+                "title": "سنتر الريم - سوبر ماركت",
+                "rate": 0,
+                "space": "يبعد 500 م",
+                "is-active": true,
+                "phonenumber":"016315190",
+                "mobilephone":"0930253884",
+                "likes":0,
+                "dislikes":0,
+                "followUp":0,
+                "workDays":" السبت - الجمعة",
+                "startTime":"06:00",
+                "endTime":"10:00",
+                "address":"السويداء - طريق قنوات",
+                "categories": "البقالة"
+            },
         };
 
     },

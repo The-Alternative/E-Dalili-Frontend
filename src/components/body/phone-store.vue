@@ -15,11 +15,11 @@ export default {
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
     .phone {
-        height: 15px;
+        height: 10px;
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 50px;
-        width: 15px;
+        width: 10px;
         transition: all 0.8s;
     }
     .phone:hover {
