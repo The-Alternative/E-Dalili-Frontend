@@ -29,10 +29,13 @@
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="stage row">
-               <div @click="addToCart()" class="cart-ico"><button class="cart-button"><i class="fa fa-shopping-cart"></i></button></div>
-            <div @click="heartlike()" id="heart" class="heart"></div>
-        </div>
-
+                <div @click="addToCart()" class="cart-ico">
+                    <button class="cart-button">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div @click="heartlike()" id="heart" class="heart"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -54,10 +57,11 @@ export default {
     methods: {
         goto: function(i, t, d, p) {
             this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
-        }, 
-        heartlike: function() {   
-           this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
-           
+        },
+        heartlike: function() {
+            this.$el.lastChild.lastChild.lastChild.classList.toggle(
+                'is-active'
+            );
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
@@ -87,7 +91,7 @@ export default {
                     duration: 1000,
                 }
             );
-        }
+        },
     },
     computed: {
         count() {
@@ -119,7 +123,7 @@ export default {
     }
 }
 /* body of products */
-.cart-ico{
+.cart-ico {
     margin: auto;
 }
 .cartshop {
@@ -200,19 +204,18 @@ export default {
 
 <style lang="scss" scoped>
 .heart {
-  width: 100px;
-  height: 100px;
-  background: url("../../../public/img/heart.png") no-repeat;
-  background-position: 0 0;
-  cursor: pointer;
-  transition: background-position 1s steps(28);
-  transition-duration: 0s;
-  margin: auto;
-  
-  &.is-active {
-    transition-duration: 1s;
-    background-position: -2800px 0;
-  }
+    width: 100px;
+    height: 100px;
+    background: url('../../../public/img/heart.png') no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: background-position 1s steps(28);
+    transition-duration: 0s;
+    margin: auto;
+
+    &.is-active {
+        transition-duration: 1s;
+        background-position: -2800px 0;
+    }
 }
 </style>
-
