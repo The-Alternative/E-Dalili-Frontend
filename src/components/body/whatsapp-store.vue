@@ -14,10 +14,10 @@ export default {
     .whatsapp {
         color: #000000;
         border-radius: 50px;
-        font-size: 15px;
+        font-size: 10px;
         margin-bottom: 20px;
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         transition: all 0.8s;
     }
     .whatsapp:hover {
