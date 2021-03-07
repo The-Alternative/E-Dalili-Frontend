@@ -1,9 +1,10 @@
 <template>
-    <div>
+    <div class="visitStore">
         <div
             id="carouselExampleInterval"
-            class="carousel slide mb-4"
+            class="carousel slide mb-4 carouselSlide"
             data-ride="carousel"
+            style="justify-content: center;"
         >
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="2000">
@@ -108,32 +109,32 @@
                 </div>
             </div>
             <div class="row mb-2">
-                <div class="col mb-3">
-                    <img
+                <div class="socail-menu col mb-3">
+                    <a><img
                         class="location mr-2"
                         src="../../public/img/location.png"
                         height="30"
-                    />
-                    <img
-                        class="mr-2"
+                    /></a>
+                    <a><img
+                        class="instagram mr-2"
                         src="../../public/img/instagram-new.png"
                         height="30"
-                    />
-                    <img
-                        class="mr-2"
+                    /></a>
+                    <a><img
+                        class="whatsapp mr-2"
                         src="../../public/img/whatsapp.png"
                         height="30"
-                    />
-                    <img
-                        class="mr-2"
+                    /></a>
+                    <a><img
+                        class="telegram mr-2"
                         src="../../public/img/telegram-app.png"
                         height="30"
-                    />
-                    <img
-                        class=""
+                    /></a>
+                    <a><img
+                        class="facebook"
                         src="../../public/img/facebook-new.png"
                         height="30"
-                    />
+                    /></a>
                 </div>
                 <div class="col mr-4 mb-3">
                     <img
@@ -148,19 +149,20 @@
                     />
                 </div>
                 <div class="col">
-                    <div class="textFollow">
+                    <div class="textFollow" id="textFollow" @click="heart()">
                         <span
                             class="heart mr-2"
-                            @click="heart()"
                             id="heart"
                         ></span>
-                        <span class="follow mr-4">متابعة</span>
+                        <span class="follow mr-4" id="follow">متابعة</span>
                     </div>
                 </div>
                 <div class="col">
-                    <span class="fa fa-cart-plus fa-2x cart mr-2"></span>
-                    <span class="far fa-thumbs-down fa-2x dislike mr-2"></span>
-                    <span class="far fa-thumbs-up fa-2x like"></span>
+                    <router-link to="/Cart">
+                        <span class="fa fa-cart-plus fa-2x cart mr-4"></span>
+                    </router-link>
+                            <span class="far fa-thumbs-down fa-2x dislike"  id="dislikebtn" @click="dislikebtn()"></span>
+                            <span class="far fa-thumbs-up fa-2x like" id="likebtn" @click="likebtn()"></span>
                 </div>
                 <div class="col">
                     <div class="followCount">2800</div>
@@ -200,10 +202,29 @@ export default {
     },
     methods: {
         heart: function() {
-            this.$el.lastChild.lastChild.lastChild.classlist.toggle(
-                'is-active'
-            );
+            document.getElementById('textFollow').classList.toggle('heart-active')
+            document.getElementById('follow').classList.toggle('heart-active')
+            document.getElementById('heart').classList.toggle('heart-active')
         },
+        likebtn: function(){
+            document.getElementById('likebtn').classList.toggle('')
+        
+            // InputEvent.getElementById('input1')
+        //     input1.value=parseInt(this.input1.value)+1;
+        //     input1.style.color="#12ff00"
+        },
+        // dislikebtn: function(){
+        //     document.getElementById('dislikebtn');
+        //     document.getElementById('input2');
+        //     input2.value=parseInt(this.input2.value)-1;
+        //     input2.style.color="#12ff00"
+        // },
+        // input1: function(){
+        //     document.getElementById('input1');
+        // },
+        // input2: function(){
+        //     document.getElementById('input2');
+        // }
     },
 };
 </script>
@@ -214,11 +235,22 @@ export default {
     border: 2px solid rgb(236, 158, 95);
     max-width: 90%;
     max-height: 100%;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 10px #f1c685;
+}
+.border1:hover{
+    border: 1px solid #ffffff;
+    border-radius: 40px 0 40px 0;
+    box-shadow: 3px 3px 3px 3px #f1c685;
 }
 .profile {
     border-radius: 250px;
     border: 2px solid rgb(231, 179, 102);
     margin-top: 40px;
+    transition: all 0.5s;
+}
+.profile:hover{
+    transform: scale3d(1.05, 1.05, 3);
 }
 .isActive {
     padding-left: 0;
@@ -249,37 +281,116 @@ export default {
 .cart {
     color: #2f7cc5;
 }
+.heart{
+    color:red;
+}
 .followCount {
     font-size: 3vh;
     border-radius: 6px 0 6px 0;
     background-color: rgb(199, 175, 39);
     border: 2px solid rgb(199, 175, 39);
 }
-.follow {
-    font-size: 3vh;
-    margin-bottom: 10px;
+.carousel-inner{
+    justify-content: center;
+    width:80%;
 }
-/*.textFollow {*/
-/*    border-radius: 3px;*/
-/*    background-color: rgb(174, 179, 177);*/
-/*    border: 2px solid rgb(174, 179, 177);*/
-/*}*/
-</style>
-
-<style lang="scss" scoped>
-.heart {
+.carousel-control-next,
+.carousel-control-prev {
+    height: 50px;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    height: 50px;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    border: 1px solid #c7c7c7;
+    border-radius: 50%;
+    width: 54px;
+    height: 95px;
+    background-color: #caabab;
+    top: 290px;
+    position: absolute;
+}
+.carousel-inner {
+    background-color: #ffff;
+    box-shadow: 0 4px 8px 0
+            rgba(0, 0, 0, 0.2),
+        0 6px 30px 0 rgba(0, 0, 0, 0.19);
+}
+.socail-menu img{
+    transition: .6s;
+    cursor: pointer;    
+    border-radius:250px;
+    width: 30px;
+    height: 35px;
+    border: 2px solid rgb(231, 179, 102);
+    background-color: rgb(231, 179, 102);
+    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+}
+.socail-menu img:hover{
+    color: #ffffff;
+    transform: translate(0,-10px);
+}
+.textFollow {
+    cursor:pointer;
+    border-radius: 5px;
+    border: 2px solid #eae2e1;
+    display: flex;
+}
+.textFollow .heart{
     width: 100px;
     height: 100px;
     background: url('../../public/img/heart.png') no-repeat;
-    background-position: 0 0;
-    cursor: pointer;
-    transition: background-position 1s steps(28);
-    transition-duration: 0s;
-    margin: auto;
-    &.is-active {
-        color: red;
-        transition-duration: 1s;
-        background-position: -2800px 0;
+    background-position: left;
+    background-size: 2900%;
+    position: absolute;
+    top:50%;
+    left: 21%;
+    transform: translate(-30%,-55%);
+}
+.follow{
+    font-size: 3vh;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    color:grey;
+}
+.heart.heart-active{
+    background-position: right;
+    animation: animate .8s steps(28) 1;
+}
+@keyframes animate {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
     }
 }
+.textFollow.heart-active{
+    border-color: #f9b9c4; 
+    background: #fbd0d8;   
+}
+.follow.heart-active{
+    color: black;
+}
+.like{
+    color: #004eff;
+    cursor: pointer;
+}
+.dislike{
+    color: #004eff;
+    cursor: pointer;   
+}
+.like:active{
+    color:#004eff;
+    background-color: #004eff;
+    transform: scale(1.2);
+}
+.dislike:active{
+    color:#004eff;
+    background-color: #004eff;
+    transform: scale(1.2);
+}
 </style>
+
