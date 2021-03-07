@@ -20,7 +20,8 @@ export default {
 @media (min-width: 200px) and (max-width: 467px) {
     .location {
         height: 10px;
-        margin-left: 20px;
+        /* margin-left: 20px; */
+        margin-right: 10px;
         border-radius: 50px;
         width: 10px;
         transition: all 0.8s;
@@ -32,7 +33,7 @@ export default {
 @media (min-width: 468px) and (max-width: 598px) {
     .location {
         height: 15px;
-        margin-left: 80px;
+        /* margin-left: 80px; */
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
@@ -45,7 +46,8 @@ export default {
 @media (min-width: 599px) and (max-width: 767px) {
     .location {
         height: 15px;
-        margin-left: 50px;
+        margin-right: 10px;
+        /* margin-left: 50px; */
         border-radius: 50px;
         width: 15px;
         transition: all 0.8s;
@@ -56,8 +58,7 @@ export default {
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     .location {
-        margin-left: 80px;
-        margin-right: 10px;
+        /* margin-left: 80px; */
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
@@ -69,7 +70,7 @@ export default {
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .location {
-        margin-left: 70px;
+        /* margin-left: 70px; */
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
@@ -81,7 +82,7 @@ export default {
 }
 @media (min-width: 1200px) {
     .location {
-        margin-left: 90px;
+        /* margin-left: 0px; */
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
