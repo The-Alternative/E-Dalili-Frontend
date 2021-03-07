@@ -6,7 +6,7 @@
         style="display: flex;"
     >
         <div
-            class="card col-lg-8 col-md-9 col-sm-12 col-xs-12 stors"
+            class="card col-lg-9 col-md-9 col-sm-12 col-xs-12 stors"
             style="display: flex;"
         >
             <!--          store 1-->
@@ -65,8 +65,10 @@
                             {{ store.categories }}
                         </li>
                     </ul>
+                    <div class="col">
                     <div class="row img-button">
-                        <img
+                        
+                            <div class="col"><img
                             class="Group"
                             src="../../../public/img/Group.png"
                             height="20"
@@ -75,17 +77,24 @@
                             class="MaskGroup"
                             src="../../../public/img/MaskGroup.png"
                             height="20"
-                        />
-                        <button
+                        /></div>
+                        <div class="col">
+                            <button
                             type="button"
-                            class="btn w-25"
+                            class="btn w-50"
                             @click="gotoview(id, title)"
                         >
                             <b>زيارة</b>
                         </button>
-                        <location-store></location-store>
-                        <phone-store></phone-store>
-                        <whatsapp-store></whatsapp-store>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <location-store></location-store>
+                                <phone-store></phone-store>
+                                <whatsapp-store></whatsapp-store>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -293,11 +302,9 @@ export default {
     .btn {
         font-weight: bold;
         font-size: 10px;
-        text-align: center;
-        align-items: center;
         height: 20px;
         width: 6px;
-        margin-left: 30px;
+        /* margin-left: 30px; */
     }
     .checked-all {
         font-size: 10px;
@@ -448,7 +455,7 @@ export default {
         font-size: 12px;
         height: 30px;
         width: 8px;
-        margin-left: 80px;
+        /* margin-left: 80px; */
     }
     .checked-all {
         font-size: 12px;
@@ -598,7 +605,7 @@ export default {
         font-size: 12px;
         height: 30px;
         width: 8px;
-        margin-left: 80px;
+        /* margin-left: 80px; */
     }
     .checked-all {
         font-size: 12px;
@@ -756,7 +763,7 @@ export default {
         height: 40px;
     }
     .btn {
-        margin-left: 70px;
+        /* margin-left: 70px; */
         height: 30px;
     }
     .text-muted {
@@ -855,7 +862,7 @@ export default {
         transition: all 0.8s;
     }
     .btn {
-        margin-left: 80px;
+        /* margin-left: 80px; */
         width: 20px;
     }
     .rounded-circle {
@@ -952,7 +959,7 @@ export default {
         transition: all 0.8s;
     }
     .btn {
-        margin-left: 100px;
+        /* margin-left: 30px; */
         width: 4px;
         background-color: #66ff66;
     }
@@ -975,9 +982,9 @@ export default {
     .img-button {
         margin-top: 30px;
     }
-    .Group {
+    /* .Group {
         margin-left: 10px;
-    }
+    } */
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
@@ -1022,6 +1029,9 @@ export default {
         margin-left: 160px;
         margin-top: 10px;
         margin-right: 10px;
+    }
+    .MaskGroup{
+        margin-right: 140px;
     }
     .slide {
         display: none;
