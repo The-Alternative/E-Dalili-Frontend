@@ -1,11 +1,7 @@
 <template>
     <div class="home">
         <div class="all-section">
-            <router-link to="/">
-                <button type="button" class="btn">
-                    <a>جميع الأقسام</a>
-                </button></router-link
-            >
+            <h3>جميع الأقسام</h3>
         </div>
         <div class="row align-middle" style="height: 750px;">
             <div
@@ -196,7 +192,7 @@
                     <div class="ico-card">
                         <img
                             class="img-market"
-                            src="../../../public/img/elc1.png"
+                            src="../../../public/img/ocl3.png"
                         />
                         <i class="fa fa-rebel"></i>
                     </div>
@@ -302,7 +298,8 @@ export default {
     background-color: #edefef;
 }
 .all-section {
-    text-align: right;
+    text-align: center;
+    color: #6c6c77;
 }
 .h-100 {
     height: 100vh !important;
@@ -386,7 +383,7 @@ export default {
         bottom: 0;
         right: 0;
         width: 100%;
-        height: 100%;
+        height: 92%;
         overflow: hidden;
     }
     i {
@@ -619,7 +616,7 @@ $nav-button-width: 5rem;
     border-radius: 50%;
 }
 .img-market {
-    border-radius: 34%;
-    margin-top: 14px;
+border-radius: 50%;
+margin-top: 5px;
 }
 </style>

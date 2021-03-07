@@ -155,6 +155,13 @@
                                 </button></router-link
                             >
                         </div>
+                                <div>
+            <router-link to="/">
+                 <button type="button" class="btn btn-light">
+                    <a>جميع الأقسام</a>
+                </button></router-link
+            >
+        </div>
                         
                     </div>
                 </div>
@@ -709,7 +716,7 @@ export default {
     content: url(../../../public/img/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 395px;
+    right: 450x;
 }
 .naver .row .sell {
     background-color: #f6ef19;
@@ -756,7 +763,7 @@ export default {
     }
     .naver .img::before {
         top: 77px;
-        right: 407px;
+        right: 465px;
     }
     .naver .row .products {
         width: 60px;
@@ -776,7 +783,7 @@ export default {
     }
     .naver .img::before {
         top: 38px;
-        right: 425px;
+        right: 490px;
     }
     .naver .row .products {
         width: 60px;
@@ -796,7 +803,7 @@ export default {
     }
     .naver .img::before {
         top: -1px;
-        right: 340px;
+        right: 385px;
     }
 }
 /* End Naver*/
