@@ -266,6 +266,7 @@ import Cartmini from '@/components/cart/Cartmini.vue';
 export default {
     data() {
         return {
+        
             details: {
                 id: this.id,
                 title: this.title,
