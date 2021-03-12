@@ -308,7 +308,6 @@ export default {
     position: relative;
     top: 50%;
 }
-
 .column {
     margin-top: 3rem;
     padding-left: 3rem;
@@ -616,7 +615,7 @@ $nav-button-width: 5rem;
     border-radius: 50%;
 }
 .img-market {
-border-radius: 50%;
-margin-top: 5px;
+    border-radius: 50%;
+    margin-top: 5px;
 }
 </style>

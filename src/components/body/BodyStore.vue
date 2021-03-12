@@ -5,20 +5,17 @@
         id="wrapper"
         style="display: flex;"
     >
-        <div
-            class="card col-lg-9 col-md-9 col-sm-12 col-xs-12 stors"
-            style="display: flex;"
-        >
+        <div class="card col-lg-9 col-md-9 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
             <div
                 class="store"
-                v-for="store in activeStores"
+                v-for="store in stores"
                 v-bind:store="store"
                 :key="store.id"
                 :address="store.address"
             >
                 <div class="card-title col">
-                    <div class="d-flex flex-col">
+                    <div class="col DIV1">
                         <div class="col">
                             <img
                                 class="img-open"
@@ -30,7 +27,7 @@
                             {{ store.space }}
                         </div>
                         <div class="col">
-                            <div class="row mt-3">
+                            <div class="row mt-3 divtitle">
                                 <div class="title">{{ store.title }}</div>
                                 <div class="stars text-right">
                                     <span
@@ -66,34 +63,35 @@
                         </li>
                     </ul>
                     <div class="col">
-                    <div class="row img-button">
-                        
-                            <div class="col"><img
-                            class="Group"
-                            src="../../../public/img/Group.png"
-                            height="20"
-                        />
-                        <img
-                            class="MaskGroup"
-                            src="../../../public/img/MaskGroup.png"
-                            height="20"
-                        /></div>
-                        <div class="col">
-                            <button
-                            type="button"
-                            class="btn w-50"
-                            @click="gotoview(id, title)"
-                        >
-                            <b>زيارة</b>
-                        </button>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <location-store></location-store>
-                                <phone-store></phone-store>
-                                <whatsapp-store></whatsapp-store>
+                        <div class="row img-button">
+                            <div class="col">
+                                <img
+                                    class="Group"
+                                    src="../../../public/img/Group.png"
+                                    height="20"
+                                />
+                                <img
+                                    class="MaskGroup"
+                                    src="../../../public/img/MaskGroup.png"
+                                    height="20"
+                                />
                             </div>
-                        </div>
+                            <div class="col">
+                                <button
+                                    type="button"
+                                    class="btn w-50"
+                                    @click="gotoview(id, title)"
+                                >
+                                    <b>زيارة</b>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <location-store></location-store>
+                                    <phone-store></phone-store>
+                                    <whatsapp-store></whatsapp-store>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -248,7 +246,7 @@
     </div>
 </template>
 <script>
-import data from '../../jeson/data.json';
+// import data from '../../jeson/data.json';
 import LocationStore from '../../components/body/location-store';
 import PhoneStore from '../../components/body/phone-store';
 import WhatsappStore from '../../components/body/whatsapp-store';
@@ -262,28 +260,34 @@ export default {
 
     data() {
         return {
-            stores: data.stores,
-            categories: data.categories,
+            // stores: data.stores,
+            // categories: data.categories,
             rate: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        activeStores: function() {
-            if (this.selectedCategory.length == 0) return this.stores;
-            var activeStores = [];
-            var filters = this.selectedCategory;
-
-            this.stores.forEach(function(store) {
-                function storeContainsFilter(filter) {
-                    return store.categories.indexOf(filter) != -1;
-                }
-                if (filters.every(storeContainsFilter)) {
-                    activeStores.push(store);
-                }
-            });
-            return activeStores;
+        stores() {
+            return this.$store.state.stores;
         },
+        categories() {
+            return this.$store.state.Categories;
+        },
+        // activeStores: function() {
+        //     if (this.selectedCategory.length == 0) return this.stores;
+        //     var activeStores = [];
+        //     var filters = this.selectedCategory;
+
+        //     this.stores.forEach(function(store) {
+        //         function storeContainsFilter(filter) {
+        //             return store.categories.indexOf(filter) != -1;
+        //         }
+        //         if (filters.every(storeContainsFilter)) {
+        //             activeStores.push(store);
+        //         }
+        //     });
+        //     return activeStores;
+        // },
     },
     methods: {
         btnbar: function() {
@@ -402,37 +406,42 @@ export default {
         margin-right: 0;
         margin-left: 0;
     }
-    .card-footer {
-        text-align: center;
+    .DIV1 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .divtitle {
+        display: block;
     }
     .img-open {
         height: 15px;
         margin-top: 10px;
         transition: all 0.8s;
     }
+
     .rounded-circle {
-        margin-top: 10px;
-        height: 20px;
+        height: 60px;
     }
     .text-muted {
         margin-top: 20px;
-        font-size: 6px;
+        font-size: 10px;
         font-weight: bold;
     }
     .title {
-        font-size: 6px;
+        font-size: 10px;
         font-weight: bold;
+        text-align: right;
     }
     .stars {
         font-weight: bold;
-        font-size: 6px;
+        font-size: 10px;
         color: #ffd200;
         list-style: none;
     }
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 8px;
+        font-size: 10px;
         color: #751aff;
         text-align: center;
     }
@@ -446,6 +455,7 @@ export default {
         height: 10px;
     }
     .stors {
+        /* display: inline-block; */
         width: 100%;
     }
 }
@@ -598,6 +608,9 @@ export default {
     .stors {
         width: 100%;
     }
+    .DIV1 {
+        display: flex;
+    }
 }
 @media (min-width: 599px) and (max-width: 767px) {
     .btn {
@@ -747,6 +760,9 @@ export default {
     .stors {
         width: 100%;
     }
+    .DIV1 {
+        display: flex;
+    }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     .card {
@@ -849,6 +865,9 @@ export default {
     .card-group {
         justify-content: center;
     }
+    .DIV1 {
+        display: flex;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .card {
@@ -949,6 +968,9 @@ export default {
     .card-group {
         justify-content: center;
     }
+    .DIV1 {
+        display: flex;
+    }
 }
 @media (min-width: 1200px) {
     .menu {
@@ -1030,7 +1052,7 @@ export default {
         margin-top: 10px;
         margin-right: 10px;
     }
-    .MaskGroup{
+    .MaskGroup {
         margin-right: 140px;
     }
     .slide {
@@ -1041,6 +1063,9 @@ export default {
     }
     .card-group {
         justify-content: center;
+    }
+    .DIV1 {
+        display: flex;
     }
 }
 
