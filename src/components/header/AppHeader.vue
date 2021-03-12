@@ -155,14 +155,13 @@
                                 </button></router-link
                             >
                         </div>
-                                <div>
-            <router-link to="/">
-                 <button type="button" class="btn btn-light">
-                    <a>جميع الأقسام</a>
-                </button></router-link
-            >
-        </div>
-                        
+                        <div>
+                            <router-link to="/">
+                                <button type="button" class="btn btn-light">
+                                    <a>جميع الأقسام</a>
+                                </button></router-link
+                            >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,7 +251,7 @@ export default {
     padding: 20px;
     width: 100%;
 }
-.upper-bar span{
+.upper-bar span {
     font-size: 17px;
 }
 .upper-bar .customer-select {
@@ -277,8 +276,6 @@ export default {
     position: relative;
     height: 35px;
     line-height: 2.15;
-    
-    
 }
 .upper-bar .sel1:after {
     position: absolute;
@@ -317,16 +314,16 @@ export default {
     font-size: 20px;
 }
 .upper-bar .sel1 select {
-   width: 46px;
+    width: 46px;
 }
 .upper-bar .sel2 select {
-   width: 32px;
+    width: 32px;
 }
 .upper-bar .sel3 select {
-   width: 35px;
+    width: 35px;
 }
 .upper-bar .sel4 select {
-   width: 47px;
+    width: 47px;
 }
 .upper-bar .sel4:after {
     position: absolute;

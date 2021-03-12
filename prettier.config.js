@@ -17,5 +17,5 @@ module.exports = {
     useTabs: false,
     vueIndentScriptAndStyle: false,
     ignored: false,
-    inferredParser: 'vue'
+    inferredParser: 'vue',
 };

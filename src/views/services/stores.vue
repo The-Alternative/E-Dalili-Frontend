@@ -1,6 +1,6 @@
 <template>
     <div>
-         <Cartmini />
+        <Cartmini />
         <BodyStore />
     </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     name: 'stores',
     components: {
         BodyStore,
-        Cartmini
+        Cartmini,
     },
 };
 </script>
