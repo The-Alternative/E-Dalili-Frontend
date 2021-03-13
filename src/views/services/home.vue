@@ -279,7 +279,6 @@ export default {
     position: relative;
     top: 50%;
 }
-
 .column {
     margin-top: 3rem;
     padding-left: 3rem;

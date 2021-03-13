@@ -36,8 +36,8 @@ const routes = [
     },
     {
         path: '/visitStore/:id/:title',
-        name:'visitStore',
-        component:visitStore,
+        name: 'visitStore',
+        component: visitStore,
         props: true,
     },
     /* cart shop */

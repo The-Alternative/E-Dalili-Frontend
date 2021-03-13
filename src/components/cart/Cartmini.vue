@@ -1,6 +1,10 @@
 <template>
     <div>
-        <div class="cart-shop-icon" @click="totalPrice !== 0 ? showcart() : hidecart()"  id="cart">
+        <div
+            class="cart-shop-icon"
+            @click="totalPrice !== 0 ? showcart() : hidecart()"
+            id="cart"
+        >
             <i class="fa fa-shopping-cart"></i>
             <span class="cart-count">{{ cartItemCount }}</span>
         </div>
@@ -16,7 +20,10 @@
                         <div class="cart-items">
                             <div class="row" style="width:100%">
                                 <div class="col-md-2 col-xs-12">
-                                    <img class="img" src="../../../public/img/w.jpg" />
+                                    <img
+                                        class="img"
+                                        src="../../../public/img/w.jpg"
+                                    />
                                 </div>
                                 <div class="col-md-3 col-xs-12">
                                     {{ items.title }}
@@ -56,12 +63,12 @@
                         </div>
                     </div>
                     <div class="col">
-                       <button class="button"><span>اشتري الآن </span></button>
-                        <router-link to="/Cart"
-                            > <button class="button but1"><span>
-                                الذهاب لعربة التسوق </span></button>
-                            </router-link
-                        >
+                        <button class="button"><span>اشتري الآن </span></button>
+                        <router-link to="/Cart">
+                            <button class="button but1">
+                                <span> الذهاب لعربة التسوق </span>
+                            </button>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -79,7 +86,7 @@ export default {
             var cart = document.getElementById('cartshop');
             cart.classList.toggle('vs');
         },
-         hidecart: function() {
+        hidecart: function() {
             var cart = document.getElementById('cartshop');
             cart.classList.remove('vs');
         },
@@ -114,43 +121,43 @@ export default {
 <style scoped>
 /* ____________________________ Start Cart Shop ________________________________ */
 .button {
-  border-radius: 4px;
-  background-color: #008b8b;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 16px;
-  padding: 20px;
-  width: 190px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+    border-radius: 4px;
+    background-color: #008b8b;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    width: 190px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .but1 span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-  font-size: 30px;
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    font-size: 30px;
 }
 
 .button:hover span {
-  padding-right: 25px;
+    padding-right: 25px;
 }
 
 .button:hover span:after {
-  opacity: 1;
-  right: 0;
+    opacity: 1;
+    right: 0;
 }
 
 .close {
@@ -369,8 +376,8 @@ a:hover {
         font-size: 20px;
     }
     .col-md-2,
-.col-md-3 {
-    margin-top: 1vh;
-}
+    .col-md-3 {
+        margin-top: 1vh;
+    }
 }
 </style>
