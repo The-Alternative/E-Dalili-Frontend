@@ -3,7 +3,7 @@
         <div class="all-section">
             <h3>جميع الأقسام</h3>
         </div>
-        <div class="row align-middle" style="height: 750px;">
+        <div class="row align-middle">
             <div
                 class="col-md-6 col-lg-3 col-xs-6  column"
                 v-for="catog in categories"
@@ -598,8 +598,17 @@ height: 340px;
 }
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
+.page-number{
+    font-size: 5vh;
+        }
      .cont-market{
 height: auto;
+}
+.card {
+    min-height: 175px;
+}
+.landscape-text {
+    font-size: 16vh;
 }
     }
     /* Small devices (landscape phones, 576px and up) */
