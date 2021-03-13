@@ -3,7 +3,7 @@
         <div class="all-section">
             <h3>جميع الأقسام</h3>
         </div>
-        <div class="row align-middle" style="height: 750px;">
+        <div class="row align-middle">
             <div
                 class="col-md-6 col-lg-3 col-xs-6  column"
                 v-for="catog in categories"
@@ -171,111 +171,82 @@
         </main>
         <!-- __________________________________________________________________ -->
         <h2>Some Market</h2>
-        <div class="row align-middle" style="height: 700px;">
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+        <div class="row align-middle cont-market">
+            <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                   
                         <img
                             class="img-market"
                             src="../../../public/img/quik1.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        /> <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+            <div class="col-md-4 col-lg-3 col-xs-6  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                  
                         <img
                             class="img-market"
                             src="../../../public/img/ocl3.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        />  <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+            <div class="col-md-4 col-lg-3 col-xs-6  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                
                         <img
                             class="img-market"
                             src="../../../public/img/ocl5.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        />    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+            <div class="col-md-4 col-lg-3 col-xs-6 md  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                 
                         <img
                             class="img-market"
                             src="../../../public/img/toys1.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        />   <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+        </div>
+          <div class="row align-middle cont-market">
+            <div class="col-md-4 col-lg-3 col-xs-6  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                  
                         <img
                             class="img-market"
                             src="../../../public/img/quik5.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        />  <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+            <div class="col-md-4 col-lg-3 col-xs-6  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                  
                         <img
                             class="img-market"
                             src="../../../public/img/toys5.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        />  <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+            <div class="col-md-4 col-lg-3 col-xs-6  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                  
                         <img
                             class="img-market"
                             src="../../../public/img/elc3.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        />  <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 col-xs-6  column" style="width:50%">
+            <div class="col-md-4 col-lg-3 col-xs-6 md  column" >
                 <div class="card card-market">
-                    <div class="txt"></div>
-                    <a href="#">more...</a>
-                    <div class="ico-card">
+                    
                         <img
                             class="img-market"
                             src="../../../public/img/ocl4.png"
-                        />
-                        <i class="fa fa-rebel"></i>
-                    </div>
+                        /><a href="#">more...</a>
                 </div>
             </div>
+            
         </div>
     </div>
 </template>
@@ -329,7 +300,7 @@ export default {
     }
 }
 .card {
-    min-height: 170px;
+    min-height: 240px;
     margin: 0;
     padding: 1.7rem 1.2rem;
     border: none;
@@ -613,9 +584,45 @@ $nav-button-width: 5rem;
 /* _____________________ market after slider _____________________________ */
 .card-market {
     border-radius: 50%;
+
 }
 .img-market {
-    border-radius: 50%;
-    margin-top: 5px;
+border-radius: 50%;
+margin: auto;
+height: 150px;
+width: 150px;
 }
+.cont-market{
+height: 340px;
+}
+    /* Extra small devices (portrait phones, less than 576px) */
+    @media (max-width: 575.98px) {
+.page-number{
+    font-size: 5vh;
+        }
+     .cont-market{
+height: auto;
+}
+.card {
+    min-height: 175px;
+}
+.landscape-text {
+    font-size: 16vh;
+}
+    }
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+.cont-market{
+height: auto;
+}
+    }
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+.md{
+    display: none;
+}
+    }
+        /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+    }
 </style>

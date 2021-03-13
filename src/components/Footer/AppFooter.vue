@@ -1,7 +1,7 @@
 <template>
     <!-- Start About-Us -->
     <div class="about-us">
-        <div class="container">
+        
             <div class="row">
                 <div class="col-sm-3 ">
                     <h3>Get to Know Us</h3>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 visiter text-center">
                     <ul>
-                        المتصلین
+                        المتصلین<br>
                         <li>0</li>
                         <li>0</li>
                         <li>3</li>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 visiter text-cnter">
                     <ul>
-                        الزیارات
+                          الزیارات <br>
                         <li>0</li>
                         <li>0</li>
                         <li>1</li>
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-    </div>
+   
 </template>
 
 <script>
@@ -142,7 +142,7 @@ export default {
 .about-us .work-us {
     background-color: black;
     color: #fff;
-    width: 120px;
+    width: 140px;
     padding-left: 30px;
     border-radius: 10px;
     height: 37px;
@@ -175,7 +175,7 @@ export default {
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .about-us {
-        height: 1030px;
+        height: 1045px;
     }
     .about-us h3 {
         font-size: 20px;
@@ -200,6 +200,8 @@ export default {
     }
     .about-us .work-us {
         margin: 0 0 20px 60px;
+        width: 140px;
+
     }
     .about-us .work-us img {
         left: 85px;
@@ -238,7 +240,7 @@ export default {
     }
     .about-us .visiter ul li {
         width: 20px;
-        height: 20px;
+        height: 28px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -257,11 +259,11 @@ export default {
         font-size: 14px;
     }
     .about-us .visiter ul li {
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 22px;
     }
     .about-us .work-us {
-        width: 90px;
+        width: 100px;
         height: 30px;
         font-size: 10px;
         margin-left: 20px;
@@ -291,11 +293,11 @@ export default {
         width: 800px;
     }
     .about-us .visiter ul {
-        font-size: 16px;
+        font-size: 15px;
     }
     .about-us .visiter ul li {
         width: 17px;
-        height: 17px;
+        height: 24px;
     }
 }
 
