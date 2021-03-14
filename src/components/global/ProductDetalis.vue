@@ -15,8 +15,8 @@
                         <div class="show-prod">
                             <div class="row">
                                 <!-- ___________________________________________________ -->
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="row" style="width:400px">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
                                         <div class="col-12">
                                             <img
                                                 src="../../../public/img/w.jpg"
@@ -43,7 +43,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
+                                <div class="col-md-6 col-xs-12" style="direction: rtl;">
                                     <div
                                         class="store"
                                         v-for="store in stores.slice(0, 1)"
@@ -52,21 +52,20 @@
                                         :address="store.address"
                                     >
                                         <div>
-                                            <img
+                                           <img class="rounded-circle"
+                                            src="../../../public/img/market-logo.png"
+                                             height="60"
+                                             />
+                                           
+                                            <h2>
+                                                {{ store.title }}
+                                            </h2>
+                                            {{ store.space }}
+                                             <img
                                                 class="img-open"
                                                 style="margin-right:10px"
                                                 src="../../../public/img/open.png"
                                                 height="40"
-                                            />{{ store.space }}
-                                            <h2
-                                                style="display: inline-block;margin: 0 20px 0 100px;"
-                                            >
-                                                {{ store.title }}
-                                            </h2>
-                                            <img
-                                                class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
-                                                height="60"
                                             />
                                         </div>
                                     </div>
@@ -118,8 +117,8 @@
                         <div class="show-prod">
                             <div class="row">
                                 <!-- ___________________________________________________ -->
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="row" style="width:400px">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
                                         <div class="col-12">
                                             <img
                                                 src="../../../public/img/w.jpg"
@@ -146,7 +145,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
+                               <div class="col-md-6 col-xs-12" style="direction: rtl;">
                                     <div
                                         class="store"
                                         v-for="store in stores.slice(1, 2)"
@@ -155,21 +154,20 @@
                                         :address="store.address"
                                     >
                                         <div>
-                                            <img
+                                           <img class="rounded-circle"
+                                            src="../../../public/img/market-logo.png"
+                                             height="60"
+                                             />
+                                           
+                                            <h2>
+                                                {{ store.title }}
+                                            </h2>
+                                            {{ store.space }}
+                                             <img
                                                 class="img-open"
                                                 style="margin-right:10px"
                                                 src="../../../public/img/open.png"
                                                 height="40"
-                                            />{{ store.space }}
-                                            <h2
-                                                style="display: inline-block;margin: 0 20px 0 100px;"
-                                            >
-                                                {{ store.title }}
-                                            </h2>
-                                            <img
-                                                class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
-                                                height="60"
                                             />
                                         </div>
                                     </div>
@@ -221,8 +219,8 @@
                         <div class="show-prod">
                             <div class="row">
                                 <!-- ___________________________________________________ -->
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="row" style="width:400px">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
                                         <div class="col-12">
                                             <img
                                                 src="../../../public/img/w.jpg"
@@ -249,7 +247,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
+                               <div class="col-md-6 col-xs-12" style="direction: rtl;">
                                     <div
                                         class="store"
                                         v-for="store in stores.slice(2, 3)"
@@ -258,21 +256,20 @@
                                         :address="store.address"
                                     >
                                         <div>
-                                            <img
+                                           <img class="rounded-circle"
+                                            src="../../../public/img/market-logo.png"
+                                             height="60"
+                                             />
+                                           
+                                            <h2>
+                                                {{ store.title }}
+                                            </h2>
+                                            {{ store.space }}
+                                             <img
                                                 class="img-open"
                                                 style="margin-right:10px"
                                                 src="../../../public/img/open.png"
                                                 height="40"
-                                            />{{ store.space }}
-                                            <h2
-                                                style="display: inline-block;margin: 0 20px 0 100px;"
-                                            >
-                                                {{ store.title }}
-                                            </h2>
-                                            <img
-                                                class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
-                                                height="60"
                                             />
                                         </div>
                                     </div>
@@ -393,6 +390,13 @@ export default {
     justify-content: center;
     margin: 0;
 }
+.show-prod .col-4{
+    max-width: 21%;
+}
+.show-prod h2{
+    display: inline-block;
+    margin: 0 20px 0 100px;
+}
 .col-4 img {
     height: 100px;
     width: 101px;
@@ -454,28 +458,50 @@ export default {
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .content-pro {
-        font-size: 15px;
-    }
-    .show-prod .reower .col-xs-6 {
-        flex: 1 0 50%;
-        max-width: 50%;
-    }
-    .show-prod .content-pro button {
-        width: 80px;
-        margin-top: 10px;
-        border-radius: 13px;
-        font-weight: 1;
-    }
-    .content-pro {
-        margin-top: 2vh;
-    }
-    .content-pro div {
-        margin: 1vh 0;
-    }
-    .content-pro button {
-        margin: 5px 0;
-    }
+
+   .show-prod .col-12 img {
+       width: 220px;
+   }
+   .show-prod .col-4{
+       padding: 0;
+       max-width: 24%;
+   }
+   .show-prod .col-4 img{
+    height: 55px;
+    width: 55px
+   }
+   .show-prod h2{
+display: inline-block;
+margin: 22px;
+font-size: 20px;
+font-weight: bold;
+}
+
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .show-prod h2{
+   font-size: 18px;
+    margin: 10px;
+}  
+   .show-prod .col-12 img {
+       width: 300px;
+   }
+   .show-prod .col-4{
+       padding: 0;
+       max-width: 30%;
+   }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .show-prod h2{
+    font-size: 20px;
+    margin: 22px;
+}  
+  .show-prod .col-4{
+       padding: 0;
+       max-width: 30%;
+   }
 }
 .carousel-control-next,
 .carousel-control-prev {
