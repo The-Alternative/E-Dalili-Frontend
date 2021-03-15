@@ -2699,8 +2699,8 @@ export default {
         background-color: #fefefe;
         // margin: 0 20px;
         height: 100%;
-        margin-right: 20px;
-        margin-left:20px;
+        margin-right: 10px;
+        margin-left:10px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }

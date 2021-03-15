@@ -109,7 +109,7 @@ export default {
     letter-spacing: 1px;
 }
 .new {
-    width: 80%;
+    width: 100%;
     cursor: pointer;
 }
 .overlay{
