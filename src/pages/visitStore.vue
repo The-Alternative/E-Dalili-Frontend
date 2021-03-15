@@ -75,7 +75,7 @@
                         src="../../public/img/market-logo.png"
                         height="100"
                     />
-                    <div class="mt-4">{{ stores.title }}</div>
+                    <div class="mt-4 ml-4">{{ stores.title }}</div>
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
                     <div class="textRight"><span>متجر تجزئة</span></div>
@@ -108,7 +108,6 @@
                                 height="20"
                             />
                         </div>
-                        <div class="textcount">المتابعين</div>
                     </div>
                 </div>
             </div>
@@ -178,9 +177,11 @@
                         @click="likebtn()"
                     ></span>
                 </div>
-                <div class="col">
-                    <div class="followCount">2800</div>
-                </div></div>
+                <div class="col count">
+                        <span class="followCount">2800</span>
+                        <span class="textcount">المتابعين</span>
+                </div>
+                </div>
             </div>
         </div>
         <div id="nav" class="naver">
@@ -280,27 +281,31 @@
                 <img src="../../public/img/IMG_2.png" />
             </div>
         </div>
-        <!-- <div class="show-prod">
-            <div class="row reower">
-                <BodyProduct
+        <!-- show  products -->
+        <div class="show-prod">
+            <div class="all-section">
+                <span class="text">المنتجات الأكثر طلباً</span>
+            </div>
+            <div class="row mt-2">
+                <BodyProductStore
                     v-for="items in product"
                     :key="items.pr"
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
-                    :description="
-                        items.description
-                    "
+                    :description="items.description"
                     @click="goto(items)"
                 >
-                </BodyProduct>
+                </BodyProductStore>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
 <script>
-// import BodyProduct from '@/components/global/BodyProduct.vue';
+// import Cartmini from '@/components/cart/Cartmini.vue';
+import BodyProductStore from '@/pages/globalpages/BodyProductStore';
+
 export default {
     name: 'visitStore',
     data() {
@@ -309,7 +314,8 @@ export default {
         };
     },
     components: {
-        // BodyProduct
+        BodyProductStore,
+        // Cartmini
     },
     props: ['id', 'title'],
     computed: {
@@ -423,7 +429,8 @@ export default {
         font-size: 3vh;
         max-width: 50px;
         text-align: center;
-        margin: auto;
+        margin-left:20px;
+        margin-bottom: 20px;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
@@ -476,13 +483,24 @@ export default {
     .follow.heart-active {
         color: black;
     }
-    .textcount {
-        margin-left: 60px;
-        font-size: 12px;
-        background-size: 2900%;
-        position: absolute;
-        top: 447%;
-        left:45%;
+    // .textcount {
+    //     margin-left: 60px;
+    //     font-size: 12px;
+    //     background-size: 2900%;
+    //     position: absolute;
+    //     top: 445%;
+    //     left:45%;
+    // }
+    .followCount {
+        font-size: 3vh;
+        margin-top: 20px;
+        margin-right: 10px;
+        border-radius: 6px 0 6px 0;
+        background-color: rgb(199, 175, 39);
+        border: 2px solid rgb(199, 175, 39);
+    }
+    .count{
+        margin-bottom: 20px;
     }
     .like {
         color: #004eff;
@@ -536,6 +554,9 @@ export default {
         border-radius: 250px;
         width: 25px;
         height: 30px;
+    }
+    .socail-menu{
+        margin-top: 20px;
     }
     .imgdiliver{
         margin-top: 20px;
@@ -735,6 +756,20 @@ export default {
         height: 410px;
     }
     ///end brand market
+                ///start product
+    .row {
+        justify-content: center;
+    }
+    .show-prod{
+        margin-bottom: 20%;
+        background-color: #fefefe;
+        height: 100%;
+        margin-right: 20px;
+        margin-left:20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px #c2bdbd;
+    }
+    ///end product
 }
 @media (min-width: 368px) and (max-width: 598.99px) {
     ///start details store///
@@ -780,6 +815,9 @@ export default {
         display: inline;
         margin-top:20px;
     }
+    .socail-menu{
+        margin-top: 20px;
+    }
     .texticon{
         margin-left: 180px;
     }
@@ -816,6 +854,7 @@ export default {
         max-width: 50px;
         text-align: center;
         margin: auto;
+        margin-bottom: 20px;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
@@ -833,8 +872,8 @@ export default {
         margin: auto;
     }
     .textFollow .heart {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         background: url('../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
@@ -868,13 +907,16 @@ export default {
     .follow.heart-active {
         color: black;
     }
-    .textcount {
-        margin-left: 60px;
-        font-size: 12px;
-        background-size: 2900%;
-        position: absolute;
-        top: 447%;
-        left:45%;
+    .followCount {
+        font-size: 3vh;
+        margin-top: 20px;
+        border-radius: 6px 0 6px 0;
+        background-color: rgb(199, 175, 39);
+        border: 2px solid rgb(199, 175, 39);
+    }
+    .count{
+        display: flex;
+        flex-direction: column-reverse;
     }
     .like {
         color: #004eff;
@@ -1124,6 +1166,21 @@ export default {
         height: 410px;
     }
     ///end brand market
+                ///start product
+    .row {
+        justify-content: center;
+    }
+    .show-prod{
+        margin-bottom: 20%;
+        background-color: #fefefe;
+        // margin: 0 20px;
+        height: 100%;
+        margin-right: 20px;
+        margin-left:20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px #c2bdbd;
+    }
+    ///end product
 }
 @media (min-width: 599px) and (max-width: 767px) {
     ///start details store///
@@ -1146,6 +1203,7 @@ export default {
         border: 2px solid rgb(231, 179, 102);
         margin-top: 40px;
         transition: all 0.5s;
+        margin-left: 40px;
     }
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
@@ -1196,23 +1254,24 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        margin-right: 20px;
+        max-width: 70%;
+        // margin-right: 20px;
     }
     .textFollow .heart {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         background: url('../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
         top: 25%;
-        left: 21%;
+        left: 19%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 3vh;
         margin-bottom: 10px;
-        margin-left: 80px;
+        margin-left: 60px;
         color: grey;
     }
     .heart.heart-active {
@@ -1235,7 +1294,7 @@ export default {
         color: black;
     }
     .textcount {
-        margin-left: 60px;
+        margin-left: 10px;
         font-size: 12px;
         margin-top: 20px;
     }
@@ -1486,6 +1545,21 @@ export default {
         height: 410px;
     }
     ///end brand market
+                ///start product
+    .row {
+        justify-content: center;
+    }
+    .show-prod{
+        margin-bottom: 30%;
+        background-color: #fefefe;
+        // margin: 0 20px;
+        height: 100%;
+        margin-right: 20px;
+        margin-left:20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px #c2bdbd;
+    }
+    ///end product
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     ///start details store///
@@ -1504,6 +1578,7 @@ export default {
         box-shadow: 3px 3px 3px 3px #f1c685;
     }
     .profile {
+        margin-left: 50px;
         border-radius: 250px;
         border: 2px solid rgb(231, 179, 102);
         margin-top: 40px;
@@ -1528,7 +1603,7 @@ export default {
         display: inline;
     }
     .texticon{
-        margin-left: 20px;
+        margin-left: 60px;
     }
     .phone {
         margin-left: 30px;
@@ -1572,17 +1647,17 @@ export default {
         border: 2px solid #eae2e1;
         display: flex;
         max-width: 50%;
-        margin-left: 20px;
+        margin-left: 40px;
     }
     .textFollow .heart {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         background: url('../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 30%;
-        left: 18%;
+        top: 25%;
+        left: 25%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -1855,6 +1930,21 @@ export default {
         height: 410px;
     }
     ///end brand market
+                ///start product
+    .row {
+        justify-content: center;
+    }
+    .show-prod{
+        margin-bottom: 20%;
+        background-color: #fefefe;
+        // margin: 0 20px;
+        height: 100%;
+        margin-right: 20px;
+        margin-left:20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px #c2bdbd;
+    }
+    ///end product
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     ///start details store///
@@ -1937,25 +2027,25 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 50%;
-        margin-left: 80px;
+        max-width: 30%;
+        margin-left: 160px;
         // margin-right: 10px;
     }
     .textFollow .heart {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         background: url('../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 30%;
-        left: 30%;
+        top: 26%;
+        left: 38%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 3vh;
         margin-bottom: 10px;
-        margin-left: 130px;
+        margin-left: 80px;
         color: grey;
     }
     .heart.heart-active {
@@ -2216,6 +2306,21 @@ export default {
         height: 410px;
     }
     ///end brand market
+                ///start product
+    .row {
+        justify-content: center;
+    }
+    .show-prod{
+        margin-bottom: 20%;
+        background-color: #fefefe;
+        // margin: 0 20px;
+        height: 100%;
+        margin-right: 20px;
+        margin-left:20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px #c2bdbd;
+    }
+    ///end product
 }
 @media (min-width: 1200px) {
     ///start details store///
@@ -2266,11 +2371,6 @@ export default {
         margin-left: 20px;
         display: flex;
     }
-    .textcount{
-        margin-top:40px;
-        margin-right: 20px;
-        font-size: 12px;
-    }
     .cartlike{
         margin-right: 80px;
         display: flex;
@@ -2301,9 +2401,15 @@ export default {
     }
     .followCount {
         font-size: 3vh;
+        margin-top: 20px;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
+    }
+    .count{
+        display: flex;
+        flex-direction: column-reverse;
+        bottom:60%;
     }
     .socail-menu img:hover {
         transform: translate(0, -10px);
@@ -2313,24 +2419,24 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 30%;
-        margin-left: 90px;
+        max-width: 50%;
+        margin-left: 50px;
     }
     .textFollow .heart {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height:90px;
         background: url('../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 55%;
+        top: 35%;
         left: 25%;
         transform: translate(-30%, -55%);
     }
     .follow {
-        font-size: 3vh;
+        font-size: 4vh;
         margin-bottom: 10px;
-        margin-left: 70px;
+        margin-left: 75px;
         color: grey;
     }
     .heart.heart-active {
@@ -2390,7 +2496,7 @@ export default {
         width: 54px;
         height: 95px;
         background-color: #caabab;
-        top: 290px;
+        top: 250px;
         position: absolute;
     }
     .carousel-inner {
@@ -2584,5 +2690,20 @@ export default {
         height: 410px;
     }
     ///end brand market
+                ///start product
+    .row {
+        justify-content: center;
+    }
+    .show-prod{
+        margin-bottom: 10%;
+        background-color: #fefefe;
+        // margin: 0 20px;
+        height: 100%;
+        margin-right: 20px;
+        margin-left:20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px #c2bdbd;
+    }
+    ///end product
 }
 </style>
