@@ -5,7 +5,7 @@
         id="wrapper"
         style="display: flex;"
     >
-        <div class="card col-lg-9 col-md-9 col-sm-12 col-xs-12 stors">
+        <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
             <div
                 class="store"
@@ -306,8 +306,8 @@ export default {
     .btn {
         font-weight: bold;
         font-size: 10px;
-        height: 20px;
-        width: 6px;
+        height: 30px;
+        width: 7px;
         /* margin-left: 30px; */
     }
     .checked-all {
@@ -410,6 +410,10 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
+    .img-button{
+        display: flex;
+        flex-direction: column-reverse;   
+    }
     .divtitle {
         display: block;
     }
@@ -420,23 +424,27 @@ export default {
     }
 
     .rounded-circle {
-        height: 60px;
+        margin-top: 10px;
+        height: 80px;
     }
     .text-muted {
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 10px;
         font-weight: bold;
+
     }
     .title {
         font-size: 10px;
         font-weight: bold;
-        text-align: right;
+        text-align: center;
     }
     .stars {
         font-weight: bold;
         font-size: 10px;
         color: #ffd200;
         list-style: none;
+        margin-right: 50px;
+
     }
     .categorystore {
         margin-top: 5px;
@@ -444,9 +452,6 @@ export default {
         font-size: 10px;
         color: #751aff;
         text-align: center;
-    }
-    .img-button {
-        margin-top: 5px;
     }
     .Group {
         height: 10px;
@@ -1052,9 +1057,9 @@ export default {
         margin-top: 10px;
         margin-right: 10px;
     }
-    .MaskGroup {
+    /* .MaskGroup {
         margin-right: 140px;
-    }
+    } */
     .slide {
         display: none;
     }
