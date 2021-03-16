@@ -284,7 +284,7 @@
         <!-- show  products -->
         <div class="show-prod">
             <div class="all-section">
-                <span class="text">المنتجات الأكثر طلباً</span>
+                <span class="text">آخر عمليات البحث</span>
             </div>
             <div class="row mt-2">
                 <BodyProductStore
@@ -764,8 +764,7 @@ export default {
         margin-bottom: 20%;
         background-color: #fefefe;
         height: 100%;
-        margin-right: 20px;
-        margin-left:20px;
+        margin: 0 20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
@@ -1173,10 +1172,8 @@ export default {
     .show-prod{
         margin-bottom: 20%;
         background-color: #fefefe;
-        // margin: 0 20px;
+        margin: 0 20px;
         height: 100%;
-        margin-right: 20px;
-        margin-left:20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
@@ -1552,10 +1549,8 @@ export default {
     .show-prod{
         margin-bottom: 30%;
         background-color: #fefefe;
-        // margin: 0 20px;
+        margin: 0 20px;
         height: 100%;
-        margin-right: 20px;
-        margin-left:20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
@@ -1937,10 +1932,8 @@ export default {
     .show-prod{
         margin-bottom: 20%;
         background-color: #fefefe;
-        // margin: 0 20px;
+        margin: 0 20px;
         height: 100%;
-        margin-right: 20px;
-        margin-left:20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
@@ -2313,10 +2306,8 @@ export default {
     .show-prod{
         margin-bottom: 20%;
         background-color: #fefefe;
-        // margin: 0 20px;
+        margin: 0 20px;
         height: 100%;
-        margin-right: 20px;
-        margin-left:20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
@@ -2697,10 +2688,8 @@ export default {
     .show-prod{
         margin-bottom: 10%;
         background-color: #fefefe;
-        // margin: 0 20px;
+        margin: 0 20px;
         height: 100%;
-        margin-right: 10px;
-        margin-left:10px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
