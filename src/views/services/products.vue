@@ -48,7 +48,7 @@
                     :price="items.price"
                     :title="items.title"
                     :description="items.description"
-                    @click="goto(items)"
+                    
                 >
                 </BodyProduct>
             </div>

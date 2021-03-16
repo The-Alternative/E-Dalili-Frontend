@@ -59,7 +59,12 @@ export default {
             this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
         },
         heartlike: function() {
-            this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
+                    let heart = localStorage.getItem("heart-option");
+        if(heart !== null){
+           this.$el.lastChild.lastChild.lastChild.classList.toggle(heart);
+        }
+            
+            localStorage.setItem("heart-option",'is-active')
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);

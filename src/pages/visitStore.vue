@@ -293,7 +293,7 @@
                     :price="items.price"
                     :title="items.title"
                     :description="items.description"
-                    @click="goto(items)"
+                    
                 >
                 </BodyProductStore>
             </div>
@@ -316,7 +316,7 @@ export default {
         BodyProductStore,
         // Cartmini
     },
-    props: ['id', 'title'],
+ 
     computed: {
         stores() {
             return this.$store.state.stores[0];
