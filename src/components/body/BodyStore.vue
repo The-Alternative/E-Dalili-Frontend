@@ -1,4 +1,5 @@
 <template>
+
     <!--  all coulome body  -->
     <div
         class="card-group col-sm-12 wrapper"
@@ -80,7 +81,7 @@
                                 <button
                                     type="button"
                                     class="btn w-50"
-                                    @click="gotoview(id, title)"
+                                    @click="gotoview(store.id, store.title)"
                                 >
                                     <b>زيارة</b>
                                 </button>

@@ -27,13 +27,13 @@
                 <i class="fa fa-star"></i>
             </div>
             <div class="name-prod">
-                bbb
+               {{title}}
             </div>
             <div class="category">
-                bb
+                {{description}}
             </div>
             <div>
-                <span> 80.00 ل.س</span>
+                <span>{{price}} 80.00 ل.س</span>
                 <div class="price" style="display: inline-block"></div>
             </div>
             <div class="avilble">
