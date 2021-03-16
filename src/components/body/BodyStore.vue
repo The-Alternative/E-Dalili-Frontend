@@ -11,9 +11,7 @@
             <div
                 class="store"
                 v-for="store in stores"
-                v-bind:store="store"
                 :key="store.id"
-                :address="store.address"
             >
                 <div class="card-title col">
                     <div class="col DIV1">

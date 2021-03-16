@@ -63,9 +63,9 @@ export default {
         goto: function(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
-        heartlike: function() {
-            this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
-        },
+        // heartlike: function() {
+        //     this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
+        // },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
