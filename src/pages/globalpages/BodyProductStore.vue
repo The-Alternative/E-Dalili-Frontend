@@ -1,18 +1,19 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
+        <div class="borderproduct">
         <div class="product-top">
             <img
                 src="../../../public/img/w.jpg"
                 class="new"
             />
             <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                <button type="button" class="btn btn-secondary" title="Quick Shop"  @click="goto(id, title, description, price)">
                     <i class="fa fa-eye"></i>
                 </button>
-                <button type="button" class="btn btn-secondary" id="heart" title="Add to wishlist">
+                <button type="button" class="btn btn-secondary" id="heart" title="Add to wishlist" @click="heartlike()">
                     <i class="fa fa-heart"></i>
                 </button>
-                <button type="button" class="btn btn-secondary cartshop" id="cart" title="Add to cart">
+                <button type="button" class="btn btn-secondary cartshop" id="cart" title="Add to cart" @click="addToCart()">
                     <i class="fa fa-shopping-cart"></i>
                 </button>
             </div>
@@ -40,12 +41,13 @@
                 <span class="fa fa-check-circle"></span>
             </div>
         </div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Products',
+    name: 'BodyProductStore',
     props: ['id', 'title', 'description', 'price'],
     data() {
         return {
@@ -58,12 +60,12 @@ export default {
         };
     },
     methods: {
-        // goto: function(i, t, d, p) {
-        //     this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
-        // },
-        // heartlike: function() {
-        //     this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
-        // },
+        goto: function(i, t, d, p) {
+            this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
+        },
+        heartlike: function() {
+            this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
+        },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
@@ -95,9 +97,9 @@ export default {
         },
     },
     computed: {
-        // count() {
-        //     return this.$store.state.count;
-        // },
+        count() {
+            return this.$store.state.count;
+        },
     },
 };
 </script>
@@ -105,9 +107,26 @@ export default {
 <style scoped>
 .coler{
     width: 100%;
-    margin-top:10px ;
     letter-spacing: 1px;
 }
+.borderproduct{
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px #c2bdbd;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+/* .product-top{
+
+ 
+}
+.product-bottom{
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;    
+    box-shadow: 3px 3px 3px 3px #c2bdbd;
+    background-color: #ffffff 
+} */
 .new {
     width: 100%;
     cursor: pointer;
@@ -158,3 +177,20 @@ export default {
     margin-right: 10px;
 }
 </style>
+
+<style lang="scss" scoped>
+.heart {
+    width: 100px;
+    height: 100px;
+    background: url('../../../public/img/heart.png') no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: background-position 1s steps(28);
+    transition-duration: 0s;
+    margin: auto;
+
+    &.is-active {
+        transition-duration: 1s;
+        background-position: -2800px 0;
+    }
+}
