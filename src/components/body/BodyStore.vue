@@ -10,9 +10,7 @@
             <div
                 class="store"
                 v-for="store in stores"
-                v-bind:store="store"
                 :key="store.id"
-                :address="store.address"
             >
                 <div class="card-title col">
                     <div class="col DIV1">
@@ -80,7 +78,9 @@
                                 <button
                                     type="button"
                                     class="btn w-50"
-                                    @click="gotoview(id, title)"
+                                    :id="store.id"
+                                    :title="store.title"
+                                    @click="gotoview(store.id,store.title)"
                                 >
                                     <b>زيارة</b>
                                 </button>

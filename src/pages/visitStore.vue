@@ -66,7 +66,6 @@
                             <div>{{ stores.startTime }}</div>
                         </div>
                     </div>
-                    <div class="mt-5">{{ stores.address }}</div>
                     <hr class="hr" />
                 </div>
                 <div class="col-lg-6">

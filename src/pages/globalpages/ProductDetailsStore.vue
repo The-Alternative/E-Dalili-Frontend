@@ -1,6 +1,56 @@
 <template>
-    <div class="ProductDetalis" style="background-color:#e9ecf2">
-        <Cartmini />
+    <!-- <div class="ProductDetalis" style="background-color:#e9ecf2"> -->
+           <div class="visitStore">
+        <div
+            id="carouselExampleInterval"
+            class="carousel slide mb-4 carouselSlide"
+            data-ride="carousel"
+            style="justify-content: center;"
+        >
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active" data-interval="2000">
+                    <img
+                        src="../../../public/img/banner-2.jpg"
+                        class="d-block w-100 h-50"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="../../../public/img/banner-1.jpg"
+                        class="d-block w-100 h-30"
+                        alt="..."
+                    />
+                </div>
+            </div>
+            <a
+                class="carousel-control-prev"
+                href="#carouselExampleInterval"
+                role="button"
+                data-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a
+                class="carousel-control-next"
+                href="#carouselExampleInterval"
+                role="button"
+                data-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+       
+    
+        <!-- <Cartmini />
         <div class="show-prod">
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
@@ -60,10 +110,10 @@
             </div>
             <div class="content-pro text-center">
                 <div class="name-prod">
-                    {{ details.title }}
+                    {{ title }}
                 </div>
                 <div class="category">
-                    {{ details.description }}
+                    {{ description }}
                 </div>
 
                 <div>
@@ -99,14 +149,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div> 
 </template>
 <script>
-import Cartmini from '@/components/cart/Cartmini.vue';
+// import Cartmini from '@/components/cart/Cartmini.vue';
 
 export default {
-    name: 'ProductDetailsStore',
+    name: 'ProductdetailsStore',
     data() {
         return {
             details: {
@@ -118,43 +168,43 @@ export default {
         };
     },
     components: {
-        Cartmini,
+        // Cartmini,
     },
     props: ['title', 'description', 'id', 'price'],
     computed: {
-        count() {
-            return this.$store.state.count;
-        },
-        stores() {
-            return this.$store.state.stores;
-        },
+        // count() {
+        //     return this.$store.state.count;
+        // },
+        // stores() {
+        //     return this.$store.state.stores;
+        // },
     },
     methods: {
-        increment() {
-            this.$store.commit('increment');
-        },
-        addItem(items) {
-            this.$store.dispatch('addToCart', items);
-        },
-        gotocart: function() {
-            this.$router.push(`/Cart`);
-        },
-        addToCart() {
-            this.$store.dispatch('addToCart', this.details);
-            document.getElementById('cart').animate(
-                [
-                    // keyframes
-                    { transform: 'rotate(-20deg)' },
-                    { transform: 'rotate(20deg)' },
-                    { transform: 'scale(3,3)' },
-                    { transform: 'scale(1,1)' },
-                ],
-                {
-                    // timing options
-                    duration: 1000,
-                }
-            );
-        },
+        // increment() {
+        //     this.$store.commit('increment');
+        // },
+        // addItem(items) {
+        //     this.$store.dispatch('addToCart', items);
+        // },
+        // gotocart: function() {
+        //     this.$router.push(`/Cart`);
+        // },
+        // addToCart() {
+        //     this.$store.dispatch('addToCart', this.details);
+        //     document.getElementById('cart').animate(
+        //         [
+        //             // keyframes
+        //             { transform: 'rotate(-20deg)' },
+        //             { transform: 'rotate(20deg)' },
+        //             { transform: 'scale(3,3)' },
+        //             { transform: 'scale(1,1)' },
+        //         ],
+        //         {
+        //             // timing options
+        //             duration: 1000,
+        //         }
+        //     );
+        // },
     },
 };
 </script>

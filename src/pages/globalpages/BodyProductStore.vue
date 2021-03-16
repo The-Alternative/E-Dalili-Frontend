@@ -27,13 +27,13 @@
                 <i class="fa fa-star"></i>
             </div>
             <div class="name-prod">
-                bbb
+                {{title}}
             </div>
             <div class="category">
-                bb
+                {{description}}
             </div>
             <div>
-                <span> 80.00 ل.س</span>
+                <span> {{price}} ل.س</span>
                 <div class="price" style="display: inline-block"></div>
             </div>
             <div class="avilble">
@@ -63,9 +63,9 @@ export default {
         goto: function(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
-        heartlike: function() {
-            this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
-        },
+        // heartlike: function() {
+        //     this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
+        // },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
