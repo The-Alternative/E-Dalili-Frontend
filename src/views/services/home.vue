@@ -174,79 +174,77 @@
         <div class="row align-middle cont-market">
             <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                   
-                        <img
-                            class="img-market"
-                            src="../../../public/img/quik1.png"
-                        /> <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/quik1.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xs-6  column" >
+            <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                  
-                        <img
-                            class="img-market"
-                            src="../../../public/img/ocl3.png"
-                        />  <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/ocl3.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xs-6  column" >
+            <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                
-                        <img
-                            class="img-market"
-                            src="../../../public/img/ocl5.png"
-                        />    <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/ocl5.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xs-6 md  column" >
+            <div class="col-md-4 col-lg-3 col-xs-6 md  column">
                 <div class="card card-market">
-                 
-                        <img
-                            class="img-market"
-                            src="../../../public/img/toys1.png"
-                        />   <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/toys1.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
         </div>
-          <div class="row align-middle cont-market">
-            <div class="col-md-4 col-lg-3 col-xs-6  column" >
+        <div class="row align-middle cont-market">
+            <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                  
-                        <img
-                            class="img-market"
-                            src="../../../public/img/quik5.png"
-                        />  <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/quik5.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xs-6  column" >
+            <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                  
-                        <img
-                            class="img-market"
-                            src="../../../public/img/toys5.png"
-                        />  <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/toys5.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xs-6  column" >
+            <div class="col-md-4 col-lg-3 col-xs-6  column">
                 <div class="card card-market">
-                  
-                        <img
-                            class="img-market"
-                            src="../../../public/img/elc3.png"
-                        />  <a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/elc3.png"
+                    />
+                    <a href="#">more...</a>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xs-6 md  column" >
+            <div class="col-md-4 col-lg-3 col-xs-6 md  column">
                 <div class="card card-market">
-                    
-                        <img
-                            class="img-market"
-                            src="../../../public/img/ocl4.png"
-                        /><a href="#">more...</a>
+                    <img
+                        class="img-market"
+                        src="../../../public/img/ocl4.png"
+                    /><a href="#">more...</a>
                 </div>
             </div>
-            
         </div>
     </div>
 </template>
@@ -584,45 +582,44 @@ $nav-button-width: 5rem;
 /* _____________________ market after slider _____________________________ */
 .card-market {
     border-radius: 50%;
-
 }
 .img-market {
-border-radius: 50%;
-margin: auto;
-height: 150px;
-width: 150px;
+    border-radius: 50%;
+    margin: auto;
+    height: 150px;
+    width: 150px;
 }
-.cont-market{
-height: 340px;
+.cont-market {
+    height: 340px;
 }
-    /* Extra small devices (portrait phones, less than 576px) */
-    @media (max-width: 575.98px) {
-.page-number{
-    font-size: 5vh;
-        }
-     .cont-market{
-height: auto;
-}
-.card {
-    min-height: 175px;
-}
-.landscape-text {
-    font-size: 16vh;
-}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .page-number {
+        font-size: 5vh;
     }
-    /* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) and (max-width: 767.98px) {
-.cont-market{
-height: auto;
+    .cont-market {
+        height: auto;
+    }
+    .card {
+        min-height: 175px;
+    }
+    .landscape-text {
+        font-size: 16vh;
+    }
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .cont-market {
+        height: auto;
     }
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) and (max-width: 991.98px) {
-.md{
-    display: none;
 }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .md {
+        display: none;
     }
-        /* Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
 </style>

@@ -1,5 +1,4 @@
 <template>
-
     <!--  all coulome body  -->
     <div
         class="card-group col-sm-12 wrapper"
@@ -8,11 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div
-                class="store"
-                v-for="store in stores"
-                :key="store.id"
-            >
+            <div class="store" v-for="store in stores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -79,7 +74,9 @@
                                 <button
                                     type="button"
                                     class="btn w-50"
-                                    @click="gotoview(store.id, store.title)"
+                                    @click="gotoview(store.id, store.title,
+                                     store.phonenumber, store.mobilephone,
+                                      store.workDays, store.startTime, store.endTime, store.address)"
                                 >
                                     <b>زيارة</b>
                                 </button>
@@ -255,7 +252,7 @@ export default {
         PhoneStore,
         LocationStore,
     },
-    props: ['id', 'title'],
+    props: ['id', 'title','phonenumber','mobilephone','workDays','startTime','endTime','address'],
 
     data() {
         return {
@@ -293,8 +290,8 @@ export default {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function(i, t) {
-            this.$router.push(`visitStore/${i}/${t}`);
+        gotoview: function(i, t,p,m,w,s,e,a) {
+            this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`);
         },
     },
 };
@@ -409,9 +406,9 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
-    .img-button{
+    .img-button {
         display: flex;
-        flex-direction: column-reverse;   
+        flex-direction: column-reverse;
     }
     .divtitle {
         display: block;
@@ -430,7 +427,6 @@ export default {
         margin-top: 10px;
         font-size: 10px;
         font-weight: bold;
-
     }
     .title {
         font-size: 10px;
@@ -443,7 +439,6 @@ export default {
         color: #ffd200;
         list-style: none;
         margin-right: 50px;
-
     }
     .categorystore {
         margin-top: 5px;

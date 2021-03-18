@@ -48,23 +48,27 @@
             </a>
         </div>
         <div class="border1 mb-4">
-            <div class="col-sm-12 detailssmall" style="display: flex; padding: 0">
+            <div
+                class="col-sm-12 detailssmall"
+                style="display: flex; padding: 0"
+            >
                 <div class="col-lg-3 col-sm-3">
                     <img
                         class="isActive mt-4"
                         src="../../public/img/open.png"
                         height="40"
                     />
-                    <div class="mt-4">{{ stores.workDays }}</div>
+                    <div class="mt-4">{{ workDays }}</div>
                     <div class="mt-3 row">
                         <div class="row">
-                            <span>م</span>
-                            <div class="mr-2">{{ stores.endTime }}</div>
+                            <div class="mr-2">{{ endTime }}</div>
                         </div>
                         <div class="row">
-                            <span class="">ص</span>
-                            <div>{{ stores.startTime }}</div>
-                        </div>
+                            <div>{{ startTime }}</div>
+                        </div> 
+                    </div>
+                    <div class="row mt-4">
+                        <div>{{ address }}</div>
                     </div>
                     <hr class="hr" />
                 </div>
@@ -74,14 +78,14 @@
                         src="../../public/img/market-logo.png"
                         height="100"
                     />
-                    <div class="mt-4 ml-4">{{ stores.title }}</div>
+                    <div class="mt-4 mb-4">{{ title }}</div>
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
                     <div class="textRight"><span>متجر تجزئة</span></div>
                     <div class="icons mt-3">
                         <div class="row telephone mt-3">
                             <span class="texticon">{{
-                                stores.phonenumber
+                                phonenumber
                             }}</span>
                             <img
                                 class="ml-2"
@@ -91,7 +95,7 @@
                         </div>
                         <div class="row mt-2 mb-2 phone">
                             <span class="texticon">{{
-                                stores.mobilephone
+                                mobilephone
                             }}</span>
                             <img
                                 class="ml-2"
@@ -111,75 +115,80 @@
                 </div>
             </div>
             <div class="row mb-2 bottomdetails">
-                <div class="rowimg"><div class="socail-menu col mb-3">
-                    <a
-                        ><img
-                            class="location mr-2"
-                            src="../../public/img/location.png"
+                <div class="rowimg">
+                    <div class="socail-menu col mb-3">
+                        <a
+                            ><img
+                                class="location mr-2"
+                                src="../../public/img/location.png"
+                                height="30"
+                        /></a>
+                        <a
+                            ><img
+                                class="instagram mr-2"
+                                src="../../public/img/instagram-new.png"
+                                height="30"
+                        /></a>
+                        <a
+                            ><img
+                                class="whatsapp mr-2"
+                                src="../../public/img/whatsapp.png"
+                                height="30"
+                        /></a>
+                        <a
+                            ><img
+                                class="telegram mr-2"
+                                src="../../public/img/telegram-app.png"
+                                height="30"
+                        /></a>
+                        <a
+                            ><img
+                                class="facebook"
+                                src="../../public/img/facebook-new.png"
+                                height="30"
+                        /></a>
+                    </div>
+                    <div class="col imgdiliver mb-3">
+                        <img
+                            class="MaskGroup"
+                            src="../../public/img/MaskGroup.png"
                             height="30"
-                    /></a>
-                    <a
-                        ><img
-                            class="instagram mr-2"
-                            src="../../public/img/instagram-new.png"
+                        />
+                        <img
+                            class="Group"
+                            src="../../public/img/Group.png"
                             height="30"
-                    /></a>
-                    <a
-                        ><img
-                            class="whatsapp mr-2"
-                            src="../../public/img/whatsapp.png"
-                            height="30"
-                    /></a>
-                    <a
-                        ><img
-                            class="telegram mr-2"
-                            src="../../public/img/telegram-app.png"
-                            height="30"
-                    /></a>
-                    <a
-                        ><img
-                            class="facebook"
-                            src="../../public/img/facebook-new.png"
-                            height="30"
-                    /></a>
+                        />
+                    </div>
                 </div>
-                <div class="col imgdiliver mb-3">
-                    <img
-                        class="MaskGroup"
-                        src="../../public/img/MaskGroup.png"
-                        height="30"
-                    />
-                    <img
-                        class="Group"
-                        src="../../public/img/Group.png"
-                        height="30"
-                    />
-                </div></div>
                 <div class="col">
                     <div class="textFollow" id="textFollow" @click="heart()">
                         <span class="heart mr-2" id="heart"></span>
                         <span class="follow mr-4" id="follow">متابعة</span>
                     </div>
                 </div>
-                <div class="likecount"><div class="col cartlike">
-                    <router-link to="/Cart">
-                        <span class="fa fa-cart-plus fa-2x cart mr-4"></span>
-                    </router-link>
-                    <span
-                        class="far fa-thumbs-down fa-2x dislike"
-                        id="dislikebtn"
-                        @click="dislikebtn()"
-                    ></span>
-                    <span
-                        class="far fa-thumbs-up fa-2x like"
-                        id="likebtn"
-                        @click="likebtn()"
-                    ></span>
-                </div>
-                <div class="col count">
+                <div class="likecount">
+                    <div class="col cartlike">
+                        <router-link to="/Cart">
+                            <span
+                                class="fa fa-cart-plus fa-2x cart mr-4"
+                            ></span>
+                        </router-link>
+                        <span
+                            class="far fa-thumbs-down fa-2x dislike"
+                            id="dislikebtn"
+                            @click="dislikebtn()"
+                        ></span>
+                        <span
+                            class="far fa-thumbs-up fa-2x like"
+                            id="likebtn"
+                            @click="likebtn()"
+                        ></span>
+                    </div>
+                    <div class="col count">
                         <span class="followCount">2800</span>
                         <span class="textcount">المتابعين</span>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -288,13 +297,13 @@
             <div class="row mt-2">
                 <BodyProductStore
                     v-for="items in product"
-                    :key="items.pr"
+                    :key="items.pr" 
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
                     :description="items.description"
-                    
-                >
+                    v-on:click="gotodetails(items)"
+                    >
                 </BodyProductStore>
             </div>
         </div>
@@ -307,6 +316,7 @@ import BodyProductStore from '@/pages/globalpages/BodyProductStore';
 
 export default {
     name: 'visitStore',
+    props: ['id', 'title','phonenumber','mobilephone','workDays','startTime','endTime','address','description', 'price'],
     data() {
         return {
             urll: '/img/',
@@ -316,10 +326,10 @@ export default {
         BodyProductStore,
         // Cartmini
     },
- 
+
     computed: {
         stores() {
-            return this.$store.state.stores[0];
+            return this.$store.state.stores;
         },
         categories() {
             return this.$store.state.categories;
@@ -342,6 +352,12 @@ export default {
         likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
+        gotodetails(item){
+            this.$router.push({name:'ProductDetailsStore',params:item});
+        },
+        //  goto: function(i, t, d, p) {
+        //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
+        // },
     },
 };
 </script>
@@ -365,7 +381,7 @@ export default {
         border-radius: 40px 0 40px 0;
         box-shadow: 3px 3px 3px 3px #f1c685;
     }
-    .detailssmall{
+    .detailssmall {
         display: flex;
         flex-direction: column-reverse;
     }
@@ -391,9 +407,9 @@ export default {
     }
     .icons {
         display: inline;
-        margin-top:20px;
+        margin-top: 20px;
     }
-    .texticon{
+    .texticon {
         margin-left: 30px;
     }
     .phone {
@@ -402,13 +418,13 @@ export default {
     .telephone {
         margin-left: 30px;
     }
-    .bottomdetails{
+    .bottomdetails {
         display: flex;
         flex-direction: column-reverse;
     }
     .like {
         margin-top: 20px;
-        margin-bottom:20px;
+        margin-bottom: 20px;
         color: #2f7cc5;
     }
     .dislike {
@@ -428,7 +444,7 @@ export default {
         font-size: 3vh;
         max-width: 50px;
         text-align: center;
-        margin-left:20px;
+        margin-left: 20px;
         margin-bottom: 20px;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
@@ -482,14 +498,6 @@ export default {
     .follow.heart-active {
         color: black;
     }
-    // .textcount {
-    //     margin-left: 60px;
-    //     font-size: 12px;
-    //     background-size: 2900%;
-    //     position: absolute;
-    //     top: 445%;
-    //     left:45%;
-    // }
     .followCount {
         font-size: 3vh;
         margin-top: 20px;
@@ -498,7 +506,7 @@ export default {
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
     }
-    .count{
+    .count {
         margin-bottom: 20px;
     }
     .like {
@@ -554,10 +562,10 @@ export default {
         width: 25px;
         height: 30px;
     }
-    .socail-menu{
+    .socail-menu {
         margin-top: 20px;
     }
-    .imgdiliver{
+    .imgdiliver {
         margin-top: 20px;
     }
     ///end slide///
@@ -755,15 +763,15 @@ export default {
         height: 410px;
     }
     ///end brand market
-                ///start product
+    ///start product
     .row {
         justify-content: center;
     }
-    .show-prod{
+    .show-prod {
         margin-bottom: 20%;
         background-color: #fefefe;
         height: 100%;
-        margin: 0 20px;
+        margin: 20px 20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
@@ -785,7 +793,7 @@ export default {
         border-radius: 40px 0 40px 0;
         box-shadow: 3px 3px 3px 3px #f1c685;
     }
-    .detailssmall{
+    .detailssmall {
         display: flex;
         flex-direction: column-reverse;
     }
@@ -811,12 +819,12 @@ export default {
     }
     .icons {
         display: inline;
-        margin-top:20px;
-    }
-    .socail-menu{
         margin-top: 20px;
     }
-    .texticon{
+    .socail-menu {
+        margin-top: 20px;
+    }
+    .texticon {
         margin-left: 180px;
     }
     .phone {
@@ -825,13 +833,13 @@ export default {
     .telephone {
         margin-left: 30px;
     }
-    .bottomdetails{
+    .bottomdetails {
         display: flex;
         flex-direction: column-reverse;
     }
     .like {
         margin-top: 20px;
-        margin-bottom:20px;
+        margin-bottom: 20px;
         color: #2f7cc5;
     }
     .dislike {
@@ -912,7 +920,7 @@ export default {
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
     }
-    .count{
+    .count {
         display: flex;
         flex-direction: column-reverse;
     }
@@ -969,7 +977,7 @@ export default {
         width: 25px;
         height: 30px;
     }
-    .imgdiliver{
+    .imgdiliver {
         margin-top: 20px;
     }
     ///end slide///
@@ -1164,14 +1172,14 @@ export default {
         height: 410px;
     }
     ///end brand market
-                ///start product
+    ///start product
     .row {
         justify-content: center;
     }
-    .show-prod{
+    .show-prod {
         margin-bottom: 20%;
         background-color: #fefefe;
-        margin: 0 20px;
+        margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
@@ -1294,13 +1302,13 @@ export default {
         font-size: 12px;
         margin-top: 20px;
     }
-    .rowimg{
+    .rowimg {
         display: flex;
         flex-direction: column-reverse;
     }
-    .likecount{
+    .likecount {
         display: flex;
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;
     }
     .like {
         color: #004eff;
@@ -1541,14 +1549,14 @@ export default {
         height: 410px;
     }
     ///end brand market
-                ///start product
+    ///start product
     .row {
         justify-content: center;
     }
-    .show-prod{
+    .show-prod {
         margin-bottom: 30%;
         background-color: #fefefe;
-        margin: 0 20px;
+        margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
@@ -1596,7 +1604,7 @@ export default {
     .icons {
         display: inline;
     }
-    .texticon{
+    .texticon {
         margin-left: 60px;
     }
     .phone {
@@ -1626,14 +1634,14 @@ export default {
     .socail-menu img:hover {
         transform: translate(0, -10px);
     }
-    .rowimg{
+    .rowimg {
         display: flex;
         flex-direction: column-reverse;
     }
-    .likecount{
+    .likecount {
         margin-right: 20px;
         display: flex;
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;
     }
     .textFollow {
         cursor: pointer;
@@ -1680,7 +1688,7 @@ export default {
         color: black;
     }
     .textcount {
-        margin: 30px 0  0 50px;
+        margin: 30px 0 0 50px;
     }
     .like {
         color: #004eff;
@@ -1924,14 +1932,14 @@ export default {
         height: 410px;
     }
     ///end brand market
-                ///start product
+    ///start product
     .row {
         justify-content: center;
     }
-    .show-prod{
+    .show-prod {
         margin-bottom: 20%;
         background-color: #fefefe;
-        margin: 0 20px;
+        margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
@@ -2005,14 +2013,14 @@ export default {
     .socail-menu img:hover {
         transform: translate(0, -10px);
     }
-    .rowimg{
+    .rowimg {
         display: flex;
         flex-direction: column-reverse;
     }
-    .likecount{
+    .likecount {
         margin-right: 20px;
         display: flex;
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;
     }
     .textFollow {
         cursor: pointer;
@@ -2060,7 +2068,7 @@ export default {
         color: black;
     }
     .textcount {
-        margin-top:40px;
+        margin-top: 40px;
         margin-left: 20px;
     }
     .like {
@@ -2298,14 +2306,14 @@ export default {
         height: 410px;
     }
     ///end brand market
-                ///start product
+    ///start product
     .row {
         justify-content: center;
     }
-    .show-prod{
+    .show-prod {
         margin-bottom: 20%;
         background-color: #fefefe;
-        margin: 0 20px;
+        margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
@@ -2348,24 +2356,24 @@ export default {
         margin-left: 200px;
         border: 2px solid rgb(144, 148, 147);
     }
-    .rowimg{
+    .rowimg {
         display: flex;
         // flex-direction: column-reverse;
     }
-    .likecount{
+    .likecount {
         margin-right: 60px;
         display: flex;
-        // flex-direction: column-reverse; 
+        // flex-direction: column-reverse;
     }
-    .socail-menu{
+    .socail-menu {
         margin-left: 20px;
         display: flex;
     }
-    .cartlike{
+    .cartlike {
         margin-right: 80px;
         display: flex;
     }
-    .imgdiliver{
+    .imgdiliver {
         margin-left: 90px;
     }
     .icons {
@@ -2396,10 +2404,10 @@ export default {
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
     }
-    .count{
+    .count {
         display: flex;
         flex-direction: column-reverse;
-        bottom:60%;
+        bottom: 60%;
     }
     .socail-menu img:hover {
         transform: translate(0, -10px);
@@ -2414,7 +2422,7 @@ export default {
     }
     .textFollow .heart {
         width: 90px;
-        height:90px;
+        height: 90px;
         background: url('../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
@@ -2680,14 +2688,14 @@ export default {
         height: 410px;
     }
     ///end brand market
-                ///start product
+    ///start product
     .row {
         justify-content: center;
     }
-    .show-prod{
+    .show-prod {
         margin-bottom: 10%;
         background-color: #fefefe;
-        margin: 0 20px;
+        margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;

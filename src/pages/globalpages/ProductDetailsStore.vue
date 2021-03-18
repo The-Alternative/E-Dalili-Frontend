@@ -1,162 +1,351 @@
 <template>
-    <!-- <div class="ProductDetalis" style="background-color:#e9ecf2"> -->
-           <div class="visitStore">
+ <div class="ProductDetalis" style="background-color:#e9ecf2">
+        <Cartmini />
+
         <div
-            id="carouselExampleInterval"
-            class="carousel slide mb-4 carouselSlide"
+            id="deno"
+            class="carousel slide"
             data-ride="carousel"
-            style="justify-content: center;"
+            style="margin-top: 10px;"
         >
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active" data-interval="2000">
-                    <img
-                        src="../../../public/img/banner-2.jpg"
-                        class="d-block w-100 h-50"
-                        alt="..."
-                    />
-                </div>
-                <div class="carousel-item">
-                    <img
-                        src="../../../public/img/banner-1.jpg"
-                        class="d-block w-100 h-30"
-                        alt="..."
-                    />
-                </div>
-            </div>
-            <a
-                class="carousel-control-prev"
-                href="#carouselExampleInterval"
-                role="button"
-                data-slide="prev"
-            >
-                <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                ></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a
-                class="carousel-control-next"
-                href="#carouselExampleInterval"
-                role="button"
-                data-slide="next"
-            >
-                <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                ></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-       
-    
-        <!-- <Cartmini />
-        <div class="show-prod">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <div class="row" style="width:400px">
-                        <div class="col-12">
-                            <img
-                                src="../../../public/img/w.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                src="../../../public/img/w.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                src="../../../public/img/w.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                src="../../../public/img/w.jpg"
-                                alt=""
-                            />
+            <div class="col-sm-12" style="padding:0">
+                <div class="carousel-inner">
+                    <!-- carousel item 1 -->
+                    <div class="carousel-item active">
+                        <div class="show-prod">
+                            <div class="row">
+                                <!-- ___________________________________________________ -->
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-6 col-xs-12"
+                                    style="direction: rtl;"
+                                >
+                                    <div
+                                        class="store"
+                                        v-for="store in stores.slice(0, 1)"
+                                        v-bind:store="store"
+                                        :key="store.id"
+                                        :address="store.address"
+                                    >
+                                        <div>
+                                            <img
+                                                class="rounded-circle"
+                                                src="../../../public/img/market-logo.png"
+                                                height="60"
+                                            />
+                                            <h2>
+                                                {{ store.title }}
+                                            </h2>
+                                            {{ store.space }}
+                                            <img
+                                                class="img-open"
+                                                style="margin-right:10px"
+                                                src="../../../public/img/open.png"
+                                                height="40"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="content-pro text-center">
+                                        <div class="name-prod">
+                                            {{ title }}
+                                        </div>
+                                        <div class="category">
+                                            {{ description }}
+                                        </div>
+
+                                        <div>
+                                            <span>80.00 S.P</span>
+                                            <div
+                                                class="price"
+                                                style="display: inline-block"
+                                            ></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <button
+                                                    @click="addToCart"
+                                                    class="but1"
+                                                >
+                                                    <span>
+                                                        إضافة لعربة التسوق
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="col">
+                                                <button
+                                                    @click="gotocart"
+                                                    class="but1"
+                                                >
+                                                    <span>
+                                                        الذهاب لعربة التسوق
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div
-                        class="store"
-                        v-for="store in stores"
-                        v-bind:store="store"
-                        :key="store.id"
-                        :address="store.address"
-                    >
-                    <div>
-                    <img
-                        class="img-open"
-                        style="margin-right:10px"
-                        src="../../../public/img/open.png"
-                        height="40"
-                    />{{ store.space }}
-                    <h2
-                        style="display: inline-block;margin: 0 20px 0 100px;"
-                    >
-                        {{ store.title }}
-                    </h2>
-                    <img
-                        class="rounded-circle"
-                        src="../../../public/img/market-logo.png"
-                        height="60"
-                    />
-                </div>
-            </div>
-            <div class="content-pro text-center">
-                <div class="name-prod">
-                    {{ title }}
-                </div>
-                <div class="category">
-                    {{ description }}
+                    <!-- carousel item 2 -->
+                    <div class="carousel-item">
+                        <div class="show-prod">
+                            <div class="row">
+                                <!-- ___________________________________________________ -->
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-6 col-xs-12"
+                                    style="direction: rtl;"
+                                >
+                                    <div
+                                        class="store"
+                                        v-for="store in stores.slice(1, 2)"
+                                        v-bind:store="store"
+                                        :key="store.id"
+                                        :address="store.address"
+                                    >
+                                        <div>
+                                            <img
+                                                class="rounded-circle"
+                                                src="../../../public/img/market-logo.png"
+                                                height="60"
+                                            />
+
+                                            <h2>
+                                                {{ store.title }}
+                                            </h2>
+                                            {{ store.space }}
+                                            <img
+                                                class="img-open"
+                                                style="margin-right:10px"
+                                                src="../../../public/img/open.png"
+                                                height="40"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="content-pro text-center">
+                                        <div class="name-prod">
+                                            {{ title }}
+                                        </div>
+                                        <div class="category">
+                                            {{ description }}
+                                        </div>
+
+                                        <div>
+                                            <span>90.00 S.P</span>
+                                            <div
+                                                class="price"
+                                                style="display: inline-block"
+                                            ></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <button
+                                                    @click="addToCart"
+                                                    class="but1"
+                                                >
+                                                    <span>
+                                                        إضافة لعربة التسوق
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="col">
+                                                <button
+                                                    @click="gotocart"
+                                                    class="but1"
+                                                >
+                                                    <span>
+                                                        الذهاب لعربة التسوق
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- carousel item 3 -->
+                    <div class="carousel-item">
+                        <div class="show-prod">
+                            <div class="row">
+                                <!-- ___________________________________________________ -->
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="col-4">
+                                            <img
+                                                src="../../../public/img/w.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-6 col-xs-12"
+                                    style="direction: rtl;"
+                                >
+                                    <div
+                                        class="store"
+                                        v-for="store in stores.slice(2, 3)"
+                                        v-bind:store="store"
+                                        :key="store.id"
+                                        :address="store.address"
+                                    >
+                                        <div>
+                                            <img
+                                                class="rounded-circle"
+                                                src="../../../public/img/market-logo.png"
+                                                height="60"
+                                            />
+
+                                            <h2>
+                                                {{ store.title }}
+                                            </h2>
+                                            {{ store.space }}
+                                            <img
+                                                class="img-open"
+                                                style="margin-right:10px"
+                                                src="../../../public/img/open.png"
+                                                height="40"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="content-pro text-center">
+                                        <div class="name-prod">
+                                            {{ title }}
+                                        </div>
+                                        <div class="category">
+                                            {{ description }}
+                                        </div>
+
+                                        <div>
+                                            <span>100.00 S.P</span>
+                                            <div
+                                                class="price"
+                                                style="display: inline-block"
+                                            ></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <button
+                                                    @click="addToCart"
+                                                    class="but1"
+                                                >
+                                                    <span>
+                                                        إضافة لعربة التسوق
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="col">
+                                                <button
+                                                    @click="gotocart"
+                                                    class="but1"
+                                                >
+                                                    <span>
+                                                        الذهاب لعربة التسوق
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <span>80.00 S.P</span>
-                    <div
-                        class="price"
-                        style="display: inline-block"
-                    ></div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <button
-                            @click="addToCart"
-                            class="but1"
-                        >
-                            <span>
-                                إضافة لعربة التسوق
-                            </span>
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button
-                            @click="gotocart"
-                            class="but1"
-                        >
-                            <span>
-                                الذهاب لعربة التسوق
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                </div>
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#deno" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#deno" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
             </div>
         </div>
-    </div> -->
-</div> 
+    </div>
 </template>
+
 <script>
-// import Cartmini from '@/components/cart/Cartmini.vue';
+import Cartmini from '@/components/cart/Cartmini.vue';
 
 export default {
-    name: 'ProductdetailsStore',
+        name: 'ProductDetailsStore',
     data() {
         return {
             details: {
@@ -168,51 +357,62 @@ export default {
         };
     },
     components: {
-        // Cartmini,
+        Cartmini,
     },
-    props: ['title', 'description', 'id', 'price'],
+    props: ['id', 'title', 'description', 'price'],
     computed: {
-        // count() {
-        //     return this.$store.state.count;
-        // },
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
+        count() {
+            return this.$store.state.count;
+        },
+        stores() {
+            return this.$store.state.stores;
+        },
+        product() {
+            return this.$store.state.stores[0].products;
+        },
     },
     methods: {
-        // increment() {
-        //     this.$store.commit('increment');
-        // },
-        // addItem(items) {
-        //     this.$store.dispatch('addToCart', items);
-        // },
-        // gotocart: function() {
-        //     this.$router.push(`/Cart`);
-        // },
-        // addToCart() {
-        //     this.$store.dispatch('addToCart', this.details);
-        //     document.getElementById('cart').animate(
-        //         [
-        //             // keyframes
-        //             { transform: 'rotate(-20deg)' },
-        //             { transform: 'rotate(20deg)' },
-        //             { transform: 'scale(3,3)' },
-        //             { transform: 'scale(1,1)' },
-        //         ],
-        //         {
-        //             // timing options
-        //             duration: 1000,
-        //         }
-        //     );
-        // },
+        increment() {
+            this.$store.commit('increment');
+        },
+        addItem(items) {
+            this.$store.dispatch('addToCart', items);
+        },
+        gotocart: function() {
+            this.$router.push(`/Cart`);
+        },
+        addToCart() {
+            this.$store.dispatch('addToCart', this.details);
+            document.getElementById('cart').animate(
+                [
+                    // keyframes
+                    { transform: 'rotate(-20deg)' },
+                    { transform: 'rotate(20deg)' },
+                    { transform: 'scale(3,3)' },
+                    { transform: 'scale(1,1)' },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
+        },
     },
 };
 </script>
+
 <style lang="scss" scoped></style>
 <style scoped>
 .row {
     justify-content: center;
     margin: 0;
+}
+.show-prod .col-4 {
+    max-width: 21%;
+}
+.show-prod h2 {
+    display: inline-block;
+    margin: 0 20px 0 100px;
 }
 .col-4 img {
     height: 100px;
@@ -275,27 +475,47 @@ export default {
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .content-pro {
-        font-size: 15px;
+    .show-prod .col-12 img {
+        width: 220px;
     }
-    .show-prod .reower .col-xs-6 {
-        flex: 1 0 50%;
-        max-width: 50%;
+    .show-prod .col-4 {
+        padding: 0;
+        max-width: 24%;
     }
-    .show-prod .content-pro button {
-        width: 80px;
-        margin-top: 10px;
-        border-radius: 13px;
-        font-weight: 1;
+    .show-prod .col-4 img {
+        height: 55px;
+        width: 55px;
     }
-    .content-pro {
-        margin-top: 2vh;
+    .show-prod h2 {
+        display: inline-block;
+        margin: 22px;
+        font-size: 20px;
+        font-weight: bold;
     }
-    .content-pro div {
-        margin: 1vh 0;
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .show-prod h2 {
+        font-size: 18px;
+        margin: 10px;
     }
-    .content-pro button {
-        margin: 5px 0;
+    .show-prod .col-12 img {
+        width: 300px;
+    }
+    .show-prod .col-4 {
+        padding: 0;
+        max-width: 30%;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .show-prod h2 {
+        font-size: 20px;
+        margin: 22px;
+    }
+    .show-prod .col-4 {
+        padding: 0;
+        max-width: 30%;
     }
 }
 .carousel-control-next,

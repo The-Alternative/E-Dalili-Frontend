@@ -5,9 +5,11 @@
             <img
                 src="../../../public/img/w.jpg"
                 class="new"
+                
             />
             <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop"  @click="goto(id, title, description, price)">
+                <button type="button" class="btn btn-secondary" title="Quick Shop" v-on:click="gotodetails(items)"
+>
                     <i class="fa fa-eye"></i>
                 </button>
                 <button type="button" class="btn btn-secondary" id="heart" title="Add to wishlist" @click="heartlike()">
@@ -51,21 +53,32 @@ export default {
     props: ['id', 'title', 'description', 'price'],
     data() {
         return {
-            details: {
-                id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
-            },
+            // details: {
+            //     id: this.id,
+            //     title: this.title,
+            //     description: this.description,
+            //     price: this.price,
+            // },
         };
     },
     methods: {
-        goto: function(i, t, d, p) {
-            this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
+        gotodetails(item){
+            this.$router.push({name:'ProductDetailsStore',params:item});
         },
-        // heartlike: function() {
-        //     this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
+        // goto: function(i, t, d, p) {
+        //     this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         // },
+        //   goto: function(i, t, d, p) {
+        //     this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
+        // },
+        heartlike: function() {
+            let heart = localStorage.getItem('heart-option');
+            if (heart !== null) {
+                this.$el.lastChild.lastChild.lastChild.classList.toggle(heart);
+            }
+
+            localStorage.setItem('heart-option', 'is-active');
+        },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
@@ -100,6 +113,18 @@ export default {
         count() {
             return this.$store.state.count;
         },
+        stores() {
+            return this.$store.state.stores;
+        },
+        // categories() {
+        //     return this.$store.state.categories;
+        // },
+        // brands() {
+        //     return this.$store.state.brands;
+        // },
+        product() {
+            return this.$store.state.stores[0].products;
+        },
     },
 };
 </script>
@@ -113,7 +138,7 @@ export default {
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px #c2bdbd;
     background-color: #ffffff;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 /* .product-top{
 
