@@ -50,6 +50,8 @@
         <!-- End Upper Bar -->
         <!-- Start landing -->
         <div class="jumbotron">
+            <div class="bars" @click="showfut()"><i class="fa fa-bars"></i></div>
+            <div class="exit-fut" id="exit-fut" @click="hidefut()">X</div>
             <div class="container">
                 <div class="row">
                     <div class="search col-lg-12">
@@ -57,7 +59,7 @@
                         ><input class="input" type="search" placeholder="بحث" />
                     </div>
                     <div class="col-lg-12 fet">
-                        <div class="featuers">
+                        <div class="featuers" id="fut">
                             <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
@@ -204,7 +206,41 @@ export default {
         },
         goto: function() {
             this.$router.push(`/`);
-        },
+        }, showfut() {
+            document.getElementById('fut').animate(
+                [
+                    // keyframes
+                   { right:'-231px', top:'-355px',height:'27px'},
+                   {right:'30px', top:'-355px',height:'27px'},
+                    {right:'30px', top:'-355px',height:'130px'}
+                   
+                ],
+                {
+                    // timing options
+                    duration: 500,
+                   fill: 'forwards'
+                },
+                
+            );
+               document.getElementById('exit-fut').style.display = "block"
+        }, hidefut() {
+            document.getElementById('fut').animate(
+                [
+                    // keyframes
+                    {right:'30px', top:'-355px',height:'130px'},
+                     {right:'30px', top:'-355px',height:'27px'},
+                     { right:'-231px', top:'-355px',height:'27px'}
+                   
+                ],
+                {
+                    // timing options
+                    duration: 500,
+                   fill: 'forwards'
+                },
+                
+            );
+               document.getElementById('exit-fut').style.display = "none"
+        }
     },
 
     /*
@@ -549,6 +585,7 @@ export default {
     background-color: #bfc0c2;
     padding: 10px 20px;
     color: #635f5f;
+    overflow: hidden;
 }
 .jumbotron .featuers span {
     font-weight: bold;
@@ -593,12 +630,32 @@ export default {
     height: 33px;
     width: 1px;
     background-color: #8d8d8d;
+}.bars,.exit-fut{
+    display: none;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .jumbotron {
         height: 300px;
         width: 100%;
+    }
+    .exit-fut{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: #5daaa6;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    top: 123px;
+    left: 53px;
+    padding: 1px;
+    font-weight: bold;
+    }
+    .bars{
+        display: block;
+        text-align: right;
+        cursor: pointer;
     }
     .jumbotron .search {
         width: 100%;
@@ -628,9 +685,11 @@ export default {
     }
     .jumbotron .featuers {
         width: 200px;
-        margin-top: 75px;
+        position: absolute;
         font-size: 11px;
         border-radius: 20px;
+        top: -461px;
+        right: -231px;
     }
     .jumbotron .featuers i {
         font-size: 17px;
