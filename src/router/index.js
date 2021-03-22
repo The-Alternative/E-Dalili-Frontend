@@ -36,7 +36,7 @@ const routes = [
         component: UserLocation,
     },
     {
-        path: '/visitStore/:id/:title',
+        path: '/visitStore/:id/:title/:phonenumber/:mobilephone/:workDays/:startTime/:endTime/:address',
         name: 'visitStore',
         component: visitStore,
         props: true,
@@ -54,8 +54,9 @@ const routes = [
         props: true,
     },
     {
-        path:'/ProductDetailsStore/:id/:title/:description/:price',
-        component:ProductDetailsStore,
+        path: '/ProductDetailsStore',
+        component: ProductDetailsStore,
+        name:'ProductDetailsStore',
         props: true,
     },
     /* services */

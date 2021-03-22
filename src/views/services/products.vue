@@ -48,7 +48,6 @@
                     :price="items.price"
                     :title="items.title"
                     :description="items.description"
-                    
                 >
                 </BodyProduct>
             </div>

@@ -43,7 +43,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-xs-12" style="direction: rtl;">
+                                <div
+                                    class="col-md-6 col-xs-12"
+                                    style="direction: rtl;"
+                                >
                                     <div
                                         class="store"
                                         v-for="store in stores.slice(0, 1)"
@@ -52,16 +55,17 @@
                                         :address="store.address"
                                     >
                                         <div>
-                                           <img class="rounded-circle"
-                                            src="../../../public/img/market-logo.png"
-                                             height="60"
-                                             />
-                                           
+                                            <img
+                                                class="rounded-circle"
+                                                src="../../../public/img/market-logo.png"
+                                                height="60"
+                                            />
+
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
                                             {{ store.space }}
-                                             <img
+                                            <img
                                                 class="img-open"
                                                 style="margin-right:10px"
                                                 src="../../../public/img/open.png"
@@ -145,7 +149,10 @@
                                         </div>
                                     </div>
                                 </div>
-                               <div class="col-md-6 col-xs-12" style="direction: rtl;">
+                                <div
+                                    class="col-md-6 col-xs-12"
+                                    style="direction: rtl;"
+                                >
                                     <div
                                         class="store"
                                         v-for="store in stores.slice(1, 2)"
@@ -154,16 +161,17 @@
                                         :address="store.address"
                                     >
                                         <div>
-                                           <img class="rounded-circle"
-                                            src="../../../public/img/market-logo.png"
-                                             height="60"
-                                             />
-                                           
+                                            <img
+                                                class="rounded-circle"
+                                                src="../../../public/img/market-logo.png"
+                                                height="60"
+                                            />
+
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
                                             {{ store.space }}
-                                             <img
+                                            <img
                                                 class="img-open"
                                                 style="margin-right:10px"
                                                 src="../../../public/img/open.png"
@@ -247,7 +255,10 @@
                                         </div>
                                     </div>
                                 </div>
-                               <div class="col-md-6 col-xs-12" style="direction: rtl;">
+                                <div
+                                    class="col-md-6 col-xs-12"
+                                    style="direction: rtl;"
+                                >
                                     <div
                                         class="store"
                                         v-for="store in stores.slice(2, 3)"
@@ -256,16 +267,17 @@
                                         :address="store.address"
                                     >
                                         <div>
-                                           <img class="rounded-circle"
-                                            src="../../../public/img/market-logo.png"
-                                             height="60"
-                                             />
-                                           
+                                            <img
+                                                class="rounded-circle"
+                                                src="../../../public/img/market-logo.png"
+                                                height="60"
+                                            />
+
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
                                             {{ store.space }}
-                                             <img
+                                            <img
                                                 class="img-open"
                                                 style="margin-right:10px"
                                                 src="../../../public/img/open.png"
@@ -390,10 +402,10 @@ export default {
     justify-content: center;
     margin: 0;
 }
-.show-prod .col-4{
+.show-prod .col-4 {
     max-width: 21%;
 }
-.show-prod h2{
+.show-prod h2 {
     display: inline-block;
     margin: 0 20px 0 100px;
 }
@@ -458,50 +470,48 @@ export default {
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-
-   .show-prod .col-12 img {
-       width: 220px;
-   }
-   .show-prod .col-4{
-       padding: 0;
-       max-width: 24%;
-   }
-   .show-prod .col-4 img{
-    height: 55px;
-    width: 55px
-   }
-   .show-prod h2{
-display: inline-block;
-margin: 22px;
-font-size: 20px;
-font-weight: bold;
-}
-
+    .show-prod .col-12 img {
+        width: 220px;
+    }
+    .show-prod .col-4 {
+        padding: 0;
+        max-width: 24%;
+    }
+    .show-prod .col-4 img {
+        height: 55px;
+        width: 55px;
+    }
+    .show-prod h2 {
+        display: inline-block;
+        margin: 22px;
+        font-size: 20px;
+        font-weight: bold;
+    }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .show-prod h2{
-   font-size: 18px;
-    margin: 10px;
-}  
-   .show-prod .col-12 img {
-       width: 300px;
-   }
-   .show-prod .col-4{
-       padding: 0;
-       max-width: 30%;
-   }
+    .show-prod h2 {
+        font-size: 18px;
+        margin: 10px;
+    }
+    .show-prod .col-12 img {
+        width: 300px;
+    }
+    .show-prod .col-4 {
+        padding: 0;
+        max-width: 30%;
+    }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .show-prod h2{
-    font-size: 20px;
-    margin: 22px;
-}  
-  .show-prod .col-4{
-       padding: 0;
-       max-width: 30%;
-   }
+    .show-prod h2 {
+        font-size: 20px;
+        margin: 22px;
+    }
+    .show-prod .col-4 {
+        padding: 0;
+        max-width: 30%;
+    }
 }
 .carousel-control-next,
 .carousel-control-prev {
