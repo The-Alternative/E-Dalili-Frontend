@@ -585,7 +585,6 @@ export default {
     background-color: #bfc0c2;
     padding: 10px 20px;
     color: #635f5f;
-    overflow: hidden;
 }
 .jumbotron .featuers span {
     font-weight: bold;
@@ -639,6 +638,9 @@ export default {
         height: 300px;
         width: 100%;
     }
+    .jumbotron .featuers {
+    overflow: hidden;
+}
     .exit-fut{
     width: 25px;
     height: 25px;
@@ -651,6 +653,7 @@ export default {
     left: 53px;
     padding: 1px;
     font-weight: bold;
+    
     }
     .bars{
         display: block;
