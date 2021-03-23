@@ -75,10 +75,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
@@ -181,10 +181,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
@@ -287,10 +287,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
@@ -348,7 +348,7 @@ export default {
     data() {
         return {
             details: {
-                id: this.id,
+                id:this.id,
                 title: this.title,
                 description: this.description,
                 price: this.price,
@@ -358,13 +358,16 @@ export default {
     components: {
         Cartmini,
     },
-    props: ['title', 'description', 'id', 'price'],
+    props: ['id','title', 'description','price'],
     computed: {
         count() {
             return this.$store.state.count;
         },
         stores() {
             return this.$store.state.stores;
+        },
+        product() {
+            return this.$store.state.stores[0].products;
         },
     },
     methods: {

@@ -25,8 +25,8 @@ import ProductDetalis from '../components/global/ProductDetalis.vue';
 import Cart from '../components/cart/Cart.vue';
 
 import UserLocation from '../pages/UserLocation';
-import visitStore from '../pages/visitStore';
-import ProductDetailsStore from '../pages/globalpages/ProductDetailsStore';
+import visitStore from '../components/body/pages/visitStore';
+import ProductDetailsStore from '../components/body/pages/ProductDetailsStore';
 
 Vue.use(VueRouter);
 
@@ -54,7 +54,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore',
+        path: '/ProductDetailsStore/:id/:title/:description/:price',
         component: ProductDetailsStore,
         name:'ProductDetailsStore',
         props: true,
