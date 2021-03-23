@@ -1,20 +1,15 @@
 <template>
     <div>
-        <router-link to="/location"
-            ><img
-                class="location"
-                src="../../../public/img/location.png"
-                height="20"
-        /></router-link>
+        <img
+            class="location"
+            src="../../../public/img/location.png"
+            height="20"
+        />
     </div>
 </template>
 
 <script>
-import UserLocation from '../../pages/UserLocation';
 export default {
-    component: {
-        UserLocation,
-    },
     name: 'location-store',
 };
 </script>
