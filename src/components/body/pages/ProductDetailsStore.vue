@@ -1,5 +1,5 @@
 <template>
- <div class="ProductDetalis" style="background-color:#e9ecf2">
+    <div class="ProductDetalis" style="background-color:#e9ecf2">
         <Cartmini />
 
         <div
@@ -19,25 +19,25 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
@@ -57,7 +57,7 @@
                                         <div>
                                             <img
                                                 class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
+                                                src="../../../../public/img/market-logo.png"
                                                 height="60"
                                             />
                                             <h2>
@@ -67,17 +67,17 @@
                                             <img
                                                 class="img-open"
                                                 style="margin-right:10px"
-                                                src="../../../public/img/open.png"
+                                                src="../../../../public/img/open.png"
                                                 height="40"
                                             />
                                         </div>
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ title }}
+                                            {{ details.title }}
                                         </div>
                                         <div class="category">
-                                            {{ description }}
+                                            {{ details.description }}
                                         </div>
 
                                         <div>
@@ -124,25 +124,25 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
@@ -162,7 +162,7 @@
                                         <div>
                                             <img
                                                 class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
+                                                src="../../../../public/img/market-logo.png"
                                                 height="60"
                                             />
 
@@ -173,17 +173,17 @@
                                             <img
                                                 class="img-open"
                                                 style="margin-right:10px"
-                                                src="../../../public/img/open.png"
+                                                src="../../../../public/img/open.png"
                                                 height="40"
                                             />
                                         </div>
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ title }}
+                                            {{ details.title }}
                                         </div>
                                         <div class="category">
-                                            {{ description }}
+                                            {{ details.description }}
                                         </div>
 
                                         <div>
@@ -230,25 +230,25 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
                                         <div class="col-4">
                                             <img
-                                                src="../../../public/img/w.jpg"
+                                                src="../../../../public/img/w.jpg"
                                                 alt=""
                                             />
                                         </div>
@@ -268,7 +268,7 @@
                                         <div>
                                             <img
                                                 class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
+                                                src="../../../../public/img/market-logo.png"
                                                 height="60"
                                             />
 
@@ -279,17 +279,17 @@
                                             <img
                                                 class="img-open"
                                                 style="margin-right:10px"
-                                                src="../../../public/img/open.png"
+                                                src="../../../../public/img/open.png"
                                                 height="40"
                                             />
                                         </div>
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ title }}
+                                            {{ details.title }}
                                         </div>
                                         <div class="category">
-                                            {{ description }}
+                                            {{ details.description }}
                                         </div>
 
                                         <div>
@@ -345,7 +345,7 @@
 import Cartmini from '@/components/cart/Cartmini.vue';
 
 export default {
-        name: 'ProductDetailsStore',
+    name: 'ProductDetailsStore',
     data() {
         return {
             details: {
@@ -354,6 +354,7 @@ export default {
                 description: this.description,
                 price: this.price,
             },
+            // details:this.$route.params
         };
     },
     components: {
@@ -397,6 +398,13 @@ export default {
                 }
             );
         },
+    },
+    created() {
+        if (this.$route.params.id !== undefined)
+            localStorage.setItem('details', JSON.stringify(this.$route.params));
+    },
+    mounted() {
+        this.details = JSON.parse(localStorage.getItem('details'));
     },
 };
 </script>
