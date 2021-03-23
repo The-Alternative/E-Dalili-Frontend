@@ -5,6 +5,7 @@
                 @click="goto(id, title, description, price)"
                 src="../../../public/img/w.jpg"
                 class="new"
+
             />
             <div @click="goto(id, title, description, price)" class="name-prod">
                 {{ title }}

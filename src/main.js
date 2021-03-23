@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import router from './router/index';
 import store from './store/Store';
 import 'jquery';
+import VueLazyload from 'vue-lazyload';
 
 import 'bootstrap';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
@@ -22,6 +23,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueLazyload);
 
 new Vue({
     router,

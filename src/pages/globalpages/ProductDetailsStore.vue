@@ -79,7 +79,7 @@
                                         <div class="category">
                                             {{ description }}
                                         </div>
-
+                                      {{id}}
                                         <div>
                                             <span>80.00 S.P</span>
                                             <div
@@ -165,7 +165,7 @@
                                                 src="../../../public/img/market-logo.png"
                                                 height="60"
                                             />
-
+                                            
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
@@ -185,7 +185,7 @@
                                         <div class="category">
                                             {{ description }}
                                         </div>
-
+                                      
                                         <div>
                                             <span>90.00 S.P</span>
                                             <div

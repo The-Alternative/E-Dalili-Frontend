@@ -302,7 +302,7 @@
                     :price="items.price"
                     :title="items.title"
                     :description="items.description"
-                    v-on:click="gotodetails(items)"
+                    v-on:click="gotodetails(id)"
                     >
 
                 </BodyProductStore>
@@ -352,8 +352,8 @@ export default {
         likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
-        gotodetails(item){
-            this.$router.push({name:'ProductDetailsStore',params:item});
+        gotodetails(i){
+            this.$router.push(`ProductDetailsStore/${i}`);
         },
         //  goto: function(i, t, d, p) {
         //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
