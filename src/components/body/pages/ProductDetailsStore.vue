@@ -74,14 +74,14 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ name }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
-                                            <span>80.00 S.P</span>
+                                            <span>{{price}} S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -180,14 +180,14 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ name }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
-                                            <span>90.00 S.P</span>
+                                            <span>{{price}} S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -286,14 +286,14 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ name }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
-                                            <span>100.00 S.P</span>
+                                            <span>{{price}} S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -350,7 +350,7 @@ export default {
         return {
             details: {
                 id: this.id,
-                title: this.title,
+                name: this.name,
                 description: this.description,
                 price: this.price,
             },
@@ -360,7 +360,7 @@ export default {
     components: {
         Cartmini,
     },
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'name', 'description', 'price'],
     computed: {
         count() {
             return this.$store.state.count;

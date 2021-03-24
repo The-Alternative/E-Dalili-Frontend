@@ -8,7 +8,7 @@
                         type="button"
                         class="btn btn-secondary"
                         title="Quick Shop"
-                        @click="gotodetails(id, title, description, price)"
+                        v-on:click="gotodetails(items)"
                     >
                         <i class="fa fa-eye"></i>
                     </button>
@@ -41,7 +41,7 @@
                     <i class="fa fa-star"></i>
                 </div>
                 <div class="name-prod">
-                    {{ title }}
+                    {{ name }}
                 </div>
                 <div class="category">
                     {{ description }}
@@ -62,24 +62,24 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'name', 'description', 'price'],
     data() {
         return {
-            details: {
-                id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
-            },
+            // details: {
+            //     id: this.id,
+            //     title: this.title,
+            //     description: this.description,
+            //     price: this.price,
+            // },
         };
     },
     methods: {
-        // gotodetails(item){
-        //     this.$router.push({name:'ProductDetailsStore',params:item});
-        // },
-        gotodetails: function(i, t, d, p) {
-            this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
+        gotodetails(item){
+            this.$router.push({name:'ProductDetailsStore',params:item});
         },
+        // gotodetails: function(i, t, d, p) {
+        //     this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
+        // },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
