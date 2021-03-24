@@ -8,7 +8,7 @@
                         type="button"
                         class="btn btn-secondary"
                         title="Quick Shop"
-                        v-on:click="gotodetails(items)"
+                        @click="gotodetails(items)"
                     >
                         <i class="fa fa-eye"></i>
                     </button>
@@ -41,7 +41,7 @@
                     <i class="fa fa-star"></i>
                 </div>
                 <div class="name-prod">
-                    {{ name }}
+                    {{ title }}
                 </div>
                 <div class="category">
                     {{ description }}
@@ -62,15 +62,15 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'description', 'price'],
+    props: ['id', 'title', 'description', 'price'],
     data() {
         return {
-            // details: {
-            //     id: this.id,
-            //     title: this.title,
-            //     description: this.description,
-            //     price: this.price,
-            // },
+            details: {
+                id: this.id,
+                title: this.title,
+                description: this.description,
+                price: this.price,
+            },
         };
     },
     methods: {

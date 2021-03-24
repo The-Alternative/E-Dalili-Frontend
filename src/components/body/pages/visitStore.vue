@@ -296,9 +296,9 @@
                     :key="items.pr"
                     :id="items.id"
                     :price="items.price"
-                    :name="items.name"
+                    :title="items.title"
                     :description="items.description"
-                    v-on:click="gotodetails(id,name,description,price)"
+                    v-on:click="gotodetails(id,title,description,price)"
                 >
                 </BodyProductStore>
             </div>
@@ -357,8 +357,8 @@ export default {
         likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
-        gotodetails(i,n,d,p){
-            this.$router.push(`ProductDetailsStore/${i}/${n}/${d}/${p}`);
+        gotodetails(i,t,d,p){
+            this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
         //  goto: function(i, t, d, p) {
         //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
@@ -597,7 +597,6 @@ export default {
         content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: 160px;
-        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -1009,7 +1008,6 @@ export default {
         content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: 82px;
-        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -1389,10 +1387,9 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../../../public/img/icon-button.png);
+        content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: 28px;
-        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -1769,10 +1766,9 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../../../public/img/icon-button.png);
+        content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: 27px;
-        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -2150,10 +2146,9 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../../../public/img/icon-button.png);
+        content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: -1px;
-        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -2538,7 +2533,6 @@ export default {
         content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: -1px;
-        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;

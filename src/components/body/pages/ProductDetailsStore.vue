@@ -74,14 +74,14 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ name }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
                                             {{ description }}
                                         </div>
 
                                         <div>
-                                            <span>{{price}} S.P</span>
+                                            <span>80.00 S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -180,14 +180,14 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ name }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
                                             {{ description }}
                                         </div>
 
                                         <div>
-                                            <span>{{price}} S.P</span>
+                                            <span>90.00 S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -286,14 +286,14 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ name }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
                                             {{ description }}
                                         </div>
 
                                         <div>
-                                            <span>{{price}} S.P</span>
+                                            <span>100.00 S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -348,19 +348,19 @@ export default {
     name: 'ProductDetailsStore',
     data() {
         return {
-            details: {
-                id: this.id,
-                name: this.name,
-                description: this.description,
-                price: this.price,
-            },
-            // details:this.$route.params
+            // details: {
+            //     id: this.id,
+            //     title: this.title,
+            //     description: this.description,
+            //     price: this.price,
+            // },
+            details:this.$route.params
         };
     },
     components: {
         Cartmini,
     },
-    props: ['id', 'name', 'description', 'price'],
+    props: ['id', 'title', 'description', 'price'],
     computed: {
         count() {
             return this.$store.state.count;

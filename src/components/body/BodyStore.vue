@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store" v-for="store in stores" :key="store.id">
+            <div class="store" v-for="store in activeStores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -102,7 +102,7 @@
         </span>
 
         <div
-            class="card col-lg-3 col-md-3 col-sm-4 col-xs-4 categores"
+            class="card col-lg-3 col-md-3 col-sm-4 col-xs-4 mb-4 categores"
             id="menu"
         >
             <div class="backdrop"></div>
@@ -269,21 +269,21 @@ export default {
         categories() {
             return this.$store.state.Categories;
         },
-        // activeStores: function() {
-        //     if (this.selectedCategory.length == 0) return this.stores;
-        //     var activeStores = [];
-        //     var filters = this.selectedCategory;
+        activeStores: function() {
+            if (this.selectedCategory.length == 0) return this.$store.state.stores;
+            var activeStores = [];
+            var filters = this.selectedCategory;
 
-        //     this.stores.forEach(function(store) {
-        //         function storeContainsFilter(filter) {
-        //             return store.categories.indexOf(filter) != -1;
-        //         }
-        //         if (filters.every(storeContainsFilter)) {
-        //             activeStores.push(store);
-        //         }
-        //     });
-        //     return activeStores;
-        // },
+            this.$store.state.stores.forEach(function(store) {
+                function storeContainsFilter(filter) {
+                    return store.categories.indexOf(filter) != -1;
+                }
+                if (filters.every(storeContainsFilter)) {
+                    activeStores.push(store);
+                }
+            });
+            return activeStores;
+        },
     },
     methods: {
         btnbar: function() {
