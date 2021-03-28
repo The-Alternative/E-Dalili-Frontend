@@ -51,8 +51,10 @@
                     <div class="price" style="display: inline-block"></div>
                 </div>
                 <div class="avilble">
-                    <div style="display: inline-block"></div>
-                    <span class="fa fa-check-circle">{{ stores.title }}</span>
+                    <div class="mb-2">
+                        <div style="display: inline-block">متوفر في سنتر الريم</div>
+                        <span class="fa fa-check-circle"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,26 +135,16 @@ export default {
 <style scoped>
 .coler {
     width: 100%;
+    justify-content: center;
     letter-spacing: 1px;
 }
 .borderproduct {
+    justify-content: center;
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px #c2bdbd;
     background-color: #ffffff;
     margin: 10px;
 }
-/* .product-top{
-
- 
-}
-.product-bottom{
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;    
-    box-shadow: 3px 3px 3px 3px #c2bdbd;
-    background-color: #ffffff 
-} */
 .new {
     width: 100%;
     cursor: pointer;

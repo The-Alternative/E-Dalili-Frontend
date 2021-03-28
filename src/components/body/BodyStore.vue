@@ -102,7 +102,7 @@
         </span>
 
         <div
-            class="card col-lg-3 col-md-3 col-sm-4 col-xs-4 mb-4 categores"
+            class="card col-lg-3 mr-4 col-md-3 col-sm-4 col-xs-4 mb-4  categores"
             id="menu"
         >
             <div class="backdrop"></div>
@@ -301,10 +301,9 @@ export default {
 @media (min-width: 200px) and (max-width: 467px) {
     .btn {
         font-weight: bold;
-        font-size: 10px;
+        font-size: 12px;
         height: 30px;
-        width: 7px;
-        /* margin-left: 30px; */
+        margin: 20px 0;
     }
     .checked-all {
         font-size: 10px;
@@ -344,27 +343,27 @@ export default {
     .star-right {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 90px;
+        margin-left: 40px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 102px;
+        margin-left: 50px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 112px;
+        margin-left: 60px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 122px;
+        margin-left: 72px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 134px;
+        margin-left: 84px;
     }
     /*...................*/
     .categores {
@@ -383,13 +382,13 @@ export default {
         position: absolute;
         top: 0;
         right: 10px;
-        height: 45px;
-        width: 45px;
+        height: 30px;
+        width: 30px;
         cursor: pointer;
         transition: right 0.4s ease;
     }
     .slide.click {
-        right: 260px;
+        right: 200px;
     }
     .slide .fa-bars {
         color: #000000;
@@ -408,13 +407,13 @@ export default {
     }
     .img-button {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .divtitle {
         display: block;
     }
     .img-open {
-        height: 15px;
+        height: 20px;
         margin-top: 10px;
         transition: all 0.8s;
     }
@@ -438,23 +437,22 @@ export default {
         font-size: 10px;
         color: #ffd200;
         list-style: none;
-        margin-right: 50px;
+        margin-right: 35px;
     }
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 10px;
+        font-size: 12px;
         color: #751aff;
-        text-align: center;
+        margin-right: 50px;
     }
     .Group {
-        height: 10px;
+        height: 15px;
     }
     .MaskGroup {
-        height: 10px;
+        height: 15px;
     }
     .stors {
-        /* display: inline-block; */
         width: 100%;
     }
 }
@@ -464,7 +462,6 @@ export default {
         font-size: 12px;
         height: 30px;
         width: 8px;
-        /* margin-left: 80px; */
     }
     .checked-all {
         font-size: 12px;
@@ -538,7 +535,7 @@ export default {
         transition: right 0.4s ease;
     }
     .categores.show {
-        right: 0;
+        right: 10px;
     }
     .slide {
         position: absolute;
@@ -573,14 +570,14 @@ export default {
     }
     .rounded-circle {
         margin-top: 10px;
-        height: 30px;
+        height: 40px;
     }
     .text-muted {
         margin-top: 20px;
-        font-size: 8px;
+        font-size: 10px;
     }
     .title {
-        font-size: 8px;
+        font-size: 10px;
     }
     .stars {
         font-size: 8px;
@@ -590,7 +587,7 @@ export default {
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 10px;
+        font-size: 12px;
         color: #751aff;
         text-align: center;
     }
@@ -617,7 +614,6 @@ export default {
         font-size: 12px;
         height: 30px;
         width: 8px;
-        /* margin-left: 80px; */
     }
     .checked-all {
         font-size: 12px;
@@ -725,14 +721,14 @@ export default {
     }
     .rounded-circle {
         margin-top: 10px;
-        height: 30px;
+        height: 40px;
     }
     .text-muted {
         margin-top: 20px;
-        font-size: 8px;
+        font-size: 10px;
     }
     .title {
-        font-size: 8px;
+        font-size: 10px;
     }
     .stars {
         font-size: 8px;
@@ -742,7 +738,7 @@ export default {
     .categorystore {
         margin-top: 5px;
         list-style: none;
-        font-size: 10px;
+        font-size: 12px;
         color: #751aff;
         text-align: center;
     }
@@ -778,7 +774,6 @@ export default {
         height: 40px;
     }
     .btn {
-        /* margin-left: 70px; */
         height: 30px;
     }
     .text-muted {
