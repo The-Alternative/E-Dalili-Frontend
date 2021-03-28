@@ -1,7 +1,7 @@
 <template>
     <div>
-        <a href="#"
-            ><img class="phone" src="../../../public/img/phone.png" height="20"
+        <a href="tel:mobilephone"
+            ><img class="phone" id="callclick" v-on:click="clickEvent();" src="../../../public/img/phone.png" height="20"
         /></a>
         <!--    <a href="#"><i class="whatsapp fab fa-whatsapp"></i></a>-->
     </div>
@@ -10,16 +10,21 @@
 <script>
 export default {
     name: 'phone-store',
+    methods:{
+        clickEvent: function(){
+            document.getElementById('callclick')
+        }
+    }
 };
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
     .phone {
-        height: 10px;
+        height: 20px;
         /* margin-left: 10px; */
         margin-right: 10px;
         border-radius: 50px;
-        width: 10px;
+        width: 15px;
         transition: all 0.8s;
     }
     .phone:hover {

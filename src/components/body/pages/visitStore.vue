@@ -78,7 +78,7 @@
                         src="../../../../public/img/market-logo.png"
                         height="100"
                     />
-                    <div class="mt-4 mb-4">{{ title }}</div>
+                    <div class="mt-4 mb-4 title-profile">{{ title }}</div>
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
                     <div class="textRight"><span>متجر تجزئة</span></div>
@@ -475,7 +475,7 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 60%;
-        left: 32%;
+        left: 35%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -616,8 +616,9 @@ export default {
     }
     .align-middle {
         display: flex;
-        flex-direction: column-reverse;
-        right: 8%;
+        flex-direction: column;
+        justify-content: center;
+        // right: 8%;
         position: relative;
         top: 50%;
     }
@@ -745,29 +746,29 @@ export default {
     }
     ///end brand///
     ///start brand market///
+   .show-market {
+        background-color: #fff;
+        border-radius: 7px;
+        height: 200px;
+    }
+    .mar .show-market:nth-child(2),
+    .mar .show-market:nth-child(3) {
+        display: none;
+    }
+    .show-market img {
+        width: 32%;
+    }
     .mar {
         background-color: #fefefe;
         margin: 0 20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
-    .show-market {
-        background-color: #fff;
-        width: 100%;
-        height: 250px;
-        margin-top: 20px;
-        border-radius: 7px;
-        display: inline;
-    }
-    .show-market img {
-        width: 19%;
-        height: 100%;
-    }
+    ///end brand market
+    ///start product
     .show-prod {
         height: 410px;
     }
-    ///end brand market
-    ///start product
     .row {
         justify-content: center;
     }
@@ -889,7 +890,7 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 60%;
-        left: 38%;
+        left: 40%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -1063,7 +1064,7 @@ export default {
         box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
         .txt {
             margin-left: 1rem;
-            margin-top: 6rem;
+            margin-top: 8rem;
             z-index: 1;
             h1 {
                 font-size: 1.2rem;
@@ -1153,29 +1154,29 @@ export default {
     }
     ///end brand///
     ///start brand market///
+    .show-market {
+        background-color: #fff;
+        border-radius: 7px;
+        height: 200px;
+    }
+    .mar .show-market:nth-child(2),
+    .mar .show-market:nth-child(3) {
+        display: none;
+    }
+    .show-market img {
+        width: 32%;
+    }
     .mar {
         background-color: #fefefe;
         margin: 0 20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
-    .show-market {
-        background-color: #fff;
-        width: 100%;
-        height: 250px;
-        margin-top: 50px;
-        border-radius: 7px;
-        display: inline;
-    }
-    .show-market img {
-        width: 19%;
-        height: 100%;
-    }
+    ///end brand market
+    ///start product
     .show-prod {
         height: 410px;
     }
-    ///end brand market
-    ///start product
     .row {
         justify-content: center;
     }
@@ -1529,29 +1530,29 @@ export default {
     }
     ///end brand///
     ///start brand market///
+    .show-market {
+        background-color: #fff;
+        border-radius: 7px;
+        height: 200px;
+    }
+    .mar .show-market:nth-child(2),
+    .mar .show-market:nth-child(3) {
+        display: none;
+    }
+    .show-market img {
+        width: 32%;
+    }
     .mar {
         background-color: #fefefe;
         margin: 0 20px;
         border-radius: 10px;
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
-    .show-market {
-        background-color: #fff;
-        width: 100%;
-        height: 250px;
-        margin-top: 50px;
-        border-radius: 7px;
-        display: inline;
-    }
-    .show-market img {
-        width: 19%;
-        height: 100%;
-    }
+    ///end brand market
+    ///start product
     .show-prod {
         height: 410px;
     }
-    ///end brand market
-    ///start product
     .row {
         justify-content: center;
     }
@@ -1591,6 +1592,9 @@ export default {
     }
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
+    }
+    .title-profile{
+        margin-left: 30px;
     }
     .isActive {
         padding-left: 0;
@@ -1690,7 +1694,7 @@ export default {
         color: black;
     }
     .textcount {
-        margin: 30px 0 0 50px;
+        margin: 30px 0 0 30px;
     }
     .like {
         color: #004eff;
@@ -1978,9 +1982,9 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 2vh;
+        font-size: 2.5vh;
         background-color: rgb(144, 148, 147);
-        margin-left: 120px;
+        margin-left: 100px;
         border: 2px solid rgb(144, 148, 147);
     }
     .icons {
@@ -2351,19 +2355,17 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 2vh;
+        font-size: 2.5vh;
         background-color: rgb(144, 148, 147);
-        margin-left: 200px;
+        margin-left: 150px;
         border: 2px solid rgb(144, 148, 147);
     }
     .rowimg {
         display: flex;
-        // flex-direction: column-reverse;
     }
     .likecount {
         margin-right: 60px;
         display: flex;
-        // flex-direction: column-reverse;
     }
     .socail-menu {
         margin-left: 20px;
@@ -2418,7 +2420,7 @@ export default {
         border: 2px solid #eae2e1;
         display: flex;
         max-width: 50%;
-        margin-left: 50px;
+        margin-left: 40px;
     }
     .textFollow .heart {
         width: 90px;
@@ -2428,13 +2430,13 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 35%;
-        left: 25%;
+        left: 20%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 4vh;
         margin-bottom: 10px;
-        margin-left: 75px;
+        margin-left: 70px;
         color: grey;
     }
     .heart.heart-active {
