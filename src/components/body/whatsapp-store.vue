@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="#"><i class="whatsapp fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/mobilephone/?text=text"><i class="whatsapp fab fa-whatsapp"></i></a>
     </div>
 </template>
 
@@ -8,6 +8,7 @@
 export default {
     name: 'whatsapp-store',
 };
+// https://bit.ly/3d0qwF5
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {

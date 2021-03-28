@@ -9,14 +9,14 @@
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" data-interval="2000">
                     <img
-                        src="../../public/img/banner-2.jpg"
+                        src="../../../../public/img/banner-2.jpg"
                         class="d-block w-100 h-50"
                         alt="..."
                     />
                 </div>
                 <div class="carousel-item">
                     <img
-                        src="../../public/img/banner-1.jpg"
+                        src="../../../../public/img/banner-1.jpg"
                         class="d-block w-100 h-30"
                         alt="..."
                     />
@@ -55,7 +55,7 @@
                 <div class="col-lg-3 col-sm-3">
                     <img
                         class="isActive mt-4"
-                        src="../../public/img/open.png"
+                        src="../../../../public/img/open.png"
                         height="40"
                     />
                     <div class="mt-4">{{ workDays }}</div>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="row">
                             <div>{{ startTime }}</div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div>{{ address }}</div>
@@ -75,7 +75,7 @@
                 <div class="col-lg-6">
                     <img
                         class="rounded-circle mb-4 profile"
-                        src="../../public/img/market-logo.png"
+                        src="../../../../public/img/market-logo.png"
                         height="100"
                     />
                     <div class="mt-4 mb-4">{{ title }}</div>
@@ -84,22 +84,18 @@
                     <div class="textRight"><span>متجر تجزئة</span></div>
                     <div class="icons mt-3">
                         <div class="row telephone mt-3">
-                            <span class="texticon">{{
-                                phonenumber
-                            }}</span>
+                            <span class="texticon">{{ phonenumber }}</span>
                             <img
                                 class="ml-2"
-                                src="../../public/img/telephone.svg"
+                                src="../../../../public/img/telephone.svg"
                                 height="20"
                             />
                         </div>
                         <div class="row mt-2 mb-2 phone">
-                            <span class="texticon">{{
-                                mobilephone
-                            }}</span>
+                            <span class="texticon">{{ mobilephone }}</span>
                             <img
                                 class="ml-2"
-                                src="../../public/img/mobile-phone.svg"
+                                src="../../../../public/img/mobile-phone.svg"
                                 height="30"
                             />
                         </div>
@@ -107,7 +103,7 @@
                             <span class="texticon">تواصل مع المتجر</span>
                             <img
                                 class="ml-2"
-                                src="../../public/img/comments.svg"
+                                src="../../../../public/img/comments.svg"
                                 height="20"
                             />
                         </div>
@@ -120,43 +116,43 @@
                         <a
                             ><img
                                 class="location mr-2"
-                                src="../../public/img/location.png"
+                                src="../../../../public/img/location.png"
                                 height="30"
                         /></a>
                         <a
                             ><img
                                 class="instagram mr-2"
-                                src="../../public/img/instagram-new.png"
+                                src="../../../../public/img/instagram-new.png"
                                 height="30"
                         /></a>
                         <a
                             ><img
                                 class="whatsapp mr-2"
-                                src="../../public/img/whatsapp.png"
+                                src="../../../../public/img/whatsapp.png"
                                 height="30"
                         /></a>
                         <a
                             ><img
                                 class="telegram mr-2"
-                                src="../../public/img/telegram-app.png"
+                                src="../../../../public/img/telegram-app.png"
                                 height="30"
                         /></a>
                         <a
                             ><img
                                 class="facebook"
-                                src="../../public/img/facebook-new.png"
+                                src="../../../../public/img/facebook-new.png"
                                 height="30"
                         /></a>
                     </div>
                     <div class="col imgdiliver mb-3">
                         <img
                             class="MaskGroup"
-                            src="../../public/img/MaskGroup.png"
+                            src="../../../../public/img/MaskGroup.png"
                             height="30"
                         />
                         <img
                             class="Group"
-                            src="../../public/img/Group.png"
+                            src="../../../../public/img/Group.png"
                             height="30"
                         />
                     </div>
@@ -255,7 +251,7 @@
                             <a href="#">more</a>
                             <div class="ico-card">
                                 <img
-                                    src="../../public/img/buty.jpg"
+                                    src="../../../../public/img/buty.jpg"
                                     style="width:60%"
                                 />
                                 <i class="fa fa-rebel"></i>
@@ -273,7 +269,7 @@
                     :key="brand.id"
                     :image="brand.image"
                 >
-                    <img src="../../public/img/S1.png" />
+                    <img src="../../../../public/img/S1.png" />
                 </div>
             </div>
         </div>
@@ -286,7 +282,7 @@
                 v-for="brand in brands.slice(2, 7)"
                 :key="brand.id"
             >
-                <img src="../../public/img/IMG_2.png" />
+                <img src="../../../../public/img/IMG_2.png" />
             </div>
         </div>
         <!-- show  products -->
@@ -297,7 +293,7 @@
             <div class="row mt-2">
                 <BodyProductStore
                     v-for="items in product"
-                    :key="items.pr" 
+                    :key="items.pr"
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
@@ -313,11 +309,20 @@
 
 <script>
 // import Cartmini from '@/components/cart/Cartmini.vue';
-import BodyProductStore from '@/pages/globalpages/BodyProductStore';
+import BodyProductStore from './BodyProductStore';
 
 export default {
     name: 'visitStore',
-    props: ['id', 'title','phonenumber','mobilephone','workDays','startTime','endTime','address','description', 'price'],
+    props: [
+        'id',
+        'title',
+        'phonenumber',
+        'mobilephone',
+        'workDays',
+        'startTime',
+        'endTime',
+        'address',
+    ],
     data() {
         return {
             urll: '/img/',
@@ -465,7 +470,7 @@ export default {
     .textFollow .heart {
         width: 80px;
         height: 80px;
-        background: url('../../public/img/heart.png') no-repeat;
+        background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
@@ -589,10 +594,10 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../public/img/icon-button.png);
+        content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: 160px;
-        right: 550x;
+        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -880,7 +885,7 @@ export default {
     .textFollow .heart {
         width: 80px;
         height: 80px;
-        background: url('../../public/img/heart.png') no-repeat;
+        background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
@@ -1001,10 +1006,10 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../public/img/icon-button.png);
+        content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: 82px;
-        right: 550x;
+        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -1264,7 +1269,7 @@ export default {
     .textFollow .heart {
         width: 80px;
         height: 80px;
-        background: url('../../public/img/heart.png') no-repeat;
+        background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
@@ -1384,10 +1389,10 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../public/img/icon-button.png);
+        content: url(../../../../public/img/icon-button.png);
         position: absolute;
         top: 28px;
-        right: 550x;
+        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -1654,7 +1659,7 @@ export default {
     .textFollow .heart {
         width: 80px;
         height: 80px;
-        background: url('../../public/img/heart.png') no-repeat;
+        background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
@@ -1764,10 +1769,10 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../public/img/icon-button.png);
+        content: url(../../../../public/img/icon-button.png);
         position: absolute;
         top: 27px;
-        right: 550x;
+        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -2034,7 +2039,7 @@ export default {
     .textFollow .heart {
         width: 80px;
         height: 80px;
-        background: url('../../public/img/heart.png') no-repeat;
+        background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
@@ -2145,10 +2150,10 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../public/img/icon-button.png);
+        content: url(../../../../public/img/icon-button.png);
         position: absolute;
         top: -1px;
-        right: 550x;
+        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -2423,7 +2428,7 @@ export default {
     .textFollow .heart {
         width: 90px;
         height: 90px;
-        background: url('../../public/img/heart.png') no-repeat;
+        background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
@@ -2530,10 +2535,10 @@ export default {
         transform: scale3d(1.1, 1.1, 1.1);
     }
     .naver .img::before {
-        content: url(../../public/img/icon-button.png);
+        content: url('../../../../public/img/icon-button.png');
         position: absolute;
         top: -1px;
-        right: 550x;
+        right: 550px;
     }
     .naver .row .sell {
         color: #f6ef19;
