@@ -3,9 +3,9 @@
     <div class="about-us">
         <div class="row">
             <div class="col-sm-3 ">
-                <h3>Get to Know Us</h3>
+                <h3>{{$t('GetKnowUs')}}</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">{{$t('AboutUs')}}</a></li>
                     <li><a href="#">Careers Press</a></li>
                     <li><a href="#">Releases</a></li>
                     <li><a href="#">E-DALELY Cares</a></li>
@@ -13,7 +13,7 @@
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h3>Connect with</h3>
+                <h3>{{$t('Connectwith')}}</h3>
                 <ul>
                     <li><a href="#">Facebook</a></li>
                     <li><a href="#">Twitter</a></li>

@@ -58,19 +58,19 @@
                     </div>
                     <div class="col-lg-12 fet">
                         <div class="featuers">
-                            <div>{{$t('Add your store to the platform E-Dalely')}}</div>
+                            <div>{{$t('AddPlatform')}}</div>
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{
                                     cartItemCount
                                 }}</span>
-                                <div class="shopping">{{$t('Shopping cart')}}</div>
+                                <div class="shopping">{{$t('Shoppingcart')}}</div>
                             </div>
                             <i class="fa fa-map-marker"></i>
-                            <div class="map">{{$t('Select your location')}}</div>
+                            <div class="map">{{$t('Selectlocation')}}</div>
 
                             <i class="fa fa-user-circle "> </i>
-                            <div class="user">{{$t('sign in')}}</div>
+                            <div class="user">{{$t('signin')}}</div>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <div>
                             <router-link to="/professional">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Professionals and technicians')}}</a>
+                                    <a>{{$t('ProfessionalsTechnicians')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -110,7 +110,7 @@
                                     type="button"
                                     class="btn btn-light medic"
                                 >
-                                    <a>{{$t('Pharmacies and medicines')}}</a>
+                                    <a>{{$t('PharmaciesMedicines')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -124,7 +124,7 @@
                         <div>
                             <router-link to="/resturants">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Restaurants and cafes')}}</a>
+                                    <a>{{$t('RestaurantsCafes')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -134,7 +134,7 @@
                                     type="button"
                                     class="btn btn-light sell"
                                 >
-                                    <a>{{$t('Festival of performances')}}</a>
+                                    <a>{{$t('FestivalPerformances')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -158,7 +158,7 @@
                         <div>
                             <router-link to="/">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('All sections')}}</a>
+                                    <a>{{$t('Allsections')}}</a>
                                 </button></router-link
                             >
                         </div>
