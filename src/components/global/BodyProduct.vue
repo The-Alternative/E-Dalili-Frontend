@@ -1,10 +1,11 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
-            <img
+            <img 
                 @click="goto(id, title, description, price)"
-                src="../../../public/img/w.jpg"
+                v-lazy="image"
                 class="new"
+
             />
             <div @click="goto(id, title, description, price)" class="name-prod">
                 {{ title }}
@@ -43,7 +44,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'title', 'description', 'price','image'],
     data() {
         return {
             details: {
@@ -59,12 +60,7 @@ export default {
             this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
         },
         heartlike: function() {
-            let heart = localStorage.getItem('heart-option');
-            if (heart !== null) {
-                this.$el.lastChild.lastChild.lastChild.classList.toggle(heart);
-            }
-
-            localStorage.setItem('heart-option', 'is-active');
+           this.$el.lastChild.lastChild.lastChild.classList.toggle('is-active');
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);

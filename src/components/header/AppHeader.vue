@@ -50,6 +50,8 @@
         <!-- End Upper Bar -->
         <!-- Start landing -->
         <div class="jumbotron">
+            <div class="bars" @click="showfut()"><i class="fa fa-bars"></i></div>
+            <div class="exit-fut" id="exit-fut" @click="hidefut()">X</div>
             <div class="container">
                 <div class="row">
                     <div class="search col-lg-12">
@@ -57,8 +59,13 @@
                         ><input class="input" type="search" :placeholder="$t('Search')" />
                     </div>
                     <div class="col-lg-12 fet">
+<<<<<<< HEAD
+                        <div class="featuers" id="fut">
+                            <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
+=======
                         <div class="featuers">
                             <div>{{$t('Add your store to the platform E-Dalely')}}</div>
+>>>>>>> 368e19a7bf4ee41fc9f03b9f37b3b1afc4d28ae6
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{
@@ -206,6 +213,40 @@ export default {
         },
         goto: function() {
             this.$router.push(`/`);
+        }, showfut() {
+            document.getElementById('fut').animate(
+                [
+                    // keyframes
+                   { right:'-231px', top:'-355px',height:'27px'},
+                   {right:'30px', top:'-355px',height:'27px'},
+                    {right:'30px', top:'-355px',height:'130px'}
+                   
+                ],
+                {
+                    // timing options
+                    duration: 500,
+                   fill: 'forwards'
+                },
+                
+            );
+               document.getElementById('exit-fut').style.display = "block"
+        }, hidefut() {
+            document.getElementById('fut').animate(
+                [
+                    // keyframes
+                    {right:'30px', top:'-355px',height:'130px'},
+                     {right:'30px', top:'-355px',height:'27px'},
+                     { right:'-231px', top:'-355px',height:'27px'}
+                   
+                ],
+                {
+                    // timing options
+                    duration: 500,
+                   fill: 'forwards'
+                },
+                
+            );
+               document.getElementById('exit-fut').style.display = "none"
         },
         handleChange(event){
             localStorage.setItem('lang',event.target.value);
@@ -320,16 +361,20 @@ export default {
     font-size: 20px;
 }
 .upper-bar .sel1 select {
-    width: 46px;
+     width: 102px;
+    padding: 0 28px;
 }
 .upper-bar .sel2 select {
-    width: 32px;
+     width: 102px;
+    padding: 0 32px;
 }
 .upper-bar .sel3 select {
-    width: 35px;
+    width: 102px;
+    padding: 0 30px;
 }
 .upper-bar .sel4 select {
-    width: 47px;
+   width: 102px;
+padding: 0 27px;
 }
 .upper-bar .sel4:after {
     position: absolute;
@@ -410,6 +455,22 @@ export default {
         left: 98px;
         width: 60px;
     }
+    .upper-bar .sel1 select {
+width: 102px;
+padding: 0 16px
+}
+.upper-bar .sel2 select {
+width: 102px;
+padding: 0 21px
+}
+.upper-bar .sel3 select {
+width: 102px;
+padding: 0 17px
+}
+.upper-bar .sel4 select {
+width: 102px;
+padding: 0 16px
+}
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -599,12 +660,36 @@ export default {
     height: 33px;
     width: 1px;
     background-color: #8d8d8d;
+}.bars,.exit-fut{
+    display: none;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .jumbotron {
         height: 300px;
         width: 100%;
+    }
+    .jumbotron .featuers {
+    overflow: hidden;
+}
+    .exit-fut{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: #5daaa6;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    top: 123px;
+    left: 53px;
+    padding: 1px;
+    font-weight: bold;
+    
+    }
+    .bars{
+        display: block;
+        text-align: right;
+        cursor: pointer;
     }
     .jumbotron .search {
         width: 100%;
@@ -634,9 +719,11 @@ export default {
     }
     .jumbotron .featuers {
         width: 200px;
-        margin-top: 75px;
+        position: absolute;
         font-size: 11px;
         border-radius: 20px;
+        top: -461px;
+        right: -231px;
     }
     .jumbotron .featuers i {
         font-size: 17px;

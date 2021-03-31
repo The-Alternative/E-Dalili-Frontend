@@ -6,6 +6,7 @@ import store from './store/Store';
 import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import 'jquery';
+import VueLazyload from 'vue-lazyload';
 
 import 'bootstrap';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
@@ -22,6 +23,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueLazyload);
 Vue.use(VueI18n);
 
 // axios.defaults.baseURL='http://edalili.e-dalely.com';

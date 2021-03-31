@@ -300,6 +300,7 @@
                     :description="items.description"
                     v-on:click="gotodetails(id,title,description,price)"
                 >
+
                 </BodyProductStore>
             </div>
         </div>
@@ -331,7 +332,6 @@ export default {
         BodyProductStore,
         // Cartmini
     },
-
     computed: {
         stores() {
             return this.$store.state.stores;
@@ -359,6 +359,7 @@ export default {
         },
         gotodetails(i,t,d,p){
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
+
         },
         //  goto: function(i, t, d, p) {
         //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);

@@ -11,13 +11,13 @@
 
 <script>
 import AppHeader from '@/components/header/AppHeader.vue';
-import AppFooter from '@/components/Footer/AppFooter.vue';
+
 
 export default {
     name: 'App',
     components: {
         AppHeader,
-        AppFooter,
+        AppFooter: () => import('@/components/Footer/AppFooter.vue')
     },
 };
 </script>
