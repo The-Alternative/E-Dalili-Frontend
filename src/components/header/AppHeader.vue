@@ -6,10 +6,10 @@
                     <img src="../../../public/img/logo-4.png" />
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
-                    <div class="customer-select sel4">
-                        <select>
-                            <option>العربية</option>
-                            <option></option>
+                    <div class="customer-select sel4" >
+                        <select class="w-50" v-model="lang" @change="handleChange($event)">
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
                         </select>
                     </div>
                     <span class="lang2">نطاق البحث</span>
@@ -58,19 +58,19 @@
                     </div>
                     <div class="col-lg-12 fet">
                         <div class="featuers">
-                            <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
+                            <div>{{$t('Add your store to the platform E-Dalely')}}</div>
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{
                                     cartItemCount
                                 }}</span>
-                                <div class="shopping">عربة التسوق</div>
+                                <div class="shopping">{{$t('Shopping cart')}}</div>
                             </div>
                             <i class="fa fa-map-marker"></i>
-                            <div class="map">حدد موقعك</div>
+                            <div class="map">{{$t('Select your location')}}</div>
 
                             <i class="fa fa-user-circle "> </i>
-                            <div class="user">تسجیل الدخول</div>
+                            <div class="user">{{$t('sign in')}}</div>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,9 @@ export default {
     name: 'AppHeader',
     props: ['title', 'description', 'id', 'price'],
     data() {
+        const lang = localStorage.getItem('lang') || 'en';
         return {
+            lang: lang,
             details: {
                 id: this.id,
                 title: this.title,
@@ -205,11 +207,15 @@ export default {
         goto: function() {
             this.$router.push(`/`);
         },
+        handleChange(event){
+            localStorage.setItem('lang',event.target.value);
+            window.location.reload();
+        }
     },
 
     /*
    created(){
-    axios.get("http://edalili.e-dalely.com")
+    axios.get("http://edalili.e-dalely.com")// axios.get('/routename').then{response=>this.routename=response.data}
     .then(response => {
       this.cities = response.data[0].cities;
     })

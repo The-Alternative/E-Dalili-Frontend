@@ -433,7 +433,7 @@ input[value='2']:checked ~ * [data-scene='2'],
 input[value='3']:checked ~ * [data-scene='3'],
 input[value='4']:checked ~ * [data-scene='4'] {
     + [data-scene] {
-        tranform: translateX(25%);
+        transform: translateX(25%);
     }
 }
 .landscape {
