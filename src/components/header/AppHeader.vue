@@ -158,7 +158,7 @@
                         <div>
                             <router-link to="/">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('all sections')}}</a>
+                                    <a>{{$t('All sections')}}</a>
                                 </button></router-link
                             >
                         </div>
