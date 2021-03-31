@@ -54,7 +54,7 @@
                 <div class="row">
                     <div class="search col-lg-12">
                         <i class="fa fa-search"></i
-                        ><input class="input" type="search" placeholder="بحث" />
+                        ><input class="input" type="search" :placeholder="$t('Search')" />
                     </div>
                     <div class="col-lg-12 fet">
                         <div class="featuers">
@@ -86,21 +86,21 @@
                         <div>
                             <router-link to="/instrc" exact>
                                 <button type="button" class="btn btn-light">
-                                    <a>مصانع</a>
+                                    <a>{{$t('Factories')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/company">
                                 <button type="button" class="btn btn-light">
-                                    <a>شركات</a>
+                                    <a>{{$t('Companies')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/professional">
                                 <button type="button" class="btn btn-light">
-                                    <a>مھنیون وفنیون</a>
+                                    <a>{{$t('Professionals and technicians')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -110,21 +110,21 @@
                                     type="button"
                                     class="btn btn-light medic"
                                 >
-                                    <a>صیدلیات وأدویة</a>
+                                    <a>{{$t('Pharmacies and medicines')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/doctors">
                                 <button type="button" class="btn btn-light">
-                                    <a>أطباء</a>
+                                    <a>{{$t('Doctors')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/resturants">
                                 <button type="button" class="btn btn-light">
-                                    <a>مطاعم ومقاھي</a>
+                                    <a>{{$t('Restaurants and cafes')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -134,14 +134,14 @@
                                     type="button"
                                     class="btn btn-light sell"
                                 >
-                                    <a>مھرجان العروضات </a>
+                                    <a>{{$t('Festival of performances')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/stores">
                                 <button type="button" class="btn btn-light">
-                                    <a>متاجر</a>
+                                    <a>{{$t('Stores')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -151,14 +151,14 @@
                                     type="button"
                                     class="btn btn-light products"
                                 >
-                                    <a>منتجات</a>
+                                    <a>{{$t('Products')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/">
                                 <button type="button" class="btn btn-light">
-                                    <a>جميع الأقسام</a>
+                                    <a>{{$t('all sections')}}</a>
                                 </button></router-link
                             >
                         </div>
