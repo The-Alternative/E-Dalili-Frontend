@@ -1,12 +1,22 @@
 {
     " عربة التسوق":"Shopping cart",
     "حدد موقعك":"Select your location",
+    "بحث":"Search",
     "تسجيل الدخول":"sign in",
     "E-Dalely أضف متجرك إلى منصة":"Add your store to the platform E-Dalely",
     "نطاق البحث":"Scope of the search",
     "اللغة":"language",
+    "مصانع":"Factories",
+    "شركات":"Companies",
+    "مهنيون و فنيون":"Professionals and technicians",
+    "صيدليات وأدوية":"Pharmacies and medicines",
+    "أطباء":"Doctors",
+    "مطاعم و مقاهي":"Restaurants and cafes",
+    "مهرجان العروضات":"Festival of performances",
+    "متاجر":"Stores",
+    "منتجات":"Products",
 
-    "جميع الأقسام":"all sections",
+    "جميع الأقسام":"All sections",
     "ساعات نسائية":"women watches"
     
 }
