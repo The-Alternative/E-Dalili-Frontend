@@ -2,30 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 /* import services */
 import home from '../views/services/home.vue';
-import stores from '../views/services/stores.vue';
-import instrc from '../views/services/instrc.vue';
-import company from '../views/services/company.vue';
-import professional from '../views/services/professional.vue';
-import medic from '../views/services/medic.vue';
-import doctors from '../views/services/doctors.vue';
-import resturants from '../views/services/resturants.vue';
-import products from '../views/services/products.vue';
-import festival from '../views/services/festival.vue';
-/* import section */
-import buty from '../views/section/buty.vue';
-import mobile from '../views/section/mobile.vue';
-import computer from '../views/section/computer.vue';
-import elctronic from '../views/section/elctronic.vue';
-import kitchen from '../views/section/kitchen.vue';
-import education from '../views/section/education.vue';
-import furniture from '../views/section/furniture.vue';
-import child from '../views/section/child.vue';
-/* import cartshop */
-import ProductDetalis from '../components/global/ProductDetalis.vue';
-import Cart from '../components/cart/Cart.vue';
-
-import visitStore from '../components/body/pages/visitStore';
-import ProductDetailsStore from '../components/body/pages/ProductDetailsStore';
 
 Vue.use(VueRouter);
 
@@ -34,24 +10,24 @@ const routes = [
         path:
             '/visitStore/:id/:title/:phonenumber/:mobilephone/:workDays/:startTime/:endTime/:address',
         name: 'visitStore',
-        component: visitStore,
+        component: () => import('../components/body/pages/visitStore'),
         props: true,
     },
     /* cart shop */
     {
         path: '/Cart',
-        component: Cart,
+        component: () => import('../components/cart/Cart.vue'),
         props: true,
     },
     /* ProductDetalis */
     {
         path: '/ProductDetalis/:id/:title/:description/:price',
-        component: ProductDetalis,
+        component: () => import('../components/global/ProductDetalis.vue'),
         props: true,
     },
     {
         path: '/ProductDetailsStore/:id',
-        component: ProductDetailsStore,
+        component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,
     },
@@ -64,88 +40,88 @@ const routes = [
     {
         path: '/products',
         name: 'products',
-        component: products,
+        component: () => import('../views/services/products.vue'),
     },
     {
         path: '/company',
         name: 'company',
-        component: company,
+        component: () => import('../views/services/company.vue'),
     },
     {
         path: '/professional',
         name: 'professional',
-        component: professional,
+        component: () => import('../views/services/professional.vue'),
     },
     {
         path: '/medic',
         name: 'medic',
-        component: medic,
+        component: () => import('../views/services/medic.vue'),
     },
     {
         path: '/doctors',
         name: 'doctors',
-        component: doctors,
+        component: () => import('../views/services/doctors.vue'),
     },
     {
         path: '/resturants',
         name: 'resturants',
-        component: resturants,
+        component: () => import('../views/services/resturants.vue'),
     },
     {
         path: '/instrc',
         name: 'instrc',
-        component: instrc,
+        component: () => import('../views/services/instrc.vue'),
     },
     {
         path: '/stores',
         name: 'stores',
-        component: stores,
+        component: () => import('../views/services/stores.vue'),
     },
     /* section */
     {
         path: '/festival',
         name: 'festival',
-        component: festival,
+        component: () => import('../views/services/festival.vue'),
     },
     {
         path: '/buty',
         name: 'buty',
-        component: buty,
+        component: () => import('../views/section/buty.vue'),
     },
     {
         path: '/mobile',
         name: 'mobile',
-        component: mobile,
+        component: () => import('../views/section/mobile.vue'),
     },
     {
         path: '/computer',
         name: 'computer',
-        component: computer,
+        component: () => import('../views/section/computer.vue'),
     },
     {
         path: '/elctronic',
         name: 'elctronic',
-        component: elctronic,
+        component: () => import('../views/section/elctronic.vue'),
     },
     {
         path: '/kitchen',
         name: 'kitchen',
-        component: kitchen,
+        component: () => import('../views/section/kitchen.vue'),
     },
     {
         path: '/education',
         name: 'education',
-        component: education,
+        component: () => import('../views/section/education.vue'),
     },
     {
         path: '/furniture',
         name: 'furniture',
-        component: furniture,
+        component: () => import('../views/section/furniture.vue'),
     },
     {
         path: '/child',
         name: 'child',
-        component: child,
+        component: () => import('../views/section/child.vue'),
     },
 ];
 

@@ -1,9 +1,9 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
-            <img
+            <img 
                 @click="goto(id, title, description, price)"
-                src="../../../public/img/w.jpg"
+                v-lazy="image"
                 class="new"
 
             />
@@ -44,7 +44,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'title', 'description', 'price','image'],
     data() {
         return {
             details: {

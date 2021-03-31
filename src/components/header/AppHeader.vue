@@ -350,16 +350,20 @@ export default {
     font-size: 20px;
 }
 .upper-bar .sel1 select {
-    width: 46px;
+     width: 102px;
+    padding: 0 28px;
 }
 .upper-bar .sel2 select {
-    width: 32px;
+     width: 102px;
+    padding: 0 32px;
 }
 .upper-bar .sel3 select {
-    width: 35px;
+    width: 102px;
+    padding: 0 30px;
 }
 .upper-bar .sel4 select {
-    width: 47px;
+   width: 102px;
+padding: 0 27px;
 }
 .upper-bar .sel4:after {
     position: absolute;
@@ -440,6 +444,22 @@ export default {
         left: 98px;
         width: 60px;
     }
+    .upper-bar .sel1 select {
+width: 102px;
+padding: 0 16px
+}
+.upper-bar .sel2 select {
+width: 102px;
+padding: 0 21px
+}
+.upper-bar .sel3 select {
+width: 102px;
+padding: 0 17px
+}
+.upper-bar .sel4 select {
+width: 102px;
+padding: 0 16px
+}
 }
 
 /* Small devices (landscape phones, 576px and up) */

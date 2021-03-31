@@ -74,10 +74,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
                                       {{id}}
                                         <div>
@@ -180,10 +180,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
                                       
                                         <div>
@@ -286,10 +286,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ details.title }}
+                                            {{ title }}
                                         </div>
                                         <div class="category">
-                                            {{ details.description }}
+                                            {{ description }}
                                         </div>
 
                                         <div>
@@ -348,13 +348,13 @@ export default {
     name: 'ProductDetailsStore',
     data() {
         return {
-            details: {
-                id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
-            },
-            // details:this.$route.params
+            // details: {
+            //     id: this.id,
+            //     title: this.title,
+            //     description: this.description,
+            //     price: this.price,
+            // },
+            details:this.$route.params
         };
     },
     components: {

@@ -12,6 +12,7 @@ export default new Vuex.Store({
         // MOCK_DATA json
         Product: jeson[0].Products,
         stores: data.stores,
+        product:data.stores[0].products,
         Categories: data.categories,
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,
