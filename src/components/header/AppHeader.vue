@@ -6,10 +6,10 @@
                     <img src="../../../public/img/logo-4.png" />
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
-                    <div class="customer-select sel4">
-                        <select>
-                            <option>العربية</option>
-                            <option></option>
+                    <div class="customer-select sel4" >
+                        <select class="w-50" v-model="lang" @change="handleChange($event)">
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
                         </select>
                     </div>
                     <span class="lang2">نطاق البحث</span>
@@ -56,23 +56,28 @@
                 <div class="row">
                     <div class="search col-lg-12">
                         <i class="fa fa-search"></i
-                        ><input class="input" type="search" placeholder="بحث" />
+                        ><input class="input" type="search" :placeholder="$t('Search')" />
                     </div>
                     <div class="col-lg-12 fet">
+<<<<<<< HEAD
                         <div class="featuers" id="fut">
                             <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
+=======
+                        <div class="featuers">
+                            <div>{{$t('Add your store to the platform E-Dalely')}}</div>
+>>>>>>> 368e19a7bf4ee41fc9f03b9f37b3b1afc4d28ae6
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{
                                     cartItemCount
                                 }}</span>
-                                <div class="shopping">عربة التسوق</div>
+                                <div class="shopping">{{$t('Shopping cart')}}</div>
                             </div>
                             <i class="fa fa-map-marker"></i>
-                            <div class="map">حدد موقعك</div>
+                            <div class="map">{{$t('Select your location')}}</div>
 
                             <i class="fa fa-user-circle "> </i>
-                            <div class="user">تسجیل الدخول</div>
+                            <div class="user">{{$t('sign in')}}</div>
                         </div>
                     </div>
                 </div>
@@ -88,21 +93,21 @@
                         <div>
                             <router-link to="/instrc" exact>
                                 <button type="button" class="btn btn-light">
-                                    <a>مصانع</a>
+                                    <a>{{$t('Factories')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/company">
                                 <button type="button" class="btn btn-light">
-                                    <a>شركات</a>
+                                    <a>{{$t('Companies')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/professional">
                                 <button type="button" class="btn btn-light">
-                                    <a>مھنیون وفنیون</a>
+                                    <a>{{$t('Professionals and technicians')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -112,21 +117,21 @@
                                     type="button"
                                     class="btn btn-light medic"
                                 >
-                                    <a>صیدلیات وأدویة</a>
+                                    <a>{{$t('Pharmacies and medicines')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/doctors">
                                 <button type="button" class="btn btn-light">
-                                    <a>أطباء</a>
+                                    <a>{{$t('Doctors')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/resturants">
                                 <button type="button" class="btn btn-light">
-                                    <a>مطاعم ومقاھي</a>
+                                    <a>{{$t('Restaurants and cafes')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -136,14 +141,14 @@
                                     type="button"
                                     class="btn btn-light sell"
                                 >
-                                    <a>مھرجان العروضات </a>
+                                    <a>{{$t('Festival of performances')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/stores">
                                 <button type="button" class="btn btn-light">
-                                    <a>متاجر</a>
+                                    <a>{{$t('Stores')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -153,14 +158,14 @@
                                     type="button"
                                     class="btn btn-light products"
                                 >
-                                    <a>منتجات</a>
+                                    <a>{{$t('Products')}}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/">
                                 <button type="button" class="btn btn-light">
-                                    <a>جميع الأقسام</a>
+                                    <a>{{$t('All sections')}}</a>
                                 </button></router-link
                             >
                         </div>
@@ -179,7 +184,9 @@ export default {
     name: 'AppHeader',
     props: ['title', 'description', 'id', 'price'],
     data() {
+        const lang = localStorage.getItem('lang') || 'en';
         return {
+            lang: lang,
             details: {
                 id: this.id,
                 title: this.title,
@@ -240,12 +247,16 @@ export default {
                 
             );
                document.getElementById('exit-fut').style.display = "none"
+        },
+        handleChange(event){
+            localStorage.setItem('lang',event.target.value);
+            window.location.reload();
         }
     },
 
     /*
    created(){
-    axios.get("http://edalili.e-dalely.com")
+    axios.get("http://edalili.e-dalely.com")// axios.get('/routename').then{response=>this.routename=response.data}
     .then(response => {
       this.cities = response.data[0].cities;
     })
