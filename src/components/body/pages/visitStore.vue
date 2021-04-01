@@ -298,9 +298,8 @@
                     :price="items.price"
                     :title="items.title"
                     :description="items.description"
-                    v-on:click="gotodetails(id,title,description,price)"
+                    v-on:click="gotodetails(id, title, description, price)"
                 >
-
                 </BodyProductStore>
             </div>
         </div>
@@ -357,9 +356,8 @@ export default {
         likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
-        gotodetails(i,t,d,p){
+        gotodetails(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
-
         },
         //  goto: function(i, t, d, p) {
         //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
@@ -747,7 +745,7 @@ export default {
     }
     ///end brand///
     ///start brand market///
-   .show-market {
+    .show-market {
         background-color: #fff;
         border-radius: 7px;
         height: 200px;
@@ -1594,7 +1592,7 @@ export default {
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
     }
-    .title-profile{
+    .title-profile {
         margin-left: 30px;
     }
     .isActive {
