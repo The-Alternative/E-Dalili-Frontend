@@ -96,7 +96,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        إضافة لعربة التسوق
+                                                        {{$t('AddCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -106,7 +106,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        الذهاب لعربة التسوق
+                                                        {{$t('GoToCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -202,7 +202,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        إضافة لعربة التسوق
+                                                        {{$t('AddCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -212,7 +212,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        الذهاب لعربة التسوق
+                                                        {{$t('GoToCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -308,7 +308,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        إضافة لعربة التسوق
+                                                        {{$t('AddCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -318,7 +318,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        الذهاب لعربة التسوق
+                                                        {{$t('GoToCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -348,7 +348,7 @@ export default {
     data() {
         return {
             details: {
-                id:this.id,
+                id: this.id,
                 title: this.title,
                 description: this.description,
                 price: this.price,
@@ -358,7 +358,7 @@ export default {
     components: {
         Cartmini,
     },
-    props: ['id','title', 'description','price'],
+    props: ['id', 'title', 'description', 'price'],
     computed: {
         count() {
             return this.$store.state.count;

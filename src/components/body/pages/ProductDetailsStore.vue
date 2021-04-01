@@ -79,7 +79,7 @@
                                         <div class="category">
                                             {{ description }}
                                         </div>
-                                      {{id}}
+                                        {{ id }}
                                         <div>
                                             <span>80.00 S.P</span>
                                             <div
@@ -95,7 +95,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        إضافة لعربة التسوق
+                                                        {{$t('AddCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -105,7 +105,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        الذهاب لعربة التسوق
+                                                        {{$t('GoToCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -165,7 +165,7 @@
                                                 src="../../../../public/img/market-logo.png"
                                                 height="60"
                                             />
-                                            
+
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
@@ -185,7 +185,7 @@
                                         <div class="category">
                                             {{ description }}
                                         </div>
-                                      
+
                                         <div>
                                             <span>90.00 S.P</span>
                                             <div
@@ -201,7 +201,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        إضافة لعربة التسوق
+                                                        {{$t('AddCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -211,7 +211,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        الذهاب لعربة التسوق
+                                                        {{$t('GoToCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -307,7 +307,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        إضافة لعربة التسوق
+                                                        {{$t('AddCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -317,7 +317,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        الذهاب لعربة التسوق
+                                                        {{$t('GoToCart')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -354,7 +354,7 @@ export default {
             //     description: this.description,
             //     price: this.price,
             // },
-            details:this.$route.params
+            details: this.$route.params,
         };
     },
     components: {
