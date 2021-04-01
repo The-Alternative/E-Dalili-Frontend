@@ -6,8 +6,12 @@
                     <img src="../../../public/img/logo-4.png" />
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
-                    <div class="customer-select sel4" >
-                        <select class="w-50" v-model="lang" @change="handleChange($event)">
+                    <div class="customer-select sel4">
+                        <select
+                            class="w-50"
+                            v-model="lang"
+                            @change="handleChange($event)"
+                        >
                             <option value="en">English</option>
                             <option value="ar">العربية</option>
                         </select>
@@ -50,34 +54,37 @@
         <!-- End Upper Bar -->
         <!-- Start landing -->
         <div class="jumbotron">
-            <div class="bars" @click="showfut()"><i class="fa fa-bars"></i></div>
+            <div class="bars" @click="showfut()">
+                <i class="fa fa-bars"></i>
+            </div>
             <div class="exit-fut" id="exit-fut" @click="hidefut()">X</div>
             <div class="container">
                 <div class="row">
                     <div class="search col-lg-12">
                         <i class="fa fa-search"></i
-                        ><input class="input" type="search" :placeholder="$t('Search')" />
+                        ><input
+                            class="input"
+                            type="search"
+                            :placeholder="$t('Search')"
+                        />
                     </div>
                     <div class="col-lg-12 fet">
-<<<<<<< HEAD
                         <div class="featuers" id="fut">
-                            <div><span>E-Dalely</span> أضف متجرك إلى منصة</div>
-=======
-                        <div class="featuers">
-                            <div>{{$t('Add your store to the platform E-Dalely')}}</div>
->>>>>>> 368e19a7bf4ee41fc9f03b9f37b3b1afc4d28ae6
+                            <div>{{ $t('AddPlatform') }}</div>
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{
                                     cartItemCount
                                 }}</span>
-                                <div class="shopping">{{$t('Shopping cart')}}</div>
+                                <div class="shopping">
+                                    {{ $t('Shoppingcart') }}
+                                </div>
                             </div>
                             <i class="fa fa-map-marker"></i>
-                            <div class="map">{{$t('Select your location')}}</div>
+                            <div class="map">{{ $t('Selectlocation') }}</div>
 
                             <i class="fa fa-user-circle "> </i>
-                            <div class="user">{{$t('sign in')}}</div>
+                            <div class="user">{{ $t('signin') }}</div>
                         </div>
                     </div>
                 </div>
@@ -93,21 +100,21 @@
                         <div>
                             <router-link to="/instrc" exact>
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Factories')}}</a>
+                                    <a>{{ $t('Factories') }}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/company">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Companies')}}</a>
+                                    <a>{{ $t('Companies') }}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/professional">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Professionals and technicians')}}</a>
+                                    <a>{{ $t('ProfessionalsTechnicians') }}</a>
                                 </button></router-link
                             >
                         </div>
@@ -117,21 +124,21 @@
                                     type="button"
                                     class="btn btn-light medic"
                                 >
-                                    <a>{{$t('Pharmacies and medicines')}}</a>
+                                    <a>{{ $t('PharmaciesMedicines') }}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/doctors">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Doctors')}}</a>
+                                    <a>{{ $t('Doctors') }}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/resturants">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Restaurants and cafes')}}</a>
+                                    <a>{{ $t('RestaurantsCafes') }}</a>
                                 </button></router-link
                             >
                         </div>
@@ -141,14 +148,14 @@
                                     type="button"
                                     class="btn btn-light sell"
                                 >
-                                    <a>{{$t('Festival of performances')}}</a>
+                                    <a>{{ $t('FestivalPerformances') }}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/stores">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('Stores')}}</a>
+                                    <a>{{ $t('Stores') }}</a>
                                 </button></router-link
                             >
                         </div>
@@ -158,14 +165,14 @@
                                     type="button"
                                     class="btn btn-light products"
                                 >
-                                    <a>{{$t('Products')}}</a>
+                                    <a>{{ $t('Products') }}</a>
                                 </button></router-link
                             >
                         </div>
                         <div>
                             <router-link to="/">
                                 <button type="button" class="btn btn-light">
-                                    <a>{{$t('All sections')}}</a>
+                                    <a>{{ $t('Allsections') }}</a>
                                 </button></router-link
                             >
                         </div>
@@ -175,7 +182,7 @@
         </div>
     </div>
 </template>
-<script src="../../js/proj.js"></script>
+<!--<script src="../../js/proj.js"></script>-->
 <script>
 import jeson from '@/jeson/MOCK_DATA.json';
 // import axios from "axios";
@@ -213,64 +220,62 @@ export default {
         },
         goto: function() {
             this.$router.push(`/`);
-        }, showfut() {
-            document.getElementById('fut').animate(
-                [
-                    // keyframes
-                   { right:'-231px', top:'-355px',height:'27px'},
-                   {right:'30px', top:'-355px',height:'27px'},
-                    {right:'30px', top:'-355px',height:'130px'}
-                   
-                ],
-                {
-                    // timing options
-                    duration: 500,
-                   fill: 'forwards'
-                },
-                
-            );
-               document.getElementById('exit-fut').style.display = "block"
-        }, hidefut() {
-            document.getElementById('fut').animate(
-                [
-                    // keyframes
-                    {right:'30px', top:'-355px',height:'130px'},
-                     {right:'30px', top:'-355px',height:'27px'},
-                     { right:'-231px', top:'-355px',height:'27px'}
-                   
-                ],
-                {
-                    // timing options
-                    duration: 500,
-                   fill: 'forwards'
-                },
-                
-            );
-               document.getElementById('exit-fut').style.display = "none"
         },
-        handleChange(event){
-            localStorage.setItem('lang',event.target.value);
+        showfut() {
+            document.getElementById('fut').animate(
+                [
+                    // keyframes
+                    { right: '-231px', top: '-355px', height: '27px' },
+                    { right: '30px', top: '-355px', height: '27px' },
+                    { right: '30px', top: '-355px', height: '130px' },
+                ],
+                {
+                    // timing options
+                    duration: 500,
+                    fill: 'forwards',
+                }
+            );
+            document.getElementById('exit-fut').style.display = 'block';
+        },
+        hidefut() {
+            document.getElementById('fut').animate(
+                [
+                    // keyframes
+                    { right: '30px', top: '-355px', height: '130px' },
+                    { right: '30px', top: '-355px', height: '27px' },
+                    { right: '-231px', top: '-355px', height: '27px' },
+                ],
+                {
+                    // timing options
+                    duration: 500,
+                    fill: 'forwards',
+                }
+            );
+            document.getElementById('exit-fut').style.display = 'none';
+        },
+        handleChange(event) {
+            localStorage.setItem('lang', event.target.value);
             window.location.reload();
-        }
+        },
     },
 
-    /*
-   created(){
-    axios.get("http://edalili.e-dalely.com")// axios.get('/routename').then{response=>this.routename=response.data}
-    .then(response => {
-      this.cities = response.data[0].cities;
-    })
-    .then(response => {
-      this.governorates = response.data[0].governorates;
-    })
-    .then(response => {
-      this.streets = response.data[0].streets;
-    })
-    .then(response => {
-      this.categories = response.data[0].categories;
-    })
-    }
-    */
+    //
+    // created(){
+    //  axios.get("http://edalili.e-dalely.com")// axios.get('/routename').then{response=>this.routename=response.data}
+    //  .then(response => {
+    //    this.cities = response.data[0].cities;
+    //  })
+    //  .then(response => {
+    //    this.governorates = response.data[0].governorates;
+    //  })
+    //  .then(response => {
+    //    this.streets = response.data[0].streets;
+    //  })
+    //  .then(response => {
+    //    this.categories = response.data[0].categories;
+    //  })
+    //  }
+    //
 };
 </script>
 
@@ -317,7 +322,7 @@ export default {
     -o-appearance: none;
     background-color: transparent;
     color: #fff;
-    padding: auto;
+    padding: 0;
     z-index: 2;
     font-size: 16px;
     position: relative;
@@ -332,7 +337,7 @@ export default {
     background-color: transparent;
     color: #fff;
     transform: rotate(90deg);
-    font-size: 17px;
+    /*font-size: 17px;*/
     z-index: 1;
     font-size: 20px;
 }
@@ -344,7 +349,7 @@ export default {
     background-color: transparent;
     color: #fff;
     transform: rotate(90deg);
-    font-size: 17px;
+    /*font-size: 17px;*/
     z-index: 1;
     font-size: 20px;
 }
@@ -356,16 +361,16 @@ export default {
     background-color: transparent;
     color: #fff;
     transform: rotate(90deg);
-    font-size: 17px;
+    /*font-size: 17px;*/
     z-index: 1;
     font-size: 20px;
 }
 .upper-bar .sel1 select {
-     width: 102px;
+    width: 102px;
     padding: 0 28px;
 }
 .upper-bar .sel2 select {
-     width: 102px;
+    width: 102px;
     padding: 0 32px;
 }
 .upper-bar .sel3 select {
@@ -373,8 +378,8 @@ export default {
     padding: 0 30px;
 }
 .upper-bar .sel4 select {
-   width: 102px;
-padding: 0 27px;
+    width: 102px;
+    padding: 0 27px;
 }
 .upper-bar .sel4:after {
     position: absolute;
@@ -456,21 +461,21 @@ padding: 0 27px;
         width: 60px;
     }
     .upper-bar .sel1 select {
-width: 102px;
-padding: 0 16px
-}
-.upper-bar .sel2 select {
-width: 102px;
-padding: 0 21px
-}
-.upper-bar .sel3 select {
-width: 102px;
-padding: 0 17px
-}
-.upper-bar .sel4 select {
-width: 102px;
-padding: 0 16px
-}
+        width: 102px;
+        padding: 0 16px;
+    }
+    .upper-bar .sel2 select {
+        width: 102px;
+        padding: 0 21px;
+    }
+    .upper-bar .sel3 select {
+        width: 102px;
+        padding: 0 17px;
+    }
+    .upper-bar .sel4 select {
+        width: 102px;
+        padding: 0 16px;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -573,7 +578,7 @@ padding: 0 16px
     height: 560px;
     margin-bottom: 10px;
     width: 100%;
-    background-image: url(../../../public/img/Screenshot_2020-10-17%20E-DALELY%20Design.png);
+    background-image: url('../../../public/img/Screenshot_2020-10-17 E-DALELY Design.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -660,7 +665,9 @@ padding: 0 16px
     height: 33px;
     width: 1px;
     background-color: #8d8d8d;
-}.bars,.exit-fut{
+}
+.bars,
+.exit-fut {
     display: none;
 }
 /* Extra small devices (portrait phones, less than 576px) */
@@ -670,23 +677,22 @@ padding: 0 16px
         width: 100%;
     }
     .jumbotron .featuers {
-    overflow: hidden;
-}
-    .exit-fut{
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    background-color: #5daaa6;
-    border-radius: 50%;
-    cursor: pointer;
-    color: #fff;
-    top: 123px;
-    left: 53px;
-    padding: 1px;
-    font-weight: bold;
-    
+        overflow: hidden;
     }
-    .bars{
+    .exit-fut {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        background-color: #5daaa6;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #fff;
+        top: 123px;
+        left: 53px;
+        padding: 1px;
+        font-weight: bold;
+    }
+    .bars {
         display: block;
         text-align: right;
         cursor: pointer;
@@ -806,7 +812,7 @@ padding: 0 16px
     content: url(../../../public/img/icon-button.png);
     position: absolute;
     top: -1px;
-    right: 450x;
+    /*right: 450x;*/
 }
 .naver .row .sell {
     background-color: #f6ef19;

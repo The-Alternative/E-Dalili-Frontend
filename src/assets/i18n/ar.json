@@ -1,21 +1,37 @@
 {
-    "Shopping cart":"عربة التسوق ",
-    "Select your location":"حدد موقعك",
+"//comment1":"appheader",
+    "Shoppingcart":"عربة التسوق ",
+    "Selectlocation":"حدد موقعك",
     "Search":"بحث",
-    "sign in":"تسجيل الدخول",
-    "Add your store to the platform E-Dalely":"E-Dalely أضف متجرك إلى منصة",
+    "signin":"تسجيل الدخول",
+    "AddPlatform":"E-Dalely أضف متجرك إلى منصة",
     "Scope of the search":"نطاق البحث",
     "language":"اللغة",
     "Factories":"مصانع",
     "Companies":"شركات",
-    "Professionals and technicians":"مهنيون وفنيون",
-    "Pharmacies and medicines":"صيدليات وأدوية",
+    "ProfessionalsTechnicians":"مهنيون وفنيون",
+    "PharmaciesMedicines":"صيدليات وأدوية",
     "Doctors":"أطباء",
-    "Restaurants and cafes":"مطاعم ومقاهي",
-    "Festival of performances":"مهرجان العروضات",
+    "RestaurantsCafes":"مطاعم ومقاهي",
+    "FestivalPerformances":"مهرجان العروضات",
     "Stores":"متاجر",
     "Products":"منتجات",
 
-    "All sections":"جميع الأقسام",
-    "women watches":"ساعات نسائية"
+"//comment2":"appfootter",
+    "GetKnowUs":"تعرف علينا",
+    "AboutUs":"معلومات عنا",
+    "Connectwith":"متصل مع",
+
+"//comment3":"home page",
+    "Allsections":"جميع الأقسام",
+    "womenwatches":"ساعات نسائية",
+
+"//comment4":"Bodystore",
+    "visit":"زيارة",
+    "Viewoffers":"عرض العروضات حسب",
+    "Bydepartment":"حسب القسم",
+    "All":"الكل",
+    "DependingStoreCompany":"حسب المتجر أو الشركة",
+    "AccordingEvaluation":"حسب التقييم"
+
 }

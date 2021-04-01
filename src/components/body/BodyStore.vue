@@ -78,7 +78,7 @@
                                      store.phonenumber, store.mobilephone,
                                       store.workDays, store.startTime, store.endTime, store.address)"
                                 >
-                                    <b>زيارة</b>
+                                    <b>{{$t('visit')}}</b>
                                 </button>
                             </div>
                             <div class="col">
@@ -107,10 +107,10 @@
         >
             <div class="backdrop"></div>
             <div class="card text-right checked-all open" id="all">
-                <span class="text-center span-text text">عرض العروضات حسب</span>
-                <span class="text-center bgcolor">حسب القسم</span>
+                <span class="text-center span-text text">{{$t('Viewoffers')}}</span>
+                <span class="text-center bgcolor">{{$t('Bydepartment')}}</span>
                 <div class="checklist">
-                    <label class="textcheck" for="check4">الكل</label>
+                    <label class="textcheck" for="check4">{{$t('All')}}</label>
                     <input
                         class="categories fa fa-check-square-o"
                         type="checkbox"
@@ -134,7 +134,7 @@
                         </li>
                     </ul>
                 </div>
-                <span class="text-center bgcolor">حسب المتجر أو الشركة</span>
+                <span class="text-center bgcolor">{{$t('DependingStoreCompany')}}</span>
                 <div class="checklist">
                     <div class="">
                         <label class="textcheck" for="check1"
@@ -154,7 +154,7 @@
                         <input class="categories" type="checkbox" id="check3" />
                     </div>
                 </div>
-                <span class="text-center bgcolor">حسب التقييم</span>
+                <span class="text-center bgcolor">{{$t('AccordingEvaluation')}}</span>
                 <div class="checklist stars">
                     <div class="row star-right">
                         <span
