@@ -52,7 +52,9 @@
                 </div>
                 <div class="avilble">
                     <div class="mb-2">
-                        <div style="display: inline-block">متوفر في سنتر الريم</div>
+                        <div style="display: inline-block">
+                            متوفر في سنتر الريم
+                        </div>
                         <span class="fa fa-check-circle"></span>
                     </div>
                 </div>
@@ -76,8 +78,8 @@ export default {
         };
     },
     methods: {
-        gotodetails(item){
-            this.$router.push({name:'ProductDetailsStore',params:item});
+        gotodetails(item) {
+            this.$router.push({ name: 'ProductDetailsStore', params: item });
         },
         // gotodetails: function(i, t, d, p) {
         //     this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);

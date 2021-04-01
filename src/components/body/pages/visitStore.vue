@@ -81,7 +81,9 @@
                     <div class="mt-4 mb-4 title-profile">{{ title }}</div>
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
-                    <div class="textRight"><span>متجر تجزئة</span></div>
+                    <div class="textRight">
+                        <span>{{ $t('RetailStore') }}</span>
+                    </div>
                     <div class="icons mt-3">
                         <div class="row telephone mt-3">
                             <span class="texticon">{{ phonenumber }}</span>
@@ -100,7 +102,9 @@
                             />
                         </div>
                         <div class="row">
-                            <span class="texticon">تواصل مع المتجر</span>
+                            <span class="texticon">{{
+                                $t('ContactStore')
+                            }}</span>
                             <img
                                 class="ml-2"
                                 src="../../../../public/img/comments.svg"
@@ -160,7 +164,9 @@
                 <div class="col">
                     <div class="textFollow" id="textFollow" @click="heart()">
                         <span class="heart mr-2" id="heart"></span>
-                        <span class="follow mr-4" id="follow">متابعة</span>
+                        <span class="follow mr-4" id="follow">{{
+                            $t('Continue')
+                        }}</span>
                     </div>
                 </div>
                 <div class="likecount">
@@ -183,7 +189,7 @@
                     </div>
                     <div class="col count">
                         <span class="followCount">2800</span>
-                        <span class="textcount">المتابعين</span>
+                        <span class="textcount">{{ $t('Followers') }}</span>
                     </div>
                 </div>
             </div>
@@ -194,22 +200,22 @@
                     <div class=" col-lg-12" style="padding: 0">
                         <div>
                             <button type="button" class="btn btn-light light1">
-                                <a>مشترياتي</a>
+                                <a>{{$t('MyPurchases')}}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn light1">
-                                <a>الأحداث</a>
+                                <a>{{$t('Events')}}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn btn-light light1">
-                                <a>جديد المتجر</a>
+                                <a>{{$t('NewStore')}}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn light1">
-                                <a>فرص عمل</a>
+                                <a>{{$t('Jobs')}}</a>
                             </button>
                         </div>
                         <div class="img">
@@ -217,12 +223,12 @@
                                 type="button"
                                 class="btn btn-warning sel light1"
                             >
-                                <a>عروض المتجر</a>
+                                <a>{{$t('StoreOffers')}}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn light1">
-                                <a>جميع الأقسام</a>
+                                <a>{{$t('Allsections')}}</a>
                             </button>
                         </div>
                     </div>
@@ -231,7 +237,7 @@
         </div>
         <div class="homeborder">
             <div class="all-section">
-                <span class="text">جميع الأقسام</span>
+                <span class="text">{{$t('Allsections')}}</span>
             </div>
             <div class="row align-middle" style="height: 80%;">
                 <div
@@ -248,7 +254,7 @@
                             <div class="txt">
                                 <h1>{{ catog.name }}</h1>
                             </div>
-                            <a href="#">more</a>
+                            <a href="#">{{$t('More')}}</a>
                             <div class="ico-card">
                                 <img
                                     src="../../../../public/img/buty.jpg"
@@ -275,7 +281,7 @@
         </div>
         <div class="mar mb-4">
             <div class="all-section">
-                <span class="text">أشهر الماركات</span>
+                <span class="text">{{$t('TheFamousBrands')}}</span>
             </div>
             <div
                 class="show-market"
@@ -288,7 +294,7 @@
         <!-- show  products -->
         <div class="show-prod">
             <div class="all-section">
-                <span class="text">آخر عمليات البحث</span>
+                <span class="text">{{$t('LatestSearches')}}</span>
             </div>
             <div class="row mt-2">
                 <BodyProductStore

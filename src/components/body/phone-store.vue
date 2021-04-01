@@ -1,7 +1,12 @@
 <template>
     <div>
         <a href="tel:mobilephone"
-            ><img class="phone" id="callclick" v-on:click="clickEvent();" src="../../../public/img/phone.png" height="20"
+            ><img
+                class="phone"
+                id="callclick"
+                v-on:click="clickEvent()"
+                src="../../../public/img/phone.png"
+                height="20"
         /></a>
         <!--    <a href="#"><i class="whatsapp fab fa-whatsapp"></i></a>-->
     </div>
@@ -10,11 +15,11 @@
 <script>
 export default {
     name: 'phone-store',
-    methods:{
-        clickEvent: function(){
-            document.getElementById('callclick')
-        }
-    }
+    methods: {
+        clickEvent: function() {
+            document.getElementById('callclick');
+        },
+    },
 };
 </script>
 <style scoped>

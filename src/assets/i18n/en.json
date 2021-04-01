@@ -32,5 +32,31 @@
     "Bydepartment":"By department",
     "All":"All",
     "DependingStoreCompany":"Depending on the store or company",
-    "AccordingEvaluation":"According to the evaluation"
+    "AccordingEvaluation":"According to the evaluation",
+
+"//comment5":"visitstore",
+    "RetailStore":"Retail store",
+    "ContactStore":"Contact the store",
+    "Continue":"Continue",
+    "Followers":"Followers",
+    "MyPurchases":"My purchases",
+    "Events":"Events",
+    "NewStore":"New store",
+    "Jobs":"Jobs",
+    "StoreOffers":"Store offers",
+    "TheFamousBrands":"The most famous brands",
+    "LatestSearches":"Latest searches",
+    "More":"More",
+    "AddCart":"Add to cart",
+    "GoToCart":"Go to the cart",
+
+"//comment6":"cart",
+    "ShoppingCart":"Shopping cart",
+    "price":"price",
+    "ShippingCosts":"Shipping costs",
+    "The priceWithShippingCosts":"The price is with shipping costs",
+
+"//comment7":"emptycart",
+    "YourCartEmpty":"Your cart is empty",
+    "YouGoHomePageViewFoodItems":"You can go to home page to view more food items"
 }

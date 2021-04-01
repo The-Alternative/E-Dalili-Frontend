@@ -7,11 +7,7 @@
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
                     <div class="customer-select sel4">
-                        <select
-                         
-                            v-model="lang"
-                            @change="handleChange($event)"
-                        >
+                        <select v-model="lang" @change="handleChange($event)">
                             <option value="en">English</option>
                             <option value="ar">العربية</option>
                         </select>

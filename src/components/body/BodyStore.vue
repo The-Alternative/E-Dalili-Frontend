@@ -74,11 +74,20 @@
                                 <button
                                     type="button"
                                     class="btn w-50"
-                                    @click="gotoview(store.id, store.title,
-                                     store.phonenumber, store.mobilephone,
-                                      store.workDays, store.startTime, store.endTime, store.address)"
+                                    @click="
+                                        gotoview(
+                                            store.id,
+                                            store.title,
+                                            store.phonenumber,
+                                            store.mobilephone,
+                                            store.workDays,
+                                            store.startTime,
+                                            store.endTime,
+                                            store.address
+                                        )
+                                    "
                                 >
-                                    <b>{{$t('visit')}}</b>
+                                    <b>{{ $t('visit') }}</b>
                                 </button>
                             </div>
                             <div class="col">
@@ -107,10 +116,16 @@
         >
             <div class="backdrop"></div>
             <div class="card text-right checked-all open" id="all">
-                <span class="text-center span-text text">{{$t('Viewoffers')}}</span>
-                <span class="text-center bgcolor">{{$t('Bydepartment')}}</span>
+                <span class="text-center span-text text">{{
+                    $t('Viewoffers')
+                }}</span>
+                <span class="text-center bgcolor">{{
+                    $t('Bydepartment')
+                }}</span>
                 <div class="checklist">
-                    <label class="textcheck" for="check4">{{$t('All')}}</label>
+                    <label class="textcheck" for="check4">{{
+                        $t('All')
+                    }}</label>
                     <input
                         class="categories fa fa-check-square-o"
                         type="checkbox"
@@ -134,7 +149,9 @@
                         </li>
                     </ul>
                 </div>
-                <span class="text-center bgcolor">{{$t('DependingStoreCompany')}}</span>
+                <span class="text-center bgcolor">{{
+                    $t('DependingStoreCompany')
+                }}</span>
                 <div class="checklist">
                     <div class="">
                         <label class="textcheck" for="check1"
@@ -154,7 +171,9 @@
                         <input class="categories" type="checkbox" id="check3" />
                     </div>
                 </div>
-                <span class="text-center bgcolor">{{$t('AccordingEvaluation')}}</span>
+                <span class="text-center bgcolor">{{
+                    $t('AccordingEvaluation')
+                }}</span>
                 <div class="checklist stars">
                     <div class="row star-right">
                         <span
@@ -252,7 +271,16 @@ export default {
         PhoneStore,
         LocationStore,
     },
-    props: ['id', 'title','phonenumber','mobilephone','workDays','startTime','endTime','address'],
+    props: [
+        'id',
+        'title',
+        'phonenumber',
+        'mobilephone',
+        'workDays',
+        'startTime',
+        'endTime',
+        'address',
+    ],
 
     data() {
         return {
@@ -270,7 +298,8 @@ export default {
             return this.$store.state.Categories;
         },
         activeStores: function() {
-            if (this.selectedCategory.length == 0) return this.$store.state.stores;
+            if (this.selectedCategory.length == 0)
+                return this.$store.state.stores;
             var activeStores = [];
             var filters = this.selectedCategory;
 
@@ -290,8 +319,10 @@ export default {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function(i, t,p,m,w,s,e,a) {
-            this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`);
+        gotoview: function(i, t, p, m, w, s, e, a) {
+            this.$router.push(
+                `visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`
+            );
         },
     },
 };
