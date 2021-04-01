@@ -8,7 +8,7 @@
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
                     <div class="customer-select sel4">
                         <select
-                            class="w-50"
+                         
                             v-model="lang"
                             @change="handleChange($event)"
                         >
