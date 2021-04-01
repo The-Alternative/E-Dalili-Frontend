@@ -9,7 +9,7 @@
                     v-for="brand in brands.slice(0, 2)"
                     :key="brand.id"
                 >
-                    <img :src="brand.image" />
+                    <img v-lazy="brand.image" />
                 </div>
             </div>
         </div>
@@ -22,6 +22,7 @@
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
+                    :image="items.image"
                     :description="items.description"
                     @click="goto(items)"
                 >
@@ -35,7 +36,7 @@
                 v-for="brand in brands.slice(2, 7)"
                 :key="brand.id"
             >
-                <img :src="brand.image" />
+                <img v-lazy="brand.image" />
             </div>
         </div>
         <!-- show  products -->
@@ -47,6 +48,7 @@
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
+                     :image="items.image"
                     :description="items.description"
                 >
                 </BodyProduct>
@@ -62,7 +64,7 @@
                     :key="brand.id"
                     :image="brand.image"
                 >
-                    <img :src="brand.image" />
+                    <img v-lazy="brand.image" />
                 </div>
             </div>
         </div>
@@ -96,6 +98,7 @@
                                         :id="items.id"
                                         :price="items.price"
                                         :title="items.title"
+                                        :image="items.image"
                                         :description="items.description"
                                         @click="goto(items)"
                                     >
@@ -113,6 +116,7 @@
                                         :id="items.id"
                                         :price="items.price"
                                         :title="items.title"
+                                        :image="items.image"
                                         :description="items.description"
                                         @click="goto(items)"
                                     >
@@ -130,6 +134,7 @@
                                         :id="items.id"
                                         :price="items.price"
                                         :title="items.title"
+                                        :image="items.image"
                                         :description="items.description"
                                         @click="goto(items)"
                                     >
@@ -155,17 +160,26 @@
                     </a>
                     <!-- ------------------------------------------------------------ -->
                     <div class="row">
-                        <div class="col-sm-9 imgs">
+                        <div v-for="brand in brands.slice(9, 10)"
+                            :key="brand.id"
+                            :image="brand.image"
+                            class="col-sm-9 imgs">
                             <img
-                                src="../../../public/img/HEADPHONES.jpg"
+                            v-lazy="brand.image"
                                 style="width: 100%"
                             />
                         </div>
-                        <div class="col-sm-1.5 imges1">
-                            <img src="../../../public/img/home.jpg" />
+                        <div v-for="brand in brands.slice(10, 11)"
+                            :key="brand.id"
+                            :image="brand.image"
+                            class="col-sm-1.5 imges1">
+                            <img v-lazy="brand.image" />
                         </div>
-                        <div class="col-sm-1.5 imges2">
-                            <img src="../../../public/img/gasses.jpg" />
+                        <div v-for="brand in brands.slice(11, 12)"
+                            :key="brand.id"
+                            :image="brand.image"
+                            class="col-sm-1.5 imges2">
+                            <img v-lazy="brand.image" />
                         </div>
                     </div>
                 </div>
@@ -190,6 +204,7 @@
                                     :id="items.id"
                                     :price="items.price"
                                     :title="items.title"
+                                    :image="items.image"
                                     :description="items.description"
                                     @click="goto(items)"
                                 >
@@ -207,6 +222,7 @@
                                     :id="items.id"
                                     :price="items.price"
                                     :title="items.title"
+                                    :image="items.image"
                                     :description="items.description"
                                     @click="goto(items)"
                                 >
@@ -224,6 +240,7 @@
                                     :id="items.id"
                                     :price="items.price"
                                     :title="items.title"
+                                    :image="items.image"
                                     :description="items.description"
                                     @click="goto(items)"
                                 >
@@ -246,10 +263,6 @@
 </template>
 
 <script>
-import BodyProduct from '@/components/global/BodyProduct.vue';
-import Subscriber from '@/components/global/Subscriber.vue';
-import Cartmini from '@/components/cart/Cartmini.vue';
-
 //import axios from "axios";
 export default {
     data() {
@@ -263,9 +276,10 @@ export default {
     },
     name: 'products',
     components: {
-        BodyProduct,
-        Subscriber,
-        Cartmini,
+        BodyProduct: () => import('@/components/global/BodyProduct.vue'),
+        Subscriber: () => import('@/components/global/Subscriber.vue'),
+        Cartmini: () => import('@/components/cart/Cartmini.vue'),
+        
     },
     computed: {
         Product() {
