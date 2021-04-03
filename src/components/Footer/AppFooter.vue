@@ -5,40 +5,38 @@
             <div class="col-sm-3 ">
                 <h3>{{ $t('GetKnowUs') }}</h3>
                 <ul>
-                    <li>
-                        <a href="#">{{ $t('AboutUs') }}</a>
-                    </li>
-                    <li><a href="#">Careers Press</a></li>
-                    <li><a href="#">Releases</a></li>
-                    <li><a href="#">E-DALELY Cares</a></li>
-                    <li><a href="#">Gift a Smile</a></li>
+                    <li><a href="#">{{$t('AboutUs')}}</a></li>
+                    <li><a href="#">{{$t('CareersPress')}}></a></li>
+                    <li><a href="#">{{$t('Releases')}}</a></li>
+                    <li><a href="#">{{$t('E-DALELYCares')}}</a></li>
+                    <li><a href="#">{{$t('GiftaSmile')}}</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <h3>{{ $t('Connectwith') }}</h3>
                 <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">{{$t('Facebook')}}</a></li>
+                    <li><a href="#">{{$t('Twitter')}}</a></li>
+                    <li><a href="#">{{$t('Instagram')}}</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h3>Join Us</h3>
+                <h3>{{$t('JoinUs')}}</h3>
                 <ul>
-                    <li><a href="#">Sell on E-Dalely</a></li>
-                    <li><a href="#">Sell under E-Dalely</a></li>
-                    <li><a href="#">Accelerator</a></li>
-                    <li><a href="#">Become an Affiliate</a></li>
-                    <li><a href="#">Fulfilment by E-Dalely</a></li>
+                    <li><a href="#">{{$t('SellonE-Dalely')}}</a></li>
+                    <li><a href="#">{{$t('SellunderE-Dalely')}}</a></li>
+                    <li><a href="#">{{$t('Accelerator')}}</a></li>
+                    <li><a href="#">{{$t('BecomeanAffiliate')}}</a></li>
+                    <li><a href="#">{{$t('FulfilmentbyE-Dalely')}}</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h3>Let Us Help</h3>
+                <h3>{{$t('LetUsHelp')}}</h3>
                 <ul>
-                    <li><a href="#"> Your Account</a></li>
-                    <li><a href="#">E-Dalely App Download </a></li>
-                    <li><a href="#"> E-Dalely Assistant Download</a></li>
-                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">{{$t('YourAccount')}} </a></li>
+                    <li><a href="#">{{$t('E-DalelyAppDownload')}} </a></li>
+                    <li><a href="#">{{$t('E-DalelyAssistantDownload')}} </a></li>
+                    <li><a href="#">{{$t('HelpCenter')}}</a></li>
                 </ul>
             </div>
             <hr />
