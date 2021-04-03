@@ -48,7 +48,7 @@
                     :id="items.id"
                     :price="items.price"
                     :title="items.title"
-                     :image="items.image"
+                    :image="items.image"
                     :description="items.description"
                 >
                 </BodyProduct>
@@ -160,25 +160,28 @@
                     </a>
                     <!-- ------------------------------------------------------------ -->
                     <div class="row">
-                        <div v-for="brand in brands.slice(9, 10)"
+                        <div
+                            v-for="brand in brands.slice(9, 10)"
                             :key="brand.id"
                             :image="brand.image"
-                            class="col-sm-9 imgs">
-                            <img
-                            v-lazy="brand.image"
-                                style="width: 100%"
-                            />
+                            class="col-sm-9 imgs"
+                        >
+                            <img v-lazy="brand.image" style="width: 100%" />
                         </div>
-                        <div v-for="brand in brands.slice(10, 11)"
+                        <div
+                            v-for="brand in brands.slice(10, 11)"
                             :key="brand.id"
                             :image="brand.image"
-                            class="col-sm-1.5 imges1">
+                            class="col-sm-1.5 imges1"
+                        >
                             <img v-lazy="brand.image" />
                         </div>
-                        <div v-for="brand in brands.slice(11, 12)"
+                        <div
+                            v-for="brand in brands.slice(11, 12)"
                             :key="brand.id"
                             :image="brand.image"
-                            class="col-sm-1.5 imges2">
+                            class="col-sm-1.5 imges2"
+                        >
                             <img v-lazy="brand.image" />
                         </div>
                     </div>
@@ -279,7 +282,6 @@ export default {
         BodyProduct: () => import('@/components/global/BodyProduct.vue'),
         Subscriber: () => import('@/components/global/Subscriber.vue'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
-        
     },
     computed: {
         Product() {

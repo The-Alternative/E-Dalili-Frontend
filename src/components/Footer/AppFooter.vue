@@ -3,7 +3,7 @@
     <div class="about-us">
         <div class="row">
             <div class="col-sm-3 ">
-                <h3>{{$t('GetKnowUs')}}</h3>
+                <h3>{{ $t('GetKnowUs') }}</h3>
                 <ul>
                     <li><a href="#">{{$t('AboutUs')}}</a></li>
                     <li><a href="#">{{$t('CareersPress')}}></a></li>
@@ -13,7 +13,7 @@
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h3>{{$t('Connectwith')}}</h3>
+                <h3>{{ $t('Connectwith') }}</h3>
                 <ul>
                     <li><a href="#">{{$t('Facebook')}}</a></li>
                     <li><a href="#">{{$t('Twitter')}}</a></li>

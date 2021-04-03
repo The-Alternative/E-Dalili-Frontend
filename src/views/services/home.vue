@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="all-section">
-            <h3>جميع الأقسام</h3>
+            <h3>{{$t('Allsections')}}</h3>
         </div>
         <div class="row align-middle">
             <div
@@ -18,7 +18,7 @@
                         <div class="txt">
                             <h1>{{ catog.name }}</h1>
                         </div>
-                        <a href="#">more</a>
+                        <a href="#">{{$t('More')}}</a>
                         <div class="ico-card">
                             <img v-lazy="catog.image" style="width:60%" />
                             <i class="fa fa-rebel"></i>
@@ -172,25 +172,25 @@
         <!-- __________________________________________________________________ -->
         <h2>Some Market</h2>
         <div class="row align-middle cont-market">
-            <div v-for="brand in brands.slice(12, 16)"
-                    :key="brand.id" class="col-md-4 col-lg-3 col-xs-6  column">
+            <div
+                v-for="brand in brands.slice(12, 16)"
+                :key="brand.id"
+                class="col-md-4 col-lg-3 col-xs-6  column"
+            >
                 <div class="card card-market">
-                    <img
-                        class="img-market"
-                         v-lazy="brand.image"
-                    />
+                    <img class="img-market" v-lazy="brand.image" />
                     <a href="#">more...</a>
                 </div>
             </div>
         </div>
         <div class="row align-middle cont-market">
-            <div v-for="brand in brands.slice(16, 20)"
-                    :key="brand.id" class="col-md-4 col-lg-3 col-xs-6  column">
+            <div
+                v-for="brand in brands.slice(16, 20)"
+                :key="brand.id"
+                class="col-md-4 col-lg-3 col-xs-6  column"
+            >
                 <div class="card card-market">
-                    <img
-                        class="img-market"
-                      v-lazy="brand.image"
-                    />
+                    <img class="img-market" v-lazy="brand.image" />
                     <a href="#">more...</a>
                 </div>
             </div>
@@ -207,7 +207,7 @@ export default {
         },
         brands() {
             return this.$store.state.brands;
-        }
+        },
     },
 };
 </script>
