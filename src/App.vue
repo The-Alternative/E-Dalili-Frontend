@@ -25,4 +25,7 @@ export default {
 #app {
     text-align: center;
 }
+// html:lang(en) *{
+//     text-align: left;
+// }
 </style>

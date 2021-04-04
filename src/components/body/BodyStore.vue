@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store" v-for="store in activeStores" :key="store.id">
+            <div class="store mb-4" v-for="store in activeStores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -90,7 +90,7 @@
                                     <b>{{ $t('visit') }}</b>
                                 </button>
                             </div>
-                            <div class="col">
+                            <div class="col team-social">
                                 <div class="row">
                                     <location-store></location-store>
                                     <phone-store></phone-store>
@@ -419,7 +419,7 @@ export default {
         transition: right 0.4s ease;
     }
     .slide.click {
-        right: 200px;
+        right: 220px;
     }
     .slide .fa-bars {
         color: #000000;
@@ -484,6 +484,12 @@ export default {
         height: 15px;
     }
     .stors {
+        width: 100%;
+    }
+    .team-social{
+        position: absolute;
+        bottom: -20px;
+        right: 0;
         width: 100%;
     }
 }
@@ -638,6 +644,13 @@ export default {
     .DIV1 {
         display: flex;
     }
+    .team-social{
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        width: 100%;
+    }
+    
 }
 @media (min-width: 599px) and (max-width: 767px) {
     .btn {

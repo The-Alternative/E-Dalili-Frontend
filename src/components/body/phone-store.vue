@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="span">
         <a href="tel:mobilephone"
             ><img
                 class="phone"
@@ -24,39 +24,48 @@ export default {
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
+  .span{
+        color: #fefefe;
+        margin-left: 10px;
+        margin-right: 10px;
+        display:inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
     .phone {
         height: 20px;
-        /* margin-left: 10px; */
-        margin-right: 10px;
-        border-radius: 50px;
         width: 15px;
         transition: all 0.8s;
-    }
-    .phone:hover {
-        background-color: #fa79d3;
-        box-shadow: 0 0 20px #000000;
-        transform: translate(0, -10px);
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
+  .span{
+        color: #fefefe;
+        margin-left: 10px;
+        margin-right: 10px;
+        display:inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
     .phone {
         height: 15px;
-        /* margin-left: 10px; */
-        margin-right: 10px;
-        border-radius: 50px;
         width: 15px;
         transition: all 0.8s;
-    }
-    .phone:hover {
-        background-color: #fa79d3;
-        box-shadow: 0 0 20px #000000;
-        transform: translate(0, -10px);
     }
 }
 @media (min-width: 599px) and (max-width: 767px) {
     .phone {
         height: 15px;
-        /* margin-left: 10px; */
         margin-right: 10px;
         border-radius: 50px;
         width: 15px;
