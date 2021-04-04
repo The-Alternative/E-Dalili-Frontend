@@ -473,8 +473,8 @@ export default {
         margin: auto;
     }
     .textFollow .heart {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
@@ -883,7 +883,7 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 100px;
+        max-width: 150px;
         text-align: center;
         margin: auto;
     }
@@ -894,14 +894,14 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 60%;
-        left: 40%;
+        top: 55%;
+        left: 38%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 3vh;
         margin-bottom: 10px;
-        margin-left: 40px;
+        margin-left: 60px;
         color: grey;
     }
     .heart.heart-active {

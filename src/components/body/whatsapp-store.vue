@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="span">
         <a href="https://wa.me/mobilephone/?text=text"
             ><i class="whatsapp fab fa-whatsapp"></i
         ></a>
@@ -14,33 +14,42 @@ export default {
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
+    .span{
+        color: #fefefe;
+        display:inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
     .whatsapp {
         color: #000000;
-        border-radius: 50px;
         font-size: 18px;
         margin-bottom: 20px;
         transition: all 0.8s;
     }
-    .whatsapp:hover {
-        background-color: #25d366;
-        box-shadow: 0 0 20px #071d0f;
-        transform: translate(0, -10px);
-    }
 }
 @media (min-width: 468px) and (max-width: 598px) {
+  .span{
+        color: #fefefe;
+        display:inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
     .whatsapp {
         color: #000000;
-        border-radius: 50px;
         font-size: 15px;
-        margin-bottom: 20px;
         width: 15px;
         height: 15px;
         transition: all 0.8s;
-    }
-    .whatsapp:hover {
-        background-color: #25d366;
-        box-shadow: 0 0 20px #071d0f;
-        transform: translate(0, -10px);
     }
 }
 @media (min-width: 599px) and (max-width: 767px) {

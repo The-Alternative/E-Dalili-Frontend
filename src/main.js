@@ -20,7 +20,7 @@ import main from '../src/assets/css/main.css';
 import '../public/fontawesome-free-5.15.1-web/css/all.css';
 
 const lang = localStorage.getItem('lang') || 'en';
-
+document.documentElement.lang=lang;
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);

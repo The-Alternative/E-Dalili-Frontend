@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="span">
         <img
             class="location"
             src="../../../public/img/location.png"
@@ -16,36 +16,45 @@ export default {
 
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
+    .span{
+        color: #fefefe;
+        display:inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
     .location {
         height: 20px;
-        /* margin-left: 20px; */
-        margin-right: 10px;
-        border-radius: 50px;
         width: 15px;
         transition: all 0.8s;
-    }
-    .location:hover {
-        transform: translate(0, -10px);
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
+    .span{
+        color: #fefefe;
+        display:inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
     .location {
         height: 15px;
-        /* margin-left: 80px; */
-        margin-right: 10px;
-        border-radius: 50px;
         width: 15px;
-        transition: all 0.8s;
-    }
-    .location:hover {
-        transform: translate(0, -10px);
+        transition: all 0.8s linear;
     }
 }
 @media (min-width: 599px) and (max-width: 767px) {
     .location {
         height: 15px;
         margin-right: 10px;
-        /* margin-left: 50px; */
         border-radius: 50px;
         width: 15px;
         transition: all 0.8s;
