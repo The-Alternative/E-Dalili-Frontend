@@ -90,7 +90,7 @@
 
         <!-- Start navbar-->
         <div id="nav" class="naver">
-            <div class="container">
+            <div class="container" lang="en">
                 <div class="row text-center">
                     <div class=" col-lg-12" style="padding: 0">
                         <div>
@@ -138,7 +138,7 @@
                                 </button></router-link
                             >
                         </div>
-                        <div class="img">
+                        <div class="img" lang="en">
                             <router-link to="/festival">
                                 <button
                                     type="button"
@@ -222,8 +222,8 @@ export default {
                 [
                     // keyframes
                     { right: '-231px', top: '-355px', height: '27px' },
-                    { right: '30px', top: '-355px', height: '27px' },
-                    { right: '30px', top: '-355px', height: '130px' },
+                    { right: '10px', top: '-355px', height: '27px' },
+                    { right: '10px', top: '-355px', height: '130px' },
                 ],
                 {
                     // timing options
@@ -237,9 +237,9 @@ export default {
             document.getElementById('fut').animate(
                 [
                     // keyframes
-                    { right: '30px', top: '-355px', height: '130px' },
-                    { right: '30px', top: '-355px', height: '27px' },
-                    { right: '-231px', top: '-355px', height: '27px' },
+                    { right: '10px', top: '-355px', height: '130px' },
+                    { right: '10px', top: '-355px', height: '27px' },
+                    { right: '-281px', top: '-355px', height: '27px' },
                 ],
                 {
                     // timing options
@@ -683,8 +683,8 @@ export default {
         border-radius: 50%;
         cursor: pointer;
         color: #fff;
-        top: 123px;
-        left: 53px;
+        top: 121px;
+        left: 23px;
         padding: 1px;
         font-weight: bold;
     }
@@ -720,12 +720,12 @@ export default {
         width: 100%;
     }
     .jumbotron .featuers {
-        width: 200px;
+        width: 250px;
         position: absolute;
         font-size: 11px;
         border-radius: 20px;
         top: -461px;
-        right: -231px;
+        right: -280px;
     }
     .jumbotron .featuers i {
         font-size: 17px;
@@ -747,7 +747,7 @@ export default {
         margin-bottom: 10px;
     }
     .jumbotron .featuers {
-        width: 375px;
+        width: 460px;
         margin-top: 200px;
         font-size: 12px;
         border-radius: 20px;
@@ -762,7 +762,7 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .jumbotron .featuers {
-        width: 700px;
+        width: 740px;
         margin-top: 399px;
         font-size: 12px;
     }
@@ -779,6 +779,9 @@ export default {
     background-color: #a7a6a6;
     padding: 5px 0 5px 0;
     margin: 10px 0 10px 0;
+}
+.naver .container:lang(en) {
+    max-width: 1325px;
 }
 .naver .row .col-lg-12 div {
     margin: 0 5px;
@@ -854,8 +857,7 @@ export default {
         height: 29px;
     }
     .naver .img::before {
-        top: 77px;
-        right: 465px;
+        top: 38px;
     }
     .naver .row .products {
         width: 60px;
@@ -875,7 +877,7 @@ export default {
     }
     .naver .img::before {
         top: 38px;
-        right: 490px;
+
     }
     .naver .row .products {
         width: 60px;
@@ -895,7 +897,6 @@ export default {
     }
     .naver .img::before {
         top: -1px;
-        right: 385px;
     }
 }
 /* End Naver*/
