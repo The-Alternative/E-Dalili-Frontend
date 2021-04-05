@@ -1341,7 +1341,7 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 70%;
+        max-width: 60%;
     }
     .textFollow .heart {
         width: 80px;
@@ -1350,15 +1350,15 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 28%;
-        left: 19%;
+        top: 30%;
+        left: 12%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 4vh;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 70px;
+        margin-left: 50px;
         color: grey;
     }
     .heart.heart-active {
@@ -2523,7 +2523,7 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 50%;
-        left: 18%;
+        left: 17%;
         transform: translate(-30%, -55%);
     }
     .follow {
