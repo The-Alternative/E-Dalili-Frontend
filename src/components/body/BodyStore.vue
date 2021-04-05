@@ -7,7 +7,11 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in activeStores" :key="store.id">
+            <div
+                class="store mb-4"
+                v-for="store in activeStores"
+                :key="store.id"
+            >
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -50,51 +54,57 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li class="categorystore">
-                            {{ store.categories }}
-                        </li>
-                    </ul>
-                    <div class="col">
-                        <div class="row img-button">
-                            <div class="col">
-                                <img
-                                    class="Group"
-                                    src="../../../public/img/Group.png"
-                                    height="20"
-                                />
-                                <img
-                                    class="MaskGroup"
-                                    src="../../../public/img/MaskGroup.png"
-                                    height="20"
-                                />
-                            </div>
-                            <div class="col">
-                                <button
-                                    type="button"
-                                    class="btn w-50"
-                                    @click="
-                                        gotoview(
-                                            store.id,
-                                            store.title,
-                                            store.phonenumber,
-                                            store.mobilephone,
-                                            store.workDays,
-                                            store.startTime,
-                                            store.endTime,
-                                            store.address
-                                        )
-                                    "
-                                >
-                                    <b>{{ $t('visit') }}</b>
-                                </button>
-                            </div>
-                            <div class="col team-social">
-                                <div class="row">
-                                    <location-store></location-store>
-                                    <phone-store></phone-store>
-                                    <whatsapp-store></whatsapp-store>
+                <div class="drop" id="drop-active" @click="dropactive()">
+                    <i class="fa fa-angle-down"></i>
+                </div>
+
+                <div class="descripation" id="descripation">
+                    <div class="card-footer" id="card-footer">
+                        <ul class="flex-row d-inline-flex">
+                            <li class="categorystore">
+                                {{ store.categories }}
+                            </li>
+                        </ul>
+                        <div class="col">
+                            <div class="row img-button">
+                                <div class="col">
+                                    <img
+                                        class="Group"
+                                        src="../../../public/img/Group.png"
+                                        height="20"
+                                    />
+                                    <img
+                                        class="MaskGroup"
+                                        src="../../../public/img/MaskGroup.png"
+                                        height="20"
+                                    />
+                                </div>
+                                <div class="col">
+                                    <button
+                                        type="button"
+                                        class="btn"
+                                        @click="
+                                            gotoview(
+                                                store.id,
+                                                store.title,
+                                                store.phonenumber,
+                                                store.mobilephone,
+                                                store.workDays,
+                                                store.startTime,
+                                                store.endTime,
+                                                store.address
+                                            )
+                                        "
+                                    >
+                                        <b class="">{{ $t('visit') }}</b>
+                                    </button>
+                                </div>
+                                <div class="col team-social">
+                                    <div class="row">
+                                        <location-store></location-store>
+                                        <phone-store></phone-store>
+                                        <whatsapp-store></whatsapp-store>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -319,6 +329,14 @@ export default {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
+        dropactive: function() {
+            document
+                .getElementById('drop-active')
+                .classList.toggle('drop-rotate');
+            document
+                .getElementById('descripation')
+                .classList.toggle('drop-active');
+        },
         gotoview: function(i, t, p, m, w, s, e, a) {
             this.$router.push(
                 `visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`
@@ -332,9 +350,12 @@ export default {
 @media (min-width: 200px) and (max-width: 467px) {
     .btn {
         font-weight: bold;
-        font-size: 12px;
+        font-size: 1rem;
+        /* font-size: 15px; */
         height: 30px;
-        margin: 20px 0;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 30px;
     }
     .checked-all {
         font-size: 10px;
@@ -448,7 +469,6 @@ export default {
         margin-top: 10px;
         transition: all 0.8s;
     }
-
     .rounded-circle {
         margin-top: 10px;
         height: 80px;
@@ -468,7 +488,9 @@ export default {
         font-size: 10px;
         color: #ffd200;
         list-style: none;
-        margin-right: 35px;
+        text-align: center;
+        align-items: center;
+        margin-right: 40%;
     }
     .categorystore {
         margin-top: 5px;
@@ -486,19 +508,56 @@ export default {
     .stors {
         width: 100%;
     }
-    .team-social{
+    .team-social {
         position: absolute;
         bottom: -20px;
         right: 0;
         width: 100%;
     }
+    .store {
+        position: relative;
+        overflow: hidden;
+    }
+    .drop {
+        position: absolute;
+        bottom: 5px;
+        display: flex;
+        border-radius: 40px;
+        background: #abc8d1;
+        text-align: center;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    .drop i {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        transition: all 0.9s ease-in-out;
+        color: rgb(19, 18, 18);
+    }
+    .drop i:hover {
+        color: rgb(112, 108, 108);
+    }
+    .drop-active {
+        height: 230px !important;
+        text-align: center;
+    }
+    .drop-rotate {
+        transform: rotate(180deg);
+    }
+    .card-footer {
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        z-index: 1;
+    }
 }
 @media (min-width: 468px) and (max-width: 598.99px) {
     .btn {
-        font-weight: bold;
-        font-size: 12px;
+        font-size: 1rem;
         height: 30px;
-        width: 8px;
+        width: 60%;
+        margin-bottom: 10px;
     }
     .checked-all {
         font-size: 12px;
@@ -644,20 +703,22 @@ export default {
     .DIV1 {
         display: flex;
     }
-    .team-social{
+    .team-social {
         position: absolute;
         bottom: -20px;
         right: 0;
         width: 100%;
     }
-    
+    .drop {
+        display: none;
+    }
 }
 @media (min-width: 599px) and (max-width: 767px) {
     .btn {
-        font-weight: bold;
-        font-size: 12px;
+        font-size: 1rem;
         height: 30px;
-        width: 8px;
+        width: 60%;
+        margin-bottom: 10px;
     }
     .checked-all {
         font-size: 12px;
@@ -802,6 +863,9 @@ export default {
     .DIV1 {
         display: flex;
     }
+    .drop {
+        display: none;
+    }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     .card {
@@ -818,7 +882,10 @@ export default {
         height: 40px;
     }
     .btn {
+        font-size: 1rem;
         height: 30px;
+        width: 60%;
+        margin-bottom: 10px;
     }
     .text-muted {
         margin-top: 20px;
@@ -906,6 +973,9 @@ export default {
     .DIV1 {
         display: flex;
     }
+    .drop {
+        display: none;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .card {
@@ -919,8 +989,10 @@ export default {
         transition: all 0.8s;
     }
     .btn {
-        /* margin-left: 80px; */
-        width: 20px;
+        font-size: 1rem;
+        height: 40px;
+        width: 60%;
+        margin-bottom: 10px;
     }
     .rounded-circle {
         height: 50px;
@@ -1009,6 +1081,9 @@ export default {
     .DIV1 {
         display: flex;
     }
+    .drop {
+        display: none;
+    }
 }
 @media (min-width: 1200px) {
     .menu {
@@ -1019,8 +1094,10 @@ export default {
         transition: all 0.8s;
     }
     .btn {
-        /* margin-left: 30px; */
-        width: 4px;
+        font-size: 1rem;
+        height: 40px;
+        width: 50%;
+        margin-bottom: 10px;
         background-color: #66ff66;
     }
     .textcheck {
@@ -1104,6 +1181,9 @@ export default {
     }
     .DIV1 {
         display: flex;
+    }
+    .drop {
+        display: none;
     }
 }
 
