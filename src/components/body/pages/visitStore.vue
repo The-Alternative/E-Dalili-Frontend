@@ -71,6 +71,9 @@
                         <div>{{ address }}</div>
                     </div>
                     <hr class="hr" />
+                    <div class="drop" id="drop-active" @click="dropactive()">
+                        <i class="fa fa-angle-down"></i>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <img
@@ -114,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-2 bottomdetails">
+            <div class="description" id="description"><div class="row mb-2 bottomdetails" id="bottomdetails">
                 <div class="rowimg">
                     <div class="socail-menu col mb-3">
                         <a
@@ -192,7 +195,7 @@
                         <span class="textcount">{{ $t('Followers') }}</span>
                     </div>
                 </div>
-            </div>
+            </div></div>
         </div>
         <div id="nav" class="naver">
             <div class="container">
@@ -359,6 +362,10 @@ export default {
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
+        dropactive:function(){
+            document.getElementById('drop-active').classList.toggle('drop-rotate');
+            document.getElementById('description').classList.toggle('drop-active')
+        },
         likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
@@ -378,6 +385,8 @@ export default {
 @media (min-width: 200px) and (max-width: 367px) {
     ///start details store///
     .border1 {
+        position: relative;
+        overflow: hidden;
         margin: 10px;
         border-radius: 40px 0 40px 0;
         border: 2px solid rgb(236, 158, 95);
@@ -415,6 +424,34 @@ export default {
         margin-left: 120px;
         border: 2px solid rgb(144, 148, 147);
     }
+    .drop{
+        position: absolute;
+        bottom: 5px;
+        display: flex;
+        border-radius: 40px;
+        background: rgb(199, 175, 39);
+        justify-content: center;
+    }
+    .drop i{
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        transition: all 0.8s ease-in-out;
+    }
+    .drop i:hover{
+        color: rgb(134, 133, 133);
+    }
+    .drop-active{
+        height: 350px !important;
+        justify-content: center;
+        margin-left: 18%;
+    }
+    .drop-rotate{
+        transform: rotate(180deg);
+    }
+    .hr{
+        display: none;
+    }
     .icons {
         display: inline;
         margin-top: 20px;
@@ -429,6 +466,8 @@ export default {
         margin-left: 30px;
     }
     .bottomdetails {
+        position: absolute;
+        z-index: 1;
         display: flex;
         flex-direction: column-reverse;
     }
@@ -480,7 +519,7 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 60%;
-        left: 35%;
+        left: 25%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -790,11 +829,13 @@ export default {
 @media (min-width: 368px) and (max-width: 598.99px) {
     ///start details store///
     .border1 {
+        position: relative;
+        overflow: hidden;
         margin: 10px;
         border-radius: 40px 0 40px 0;
         border: 2px solid rgb(236, 158, 95);
         max-width: 100%;
-        max-height: 100%;
+        height: 100%;
         background-color: #ffffff;
         box-shadow: 10px 10px 10px #f1c685;
     }
@@ -815,6 +856,36 @@ export default {
     }
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
+    }
+    .drop{
+        position: absolute;
+        bottom: 5px;
+        // width: 100%;
+        display: flex;
+        border-radius: 40px;
+        background: rgb(199, 175, 39);
+        justify-content: center;
+    }
+    .drop i{
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        // color: rgb(204, 204, 204,0.179);
+        transition: all 0.8s ease-in-out;
+    }
+    .drop i:hover{
+        color: rgb(134, 133, 133);
+    }
+    .drop-active{
+        height: 350px !important;
+        justify-content: center;
+        margin-left: 30%;
+    }
+    .drop-rotate{
+        transform: rotate(180deg);
+    }
+    .hr{
+        display: none;
     }
     .isActive {
         padding-left: 0;
@@ -844,8 +915,11 @@ export default {
         margin-left: 30px;
     }
     .bottomdetails {
+        position: absolute;
+        z-index: 1;
         display: flex;
         flex-direction: column-reverse;
+        transition: 0.2s ease-in-out;
     }
     .like {
         margin-top: 20px;
@@ -895,7 +969,7 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 55%;
-        left: 38%;
+        left: 20%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -1202,7 +1276,7 @@ export default {
         border-radius: 40px 0 40px 0;
         border: 2px solid rgb(236, 158, 95);
         max-width: 90%;
-        max-height: 100%;
+        height: 100%;
         background-color: #ffffff;
         box-shadow: 10px 10px 10px #f1c685;
     }
@@ -1268,7 +1342,6 @@ export default {
         border: 2px solid #eae2e1;
         display: flex;
         max-width: 70%;
-        // margin-right: 20px;
     }
     .textFollow .heart {
         width: 80px;
@@ -1277,14 +1350,15 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 25%;
+        top: 28%;
         left: 19%;
         transform: translate(-30%, -55%);
     }
     .follow {
-        font-size: 3vh;
+        font-size: 4vh;
+        margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 60px;
+        margin-left: 70px;
         color: grey;
     }
     .heart.heart-active {
@@ -1310,6 +1384,9 @@ export default {
         margin-left: 10px;
         font-size: 12px;
         margin-top: 20px;
+    }
+    .drop{
+        display: none;
     }
     .rowimg {
         display: flex;
@@ -1649,6 +1726,9 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
+    .drop{
+        display: none;
+    }
     .likecount {
         margin-right: 20px;
         display: flex;
@@ -1669,14 +1749,15 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 25%;
+        top: 28%;
         left: 25%;
         transform: translate(-30%, -55%);
     }
     .follow {
-        font-size: 3vh;
+        font-size: 4vh;
+        margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 80px;
+        margin-left: 70px;
         color: grey;
     }
     .heart.heart-active {
@@ -2027,6 +2108,9 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
+    .drop{
+        display: none;
+    }
     .likecount {
         margin-right: 20px;
         display: flex;
@@ -2048,13 +2132,14 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 26%;
+        top:30%;
         left: 38%;
         transform: translate(-30%, -55%);
     }
     .follow {
-        font-size: 3vh;
+        font-size: 4vh;
         margin-bottom: 10px;
+        margin-top: 10px;
         margin-left: 80px;
         color: grey;
     }
@@ -2411,6 +2496,9 @@ export default {
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
     }
+    .drop{
+        display: none;
+    }
     .count {
         display: flex;
         flex-direction: column-reverse;
@@ -2434,14 +2522,15 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 35%;
-        left: 20%;
+        top: 50%;
+        left: 18%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 4vh;
+        margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 70px;
+        margin-left: 60px;
         color: grey;
     }
     .heart.heart-active {
