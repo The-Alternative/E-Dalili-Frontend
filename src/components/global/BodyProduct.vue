@@ -174,8 +174,8 @@ export default {
 }
 .content-pro button {
     border-radius: 59%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     font-size: 20px;
     border: none;
     padding: 0;
@@ -187,9 +187,9 @@ export default {
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .content-pro {
-        font-size: 10px;
-        height: auto;
-        margin-top: 1vh;
+    font-size: 12px;
+    height: auto;
+    margin-top: 3vh;
     }
     .content-pro .name-prod {
         margin-bottom: 10px;
@@ -204,7 +204,7 @@ export default {
 
 <style lang="scss" scoped>
 .heart {
-    width: 100px;
+    width: 80px;
     height: 100px;
     background: url('../../../public/img/heart.png') no-repeat;
     background-position: 0 0;
