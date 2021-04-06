@@ -280,12 +280,12 @@ export default {
 .cart-count {
     font-size: 15px;
     color: #ba8b00;
-    padding: 0px 5px;
-    margin-left: -13px;
+    padding: -1px 5px;
+    margin-left: -21px;
     background: #ffffff;
     height: 22px;
     border-radius: 50%;
-    width: 21px;
+    width: 19px;
     position: absolute;
     margin-top: -10px;
 }
@@ -374,8 +374,8 @@ export default {
     padding: 0 30px;
 }
 .upper-bar .sel4 select {
-    width: 102px;
-    padding: 0 27px;
+    width: 125px;
+    padding: 0 30px;
 }
 .upper-bar .sel4:after {
     position: absolute;
@@ -602,7 +602,7 @@ export default {
 }
 .jumbotron .search i {
     background-color: #87948b;
-    padding: 9px 10px;
+    padding: 10px 10px;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     width: 35px;
@@ -613,7 +613,7 @@ export default {
 .jumbotron .featuers {
     width: 800px;
     margin: auto;
-    margin-top: 400px;
+    margin-top: 410px;
     background-color: #bfc0c2;
     padding: 10px 20px;
     color: #635f5f;
@@ -684,7 +684,7 @@ export default {
         cursor: pointer;
         color: #fff;
         top: 121px;
-        left: 23px;
+        left: 55px;
         padding: 1px;
         font-weight: bold;
     }
@@ -836,7 +836,7 @@ export default {
     }
     .naver .img::before {
         top: 77px;
-        right: 220px;
+        right: 278px;
     }
     .naver .row .products {
         width: 60px;
