@@ -271,15 +271,11 @@
     </div>
 </template>
 <script>
-// import data from '../../jeson/data.json';
-import LocationStore from '../../components/body/location-store';
-import PhoneStore from '../../components/body/phone-store';
-import WhatsappStore from '../../components/body/whatsapp-store';
 export default {
     components: {
-        WhatsappStore,
-        PhoneStore,
-        LocationStore,
+        WhatsappStore:()=>import('@/components/body/whatsapp-store.vue'),
+        PhoneStore:()=>import('@/components/body/phone-store'),
+        LocationStore:()=>import('@/components/body/location-store')
     },
     props: [
         'id',
@@ -294,8 +290,6 @@ export default {
 
     data() {
         return {
-            // stores: data.stores,
-            // categories: data.categories,
             rate: 0,
             selectedCategory: [],
         };
@@ -351,7 +345,6 @@ export default {
     .btn {
         font-weight: bold;
         font-size: 1rem;
-        /* font-size: 15px; */
         height: 30px;
         width: 100%;
         margin-top: 10px;
@@ -395,27 +388,27 @@ export default {
     .star-right {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 40px;
+        margin-left: 30px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 50px;
+        margin-left: 40px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 60px;
+        margin-left: 50px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 72px;
+        margin-left: 60px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 84px;
+        margin-left: 70px;
     }
     /*...................*/
     .categores {
@@ -550,6 +543,7 @@ export default {
         left: 10%;
         right: 10%;
         z-index: 1;
+        transition: 0.2s ease-in-out;
     }
 }
 @media (min-width: 468px) and (max-width: 598.99px) {
@@ -598,27 +592,27 @@ export default {
     .star-right {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 90px;
+        margin-left: 70px;
     }
     .star-right2 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 102px;
+        margin-left: 80px;
     }
     .star-right3 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 112px;
+        margin-left:90px;
     }
     .star-right4 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 122px;
+        margin-left: 100px;
     }
     .star-right5 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left: 134px;
+        margin-left: 110px;
     }
     /*...................*/
     .categores {
@@ -1251,7 +1245,7 @@ body {
 }
 .textcheck:hover {
     color: #5a5957;
-    transform: translate(0, -5px);
+    /* transform: translate(0, -5px); */
 }
 .categorystore:hover {
     transform: scale(1.3);
