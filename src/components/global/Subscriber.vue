@@ -33,10 +33,10 @@ export default {
 }
 .last-subscriber .subscriber button {
     background-color: #d5caca;
-    height: 25px;
+    height: 30px;
     width: 74px;
     padding: 0px;
-    font-size: 12px;
+    font-size: 17px;
 }
 
 .last-subscriber .subscriber img {

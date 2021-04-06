@@ -260,11 +260,11 @@ export default {
     font-family: 'Oswald', sans-serif;
     box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
     .txt {
-        margin-left: -3rem;
-        margin-top: 12rem;
+        margin-left: 0;
+        margin-top: 5rem;
         z-index: 1;
         h1 {
-            font-size: 1.5rem;
+            font-size: 17px;
             font-weight: 300;
             text-transform: uppercase;
         }
@@ -526,9 +526,6 @@ $nav-button-width: 5rem;
     }
     .layer .col:nth-child(6) {
         display: none;
-    }
-    .card .txt {
-        margin-top: 4rem;
     }
 }
 /* _____________________ market after slider _____________________________ */
