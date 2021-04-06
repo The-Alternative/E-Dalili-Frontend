@@ -185,21 +185,21 @@ export default {
     background-color: #d3b85f;
 }
 /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
+@media (max-width: 576.98px) {
     .content-pro {
     font-size: 12px;
     height: auto;
-    margin-top: 3vh;
+    margin-top: 2vh;
     }
     .content-pro .name-prod {
         margin-bottom: 10px;
     }
-
     .reower .col-xs-6 {
         flex: 1 0 50%;
         max-width: 50%;
     }
 }
+
 </style>
 
 <style lang="scss" scoped>
