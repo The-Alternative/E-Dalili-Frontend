@@ -1,5 +1,5 @@
 <template>
-    <div class="ProductDetalis" style="background-color:#e9ecf2">
+    <div class="ProductDetalis" style="background-color: #e9ecf2;">
         <Cartmini />
 
         <div
@@ -8,7 +8,7 @@
             data-ride="carousel"
             style="margin-top: 10px;"
         >
-            <div class="col-sm-12" style="padding:0">
+            <div class="col-sm-12" style="padding: 0;">
                 <div class="carousel-inner">
                     <!-- carousel item 1 -->
                     <div class="carousel-item active">
@@ -66,7 +66,7 @@
                                             {{ store.space }}
                                             <img
                                                 class="img-open"
-                                                style="margin-right:10px"
+                                                style="margin-right: 10px;"
                                                 src="../../../../public/img/open.png"
                                                 height="40"
                                             />
@@ -84,7 +84,7 @@
                                             <span>80.00 S.P</span>
                                             <div
                                                 class="price"
-                                                style="display: inline-block"
+                                                style="display: inline-block;"
                                             ></div>
                                         </div>
 
@@ -95,7 +95,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
+                                                        {{ $t('AddCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -105,7 +105,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{ $t('GoToCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -172,7 +172,7 @@
                                             {{ store.space }}
                                             <img
                                                 class="img-open"
-                                                style="margin-right:10px"
+                                                style="margin-right: 10px;"
                                                 src="../../../../public/img/open.png"
                                                 height="40"
                                             />
@@ -190,7 +190,7 @@
                                             <span>90.00 S.P</span>
                                             <div
                                                 class="price"
-                                                style="display: inline-block"
+                                                style="display: inline-block;"
                                             ></div>
                                         </div>
 
@@ -201,7 +201,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
+                                                        {{ $t('AddCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -211,7 +211,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{ $t('GoToCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -278,7 +278,7 @@
                                             {{ store.space }}
                                             <img
                                                 class="img-open"
-                                                style="margin-right:10px"
+                                                style="margin-right: 10px;"
                                                 src="../../../../public/img/open.png"
                                                 height="40"
                                             />
@@ -296,7 +296,7 @@
                                             <span>100.00 S.P</span>
                                             <div
                                                 class="price"
-                                                style="display: inline-block"
+                                                style="display: inline-block;"
                                             ></div>
                                         </div>
 
@@ -307,7 +307,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
+                                                        {{ $t('AddCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -317,7 +317,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{ $t('GoToCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -342,23 +342,15 @@
 </template>
 
 <script>
-import Cartmini from '@/components/cart/Cartmini.vue';
-
 export default {
     name: 'ProductDetailsStore',
     data() {
         return {
-            // details: {
-            //     id: this.id,
-            //     title: this.title,
-            //     description: this.description,
-            //     price: this.price,
-            // },
             details: this.$route.params,
         };
     },
     components: {
-        Cartmini,
+        Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     props: ['id', 'title', 'description', 'price'],
     computed: {
@@ -379,7 +371,7 @@ export default {
         addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function() {
+        gotocart: function () {
             this.$router.push(`/Cart`);
         },
         addToCart() {

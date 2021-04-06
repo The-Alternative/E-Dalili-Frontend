@@ -34,7 +34,7 @@
             </div>
             <div class="product-bottom text-center">
                 <div class="stars">
-                    <i class="fa fa-star  checked"></i>
+                    <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
@@ -48,11 +48,11 @@
                 </div>
                 <div>
                     <span>{{ price }} $</span>
-                    <div class="price" style="display: inline-block"></div>
+                    <div class="price" style="display: inline-block;"></div>
                 </div>
                 <div class="avilble">
                     <div class="mb-2">
-                        <div style="display: inline-block">
+                        <div style="display: inline-block;">
                             متوفر في سنتر الريم
                         </div>
                         <span class="fa fa-check-circle"></span>
@@ -179,6 +179,16 @@ export default {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+}
+.cartshop{
+    position:relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+
+}
+.cartshop:active{
+    transform: scale(0.9);
+    background-color: #ffa130;
+    box-shadow: 0 2px 25px rgba(255, 215, 52, 0.2);
 }
 .cartshop:hover {
     background-color: #d3b85f;

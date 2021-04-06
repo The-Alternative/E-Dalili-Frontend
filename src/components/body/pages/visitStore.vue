@@ -1,5 +1,6 @@
 <template>
     <div class="visitStore">
+        <Cartmini />
         <div
             id="carouselExampleInterval"
             class="carousel slide mb-4 carouselSlide"
@@ -50,9 +51,9 @@
         <div class="border1 mb-4">
             <div
                 class="col-sm-12 detailssmall"
-                style="display: flex; padding: 0"
+                style="display: flex; padding: 0;"
             >
-                <div class="col-lg-3 col-sm-3">
+                <div class="col-lg-3 col-sm-12 datedetails">
                     <img
                         class="isActive mt-4"
                         src="../../../../public/img/open.png"
@@ -117,108 +118,114 @@
                     </div>
                 </div>
             </div>
-            <div class="description" id="description"><div class="row mb-2 bottomdetails" id="bottomdetails">
-                <div class="rowimg">
-                    <div class="socail-menu col mb-3">
-                        <a
-                            ><img
-                                class="location mr-2"
-                                src="../../../../public/img/location.png"
+            <div class="description" id="description">
+                <div class="row mb-2 bottomdetails" id="bottomdetails">
+                    <div class="rowimg">
+                        <div class="socail-menu col mb-3">
+                            <a
+                                ><img
+                                    class="location mr-2"
+                                    src="../../../../public/img/location.png"
+                                    height="30"
+                            /></a>
+                            <a
+                                ><img
+                                    class="instagram mr-2"
+                                    src="../../../../public/img/instagram-new.png"
+                                    height="30"
+                            /></a>
+                            <a
+                                ><img
+                                    class="whatsapp mr-2"
+                                    src="../../../../public/img/whatsapp.png"
+                                    height="30"
+                            /></a>
+                            <a
+                                ><img
+                                    class="telegram mr-2"
+                                    src="../../../../public/img/telegram-app.png"
+                                    height="30"
+                            /></a>
+                            <a
+                                ><img
+                                    class="facebook"
+                                    src="../../../../public/img/facebook-new.png"
+                                    height="30"
+                            /></a>
+                        </div>
+                        <div class="col imgdiliver mb-3">
+                            <img
+                                class="MaskGroup"
+                                src="../../../../public/img/MaskGroup.png"
                                 height="30"
-                        /></a>
-                        <a
-                            ><img
-                                class="instagram mr-2"
-                                src="../../../../public/img/instagram-new.png"
+                            />
+                            <img
+                                class="Group"
+                                src="../../../../public/img/Group.png"
                                 height="30"
-                        /></a>
-                        <a
-                            ><img
-                                class="whatsapp mr-2"
-                                src="../../../../public/img/whatsapp.png"
-                                height="30"
-                        /></a>
-                        <a
-                            ><img
-                                class="telegram mr-2"
-                                src="../../../../public/img/telegram-app.png"
-                                height="30"
-                        /></a>
-                        <a
-                            ><img
-                                class="facebook"
-                                src="../../../../public/img/facebook-new.png"
-                                height="30"
-                        /></a>
+                            />
+                        </div>
                     </div>
-                    <div class="col imgdiliver mb-3">
-                        <img
-                            class="MaskGroup"
-                            src="../../../../public/img/MaskGroup.png"
-                            height="30"
-                        />
-                        <img
-                            class="Group"
-                            src="../../../../public/img/Group.png"
-                            height="30"
-                        />
+                    <div class="col">
+                        <div
+                            class="textFollow"
+                            id="textFollow"
+                            @click="heart()"
+                        >
+                            <span class="heart mr-2" id="heart"></span>
+                            <span class="follow mr-4" id="follow">{{
+                                $t('Continue')
+                            }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="textFollow" id="textFollow" @click="heart()">
-                        <span class="heart mr-2" id="heart"></span>
-                        <span class="follow mr-4" id="follow">{{
-                            $t('Continue')
-                        }}</span>
-                    </div>
-                </div>
-                <div class="likecount">
-                    <div class="col cartlike">
-                        <router-link to="/Cart">
+                    <div class="likecount">
+                        <div class="col cartlike">
+                            <router-link to="/Cart">
+                                <span
+                                    class="fa fa-cart-plus fa-2x cart mr-4"
+                                ></span>
+                            </router-link>
                             <span
-                                class="fa fa-cart-plus fa-2x cart mr-4"
+                                class="far fa-thumbs-down fa-2x dislike"
+                                id="dislikebtn"
+                                @click="dislikebtn()"
                             ></span>
-                        </router-link>
-                        <span
-                            class="far fa-thumbs-down fa-2x dislike"
-                            id="dislikebtn"
-                            @click="dislikebtn()"
-                        ></span>
-                        <span
-                            class="far fa-thumbs-up fa-2x like"
-                            id="likebtn"
-                            @click="likebtn()"
-                        ></span>
-                    </div>
-                    <div class="col count">
-                        <span class="followCount">2800</span>
-                        <span class="textcount">{{ $t('Followers') }}</span>
+                            <span
+                                class="far fa-thumbs-up fa-2x like"
+                                id="likebtn"
+                                @click="likebtn()"
+                            ></span>
+                        </div>
+                        <div class="col count">
+                            <span class="followCount">2800</span>
+                            <span class="textcount">{{ $t('Followers') }}</span>
+                        </div>
                     </div>
                 </div>
-            </div></div>
+            </div>
         </div>
         <div id="nav" class="naver">
             <div class="container">
                 <div class="row text-center">
-                    <div class=" col-lg-12" style="padding: 0">
+                    <div class="col-lg-12" style="padding: 0;">
                         <div>
                             <button type="button" class="btn btn-light light1">
-                                <a>{{$t('MyPurchases')}}</a>
+                                <a>{{ $t('MyPurchases') }}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn light1">
-                                <a>{{$t('Events')}}</a>
+                                <a>{{ $t('Events') }}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn btn-light light1">
-                                <a>{{$t('NewStore')}}</a>
+                                <a>{{ $t('NewStore') }}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn light1">
-                                <a>{{$t('Jobs')}}</a>
+                                <a>{{ $t('Jobs') }}</a>
                             </button>
                         </div>
                         <div class="img">
@@ -226,12 +233,12 @@
                                 type="button"
                                 class="btn btn-warning sel light1"
                             >
-                                <a>{{$t('StoreOffers')}}</a>
+                                <a>{{ $t('StoreOffers') }}</a>
                             </button>
                         </div>
                         <div>
                             <button type="button" class="btn light1">
-                                <a>{{$t('Allsections')}}</a>
+                                <a>{{ $t('Allsections') }}</a>
                             </button>
                         </div>
                     </div>
@@ -240,7 +247,7 @@
         </div>
         <div class="homeborder">
             <div class="all-section">
-                <span class="text">{{$t('Allsections')}}</span>
+                <span class="text">{{ $t('Allsections') }}</span>
             </div>
             <div class="row align-middle" style="height: 80%;">
                 <div
@@ -250,18 +257,18 @@
                     :slug="catog.slug"
                     :name="catog.name"
                     :image="catog.image"
-                    style="width:50%"
+                    style="width: 50%;"
                 >
                     <router-link :to="`/${catog.slug}`">
                         <div class="card">
                             <div class="txt">
                                 <h1>{{ catog.name }}</h1>
                             </div>
-                            <a href="#">{{$t('More')}}</a>
+                            <a href="#">{{ $t('More') }}</a>
                             <div class="ico-card">
                                 <img
                                     src="../../../../public/img/buty.jpg"
-                                    style="width:60%"
+                                    style="width: 60%;"
                                 />
                                 <i class="fa fa-rebel"></i>
                             </div>
@@ -284,7 +291,7 @@
         </div>
         <div class="mar mb-4">
             <div class="all-section">
-                <span class="text">{{$t('TheFamousBrands')}}</span>
+                <span class="text">{{ $t('TheFamousBrands') }}</span>
             </div>
             <div
                 class="show-market"
@@ -297,7 +304,7 @@
         <!-- show  products -->
         <div class="show-prod">
             <div class="all-section">
-                <span class="text">{{$t('LatestSearches')}}</span>
+                <span class="text">{{ $t('LatestSearches') }}</span>
             </div>
             <div class="row mt-2">
                 <BodyProductStore
@@ -338,7 +345,7 @@ export default {
     },
     components: {
         BodyProductStore,
-        // Cartmini
+        Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
         stores() {
@@ -355,18 +362,22 @@ export default {
         },
     },
     methods: {
-        heart: function() {
+        heart: function () {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive:function(){
-            document.getElementById('drop-active').classList.toggle('drop-rotate');
-            document.getElementById('description').classList.toggle('drop-active')
+        dropactive: function () {
+            document
+                .getElementById('drop-active')
+                .classList.toggle('drop-rotate');
+            document
+                .getElementById('description')
+                .classList.toggle('drop-active');
         },
-        likebtn: function() {
+        likebtn: function () {
             document.getElementById('likebtn').classList.toggle('');
         },
         gotodetails(i, t, d, p) {
@@ -424,7 +435,7 @@ export default {
         margin-left: 120px;
         border: 2px solid rgb(144, 148, 147);
     }
-    .drop{
+    .drop {
         position: absolute;
         bottom: 5px;
         display: flex;
@@ -432,24 +443,24 @@ export default {
         background: rgb(199, 175, 39);
         justify-content: center;
     }
-    .drop i{
+    .drop i {
         display: block;
         cursor: pointer;
         font-size: 1.8rem;
         transition: all 0.8s ease-in-out;
     }
-    .drop i:hover{
+    .drop i:hover {
         color: rgb(134, 133, 133);
     }
-    .drop-active{
+    .drop-active {
         height: 350px !important;
         justify-content: center;
         margin-left: 18%;
     }
-    .drop-rotate{
+    .drop-rotate {
         transform: rotate(180deg);
     }
-    .hr{
+    .hr {
         display: none;
     }
     .icons {
@@ -662,7 +673,9 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // right: 8%;
+        right:10%;
+        left:10%;
+        width: 100%;
         position: relative;
         top: 50%;
     }
@@ -688,7 +701,7 @@ export default {
         }
     }
     .card {
-        min-height: 170px;
+        min-height: 160px;
         min-width: 150px;
         margin: auto;
         padding: 1.7rem 1.2rem;
@@ -700,10 +713,10 @@ export default {
         box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
         .txt {
             margin-left: 1rem;
-            margin-top: 6rem;
+            margin-top: 7rem;
             z-index: 1;
             h1 {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: 300;
                 text-transform: uppercase;
             }
@@ -826,7 +839,7 @@ export default {
     }
     ///end product
 }
-@media (min-width: 368px) and (max-width: 598.99px) {
+@media (min-width: 368px) and (max-width: 510px) {
     ///start details store///
     .border1 {
         position: relative;
@@ -857,7 +870,7 @@ export default {
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
     }
-    .drop{
+    .drop {
         position: absolute;
         bottom: 5px;
         // width: 100%;
@@ -866,25 +879,25 @@ export default {
         background: rgb(199, 175, 39);
         justify-content: center;
     }
-    .drop i{
+    .drop i {
         display: block;
         cursor: pointer;
         font-size: 1.8rem;
         // color: rgb(204, 204, 204,0.179);
         transition: all 0.8s ease-in-out;
     }
-    .drop i:hover{
+    .drop i:hover {
         color: rgb(134, 133, 133);
     }
-    .drop-active{
+    .drop-active {
         height: 350px !important;
         justify-content: center;
         margin-left: 30%;
     }
-    .drop-rotate{
+    .drop-rotate {
         transform: rotate(180deg);
     }
-    .hr{
+    .hr {
         display: none;
     }
     .isActive {
@@ -893,16 +906,13 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 3vh;
+        font-size: 4vh;
         background-color: rgb(144, 148, 147);
         margin-left: 250px;
         border: 2px solid rgb(144, 148, 147);
     }
     .icons {
         display: inline;
-        margin-top: 20px;
-    }
-    .socail-menu {
         margin-top: 20px;
     }
     .texticon {
@@ -920,6 +930,9 @@ export default {
         display: flex;
         flex-direction: column-reverse;
         transition: 0.2s ease-in-out;
+    }
+    .socail-menu {
+        margin-top: 20px;
     }
     .like {
         margin-top: 20px;
@@ -940,7 +953,7 @@ export default {
         color: red;
     }
     .followCount {
-        font-size: 3vh;
+        font-size: 4vh;
         max-width: 50px;
         text-align: center;
         margin: auto;
@@ -959,7 +972,6 @@ export default {
         display: flex;
         max-width: 150px;
         text-align: center;
-        margin: auto;
     }
     .textFollow .heart {
         width: 80px;
@@ -1007,6 +1019,7 @@ export default {
     .count {
         display: flex;
         flex-direction: column-reverse;
+        margin-bottom: 20px;
     }
     .like {
         color: #004eff;
@@ -1026,6 +1039,9 @@ export default {
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
+    }
+    .imgdiliver {
+        margin-top: 20px;
     }
     ///end details store///
     ///start slide///
@@ -1087,7 +1103,7 @@ export default {
     .naver .img::before {
         content: url('../../../../public/img/icon-button.png');
         position: absolute;
-        top: 82px;
+        top: 70%;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -1269,13 +1285,15 @@ export default {
     }
     ///end product
 }
-@media (min-width: 599px) and (max-width: 767px) {
-    ///start details store///
+@media (min-width: 511px) and (max-width: 767px) {
+   ///start details store///
     .border1 {
-        margin: auto;
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
         border-radius: 40px 0 40px 0;
         border: 2px solid rgb(236, 158, 95);
-        max-width: 90%;
+        max-width: 100%;
         height: 100%;
         background-color: #ffffff;
         box-shadow: 10px 10px 10px #f1c685;
@@ -1285,15 +1303,47 @@ export default {
         border-radius: 40px 0 40px 0;
         box-shadow: 3px 3px 3px 3px #f1c685;
     }
+    .detailssmall {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .profile {
         border-radius: 250px;
         border: 2px solid rgb(231, 179, 102);
         margin-top: 40px;
         transition: all 0.5s;
-        margin-left: 40px;
     }
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
+    }
+    .drop {
+        position: absolute;
+        bottom: 5px;
+        display: flex;
+        border-radius: 40px;
+        background: rgb(199, 175, 39);
+        justify-content: center;
+    }
+    .drop i {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        // color: rgb(204, 204, 204,0.179);
+        transition: all 0.8s ease-in-out;
+    }
+    .drop i:hover {
+        color: rgb(134, 133, 133);
+    }
+    .drop-active {
+        height: 350px !important;
+        justify-content: center;
+        margin-left: 30%;
+    }
+    .drop-rotate {
+        transform: rotate(180deg);
+    }
+    .hr {
+        display: none;
     }
     .isActive {
         padding-left: 0;
@@ -1301,34 +1351,58 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 3vh;
+        font-size: 4vh;
         background-color: rgb(144, 148, 147);
-        margin-left: 110px;
+        margin-left: 80%;
         border: 2px solid rgb(144, 148, 147);
     }
     .icons {
         display: inline;
+        margin-top: 20px;
+    }
+    .texticon {
+        margin-left: 70%;
     }
     .phone {
-        margin-left: 30px;
+        margin-left: 18%;
     }
     .telephone {
-        margin-left: 30px;
+        margin-left: 18%;
+    }
+    .bottomdetails {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column-reverse;
+        transition: 0.2s ease-in-out;
+    }
+    .socail-menu {
+        margin-top: 20px;
     }
     .like {
+        margin-top: 20px;
+        margin-bottom: 20px;
         color: #2f7cc5;
     }
     .dislike {
+        margin-top: 20px;
+        margin-bottom: 20px;
         color: #2f7cc5;
     }
     .cart {
+        margin-top: 20px;
+        margin-bottom: 20px;
         color: #2f7cc5;
     }
     .heart {
         color: red;
     }
     .followCount {
-        font-size: 3vh;
+        font-size: 6vh;
+        max-width: 80%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 20px;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
@@ -1341,7 +1415,7 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 60%;
+        max-width: 90%;
     }
     .textFollow .heart {
         width: 80px;
@@ -1350,15 +1424,15 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 30%;
-        left: 12%;
+        top: 55%;
+        left: 20%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 4vh;
-        margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 50px;
+        margin-top: 10px;
+        margin-left: 50%;
         color: grey;
     }
     .heart.heart-active {
@@ -1380,21 +1454,17 @@ export default {
     .follow.heart-active {
         color: black;
     }
-    .textcount {
-        margin-left: 10px;
-        font-size: 12px;
+    .followCount {
+        font-size: 3vh;
         margin-top: 20px;
+        border-radius: 6px 0 6px 0;
+        background-color: rgb(199, 175, 39);
+        border: 2px solid rgb(199, 175, 39);
     }
-    .drop{
-        display: none;
-    }
-    .rowimg {
+    .count {
         display: flex;
         flex-direction: column-reverse;
-    }
-    .likecount {
-        display: flex;
-        flex-direction: column-reverse;
+        margin-bottom: 20px;
     }
     .like {
         color: #004eff;
@@ -1405,7 +1475,6 @@ export default {
         cursor: pointer;
     }
     .like:active {
-        /* content:'\f164'; */
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
@@ -1414,6 +1483,9 @@ export default {
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
+    }
+    .imgdiliver {
+        margin-top: 20px;
     }
     ///end details store///
     ///start slide///
@@ -1684,7 +1756,7 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 3vh;
+        font-size: 4vh;
         background-color: rgb(144, 148, 147);
         margin-left: 110px;
         border: 2px solid rgb(144, 148, 147);
@@ -1714,7 +1786,7 @@ export default {
         color: red;
     }
     .followCount {
-        font-size: 3vh;
+        font-size: 4vh;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
@@ -1726,9 +1798,6 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
-    .drop{
-        display: none;
-    }
     .likecount {
         margin-right: 20px;
         display: flex;
@@ -1739,8 +1808,8 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 50%;
-        margin-left: 40px;
+        max-width: 60%;
+        margin-left: 80px;
     }
     .textFollow .heart {
         width: 80px;
@@ -1750,14 +1819,14 @@ export default {
         background-size: 2900%;
         position: absolute;
         top: 28%;
-        left: 25%;
+        left: 35%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 4vh;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 70px;
+        margin-left: 50%;
         color: grey;
     }
     .heart.heart-active {
@@ -1800,6 +1869,9 @@ export default {
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
+    }
+    .drop{
+        display: none;
     }
     ///end details store///
     ///start slide///
@@ -2068,7 +2140,7 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 2.5vh;
+        font-size: 4vh;
         background-color: rgb(144, 148, 147);
         margin-left: 100px;
         border: 2px solid rgb(144, 148, 147);
@@ -2096,7 +2168,7 @@ export default {
         color: red;
     }
     .followCount {
-        font-size: 3vh;
+        font-size: 4vh;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
@@ -2108,7 +2180,7 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
-    .drop{
+    .drop {
         display: none;
     }
     .likecount {
@@ -2121,9 +2193,12 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 30%;
-        margin-left: 160px;
-        // margin-right: 10px;
+        max-width: 40%;
+        justify-content: center;
+        margin-left: 180px;
+        // margin-right: 20px;
+        // left:20%;
+        // right: 20%;
     }
     .textFollow .heart {
         width: 80px;
@@ -2132,8 +2207,8 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top:30%;
-        left: 38%;
+        top: 30%;
+        left: 40%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -2445,7 +2520,7 @@ export default {
     .textRight {
         border-radius: 6px 0 0 6px;
         margin-right: 0;
-        font-size: 2.5vh;
+        font-size: 4vh;
         background-color: rgb(144, 148, 147);
         margin-left: 150px;
         border: 2px solid rgb(144, 148, 147);
@@ -2490,13 +2565,13 @@ export default {
         color: red;
     }
     .followCount {
-        font-size: 3vh;
+        font-size: 4vh;
         margin-top: 20px;
         border-radius: 6px 0 6px 0;
         background-color: rgb(199, 175, 39);
         border: 2px solid rgb(199, 175, 39);
     }
-    .drop{
+    .drop {
         display: none;
     }
     .count {
@@ -2512,8 +2587,8 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 50%;
-        margin-left: 40px;
+        max-width: 80%;
+        margin-left: 10px;
     }
     .textFollow .heart {
         width: 90px;
@@ -2522,15 +2597,15 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 50%;
-        left: 17%;
+        top: 40%;
+        left: 18%;
         transform: translate(-30%, -55%);
     }
     .follow {
         font-size: 4vh;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 60px;
+        margin-left: 40%;
         color: grey;
     }
     .heart.heart-active {
