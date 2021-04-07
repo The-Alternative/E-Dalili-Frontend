@@ -53,7 +53,7 @@
                 class="col-sm-12 detailssmall"
                 style="display: flex; padding: 0;"
             >
-                <div class="col-lg-3 col-sm-12 datedetails">
+                <div class="col-lg-3 datedetails">
                     <img
                         class="isActive mt-4"
                         src="../../../../public/img/open.png"
@@ -536,6 +536,7 @@ export default {
     .follow {
         font-size: 3vh;
         margin-bottom: 10px;
+        margin-top: 10px;
         margin-left: 40px;
         color: grey;
     }
@@ -651,7 +652,7 @@ export default {
     .naver .img::before {
         content: url('../../../../public/img/icon-button.png');
         position: absolute;
-        top: 160px;
+        top: 68%;
     }
     .naver .row .sell {
         color: #f6ef19;
@@ -673,8 +674,8 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        right:10%;
-        left:10%;
+        right: 10%;
+        left: 10%;
         width: 100%;
         position: relative;
         top: 50%;
@@ -985,7 +986,8 @@ export default {
         transform: translate(-30%, -55%);
     }
     .follow {
-        font-size: 3vh;
+        font-size: 4vh;
+        margin-top:10px;
         margin-bottom: 10px;
         margin-left: 60px;
         color: grey;
@@ -1286,7 +1288,7 @@ export default {
     ///end product
 }
 @media (min-width: 511px) and (max-width: 767px) {
-   ///start details store///
+    ///start details store///
     .border1 {
         position: relative;
         overflow: hidden;
@@ -1341,6 +1343,10 @@ export default {
     }
     .drop-rotate {
         transform: rotate(180deg);
+    }
+    .description{
+        right:10%;
+        left:10%;
     }
     .hr {
         display: none;
@@ -1424,7 +1430,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 55%;
+        top: 60%;
         left: 20%;
         transform: translate(-30%, -55%);
     }
@@ -1487,6 +1493,7 @@ export default {
     .imgdiliver {
         margin-top: 20px;
     }
+    
     ///end details store///
     ///start slide///
     .carouselSlide {
@@ -1737,7 +1744,7 @@ export default {
         box-shadow: 3px 3px 3px 3px #f1c685;
     }
     .profile {
-        margin-left: 50px;
+        // margin-left: 50px;
         border-radius: 250px;
         border: 2px solid rgb(231, 179, 102);
         margin-top: 40px;
@@ -1747,9 +1754,9 @@ export default {
     .profile:hover {
         transform: scale3d(1.05, 1.05, 3);
     }
-    .title-profile {
-        margin-left: 30px;
-    }
+    // .title-profile {
+    //     // margin-left: 30px;
+    // }
     .isActive {
         padding-left: 0;
     }
@@ -1818,8 +1825,8 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 28%;
-        left: 35%;
+        top: 30%;
+        left: 30%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -1870,7 +1877,7 @@ export default {
         background-color: #004eff;
         transform: scale(1.2);
     }
-    .drop{
+    .drop {
         display: none;
     }
     ///end details store///
@@ -2195,10 +2202,7 @@ export default {
         display: flex;
         max-width: 40%;
         justify-content: center;
-        margin-left: 180px;
-        // margin-right: 20px;
-        // left:20%;
-        // right: 20%;
+        margin-left: 170px;
     }
     .textFollow .heart {
         width: 80px;
