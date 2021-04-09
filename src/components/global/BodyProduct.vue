@@ -34,14 +34,14 @@
                         <i class="fa fa-shopping-cart"></i>
                     </button>
                 </div>
-                <div @click="heartlike()" id="heart" class="heart"></div>
+                <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
             </div>
         </div>
     </div>
 </template>
-
 <script>
 export default {
+    
     name: 'Products',
     props: ['id', 'title', 'description', 'price', 'image'],
     data() {
@@ -58,8 +58,8 @@ export default {
         goto: function(i, t, d, p) {
             this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
         },
-        heartlike: function() {
-            this.$el.lastChild.lastChild.lastChild.classList.toggle(
+        heartlike: function() {      
+            this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle(
                 'is-active'
             );
         },
@@ -203,6 +203,16 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.heart-conten{
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin:10px auto;
+}
+.content-pro .heart-conten:hover {
+    background-color: #d3b85f;
+}
 .heart {
     width: 80px;
     height: 100px;
@@ -211,7 +221,7 @@ export default {
     cursor: pointer;
     transition: background-position 1s steps(28);
     transition-duration: 0s;
-    margin: auto;
+    margin: -22px 0px 0 -25px;
 
     &.is-active {
         transition-duration: 1s;
