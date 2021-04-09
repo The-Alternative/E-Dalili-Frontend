@@ -186,7 +186,7 @@ export default {
     width: 50px;
     height: 50px;
     background-color: #73a580;
-    padding: 15px 10px;
+    padding: 13px 10px;
     border-radius: 50%;
     z-index: 999;
 }

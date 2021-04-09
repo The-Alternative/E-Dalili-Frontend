@@ -611,7 +611,7 @@ export default {
     cursor: pointer;
 }
 .jumbotron .featuers {
-    width: 800px;
+    width: 890px;
     margin: auto;
     margin-top: 410px;
     background-color: #bfc0c2;
