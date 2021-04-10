@@ -122,7 +122,7 @@ export default {
         margin-top: 12rem;
         z-index: 1;
         h1 {
-            font-size:16px;
+            font-size:18px;
             font-weight: 300;
             text-transform: uppercase;
         }
