@@ -2728,7 +2728,6 @@ export default {
         cursor: pointer;
     }
     .like:active {
-        /* content:'\f164'; */
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
@@ -2909,9 +2908,6 @@ export default {
         background-color: #fefefe;
         margin: 20px 20px 20px 20px;
         border-radius: 10px;
-        // border-color: #000;
-        // border: 1px solid black;
-        // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end card categories///
     ///start brand///
@@ -2962,10 +2958,9 @@ export default {
         margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
-        // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store//////
+                                    //start visiter store//
     .visiter ul{
         list-style: none;
         margin: 0;
