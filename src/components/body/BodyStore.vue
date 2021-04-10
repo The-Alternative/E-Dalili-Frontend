@@ -54,62 +54,64 @@
                         </div>
                     </div>
                 </div>
-                <div class="drop" id="drop-active" @click="dropactive()">
+                <!-- <div class="drop" id="drop-active" @click="dropactive()">
                     <i class="fa fa-angle-down"></i>
-                </div>
+                </div> -->
 
-                <div class="descripation" id="descripation">
-                    <div class="card-footer" id="card-footer">
-                        <ul class="flex-row d-inline-flex">
-                            <li class="categorystore">
-                                {{ store.categories }}
-                            </li>
-                        </ul>
-                        <div class="col">
-                            <div class="row img-button">
-                                <div class="col">
-                                    <img
+                <!-- <div class="descripation" id="descripation"> -->
+                <div class="card-footer" id="card-footer">
+                    <ul class="flex-row d-inline-flex">
+                        <li class="categorystore">
+                            {{ store.categories }}
+                        </li>
+                    </ul>
+                    <div class="col">
+                        <div class="row img-button">
+                            <div class="col dileversmall">
+                                <span class="span"
+                                    ><img
                                         class="Group"
                                         src="../../../public/img/Group.png"
                                         height="20"
-                                    />
-                                    <img
+                                /></span>
+                                <span class="span"
+                                    ><img
                                         class="MaskGroup"
                                         src="../../../public/img/MaskGroup.png"
                                         height="20"
-                                    />
-                                </div>
-                                <div class="col">
-                                    <button
-                                        type="button"
-                                        class="btn"
-                                        @click="
-                                            gotoview(
-                                                store.id,
-                                                store.title,
-                                                store.phonenumber,
-                                                store.mobilephone,
-                                                store.workDays,
-                                                store.startTime,
-                                                store.endTime,
-                                                store.address
-                                            )
-                                        "
-                                    >
-                                        <b class="">{{ $t('visit') }}</b>
-                                    </button>
-                                </div>
-                                <div class="col team-social">
-                                    <div class="row">
-                                        <location-store></location-store>
-                                        <phone-store></phone-store>
-                                        <whatsapp-store></whatsapp-store>
-                                    </div>
+                                /></span>
+                            </div>
+                            <div class="col btnsmall">
+                                <button
+                                    type="button"
+                                    class="btn"
+                                    @click="
+                                        gotoview(
+                                            store.id,
+                                            store.title,
+                                            store.phonenumber,
+                                            store.mobilephone,
+                                            store.workDays,
+                                            store.startTime,
+                                            store.endTime,
+                                            store.address
+                                        )
+                                    "
+                                >
+                                    <b class="">{{ $t('visit') }}</b>
+                                </button>
+                            </div>
+                            <div class="col team-social">
+                                <div class="row">
+                                    <location-store></location-store>
+                                    <phone-store></phone-store>
+                                    <whatsapp-store></whatsapp-store>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- </div> -->
             </div>
         </div>
 
@@ -121,7 +123,7 @@
         </span>
 
         <div
-            class="card col-lg-3 mr-4 col-md-3 col-sm-4 col-xs-4 mb-4  categores"
+            class="card col-lg-3 mr-4 col-md-3 col-sm-4 col-xs-4 mb-4 categores"
             id="menu"
         >
             <div class="backdrop"></div>
@@ -197,7 +199,7 @@
                             @click="rate = item + rate"
                             v-for="item in 5 - rate"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
@@ -213,7 +215,7 @@
                             @click="rate = item + rate"
                             v-for="item in 4 - rate"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
@@ -229,7 +231,7 @@
                             @click="rate = item + rate"
                             v-for="item in 3 - rate"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
@@ -245,7 +247,7 @@
                             @click="rate = item + rate"
                             v-for="item in 2 - rate"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
@@ -261,7 +263,7 @@
                             @click="rate = item + rate"
                             v-for="item in 1 - rate"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
@@ -273,9 +275,9 @@
 <script>
 export default {
     components: {
-        WhatsappStore:()=>import('@/components/body/whatsapp-store.vue'),
-        PhoneStore:()=>import('@/components/body/phone-store'),
-        LocationStore:()=>import('@/components/body/location-store')
+        WhatsappStore: () => import('@/components/body/whatsapp-store.vue'),
+        PhoneStore: () => import('@/components/body/phone-store'),
+        LocationStore: () => import('@/components/body/location-store'),
     },
     props: [
         'id',
@@ -301,13 +303,13 @@ export default {
         categories() {
             return this.$store.state.Categories;
         },
-        activeStores: function() {
+        activeStores: function () {
             if (this.selectedCategory.length == 0)
                 return this.$store.state.stores;
             var activeStores = [];
             var filters = this.selectedCategory;
 
-            this.$store.state.stores.forEach(function(store) {
+            this.$store.state.stores.forEach(function (store) {
                 function storeContainsFilter(filter) {
                     return store.categories.indexOf(filter) != -1;
                 }
@@ -319,19 +321,19 @@ export default {
         },
     },
     methods: {
-        btnbar: function() {
+        btnbar: function () {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        dropactive: function() {
-            document
-                .getElementById('drop-active')
-                .classList.toggle('drop-rotate');
-            document
-                .getElementById('descripation')
-                .classList.toggle('drop-active');
-        },
-        gotoview: function(i, t, p, m, w, s, e, a) {
+        // dropactive: function() {
+        //     document
+        //         .getElementById('drop-active')
+        //         .classList.toggle('drop-rotate');
+        //     document
+        //         .getElementById('descripation')
+        //         .classList.toggle('drop-active');
+        // },
+        gotoview: function (i, t, p, m, w, s, e, a) {
             this.$router.push(
                 `visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`
             );
@@ -450,10 +452,34 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
-    .img-button {
-        display: flex;
-        flex-direction: column;
+    .team-social {
+        position: absolute;
+        bottom: -20px;
+        left: 30%;
+        /* display: flex;
+        flex-direction: row; */
     }
+    .dileversmall {
+        position: absolute;
+        bottom: -20px;
+        right: 30%;
+    }
+    .span {
+        color: #fefefe;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        margin: 0 5px;
+        background: #abc8d1;
+        transition: all 0.3s linear;
+        border-radius: 50%;
+        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
+    }
+    /* .img-button {
+        display: flex;
+        flex-direction: column-reverse;
+    } */
     .divtitle {
         display: block;
     }
@@ -501,7 +527,8 @@ export default {
     .stors {
         width: 100%;
     }
-    .team-social {
+    /* ///////////////////////////////////// */
+    /* .team-social {
         position: absolute;
         bottom: -20px;
         right: 0;
@@ -519,7 +546,7 @@ export default {
         background: #abc8d1;
         text-align: center;
         align-items: center;
-        /* justify-content: center; */
+        justify-content: center;
     }
     .drop i {
         display: block;
@@ -544,7 +571,7 @@ export default {
         right: 10%;
         z-index: 1;
         transition: 0.2s ease-in-out;
-    }
+    } */
 }
 @media (min-width: 468px) and (max-width: 598.99px) {
     .btn {
@@ -602,7 +629,7 @@ export default {
     .star-right3 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left:90px;
+        margin-left: 90px;
     }
     .star-right4 {
         margin-top: 8px;
