@@ -319,6 +319,19 @@
                 </BodyProductStore>
             </div>
         </div>
+        <!-- visit store -->
+        <div class="col-lg-12 col-md-3 col-sm-6 mb-5 mt-5 visiter text-cnter">
+            <ul>
+                الزیارات
+                <br />
+                <li>0</li>
+                <li>0</li>
+                <li>1</li>
+                <li>4</li>
+                <li>7</li>
+                <li>9</li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -987,7 +1000,7 @@ export default {
     }
     .follow {
         font-size: 4vh;
-        margin-top:10px;
+        margin-top: 10px;
         margin-bottom: 10px;
         margin-left: 60px;
         color: grey;
@@ -1344,9 +1357,9 @@ export default {
     .drop-rotate {
         transform: rotate(180deg);
     }
-    .description{
-        right:10%;
-        left:10%;
+    .description {
+        right: 10%;
+        left: 10%;
     }
     .hr {
         display: none;
@@ -1493,7 +1506,7 @@ export default {
     .imgdiliver {
         margin-top: 20px;
     }
-    
+
     ///end details store///
     ///start slide///
     .carouselSlide {
@@ -2821,7 +2834,9 @@ export default {
         background-color: #fefefe;
         margin: 20px 20px 20px 20px;
         border-radius: 10px;
-        box-shadow: 3px 3px 3px 3px #c2bdbd;
+        // border-color: #000;
+        // border: 1px solid black;
+        // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end card categories///
     ///start brand///
@@ -2872,8 +2887,22 @@ export default {
         margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
-        box-shadow: 3px 3px 3px 3px #c2bdbd;
+        // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    .visiter ul{
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li{
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+
+    }
 }
 </style>
