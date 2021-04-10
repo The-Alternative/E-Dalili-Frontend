@@ -2965,7 +2965,7 @@ export default {
         // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store///
+                                    //start visiter store//////
     .visiter ul{
         list-style: none;
         margin: 0;
