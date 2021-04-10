@@ -320,7 +320,7 @@
             </div>
         </div>
         <!-- visit store -->
-        <div class="col-lg-12 col-md-3 col-sm-6 mb-5 mt-5 visiter text-cnter">
+        <div class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center">
             <ul>
                 الزیارات
                 <br />
@@ -852,6 +852,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+                                    //start visiter store///
+    .visiter ul{
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li{
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 368px) and (max-width: 510px) {
     ///start details store///
@@ -1299,6 +1314,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+                                    //start visiter store///
+    .visiter ul{
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li{
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 511px) and (max-width: 767px) {
     ///start details store///
@@ -1434,7 +1464,7 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 90%;
+        max-width: 100%;
     }
     .textFollow .heart {
         width: 80px;
@@ -1739,6 +1769,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+                                    //start visiter store///
+    .visiter ul{
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li{
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     ///start details store///
@@ -2128,6 +2173,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+                                    //start visiter store///
+    .visiter ul{
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li{
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     ///start details store///
@@ -2505,6 +2565,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+                                    //start visiter store///
+    .visiter ul{
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li{
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 1200px) {
     ///start details store///
@@ -2653,7 +2728,6 @@ export default {
         cursor: pointer;
     }
     .like:active {
-        /* content:'\f164'; */
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
@@ -2834,9 +2908,6 @@ export default {
         background-color: #fefefe;
         margin: 20px 20px 20px 20px;
         border-radius: 10px;
-        // border-color: #000;
-        // border: 1px solid black;
-        // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end card categories///
     ///start brand///
@@ -2887,9 +2958,9 @@ export default {
         margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
-        // box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+                                    //start visiter store//
     .visiter ul{
         list-style: none;
         margin: 0;
@@ -2902,7 +2973,7 @@ export default {
         margin: 0.5vh;
         background-color: #aca6a6;
         border-radius: 10px;
-
     }
+    //end visiter store
 }
 </style>
