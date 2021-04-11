@@ -62,10 +62,7 @@
                     <div class="mt-4">{{ workDays }}</div>
                     <div class="mt-3 row">
                         <div class="row">
-                            <div class="mr-2">{{ endTime }}</div>
-                        </div>
-                        <div class="row">
-                            <div>{{ startTime }}</div>
+                            <div class="mr-2">{{ workingHours }}</div>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -347,8 +344,7 @@ export default {
         'phonenumber',
         'mobilephone',
         'workDays',
-        'startTime',
-        'endTime',
+        'workingHours',
         'address',
     ],
     data() {
