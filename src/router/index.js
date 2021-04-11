@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 const routes = [
     {
         path:
-            '/visitStore/:id/:title/:phonenumber/:mobilephone/:workDays/:startTime/:endTime/:address',
+            '/visitStore/:id/:title/:phonenumber/:mobilephone/:workDays/:workingHours/:address',
         name: 'visitStore',
         component: () => import('../components/body/pages/visitStore'),
         props: true,

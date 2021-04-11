@@ -29,15 +29,15 @@
                                 <div class="title">{{ store.title }}</div>
                                 <div class="stars text-right">
                                     <span
-                                        @click="store.rate = item"
-                                        v-for="item in parseInt(store.rate)"
+                                        @click="store.rating = item"
+                                        v-for="item in parseInt(store.rating)"
                                         :key="item"
                                         class="fa fa-star"
                                         aria-hidden="true"
                                     ></span>
                                     <span
-                                        @click="store.rate = item + store.rate"
-                                        v-for="item in 5 - store.rate"
+                                        @click="store.rating = item + store.rating"
+                                        v-for="item in 5 - store.rating"
                                         :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
@@ -92,8 +92,7 @@
                                             store.phonenumber,
                                             store.mobilephone,
                                             store.workDays,
-                                            store.startTime,
-                                            store.endTime,
+                                            store.workingHours,
                                             store.address
                                         )
                                     "
@@ -189,15 +188,15 @@
                 <div class="checklist stars">
                     <div class="row star-right">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 5 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 5 - rating"
                             :key="item"
                             class="far fa-star"
                             aria-hidden="true"
@@ -205,15 +204,15 @@
                     </div>
                     <div class="row star-right2">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 4 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 4 - rating"
                             :key="item"
                             class="far fa-star"
                             aria-hidden="true"
@@ -221,15 +220,15 @@
                     </div>
                     <div class="row star-right3">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 3 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 3 - rating"
                             :key="item"
                             class="far fa-star"
                             aria-hidden="true"
@@ -237,15 +236,15 @@
                     </div>
                     <div class="row star-right4">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 2 - rate"
+                            @click="rating = item + rate"
+                            v-for="item in 2 - rating"
                             :key="item"
                             class="far fa-star"
                             aria-hidden="true"
@@ -253,15 +252,15 @@
                     </div>
                     <div class="row star-right5">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 1 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 1 - rating"
                             :key="item"
                             class="far fa-star"
                             aria-hidden="true"
@@ -285,14 +284,13 @@ export default {
         'phonenumber',
         'mobilephone',
         'workDays',
-        'startTime',
-        'endTime',
+        'workingHours',
         'address',
     ],
 
     data() {
         return {
-            rate: 0,
+            rating: 0,
             selectedCategory: [],
         };
     },
@@ -333,9 +331,9 @@ export default {
         //         .getElementById('descripation')
         //         .classList.toggle('drop-active');
         // },
-        gotoview: function (i, t, p, m, w, s, e, a) {
+        gotoview: function (i, t, p, m, w, h, a) {
             this.$router.push(
-                `visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`
+                `visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`
             );
         },
     },
