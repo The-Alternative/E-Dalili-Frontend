@@ -317,7 +317,9 @@
             </div>
         </div>
         <!-- visit store -->
-        <div class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center">
+        <div
+            class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"
+        >
             <ul>
                 الزیارات
                 <br />
@@ -371,14 +373,14 @@ export default {
         },
     },
     methods: {
-        heart: function () {
+        heart: function() {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function () {
+        dropactive: function() {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -386,7 +388,7 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function () {
+        likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
         gotodetails(i, t, d, p) {
@@ -527,9 +529,11 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 100px;
+        max-width: 100%;
         text-align: center;
         margin: auto;
+        align-items: center;
+        justify-content: center;
     }
     .textFollow .heart {
         width: 70px;
@@ -848,13 +852,13 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store///
-    .visiter ul{
+    //start visiter store///
+    .visiter ul {
         list-style: none;
         margin: 0;
         font-size: 18px;
     }
-    .visiter li{
+    .visiter li {
         width: 15px;
         height: 29px;
         display: inline-block;
@@ -1310,13 +1314,13 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store///
-    .visiter ul{
+    //start visiter store///
+    .visiter ul {
         list-style: none;
         margin: 0;
         font-size: 18px;
     }
-    .visiter li{
+    .visiter li {
         width: 15px;
         height: 29px;
         display: inline-block;
@@ -1765,13 +1769,13 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store///
-    .visiter ul{
+    //start visiter store///
+    .visiter ul {
         list-style: none;
         margin: 0;
         font-size: 18px;
     }
-    .visiter li{
+    .visiter li {
         width: 15px;
         height: 29px;
         display: inline-block;
@@ -2169,13 +2173,13 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store///
-    .visiter ul{
+    //start visiter store///
+    .visiter ul {
         list-style: none;
         margin: 0;
         font-size: 18px;
     }
-    .visiter li{
+    .visiter li {
         width: 15px;
         height: 29px;
         display: inline-block;
@@ -2561,13 +2565,13 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
-                                    //start visiter store///
-    .visiter ul{
+    //start visiter store///
+    .visiter ul {
         list-style: none;
         margin: 0;
         font-size: 18px;
     }
-    .visiter li{
+    .visiter li {
         width: 15px;
         height: 29px;
         display: inline-block;
@@ -2956,13 +2960,13 @@ export default {
         border-radius: 10px;
     }
     ///end product
-                                    //start visiter store//
-    .visiter ul{
+    //start visiter store//
+    .visiter ul {
         list-style: none;
         margin: 0;
         font-size: 18px;
     }
-    .visiter li{
+    .visiter li {
         width: 15px;
         height: 29px;
         display: inline-block;

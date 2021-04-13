@@ -14,16 +14,13 @@ export default {
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
-  .span{
+    .span {
         color: #fefefe;
-        display:inline-block;
+        display: inline-block;
         width: 25px;
         height: 25px;
         line-height: 25px;
-        background: #abc8d1;
         transition: all 0.3s linear;
-        border-radius: 50%;
-        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
     }
     .whatsapp {
         color: #000000;
@@ -34,9 +31,9 @@ export default {
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
-  .span{
+    .span {
         color: #fefefe;
-        display:inline-block;
+        display: inline-block;
         width: 25px;
         height: 25px;
         line-height: 25px;
