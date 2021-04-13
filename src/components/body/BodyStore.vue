@@ -7,11 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div
-                class="store mb-4"
-                v-for="store in activeStores"
-                :key="store.id"
-            >
+            <div class="store mb-4" v-for="store in stores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -269,6 +265,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
     components: {
         WhatsappStore: () => import('@/components/body/whatsapp-store.vue'),
@@ -284,36 +281,36 @@ export default {
         'workingHours',
         'address',
     ],
-
     data() {
         return {
+            stores: [],
             rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        stores() {
-            return this.$store.state.stores;
-        },
+        // stores() {
+        //     return this.$store.state.stores;
+        // },
         categories() {
             return this.$store.state.Categories;
         },
-        activeStores: function() {
-            if (this.selectedCategory.length == 0)
-                return this.$store.state.stores;
-            var activeStores = [];
-            var filters = this.selectedCategory;
-
-            this.$store.state.stores.forEach(function(store) {
-                function storeContainsFilter(filter) {
-                    return store.categories.indexOf(filter) != -1;
-                }
-                if (filters.every(storeContainsFilter)) {
-                    activeStores.push(store);
-                }
-            });
-            return activeStores;
-        },
+        // activeStores: function() {
+        //     if (this.selectedCategory.length == 0)
+        //         return this.$store.state.stores;
+        //     var activeStores = [];
+        //     var filters = this.selectedCategory;
+        //
+        //     this.$store.state.stores.forEach(function(store) {
+        //         function storeContainsFilter(filter) {
+        //             return store.categories.indexOf(filter) != -1;
+        //         }
+        //         if (filters.every(storeContainsFilter)) {
+        //             activeStores.push(store);
+        //         }
+        //     });
+        //     return activeStores;
+        // },
     },
     methods: {
         btnbar: function() {
@@ -323,6 +320,20 @@ export default {
         gotoview: function(i, t, p, m, w, h, a) {
             this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
         },
+    },
+    mounted() {
+        axios
+            .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+            .then(function(res) {
+                console.log('Data: ', res.data);
+            })
+            .catch(function(error) {
+                console.log('Error: ', error);
+            });
+
+        // then((response) => {
+        //     this.stores = response.data;
+        // });
     },
 };
 </script>

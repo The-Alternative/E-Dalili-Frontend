@@ -196,7 +196,6 @@ export default {
                 description: this.description,
                 price: this.price,
             },
-            urll: 'http://edalili.e-dalely.com',
             cities: jeson[0].cities,
             governorates: jeson[0].governorates,
             streets: jeson[0].streets,
@@ -824,14 +823,14 @@ export default {
 
 /* Extra small devices (portrait phones, less than 576px)   */
 
-    @media (min-width: 520px) and (max-width: 576.98px) {
-.naver .img::before {
-    top: 38px;
-    right: 358px;
-}
+@media (min-width: 520px) and (max-width: 576.98px) {
+    .naver .img::before {
+        top: 38px;
+        right: 358px;
     }
-   
-    @media (max-width: 575.98px){
+}
+
+@media (max-width: 575.98px) {
     .naver .row .btn-light {
         width: 85px;
         height: 29px;
@@ -843,9 +842,9 @@ export default {
         font-size: 11px;
     }
     .naver .img::before {
-    top: 38px;
+        top: 38px;
     }
-  
+
     .naver .row .products {
         width: 60px;
     }
@@ -853,24 +852,21 @@ export default {
         width: 90px;
     }
 }
- @media (min-width: 330px) and (max-width: 414.98px) {
+@media (min-width: 330px) and (max-width: 414.98px) {
     .naver .img::before {
-    top: 77px;
+        top: 77px;
     }
-  
-    }
-    @media (max-width: 329.98px){
+}
+@media (max-width: 329.98px) {
     .naver .img::before {
-    top: 77px;
+        top: 77px;
     }
-  
-    }
-    @media (max-width: 314.98px){
+}
+@media (max-width: 314.98px) {
     .naver .img::before {
-    top: 116px;
+        top: 116px;
     }
-  
-    }
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .naver .row .btn-light {
@@ -903,7 +899,6 @@ export default {
     }
     .naver .img::before {
         top: 38px;
-
     }
     .naver .row .products {
         width: 60px;
