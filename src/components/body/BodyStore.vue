@@ -1,5 +1,5 @@
 <template>
-    <!--  all coulome body  -->
+    <!--  all colume body  -->
     <div
         class="card-group col-sm-12 wrapper"
         id="wrapper"
@@ -36,7 +36,9 @@
                                         aria-hidden="true"
                                     ></span>
                                     <span
-                                        @click="store.rating = item + store.rating"
+                                        @click="
+                                            store.rating = item + store.rating
+                                        "
                                         v-for="item in 5 - store.rating"
                                         :key="item"
                                         class="far fa-star"
@@ -54,11 +56,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="drop" id="drop-active" @click="dropactive()">
-                    <i class="fa fa-angle-down"></i>
-                </div> -->
-
-                <!-- <div class="descripation" id="descripation"> -->
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
@@ -301,13 +298,13 @@ export default {
         categories() {
             return this.$store.state.Categories;
         },
-        activeStores: function () {
+        activeStores: function() {
             if (this.selectedCategory.length == 0)
                 return this.$store.state.stores;
             var activeStores = [];
             var filters = this.selectedCategory;
 
-            this.$store.state.stores.forEach(function (store) {
+            this.$store.state.stores.forEach(function(store) {
                 function storeContainsFilter(filter) {
                     return store.categories.indexOf(filter) != -1;
                 }
@@ -319,22 +316,12 @@ export default {
         },
     },
     methods: {
-        btnbar: function () {
+        btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        // dropactive: function() {
-        //     document
-        //         .getElementById('drop-active')
-        //         .classList.toggle('drop-rotate');
-        //     document
-        //         .getElementById('descripation')
-        //         .classList.toggle('drop-active');
-        // },
-        gotoview: function (i, t, p, m, w, h, a) {
-            this.$router.push(
-                `visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`
-            );
+        gotoview: function(i, t, p, m, w, h, a) {
+            this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
         },
     },
 };
@@ -348,7 +335,7 @@ export default {
         height: 30px;
         width: 100%;
         margin-top: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
     .checked-all {
         font-size: 10px;
@@ -452,14 +439,12 @@ export default {
     }
     .team-social {
         position: absolute;
-        bottom: -20px;
+        bottom: 10px;
         left: 30%;
-        /* display: flex;
-        flex-direction: row; */
     }
     .dileversmall {
         position: absolute;
-        bottom: -20px;
+        bottom: 10px;
         right: 30%;
     }
     .span {
@@ -469,15 +454,8 @@ export default {
         height: 25px;
         line-height: 25px;
         margin: 0 5px;
-        background: #abc8d1;
         transition: all 0.3s linear;
-        border-radius: 50%;
-        box-shadow: 5px 5px 18px 0 rgba(21, 183, 236, 0.3);
     }
-    /* .img-button {
-        display: flex;
-        flex-direction: column-reverse;
-    } */
     .divtitle {
         display: block;
     }
@@ -525,51 +503,6 @@ export default {
     .stors {
         width: 100%;
     }
-    /* ///////////////////////////////////// */
-    /* .team-social {
-        position: absolute;
-        bottom: -20px;
-        right: 0;
-        width: 100%;
-    }
-    .store {
-        position: relative;
-        overflow: hidden;
-    }
-    .drop {
-        position: absolute;
-        bottom: 5px;
-        display: flex;
-        border-radius: 40px;
-        background: #abc8d1;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-    .drop i {
-        display: block;
-        cursor: pointer;
-        font-size: 1.8rem;
-        transition: all 0.9s ease-in-out;
-        color: rgb(19, 18, 18);
-    }
-    .drop i:hover {
-        color: rgb(112, 108, 108);
-    }
-    .drop-active {
-        height: 230px !important;
-        text-align: center;
-    }
-    .drop-rotate {
-        transform: rotate(180deg);
-    }
-    .card-footer {
-        position: absolute;
-        left: 10%;
-        right: 10%;
-        z-index: 1;
-        transition: 0.2s ease-in-out;
-    } */
 }
 @media (min-width: 468px) and (max-width: 598.99px) {
     .btn {
@@ -1100,9 +1033,6 @@ export default {
     .DIV1 {
         display: flex;
     }
-    .drop {
-        display: none;
-    }
 }
 @media (min-width: 1200px) {
     .menu {
@@ -1138,9 +1068,6 @@ export default {
     .img-button {
         margin-top: 30px;
     }
-    /* .Group {
-        margin-left: 10px;
-    } */
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
@@ -1186,9 +1113,6 @@ export default {
         margin-top: 10px;
         margin-right: 10px;
     }
-    /* .MaskGroup {
-        margin-right: 140px;
-    } */
     .slide {
         display: none;
     }
@@ -1201,8 +1125,11 @@ export default {
     .DIV1 {
         display: flex;
     }
-    .drop {
-        display: none;
+    .divtitle {
+        display: inline;
+    }
+    .stars {
+        margin-right: 50px;
     }
 }
 

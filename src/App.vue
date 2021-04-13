@@ -5,7 +5,7 @@
         <transition name="view">
             <router-view />
         </transition>
-        <!-- Fotter -->
+        <!-- Footer -->
         <AppFooter />
     </div>
 </template>
