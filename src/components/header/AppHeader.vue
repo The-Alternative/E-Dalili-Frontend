@@ -66,7 +66,13 @@
                     </div>
                     <div class="col-lg-12 fet">
                         <div class="featuers" id="fut">
-                            <div>{{ $t('AddPlatform') }}</div>
+                            <div>
+                                <router-link
+                                    to="/addStore"
+                                    style="color: #635f5f;"
+                                    >{{ $t('AddPlatform') }}</router-link
+                                >
+                            </div>
                             <div @click="gotocart">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{

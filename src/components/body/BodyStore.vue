@@ -265,7 +265,10 @@
     </div>
 </template>
 <script>
+import Vue from 'vue';
 import axios from 'axios';
+import VueAxios from 'vue-axios';
+Vue.use(VueAxios, axios);
 export default {
     components: {
         WhatsappStore: () => import('@/components/body/whatsapp-store.vue'),
@@ -283,7 +286,8 @@ export default {
     ],
     data() {
         return {
-            stores: [],
+            stores: undefined,
+            viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
@@ -322,14 +326,22 @@ export default {
         },
     },
     mounted() {
-        axios
+        Vue.axios
             .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-            .then(function(res) {
-                console.log('Data: ', res.data);
+            .then((res) => {
+                console.warn(res.data);
             })
             .catch(function(error) {
                 console.log('Error: ', error);
             });
+        // axios
+        //     .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+        //     .then(function(res) {
+        //         console.log('Data: ', res);
+        //     })
+        //     .catch(function(error) {
+        //         console.log('Error: ', error);
+        //     });
 
         // then((response) => {
         //     this.stores = response.data;
