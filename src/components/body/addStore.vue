@@ -71,16 +71,16 @@ export default {
     },
     methods: {
         postDatastore(e) {
-            this.axios.post(
-                'http://edalili.e-dalely.com/public/api/stores/create',
-                this.stores
-                    .then((result) => {
-                        console.warn(result);
-                    })
-                    .catch(function(error) {
-                        console.log('Error: ', error);
-                    })
-            );
+            // this.axios.post(
+            //     'http://edalili.e-dalely.com/public/api/stores/create',
+            //     this.stores
+            //         .then((result) => {
+            //             console.warn(result);
+            //         })
+            //         .catch(function(error) {
+            //             console.log('Error: ', error);
+            //         })
+            // );
             console.warn(this.stores);
             e.preventDefault();
         },
