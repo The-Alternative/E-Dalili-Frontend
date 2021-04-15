@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in stores" :key="store.id">
+            <div class="store mb-4" v-for="store in Store" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -286,7 +286,7 @@ export default {
     ],
     data() {
         return {
-            stores: undefined,
+            Store: undefined,
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
