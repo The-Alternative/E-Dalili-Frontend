@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in stores" :key="store.id">
+            <div class="store mb-4" v-for="store in Store" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -18,13 +18,13 @@
                             />
                         </div>
                         <div class="col text-muted">
-                            {{ store.space }}
+                            <!-- {{ store.space }} -->
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
                                 <div class="title">{{ store.title }}</div>
                                 <div class="stars text-right">
-                                    <span
+                                    <!-- <span
                                         @click="store.rating = item"
                                         v-for="item in parseInt(store.rating)"
                                         :key="item"
@@ -39,7 +39,7 @@
                                         :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
-                                    ></span>
+                                    ></span> -->
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
-                            {{ store.categories }}
+                            <!-- {{ store.categories }} -->
                         </li>
                     </ul>
                     <div class="col">
@@ -75,21 +75,7 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <button
-                                    type="button"
-                                    class="btn"
-                                    @click="
-                                        gotoview(
-                                            store.id,
-                                            store.title,
-                                            store.phonenumber,
-                                            store.mobilephone,
-                                            store.workDays,
-                                            store.workingHours,
-                                            store.address
-                                        )
-                                    "
-                                >
+                                <button type="button" class="btn">
                                     <b class="">{{ $t('visit') }}</b>
                                 </button>
                             </div>
@@ -103,7 +89,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
             </div>
         </div>
 
@@ -269,6 +254,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
+
 export default {
     components: {
         WhatsappStore: () => import('@/components/body/whatsapp-store.vue'),
@@ -284,9 +270,10 @@ export default {
         'workingHours',
         'address',
     ],
+
     data() {
         return {
-            stores: undefined,
+            Store: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
@@ -317,35 +304,40 @@ export default {
         // },
     },
     methods: {
-        btnbar: function() {
+        btnbar: function () {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function(i, t, p, m, w, h, a) {
+        gotoview: function (i, t, p, m, w, h, a) {
             this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
         },
+        fetch() {
+            var self = this;
+            Vue.axios
+                .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+                .then((res) => {
+                    self.Store = res.data;
+                    // self.Store = res.data;
+                    // Object.entries(Store);
+                    console.warn('Data SUCCESS: ', res.data);
+                })
+                .catch(function (error) {
+                    console.warn('------ Error ------: ', error);
+                });
+        },
+    },
+    created() {
+        this.fetch();
     },
     mounted() {
-        Vue.axios
-            .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-            .then((res) => {
-                console.warn(res.data);
-            })
-            .catch(function(error) {
-                console.log('Error: ', error);
-            });
-        // axios
+        // Vue.axios
         //     .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-        //     .then(function(res) {
-        //         console.log('Data: ', res);
+        //     .then((res) => {
+        //         console.warn(res.data);
         //     })
         //     .catch(function(error) {
         //         console.log('Error: ', error);
         //     });
-
-        // then((response) => {
-        //     this.stores = response.data;
-        // });
     },
 };
 </script>
