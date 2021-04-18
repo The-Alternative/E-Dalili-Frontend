@@ -22,7 +22,7 @@
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
-                                <div class="title">{{ store.title }}</div>
+                                <div class="title">{{ store.edalilyPoint }}</div>
                                 <div class="stars text-right">
                                     <!-- <span
                                         @click="store.rating = item"
