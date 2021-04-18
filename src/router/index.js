@@ -2,10 +2,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 /* import services */
 import home from '../views/services/home.vue';
-
 Vue.use(VueRouter);
 
 const routes = [
+    {
+        path: '/addStore',
+        name: 'addStore',
+        component: () => import('../components/body/addStore'),
+    },
     {
         path:
             '/visitStore/:id/:title/:phonenumber/:mobilephone/:workDays/:workingHours/:address',
