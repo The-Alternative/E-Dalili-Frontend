@@ -18,28 +18,28 @@
                             />
                         </div>
                         <div class="col text-muted">
-                            {{ store.space }}
+                            <!--                            {{ store.space }}-->
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
-                                <div class="title">{{ store.title }}</div>
+                                <div class="title"></div>
                                 <div class="stars text-right">
-                                    <span
-                                        @click="store.rating = item"
-                                        v-for="item in parseInt(store.rating)"
-                                        :key="item"
-                                        class="fa fa-star"
-                                        aria-hidden="true"
-                                    ></span>
-                                    <span
-                                        @click="
-                                            store.rating = item + store.rating
-                                        "
-                                        v-for="item in 5 - store.rating"
-                                        :key="item"
-                                        class="far fa-star"
-                                        aria-hidden="true"
-                                    ></span>
+                                    <!--                                    <span-->
+                                    <!--                                        @click="store.rating = item"-->
+                                    <!--                                        v-for="item in parseInt(store.rating)"-->
+                                    <!--                                        :key="item"-->
+                                    <!--                                        class="fa fa-star"-->
+                                    <!--                                        aria-hidden="true"-->
+                                    <!--                                    ></span>-->
+                                    <!--                                    <span-->
+                                    <!--                                        @click="-->
+                                    <!--                                            store.rating = item + store.rating-->
+                                    <!--                                        "-->
+                                    <!--                                        v-for="item in 5 - store.rating"-->
+                                    <!--                                        :key="item"-->
+                                    <!--                                        class="far fa-star"-->
+                                    <!--                                        aria-hidden="true"-->
+                                    <!--                                    ></span>-->
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
-                            {{ store.categories }}
+                            <!--                            {{ store.categories }}-->
                         </li>
                     </ul>
                     <div class="col">
@@ -75,21 +75,7 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <button
-                                    type="button"
-                                    class="btn"
-                                    @click="
-                                        gotoview(
-                                            store.id,
-                                            store.title,
-                                            store.phonenumber,
-                                            store.mobilephone,
-                                            store.workDays,
-                                            store.workingHours,
-                                            store.address
-                                        )
-                                    "
-                                >
+                                <button type="button" class="btn">
                                     <b class="">{{ $t('visit') }}</b>
                                 </button>
                             </div>
