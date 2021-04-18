@@ -18,6 +18,7 @@
                             />
                         </div>
                         <div class="col text-muted">
+<<<<<<< HEAD
                             <!-- {{ store.space }} -->
                         </div>
                         <div class="col">
@@ -40,6 +41,30 @@
                                         class="far fa-star"
                                         aria-hidden="true"
                                     ></span> -->
+=======
+                            <!--                            {{ store.space }}-->
+                        </div>
+                        <div class="col">
+                            <div class="row mt-3 divtitle">
+                                <div class="title"></div>
+                                <div class="stars text-right">
+                                    <!--                                    <span-->
+                                    <!--                                        @click="store.rating = item"-->
+                                    <!--                                        v-for="item in parseInt(store.rating)"-->
+                                    <!--                                        :key="item"-->
+                                    <!--                                        class="fa fa-star"-->
+                                    <!--                                        aria-hidden="true"-->
+                                    <!--                                    ></span>-->
+                                    <!--                                    <span-->
+                                    <!--                                        @click="-->
+                                    <!--                                            store.rating = item + store.rating-->
+                                    <!--                                        "-->
+                                    <!--                                        v-for="item in 5 - store.rating"-->
+                                    <!--                                        :key="item"-->
+                                    <!--                                        class="far fa-star"-->
+                                    <!--                                        aria-hidden="true"-->
+                                    <!--                                    ></span>-->
+>>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
                                 </div>
                             </div>
                         </div>
@@ -55,7 +80,11 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
+<<<<<<< HEAD
                             <!-- {{ store.categories }} -->
+=======
+                            <!--                            {{ store.categories }}-->
+>>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
                         </li>
                     </ul>
                     <div class="col">
@@ -273,7 +302,11 @@ export default {
 
     data() {
         return {
+<<<<<<< HEAD
             Store: [],
+=======
+            Store: undefined,
+>>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
