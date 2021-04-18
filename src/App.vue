@@ -11,12 +11,11 @@
 </template>
 
 <script>
-import AppHeader from '@/components/header/AppHeader.vue';
 
 export default {
     name: 'App',
     components: {
-        AppHeader,
+        AppHeader:()=> import ('@/components/header/AppHeader.vue'),
         AppFooter: () => import('@/components/Footer/AppFooter.vue'),
     },
 };
