@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in Store" :key="store.id">
+            <div class="store mb-4" v-for="store in stores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -18,14 +18,15 @@
                             />
                         </div>
                         <div class="col text-muted">
-<<<<<<< HEAD
-                            <!-- {{ store.space }} -->
+                            {{ store.space }}
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
-                                <div class="title">{{ store.edalilyPoint }}</div>
+                                <div class="title">
+                                    {{ store.title }}
+                                </div>
                                 <div class="stars text-right">
-                                    <!-- <span
+                                    <span
                                         @click="store.rating = item"
                                         v-for="item in parseInt(store.rating)"
                                         :key="item"
@@ -40,31 +41,7 @@
                                         :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
-                                    ></span> -->
-=======
-                            <!--                            {{ store.space }}-->
-                        </div>
-                        <div class="col">
-                            <div class="row mt-3 divtitle">
-                                <div class="title"></div>
-                                <div class="stars text-right">
-                                    <!--                                    <span-->
-                                    <!--                                        @click="store.rating = item"-->
-                                    <!--                                        v-for="item in parseInt(store.rating)"-->
-                                    <!--                                        :key="item"-->
-                                    <!--                                        class="fa fa-star"-->
-                                    <!--                                        aria-hidden="true"-->
-                                    <!--                                    ></span>-->
-                                    <!--                                    <span-->
-                                    <!--                                        @click="-->
-                                    <!--                                            store.rating = item + store.rating-->
-                                    <!--                                        "-->
-                                    <!--                                        v-for="item in 5 - store.rating"-->
-                                    <!--                                        :key="item"-->
-                                    <!--                                        class="far fa-star"-->
-                                    <!--                                        aria-hidden="true"-->
-                                    <!--                                    ></span>-->
->>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
+                                    ></span>
                                 </div>
                             </div>
                         </div>
@@ -80,11 +57,7 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
-<<<<<<< HEAD
-                            <!-- {{ store.categories }} -->
-=======
-                            <!--                            {{ store.categories }}-->
->>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
+                            {{ store.categories }}
                         </li>
                     </ul>
                     <div class="col">
@@ -104,7 +77,21 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <button type="button" class="btn">
+                                <button
+                                    type="button"
+                                    class="btn"
+                                    @click="
+                                        gotoview(
+                                            store.id,
+                                            store.title,
+                                            store.phonenumber,
+                                            store.mobilephone,
+                                            store.workDays,
+                                            store.workingHours,
+                                            store.address
+                                        )
+                                    "
+                                >
                                     <b class="">{{ $t('visit') }}</b>
                                 </button>
                             </div>
@@ -302,20 +289,16 @@ export default {
 
     data() {
         return {
-<<<<<<< HEAD
             Store: [],
-=======
-            Store: undefined,
->>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
+        stores() {
+            return this.$store.state.stores;
+        },
         categories() {
             return this.$store.state.Categories;
         },
@@ -361,16 +344,6 @@ export default {
     },
     created() {
         this.fetch();
-    },
-    mounted() {
-        // Vue.axios
-        //     .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-        //     .then((res) => {
-        //         console.warn(res.data);
-        //     })
-        //     .catch(function(error) {
-        //         console.log('Error: ', error);
-        //     });
     },
 };
 </script>
