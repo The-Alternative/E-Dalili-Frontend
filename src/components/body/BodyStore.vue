@@ -18,12 +18,13 @@
                             />
                         </div>
                         <div class="col text-muted">
-<<<<<<< HEAD
                             <!-- {{ store.space }} -->
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
-                                <div class="title">{{ store.edalilyPoint }}</div>
+                                <div class="title">
+                                    {{ store.edalilyPoint }}
+                                </div>
                                 <div class="stars text-right">
                                     <!-- <span
                                         @click="store.rating = item"
@@ -41,30 +42,6 @@
                                         class="far fa-star"
                                         aria-hidden="true"
                                     ></span> -->
-=======
-                            <!--                            {{ store.space }}-->
-                        </div>
-                        <div class="col">
-                            <div class="row mt-3 divtitle">
-                                <div class="title"></div>
-                                <div class="stars text-right">
-                                    <!--                                    <span-->
-                                    <!--                                        @click="store.rating = item"-->
-                                    <!--                                        v-for="item in parseInt(store.rating)"-->
-                                    <!--                                        :key="item"-->
-                                    <!--                                        class="fa fa-star"-->
-                                    <!--                                        aria-hidden="true"-->
-                                    <!--                                    ></span>-->
-                                    <!--                                    <span-->
-                                    <!--                                        @click="-->
-                                    <!--                                            store.rating = item + store.rating-->
-                                    <!--                                        "-->
-                                    <!--                                        v-for="item in 5 - store.rating"-->
-                                    <!--                                        :key="item"-->
-                                    <!--                                        class="far fa-star"-->
-                                    <!--                                        aria-hidden="true"-->
-                                    <!--                                    ></span>-->
->>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
                                 </div>
                             </div>
                         </div>
@@ -80,11 +57,7 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
-<<<<<<< HEAD
                             <!-- {{ store.categories }} -->
-=======
-                            <!--                            {{ store.categories }}-->
->>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
                         </li>
                     </ul>
                     <div class="col">
@@ -302,11 +275,7 @@ export default {
 
     data() {
         return {
-<<<<<<< HEAD
             Store: [],
-=======
-            Store: undefined,
->>>>>>> 1bbe45beb032ec8aadef777c542409a224186f60
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
@@ -337,11 +306,11 @@ export default {
         // },
     },
     methods: {
-        btnbar: function () {
+        btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function (i, t, p, m, w, h, a) {
+        gotoview: function(i, t, p, m, w, h, a) {
             this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
         },
         fetch() {
@@ -354,7 +323,7 @@ export default {
                     // Object.entries(Store);
                     console.warn('Data SUCCESS: ', res.data);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.warn('------ Error ------: ', error);
                 });
         },
