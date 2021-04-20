@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in stores" :key="store.id">
+            <div class="store mb-4" v-for="store in Stores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -296,35 +296,35 @@ export default {
         };
     },
     computed: {
-        stores() {
-            return this.$store.state.stores;
-        },
+        // stores() {
+        //     return this.$store.state.stores;
+        // },
         categories() {
             return this.$store.state.Categories;
         },
-        // activeStores: function() {
-        //     if (this.selectedCategory.length == 0)
-        //         return this.$store.state.stores;
-        //     var activeStores = [];
-        //     var filters = this.selectedCategory;
-        //
-        //     this.$store.state.stores.forEach(function(store) {
-        //         function storeContainsFilter(filter) {
-        //             return store.categories.indexOf(filter) != -1;
-        //         }
-        //         if (filters.every(storeContainsFilter)) {
-        //             activeStores.push(store);
-        //         }
-        //     });
-        //     return activeStores;
-        // },
+        Stores: function() {
+            if (this.selectedCategory.length == 0)
+                return this.$store.state.stores;
+            var Stores = [];
+            var filters = this.selectedCategory;
+
+            this.$store.state.stores.forEach(function(store) {
+                function storeContainsFilter(filter) {
+                    return store.categories.indexOf(filter) != -1;
+                }
+                if (filters.every(storeContainsFilter)) {
+                    Stores.push(store);
+                }
+            });
+            return Stores;
+        },
     },
     methods: {
-        btnbar: function () {
+        btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function (i, t, p, m, w, h, a) {
+        gotoview: function(i, t, p, m, w, h, a) {
             this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
         },
         fetch() {
@@ -337,7 +337,7 @@ export default {
                     // Object.entries(Store);
                     console.warn('Data SUCCESS: ', res.data);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.warn('------ Error ------: ', error);
                 });
         },
