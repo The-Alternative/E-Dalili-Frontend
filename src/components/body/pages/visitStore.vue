@@ -335,8 +335,6 @@
 </template>
 
 <script>
-// import Cartmini from '@/components/cart/Cartmini.vue';
-import BodyProductStore from './BodyProductStore';
 
 export default {
     name: 'visitStore',
@@ -355,7 +353,7 @@ export default {
         };
     },
     components: {
-        BodyProductStore,
+        BodyProductStore:() => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {

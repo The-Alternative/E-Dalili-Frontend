@@ -18,30 +18,30 @@
                             />
                         </div>
                         <div class="col text-muted">
-                            <!--                            {{ store.space }}-->
+                            {{ store.space }}
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
                                 <div class="title">
-                                    <!--                                    {{ store.title }}-->
+                                    {{ store.title }}
                                 </div>
                                 <div class="stars text-right">
-                                    <!--                                    <span-->
-                                    <!--                                        @click="store.rating = item"-->
-                                    <!--                                        v-for="item in parseInt(store.rating)"-->
-                                    <!--                                        :key="item"-->
-                                    <!--                                        class="fa fa-star"-->
-                                    <!--                                        aria-hidden="true"-->
-                                    <!--                                    ></span>-->
-                                    <!--                                    <span-->
-                                    <!--                                        @click="-->
-                                    <!--                                            store.rating = item + store.rating-->
-                                    <!--                                        "-->
-                                    <!--                                        v-for="item in 5 - store.rating"-->
-                                    <!--                                        :key="item"-->
-                                    <!--                                        class="far fa-star"-->
-                                    <!--                                        aria-hidden="true"-->
-                                    <!--                                    ></span>-->
+                                    <span
+                                        @click="store.rating = item"
+                                        v-for="item in parseInt(store.rating)"
+                                        :key="item"
+                                        class="fa fa-star"
+                                        aria-hidden="true"
+                                    ></span>
+                                    <span
+                                        @click="
+                                            store.rating = item + store.rating
+                                        "
+                                        v-for="item in 5 - store.rating"
+                                        :key="item"
+                                        class="far fa-star"
+                                        aria-hidden="true"
+                                    ></span>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
-                            <!--                            {{ store.categories }}-->
+                            {{ store.categories }}
                         </li>
                     </ul>
                     <div class="col">
@@ -77,7 +77,21 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <button type="button" class="btn">
+                                <button
+                                    type="button"
+                                    class="btn"
+                                    @click="
+                                        gotoview(
+                                            store.id,
+                                            store.title,
+                                            store.phonenumber,
+                                            store.mobilephone,
+                                            store.workDays,
+                                            store.workingHours,
+                                            store.address
+                                        )
+                                    "
+                                >
                                     <b class="">{{ $t('visit') }}</b>
                                 </button>
                             </div>
@@ -275,16 +289,16 @@ export default {
 
     data() {
         return {
-            stores: [],
+            // stores: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
+        stores() {
+            return this.$store.state.stores;
+        },
         categories() {
             return this.$store.state.Categories;
         },
@@ -306,31 +320,29 @@ export default {
         // },
     },
     methods: {
-        btnbar: function() {
+        btnbar: function () {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function(i, t, p, m, w, h, a) {
+        gotoview: function (i, t, p, m, w, h, a) {
             this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
         },
-        fetch() {
-            var self = this;
-            Vue.axios
-                .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-                .then((res) => {
-                    self.stores = res.data;
-                    // self.Store = res.data;
-                    // Object.entries(Store);
-                    console.warn('Data SUCCESS: ', res.data);
-                })
-                .catch(function(error) {
-                    console.warn('------ Error ------: ', error);
-                });
-        },
+        // fetch() {
+        //     var self = this;
+        //     Vue.axios
+        //         .get('http://localhost:8080/api/stores/getAll')
+        //         .then((res) => {
+        //             self.stores = res;
+        //             console.warn('Data SUCCESS: ', res);
+        //         })
+        //         .catch(function (error) {
+        //             console.warn('------ Error ------: ', error);
+        //         });
+        // },
     },
-    created() {
-        this.fetch();
-    },
+    // created() {
+    //     this.fetch();
+    // },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
