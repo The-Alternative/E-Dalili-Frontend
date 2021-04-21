@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in stores" :key="store.id">
+            <div class="store mb-4" v-for="store in Stores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -18,7 +18,7 @@
                             />
                         </div>
                         <div class="col text-muted">
-                            {{ store.space }}
+                            يبعد 500 م
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
@@ -27,17 +27,15 @@
                                 </div>
                                 <div class="stars text-right">
                                     <span
-                                        @click="store.rating = item"
-                                        v-for="item in parseInt(store.rating)"
+                                        @click="rating = item"
+                                        v-for="item in parseInt(rating)"
                                         :key="item"
                                         class="fa fa-star"
                                         aria-hidden="true"
                                     ></span>
                                     <span
-                                        @click="
-                                            store.rating = item + store.rating
-                                        "
-                                        v-for="item in 5 - store.rating"
+                                        @click="rating = item + rating"
+                                        v-for="item in 5 - rating"
                                         :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
@@ -57,7 +55,7 @@
                 <div class="card-footer" id="card-footer">
                     <ul class="flex-row d-inline-flex">
                         <li class="categorystore">
-                            {{ store.categories }}
+                            <!--                            {{  store.categories }}-->
                         </li>
                     </ul>
                     <div class="col">
@@ -84,11 +82,7 @@
                                         gotoview(
                                             store.id,
                                             store.title,
-                                            store.phonenumber,
-                                            store.mobilephone,
-                                            store.workDays,
-                                            store.workingHours,
-                                            store.address
+                                            store.workingHours
                                         )
                                     "
                                 >
@@ -277,28 +271,20 @@ export default {
         PhoneStore: () => import('@/components/body/phone-store'),
         LocationStore: () => import('@/components/body/location-store'),
     },
-    props: [
-        'id',
-        'title',
-        'phonenumber',
-        'mobilephone',
-        'workDays',
-        'workingHours',
-        'address',
-    ],
+    props: ['id', 'title', 'workingHours'],
 
     data() {
         return {
-            // stores: [],
+            Stores: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        stores() {
-            return this.$store.state.stores;
-        },
+        // stores() {
+        //     return this.$store.state.stores;
+        // },
         categories() {
             return this.$store.state.Categories;
         },
@@ -320,29 +306,29 @@ export default {
         // },
     },
     methods: {
-        btnbar: function () {
+        btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function (i, t, p, m, w, h, a) {
-            this.$router.push(`visitStore/${i}/${t}/${p}/${m}/${w}/${h}/${a}`);
+        gotoview: function(i, t, w) {
+            this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        // fetch() {
-        //     var self = this;
-        //     Vue.axios
-        //         .get('http://localhost:8080/api/stores/getAll')
-        //         .then((res) => {
-        //             self.stores = res;
-        //             console.warn('Data SUCCESS: ', res);
-        //         })
-        //         .catch(function (error) {
-        //             console.warn('------ Error ------: ', error);
-        //         });
-        // },
+        fetch() {
+            var self = this;
+            Vue.axios
+                .get('http://localhost:8080/api/stores/getAll')
+                .then((res) => {
+                    self.Stores = res.data.Stores;
+                    console.warn('Data SUCCESS: ', res.data.Stores);
+                })
+                .catch(function(error) {
+                    console.warn('------ Error ------: ', error);
+                });
+        },
     },
-    // created() {
-    //     this.fetch();
-    // },
+    created() {
+        this.fetch();
+    },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -1148,7 +1134,7 @@ export default {
         display: inline;
     }
     .stars {
-        margin-right: 50px;
+        margin-right: 60px;
     }
 }
 
