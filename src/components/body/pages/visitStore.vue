@@ -59,14 +59,14 @@
                         src="../../../../public/img/open.png"
                         height="40"
                     />
-                    <div class="mt-4">{{ workDays }}</div>
+                    <div class="mt-4">السبت - الجمعة</div>
                     <div class="mt-3 row">
                         <div class="row">
                             <div class="mr-2">{{ workingHours }}</div>
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div>{{ address }}</div>
+                        <div>السويداء - طريق قنوات</div>
                     </div>
                     <hr class="hr" />
                     <div class="drop" id="drop-active" @click="dropactive()">
@@ -87,7 +87,7 @@
                     </div>
                     <div class="icons mt-3">
                         <div class="row telephone mt-3">
-                            <span class="texticon">{{ phonenumber }}</span>
+                            <span class="texticon">016315190</span>
                             <img
                                 class="ml-2"
                                 src="../../../../public/img/telephone.svg"
@@ -95,7 +95,7 @@
                             />
                         </div>
                         <div class="row mt-2 mb-2 phone">
-                            <span class="texticon">{{ mobilephone }}</span>
+                            <span class="texticon">0930253884</span>
                             <img
                                 class="ml-2"
                                 src="../../../../public/img/mobile-phone.svg"
@@ -335,33 +335,22 @@
 </template>
 
 <script>
-// import Cartmini from '@/components/cart/Cartmini.vue';
-import BodyProductStore from './BodyProductStore';
-
 export default {
     name: 'visitStore',
-    props: [
-        'id',
-        'title',
-        'phonenumber',
-        'mobilephone',
-        'workDays',
-        'workingHours',
-        'address',
-    ],
+    props: ['id', 'title', 'workingHours'],
     data() {
         return {
             urll: '/img/',
         };
     },
     components: {
-        BodyProductStore,
+        BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        stores() {
-            return this.$store.state.stores;
-        },
+        // stores() {
+        //     return this.$store.state.stores;
+        // },
         categories() {
             return this.$store.state.categories;
         },
