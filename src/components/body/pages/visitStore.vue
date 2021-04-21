@@ -335,6 +335,8 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
 export default {
     name: 'visitStore',
     props: ['id', 'title', 'workingHours'],
@@ -383,9 +385,18 @@ export default {
         gotodetails(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
-        //  goto: function(i, t, d, p) {
-        //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
-        // },
+        fetch() {
+            // var self = this;
+            Vue.axios
+                .get('http://localhost:8080/api/stores/getById/1')
+                .then((res) => {
+                    // self.Stores = res.data.Stores;
+                    console.warn('Data SUCCESS: ', res);
+                })
+                .catch(function(error) {
+                    console.warn('------ Error ------: ', error);
+                });
+        },
     },
 };
 </script>
