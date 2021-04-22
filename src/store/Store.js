@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import jeson from '@/jeson/MOCK_DATA.json';
 import data from '../jeson/data';
-Vue.use(Vuex,axios);
+Vue.use(Vuex, axios);
 
 let cartItems = window.localStorage.getItem('cartItems');
 let cartItemCount = window.localStorage.getItem('cartItemCount');
@@ -87,9 +87,9 @@ export default new Vuex.Store({
                 this.commit('savedata');
             }
         },
-        // SET_Stores(state,Stores){
-        //     state.Stores = Stores
-        // }
+        SET_Stores(state, Stores) {
+            state.Stores = Stores;
+        },
     },
     actions: {
         addToCart: (context, payload) => {
@@ -98,18 +98,17 @@ export default new Vuex.Store({
         removeItem: (context, payload) => {
             context.commit('removeItem', payload);
         },
-        
     },
-    // loadStores({commit}){
+    // loadStores({ commit }) {
     //     axios
-    //     .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-    //     .then((res) => {
-    //         console.warn(res.data);
-    //         let Stores = res.data;
-    //         commit('SET_Stores',Stores)
-    //     })
-    //     .catch(function(error) {
-    //         console.log('Error: ', error);
-    //     });
-    // }
+    //         .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+    //         .then((res) => {
+    //             console.warn(res.data);
+    //             let Stores = res.data;
+    //             commit('SET_Stores', Stores);
+    //         })
+    //         .catch(function(error) {
+    //             console.log('Error: ', error);
+    //         });
+    // },
 });
