@@ -252,12 +252,12 @@
 </template>
 
 <script>
-// import axios from "axios";
+ import axios from "axios";
 export default {
     data() {
         return {
             urll: '/img/',
-            //   Product: [] ,
+              Product: [] ,
             // lastStores:[],
             //  brands:[]
             // categories:[]
@@ -270,9 +270,9 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-         Product() {
-            return this.$store.state.Product;
-        },
+        //  Product() {
+       //      return this.$store.state.Product;
+       //  },
         lastStores() {
             return this.$store.state.lastStores;
         },
@@ -283,12 +283,12 @@ export default {
             return this.$store.state.categories;
         },
     },
-   /*  created(){
+     created(){
     axios.get("http://edalili.e-dalely.com/public/api/products/getAll")
     .then(response => {
       this.Product = response.data.Product
-       console.log(response.data.Product)
-    });
+    })
+    .catch(error => {console.log(error);})
    
     }
     /*

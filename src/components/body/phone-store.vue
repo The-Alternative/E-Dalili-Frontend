@@ -24,19 +24,28 @@ export default {
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
+    .span {
+        color: #fefefe;
+        margin-left: 5px;
+        margin-right: 5px;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        transition: all 0.3s linear;
+    }
     .phone {
-        margin:10px;
-        height: 20px;
+        height: 15px;
         width: 15px;
         transition: all 0.8s;
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
-  .span{
+    .span {
         color: #fefefe;
         margin-left: 10px;
         margin-right: 10px;
-        display:inline-block;
+        display: inline-block;
         width: 25px;
         height: 25px;
         line-height: 25px;

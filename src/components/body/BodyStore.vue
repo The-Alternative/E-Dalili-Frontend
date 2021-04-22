@@ -1,5 +1,5 @@
 <template>
-    <!--  all coulome body  -->
+    <!--  all colume body  -->
     <div
         class="card-group col-sm-12 wrapper"
         id="wrapper"
@@ -7,11 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div
-                class="store mb-4"
-                v-for="store in activeStores"
-                :key="store.id"
-            >
+            <div class="store mb-4" v-for="store in Stores" :key="store.id">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -22,22 +18,24 @@
                             />
                         </div>
                         <div class="col text-muted">
-                            {{ store.space }}
+                            يبعد 500 م
                         </div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
-                                <div class="title">{{ store.title }}</div>
+                                <div class="title">
+                                    {{ store.title }}
+                                </div>
                                 <div class="stars text-right">
                                     <span
-                                        @click="store.rate = item"
-                                        v-for="item in parseInt(store.rate)"
+                                        @click="rating = item"
+                                        v-for="item in parseInt(rating)"
                                         :key="item"
                                         class="fa fa-star"
                                         aria-hidden="true"
                                     ></span>
                                     <span
-                                        @click="store.rate = item + store.rate"
-                                        v-for="item in 5 - store.rate"
+                                        @click="rating = item + rating"
+                                        v-for="item in 5 - rating"
                                         :key="item"
                                         class="far fa-star"
                                         aria-hidden="true"
@@ -54,57 +52,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="drop" id="drop-active" @click="dropactive()">
-                    <i class="fa fa-angle-down"></i>
-                </div>
-
-                <div class="descripation" id="descripation">
-                    <div class="card-footer" id="card-footer">
-                        <ul class="flex-row d-inline-flex">
-                            <li class="categorystore">
-                                {{ store.categories }}
-                            </li>
-                        </ul>
-                        <div class="col">
-                            <div class="row img-button">
-                                <div class="col">
-                                    <img
+                <div class="card-footer" id="card-footer">
+                    <ul class="flex-row d-inline-flex">
+                        <li class="categorystore">
+                            <!--                            {{  store.categories }}-->
+                        </li>
+                    </ul>
+                    <div class="col">
+                        <div class="row img-button">
+                            <div class="col dileversmall">
+                                <span class="span"
+                                    ><img
                                         class="Group"
                                         src="../../../public/img/Group.png"
                                         height="20"
-                                    />
-                                    <img
+                                /></span>
+                                <span class="span"
+                                    ><img
                                         class="MaskGroup"
                                         src="../../../public/img/MaskGroup.png"
                                         height="20"
-                                    />
-                                </div>
-                                <div class="col">
-                                    <button
-                                        type="button"
-                                        class="btn"
-                                        @click="
-                                            gotoview(
-                                                store.id,
-                                                store.title,
-                                                store.phonenumber,
-                                                store.mobilephone,
-                                                store.workDays,
-                                                store.startTime,
-                                                store.endTime,
-                                                store.address
-                                            )
-                                        "
-                                    >
-                                        <b class="">{{ $t('visit') }}</b>
-                                    </button>
-                                </div>
-                                <div class="col team-social">
-                                    <div class="row">
-                                        <location-store></location-store>
-                                        <phone-store></phone-store>
-                                        <whatsapp-store></whatsapp-store>
-                                    </div>
+                                /></span>
+                            </div>
+                            <div class="col btnsmall">
+                                <button
+                                    type="button"
+                                    class="btn"
+                                    @click="
+                                        gotoview(
+                                            store.id,
+                                            store.title,
+                                            store.workingHours
+                                        )
+                                    "
+                                >
+                                    <b class="">{{ $t('visit') }}</b>
+                                </button>
+                            </div>
+                            <div class="col team-social">
+                                <div class="row">
+                                    <location-store></location-store>
+                                    <phone-store></phone-store>
+                                    <whatsapp-store></whatsapp-store>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +110,7 @@
         </span>
 
         <div
-            class="card col-lg-3 mr-4 col-md-3 col-sm-4 col-xs-4 mb-4  categores"
+            class="card col-lg-3 mr-4 col-md-3 col-sm-4 col-xs-4 mb-4 categores"
             id="menu"
         >
             <div class="backdrop"></div>
@@ -146,7 +135,6 @@
                             class="textcheck"
                             v-for="category in categories"
                             :key="category"
-                            for="category"
                         >
                             {{ category }}
                             <input
@@ -187,81 +175,81 @@
                 <div class="checklist stars">
                     <div class="row star-right">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 5 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 5 - rating"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
                     <div class="row star-right2">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 4 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 4 - rating"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
                     <div class="row star-right3">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 3 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 3 - rating"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
                     <div class="row star-right4">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 2 - rate"
+                            @click="rating = item + rate"
+                            v-for="item in 2 - rating"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
                     <div class="row star-right5">
                         <span
-                            @click="rate = item"
-                            v-for="item in parseInt(rate)"
+                            @click="rating = item"
+                            v-for="item in parseInt(rating)"
                             :key="item"
                             class="fa fa-star"
                             aria-hidden="true"
                         ></span>
                         <span
-                            @click="rate = item + rate"
-                            v-for="item in 1 - rate"
+                            @click="rating = item + rating"
+                            v-for="item in 1 - rating"
                             :key="item"
-                            class="far fa-star "
+                            class="far fa-star"
                             aria-hidden="true"
                         ></span>
                     </div>
@@ -271,71 +259,71 @@
     </div>
 </template>
 <script>
+import Vue from 'vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+Vue.use(VueAxios, axios);
+
 export default {
     components: {
-        WhatsappStore:()=>import('@/components/body/whatsapp-store.vue'),
-        PhoneStore:()=>import('@/components/body/phone-store'),
-        LocationStore:()=>import('@/components/body/location-store')
+        WhatsappStore: () => import('@/components/body/whatsapp-store.vue'),
+        PhoneStore: () => import('@/components/body/phone-store'),
+        LocationStore: () => import('@/components/body/location-store'),
     },
-    props: [
-        'id',
-        'title',
-        'phonenumber',
-        'mobilephone',
-        'workDays',
-        'startTime',
-        'endTime',
-        'address',
-    ],
+    props: ['id', 'title', 'workingHours'],
 
     data() {
         return {
-            rate: 0,
+            Stores: [],
+            viewProductsInStore: [],
+            rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        stores() {
-            return this.$store.state.stores;
-        },
         categories() {
             return this.$store.state.Categories;
         },
-        activeStores: function() {
-            if (this.selectedCategory.length == 0)
-                return this.$store.state.stores;
-            var activeStores = [];
-            var filters = this.selectedCategory;
-
-            this.$store.state.stores.forEach(function(store) {
-                function storeContainsFilter(filter) {
-                    return store.categories.indexOf(filter) != -1;
-                }
-                if (filters.every(storeContainsFilter)) {
-                    activeStores.push(store);
-                }
-            });
-            return activeStores;
-        },
+        // Stores: function() {
+        //     if (this.selectedCategory.length == 0)
+        //         return this.$store.state.stores;
+        //     var Stores = [];
+        //     var filters = this.selectedCategory;
+        //
+        //     this.$store.state.stores.forEach(function(store) {
+        //         function storeContainsFilter(filter) {
+        //             return store.categories.indexOf(filter) != -1;
+        //         }
+        //         if (filters.every(storeContainsFilter)) {
+        //             Stores.push(store);
+        //         }
+        //     });
+        //     return Stores;
+        // },
     },
     methods: {
         btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        dropactive: function() {
-            document
-                .getElementById('drop-active')
-                .classList.toggle('drop-rotate');
-            document
-                .getElementById('descripation')
-                .classList.toggle('drop-active');
+        gotoview: function(i, t, w) {
+            this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        gotoview: function(i, t, p, m, w, s, e, a) {
-            this.$router.push(
-                `visitStore/${i}/${t}/${p}/${m}/${w}/${s}/${e}/${a}`
-            );
+        fetch() {
+            var self = this;
+            Vue.axios
+                .get('http://localhost:8080/api/stores/getAll')
+                .then((res) => {
+                    self.Stores = res.data.Stores;
+                    console.warn('Data SUCCESS: ', res.data.Stores);
+                })
+                .catch(function(error) {
+                    console.warn('------ Error ------: ', error);
+                });
         },
+    },
+    created() {
+        this.fetch();
     },
 };
 </script>
@@ -348,7 +336,7 @@ export default {
         height: 30px;
         width: 100%;
         margin-top: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
     .checked-all {
         font-size: 10px;
@@ -450,9 +438,24 @@ export default {
         display: flex;
         flex-direction: column-reverse;
     }
-    .img-button {
-        display: flex;
-        flex-direction: column;
+    .team-social {
+        position: absolute;
+        bottom: 10px;
+        left: 30%;
+    }
+    .dileversmall {
+        position: absolute;
+        bottom: 10px;
+        right: 30%;
+    }
+    .span {
+        color: #fefefe;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        margin: 0 5px;
+        transition: all 0.3s linear;
     }
     .divtitle {
         display: block;
@@ -500,50 +503,6 @@ export default {
     }
     .stors {
         width: 100%;
-    }
-    .team-social {
-        position: absolute;
-        bottom: -20px;
-        right: 0;
-        width: 100%;
-    }
-    .store {
-        position: relative;
-        overflow: hidden;
-    }
-    .drop {
-        position: absolute;
-        bottom: 5px;
-        display: flex;
-        border-radius: 40px;
-        background: #abc8d1;
-        text-align: center;
-        align-items: center;
-        /* justify-content: center; */
-    }
-    .drop i {
-        display: block;
-        cursor: pointer;
-        font-size: 1.8rem;
-        transition: all 0.9s ease-in-out;
-        color: rgb(19, 18, 18);
-    }
-    .drop i:hover {
-        color: rgb(112, 108, 108);
-    }
-    .drop-active {
-        height: 230px !important;
-        text-align: center;
-    }
-    .drop-rotate {
-        transform: rotate(180deg);
-    }
-    .card-footer {
-        position: absolute;
-        left: 10%;
-        right: 10%;
-        z-index: 1;
-        transition: 0.2s ease-in-out;
     }
 }
 @media (min-width: 468px) and (max-width: 598.99px) {
@@ -602,7 +561,7 @@ export default {
     .star-right3 {
         margin-top: 8px;
         font-size: 10px;
-        margin-left:90px;
+        margin-left: 90px;
     }
     .star-right4 {
         margin-top: 8px;
@@ -1075,9 +1034,6 @@ export default {
     .DIV1 {
         display: flex;
     }
-    .drop {
-        display: none;
-    }
 }
 @media (min-width: 1200px) {
     .menu {
@@ -1113,9 +1069,6 @@ export default {
     .img-button {
         margin-top: 30px;
     }
-    /* .Group {
-        margin-left: 10px;
-    } */
     .bgcolor {
         background-color: #e0e0d1;
         border-radius: 3px;
@@ -1161,9 +1114,6 @@ export default {
         margin-top: 10px;
         margin-right: 10px;
     }
-    /* .MaskGroup {
-        margin-right: 140px;
-    } */
     .slide {
         display: none;
     }
@@ -1176,8 +1126,11 @@ export default {
     .DIV1 {
         display: flex;
     }
-    .drop {
-        display: none;
+    .divtitle {
+        display: inline;
+    }
+    .stars {
+        margin-right: 60px;
     }
 }
 

@@ -5,18 +5,17 @@
         <transition name="view">
             <router-view />
         </transition>
-        <!-- Fotter -->
+        <!-- Footer -->
         <AppFooter />
     </div>
 </template>
 
 <script>
-import AppHeader from '@/components/header/AppHeader.vue';
 
 export default {
     name: 'App',
     components: {
-        AppHeader,
+        AppHeader:()=> import ('@/components/header/AppHeader.vue'),
         AppFooter: () => import('@/components/Footer/AppFooter.vue'),
     },
 };

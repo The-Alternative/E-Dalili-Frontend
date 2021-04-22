@@ -59,17 +59,14 @@
                         src="../../../../public/img/open.png"
                         height="40"
                     />
-                    <div class="mt-4">{{ workDays }}</div>
+                    <div class="mt-4">السبت - الجمعة</div>
                     <div class="mt-3 row">
                         <div class="row">
-                            <div class="mr-2">{{ endTime }}</div>
-                        </div>
-                        <div class="row">
-                            <div>{{ startTime }}</div>
+                            <div class="mr-2">{{ workingHours }}</div>
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div>{{ address }}</div>
+                        <div>السويداء - طريق قنوات</div>
                     </div>
                     <hr class="hr" />
                     <div class="drop" id="drop-active" @click="dropactive()">
@@ -90,7 +87,7 @@
                     </div>
                     <div class="icons mt-3">
                         <div class="row telephone mt-3">
-                            <span class="texticon">{{ phonenumber }}</span>
+                            <span class="texticon">016315190</span>
                             <img
                                 class="ml-2"
                                 src="../../../../public/img/telephone.svg"
@@ -98,7 +95,7 @@
                             />
                         </div>
                         <div class="row mt-2 mb-2 phone">
-                            <span class="texticon">{{ mobilephone }}</span>
+                            <span class="texticon">0930253884</span>
                             <img
                                 class="ml-2"
                                 src="../../../../public/img/mobile-phone.svg"
@@ -319,38 +316,33 @@
                 </BodyProductStore>
             </div>
         </div>
+        <!-- visit store -->
+        <div
+            class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"
+        >
+            <ul>
+                الزیارات
+                <br />
+                <li>0</li>
+                <li>0</li>
+                <li>1</li>
+                <li>4</li>
+                <li>7</li>
+                <li>9</li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
-// import Cartmini from '@/components/cart/Cartmini.vue';
-import BodyProductStore from './BodyProductStore';
-
 export default {
     name: 'visitStore',
-    props: [
-        'id',
-        'title',
-        'phonenumber',
-        'mobilephone',
-        'workDays',
-        'startTime',
-        'endTime',
-        'address',
-    ],
-    data() {
-        return {
-            urll: '/img/',
-        };
-    },
+    props: ['id', 'title', 'workingHours'],
     components: {
-        BodyProductStore,
+        BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        stores() {
-            return this.$store.state.stores;
-        },
         categories() {
             return this.$store.state.categories;
         },
@@ -362,14 +354,14 @@ export default {
         },
     },
     methods: {
-        heart: function () {
+        heart: function() {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function () {
+        dropactive: function() {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -377,15 +369,12 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function () {
+        likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
         gotodetails(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
-        //  goto: function(i, t, d, p) {
-        //      this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
-        // },
     },
 };
 </script>
@@ -518,9 +507,11 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 100px;
+        max-width: 100%;
         text-align: center;
         margin: auto;
+        align-items: center;
+        justify-content: center;
     }
     .textFollow .heart {
         width: 70px;
@@ -839,6 +830,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    //start visiter store///
+    .visiter ul {
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li {
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 368px) and (max-width: 510px) {
     ///start details store///
@@ -987,7 +993,7 @@ export default {
     }
     .follow {
         font-size: 4vh;
-        margin-top:10px;
+        margin-top: 10px;
         margin-bottom: 10px;
         margin-left: 60px;
         color: grey;
@@ -1286,6 +1292,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    //start visiter store///
+    .visiter ul {
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li {
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 511px) and (max-width: 767px) {
     ///start details store///
@@ -1344,9 +1365,9 @@ export default {
     .drop-rotate {
         transform: rotate(180deg);
     }
-    .description{
-        right:10%;
-        left:10%;
+    .description {
+        right: 10%;
+        left: 10%;
     }
     .hr {
         display: none;
@@ -1421,7 +1442,7 @@ export default {
         border-radius: 5px;
         border: 2px solid #eae2e1;
         display: flex;
-        max-width: 90%;
+        max-width: 100%;
     }
     .textFollow .heart {
         width: 80px;
@@ -1493,7 +1514,7 @@ export default {
     .imgdiliver {
         margin-top: 20px;
     }
-    
+
     ///end details store///
     ///start slide///
     .carouselSlide {
@@ -1726,6 +1747,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    //start visiter store///
+    .visiter ul {
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li {
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     ///start details store///
@@ -2115,6 +2151,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    //start visiter store///
+    .visiter ul {
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li {
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     ///start details store///
@@ -2492,6 +2543,21 @@ export default {
         box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    //start visiter store///
+    .visiter ul {
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li {
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 @media (min-width: 1200px) {
     ///start details store///
@@ -2640,7 +2706,6 @@ export default {
         cursor: pointer;
     }
     .like:active {
-        /* content:'\f164'; */
         color: #004eff;
         background-color: #004eff;
         transform: scale(1.2);
@@ -2821,7 +2886,6 @@ export default {
         background-color: #fefefe;
         margin: 20px 20px 20px 20px;
         border-radius: 10px;
-        box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end card categories///
     ///start brand///
@@ -2872,8 +2936,22 @@ export default {
         margin: 20px 20px;
         height: 100%;
         border-radius: 10px;
-        box-shadow: 3px 3px 3px 3px #c2bdbd;
     }
     ///end product
+    //start visiter store//
+    .visiter ul {
+        list-style: none;
+        margin: 0;
+        font-size: 18px;
+    }
+    .visiter li {
+        width: 15px;
+        height: 29px;
+        display: inline-block;
+        margin: 0.5vh;
+        background-color: #aca6a6;
+        border-radius: 10px;
+    }
+    //end visiter store
 }
 </style>

@@ -20,31 +20,13 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <div> 
-                <span> 500.00_800.00 S.P</span>
-                <div class="price" style="display: inline-block"></div>
-            </div>
             <div class="avilble">
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
-                <button @click="showSchoose()" id="choose">Choose </button>
-                <button @click="goto(id, name, long_des,short_des, price)">Details</button>
-            </div>
-             <div  id="show" class="show">
-              <div class="card">
-              <div class="row">
-                <div class="col-4"><img class="rounded-circle" src="../../../public/img/market-logo.png" height="60" style="margin-bottom:20px"/></div>
-                <div class="col-5">سنتر المصري</div>
-                <div class="col-3">500 m</div>
-              
-                <div class="col-4" style="padding: 5px;"><img class="rounded-circle" src="../../../public/img/w.jpg" style="width: 80px;height: 80px"/></div>
-                <div class="col-8">500__1000 S.P</div>
-                
-                  <div class="col-12"><div >add to cart</div></div>
-              </div></div>
-                <span  @click="hideSchoose()" id="escape" class="escape">X</span>
+                <button @click="goto(id, name, long_des,short_des, price)">Choose</button>
+                <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
             </div>
              <!-- 
              <div class="stage row">
@@ -53,7 +35,7 @@
                         <i class="fa fa-shopping-cart"></i>
                     </button>
                 </div>
-                <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
+              
             </div>
              -->
         </div>
@@ -81,16 +63,10 @@ export default {
         goto: function(i, n, s,l, p) {
             this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}/${p}`);
         },
-        showSchoose:function(){
-            this.$el.lastChild.lastChild.classList.toggle('active-List-Choose')
-        },
-        hideSchoose:function(){
-            this.$el.lastChild.lastChild.classList.remove('active-List-Choose')
-        },
-       /* heartlike: function() {      
+      heartlike: function() {      
           this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');
         },
-        addToCart() {
+        /*  addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
                 [
@@ -129,25 +105,6 @@ export default {
 };
 </script>
 <style scoped>
-.show
-{
-    display: none;
-
-}
-.active-List-Choose{
-    display: block;
-}
-.show .card{
-    display: -webkit-inline-box;
-    direction: rtl;
-}
-.show .card div{
-margin: auto;
-
-}
-.escape{
-    cursor: pointer
-}
 @media (max-width: 575.98px) {
     .left,
     .center,
@@ -248,7 +205,7 @@ border-radius: 10px
 </style>
 
 <style lang="scss" scoped>
-/*
+
 .heart-conten{
     background-color: #f0f0f0;
     border-radius: 50%;
@@ -274,5 +231,5 @@ border-radius: 10px
         background-position: -2800px 0;
     }
 }
-*/
+
 </style>

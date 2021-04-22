@@ -2,13 +2,16 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 /* import services */
 import home from '../views/services/home.vue';
-
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path:
-            '/visitStore/:id/:title/:phonenumber/:mobilephone/:workDays/:startTime/:endTime/:address',
+        path: '/addStore',
+        name: 'addStore',
+        component: () => import('../components/body/addStore'),
+    },
+    {
+        path: '/visitStore/:id/:title/:workingHours',
         name: 'visitStore',
         component: () => import('../components/body/pages/visitStore'),
         props: true,

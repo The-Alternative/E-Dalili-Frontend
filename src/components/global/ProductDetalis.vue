@@ -1,50 +1,14 @@
 <template>
     <div class="ProductDetalis" style="background-color:#e9ecf2">
         <Cartmini />
-
-        <div
-            id="deno"
-            class="carousel slide"
-            data-ride="carousel"
-            style="margin-top: 10px;"
-        >
-            <div class="col-sm-12" style="padding:0">
-                <div class="carousel-inner">
-                    <!-- carousel item 1 -->
-                    <div class="carousel-item active">
-                        <div class="show-prod">
+        <div class="row">
+            <div class="col-6"><button class="btn btn-success" style="margin-top: 10px;">اختار حسب السعر</button></div>
+             <div class="col-6"><button class="btn btn-success" style="margin-top: 10px;">اختار حسب المسافة</button></div>
+        </div>
+            <div class="show-prod">
                             <div class="row">
-                                <!-- ___________________________________________________ -->
-                                <div class="col-md-6 col-xs-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
                                 <div
-                                    class="col-md-6 col-xs-12"
+                                    class="col-xs-12"
                                     style="direction: rtl;"
                                 >
                                     <div
@@ -74,6 +38,7 @@
                                         </div>
                                     </div>
                                     <div class="content-pro text-center">
+                                        <img class="rounded-circle" src="../../../public/img/w.jpg" style="width: 100px;height: 100px"/>
                                         <div class="name-prod">
                                             {{ name }}
                                         </div>
@@ -113,232 +78,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
-                    </div>
-                    <!-- carousel item 2 -->
-                    <div class="carousel-item">
-                        <div class="show-prod">
-                            <div class="row">
-                                <!-- ___________________________________________________ -->
-                                <div class="col-md-6 col-xs-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-md-6 col-xs-12"
-                                    style="direction: rtl;"
-                                >
-                                    <div
-                                        class="store"
-                                        v-for="store in stores.slice(1, 2)"
-                                        v-bind:store="store"
-                                        :key="store.id"
-                                        :address="store.address"
-                                    >
-                                        <div>
-                                            <img
-                                                class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
-                                                height="60"
-                                            />
-
-                                            <h2>
-                                                {{ store.title }}
-                                            </h2>
-                                            {{ store.space }}
-                                            <img
-                                                class="img-open"
-                                                style="margin-right:10px"
-                                                src="../../../public/img/open.png"
-                                                height="40"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="content-pro text-center">
-                                        <div class="name-prod">
-                                            {{ title }}
-                                        </div>
-                                        <div class="category">
-                                            {{ description }}
-                                        </div>
-
-                                        <div>
-                                            <span>90.00 S.P</span>
-                                            <div
-                                                class="price"
-                                                style="display: inline-block"
-                                            ></div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <button
-                                                    @click="addToCart"
-                                                    class="but1"
-                                                >
-                                                    <span>
-                                                        {{$t('AddCart')}}
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <div class="col">
-                                                <button
-                                                    @click="gotocart"
-                                                    class="but1"
-                                                >
-                                                    <span>
-                                                        {{$t('GoToCart')}}
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- carousel item 3 -->
-                    <div class="carousel-item">
-                        <div class="show-prod">
-                            <div class="row">
-                                <!-- ___________________________________________________ -->
-                                <div class="col-md-6 col-xs-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="col-4">
-                                            <img
-                                                src="../../../public/img/w.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-md-6 col-xs-12"
-                                    style="direction: rtl;"
-                                >
-                                    <div
-                                        class="store"
-                                        v-for="store in stores.slice(2, 3)"
-                                        v-bind:store="store"
-                                        :key="store.id"
-                                        :address="store.address"
-                                    >
-                                        <div>
-                                            <img
-                                                class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
-                                                height="60"
-                                            />
-
-                                            <h2>
-                                                {{ store.title }}
-                                            </h2>
-                                            {{ store.space }}
-                                            <img
-                                                class="img-open"
-                                                style="margin-right:10px"
-                                                src="../../../public/img/open.png"
-                                                height="40"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="content-pro text-center">
-                                        <div class="name-prod">
-                                            {{ title }}
-                                        </div>
-                                        <div class="category">
-                                            {{ description }}
-                                        </div>
-
-                                        <div>
-                                            <span>100.00 S.P</span>
-                                            <div
-                                                class="price"
-                                                style="display: inline-block"
-                                            ></div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <button
-                                                    @click="addToCart"
-                                                    class="but1"
-                                                >
-                                                    <span>
-                                                        {{$t('AddCart')}}
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <div class="col">
-                                                <button
-                                                    @click="gotocart"
-                                                    class="but1"
-                                                >
-                                                    <span>
-                                                        {{$t('GoToCart')}}
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#deno" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#deno" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </div>
+             </div>
+                        
+        
     </div>
 </template>
 <script>

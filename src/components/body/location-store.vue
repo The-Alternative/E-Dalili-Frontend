@@ -16,17 +16,24 @@ export default {
 
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
+    .span {
+        color: #fefefe;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        transition: all 0.3s linear;
+    }
     .location {
-        margin-top: 10px;
-        height: 20px;
+        height: 15px;
         width: 15px;
-        transition: all 0.8s;
+        transition: all 0.8s linear;
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
-    .span{
+    .span {
         color: #fefefe;
-        display:inline-block;
+        display: inline-block;
         width: 25px;
         height: 25px;
         line-height: 25px;

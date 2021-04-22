@@ -14,18 +14,26 @@ export default {
 </script>
 <style scoped>
 @media (min-width: 200px) and (max-width: 467px) {
+    .span {
+        color: #fefefe;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        transition: all 0.3s linear;
+    }
     .whatsapp {
-        margin-top:10px;
         color: #000000;
-        font-size: 18px;
-        margin-bottom: 20px;
+        font-size: 15px;
+        width: 15px;
+        height: 15px;
         transition: all 0.8s;
     }
 }
 @media (min-width: 468px) and (max-width: 598px) {
-  .span{
+    .span {
         color: #fefefe;
-        display:inline-block;
+        display: inline-block;
         width: 25px;
         height: 25px;
         line-height: 25px;
