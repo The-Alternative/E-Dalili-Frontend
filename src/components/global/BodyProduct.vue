@@ -2,15 +2,15 @@
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
             <img
-                @click="goto(id, title, description, price)"
-                v-lazy="image"
+                @click="goto(id, name, long_des,short_des, price)"
+                v-lazy="'http://front.e-dalely.com/img/mobile.jpg'"
                 class="new"
             />
-            <div @click="goto(id, title, description, price)" class="name-prod">
-                {{ title }}
+            <div @click="goto(id, name, long_des,short_des, price)" class="name-prod">
+                {{ name }}
             </div>
-            <div @click="goto(id, title, description, price)" class="category">
-                {{ description }}
+            <div @click="goto(id, name, long_des,short_des, price)" class="category">
+                {{ short_des }}
             </div>
 
             <div class="stars">
@@ -20,48 +20,75 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <div>
-                <span>ل.س{{ price }} </span>
+            <div> 
+                <span> 500.00_800.00 S.P</span>
                 <div class="price" style="display: inline-block"></div>
             </div>
             <div class="avilble">
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
-            <div class="stage row">
-                <div @click="addToCart()" class="cart-ico">
+            <div class="row">
+                <button @click="showSchoose()" id="choose">Choose </button>
+                <button @click="goto(id, name, long_des,short_des, price)">Details</button>
+            </div>
+             <div  id="show" class="show">
+              <div class="card">
+              <div class="row">
+                <div class="col-4"><img class="rounded-circle" src="../../../public/img/market-logo.png" height="60" style="margin-bottom:20px"/></div>
+                <div class="col-5">سنتر المصري</div>
+                <div class="col-3">500 m</div>
+              
+                <div class="col-4" style="padding: 5px;"><img class="rounded-circle" src="../../../public/img/w.jpg" style="width: 80px;height: 80px"/></div>
+                <div class="col-8">500__1000 S.P</div>
+                
+                  <div class="col-12"><div >add to cart</div></div>
+              </div></div>
+                <span  @click="hideSchoose()" id="escape" class="escape">X</span>
+            </div>
+             <!-- 
+             <div class="stage row">
+              <div @click="addToCart()" class="cart-ico">
                     <button class="cart-button">
                         <i class="fa fa-shopping-cart"></i>
                     </button>
                 </div>
                 <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
             </div>
+             -->
         </div>
     </div>
 </template>
+
 <script>
 export default {
     
     name: 'Products',
-    props: ['id', 'title', 'description', 'price', 'image'],
+    props: ['id', 'name', 'short_des','long_des', 'price', 'image'],
     data() {
         return {
             details: {
                 id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
+                name: this.name,
+                short_des: this.short_des,
+                long_des:this.long_des,
+                price: this.price
             },
         };
     },
     methods: {
-        goto: function(i, t, d, p) {
-            this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
+        
+        goto: function(i, n, s,l, p) {
+            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}/${p}`);
         },
-        heartlike: function() {      
-            this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle(
-                'is-active'
-            );
+        showSchoose:function(){
+            this.$el.lastChild.lastChild.classList.toggle('active-List-Choose')
+        },
+        hideSchoose:function(){
+            this.$el.lastChild.lastChild.classList.remove('active-List-Choose')
+        },
+       /* heartlike: function() {      
+          this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');
         },
         addToCart() {
             this.$store.dispatch('addToCart', this.details);
@@ -92,6 +119,7 @@ export default {
                 }
             );
         },
+        */
     },
     computed: {
         count() {
@@ -100,8 +128,26 @@ export default {
     },
 };
 </script>
-
 <style scoped>
+.show
+{
+    display: none;
+
+}
+.active-List-Choose{
+    display: block;
+}
+.show .card{
+    display: -webkit-inline-box;
+    direction: rtl;
+}
+.show .card div{
+margin: auto;
+
+}
+.escape{
+    cursor: pointer
+}
 @media (max-width: 575.98px) {
     .left,
     .center,
@@ -173,13 +219,13 @@ export default {
     margin-right: 10px;
 }
 .content-pro button {
-    border-radius: 59%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border: none;
-    padding: 0;
-    color: #5daaa6;
+width: 100px;
+height: 50px;
+font-size: 20px;
+border: none;
+color: #5daaa6;
+margin: 15px auto;
+border-radius: 10px
 }
 .content-pro button:hover {
     background-color: #d3b85f;
@@ -199,10 +245,10 @@ export default {
         max-width: 50%;
     }
 }
-
 </style>
 
 <style lang="scss" scoped>
+/*
 .heart-conten{
     background-color: #f0f0f0;
     border-radius: 50%;
@@ -228,4 +274,5 @@ export default {
         background-position: -2800px 0;
     }
 }
+*/
 </style>

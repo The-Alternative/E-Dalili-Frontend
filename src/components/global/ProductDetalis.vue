@@ -75,10 +75,10 @@
                                     </div>
                                     <div class="content-pro text-center">
                                         <div class="name-prod">
-                                            {{ title }}
+                                            {{ name }}
                                         </div>
                                         <div class="category">
-                                            {{ description }}
+                                            {{ long_des }}
                                         </div>
 
                                         <div>
@@ -349,8 +349,9 @@ export default {
         return {
             details: {
                 id: this.id,
-                title: this.title,
-                description: this.description,
+                name: this.name,
+                short_des:this.short_des,
+                long_des: this.long_des,
                 price: this.price,
             },
         };
@@ -358,7 +359,7 @@ export default {
     components: {
         Cartmini,
     },
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'name', 'long_des','short_des', 'price'],
     computed: {
         count() {
             return this.$store.state.count;

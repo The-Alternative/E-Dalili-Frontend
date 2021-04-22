@@ -21,7 +21,7 @@ const routes = [
     },
     /* ProductDetalis */
     {
-        path: '/ProductDetalis/:id/:title/:description/:price',
+        path: '/ProductDetalis/:id/:name/:long_des/:short_des/:price',
         component: () => import('../components/global/ProductDetalis.vue'),
         props: true,
     },

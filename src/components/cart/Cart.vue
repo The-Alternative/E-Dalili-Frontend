@@ -26,10 +26,10 @@
                             <img class="img" src="../../../public/img/w.jpg" />
                         </div>
                         <div class="col-sm-2 col-xs-3">
-                            {{ items.title }}
+                            {{ items.name }}
                         </div>
                         <div class="col-sm-2 col-xs-3">
-                            {{ items.description }}
+                            {{ items.short_des }}
                         </div>
                         <div class="col-sm-3 quantity-add">
                             <button class="btnn" @click="removeItem(items)">

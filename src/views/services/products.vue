@@ -16,14 +16,13 @@
         <!-- show  products -->
         <div class="show-prod">
             <div class="row reower">
-                <BodyProduct
+               <BodyProduct
                     v-for="items in Product.slice(0, 4)"
-                    :key="items.pr"
+                    :key="items.id"
                     :id="items.id"
-                    :price="items.price"
-                    :title="items.title"
-                    :image="items.image"
-                    :description="items.description"
+                    :short_des="items.short_des"
+                    :long_des="items.long_des"
+                    :name="items.name"
                     @click="goto(items)"
                 >
                 </BodyProduct>
@@ -44,12 +43,11 @@
             <div class="row reower">
                 <BodyProduct
                     v-for="items in Product.slice(4, 8)"
-                    :key="items.pr"
+                    :key="items.id"
                     :id="items.id"
-                    :price="items.price"
-                    :title="items.title"
-                    :image="items.image"
-                    :description="items.description"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
                 >
                 </BodyProduct>
             </div>
@@ -93,16 +91,14 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                                        v-for="items in Product.slice(0, 4)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :image="items.image"
-                                        :description="items.description"
-                                        @click="goto(items)"
-                                    >
-                                    </BodyProduct>
+                    v-for="items in Product.slice(0, 4)"
+                    :key="items.id"
+                    :id="items.id"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
                                 </div>
                             </div>
                         </div>
@@ -111,16 +107,14 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                                        v-for="items in Product.slice(4, 8)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :image="items.image"
-                                        :description="items.description"
-                                        @click="goto(items)"
-                                    >
-                                    </BodyProduct>
+                    v-for="items in Product.slice(4, 8)"
+                    :key="items.id"
+                    :id="items.id"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
                                 </div>
                             </div>
                         </div>
@@ -129,16 +123,14 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                                        v-for="items in Product.slice(8, 12)"
-                                        :key="items.pr"
-                                        :id="items.id"
-                                        :price="items.price"
-                                        :title="items.title"
-                                        :image="items.image"
-                                        :description="items.description"
-                                        @click="goto(items)"
-                                    >
-                                    </BodyProduct>
+                    v-for="items in Product.slice(8, 12)"
+                    :key="items.id"
+                    :id="items.id"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
                                 </div>
                             </div>
                         </div>
@@ -202,16 +194,14 @@
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                                    v-for="items in Product.slice(0, 4)"
-                                    :key="items.pr"
-                                    :id="items.id"
-                                    :price="items.price"
-                                    :title="items.title"
-                                    :image="items.image"
-                                    :description="items.description"
-                                    @click="goto(items)"
-                                >
-                                </BodyProduct>
+                    v-for="items in Product.slice(0, 4)"
+                    :key="items.id"
+                    :id="items.id"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -220,16 +210,14 @@
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                                    v-for="items in Product.slice(4, 8)"
-                                    :key="items.pr"
-                                    :id="items.id"
-                                    :price="items.price"
-                                    :title="items.title"
-                                    :image="items.image"
-                                    :description="items.description"
-                                    @click="goto(items)"
-                                >
-                                </BodyProduct>
+                    v-for="items in Product.slice(4, 8)"
+                    :key="items.id"
+                    :id="items.id"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -237,17 +225,15 @@
                     <div class="carousel-item">
                         <div class="show-prod">
                             <div class="row">
-                                <BodyProduct
-                                    v-for="items in Product.slice(8, 12)"
-                                    :key="items.pr"
-                                    :id="items.id"
-                                    :price="items.price"
-                                    :title="items.title"
-                                    :image="items.image"
-                                    :description="items.description"
-                                    @click="goto(items)"
-                                >
-                                </BodyProduct>
+                                 <BodyProduct
+                    v-for="items in Product.slice(8, 12)"
+                    :key="items.id"
+                    :id="items.id"
+                    :short_des="items.short_des"
+                    :name="items.name"
+                    @click="goto(items)"
+                >
+                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -266,12 +252,12 @@
 </template>
 
 <script>
-//import axios from "axios";
+// import axios from "axios";
 export default {
     data() {
         return {
             urll: '/img/',
-            //  Product:[],
+            //   Product: [] ,
             // lastStores:[],
             //  brands:[]
             // categories:[]
@@ -284,7 +270,7 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        Product() {
+         Product() {
             return this.$store.state.Product;
         },
         lastStores() {
@@ -297,11 +283,15 @@ export default {
             return this.$store.state.categories;
         },
     },
-    /* created(){
-    axios.get("http://edalili.e-dalely.com")
+   /*  created(){
+    axios.get("http://edalili.e-dalely.com/public/api/products/getAll")
     .then(response => {
-      this.Product = response.data[0].Products;
-    })
+      this.Product = response.data.Product
+       console.log(response.data.Product)
+    });
+   
+    }
+    /*
     .then(response => {
       this.lastStores = response.data[0].lastStores;
     })
