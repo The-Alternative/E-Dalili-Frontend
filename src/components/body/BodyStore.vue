@@ -135,7 +135,6 @@
                             class="textcheck"
                             v-for="category in categories"
                             :key="category"
-                            for="category"
                         >
                             {{ category }}
                             <input
