@@ -335,24 +335,14 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
 export default {
     name: 'visitStore',
     props: ['id', 'title', 'workingHours'],
-    data() {
-        return {
-            urll: '/img/',
-        };
-    },
     components: {
         BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
         categories() {
             return this.$store.state.categories;
         },
@@ -384,18 +374,6 @@ export default {
         },
         gotodetails(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
-        },
-        fetch() {
-            // var self = this;
-            Vue.axios
-                .get('http://localhost:8080/api/stores/getById/1')
-                .then((res) => {
-                    // self.Stores = res.data.Stores;
-                    console.warn('Data SUCCESS: ', res);
-                })
-                .catch(function(error) {
-                    console.warn('------ Error ------: ', error);
-                });
         },
     },
 };
