@@ -282,9 +282,6 @@ export default {
         };
     },
     computed: {
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
         categories() {
             return this.$store.state.Categories;
         },
