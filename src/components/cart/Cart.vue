@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h4 style="margin-bottom:5px">
-                                <b>{{$t('ShoppingCart')}}</b>
+                                <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
                         <div class="store">
@@ -45,7 +45,7 @@
                             </button>
                         </div>
                         <div class="col-sm-2 col-xs-3">
-                            <span>{{$t('price')}}: </span>
+                            <span>{{ $t('price') }}: </span>
                             <span class="price">{{
                                 items.price * items.quantity
                             }}</span>
@@ -64,13 +64,11 @@
                         ل.س
                     </div>
                     <div class="col" style="padding-left:0;">
-                        :{{$t('price')}}
+                        :{{ $t('price') }}
                     </div>
                 </div>
                 <form class="fo">
-                    <p>
-                    {{$t('ShippingCosts')}}  500 ل.س
-                    </p>
+                    <p>{{ $t('ShippingCosts') }} 500 ل.س</p>
                 </form>
                 <div
                     class="row"
@@ -80,9 +78,7 @@
                         <span class="price"> {{ totalPrice + 500 }}</span>
                         ل.س
                     </div>
-                    <div class="col">
-                        :{{$t('priceWithShippingCosts')}}  
-                    </div>
+                    <div class="col">:{{ $t('priceWithShippingCosts') }}</div>
                 </div>
                 <a class="cta" style="border:none">
                     <span>Check Out</span>

@@ -180,12 +180,11 @@ export default {
     border: none !important;
     box-shadow: none !important;
 }
-.cartshop{
-    position:relative;
+.cartshop {
+    position: relative;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-
 }
-.cartshop:active{
+.cartshop:active {
     transform: scale(0.9);
     background-color: #ffa130;
     box-shadow: 0 2px 25px rgba(255, 215, 52, 0.2);

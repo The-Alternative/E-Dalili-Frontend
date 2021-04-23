@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="all-section">
-            <h3>{{$t('Allsections')}}</h3>
+            <h3>{{ $t('Allsections') }}</h3>
         </div>
         <div class="row align-middle">
             <div
@@ -18,7 +18,7 @@
                         <div class="txt">
                             <h1>{{ catog.name }}</h1>
                         </div>
-                        <a href="#">{{$t('More')}}</a>
+                        <a href="#">{{ $t('More') }}</a>
                         <div class="ico-card">
                             <img v-lazy="catog.image" style="width:60%" />
                             <i class="fa fa-rebel"></i>
@@ -122,7 +122,7 @@ export default {
         margin-top: 12rem;
         z-index: 1;
         h1 {
-            font-size:18px;
+            font-size: 18px;
             font-weight: 300;
             text-transform: uppercase;
         }
@@ -135,62 +135,62 @@ export default {
             color: rgba(255, 255, 255, 1);
         }
     }
-@media (max-width: 575.98px) {
-        .txt{
-        margin-top: 11rem;
+    @media (max-width: 575.98px) {
+        .txt {
+            margin-top: 11rem;
+        }
+        .txt h1 {
+            font-size: 16px;
+        }
     }
-      .txt h1{
-        font-size: 16px;
+    @media (max-width: 520.98px) {
+        .txt {
+            margin-top: 9rem;
+        }
+        .txt h1 {
+            font-size: 16px;
+        }
     }
-}
-@media (max-width: 520.98px) {
-        .txt{
-        margin-top: 9rem;
+    @media (max-width: 465.98px) {
+        .txt {
+            margin-top: 8rem;
+        }
+        .txt h1 {
+            font-size: 16px;
+        }
     }
-      .txt h1{
-        font-size: 16px;
+    @media (max-width: 430.98px) {
+        .txt {
+            margin-top: 7rem;
+        }
+        .txt h1 {
+            font-size: 16px;
+        }
     }
-}
-@media (max-width: 465.98px) {
-        .txt{
-        margin-top: 8rem;
+    @media (max-width: 380.98px) {
+        .txt {
+            margin-top: 5rem;
+        }
+        .txt h1 {
+            font-size: 16px;
+        }
     }
-      .txt h1{
-        font-size: 16px;
+    @media (max-width: 340.98px) {
+        .txt {
+            margin-top: 4rem;
+        }
+        .txt h1 {
+            font-size: 12px;
+        }
     }
-}
-@media (max-width: 430.98px) {
-        .txt{
-        margin-top: 7rem;
+    @media (max-width: 300.98px) {
+        .txt {
+            margin-top: 3rem;
+        }
+        .txt h1 {
+            font-size: 12px;
+        }
     }
-      .txt h1{
-        font-size: 16px;
-    }
-}
-@media (max-width: 380.98px) {
-        .txt{
-        margin-top: 5rem;
-    }
-      .txt h1{
-        font-size: 16px;
-    }
-}
-@media (max-width: 340.98px) {
-        .txt{
-        margin-top: 4rem;
-    }
-      .txt h1{
-        font-size: 12px;
-    }
-}
-@media (max-width: 300.98px) {
-        .txt{
-        margin-top: 3rem;
-    }
-      .txt h1{
-        font-size: 12px;
-    }
-}
     a {
         z-index: 3;
         font-size: 0.7rem;
@@ -247,7 +247,6 @@ export default {
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  
     .cont-market {
         height: auto;
     }
@@ -268,15 +267,15 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .card-market {
-    padding: 0;
-    min-height: 170px;
-}
- .img-market {
-    border-radius: 50%;
-    margin: auto;
-    height: 150px;
-    width: 125px;
-}
+        padding: 0;
+        min-height: 170px;
+    }
+    .img-market {
+        border-radius: 50%;
+        margin: auto;
+        height: 150px;
+        width: 125px;
+    }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {

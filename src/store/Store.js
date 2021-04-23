@@ -12,6 +12,8 @@ export default new Vuex.Store({
     state: {
         // MOCK_DATA json
         // Stores: [],
+        Stores: [],
+        products: [],
         Product: jeson[0].Products,
         stores: data.stores,
         product: data.stores[0].products,
@@ -90,6 +92,9 @@ export default new Vuex.Store({
         SET_Stores(state, Stores) {
             state.Stores = Stores;
         },
+        // SET_PRODUCTS(state, products) {
+        //     state.products = products;
+        // },
     },
     actions: {
         addToCart: (context, payload) => {
@@ -99,16 +104,27 @@ export default new Vuex.Store({
             context.commit('removeItem', payload);
         },
     },
-    // loadStores({ commit }) {
+    // getProducts({ commit }) {
     //     axios
-    //         .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+    //         .get('http://localhost:8080/api/stores/getAll')
     //         .then((res) => {
-    //             console.warn(res.data);
-    //             let Stores = res.data;
-    //             commit('SET_Stores', Stores);
+    //             commit('SET_PRODUCTS', res.data);
+    //             console.warn('dataproduct', res.data);
     //         })
     //         .catch(function(error) {
     //             console.log('Error: ', error);
     //         });
     // },
+    loadStores({ commit }) {
+        axios
+            .get('http://localhost:8080/api/stores/getAll')
+            .then((res) => {
+                console.warn(res.data.Stores);
+                let Stores = res.data.Stores;
+                commit('SET_Stores', Stores);
+            })
+            .catch(function(error) {
+                console.log('Error: ', error);
+            });
+    },
 });

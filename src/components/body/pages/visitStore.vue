@@ -249,28 +249,25 @@
             <div class="row align-middle" style="height: 80%;">
                 <div
                     class="col-md-6 col-lg-3 col-xs-3 mb-4 column"
-                    v-for="catog in categories"
+                    v-for="catog in Categoriees"
                     :key="catog.id"
                     :slug="catog.slug"
                     :name="catog.name"
-                    :image="catog.image"
                     style="width: 50%;"
                 >
-                    <router-link :to="`/${catog.slug}`">
-                        <div class="card">
-                            <div class="txt">
-                                <h1>{{ catog.name }}</h1>
-                            </div>
-                            <a href="#">{{ $t('More') }}</a>
-                            <div class="ico-card">
-                                <img
-                                    src="../../../../public/img/buty.jpg"
-                                    style="width: 60%;"
-                                />
-                                <i class="fa fa-rebel"></i>
-                            </div>
+                    <div class="card">
+                        <div class="txt">
+                            <h1>{{ catog.name }}</h1>
                         </div>
-                    </router-link>
+                        <a href="#">{{ $t('More') }}</a>
+                        <div class="ico-card">
+                            <img
+                                src="../../../../public/img/buty.jpg"
+                                style="width: 60%;"
+                            />
+                            <i class="fa fa-rebel"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -335,17 +332,27 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+Vue.use(VueAxios, axios);
+
 export default {
     name: 'visitStore',
     props: ['id', 'title', 'workingHours'],
+    data() {
+        return {
+            Categoriees: [],
+        };
+    },
     components: {
         BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        categories() {
-            return this.$store.state.categories;
-        },
+        // categories() {
+        //     return this.$store.state.categories;
+        // },
         brands() {
             return this.$store.state.brands;
         },
@@ -375,7 +382,28 @@ export default {
         gotodetails(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
+        fetch() {
+            var self = this;
+            Vue.axios
+                .get('http://localhost:8080/api/categories/getAll')
+                .then((res) => {
+                    self.Categoriees = res.data.Category;
+                    console.warn('categories SUCCESS: ', res.data.Category);
+                })
+                .catch(function(error) {
+                    console.warn('------ Error ------: ', error);
+                });
+        },
     },
+    // mounted() {
+    //     this.$store.dispatch('loadCategories');
+    // },
+    created() {
+        this.fetch();
+    },
+    // mounted(){
+    //     this.$store.dispatch('getProducts')
+    // }
 };
 </script>
 <style lang="scss" scoped>

@@ -11,11 +11,10 @@
 </template>
 
 <script>
-
 export default {
     name: 'App',
     components: {
-        AppHeader:()=> import ('@/components/header/AppHeader.vue'),
+        AppHeader: () => import('@/components/header/AppHeader.vue'),
         AppFooter: () => import('@/components/Footer/AppFooter.vue'),
     },
 };
