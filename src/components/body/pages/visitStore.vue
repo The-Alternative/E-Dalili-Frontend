@@ -401,9 +401,6 @@ export default {
     created() {
         this.fetch();
     },
-    // mounted(){
-    //     this.$store.dispatch('getProducts')
-    // }
 };
 </script>
 <style lang="scss" scoped>
