@@ -96,7 +96,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
+                                                        {{ $t('AddCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -106,7 +106,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{ $t('GoToCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -202,7 +202,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
+                                                        {{ $t('AddCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -212,7 +212,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{ $t('GoToCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -308,7 +308,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
+                                                        {{ $t('AddCart') }}
                                                     </span>
                                                 </button>
                                             </div>
@@ -318,7 +318,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{ $t('GoToCart') }}
                                                     </span>
                                                 </button>
                                             </div>

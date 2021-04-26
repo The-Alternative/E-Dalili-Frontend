@@ -7,7 +7,7 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in Stores" :key="store.id">
+            <div class="store mb-4" v-for="store in Stores" :key="store.id" :store="store">
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -75,19 +75,12 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <button
+                                <router-link :to="{name:'visitStore',params:{id:store.id,title:store.title,workingHours:store.workingHours}}"><button
                                     type="button"
                                     class="btn"
-                                    @click="
-                                        gotoview(
-                                            store.id,
-                                            store.title,
-                                            store.workingHours
-                                        )
-                                    "
                                 >
                                     <b class="">{{ $t('visit') }}</b>
-                                </button>
+                                </button></router-link>
                             </div>
                             <div class="col team-social">
                                 <div class="row">
@@ -270,19 +263,25 @@ export default {
         PhoneStore: () => import('@/components/body/phone-store'),
         LocationStore: () => import('@/components/body/location-store'),
     },
-    props: ['id', 'title', 'workingHours'],
+    props: ['id'],
 
     data() {
         return {
-            Stores: [],
+            // Stores: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
     },
-    computed: {
+  mounted() {
+  this.$store.dispatch('loadStores');
+      },
+  computed: {
         categories() {
             return this.$store.state.Categories;
+        },
+        Stores(){
+            return this.$store.state.Stores;
         },
         // Stores: function() {
         //     if (this.selectedCategory.length == 0)
@@ -309,22 +308,22 @@ export default {
         gotoview: function(i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch() {
-            var self = this;
-            Vue.axios
-                .get('http://localhost:8080/api/stores/getAll')
-                .then((res) => {
-                    self.Stores = res.data.Stores;
-                    console.warn('Data SUCCESS: ', res.data.Stores);
-                })
-                .catch(function(error) {
-                    console.warn('------ Error ------: ', error);
-                });
-        },
+        // fetch() {
+        //     var self = this;
+        //     Vue.axios
+        //         .get('http://localhost:8080/api/stores/getAll')
+        //         .then((res) => {
+        //             self.Stores = res.data.Stores;
+        //             console.warn('Data SUCCESS: ', res.data.Stores);
+        //         })
+        //         .catch(function(error) {
+        //             console.warn('------ Error ------: ', error);
+        //         });
+        // },
     },
-    created() {
-        this.fetch();
-    },
+    // created() {
+    //     this.fetch();
+    // },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

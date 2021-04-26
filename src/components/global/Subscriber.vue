@@ -3,7 +3,7 @@
         <div class="name-market">{{ title }}</div>
         <img src="" />
         <div class="postion-market">{{ location }}</div>
-        <button type="button" class="btn btn-light">{{$t('visit')}}</button>
+        <button type="button" class="btn btn-light">{{ $t('visit') }}</button>
     </div>
 </template>
 

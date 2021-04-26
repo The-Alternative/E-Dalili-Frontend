@@ -5,38 +5,72 @@
             <div class="col-sm-3 ">
                 <h3>{{ $t('GetKnowUs') }}</h3>
                 <ul>
-                    <li><a href="#">{{$t('AboutUs')}}</a></li>
-                    <li><a href="#">{{$t('CareersPress')}}></a></li>
-                    <li><a href="#">{{$t('Releases')}}</a></li>
-                    <li><a href="#">{{$t('E-DALELYCares')}}</a></li>
-                    <li><a href="#">{{$t('GiftaSmile')}}</a></li>
+                    <li>
+                        <a href="#">{{ $t('AboutUs') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('CareersPress') }}></a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('Releases') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('E-DALELYCares') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('GiftaSmile') }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <h3>{{ $t('Connectwith') }}</h3>
                 <ul>
-                    <li><a href="#">{{$t('Facebook')}}</a></li>
-                    <li><a href="#">{{$t('Twitter')}}</a></li>
-                    <li><a href="#">{{$t('Instagram')}}</a></li>
+                    <li>
+                        <a href="#">{{ $t('Facebook') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('Twitter') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('Instagram') }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h3>{{$t('JoinUs')}}</h3>
+                <h3>{{ $t('JoinUs') }}</h3>
                 <ul>
-                    <li><a href="#">{{$t('SellonE-Dalely')}}</a></li>
-                    <li><a href="#">{{$t('SellunderE-Dalely')}}</a></li>
-                    <li><a href="#">{{$t('Accelerator')}}</a></li>
-                    <li><a href="#">{{$t('BecomeanAffiliate')}}</a></li>
-                    <li><a href="#">{{$t('FulfilmentbyE-Dalely')}}</a></li>
+                    <li>
+                        <a href="#">{{ $t('SellonE-Dalely') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('SellunderE-Dalely') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('Accelerator') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('BecomeanAffiliate') }}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('FulfilmentbyE-Dalely') }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-sm-3">
-                <h3>{{$t('LetUsHelp')}}</h3>
+                <h3>{{ $t('LetUsHelp') }}</h3>
                 <ul>
-                    <li><a href="#">{{$t('YourAccount')}} </a></li>
-                    <li><a href="#">{{$t('E-DalelyAppDownload')}} </a></li>
-                    <li><a href="#">{{$t('E-DalelyAssistantDownload')}} </a></li>
-                    <li><a href="#">{{$t('HelpCenter')}}</a></li>
+                    <li>
+                        <a href="#">{{ $t('YourAccount') }} </a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('E-DalelyAppDownload') }} </a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('E-DalelyAssistantDownload') }} </a>
+                    </li>
+                    <li>
+                        <a href="#">{{ $t('HelpCenter') }}</a>
+                    </li>
                 </ul>
             </div>
             <hr />

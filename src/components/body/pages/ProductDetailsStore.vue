@@ -371,7 +371,7 @@ export default {
         addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function () {
+        gotocart: function() {
             this.$router.push(`/Cart`);
         },
         addToCart() {
