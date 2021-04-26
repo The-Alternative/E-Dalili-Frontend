@@ -13,6 +13,7 @@ export default new Vuex.Store({
         // MOCK_DATA json
         // Stores: [],
         Stores: [],
+        Store:null,
         products: [],
         Product: jeson[0].Products,
         stores: data.stores,
@@ -95,7 +96,11 @@ export default new Vuex.Store({
         // SET_PRODUCTS(state, products) {
         //     state.products = products;
         // },
+        SET_Store(state,Store) {
+            state.Store= Store;
+        },
     },
+
     actions: {
         addToCart: (context, payload) => {
             context.commit('addToCart', payload);
@@ -103,6 +108,30 @@ export default new Vuex.Store({
         removeItem: (context, payload) => {
             context.commit('removeItem', payload);
         },
+        loadStores({ commit }) {
+            axios
+                .get('http://localhost:8080/api/stores/getAll')
+                .then((res) => {
+                    console.warn(res.data.Stores);
+                    let Stores = res.data.Stores;
+                    commit('SET_Stores', Stores);
+                })
+                .catch(function(error) {
+                    console.log('Error: ', error);
+                });
+        },
+        loadStore({commit},productId){
+            axios
+                .get(`http://localhost:8080/api/stores/getById/${productId}`)
+                .then((res) => {
+                    console.warn(res.data.Stores);
+                    let store = res.data.Stores;
+                    commit('SET_Stores', store);
+                })
+                .catch(function(error) {
+                    console.log('Error: ', error);
+                });
+        }
     },
     // getProducts({ commit }) {
     //     axios
@@ -115,16 +144,5 @@ export default new Vuex.Store({
     //             console.log('Error: ', error);
     //         });
     // },
-    loadStores({ commit }) {
-        axios
-            .get('http://localhost:8080/api/stores/getAll')
-            .then((res) => {
-                console.warn(res.data.Stores);
-                let Stores = res.data.Stores;
-                commit('SET_Stores', Stores);
-            })
-            .catch(function(error) {
-                console.log('Error: ', error);
-            });
-    },
+
 });
