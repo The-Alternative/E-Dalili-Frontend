@@ -3,10 +3,10 @@
         <img src="../../../public/img/ShoppingCart.jpg" width="200px" />
         <div class="mt-4">
             <h4 class="orange-red fw-600">
-                {{$t('YourCartEmpty')}}
+                {{ $t('YourCartEmpty') }}
             </h4>
             <h5 class="darkblue fw-600">
-                {{$t('YouGoHomePageViewFoodItems')}}
+                {{ $t('YouGoHomePageViewFoodItems') }}
             </h5>
         </div>
     </div>

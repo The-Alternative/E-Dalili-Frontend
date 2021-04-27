@@ -12,6 +12,9 @@ export default new Vuex.Store({
     state: {
         // MOCK_DATA json
         // Stores: [],
+        Stores: [],
+        Store:null,
+        products: [],
         Product: jeson[0].Products,
         stores: data.stores,
         product: data.stores[0].products,
@@ -90,7 +93,14 @@ export default new Vuex.Store({
         SET_Stores(state, Stores) {
             state.Stores = Stores;
         },
+        // SET_PRODUCTS(state, products) {
+        //     state.products = products;
+        // },
+        SET_Store(state,Store) {
+            state.Store= Store;
+        },
     },
+
     actions: {
         addToCart: (context, payload) => {
             context.commit('addToCart', payload);
@@ -98,17 +108,41 @@ export default new Vuex.Store({
         removeItem: (context, payload) => {
             context.commit('removeItem', payload);
         },
+        loadStores({ commit }) {
+            axios
+                .get('http://localhost:8080/api/stores/getAll')
+                .then((res) => {
+                    console.warn(res.data.Stores);
+                    let Stores = res.data.Stores;
+                    commit('SET_Stores', Stores);
+                })
+                .catch(function(error) {
+                    console.log('Error: ', error);
+                });
+        },
+        loadStore({commit},productId){
+            axios
+                .get(`http://localhost:8080/api/stores/getById/${productId}`)
+                .then((res) => {
+                    console.warn(res.data.Stores);
+                    let store = res.data.Stores;
+                    commit('SET_Stores', store);
+                })
+                .catch(function(error) {
+                    console.log('Error: ', error);
+                });
+        }
     },
-    // loadStores({ commit }) {
+    // getProducts({ commit }) {
     //     axios
-    //         .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+    //         .get('http://localhost:8080/api/stores/getAll')
     //         .then((res) => {
-    //             console.warn(res.data);
-    //             let Stores = res.data;
-    //             commit('SET_Stores', Stores);
+    //             commit('SET_PRODUCTS', res.data);
+    //             console.warn('dataproduct', res.data);
     //         })
     //         .catch(function(error) {
     //             console.log('Error: ', error);
     //         });
     // },
+
 });

@@ -45,7 +45,6 @@
 <script>
 
 export default {
-    
     name: 'Products',
     props: ['id', 'name', 'short_des','long_des', 'price'],
     data() {
@@ -194,9 +193,9 @@ border-radius: 10px
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 576.98px) {
     .content-pro {
-    font-size: 12px;
-    height: auto;
-    margin-top: 2vh;
+        font-size: 12px;
+        height: auto;
+        margin-top: 2vh;
     }
     .content-pro .name-prod {
         margin-bottom: 10px;
@@ -215,7 +214,7 @@ border-radius: 10px
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    margin:10px auto;
+    margin: 10px auto;
 }
 .content-pro .heart-conten:hover {
     background-color: #d3b85f;

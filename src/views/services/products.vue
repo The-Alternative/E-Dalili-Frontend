@@ -490,28 +490,24 @@ export default {
 /* show market */
 .mar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
-
 }
-@media  (max-width: 576.98px) {
-.mar {
-    margin-top: 20vh;
-    margin-bottom: 4vh;
+@media (max-width: 576.98px) {
+    .mar {
+        margin-top: 20vh;
+        margin-bottom: 4vh;
     }
-
 }
-@media  (max-width: 500.98px) {
-.mar {
-    margin-top: 11vh;
-    margin-bottom: 4vh;
+@media (max-width: 500.98px) {
+    .mar {
+        margin-top: 11vh;
+        margin-bottom: 4vh;
     }
-
 }
-@media  (max-width: 435.98px) {
-.mar {
-    margin-top: 5vh;
-    margin-bottom: 4vh;
+@media (max-width: 435.98px) {
+    .mar {
+        margin-top: 5vh;
+        margin-bottom: 4vh;
     }
-
 }
 .show-market {
     background-color: #fff;
