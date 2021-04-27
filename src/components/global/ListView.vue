@@ -7,8 +7,10 @@
             <div class="col-6"> 
             <select class="form-control" v-model="sortType" v-on:change="sortItem()">
                 <option value="1" disabled>ترتيب</option>
-                <option>من الأرخص الى الأغلى</option>
+                <option value="price">من الأرخص الى الأغلى</option>
+                <option value="prices">من الأغلى الى الأرخص</option>
                 <option value="space">من الأقرب الى الأبعد</option>
+                <option value="spaces">من الأبعد الى الأقرب</option>
             </select>
             </div>
 
@@ -44,7 +46,7 @@
                                     
                                                   <div class="col-2">ar</div>
                                                     <div class="col-2">ar ar</div>
-                                             <div class="col-2">80.00 S.P</div>
+                                             <div class="col-2"> {{store.price}} S.P </div>
                                         </div>
                                     </div>
              </div>
@@ -81,6 +83,15 @@ export default {
         sortItem() {
                 if (this.sortType == 'space') {
                     this.stores = this.stores.sort((prev, curr) => prev.space - curr.space);
+                }
+                else if(this.sortType == 'spaces'){
+                     this.stores = this.stores.sort((prev, curr) => curr.space - prev.space);
+                }
+                else if(this.sortType == 'price'){
+                     this.stores = this.stores.sort((prev, curr) => prev.price - curr.price);
+                }
+                else if(this.sortType == 'prices'){
+                     this.stores = this.stores.sort((prev, curr) => curr.price - prev.price);
                 }
     }}
  
