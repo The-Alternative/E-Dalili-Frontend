@@ -48,15 +48,6 @@
                 </div>
                 <div>
                     <span>{{ price }} $</span>
-                    <div class="price" style="display: inline-block;"></div>
-                </div>
-                <div class="avilble">
-                    <div class="mb-2">
-                        <div style="display: inline-block;">
-                            متوفر في سنتر الريم
-                        </div>
-                        <span class="fa fa-check-circle"></span>
-                    </div>
                 </div>
             </div>
         </div>
