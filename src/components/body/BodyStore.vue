@@ -7,7 +7,12 @@
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
-            <div class="store mb-4" v-for="store in Stores" :key="store.id" :store="store">
+            <div
+                class="store mb-4"
+                v-for="store in Stores"
+                :key="store.id"
+                :store="store"
+            >
                 <div class="card-title col">
                     <div class="col DIV1">
                         <div class="col">
@@ -75,12 +80,19 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <router-link :to="{name:'visitStore',params:{id:store.id,title:store.title,workingHours:store.workingHours}}"><button
-                                    type="button"
-                                    class="btn"
+                                <router-link
+                                    :to="{
+                                        name: 'visitStore',
+                                        params: {
+                                            id: store.id,
+                                            title: store.title,
+                                            workingHours: store.workingHours,
+                                        },
+                                    }"
+                                    ><button type="button" class="btn">
+                                        <b class="">{{ $t('visit') }}</b>
+                                    </button></router-link
                                 >
-                                    <b class="">{{ $t('visit') }}</b>
-                                </button></router-link>
                             </div>
                             <div class="col team-social">
                                 <div class="row">
@@ -273,14 +285,11 @@ export default {
             selectedCategory: [],
         };
     },
-  mounted() {
-  this.$store.dispatch('loadStores');
-      },
-  computed: {
+    computed: {
         categories() {
             return this.$store.state.Categories;
         },
-        Stores(){
+        Stores() {
             return this.$store.state.Stores;
         },
         // Stores: function() {
@@ -299,6 +308,9 @@ export default {
         //     });
         //     return Stores;
         // },
+    },
+    mounted() {
+        this.$store.dispatch('loadStores');
     },
     methods: {
         btnbar: function() {
