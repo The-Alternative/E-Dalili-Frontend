@@ -1,77 +1,39 @@
 <template>
     <div class="ProductDetalis" style="background-color:#e9ecf2">
-        <Cartmini />
-        <div class="row">
-            <div class="col-6"><button class="btn btn-success" style="margin-top: 10px;">اختار حسب السعر</button></div>
-             <div class="col-6"><button class="btn btn-success" style="margin-top: 10px;">اختار حسب المسافة</button></div>
-        </div>
             <div class="show-prod">
                             <div class="row">
                                 <div
                                     class="col-xs-12"
                                     style="direction: rtl;"
                                 >
-                                    <div
-                                        class="store"
-                                        v-for="store in stores.slice(0, 1)"
-                                        v-bind:store="store"
-                                        :key="store.id"
-                                        :address="store.address"
-                                    >
-                                        <div>
-                                            <img
-                                                class="rounded-circle"
-                                                src="../../../public/img/market-logo.png"
-                                                height="60"
-                                            />
-
-                                            <h2>
-                                                {{ store.title }}
-                                            </h2>
-                                            {{ store.space }}
-                                            <img
-                                                class="img-open"
-                                                style="margin-right:10px"
-                                                src="../../../public/img/open.png"
-                                                height="40"
-                                            />
-                                        </div>
-                                    </div>
                                     <div class="content-pro text-center">
-                                        <img class="rounded-circle" src="../../../public/img/w.jpg" style="width: 100px;height: 100px"/>
+                                        <img class="" src="../../../public/img/w.jpg" style="width: 250px;height: 250px;border-radius: 10px;"/>
                                         <div class="name-prod">
                                             {{ name }}
                                         </div>
                                         <div class="category">
                                             {{ long_des }}
                                         </div>
-
+                                        <div class="avilble">
+                                            <div style="display: inline-block">متوفر في متاجر</div>
+                                            <span class="fa fa-check-circle"></span>
+                                        </div>
                                         <div>
-                                            <span>80.00 S.P</span>
+                                            <span>80.00_100.00 S.P</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
                                             ></div>
                                         </div>
-
+<div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
                                         <div class="row">
                                             <div class="col">
                                                 <button
-                                                    @click="addToCart"
+                                                    @click="gotoListView"
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('AddCart')}}
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <div class="col">
-                                                <button
-                                                    @click="gotocart"
-                                                    class="but1"
-                                                >
-                                                    <span>
-                                                        {{$t('GoToCart')}}
+                                                        {{$t('gotoListView')}}
                                                     </span>
                                                 </button>
                                             </div>
@@ -85,7 +47,6 @@
     </div>
 </template>
 <script>
-import Cartmini from '@/components/cart/Cartmini.vue';
 
 export default {
     data() {
@@ -100,9 +61,9 @@ export default {
         };
     },
     components: {
-        Cartmini,
+        
     },
-    props: ['id', 'name', 'long_des','short_des', 'price'],
+      props: ['id', 'name', 'short_des','long_des', 'price'],
     computed: {
         count() {
             return this.$store.state.count;
@@ -115,31 +76,13 @@ export default {
         },
     },
     methods: {
-        increment() {
-            this.$store.commit('increment');
+        
+      heartlike: function() {      
+          document.getElementById('heart').classList.toggle('is-active');
         },
-        addItem(items) {
-            this.$store.dispatch('addToCart', items);
-        },
-        gotocart: function() {
-            this.$router.push(`/Cart`);
-        },
-        addToCart() {
-            this.$store.dispatch('addToCart', this.details);
-            document.getElementById('cart').animate(
-                [
-                    // keyframes
-                    { transform: 'rotate(-20deg)' },
-                    { transform: 'rotate(20deg)' },
-                    { transform: 'scale(3,3)' },
-                    { transform: 'scale(1,1)' },
-                ],
-                {
-                    // timing options
-                    duration: 1000,
-                }
-            );
-        },
+        gotoListView: function() {
+            this.$router.push(`/ListView`);
+        }
     },
 };
 </script>
@@ -173,6 +116,9 @@ export default {
 .content-pro .stars {
     margin-top: 20px;
 }
+.content-pro .avilble {
+    color: #19e653;
+}
 .content-pro .checked {
     color: #dcd741;
 }
@@ -189,14 +135,12 @@ export default {
     cursor: pointer;
     margin: 5px;
 }
-
 .but1 span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-
 .but1 span:after {
     content: '\00bb';
     position: absolute;
@@ -206,11 +150,9 @@ export default {
     transition: 0.5s;
     font-size: 30px;
 }
-
 .but1:hover span {
     padding-right: 25px;
 }
-
 .but1:hover span:after {
     opacity: 1;
     right: 0;
@@ -274,4 +216,33 @@ export default {
     top: 100px;
     position: absolute;
 }
+</style>
+<style lang="scss" scoped>
+
+.heart-conten{
+    background-color: #f0f0f0;
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+    margin:10px auto;
+}
+.content-pro .heart-conten:hover {
+    background-color: #d3b85f;
+}
+.heart {
+    width: 80px;
+    height: 100px;
+    background: url('../../../public/img/heart.png') no-repeat;
+    background-position: 5px -23px;
+    cursor: pointer;
+    transition: background-position 1s steps(28);
+    transition-duration: 0s;
+    margin: -22px 0px 0 -25px;
+
+    &.is-active {
+        transition-duration: 1s;
+        background-position: -2795px -23px;
+    }
+}
+
 </style>

@@ -41,7 +41,7 @@
     "LetUsHelp":"Let Us Help",
     
 "//comment3":"home page",
-    "Allsections":"All sections",
+    "AllCategories":"All Categories",
     "womenwatches":"women watches",
 
 "//comment4":"Bodystore",
@@ -76,5 +76,11 @@
 
 "//comment7":"emptycart",
     "YourCartEmpty":"Your cart is empty",
-    "YouGoHomePageViewFoodItems":"You can go to home page to view more food items"
-}
+    "YouGoHomePageViewFoodItems":"You can go to home page to view more food items",
+
+"//comment8":"product",
+    "Choose":"Choose",
+
+"//comment9":"ProductDetalis",
+    "gotoListView":"Go To List View"
+    }

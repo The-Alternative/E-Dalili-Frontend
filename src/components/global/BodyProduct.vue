@@ -2,14 +2,14 @@
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
             <img
-                @click="goto(id, name, long_des,short_des, price)"
+                @click="gotodetails(id, name, long_des,short_des)"
                 v-lazy="'http://front.e-dalely.com/img/mobile.jpg'"
                 class="new"
             />
-            <div @click="goto(id, name, long_des,short_des, price)" class="name-prod">
-                {{ name }}
+            <div @click="gotodetails(id, name, long_des,short_des)" class="name-prod">
+                {{ name }} 
             </div>
-            <div @click="goto(id, name, long_des,short_des, price)" class="category">
+            <div @click="gotodetails(id, name, long_des,short_des)" class="category">
                 {{ short_des }}
             </div>
 
@@ -25,7 +25,7 @@
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
-                <button @click="goto(id, name, long_des,short_des, price)">Choose</button>
+                <button @click="gotoListView">{{$t('Choose')}}</button>
                 <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
             </div>
              <!-- 
@@ -43,10 +43,11 @@
 </template>
 
 <script>
+
 export default {
     
     name: 'Products',
-    props: ['id', 'name', 'short_des','long_des', 'price', 'image'],
+    props: ['id', 'name', 'short_des','long_des', 'price'],
     data() {
         return {
             details: {
@@ -54,14 +55,17 @@ export default {
                 name: this.name,
                 short_des: this.short_des,
                 long_des:this.long_des,
-                price: this.price
             },
+            
         };
     },
     methods: {
         
-        goto: function(i, n, s,l, p) {
-            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}/${p}`);
+        gotodetails: function(i, n, s,l) {
+            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
+        },
+        gotoListView: function() {
+            this.$router.push(`ListView`);
         },
       heartlike: function() {      
           this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');

@@ -24,8 +24,13 @@ const routes = [
     },
     /* ProductDetalis */
     {
-        path: '/ProductDetalis/:id/:name/:long_des/:short_des/:price',
+        path: '/ProductDetalis/:id/:name/:long_des/:short_des',
         component: () => import('../components/global/ProductDetalis.vue'),
+        props: true,
+    },
+    {
+        path: '/ListView',
+        component: () => import('../components/global/ListView.vue'),
         props: true,
     },
     {
@@ -34,7 +39,7 @@ const routes = [
         name: 'ProductDetailsStore',
         props: true,
     },
-    /* services */
+    /* services or section */
     {
         path: '/',
         name: 'home',
@@ -80,49 +85,49 @@ const routes = [
         name: 'stores',
         component: () => import('../views/services/stores.vue'),
     },
-    /* section */
+    /* Categories */
     {
-        path: '/festival',
+        path: '/فهد',
         name: 'festival',
         component: () => import('../views/services/festival.vue'),
     },
     {
-        path: '/buty',
+        path: '/فهد',
         name: 'buty',
         component: () => import('../views/section/buty.vue'),
     },
     {
-        path: '/mobile',
+        path: '/فهد',
         name: 'mobile',
         component: () => import('../views/section/mobile.vue'),
     },
     {
-        path: '/computer',
+        path: '/فهد',
         name: 'computer',
         component: () => import('../views/section/computer.vue'),
     },
     {
-        path: '/elctronic',
+        path: '/فهد',
         name: 'elctronic',
         component: () => import('../views/section/elctronic.vue'),
     },
     {
-        path: '/kitchen',
+        path: '/فهد',
         name: 'kitchen',
         component: () => import('../views/section/kitchen.vue'),
     },
     {
-        path: '/education',
+        path: '/فهد',
         name: 'education',
         component: () => import('../views/section/education.vue'),
     },
     {
-        path: '/furniture',
+        path: '/فهد',
         name: 'furniture',
         component: () => import('../views/section/furniture.vue'),
     },
     {
-        path: '/child',
+        path: '/فهد',
         name: 'child',
         component: () => import('../views/section/child.vue'),
     },

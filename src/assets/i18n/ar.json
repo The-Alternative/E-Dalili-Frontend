@@ -41,7 +41,7 @@
     "HelpCenter":"مركز المساعدة",
     
 "//comment3":"home page",
-    "Allsections":"جميع الأقسام",
+    "AllCategories":"جميع الأقسام",
     "womenwatches":"ساعات نسائية",
 
 "//comment4":"Bodystore",
@@ -76,5 +76,10 @@
 
 "//comment7":"emptycart",
     "YourCartEmpty":"عربة التسوق فارغة",
-    "YouGoHomePageViewFoodItems":"يمكنك الذهاب إلى الصفحة الرئيسية لعرض المزيد من المواد الغذائية"
+    "YouGoHomePageViewFoodItems":"يمكنك الذهاب إلى الصفحة الرئيسية لعرض المزيد من المواد الغذائية",
+"//comment8":"product",
+    "Choose":"أختيار",
+    
+"//comment9":"ProductDetalis",
+    "gotoListView":"قائمة اختيار المنتج"
 }

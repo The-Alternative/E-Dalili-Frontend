@@ -1180,7 +1180,7 @@
         {
             "id": 8,
             "title": "سنتر المحيط - سوبر ماركت",
-            "space": "يبعد 750 م",
+            "space":  650 ,
             "rating": 0,
             "is_active": true,
             "is_approved": 1,
@@ -1348,7 +1348,7 @@
         {
             "id": 9,
             "title": "سنتر خالد - سوبر ماركت",
-            "space": "يبعد 750 م",
+            "space": 750,
             "rating": 0,
             "is_active": true,
             "is_approved": 1,
@@ -1517,7 +1517,7 @@
             "id": 10,
             "title": "سنتر الريم - سوبر ماركت",
             "rating": 0,
-            "space": "يبعد 500 م",
+            "space": 500 ,
             "is_active": true,
             "is_approved": 1,
             "delivery": 1,

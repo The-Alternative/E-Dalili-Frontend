@@ -23,6 +23,7 @@
                     :short_des="items.short_des"
                     :long_des="items.long_des"
                     :name="items.name"
+                    :range_price="items.range_price"
                     @click="goto(items)"
                 >
                 </BodyProduct>
@@ -271,7 +272,7 @@ export default {
     },
     computed: {
         //  Product() {
-       //      return this.$store.state.Product;
+       //    return this.$store.state.Product;
        //  },
         lastStores() {
             return this.$store.state.lastStores;
@@ -283,10 +284,10 @@ export default {
             return this.$store.state.categories;
         },
     },
-     created(){
+    created(){
     axios.get("http://edalili.e-dalely.com/public/api/products/getAll")
     .then(response => {
-      this.Product = response.data.Product
+      this.Product = response.data.Products
     })
     .catch(error => {console.log(error);})
    
@@ -302,7 +303,6 @@ export default {
   */
 };
 </script>
-
 <style scoped>
 .row {
     justify-content: center;
