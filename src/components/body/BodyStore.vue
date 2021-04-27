@@ -274,7 +274,7 @@ export default {
 
     data() {
         return {
-            Stores: [],
+            // Stores: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
@@ -301,6 +301,9 @@ export default {
         //     return Stores;
         // },
     },
+    mounted() {
+        this.$store.dispatch('loadStores');
+    },
     methods: {
         btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
@@ -309,22 +312,22 @@ export default {
         gotoview: function(i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch() {
-            var self = this;
-            Vue.axios
-                .get('http://localhost:8080/api/stores/getAll')
-                .then((res) => {
-                    self.Stores = res.data.Stores;
-                    console.warn('Data SUCCESS: ', res.data.Stores);
-                })
-                .catch(function(error) {
-                    console.warn('------ Error ------: ', error);
-                });
-        },
+        // fetch() {
+        //     var self = this;
+        //     Vue.axios
+        //         .get('http://localhost:8080/api/stores/getAll')
+        //         .then((res) => {
+        //             self.Stores = res.data.Stores;
+        //             console.warn('Data SUCCESS: ', res.data.Stores);
+        //         })
+        //         .catch(function(error) {
+        //             console.warn('------ Error ------: ', error);
+        //         });
+        // },
     },
-    created() {
-        this.fetch();
-    },
+    // created() {
+    //     this.fetch();
+    // },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
