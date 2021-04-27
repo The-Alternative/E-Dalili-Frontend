@@ -1,18 +1,28 @@
 <template>
     <div class="ProductDetalis" style="background-color:#e9ecf2">
         <div class="row">
-            <div class="col-6"> 
+            
+            <div class="col-12"><h2> أختيار الترتيب</h2></div>
+            <div class="col-3">
+                <h2>من الأرخص الى الأغلى</h2>                             
+            <input id="1" value="price" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+            </div>
+            <div class="col-3">
+                <h2>من الأغلى الى الأرخص</h2>       
+            <input id="2" value="prices" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+            </div>
+            <div class="col-3">
+                <h2>من الأقرب الى الأبعد</h2>
+            <input id="3" value="space" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+            </div>
+            <div class="col-3"> 
+                <h2>من الأبعد الى الأقرب</h2>          
+            <input id="4" value="spaces" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+            </div>
+            <div class="col-12" style="margin:10px"> 
             <img  class="rounded-circle" src="../../../public/img/w.jpg" style="width: 150px;height: 140px"/>
             </div>
-            <div class="col-6"> 
-            <select class="form-control" v-model="sortType" v-on:change="sortItem()">
-                <option value="1" disabled>ترتيب</option>
-                <option value="price">من الأرخص الى الأغلى</option>
-                <option value="prices">من الأغلى الى الأرخص</option>
-                <option value="space">من الأقرب الى الأبعد</option>
-                <option value="spaces">من الأبعد الى الأقرب</option>
-            </select>
-            </div>
+           
 
         </div>
             <div class="show-prod">
@@ -103,14 +113,9 @@ export default {
     justify-content: center;
     margin: 0;
 }
-.form-control{
-    width: 70%;
-    margin-top: 25px;
-    text-align: center;
-}
-.form-control{
-    width: 70%;
-    margin-top: 25px;
+.col-3 {
+    border: 1px solid azure;
+    border-radius: 10px;
 }
 .store{
     margin: 20px 0;

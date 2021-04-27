@@ -12,14 +12,14 @@
                                             {{ name }}
                                         </div>
                                         <div class="category">
-                                            {{ long_des }}
+                                            {{ short_des }}
                                         </div>
                                         <div class="avilble">
-                                            <div style="display: inline-block">متوفر في متاجر</div>
+                                            <div style="display: inline-block">متوفر في 5 متاجر</div>
                                             <span class="fa fa-check-circle"></span>
                                         </div>
                                         <div>
-                                            <span>80.00_100.00 S.P</span>
+                                            <span>  80,00 ل.س  الى 100,00 ل.س</span>
                                             <div
                                                 class="price"
                                                 style="display: inline-block"
@@ -33,7 +33,7 @@
                                                     class="but1"
                                                 >
                                                     <span>
-                                                        {{$t('gotoListView')}}
+                                                        {{$t('Choose')}}
                                                     </span>
                                                 </button>
                                             </div>
