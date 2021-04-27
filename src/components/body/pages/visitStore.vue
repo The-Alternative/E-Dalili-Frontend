@@ -195,7 +195,9 @@
                         </div>
                         <div class="col count">
                             <span class="followCount">2800</span>
-                            <span class="textcount">{{ $t('Followers') }}</span>
+                            <span class="textcount mt-5">{{
+                                $t('Followers')
+                            }}</span>
                         </div>
                     </div>
                 </div>
@@ -339,7 +341,7 @@ Vue.use(VueAxios, axios);
 
 export default {
     name: 'visitStore',
-    props: ['id','title','workingHours'],
+    props: ['id', 'title', 'workingHours'],
     data() {
         return {
             Categoriees: [],
@@ -350,9 +352,9 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-      store(){
-        return this.$store.state.Store
-      },
+        store() {
+            return this.$store.state.Store;
+        },
         categories() {
             return this.$store.state.categories;
         },
@@ -363,10 +365,10 @@ export default {
             return this.$store.state.stores[0].products;
         },
     },
-  mounted() {
-      this.$store.dispatch('loadStore',this.id);
-  },
-  methods: {
+    mounted() {
+        this.$store.dispatch('loadStore', this.id);
+    },
+    methods: {
         heart: function() {
             document
                 .getElementById('textFollow')
@@ -2698,7 +2700,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 40%;
+        top: 30%;
         left: 18%;
         transform: translate(-30%, -55%);
     }
