@@ -195,7 +195,9 @@
                         </div>
                         <div class="col count">
                             <span class="followCount">2800</span>
-                            <span class="textcount">{{ $t('Followers') }}</span>
+                            <span class="textcount mt-5">{{
+                                $t('Followers')
+                            }}</span>
                         </div>
                     </div>
                 </div>
@@ -249,7 +251,7 @@
             <div class="row align-middle" style="height: 80%;">
                 <div
                     class="col-md-6 col-lg-3 col-xs-3 mb-4 column"
-                    v-for="catog in Categoriees"
+                    v-for="catog in categories"
                     :key="catog.id"
                     :slug="catog.slug"
                     :name="catog.name"
@@ -350,15 +352,21 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        // categories() {
-        //     return this.$store.state.categories;
-        // },
+        store() {
+            return this.$store.state.Store;
+        },
+        categories() {
+            return this.$store.state.categories;
+        },
         brands() {
             return this.$store.state.brands;
         },
         product() {
             return this.$store.state.stores[0].products;
         },
+    },
+    mounted() {
+        this.$store.dispatch('loadStore', this.id);
     },
     methods: {
         heart: function() {
@@ -382,25 +390,25 @@ export default {
         gotodetails(i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
-        fetch() {
-            var self = this;
-            Vue.axios
-                .get('http://localhost:8080/api/categories/getAll')
-                .then((res) => {
-                    self.Categoriees = res.data.Category;
-                    console.warn('categories SUCCESS: ', res.data.Category);
-                })
-                .catch(function(error) {
-                    console.warn('------ Error ------: ', error);
-                });
-        },
+        // fetch() {
+        //     var self = this;
+        //     Vue.axios
+        //         .get('http://localhost:8080/api/categories/getAll')
+        //         .then((res) => {
+        //             self.Categoriees = res.data.Category;
+        //             console.warn('categories SUCCESS: ', res.data.Category);
+        //         })
+        //         .catch(function(error) {
+        //             console.warn('------ Error ------: ', error);
+        //         });
+        // },
     },
     // mounted() {
     //     this.$store.dispatch('loadCategories');
     // },
-    created() {
-        this.fetch();
-    },
+    // created() {
+    //     this.fetch();
+    // },
 };
 </script>
 <style lang="scss" scoped>
@@ -2692,7 +2700,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 40%;
+        top: 30%;
         left: 18%;
         transform: translate(-30%, -55%);
     }

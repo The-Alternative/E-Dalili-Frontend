@@ -2,15 +2,15 @@
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
             <img
-                @click="goto(id, title, description, price)"
-                v-lazy="image"
+                @click="gotodetails(id, name, long_des,short_des)"
+                v-lazy="'http://front.e-dalely.com/img/mobile.jpg'"
                 class="new"
             />
-            <div @click="goto(id, title, description, price)" class="name-prod">
-                {{ title }}
+            <div @click="gotodetails(id, name, long_des,short_des)" class="name-prod">
+                {{ name }} 
             </div>
-            <div @click="goto(id, title, description, price)" class="category">
-                {{ description }}
+            <div @click="gotodetails(id, name, long_des,short_des)" class="category">
+                {{ short_des }}
             </div>
 
             <div class="stars">
@@ -20,51 +20,56 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <div>
-                <span>ل.س{{ price }} </span>
-                <div class="price" style="display: inline-block"></div>
-            </div>
             <div class="avilble">
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
-            <div class="stage row">
-                <div @click="addToCart()" class="cart-ico">
+            <div class="row">
+                <button @click="gotoListView">{{$t('Choose')}}</button>
+                <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
+            </div>
+             <!-- 
+             <div class="stage row">
+              <div @click="addToCart()" class="cart-ico">
                     <button class="cart-button">
                         <i class="fa fa-shopping-cart"></i>
                     </button>
                 </div>
-                <div class="heart-conten">
-                    <div @click="heartlike()" id="heart" class="heart"></div>
-                </div>
+              
             </div>
+             -->
         </div>
     </div>
 </template>
+
 <script>
+
 export default {
     name: 'Products',
-    props: ['id', 'title', 'description', 'price', 'image'],
+    props: ['id', 'name', 'short_des','long_des', 'price'],
     data() {
         return {
             details: {
                 id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
+                name: this.name,
+                short_des: this.short_des,
+                long_des:this.long_des,
             },
+            
         };
     },
     methods: {
-        goto: function(i, t, d, p) {
-            this.$router.push(`ProductDetalis/${i}/${t}/${d}/${p}`);
+        
+        gotodetails: function(i, n, s,l) {
+            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
         },
-        heartlike: function() {
-            this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle(
-                'is-active'
-            );
+        gotoListView: function() {
+            this.$router.push(`ListView`);
         },
-        addToCart() {
+      heartlike: function() {      
+          this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');
+        },
+        /*  addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
                 [
@@ -93,6 +98,7 @@ export default {
                 }
             );
         },
+        */
     },
     computed: {
         count() {
@@ -101,7 +107,6 @@ export default {
     },
 };
 </script>
-
 <style scoped>
 @media (max-width: 575.98px) {
     .left,
@@ -174,13 +179,13 @@ export default {
     margin-right: 10px;
 }
 .content-pro button {
-    border-radius: 59%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border: none;
-    padding: 0;
-    color: #5daaa6;
+width: 100px;
+height: 50px;
+font-size: 20px;
+border: none;
+color: #5daaa6;
+margin: 15px auto;
+border-radius: 10px
 }
 .content-pro button:hover {
     background-color: #d3b85f;
@@ -203,7 +208,8 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-.heart-conten {
+
+.heart-conten{
     background-color: #f0f0f0;
     border-radius: 50%;
     width: 50px;
@@ -228,4 +234,5 @@ export default {
         background-position: -2800px 0;
     }
 }
+
 </style>

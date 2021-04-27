@@ -1,16 +1,16 @@
 <template>
     <div class="home">
         <div class="all-section">
-            <h3>{{ $t('Allsections') }}</h3>
+            <h3>{{$t('AllCategories')}}</h3>
         </div>
         <div class="row align-middle">
             <div
                 class="col-md-6 col-lg-3 col-xs-6  column"
-                v-for="catog in categories"
+                v-for="catog in Category.slice(0,8)"
                 :key="catog.id"
                 :slug="catog.slug"
                 :name="catog.name"
-                :image="catog.image"
+                
                 style="width:50%"
             >
                 <router-link :to="`/${catog.slug}`">
@@ -20,7 +20,7 @@
                         </div>
                         <a href="#">{{ $t('More') }}</a>
                         <div class="ico-card">
-                            <img v-lazy="catog.image" style="width:60%" />
+                            <img v-lazy="'img/mobile.jpg'" style="width:60%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -57,12 +57,25 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: 'home',
+    data() {
+        return {
+            Category: []
+        }
+    },
+    created(){
+       axios.get('http://edalili.e-dalely.com/public/api/categories/getAll')
+       .then(response => {
+           this.Category = response.data.Category
+       }) 
+       .catch(error => {console.log(error);})
+    },
     computed: {
-        categories() {
-            return this.$store.state.categories;
-        },
+      //  categories() {
+      //      return this.$store.state.categories;
+      //  },
         brands() {
             return this.$store.state.brands;
         },

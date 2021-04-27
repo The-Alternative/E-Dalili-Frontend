@@ -1180,7 +1180,7 @@
         {
             "id": 8,
             "title": "سنتر المحيط - سوبر ماركت",
-            "space": "يبعد 750 م",
+            "space":  650 ,
             "rating": 0,
             "is_active": true,
             "is_approved": 1,
@@ -1197,6 +1197,7 @@
             "endTime":"م 10:00",
             "address":"السويداء - جانب مشفى الوطني",
             "categories": "أزياء",
+            "price":100.00,
             "products":[
                 {
                     "id": 1,
@@ -1348,7 +1349,7 @@
         {
             "id": 9,
             "title": "سنتر خالد - سوبر ماركت",
-            "space": "يبعد 750 م",
+            "space": 750,
             "rating": 0,
             "is_active": true,
             "is_approved": 1,
@@ -1365,6 +1366,7 @@
             "endTime":"م 10:00",
             "address":"السويداء - طريق قنوات",
             "categories": "ديكور و مفروشات,أزياء",
+            "price":80.00,
             "products":[
                 {
                     "id": 1,
@@ -1517,7 +1519,7 @@
             "id": 10,
             "title": "سنتر الريم - سوبر ماركت",
             "rating": 0,
-            "space": "يبعد 500 م",
+            "space": 500 ,
             "is_active": true,
             "is_approved": 1,
             "delivery": 1,
@@ -1533,6 +1535,7 @@
             "endTime":"م 10:00",
             "address": "السويداء",
             "categories": "البقالة, ديكور و مفروشات , أزياء",
+            "price":120.00,
             "products":[
                 {
                     "id": 1,

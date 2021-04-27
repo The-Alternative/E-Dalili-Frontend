@@ -26,10 +26,10 @@
                                     />
                                 </div>
                                 <div class="col-md-3 col-xs-12">
-                                    {{ items.title }}
+                                    {{ items.name }}
                                 </div>
                                 <div class="col-md-3 col-xs-12">
-                                    {{ items.description }}
+                                    {{ items.short_des }}
                                 </div>
                                 <div class="col-md-2 col-xs-12 quantity-add">
                                     <button

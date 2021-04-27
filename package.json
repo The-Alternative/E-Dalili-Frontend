@@ -9,6 +9,7 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
+        "@popperjs/core": "^2.9.2",
         "axios": "^0.21.1",
         "bootstrap": "^4.6.0",
         "bootstrap-vue": "^2.21.2",
@@ -17,6 +18,7 @@
         "jquery": "^3.5.1",
         "json-server": "^0.16.3",
         "normalize.css": "^8.0.1",
+        "pettier": "^1.1.0",
         "popper.js": "^1.16.1",
         "semantic-ui-vue": "^0.11.0",
         "twilio": "^3.58.0",

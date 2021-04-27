@@ -7,15 +7,15 @@
                 </div>
                 <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
                     <div class="customer-select sel4">
-                        <select v-model="lang" @change="handleChange($event)">
+                        <select v-model="lang"  @change="handleChange($event)">
                             <option value="en">English</option>
                             <option value="ar">العربية</option>
                         </select>
                     </div>
                     <span class="lang2">نطاق البحث</span>
                     <div class="customer-select sel1">
-                        <select>
-                            <option disabled>المحافظة</option>
+                        <select v-model="sortType">
+                            <option value="1" disabled>المحافظة</option>
                             <option
                                 v-for="gover in governorates"
                                 :key="gover.id"
@@ -25,16 +25,16 @@
                     </div>
 
                     <div class="customer-select sel2">
-                        <select>
-                            <option disabled>المدینة/القریة</option>
+                        <select v-model="sortType">
+                            <option value="1" disabled>المدینة/القریة</option>
                             <option v-for="city in cities" :key="city.id"
                                 >{{ city.name }}
                             </option>
                         </select>
                     </div>
                     <div class="customer-select sel3">
-                        <select>
-                            <option disabled>الحي</option>
+                        <select v-model="sortType">
+                            <option value="1" disabled>الحي</option>
                             <option
                                 v-for="street in streets"
                                 :key="street.id"
@@ -202,6 +202,7 @@ export default {
                 description: this.description,
                 price: this.price,
             },
+            sortType: '1',
             cities: jeson[0].cities,
             governorates: jeson[0].governorates,
             streets: jeson[0].streets,
@@ -346,7 +347,7 @@ export default {
     position: absolute;
     content: '>';
     top: 4px;
-    left: 14px;
+    left: 9px;
     background-color: transparent;
     color: #fff;
     transform: rotate(90deg);
@@ -367,15 +368,16 @@ export default {
     font-size: 20px;
 }
 .upper-bar .sel1 select {
-    width: 102px;
+    width: 125px;
     padding: 0 28px;
 }
 .upper-bar .sel2 select {
-    width: 102px;
-    padding: 0 32px;
+width: 140px;
+padding: 0 18px;
+font-size: 14px;
 }
 .upper-bar .sel3 select {
-    width: 102px;
+    width: 100px;
     padding: 0 30px;
 }
 .upper-bar .sel4 select {
