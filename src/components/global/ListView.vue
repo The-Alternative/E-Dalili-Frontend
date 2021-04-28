@@ -25,15 +25,15 @@
            
 
         </div>
-            <div class="show-prod">
+            <div class="show-prod ">
                                     <div
-                                        class="store"
+                                        class="store animate__animated animate__fadeInUpBig"
                                         v-for="store in stores.slice(7, 10)"
                                         v-bind:store="store"
                                         :key="store.id"
                                         :address="store.address"
                                     >
-                                        <div class="row" style="direction: rtl;">
+                                        <div class="row " style="direction: rtl;">
                                               <div class="col-1"><img
                                                 class="rounded-circle"
                                                 src="../../../public/img/market-logo.png"
@@ -43,7 +43,7 @@
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
-                                            <span>{{ store.space }}m</span>
+                                            <span>{{ store.space }}متر</span>
                                             </div>
                                               <div class="col-1">
                                             <img 
@@ -56,7 +56,7 @@
                                     
                                                   <div class="col-2">ar</div>
                                                     <div class="col-2">ar ar</div>
-                                             <div class="col-2"> {{store.price}} S.P </div>
+                                             <div class="col-2"> {{store.price}}ل.س </div>
                                         </div>
                                     </div>
              </div>

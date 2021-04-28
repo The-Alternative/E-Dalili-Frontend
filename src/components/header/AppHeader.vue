@@ -14,7 +14,7 @@
                     </div>
                     <span class="lang2">نطاق البحث</span>
                     <div class="customer-select sel1">
-                        <select v-model="sortType">
+                        <select v-model="sortType" c>
                             <option value="1" disabled>المحافظة</option>
                             <option
                                 v-for="gover in governorates"
@@ -35,7 +35,7 @@
                     <div class="customer-select sel3">
                         <select v-model="sortType">
                             <option value="1" disabled>الحي</option>
-                            <option
+                            <option 
                                 v-for="street in streets"
                                 :key="street.id"
                                 >{{ street.name }}</option
@@ -53,7 +53,7 @@
             <div class="bars" @click="showfut()">
                 <i class="fa fa-bars"></i>
             </div>
-            <div class="exit-fut" id="exit-fut" @click="hidefut()">X</div>
+            <div class="exit-fut animate__animated animate__heartBeat" id="exit-fut" @click="hidefut()">X</div>
             <div class="container">
                 <div class="row">
                     <div class="search col-lg-12">
@@ -64,8 +64,8 @@
                             :placeholder="$t('Search')"
                         />
                     </div>
-                    <div class="col-lg-12 fet">
-                        <div class="featuers" id="fut">
+                    <div class="col-lg-12">
+                        <div class="featuers animate__animated animate__heartBeat" id="fut">
                             <div>
                                 <router-link
                                     to="/addStore"
@@ -224,36 +224,13 @@ export default {
             this.$router.push(`/`);
         },
         showfut() {
-            document.getElementById('fut').animate(
-                [
-                    // keyframes
-                    { right: '-231px', top: '-355px', height: '27px' },
-                    { right: '10px', top: '-355px', height: '27px' },
-                    { right: '10px', top: '-355px', height: '130px' },
-                ],
-                {
-                    // timing options
-                    duration: 500,
-                    fill: 'forwards',
-                }
-            );
+            document.getElementById('fut').classList.toggle('show');
             document.getElementById('exit-fut').style.display = 'block';
         },
         hidefut() {
-            document.getElementById('fut').animate(
-                [
-                    // keyframes
-                    { right: '10px', top: '-355px', height: '130px' },
-                    { right: '10px', top: '-355px', height: '27px' },
-                    { right: '-281px', top: '-355px', height: '27px' },
-                ],
-                {
-                    // timing options
-                    duration: 500,
-                    fill: 'forwards',
-                }
-            );
+          
             document.getElementById('exit-fut').style.display = 'none';
+            document.getElementById('fut').classList.remove('show');
         },
         handleChange(event) {
             localStorage.setItem('lang', event.target.value);
@@ -680,7 +657,19 @@ font-size: 14px;
         width: 100%;
     }
     .jumbotron .featuers {
+        width: 250px;
+        position: absolute;
+        font-size: 11px;
+        border-radius: 20px;
         overflow: hidden;
+        display: none;
+       
+    }
+    .jumbotron .show{
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+         display: block;
     }
     .exit-fut {
         width: 25px;
@@ -690,8 +679,8 @@ font-size: 14px;
         border-radius: 50%;
         cursor: pointer;
         color: #fff;
-        top: 121px;
-        left: 55px;
+        top: 45%;
+        left: 9%;
         padding: 1px;
         font-weight: bold;
     }
@@ -722,17 +711,6 @@ font-size: 14px;
     .jumbotron .featuers div {
         margin-bottom: 10px;
         display: inline-block;
-    }
-    .jumbotron .fet {
-        width: 100%;
-    }
-    .jumbotron .featuers {
-        width: 250px;
-        position: absolute;
-        font-size: 11px;
-        border-radius: 20px;
-        top: -461px;
-        right: -280px;
     }
     .jumbotron .featuers i {
         font-size: 17px;
