@@ -261,7 +261,9 @@
                         <div class="txt">
                             <h1>{{ catog.name }}</h1>
                         </div>
-                        <a href="#">{{ $t('More') }}</a>
+                        <router-link to="/bodySection">{{
+                            $t('More')
+                        }}</router-link>
                         <div class="ico-card">
                             <img
                                 src="../../../../public/img/buty.jpg"
@@ -2955,11 +2957,12 @@ export default {
         width: 19%;
         height: 100%;
     }
+
+    ///end brand market
+    ///start product
     .show-prod {
         height: 410px;
     }
-    ///end brand market
-    ///start product
     .row {
         justify-content: center;
     }
