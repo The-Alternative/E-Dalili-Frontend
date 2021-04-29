@@ -56,6 +56,23 @@ export default {
 </script>
 
 <style scoped>
+.card {
+    /*min-height: 240px;*/
+    margin: 0;
+    padding: 1.7rem 1.2rem;
+    border: none;
+    border-radius: 0;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0.05rem;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.2);
+    background-color: #0f6674;
+}
 .card-market {
     border-radius: 50%;
     height: 150px;

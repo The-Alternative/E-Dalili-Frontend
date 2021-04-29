@@ -1239,4 +1239,11 @@ body {
         inset 2px 2px 4px rgba(109, 108, 104, 0.1),
         inset 2px 2px 8px rgba(216, 215, 211, 0.15);
 }
+.rounded-circle {
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+}
+.rounded-circle:hover {
+    transform: scale(1.2);
+}
 </style>
