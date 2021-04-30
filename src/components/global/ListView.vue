@@ -3,19 +3,19 @@
         <div class="row">
             
             <div class="col-12"><h2> أختيار الترتيب</h2></div>
-            <div class="col-3">
+            <div class="sort col-3">
                 <h2>من الأرخص الى الأغلى</h2>                             
             <input id="1" value="price" type="radio" v-model="sortType" v-on:change="sortItem()"/>
             </div>
-            <div class="col-3">
+            <div class="sort col-3">
                 <h2>من الأغلى الى الأرخص</h2>       
             <input id="2" value="prices" type="radio" v-model="sortType" v-on:change="sortItem()"/>
             </div>
-            <div class="col-3">
+            <div class="sort col-3">
                 <h2>من الأقرب الى الأبعد</h2>
             <input id="3" value="space" type="radio" v-model="sortType" v-on:change="sortItem()"/>
             </div>
-            <div class="col-3"> 
+            <div class="sort col-3"> 
                 <h2>من الأبعد الى الأقرب</h2>          
             <input id="4" value="spaces" type="radio" v-model="sortType" v-on:change="sortItem()"/>
             </div>
@@ -42,11 +42,10 @@
                                     >
                                         <div class="row " style="direction: rtl;">
                                               <div class="col-2"><img
-                                                class="rounded-circle"
+                                                class="rounded-circle store-logo"
                                                 src="../../../public/img/market-logo.png"
-                                                height="60"
                                             /></div>
-                                    <div class="col-6">
+                                    <div class="col-5">
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
@@ -63,7 +62,7 @@
                                             </div>
                                     
 
-                                             <div class="col-2"> {{store.price}}ل.س </div>
+                                             <div class="col-3"><h2> {{store.price}}ل.س </h2></div>
                                         </div>
                                     </div>
              </div>
@@ -116,11 +115,22 @@ export default {
 </script>
 <style lang="scss" scoped></style>
 <style scoped>
+h2 {
+    font-size: 2.5vw;
+    margin-top: 25px;
+}
+span{
+    font-size: 1.8vw;
+}
+.store-logo{
+    width: 100px;
+    height: 100px;
+}
 .row {
     justify-content: center;
     margin: 0;
 }
-.col-3 {
+.sort {
     border: 1px solid azure;
     border-radius: 10px;
 }
@@ -129,10 +139,6 @@ export default {
 }
 .store .row .col-7,.col-2,.col-1{
     margin: auto;
-}
-.show-prod h2 {
-    display: inline-block;
-    margin: 0 20px 0 100px;
 }
 .product-img{
     width: 200px;
@@ -149,12 +155,21 @@ margin: 20px 0;
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .show-prod h2 {
-        display: inline-block;
-        margin: 22px;
-        font-size: 20px;
-        font-weight: bold;
+    h2 {
+        font-size: 4vw;  
+        margin-top: 3vh;
     }
+    span {
+        font-size: 4vw;
+    }
+    .fa-check-circle{
+        margin: 10px 22px;
+}
+.store-logo{
+    width: 50px;
+    height: 50px;
+}
+
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {

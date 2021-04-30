@@ -261,16 +261,15 @@ export default {
 <style scoped>
 /* ____________________________________ cart icon _______________________________ */
 .cart-count {
-    font-size: 15px;
-    color: #ba8b00;
-    padding: -1px 5px;
-    margin-left: -21px;
-    background: #ffffff;
-    height: 22px;
-    border-radius: 50%;
-    width: 19px;
-    position: absolute;
-    margin-top: -10px;
+font-size: 13px;
+color: #ba8b00;
+margin-left: -21px;
+background: #ffffff;
+height: 19px;
+border-radius: 50%;
+width: 17px;
+position: absolute;
+margin-top: -10px;
 }
 /* ____________________________________app header _______________________________ */
 .upper-bar .imag img {
@@ -392,13 +391,15 @@ font-size: 14px;
         width: 50%;
     }
     .upper-bar .customer-select {
-        width: 64px;
+        width: 100px;
         display: block;
         margin-bottom: 2vh;
+        margin-left: -40px;
     }
     .upper-bar .customer-select select {
-        font-size: 12px;
-        padding-left: 5px;
+        font-size: 4vw;
+        width: 115px;
+        text-align: center;
     }
     .upper-bar .row span {
         font-size: 12px;
@@ -409,25 +410,10 @@ font-size: 14px;
         left: 82px;
         top: 57px;
     }
-    .upper-bar .sel1:after {
-        left: 6px;
-        top: 7px;
-        font-size: 15px;
-    }
-    .upper-bar .sel2:after {
-        left: 6px;
-        top: 7px;
-        font-size: 15px;
-    }
-    .upper-bar .sel3:after {
-        left: 6px;
-        top: 7px;
-        font-size: 15px;
-    }
-    .upper-bar .sel4:after {
-        left: 6px;
-        top: 7px;
-        font-size: 15px;
+    .upper-bar .customer-select select:after {
+    left: 12px;
+    top: 7px;
+    font-size: 18px;
     }
     .upper-bar .lang {
         position: absolute;
@@ -440,24 +426,7 @@ font-size: 14px;
         left: 98px;
         width: 60px;
     }
-    .upper-bar .sel1 select {
-        width: 102px;
-        padding: 0 16px;
-    }
-    .upper-bar .sel2 select {
-        width: 102px;
-        padding: 0 21px;
-    }
-    .upper-bar .sel3 select {
-        width: 102px;
-        padding: 0 17px;
-    }
-    .upper-bar .sel4 select {
-        width: 102px;
-        padding: 0 16px;
-    }
 }
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .upper-bar .imag img {

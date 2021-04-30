@@ -10,7 +10,7 @@
                 {{ name }} 
             </div>
             <div @click="gotodetails(id, name, long_des,short_des)" class="category">
-                {{ short_des }}
+                {{short_des}}
             </div>
 
             <div class="stars">
@@ -146,7 +146,7 @@ export default {
     text-decoration: none;
 }
 .content-pro {
-    font-size: 16px;
+    font-size: 1.5vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10vh;
     margin-bottom: 10vh;
@@ -181,7 +181,7 @@ export default {
 .content-pro button {
 width: 100px;
 height: 50px;
-font-size: 20px;
+font-size: 1.5vw;
 border: none;
 color: #5daaa6;
 margin: 15px auto;
@@ -193,9 +193,10 @@ border-radius: 10px
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 576.98px) {
     .content-pro {
-        font-size: 12px;
         height: auto;
         margin-top: 2vh;
+        font-size: 4vw;
+        
     }
     .content-pro .name-prod {
         margin-bottom: 10px;
@@ -204,6 +205,11 @@ border-radius: 10px
         flex: 1 0 50%;
         max-width: 50%;
     }
+    .content-pro button {
+    font-size: 5vw;
+    width: 70px;
+    height: 40px;
+}
 }
 </style>
 
