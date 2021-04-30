@@ -327,9 +327,10 @@ export default {
     margin: 40px 0 40px 0;
 }
 /* Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 575.98px) {
     .show-img {
-        height: 260px;
+        height: auto;
     }
     .show-img .img:last-child {
         display: none;
@@ -338,7 +339,7 @@ export default {
         width: 80%;
     }
     .show-prod {
-        height: 410px;
+        height: 330px;
     }
 }
 /* Small devices (landscape phones, 576px and up) */
@@ -350,7 +351,7 @@ export default {
         display: none;
     }
     .show-img .img img {
-        width: 60vh;
+        width: 100vh;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -359,7 +360,7 @@ export default {
         height: 280px;
     }
     .show-img .img img {
-        width: 50vh;
+        width: 100vh;
     }
     .row .content-pro {
         height: 416px;
@@ -534,42 +535,8 @@ export default {
         width: 32%;
     }
 }
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .show-img {
-        height: 285px;
-    }
-    .show-img .img:last-child {
-        display: none;
-    }
-    .show-img .img img {
-        width: 80%;
-    }
-}
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .show-img {
-        height: 280px;
-    }
-    .show-img .img:last-child {
-        display: none;
-    }
-    .show-img .img img {
-        width: 60vh;
-    }
-}
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .show-img {
-        height: 280px;
-    }
-    .show-img .img img {
-        width: 50vh;
-    }
-    /* End About-Us */
-
-    /* --------------------------------------------- */
     .show-der .img img {
         height: 200px;
         width: 550px;
@@ -641,7 +608,7 @@ export default {
     width: 54px;
     height: 95px;
     background-color: #caabab;
-    top: 290px;
+    top: 160px;
     position: absolute;
 }
 /* Extra small devices (portrait phones, less than 576px) */
