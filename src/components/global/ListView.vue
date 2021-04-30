@@ -19,9 +19,16 @@
                 <h2>من الأبعد الى الأقرب</h2>          
             <input id="4" value="spaces" type="radio" v-model="sortType" v-on:change="sortItem()"/>
             </div>
-            <div class="col-12" style="margin:10px"> 
-            <img  class="rounded-circle" src="../../../public/img/w.jpg" style="width: 150px;height: 140px"/>
+            <div class="col-8" style="margin:10px 0"> 
+            <img  class="product-img" src="../../../public/img/w.jpg"/>
             </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12"><h2 class="prod-name">ar</h2></div>
+                    <div class="col-12"><h2 class="prod-dis">ar ar</h2></div>
+                </div>
+            </div>
+
            
 
         </div>
@@ -34,28 +41,28 @@
                                         :address="store.address"
                                     >
                                         <div class="row " style="direction: rtl;">
-                                              <div class="col-1"><img
+                                              <div class="col-2"><img
                                                 class="rounded-circle"
                                                 src="../../../public/img/market-logo.png"
                                                 height="60"
                                             /></div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                             <h2>
                                                 {{ store.title }}
                                             </h2>
                                             <span>{{ store.space }}متر</span>
                                             </div>
-                                              <div class="col-1">
+                                              <div class="col-2">
                                             <img 
-                                                class="img-open"
+                                                class="icon-delivery"
                                                 style="margin-right:10px"
-                                                src="../../../public/img/open.png"
+                                                src="../../../public/img/icon-delivery.png"
                                                 height="40"
                                             />
+                                            <span class="fa fa-check-circle"></span>
                                             </div>
                                     
-                                                  <div class="col-2">ar</div>
-                                                    <div class="col-2">ar ar</div>
+
                                              <div class="col-2"> {{store.price}}ل.س </div>
                                         </div>
                                     </div>
@@ -127,7 +134,18 @@ export default {
     display: inline-block;
     margin: 0 20px 0 100px;
 }
-
+.product-img{
+    width: 200px;
+    height: 180px;
+    border-radius: 5%
+}
+.fa-check-circle{
+    color: #48d748;
+    margin: 10px 10px;
+}
+.prod-name,.prod-dis{
+margin: 20px 0;
+}
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
