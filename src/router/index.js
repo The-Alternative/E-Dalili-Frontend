@@ -51,6 +51,11 @@ const routes = [
         component: home,
     },
     {
+        path: '/festival',
+        name: 'festival',
+        component: () => import('../views/services/festival.vue'),
+    },
+    {
         path: '/products',
         name: 'products',
         component: () => import('../views/services/products.vue'),
@@ -92,47 +97,42 @@ const routes = [
     },
     /* Categories */
     {
-        path: '/فهد',
-        name: 'festival',
-        component: () => import('../views/services/festival.vue'),
-    },
-    {
-        path: '/فهد',
+        path: '/buty',
         name: 'buty',
         component: () => import('../views/section/buty.vue'),
     },
     {
-        path: '/فهد',
+        path: '/mobile',
         name: 'mobile',
         component: () => import('../views/section/mobile.vue'),
     },
     {
-        path: '/فهد',
+        path: '/computer',
         name: 'computer',
         component: () => import('../views/section/computer.vue'),
     },
     {
-        path: '/فهد',
+        path: '/elctronic',
         name: 'elctronic',
         component: () => import('../views/section/elctronic.vue'),
     },
     {
-        path: '/فهد',
+        path: '/kitchen',
         name: 'kitchen',
         component: () => import('../views/section/kitchen.vue'),
     },
     {
-        path: '/فهد',
+        path: '/education',
         name: 'education',
         component: () => import('../views/section/education.vue'),
     },
     {
-        path: '/فهد',
+        path: '/furniture',
         name: 'furniture',
         component: () => import('../views/section/furniture.vue'),
     },
     {
-        path: '/فهد',
+        path: '/child',
         name: 'child',
         component: () => import('../views/section/child.vue'),
     },

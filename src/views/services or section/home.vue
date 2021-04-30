@@ -8,12 +8,10 @@
                 class="col-md-6 col-lg-3 col-xs-6  column"
                 v-for="catog in Category.slice(0,8)"
                 :key="catog.id"
-                :slug="catog.slug"
                 :name="catog.name"
-                
                 style="width:50%"
             >
-                <router-link :to="`/${catog.slug}`">
+                <router-link :to="`/${catog.name}`">
                     <div class="card">
                         <div class="txt">
                             <h1>{{ catog.name }}</h1>
