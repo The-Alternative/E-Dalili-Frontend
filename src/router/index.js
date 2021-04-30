@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 /* import services */
-import home from '../views/services/home.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -48,93 +48,93 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: home,
+        component: () => import('../views/section/home.vue'),
     },
     {
         path: '/festival',
         name: 'festival',
-        component: () => import('../views/services/festival.vue'),
+        component: () => import('../views/section/festival.vue'),
     },
     {
         path: '/products',
         name: 'products',
-        component: () => import('../views/services/products.vue'),
+        component: () => import('../views/section/products.vue'),
     },
     {
         path: '/company',
         name: 'company',
-        component: () => import('../views/services/company.vue'),
+        component: () => import('../views/section/company.vue'),
     },
     {
         path: '/professional',
         name: 'professional',
-        component: () => import('../views/services/professional.vue'),
+        component: () => import('../views/section/professional.vue'),
     },
     {
         path: '/medic',
         name: 'medic',
-        component: () => import('../views/services/medic.vue'),
+        component: () => import('../views/section/medic.vue'),
     },
     {
         path: '/doctors',
         name: 'doctors',
-        component: () => import('../views/services/doctors.vue'),
+        component: () => import('../views/section/doctors.vue'),
     },
     {
         path: '/resturants',
         name: 'resturants',
-        component: () => import('../views/services/resturants.vue'),
+        component: () => import('../views/section/resturants.vue'),
     },
     {
         path: '/instrc',
         name: 'instrc',
-        component: () => import('../views/services/instrc.vue'),
+        component: () => import('../views/section/instrc.vue'),
     },
     {
         path: '/stores',
         name: 'stores',
-        component: () => import('../views/services/stores.vue'),
+        component: () => import('../views/section/stores.vue'),
     },
     /* Categories */
     {
         path: '/buty',
         name: 'buty',
-        component: () => import('../views/section/buty.vue'),
+        component: () => import('../views/categories/buty.vue'),
     },
     {
         path: '/mobile',
         name: 'mobile',
-        component: () => import('../views/section/mobile.vue'),
+        component: () => import('../views/categories/mobile.vue'),
     },
     {
         path: '/computer',
         name: 'computer',
-        component: () => import('../views/section/computer.vue'),
+        component: () => import('../views/categories/computer.vue'),
     },
     {
         path: '/elctronic',
         name: 'elctronic',
-        component: () => import('../views/section/elctronic.vue'),
+        component: () => import('../views/categories/elctronic.vue'),
     },
     {
         path: '/kitchen',
         name: 'kitchen',
-        component: () => import('../views/section/kitchen.vue'),
+        component: () => import('../views/categories/kitchen.vue'),
     },
     {
         path: '/education',
         name: 'education',
-        component: () => import('../views/section/education.vue'),
+        component: () => import('../views/categories/education.vue'),
     },
     {
         path: '/furniture',
         name: 'furniture',
-        component: () => import('../views/section/furniture.vue'),
+        component: () => import('../views/categories/furniture.vue'),
     },
     {
         path: '/child',
         name: 'child',
-        component: () => import('../views/section/child.vue'),
+        component: () => import('../views/categories/child.vue'),
     },
 ];
 
