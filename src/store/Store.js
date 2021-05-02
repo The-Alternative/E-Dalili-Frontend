@@ -13,8 +13,9 @@ export default new Vuex.Store({
         // MOCK_DATA json
         // Stores: [],
         Stores: [],
-        Store:null,
+        Store: null,
         products: [],
+        ////////////////
         Product: jeson[0].Products,
         stores: data.stores,
         product: data.stores[0].products,
@@ -96,8 +97,8 @@ export default new Vuex.Store({
         // SET_PRODUCTS(state, products) {
         //     state.products = products;
         // },
-        SET_Store(state,Store) {
-            state.Store= Store;
+        SET_Store(state, Store) {
+            state.Store = Store;
         },
     },
 
@@ -120,7 +121,7 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        loadStore({commit},productId){
+        loadStore({ commit }, productId) {
             axios
                 .get(`http://localhost:8080/api/stores/getById/${productId}`)
                 .then((res) => {
@@ -131,7 +132,7 @@ export default new Vuex.Store({
                 .catch(function(error) {
                     console.log('Error: ', error);
                 });
-        }
+        },
     },
     // getProducts({ commit }) {
     //     axios
@@ -144,5 +145,4 @@ export default new Vuex.Store({
     //             console.log('Error: ', error);
     //         });
     // },
-
 });
