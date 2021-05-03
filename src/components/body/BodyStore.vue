@@ -58,9 +58,17 @@
                     </div>
                 </div>
                 <div class="card-footer" id="card-footer">
-                    <ul class="flex-row d-inline-flex">
-                        <li class="categorystore">
-                            <!--                            {{  store.categories }}-->
+                    <ul
+                        class="flex-row d-inline-flex"
+                        v-for="section in store"
+                        :key="section.id"
+                    >
+                        <li
+                            class="categorystore mr-4 ml-4"
+                            v-for="item in section"
+                            :key="item.id"
+                        >
+                            {{ item.name }}
                         </li>
                     </ul>
                     <div class="col">
@@ -138,10 +146,10 @@
                     <ul>
                         <li
                             class="textcheck"
-                            v-for="category in categories"
+                            v-for="category in Sections"
                             :key="category"
                         >
-                            {{ category }}
+                            {{ category.name }}
                             <input
                                 class="categories"
                                 type="checkbox"
@@ -320,22 +328,22 @@ export default {
         gotoview: function(i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        // fetch() {
-        //     var self = this;
-        //     Vue.axios
-        //         .get('http://localhost:8080/api/stores/getAll')
-        //         .then((res) => {
-        //             self.Stores = res.data.Stores;
-        //             console.warn('Data SUCCESS: ', res.data.Stores);
-        //         })
-        //         .catch(function(error) {
-        //             console.warn('------ Error ------: ', error);
-        //         });
-        // },
+        fetch() {
+            var self = this;
+            Vue.axios
+                .get('http://edalili.e-dalely.com/public/api/sections/getAll')
+                .then((res) => {
+                    self.Sections = res.data.Section;
+                    console.warn('Data SUCCESS: ', res.data.Section);
+                })
+                .catch(function(error) {
+                    console.warn('------ Error ------: ', error);
+                });
+        },
     },
-    // created() {
-    //     this.fetch();
-    // },
+    created() {
+        this.fetch();
+    },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
