@@ -393,13 +393,16 @@ export default {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
         // fetch() {
-        //     var self = this;
+        //     // var self = this;
         //     Vue.axios
-        //         .get('http://localhost:8080/api/categories/getAll')
+        //         .get('http://edalili.e-dalely.com/public/api/stores/getAll')
         //         .then((res) => {
-        //             self.Categoriees = res.data.Category;
-        //             console.warn('categories SUCCESS: ', res.data.Category);
-        //         })
+        //             // self.Categoriees = res.data.Category;
+        //             console.warn(
+        //                 'Stores SUCCESS: ',
+        //                 res.data.Stores[0].section
+        //             );
+        //         }) //
         //         .catch(function(error) {
         //             console.warn('------ Error ------: ', error);
         //         });

@@ -14,6 +14,7 @@ export default new Vuex.Store({
         // Stores: [],
         Stores: [],
         Store: null,
+        Sections: [],
         products: [],
         ////////////////
         Product: jeson[0].Products,
@@ -100,6 +101,9 @@ export default new Vuex.Store({
         SET_Store(state, Store) {
             state.Store = Store;
         },
+        // SET_Sections(state, Sections) {
+        //     state.Sections = Sections;
+        // },
     },
 
     actions: {
@@ -111,7 +115,7 @@ export default new Vuex.Store({
         },
         loadStores({ commit }) {
             axios
-                .get('http://localhost:8080/api/stores/getAll')
+                .get('http://edalili.e-dalely.com/public/api/stores/getAll')
                 .then((res) => {
                     console.warn(res.data.Stores);
                     let Stores = res.data.Stores;
@@ -123,7 +127,9 @@ export default new Vuex.Store({
         },
         loadStore({ commit }, productId) {
             axios
-                .get(`http://localhost:8080/api/stores/getById/${productId}`)
+                .get(
+                    `http://edalili.e-dalely.com/public/api/stores/getById/${productId}`
+                )
                 .then((res) => {
                     console.warn(res.data.Stores);
                     let store = res.data.Stores;
@@ -133,6 +139,20 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
+        // loadSections({ commit }){
+        //     axios
+        //         .get(
+        //             `http://edalili.e-dalely.com/public/api/sections/getAll}`
+        //         )
+        //         .then((res) => {
+        //             console.warn(res.data.Section);
+        //             let Sections = res.data.Section;
+        //             commit('SET_Sections', Sections);
+        //         })
+        //         .catch(function(error) {
+        //             console.log('Error: ', error);
+        //         });
+        // },
     },
     // getProducts({ commit }) {
     //     axios
