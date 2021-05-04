@@ -285,7 +285,7 @@ export default {
     },
     props: ['id'],
 
-    data() {
+    data () {
         return {
             // Stores: [],
             viewProductsInStore: [],
@@ -294,10 +294,10 @@ export default {
         };
     },
     computed: {
-        categories() {
+        categories () {
             return this.$store.state.Categories;
         },
-        Stores() {
+        Stores () {
             return this.$store.state.Stores;
         },
         // Stores: function() {
@@ -317,18 +317,18 @@ export default {
         //     return Stores;
         // },
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadStores');
     },
     methods: {
-        btnbar: function() {
+        btnbar: function () {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function(i, t, w) {
+        gotoview: function (i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch() {
+        fetch () {
             var self = this;
             Vue.axios
                 .get('http://edalili.e-dalely.com/public/api/sections/getAll')
@@ -336,12 +336,12 @@ export default {
                     self.Sections = res.data.Section;
                     console.warn('Data SUCCESS: ', res.data.Section);
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     console.warn('------ Error ------: ', error);
                 });
         },
     },
-    created() {
+    created () {
         this.fetch();
     },
 };
