@@ -343,7 +343,7 @@ Vue.use(VueAxios, axios);
 
 export default {
     name: 'visitStore',
-    props: ['id', 'title', 'workingHours'],
+    props: ['id', 'title', 'workingHours', 'section'],
     data() {
         return {
             Categoriees: [],

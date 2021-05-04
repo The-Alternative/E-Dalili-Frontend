@@ -95,6 +95,7 @@
                                             id: store.id,
                                             title: store.title,
                                             workingHours: store.workingHours,
+                                            section: store.section,
                                         },
                                     }"
                                     ><button type="button" class="btn">
@@ -283,7 +284,7 @@ export default {
         PhoneStore: () => import('@/components/body/phone-store'),
         LocationStore: () => import('@/components/body/location-store'),
     },
-    props: ['id'],
+    props: ['id', 'section'],
 
     data() {
         return {
