@@ -41,10 +41,10 @@
                     <i class="fa fa-star"></i>
                 </div>
                 <div class="name-prod">
-                    {{ title }}
+                    {{ name }}
                 </div>
                 <div class="category">
-                    {{ description }}
+                    {{ short_des }}
                 </div>
                 <div>
                     <span>{{ price }} $</span>
@@ -57,13 +57,13 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'name', 'short_des', 'price'],
     data() {
         return {
             details: {
                 id: this.id,
-                title: this.title,
-                description: this.description,
+                name: this.name,
+                short_des: this.short_des,
                 price: this.price,
             },
         };
@@ -109,18 +109,18 @@ export default {
         count() {
             return this.$store.state.count;
         },
-        stores() {
-            return this.$store.state.stores;
-        },
+        // stores() {
+        //     return this.$store.state.stores;
+        // },
         // categories() {
         //     return this.$store.state.categories;
         // },
         // brands() {
         //     return this.$store.state.brands;
         // },
-        product() {
-            return this.$store.state.stores[0].products;
-        },
+        // product() {
+        //     return this.$store.state.stores[0].products;
+        // },
     },
 };
 </script>
