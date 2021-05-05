@@ -123,12 +123,6 @@
         </div>
     </div>
 </template>
-
-<script>
-export default {
-    name: 'AppFooter',
-};
-</script>
 <style scoped>
 /* Start About-Us */
 .about-us {
@@ -335,3 +329,9 @@ export default {
 
 /* End About-Us */
 </style>
+
+<script>
+export default {
+    name: 'AppFooter',
+};
+</script>

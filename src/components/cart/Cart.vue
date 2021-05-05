@@ -92,42 +92,6 @@
         </div>
     </div>
 </template>
-
-<script>
-import EmptyCart from '@/components/cart/EmptyCart.vue';
-export default {
-    name: 'Cart',
-    data() {
-        return {};
-    },
-    components: {
-        EmptyCart,
-    },
-    methods: {
-        addItem(items) {
-            this.$store.dispatch('addToCart', items);
-        },
-        removeItem(items) {
-            this.$store.dispatch('removeItem', items);
-        },
-        removeFromCart(item) {
-            this.$store.commit('removeFromCart', item);
-        },
-    },
-    computed: {
-        cartItems() {
-            return this.$store.state.cartItems;
-        },
-        totalPrice() {
-            let price = 0;
-            this.$store.state.cartItems.map((el) => {
-                price += el['quantity'] * el['price'];
-            });
-            return price;
-        },
-    },
-};
-</script>
 <style lang="sass" scoped>
 $color: #111
 $primary: #FFAB9D
@@ -401,3 +365,39 @@ a:hover {
     }
 }
 </style>
+
+<script>
+import EmptyCart from '@/components/cart/EmptyCart.vue';
+export default {
+    name: 'Cart',
+    data() {
+        return {};
+    },
+    components: {
+        EmptyCart,
+    },
+    methods: {
+        addItem(items) {
+            this.$store.dispatch('addToCart', items);
+        },
+        removeItem(items) {
+            this.$store.dispatch('removeItem', items);
+        },
+        removeFromCart(item) {
+            this.$store.commit('removeFromCart', item);
+        },
+    },
+    computed: {
+        cartItems() {
+            return this.$store.state.cartItems;
+        },
+        totalPrice() {
+            let price = 0;
+            this.$store.state.cartItems.map((el) => {
+                price += el['quantity'] * el['price'];
+            });
+            return price;
+        },
+    },
+};
+</script>

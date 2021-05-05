@@ -3,7 +3,7 @@
         <div class="content-pro text-center">
             <img
                 @click="gotodetails(id, name, long_des,short_des)"
-                v-lazy="'http://front.e-dalely.com/img/mobile.jpg'"
+                v-lazy="`${image}`"
                 class="new"
             />
             <div @click="gotodetails(id, name, long_des,short_des)" class="name-prod">
@@ -25,7 +25,7 @@
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
-                <button @click="gotoListView">{{$t('Choose')}}</button>
+                <button @click="gotoListView(id,name,short_des)">{{$t('Choose')}}</button>
                 <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
             </div>
              <!-- 
@@ -41,72 +41,6 @@
         </div>
     </div>
 </template>
-
-<script>
-
-export default {
-    name: 'Products',
-    props: ['id', 'name', 'short_des','long_des', 'price'],
-    data() {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                short_des: this.short_des,
-                long_des:this.long_des,
-            },
-            
-        };
-    },
-    methods: {
-        
-        gotodetails: function(i, n, s,l) {
-            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
-        },
-        gotoListView: function() {
-            this.$router.push(`ListView`);
-        },
-      heartlike: function() {      
-          this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');
-        },
-        /*  addToCart() {
-            this.$store.dispatch('addToCart', this.details);
-            this.$el.animate(
-                [
-                    // keyframes
-                    {
-                        transform:
-                            'perspective(500px) translate3d(-200px, 1000px,-10000px)',
-                    },
-                ],
-                {
-                    // timing options
-                    duration: 1000,
-                }
-            );
-            document.getElementById('cart').animate(
-                [
-                    // keyframes
-                    { transform: 'rotate(-20deg)' },
-                    { transform: 'rotate(20deg)' },
-                    { transform: 'scale(3,3)' },
-                    { transform: 'scale(1,1)' },
-                ],
-                {
-                    // timing options
-                    duration: 1000,
-                }
-            );
-        },
-        */
-    },
-    computed: {
-        count() {
-            return this.$store.state.count;
-        },
-    },
-};
-</script>
 <style scoped>
 @media (max-width: 575.98px) {
     .left,
@@ -146,7 +80,7 @@ export default {
     text-decoration: none;
 }
 .content-pro {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10vh;
     margin-bottom: 10vh;
@@ -240,5 +174,68 @@ border-radius: 10px
         background-position: -2800px 0;
     }
 }
-
 </style>
+<script>
+export default {
+    name: 'Products',
+    props: ['id', 'name','image', 'short_des','long_des', 'price'],
+    data() {
+        return {
+            details: {
+                id: this.id,
+                name: this.name,
+                short_des: this.short_des,
+                long_des:this.long_des,
+            },
+            
+        };
+    },
+    methods: {
+        
+        gotodetails: function(i, n, s,l) {
+            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
+        },
+        gotoListView: function(i,n,s) {
+            this.$router.push(`ListView/${i}/${n}/${s}`);
+        },
+      heartlike: function() {      
+          this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');
+        }
+        /*  addToCart() {
+            this.$store.dispatch('addToCart', this.details);
+            this.$el.animate(
+                [
+                    // keyframes
+                    {
+                        transform:
+                            'perspective(500px) translate3d(-200px, 1000px,-10000px)',
+                    },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
+            document.getElementById('cart').animate(
+                [
+                    // keyframes
+                    { transform: 'rotate(-20deg)' },
+                    { transform: 'rotate(20deg)' },
+                    { transform: 'scale(3,3)' },
+                    { transform: 'scale(1,1)' },
+                ],
+                {
+                    // timing options
+                    duration: 1000,
+                }
+            );
+        },
+        */
+    },
+    computed: {
+        count() {
+            return this.$store.state.count;
+        }
+    },
+};
+</script>

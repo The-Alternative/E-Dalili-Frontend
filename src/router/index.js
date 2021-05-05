@@ -34,7 +34,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ListView',
+        path: '/ListView/:id/:name/:short_des',
         component: () => import('../components/global/ListView.vue'),
         props: true,
     },

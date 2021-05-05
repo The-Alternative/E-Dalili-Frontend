@@ -11,13 +11,6 @@
         </div>
     </div>
 </template>
-
-<script>
-export default {
-    name: 'EmptyCart',
-};
-</script>
-
 <style scoped>
 .orange-red {
     color: #b21f2d;
@@ -29,3 +22,8 @@ export default {
     font-weight: 600;
 }
 </style>
+<script>
+export default {
+    name: 'EmptyCart',
+};
+</script>

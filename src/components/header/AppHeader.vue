@@ -1,5 +1,6 @@
 <template>
     <div class="header">
+        <div>haidra</div>
         <div class="upper-bar">
             <div class="row">
                 <div @click="goto" class="col-md-2 col-sm-12 col-xs-12 imag">
@@ -184,80 +185,6 @@
         </div>
     </div>
 </template>
-<!--<script src="../../js/proj.js"></script>-->
-<script>
-import jeson from '@/jeson/MOCK_DATA.json';
-// import axios from "axios";
-
-export default {
-    name: 'AppHeader',
-    props: ['title', 'description', 'id', 'price'],
-    data() {
-        const lang = localStorage.getItem('lang') || 'en';
-        return {
-            lang: lang,
-            details: {
-                id: this.id,
-                title: this.title,
-                description: this.description,
-                price: this.price,
-            },
-            sortType: '1',
-            cities: jeson[0].cities,
-            governorates: jeson[0].governorates,
-            streets: jeson[0].streets,
-            // cities:[],
-            // governorates:[],
-            // streets:[]
-        };
-    },
-    computed: {
-        cartItemCount() {
-            return this.$store.state.cartItemCount;
-        },
-    },
-    methods: {
-        gotocart: function() {
-            this.$router.push(`/Cart`);
-        },
-        goto: function() {
-            this.$router.push(`/`);
-        },
-        showfut() {
-            document.getElementById('fut').classList.toggle('show');
-            document.getElementById('exit-fut').style.display = 'block';
-        },
-        hidefut() {
-          
-            document.getElementById('exit-fut').style.display = 'none';
-            document.getElementById('fut').classList.remove('show');
-        },
-        handleChange(event) {
-            localStorage.setItem('lang', event.target.value);
-            window.location.reload();
-        },
-    },
-
-    //
-    // created(){
-    //  axios.get("http://edalili.e-dalely.com")// axios.get('/routename').then{response=>this.routename=response.data}
-    //  .then(response => {
-    //    this.cities = response.data[0].cities;
-    //  })
-    //  .then(response => {
-    //    this.governorates = response.data[0].governorates;
-    //  })
-    //  .then(response => {
-    //    this.streets = response.data[0].streets;
-    //  })
-    //  .then(response => {
-    //    this.categories = response.data[0].categories;
-    //  })
-    //  }
-    //
-};
-</script>
-
 <style scoped>
 /* ____________________________________ cart icon _______________________________ */
 .cart-count {
@@ -878,3 +805,76 @@ font-size: 14px;
 /* End Naver*/
 /* End header */
 </style>
+<!--<script src="../../js/proj.js"></script>-->
+<script>
+import jeson from '@/jeson/MOCK_DATA.json';
+// import axios from "axios";
+
+export default {
+    name: 'AppHeader',
+    props: ['title', 'description', 'id', 'price'],
+    data() {
+        const lang = localStorage.getItem('lang') || 'en';
+        return {
+            lang: lang,
+            details: {
+                id: this.id,
+                title: this.title,
+                description: this.description,
+                price: this.price,
+            },
+            sortType: '1',
+            cities: jeson[0].cities,
+            governorates: jeson[0].governorates,
+            streets: jeson[0].streets,
+            // cities:[],
+            // governorates:[],
+            // streets:[]
+        };
+    },
+    computed: {
+        cartItemCount() {
+            return this.$store.state.cartItemCount;
+        },
+    },
+    methods: {
+        gotocart: function() {
+            this.$router.push(`/Cart`);
+        },
+        goto: function() {
+            this.$router.push(`/`);
+        },
+        showfut() {
+            document.getElementById('fut').classList.toggle('show');
+            document.getElementById('exit-fut').style.display = 'block';
+        },
+        hidefut() {
+          
+            document.getElementById('exit-fut').style.display = 'none';
+            document.getElementById('fut').classList.remove('show');
+        },
+        handleChange(event) {
+            localStorage.setItem('lang', event.target.value);
+            window.location.reload();
+        },
+    },
+
+    //
+    // created(){
+    //  axios.get("http://edalili.e-dalely.com")// axios.get('/routename').then{response=>this.routename=response.data}
+    //  .then(response => {
+    //    this.cities = response.data[0].cities;
+    //  })
+    //  .then(response => {
+    //    this.governorates = response.data[0].governorates;
+    //  })
+    //  .then(response => {
+    //    this.streets = response.data[0].streets;
+    //  })
+    //  .then(response => {
+    //    this.categories = response.data[0].categories;
+    //  })
+    //  }
+    //
+};
+</script>
