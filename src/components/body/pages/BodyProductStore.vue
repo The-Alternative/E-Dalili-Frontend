@@ -2,13 +2,16 @@
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="borderproduct">
             <div class="product-top">
-                <img src="../../../../public/img/w.jpg" class="new" />
+                <img :src="image" class="new" />
                 <div class="overlay">
                     <button
                         type="button"
                         class="btn btn-secondary"
                         title="Quick Shop"
-                        @click="gotodetails(items)"
+                        :id="id"
+                        :name="name"
+                        :long_des="long_des"
+                        @click="gotodetails(id, name, long_des)"
                     >
                         <i class="fa fa-eye"></i>
                     </button>
@@ -33,6 +36,9 @@
                 </div>
             </div>
             <div class="product-bottom text-center">
+                <div class="name-prod">
+                    {{ name }}
+                </div>
                 <div class="stars">
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
@@ -40,14 +46,11 @@
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star"></i>
                 </div>
-                <div class="name-prod">
-                    {{ name }}
-                </div>
                 <div class="category">
                     {{ short_des }}
                 </div>
                 <div>
-                    <span>{{ price }} $</span>
+                    <span>{{ long_des }} $</span>
                 </div>
             </div>
         </div>
@@ -57,20 +60,21 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'short_des', 'price'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des'],
     data() {
         return {
             details: {
                 id: this.id,
                 name: this.name,
+                image: this.image,
                 short_des: this.short_des,
-                price: this.price,
+                long_des: this.long_des,
             },
         };
     },
     methods: {
-        gotodetails(item) {
-            this.$router.push({ name: 'ProductDetailsStore', params: item });
+        gotodetails(i, n, l) {
+            this.$router.push(`ProductDetailsStore/${i}/${n}/${l}`);
         },
         // gotodetails: function(i, t, d, p) {
         //     this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
