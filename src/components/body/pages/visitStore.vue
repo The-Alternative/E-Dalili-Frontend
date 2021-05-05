@@ -251,7 +251,7 @@
             <div class="row align-middle" style="height: 80%;">
                 <div
                     class="col-md-6 col-lg-3 col-xs-3 mb-4 column"
-                    v-for="catog in categories"
+                    v-for="catog in section"
                     :key="catog.id"
                     :slug="catog.slug"
                     :name="catog.name"
@@ -306,13 +306,12 @@
             </div>
             <div class="row mt-2">
                 <BodyProductStore
-                    v-for="items in product"
-                    :key="items.pr"
-                    :id="items.id"
+                    v-for="items in Product"
+                    :key="items.id"
                     :price="items.price"
-                    :title="items.title"
-                    :description="items.description"
-                    v-on:click="gotodetails(id, title, description, price)"
+                    :title="items.name"
+                    :description="items.short_des"
+                    v-on:click="gotodetails(id, name, short_des, price)"
                 >
                 </BodyProductStore>
             </div>
@@ -332,6 +331,8 @@
                 <li>9</li>
             </ul>
         </div>
+        <div v-for="item in Product" :key="item.id">{{ item.name }}</div>
+        <!--        {{ Product }}-->
     </div>
 </template>
 
@@ -343,7 +344,7 @@ Vue.use(VueAxios, axios);
 
 export default {
     name: 'visitStore',
-    props: ['id', 'title', 'workingHours'],
+    props: ['id', 'title', 'workingHours', 'section', 'Product'],
     data() {
         return {
             Categoriees: [],

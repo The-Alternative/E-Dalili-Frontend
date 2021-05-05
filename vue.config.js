@@ -1,5 +1,5 @@
-module.exports = {
-    devServer: {
-        proxy: 'http://edalili.e-dalely.com/public/',
-    },
-};
+// module.exports = {
+//     devServer: {
+//         proxy: 'http://edalili.e-dalely.com/public/',
+//     },
+// };
