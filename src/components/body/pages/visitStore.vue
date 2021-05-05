@@ -329,8 +329,6 @@
                 <li>9</li>
             </ul>
         </div>
-        <div v-for="item in Product" :key="item.id">{{ item.name }}</div>
-        <!--        {{ Product }}-->
     </div>
 </template>
 
