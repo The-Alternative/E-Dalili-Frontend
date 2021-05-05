@@ -39,7 +39,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore/:id',
+        path: '/ProductDetailsStore',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,

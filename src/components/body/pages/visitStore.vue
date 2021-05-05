@@ -235,7 +235,7 @@
                                 <a>{{ $t('StoreOffers') }}</a>
                             </button>
                         </div>
-                        <div>
+                        <div class="">
                             <button type="button" class="btn light1">
                                 <a>{{ $t('Allsections') }}</a>
                             </button>
@@ -254,6 +254,7 @@
                     v-for="catog in section"
                     :key="catog.id"
                     :slug="catog.slug"
+                    :image="catog.image"
                     :name="catog.name"
                     style="width: 50%;"
                 >
@@ -265,10 +266,7 @@
                             $t('More')
                         }}</router-link>
                         <div class="ico-card">
-                            <img
-                                src="../../../../public/img/buty.jpg"
-                                style="width: 60%;"
-                            />
+                            <img :src="catog.image" style="width: 60%;" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -308,10 +306,10 @@
                 <BodyProductStore
                     v-for="items in Product"
                     :key="items.id"
-                    :price="items.price"
-                    :title="items.name"
-                    :description="items.short_des"
-                    v-on:click="gotodetails(id, name, short_des, price)"
+                    :name="items.name"
+                    :image="items.image"
+                    :long_des="items.long_des"
+                    :short_des="items.short_des"
                 >
                 </BodyProductStore>
             </div>
@@ -331,8 +329,6 @@
                 <li>9</li>
             </ul>
         </div>
-        <div v-for="item in Product" :key="item.id">{{ item.name }}</div>
-        <!--        {{ Product }}-->
     </div>
 </template>
 
@@ -344,7 +340,7 @@ Vue.use(VueAxios, axios);
 
 export default {
     name: 'visitStore',
-    props: ['id', 'title', 'workingHours', 'section', 'Product'],
+    props: ['id', 'title', 'image', 'workingHours', 'section', 'Product'],
     data() {
         return {
             Categoriees: [],
@@ -390,9 +386,7 @@ export default {
         likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
-        gotodetails(i, t, d, p) {
-            this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
-        },
+
         // fetch() {
         //     // var self = this;
         //     Vue.axios

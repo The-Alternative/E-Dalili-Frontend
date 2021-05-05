@@ -22,10 +22,10 @@
 
             <div class="content-pro text-center col-6">
                 <div class="name-prod">
-                    {{ title }}
+                    {{ name }}
                 </div>
                 <div class="category">
-                    {{ description }}
+                    {{ long_des }}
                 </div>
                 {{ id }}
                 <div>
@@ -59,13 +59,17 @@ export default {
     name: 'ProductDetailsStore',
     data() {
         return {
-            details: this.$route.params,
+            details: {
+                id: this.id,
+                name: this.name,
+                long_des: this.long_des,
+            },
         };
     },
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id', 'title', 'description', 'price'],
+    props: ['id', 'name', 'long_des'],
     computed: {
         count() {
             return this.$store.state.count;
@@ -73,9 +77,9 @@ export default {
         // stores() {
         //     return this.$store.state.stores;
         // },
-        product() {
-            return this.$store.state.stores[0].products;
-        },
+        // product() {
+        //     return this.$store.state.stores[0].products;
+        // },
     },
     methods: {
         increment() {
@@ -104,13 +108,13 @@ export default {
             );
         },
     },
-    created() {
-        if (this.$route.params.id !== undefined)
-            localStorage.setItem('details', JSON.stringify(this.$route.params));
-    },
-    mounted() {
-        this.details = JSON.parse(localStorage.getItem('details'));
-    },
+    // created() {
+    //     if (this.$route.params.id !== undefined)
+    //         localStorage.setItem('details', JSON.stringify(this.$route.params));
+    // },
+    // mounted() {
+    //     this.details = JSON.parse(localStorage.getItem('details'));
+    // },
 };
 </script>
 
