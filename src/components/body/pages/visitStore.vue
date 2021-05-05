@@ -329,6 +329,8 @@
                 <li>9</li>
             </ul>
         </div>
+        <div v-for="item in Product" :key="item.id">{{ item.name }}</div>
+        <!--        {{ Product }}-->
     </div>
 </template>
 
@@ -340,8 +342,8 @@ Vue.use(VueAxios, axios);
 
 export default {
     name: 'visitStore',
-    props: ['id', 'title', 'image', 'workingHours', 'section', 'Product'],
-    data() {
+    props: ['id', 'title', 'workingHours', 'section', 'Product'],
+    data () {
         return {
             Categoriees: [],
         };
@@ -351,31 +353,31 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        store() {
+        store () {
             return this.$store.state.Store;
         },
-        categories() {
+        categories () {
             return this.$store.state.categories;
         },
-        brands() {
+        brands () {
             return this.$store.state.brands;
         },
-        product() {
+        product () {
             return this.$store.state.stores[0].products;
         },
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadStore', this.id);
     },
     methods: {
-        heart: function() {
+        heart: function () {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function() {
+        dropactive: function () {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -383,7 +385,7 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function() {
+        likebtn: function () {
             document.getElementById('likebtn').classList.toggle('');
         },
 
