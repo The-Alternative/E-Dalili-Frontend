@@ -29,7 +29,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <button
-                                                    @click="gotoListView"
+                                                @click="gotoListView(id,name,short_des)"
                                                     class="but1"
                                                 >
                                                     <span>
@@ -46,47 +46,6 @@
         
     </div>
 </template>
-<script>
-
-export default {
-    data() {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                short_des:this.short_des,
-                long_des: this.long_des,
-                price: this.price,
-            },
-        };
-    },
-    components: {
-        
-    },
-      props: ['id', 'name', 'short_des','long_des', 'price'],
-    computed: {
-        count() {
-            return this.$store.state.count;
-        },
-        stores() {
-            return this.$store.state.stores;
-        },
-        product() {
-            return this.$store.state.stores[0].products;
-        },
-    },
-    methods: {
-        
-      heartlike: function() {      
-          document.getElementById('heart').classList.toggle('is-active');
-        },
-        gotoListView: function() {
-            this.$router.push(`/ListView`);
-        }
-    },
-};
-</script>
-<style lang="scss" scoped></style>
 <style scoped>
 .row {
     justify-content: center;
@@ -246,3 +205,34 @@ export default {
 }
 
 </style>
+<script>
+export default {
+    data() {
+        return {
+        };
+    },
+    components: {
+        
+    },
+      props: ['id', 'name', 'short_des','long_des', 'price'],
+    computed: {
+        count() {
+            return this.$store.state.count;
+        },
+        stores() {
+            return this.$store.state.stores;
+        },
+        product() {
+            return this.$store.state.stores[0].products;
+        },
+    },
+    methods: {
+      heartlike: function() {      
+          document.getElementById('heart').classList.toggle('is-active');
+        },
+        gotoListView: function(i,n,s) {
+            this.$router.push(`/ListView/${i}/${n}/${s}`);
+        }
+    },
+};
+</script>

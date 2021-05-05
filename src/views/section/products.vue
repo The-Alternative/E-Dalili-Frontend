@@ -20,6 +20,7 @@
                     v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :long_des="items.long_des"
                     :name="items.name"
@@ -43,9 +44,10 @@
         <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
-                    v-for="items in Product.slice(4, 8)"
+                    v-for="items in Product.slice(2, 6)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
                     @click="goto(items)"
@@ -97,6 +99,7 @@
                     :id="items.id"
                     :short_des="items.short_des"
                     :name="items.name"
+                    :image="items.image"
                     @click="goto(items)"
                 >
                 </BodyProduct>
@@ -108,9 +111,10 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                    v-for="items in Product.slice(4, 8)"
+                    v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
                     @click="goto(items)"
@@ -124,9 +128,10 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                    v-for="items in Product.slice(8, 12)"
+                    v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
                     @click="goto(items)"
@@ -198,6 +203,7 @@
                     v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
                     @click="goto(items)"
@@ -211,9 +217,10 @@
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                    v-for="items in Product.slice(4, 8)"
+                    v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
                     @click="goto(items)"
@@ -227,9 +234,10 @@
                         <div class="show-prod">
                             <div class="row">
                                  <BodyProduct
-                    v-for="items in Product.slice(8, 12)"
+                    v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
+                    :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
                     @click="goto(items)"
@@ -251,62 +259,7 @@
         </div>
     </div>
 </template>
-
-<script>
- import axios from "axios";
-export default {
-    data() {
-        return {
-            urll: '/img/',
-              Product: [] ,
-            // lastStores:[],
-            //  brands:[]
-            // categories:[]
-        };
-    },
-    name: 'products',
-    components: {
-        BodyProduct: () => import('@/components/global/BodyProduct.vue'),
-        Subscriber: () => import('@/components/global/Subscriber.vue'),
-        Cartmini: () => import('@/components/cart/Cartmini.vue'),
-    },
-    computed: {
-        //  Product() {
-       //    return this.$store.state.Product;
-       //  },
-        lastStores() {
-            return this.$store.state.lastStores;
-        },
-        brands() {
-            return this.$store.state.brands;
-        },
-        categories() {
-            return this.$store.state.categories;
-        },
-    },
-    created(){
-    axios.get("http://edalili.e-dalely.com/public/api/products/getAll")
-    .then(response => {
-      this.Product = response.data.Products
-    })
-    .catch(error => {console.log(error);})
-   
-    }
-    /*
-    .then(response => {
-      this.lastStores = response.data[0].lastStores;
-    })
-    .then(response => {
-      this.brands = response.data[0].brands;
-    })
-  },
-  */
-};
-</script>
 <style scoped>
-.row {
-    justify-content: center;
-}
 .show-img {
     background-image: linear-gradient(180deg, #a6a6a6, #fff);
     width: 100%;
@@ -315,7 +268,9 @@ export default {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 2vh;
 }
-
+.show-prod {
+       padding: 0 10px;
+    }
 .show-img .row .img {
     text-align: center;
     transition: all 0.5s;
@@ -593,6 +548,7 @@ export default {
 .carousel-inner {
     background-color: #ffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
 }
 .carousel-inner .show-prod .row .content-pro {
     margin-top: 0;
@@ -607,8 +563,7 @@ export default {
     border-radius: 50%;
     width: 54px;
     height: 95px;
-    background-color: #caabab;
-    top: 160px;
+    top:160px;
     position: absolute;
 }
 /* Extra small devices (portrait phones, less than 576px) */
@@ -807,3 +762,55 @@ export default {
 }
 /* ________________________________ End Products _______________________________*/
 </style>
+
+<script>
+ import axios from "axios";
+export default {
+    data() {
+        return {
+            urll: '/img/',
+              Product: [] ,
+            // lastStores:[],
+            //  brands:[]
+            // categories:[]
+        };
+    },
+    name: 'products',
+    components: {
+        BodyProduct: () => import('@/components/global/BodyProduct.vue'),
+        Subscriber: () => import('@/components/global/Subscriber.vue'),
+        Cartmini: () => import('@/components/cart/Cartmini.vue'),
+    },
+    computed: {
+        //  Product() {
+       //    return this.$store.state.Product;
+       //  },
+        lastStores() {
+            return this.$store.state.lastStores;
+        },
+        brands() {
+            return this.$store.state.brands;
+        },
+        categories() {
+            return this.$store.state.categories;
+        },
+    },
+    created(){
+    axios.get("http://edalili.e-dalely.com/public/api/products/getAll")
+    .then(response => {
+      this.Product = response.data.Products
+    })
+    .catch(error => {console.log(error);})
+   
+    }
+    /*
+    .then(response => {
+      this.lastStores = response.data[0].lastStores;
+    })
+    .then(response => {
+      this.brands = response.data[0].brands;
+    })
+  },
+  */
+};
+</script>

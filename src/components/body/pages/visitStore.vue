@@ -235,7 +235,7 @@
                                 <a>{{ $t('StoreOffers') }}</a>
                             </button>
                         </div>
-                        <div>
+                        <div class="">
                             <button type="button" class="btn light1">
                                 <a>{{ $t('Allsections') }}</a>
                             </button>
@@ -254,6 +254,7 @@
                     v-for="catog in section"
                     :key="catog.id"
                     :slug="catog.slug"
+                    :image="catog.image"
                     :name="catog.name"
                     style="width: 50%;"
                 >
@@ -265,10 +266,7 @@
                             $t('More')
                         }}</router-link>
                         <div class="ico-card">
-                            <img
-                                src="../../../../public/img/buty.jpg"
-                                style="width: 60%;"
-                            />
+                            <img :src="catog.image" style="width: 60%;" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -308,10 +306,10 @@
                 <BodyProductStore
                     v-for="items in Product"
                     :key="items.id"
-                    :price="items.price"
-                    :title="items.name"
-                    :description="items.short_des"
-                    v-on:click="gotodetails(id, name, short_des, price)"
+                    :name="items.name"
+                    :image="items.image"
+                    :long_des="items.long_des"
+                    :short_des="items.short_des"
                 >
                 </BodyProductStore>
             </div>
@@ -345,7 +343,7 @@ Vue.use(VueAxios, axios);
 export default {
     name: 'visitStore',
     props: ['id', 'title', 'workingHours', 'section', 'Product'],
-    data() {
+    data () {
         return {
             Categoriees: [],
         };
@@ -355,31 +353,31 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        store() {
+        store () {
             return this.$store.state.Store;
         },
-        categories() {
+        categories () {
             return this.$store.state.categories;
         },
-        brands() {
+        brands () {
             return this.$store.state.brands;
         },
-        product() {
+        product () {
             return this.$store.state.stores[0].products;
         },
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadStore', this.id);
     },
     methods: {
-        heart: function() {
+        heart: function () {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function() {
+        dropactive: function () {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -387,12 +385,10 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function() {
+        likebtn: function () {
             document.getElementById('likebtn').classList.toggle('');
         },
-        gotodetails(i, t, d, p) {
-            this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
-        },
+
         // fetch() {
         //     // var self = this;
         //     Vue.axios

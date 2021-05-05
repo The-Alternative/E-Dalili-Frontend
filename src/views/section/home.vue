@@ -6,9 +6,10 @@
         <div class="row align-middle">
             <div
                 class="col-md-6 col-lg-3 col-xs-6  column"
-                v-for="catog in Category.slice(0,8)"
+                v-for="catog in Category"
                 :key="catog.id"
                 :name="catog.name"
+                :image="catog.image"
                 style="width:50%"
             >
                 <router-link :to="`/${catog.name}`">
@@ -18,7 +19,7 @@
                         </div>
                         <a href="#">{{ $t('More') }}</a>
                         <div class="ico-card">
-                            <img v-lazy="'img/mobile.jpg'" style="width:60%" />
+                            <img v-lazy="image" style="width:60%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -53,33 +54,6 @@
         </div>
     </div>
 </template>
-
-<script>
-import axios from "axios";
-export default {
-    name: 'home',
-    data() {
-        return {
-            Category: []
-        }
-    },
-    created(){
-       axios.get('http://edalili.e-dalely.com/public/api/categories/getAll')
-       .then(response => {
-           this.Category = response.data.Category
-       }) 
-       .catch(error => {console.log(error);})
-    },
-    computed: {
-      //  categories() {
-      //      return this.$store.state.categories;
-      //  },
-        brands() {
-            return this.$store.state.brands;
-        },
-    },
-};
-</script>
 <style lang="scss" scoped>
 * {
     transition: 0.5s;
@@ -292,3 +266,30 @@ export default {
 @media (min-width: 992px) and (max-width: 1199.98px) {
 }
 </style>
+<script>
+import axios from "axios";
+export default {
+    name: 'home',
+     props: ['image'],
+    data() {
+        return {
+            Category: []
+        }
+    },
+    created(){
+       axios.get('http://edalili.e-dalely.com/public/api/categories/getAll')
+       .then(response => {
+           this.Category = response.data.Category
+       }) 
+       .catch(error => {console.log(error);})
+    },
+    computed: {
+      //  categories() {
+      //      return this.$store.state.categories;
+      //  },
+        brands() {
+            return this.$store.state.brands;
+        },
+    },
+};
+</script>

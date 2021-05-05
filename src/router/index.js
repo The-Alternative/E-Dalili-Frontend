@@ -34,12 +34,12 @@ const routes = [
         props: true,
     },
     {
-        path: '/ListView',
+        path: '/ListView/:id/:name/:short_des',
         component: () => import('../components/global/ListView.vue'),
         props: true,
     },
     {
-        path: '/ProductDetailsStore/:id',
+        path: '/ProductDetailsStore',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,
