@@ -4,28 +4,28 @@
             
             <div class="col-12"><h2> أختيار الترتيب</h2></div>
             <div class="sort col-3">
-                <h2>من الأرخص الى الأغلى</h2>                             
-            <input id="1" value="price" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+                <input id="radio1" name="radios" value="price" type="radio" v-model="sortType" v-on:change="sortItem()">
+                <label for="radio1">من الأرخص الى الأغلى</label>
             </div>
             <div class="sort col-3">
-                <h2>من الأغلى الى الأرخص</h2>       
-            <input id="2" value="prices" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+                <input id="radio2" name="radios" value="prices" type="radio" v-model="sortType" v-on:change="sortItem()">
+                <label for="radio2">من الأغلى الى الأرخص</label>
             </div>
             <div class="sort col-3">
-                <h2>من الأقرب الى الأبعد</h2>
-            <input id="3" value="space" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+                <input type="radio" id="radio3" name="radios" value="space" v-model="sortType" v-on:change="sortItem()">
+                <label for="radio3">من الأقرب الى الأبعد</label>
             </div>
             <div class="sort col-3"> 
-                <h2>من الأبعد الى الأقرب</h2>          
-            <input id="4" value="spaces" type="radio" v-model="sortType" v-on:change="sortItem()"/>
+                <input type="radio" id="radio4" name="radios" value="spaces" v-model="sortType" v-on:change="sortItem()">
+                <label for="radio4">من الأبعد الى الأقرب</label>
             </div>
             <div class="col-8" style="margin:10px 0"> 
             <img  class="product-img" src="../../../public/img/w.jpg"/>
             </div>
             <div class="col-4">
                 <div class="row">
-                    <div class="col-12"><h2 class="prod-name">ar</h2></div>
-                    <div class="col-12"><h2 class="prod-dis">ar ar</h2></div>
+                    <div class="col-12"><h5 class="prod-name">{{name}}</h5></div>
+                    <div class="col-12"><h5 class="prod-dis">{{short_des}}</h5></div>
                 </div>
             </div>
 
@@ -68,55 +68,40 @@
              </div>
     </div>
 </template>
-
-<script>
-export default {
-    data() {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                short_des:this.short_des,
-                long_des: this.long_des,
-                price: this.price,
-            },
-             sortType: '1',
-                stores: this.$store.state.stores
-        };
-    },
-    components: {
-        
-    },
-    
-    props: ['id', 'name', 'short_des','long_des', 'price'],
-    computed: {
-        
-        product() {
-            return this.$store.state.stores[0].products;
-        },
-        
-    },methods:{
-        sortItem() {
-                if (this.sortType == 'space') {
-                    this.stores = this.stores.sort((prev, curr) => prev.space - curr.space);
-                }
-                else if(this.sortType == 'spaces'){
-                     this.stores = this.stores.sort((prev, curr) => curr.space - prev.space);
-                }
-                else if(this.sortType == 'price'){
-                     this.stores = this.stores.sort((prev, curr) => prev.price - curr.price);
-                }
-                else if(this.sortType == 'prices'){
-                     this.stores = this.stores.sort((prev, curr) => curr.price - prev.price);
-                }
-    }}
- 
-};
-</script>
-<style lang="scss" scoped></style>
 <style scoped>
+
+
+.sort input[type="radio"] {
+  display: none;
+}
+
+.sort label {
+  display: inline-block;
+  background-color: #e9ecf2;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+}
+.sort label:hover {
+    background-color: #68d268;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.sort input[type="radio"]:checked+label {
+ background-color: #68d268;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
 h2 {
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin-top: 25px;
 }
 span{
@@ -133,7 +118,9 @@ span{
 .sort {
     border: 1px solid azure;
     border-radius: 10px;
+    padding: 0;
 }
+
 .store{
     margin: 20px 0;
 }
@@ -186,3 +173,47 @@ margin: 20px 0;
     }
 }
 </style>
+<script>
+export default {
+    data() {
+        return {
+            details: {
+                id: this.id,
+                name: this.name,
+                short_des:this.short_des,
+                long_des: this.long_des,
+                price: this.price,
+            },
+             sortType: '1',
+                stores: this.$store.state.stores
+        };
+    },
+    components: {
+        
+    },
+    
+    props: ['id', 'name', 'short_des','long_des', 'price'],
+    computed: {
+        
+        product() {
+            return this.$store.state.stores[0].products;
+        },
+        
+    },methods:{
+        sortItem() {
+                if (this.sortType == 'space') {
+                    this.stores = this.stores.sort((prev, curr) => prev.space - curr.space);
+                }
+                else if(this.sortType == 'spaces'){
+                     this.stores = this.stores.sort((prev, curr) => curr.space - prev.space);
+                }
+                else if(this.sortType == 'price'){
+                     this.stores = this.stores.sort((prev, curr) => prev.price - curr.price);
+                }
+                else if(this.sortType == 'prices'){
+                     this.stores = this.stores.sort((prev, curr) => curr.price - prev.price);
+                }
+    }}
+ 
+};
+</script>

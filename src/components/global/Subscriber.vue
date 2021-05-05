@@ -6,14 +6,6 @@
         <button type="button" class="btn btn-light">{{ $t('visit') }}</button>
     </div>
 </template>
-
-<script>
-export default {
-    name: 'Subscriber',
-    props: ['title', 'location'],
-};
-</script>
-
 <style scoped>
 .last-subscriber .subscriber {
     background-color: #fff;
@@ -86,3 +78,9 @@ export default {
 }
 /* ------------------------------------------ */
 </style>
+<script>
+export default {
+    name: 'Subscriber',
+    props: ['title', 'location'],
+};
+</script>

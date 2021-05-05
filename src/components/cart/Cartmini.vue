@@ -75,49 +75,6 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    components: {},
-    data() {
-        return {};
-    },
-    methods: {
-        showcart: function() {
-            var cart = document.getElementById('cartshop');
-            cart.classList.toggle('vs');
-        },
-        hidecart: function() {
-            var cart = document.getElementById('cartshop');
-            cart.classList.remove('vs');
-        },
-        addItem(items) {
-            this.$store.dispatch('addToCart', items);
-        },
-        removeItem(items) {
-            this.$store.dispatch('removeItem', items);
-        },
-        removeFromCart(item) {
-            this.$store.commit('removeFromCart', item);
-        },
-    },
-    computed: {
-        cartItems() {
-            return this.$store.state.cartItems;
-        },
-        cartItemCount() {
-            return this.$store.state.cartItemCount;
-        },
-        totalPrice() {
-            let price = 0;
-            this.$store.state.cartItems.map((el) => {
-                price += el['quantity'] * el['price'];
-            });
-            return price;
-        },
-    },
-};
-</script>
-
 <style scoped>
 /* ____________________________ Start Cart Shop ________________________________ */
 .button {
@@ -381,3 +338,46 @@ a:hover {
     }
 }
 </style>
+
+<script>
+export default {
+    components: {},
+    data() {
+        return {};
+    },
+    methods: {
+        showcart: function() {
+            var cart = document.getElementById('cartshop');
+            cart.classList.toggle('vs');
+        },
+        hidecart: function() {
+            var cart = document.getElementById('cartshop');
+            cart.classList.remove('vs');
+        },
+        addItem(items) {
+            this.$store.dispatch('addToCart', items);
+        },
+        removeItem(items) {
+            this.$store.dispatch('removeItem', items);
+        },
+        removeFromCart(item) {
+            this.$store.commit('removeFromCart', item);
+        },
+    },
+    computed: {
+        cartItems() {
+            return this.$store.state.cartItems;
+        },
+        cartItemCount() {
+            return this.$store.state.cartItemCount;
+        },
+        totalPrice() {
+            let price = 0;
+            this.$store.state.cartItems.map((el) => {
+                price += el['quantity'] * el['price'];
+            });
+            return price;
+        },
+    },
+};
+</script>
