@@ -235,7 +235,7 @@
                                 <a>{{ $t('StoreOffers') }}</a>
                             </button>
                         </div>
-                        <div>
+                        <div class="">
                             <button type="button" class="btn light1">
                                 <a>{{ $t('Allsections') }}</a>
                             </button>
