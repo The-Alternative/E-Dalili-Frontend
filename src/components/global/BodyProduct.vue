@@ -130,8 +130,10 @@ border-radius: 10px
         height: auto;
         margin-top: 2vh;
         font-size: 4vw;
-        
     }
+    .content-pro .row{
+        flex-wrap: nowrap
+}
     .content-pro .name-prod {
         margin-bottom: 10px;
     }
@@ -140,10 +142,32 @@ border-radius: 10px
         max-width: 50%;
     }
     .content-pro button {
-    font-size: 5vw;
+    font-size: 4vw;
     width: 70px;
     height: 40px;
+    margin: 16px 3px;
 }
+.heart-conten{
+    margin: 10px 0;
+}
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+ .content-pro {
+    font-size: 3.3vw;
+}  
+   .content-pro button {
+    font-size: 3.3vw;
+   } 
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .content-pro {
+    font-size: 1.8vw;
+}  
+   .content-pro button {
+    font-size: 1.8vw;
+   } 
 }
 </style>
 
@@ -173,6 +197,11 @@ border-radius: 10px
         transition-duration: 1s;
         background-position: -2800px 0;
     }
+}
+@media (max-width: 576.98px) {
+.heart-conten{
+    margin: 10px 0;
+}
 }
 </style>
 <script>
