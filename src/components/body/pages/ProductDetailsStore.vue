@@ -31,10 +31,6 @@
                 <div>
                     <span>80.00 S.P</span>
                     <div class="price" style="display: inline-block;"></div>
-                    {{ category }}
-                    <div v-for="item in category" :key="item.id">
-                        {{ item }}
-                    </div>
                 </div>
 
                 <div class="row">
@@ -71,8 +67,6 @@ export default {
         'image',
         'short_des',
         'long_des',
-        'store_product',
-        'category',
     ],
     computed: {
         count() {
