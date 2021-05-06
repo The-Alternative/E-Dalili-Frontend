@@ -30,24 +30,24 @@
         <h2 style="margin-top: 3vh;">Some Market</h2>
         <div class="row align-middle cont-market">
             <div
-                v-for="brand in brands.slice(12, 16)"
-                :key="brand.id"
+                v-for="bran in Brand.slice(0, 4)"
+                :key="bran.id"
                 class=" col-md-3 col-sm-6  column"
             >
                 <div class="card card-market">
-                    <img class="img-market" v-lazy="brand.image" />
+                    <img class="img-market" v-lazy="bran.image" />
                     <a href="#">more...</a>
                 </div>
             </div>
         </div>
         <div class="row align-middle cont-market">
             <div
-                v-for="brand in brands.slice(16, 20)"
-                :key="brand.id"
+                v-for="bran in Brand.slice(2, 6)"
+                :key="bran.id"
                 class=" col-md-3 col-sm-6  column"
             >
                 <div class="card card-market">
-                    <img class="img-market" v-lazy="brand.image" />
+                    <img class="img-market" v-lazy="bran.image" />
                     <a href="#">more...</a>
                 </div>
             </div>
@@ -273,7 +273,8 @@ export default {
      props: ['image'],
     data() {
         return {
-            Category: []
+            Category: [],
+            Brand: []
         }
     },
     created(){
@@ -281,15 +282,19 @@ export default {
        .then(response => {
            this.Category = response.data.Category
        }) 
-       .catch(error => {console.log(error);})
+   
+    axios.get("http://edalili.e-dalely.com/public/api/brands/getAll")
+    .then(response => {
+     this.Brand = response.data.Brand
+    })
+    .catch(error => {console.log(error);})
+   
     },
     computed: {
       //  categories() {
       //      return this.$store.state.categories;
       //  },
-        brands() {
-            return this.$store.state.brands;
-        },
+    
     },
 };
 </script>
