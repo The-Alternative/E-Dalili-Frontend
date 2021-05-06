@@ -4,17 +4,28 @@
             <div class="product-top">
                 <img :src="image" class="new" />
                 <div class="overlay">
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        title="Quick Shop"
-                        :id="id"
-                        :name="name"
-                        :long_des="long_des"
-                        @click="gotodetails(id, name, long_des)"
+                    <router-link
+                        :to="{
+                            name: 'ProductDetailsStore',
+                            params: {
+                                id: id,
+                                name: name,
+                                image: image,
+                                short_des: short_des,
+                                long_des: long_des,
+                                store_product: store_product,
+                                category: category,
+                            },
+                        }"
                     >
-                        <i class="fa fa-eye"></i>
-                    </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            title="Quick Shop"
+                        >
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </router-link>
                     <button
                         type="button"
                         class="btn btn-secondary"
@@ -39,6 +50,9 @@
                 <div class="name-prod">
                     {{ name }}
                 </div>
+                <div v-for="item in store_product" :key="item.id">
+                    {{ item.price }}
+                </div>
                 <div class="stars">
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
@@ -60,7 +74,15 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'image', 'short_des', 'long_des'],
+    props: [
+        'id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+        'category',
+    ],
     data() {
         return {
             details: {
@@ -69,13 +91,15 @@ export default {
                 image: this.image,
                 short_des: this.short_des,
                 long_des: this.long_des,
+                store_product: this.store_product,
+                category: this.category,
             },
         };
     },
     methods: {
-        gotodetails(i, n, l) {
-            this.$router.push(`ProductDetailsStore/${i}/${n}/${l}`);
-        },
+        // gotodetails(i, n, l) {
+        //     this.$router.push(`ProductDetailsStore/${i}/${n}/${l}`);
+        // },
         // gotodetails: function(i, t, d, p) {
         //     this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         // },
@@ -125,6 +149,9 @@ export default {
         // product() {
         //     return this.$store.state.stores[0].products;
         // },
+    },
+    mounted() {
+        this.$store.dispatch('loadStoreDetailsProduct', this.id);
     },
 };
 </script>

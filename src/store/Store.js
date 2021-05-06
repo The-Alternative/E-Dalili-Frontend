@@ -16,6 +16,7 @@ export default new Vuex.Store({
         Store: null,
         Sections: [],
         products: [],
+        DetailsProduct: null,
         ////////////////
         Product: jeson[0].Products,
         stores: data.stores,
@@ -101,9 +102,9 @@ export default new Vuex.Store({
         SET_Store(state, Store) {
             state.Store = Store;
         },
-        // SET_Sections(state, Sections) {
-        //     state.Sections = Sections;
-        // },
+        SET_DetailsProduct(state, DetailsProduct) {
+            state.DetailsProduct = DetailsProduct;
+        },
     },
 
     actions: {
@@ -134,6 +135,20 @@ export default new Vuex.Store({
                     console.warn(res.data.Stores);
                     let store = res.data.Stores;
                     commit('SET_Stores', store);
+                })
+                .catch(function(error) {
+                    console.log('Error: ', error);
+                });
+        },
+        loadStoreDetailsProduct({ commit }, productId) {
+            axios
+                .get(
+                    `http://edalili.e-dalely.com/public/api/products/getById/${productId}`
+                )
+                .then((res) => {
+                    console.warn(res.data);
+                    let DetailsProduct = res.data;
+                    commit('SET_DetailsProduct', DetailsProduct);
                 })
                 .catch(function(error) {
                     console.log('Error: ', error);

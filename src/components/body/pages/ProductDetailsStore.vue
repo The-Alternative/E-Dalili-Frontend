@@ -6,16 +6,16 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-12">
-                        <img src="../../../../public/img/w.jpg" alt="" />
+                        <img :src="image" />
                     </div>
                     <div class="col-4">
-                        <img src="../../../../public/img/w.jpg" alt="" />
+                        <img :src="image" />
                     </div>
                     <div class="col-4">
-                        <img src="../../../../public/img/w.jpg" alt="" />
+                        <img :src="image" />
                     </div>
                     <div class="col-4">
-                        <img src="../../../../public/img/w.jpg" alt="" />
+                        <img :src="image" />
                     </div>
                 </div>
             </div>
@@ -31,6 +31,10 @@
                 <div>
                     <span>80.00 S.P</span>
                     <div class="price" style="display: inline-block;"></div>
+                    {{ category }}
+                    <div v-for="item in category" :key="item.id">
+                        {{ item }}
+                    </div>
                 </div>
 
                 <div class="row">
@@ -57,19 +61,19 @@
 <script>
 export default {
     name: 'ProductDetailsStore',
-    data() {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                long_des: this.long_des,
-            },
-        };
-    },
+
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id', 'name', 'long_des'],
+    props: [
+        'id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+        'category',
+    ],
     computed: {
         count() {
             return this.$store.state.count;
