@@ -13,8 +13,6 @@
                                 image: image,
                                 short_des: short_des,
                                 long_des: long_des,
-                                store_product: store_product,
-                                category: category,
                             },
                         }"
                     >
@@ -50,9 +48,6 @@
                 <div class="name-prod">
                     {{ name }}
                 </div>
-                <div v-for="item in store_product" :key="item.id">
-                    {{ item.price }}
-                </div>
                 <div class="stars">
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
@@ -80,8 +75,6 @@ export default {
         'image',
         'short_des',
         'long_des',
-        'store_product',
-        'category',
     ],
     data() {
         return {
@@ -91,8 +84,6 @@ export default {
                 image: this.image,
                 short_des: this.short_des,
                 long_des: this.long_des,
-                store_product: this.store_product,
-                category: this.category,
             },
         };
     },
