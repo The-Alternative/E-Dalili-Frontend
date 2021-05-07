@@ -1,16 +1,16 @@
 <template>
     <div class="home">
         <div class="all-section">
-            <h3>{{$t('AllCategories')}}</h3>
+            <h3>{{ $t('AllCategories') }}</h3>
         </div>
         <div class="row align-middle">
             <div
-                class="col-md-6 col-lg-3 col-xs-6  column"
+                class="col-md-6 col-lg-3 col-xs-6 column"
                 v-for="catog in Category"
                 :key="catog.id"
                 :name="catog.name"
                 :image="catog.image"
-                style="width:50%"
+                style="width: 50%"
             >
                 <router-link :to="`/${catog.name}`">
                     <div class="card">
@@ -19,7 +19,7 @@
                         </div>
                         <a href="#">{{ $t('More') }}</a>
                         <div class="ico-card">
-                            <img v-lazy="image" style="width:60%" />
+                            <img v-lazy="image" style="width: 60%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -27,12 +27,12 @@
             </div>
         </div>
         <!-- __________________________________________________________________ -->
-        <h2 style="margin-top: 3vh;">Some Market</h2>
+        <h2 style="margin-top: 3vh">Some Market</h2>
         <div class="row align-middle cont-market">
             <div
                 v-for="brand in brands.slice(12, 16)"
                 :key="brand.id"
-                class=" col-md-3 col-sm-6  column"
+                class="col-md-3 col-sm-6 column"
             >
                 <div class="card card-market">
                     <img class="img-market" v-lazy="brand.image" />
@@ -44,7 +44,7 @@
             <div
                 v-for="brand in brands.slice(16, 20)"
                 :key="brand.id"
-                class=" col-md-3 col-sm-6  column"
+                class="col-md-3 col-sm-6 column"
             >
                 <div class="card card-market">
                     <img class="img-market" v-lazy="brand.image" />
@@ -267,26 +267,29 @@
 }
 </style>
 <script>
-import axios from "axios";
+import axios from 'axios';
 export default {
     name: 'home',
-     props: ['image'],
+    props: ['image'],
     data() {
         return {
-            Category: []
-        }
+            Category: [],
+        };
     },
-    created(){
-       axios.get('http://edalili.e-dalely.com/public/api/categories/getAll')
-       .then(response => {
-           this.Category = response.data.Category
-       }) 
-       .catch(error => {console.log(error);})
+    created() {
+        axios
+            .get('http://edalili.e-dalely.com/public/api/categories/getAll')
+            .then((response) => {
+                this.Category = response.data.Category;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     },
     computed: {
-      //  categories() {
-      //      return this.$store.state.categories;
-      //  },
+        //  categories() {
+        //      return this.$store.state.categories;
+        //  },
         brands() {
             return this.$store.state.brands;
         },

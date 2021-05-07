@@ -1,5 +1,5 @@
 <template>
-    <div class="ProductDetalis" style="background-color: #e9ecf2;">
+    <div class="ProductDetalis" style="background-color: #e9ecf2">
         <Cartmini />
         <!-- ___________________________________________________ -->
         <div class="col-12 row">
@@ -30,7 +30,7 @@
                 {{ id }}
                 <div>
                     <span>80.00 S.P</span>
-                    <div class="price" style="display: inline-block;"></div>
+                    <div class="price" style="display: inline-block"></div>
                 </div>
 
                 <div class="row">
@@ -61,13 +61,7 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: [
-        'id',
-        'name',
-        'image',
-        'short_des',
-        'long_des',
-    ],
+    props: ['id', 'name', 'image', 'short_des', 'long_des'],
     computed: {
         count() {
             return this.$store.state.count;
@@ -86,7 +80,7 @@ export default {
         addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function() {
+        gotocart: function () {
             this.$router.push(`/Cart`);
         },
         addToCart() {

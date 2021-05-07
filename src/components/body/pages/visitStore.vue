@@ -5,7 +5,7 @@
             id="carouselExampleInterval"
             class="carousel slide mb-4 carouselSlide"
             data-ride="carousel"
-            style="justify-content: center;"
+            style="justify-content: center"
         >
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" data-interval="2000">
@@ -51,7 +51,7 @@
         <div class="border1 mb-4">
             <div
                 class="col-sm-12 detailssmall"
-                style="display: flex; padding: 0;"
+                style="display: flex; padding: 0"
             >
                 <div class="col-lg-3 datedetails">
                     <img
@@ -206,7 +206,7 @@
         <div id="nav" class="naver">
             <div class="container">
                 <div class="row text-center">
-                    <div class="col-lg-12" style="padding: 0;">
+                    <div class="col-lg-12" style="padding: 0">
                         <div>
                             <button type="button" class="btn btn-light light1">
                                 <a>{{ $t('MyPurchases') }}</a>
@@ -248,7 +248,7 @@
             <div class="all-section">
                 <span class="text">{{ $t('Allsections') }}</span>
             </div>
-            <div class="row align-middle" style="height: 80%;">
+            <div class="row align-middle" style="height: 80%">
                 <div
                     class="col-md-6 col-lg-3 col-xs-3 mb-4 column"
                     v-for="catog in section"
@@ -256,7 +256,7 @@
                     :slug="catog.slug"
                     :image="catog.image"
                     :name="catog.name"
-                    style="width: 50%;"
+                    style="width: 50%"
                 >
                     <div class="card">
                         <div class="txt">
@@ -266,7 +266,7 @@
                             $t('More')
                         }}</router-link>
                         <div class="ico-card">
-                            <img :src="catog.image" style="width: 60%;" />
+                            <img :src="catog.image" style="width: 60%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -366,14 +366,14 @@ export default {
         this.$store.dispatch('loadStore', this.id);
     },
     methods: {
-        heart: function() {
+        heart: function () {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function() {
+        dropactive: function () {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -381,7 +381,7 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function() {
+        likebtn: function () {
             document.getElementById('likebtn').classList.toggle('');
         },
 

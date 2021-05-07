@@ -5,7 +5,7 @@
                 <div class="title">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 style="margin-bottom:5px">
+                            <h4 style="margin-bottom: 5px">
                                 <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
@@ -63,7 +63,7 @@
                         <span class="price"> {{ totalPrice }}</span>
                         ل.س
                     </div>
-                    <div class="col" style="padding-left:0;">
+                    <div class="col" style="padding-left: 0">
                         :{{ $t('price') }}
                     </div>
                 </div>
@@ -72,7 +72,11 @@
                 </form>
                 <div
                     class="row"
-                    style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;margin-bottom: 40px"
+                    style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding: 2vh 0;
+                        margin-bottom: 40px;
+                    "
                 >
                     <div class="col text-right">
                         <span class="price"> {{ totalPrice + 500 }}</span>
@@ -80,7 +84,7 @@
                     </div>
                     <div class="col">:{{ $t('priceWithShippingCosts') }}</div>
                 </div>
-                <a class="cta" style="border:none">
+                <a class="cta" style="border: none">
                     <span>Check Out</span>
                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                         <path d="M1,5 L11,5"></path>

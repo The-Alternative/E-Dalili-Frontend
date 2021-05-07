@@ -69,13 +69,7 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: [
-        'id',
-        'name',
-        'image',
-        'short_des',
-        'long_des',
-    ],
+    props: ['id', 'name', 'image', 'short_des', 'long_des'],
     data() {
         return {
             details: {

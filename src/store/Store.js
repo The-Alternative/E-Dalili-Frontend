@@ -122,7 +122,7 @@ export default new Vuex.Store({
                     let Stores = res.data.Stores;
                     commit('SET_Stores', Stores);
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     console.log('Error: ', error);
                 });
         },
@@ -136,7 +136,7 @@ export default new Vuex.Store({
                     let store = res.data.Stores;
                     commit('SET_Stores', store);
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     console.log('Error: ', error);
                 });
         },
@@ -150,7 +150,7 @@ export default new Vuex.Store({
                     let DetailsProduct = res.data;
                     commit('SET_DetailsProduct', DetailsProduct);
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     console.log('Error: ', error);
                 });
         },

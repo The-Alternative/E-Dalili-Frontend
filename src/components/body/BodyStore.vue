@@ -3,7 +3,7 @@
     <div
         class="card-group col-sm-12 wrapper"
         id="wrapper"
-        style="display: flex;"
+        style="display: flex"
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
@@ -22,9 +22,7 @@
                                 height="40"
                             />
                         </div>
-                        <div class="col text-muted">
-                            يبعد 500 م
-                        </div>
+                        <div class="col text-muted">يبعد 500 م</div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
                                 <div class="title">
@@ -284,7 +282,7 @@ export default {
     },
     props: ['id', 'section', 'Product', 'brand'],
 
-    data () {
+    data() {
         return {
             // Stores: [],
             viewProductsInStore: [],
@@ -293,10 +291,10 @@ export default {
         };
     },
     computed: {
-        categories () {
+        categories() {
             return this.$store.state.Categories;
         },
-        Stores () {
+        Stores() {
             return this.$store.state.Stores;
         },
         // Stores: function() {
@@ -316,7 +314,7 @@ export default {
         //     return Stores;
         // },
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadStores');
     },
     methods: {
@@ -327,7 +325,7 @@ export default {
         gotoview: function (i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch () {
+        fetch() {
             var self = this;
             Vue.axios
                 .get('http://edalili.e-dalely.com/public/api/sections/getAll')
@@ -340,7 +338,7 @@ export default {
                 });
         },
     },
-    created () {
+    created() {
         this.fetch();
     },
 };
