@@ -45,10 +45,10 @@
                 </div>
             </div>
             <div class="product-bottom text-center">
-                <div class="name-prod">
+                <div class="name-prod mt-2">
                     {{ name }}
                 </div>
-                <div class="stars">
+                <div class="stars mb-2">
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
@@ -58,8 +58,14 @@
                 <div class="category">
                     {{ short_des }}
                 </div>
-                <div>
-                    <span>{{ long_des }} $</span>
+                <div class="row">
+                    <div class="heart-conten">
+                        <div
+                            @click="heartlike()"
+                            id="heart"
+                            class="heart"
+                        ></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,7 +76,7 @@
 export default {
     name: 'BodyProductStore',
     props: ['id', 'name', 'image', 'short_des', 'long_des'],
-    data() {
+    data () {
         return {
             details: {
                 id: this.id,
@@ -82,13 +88,12 @@ export default {
         };
     },
     methods: {
-        // gotodetails(i, n, l) {
-        //     this.$router.push(`ProductDetailsStore/${i}/${n}/${l}`);
-        // },
-        // gotodetails: function(i, t, d, p) {
-        //     this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
-        // },
-        addToCart() {
+        heartlike: function () {
+            this.$el.lastChild.lastChild.lastChild.classList.toggle(
+                'is-active'
+            );
+        },
+        addToCart () {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
                 [
@@ -119,7 +124,7 @@ export default {
         },
     },
     computed: {
-        count() {
+        count () {
             return this.$store.state.count;
         },
         // stores() {
@@ -135,7 +140,7 @@ export default {
         //     return this.$store.state.stores[0].products;
         // },
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadStoreDetailsProduct', this.id);
     },
 };
@@ -153,6 +158,13 @@ export default {
     box-shadow: 3px 3px 3px 3px #c2bdbd;
     background-color: #ffffff;
     margin: 10px;
+    transition: all 0.5s;
+}
+.borderproduct .row {
+    flex-wrap: nowrap;
+}
+.borderproduct:hover {
+    transform: scale3d(1.05, 1.05, 1);
 }
 .new {
     width: 100%;
@@ -181,11 +193,15 @@ export default {
     padding: 7px;
     margin: 5%;
     margin-bottom: 5%;
+    transition: all 0.5s;
 }
 .overlay .btn-secondary {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+}
+.overlay .fa:hover {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .cartshop {
     position: relative;
@@ -215,19 +231,34 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.heart-conten {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+}
+.heart-conten:hover {
+    background-color: #d3b85f;
+}
 .heart {
-    width: 100px;
+    width: 80px;
     height: 100px;
     background: url('../../../../public/img/heart.png') no-repeat;
     background-position: 0 0;
     cursor: pointer;
     transition: background-position 1s steps(28);
     transition-duration: 0s;
-    margin: auto;
+    margin: -22px 0px 0 -25px;
 
     &.is-active {
         transition-duration: 1s;
         background-position: -2800px 0;
+    }
+}
+@media (max-width: 576.98px) {
+    .heart-conten {
+        margin: 10px 0;
     }
 }
 </style>

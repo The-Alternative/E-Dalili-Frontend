@@ -34,10 +34,10 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="brand in brands.slice(2, 7)"
-                :key="brand.id"
+                v-for="bran in Brand.slice(0, 5)"
+                :key="bran.id"
             >
-                <img v-lazy="brand.image" />
+                <img v-lazy="bran.image" />
             </div>
         </div>
         <!-- show  products -->
@@ -446,16 +446,17 @@
 /* show market */
 .mar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    background-color: #eee;
 }
 @media (max-width: 576.98px) {
     .mar {
-        margin-top: 20vh;
+        margin-top: 47vh;
         margin-bottom: 4vh;
     }
 }
 @media (max-width: 500.98px) {
     .mar {
-        margin-top: 11vh;
+        margin-top: 35vh;
         margin-bottom: 4vh;
     }
 }
@@ -475,12 +476,18 @@
 }
 .show-market img {
     width: 19%;
-    height: 100%;
+    height: 230px;
+    border-radius: 5%;
+    transition: all 0.5s;
+}
+.show-market img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+    cursor: pointer;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show-market {
-        height: 150px;
+        height: 140px;
     }
     .mar .show-market:nth-child(2),
     .mar .show-market:nth-child(3) {
@@ -488,6 +495,7 @@
     }
     .show-market img {
         width: 32%;
+        height: 160px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -498,6 +506,9 @@
         margin-top: 40px;
         margin-bottom: 100px;
         text-align: center;
+    }
+    .show-market img {
+        height: 180px;
     }
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
@@ -613,6 +624,9 @@
     .slide .last {
         margin-left: 35px;
         font-size: 14px;
+    }
+    .show-market img {
+        height: 180px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -766,12 +780,12 @@
 <script>
 import axios from 'axios';
 export default {
-    data() {
+    data () {
         return {
             urll: '/img/',
             Product: [],
             // lastStores:[],
-            //  brands:[]
+            Brand: [],
             // categories:[]
         };
     },
@@ -785,21 +799,26 @@ export default {
         //  Product() {
         //    return this.$store.state.Product;
         //  },
-        lastStores() {
+        lastStores () {
             return this.$store.state.lastStores;
         },
-        brands() {
+        brands () {
             return this.$store.state.brands;
         },
-        categories() {
+        categories () {
             return this.$store.state.categories;
         },
     },
-    created() {
+    created () {
         axios
             .get('http://edalili.e-dalely.com/public/api/products/getAll')
             .then((response) => {
                 this.Product = response.data.Products;
+            });
+        axios
+            .get('http://edalili.e-dalely.com/public/api/brands/getAll')
+            .then((response) => {
+                this.Brand = response.data.Brand;
             })
             .catch((error) => {
                 console.log(error);

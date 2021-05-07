@@ -121,9 +121,9 @@
                         <div class="socail-menu col mb-3">
                             <a
                                 ><img
-                                    class="location mr-2"
+                                    class="location mr-2 ml-2"
                                     src="../../../../public/img/location.png"
-                                    height="30"
+                                    height="20"
                             /></a>
                             <a
                                 ><img
@@ -169,7 +169,7 @@
                             id="textFollow"
                             @click="heart()"
                         >
-                            <span class="heart mr-2" id="heart"></span>
+                            <span class="heart mr-2 mt-2" id="heart"></span>
                             <span class="follow mr-4" id="follow">{{
                                 $t('Continue')
                             }}</span>
@@ -193,7 +193,7 @@
                                 @click="likebtn()"
                             ></span>
                         </div>
-                        <div class="col count">
+                        <div class="col count mt-2">
                             <span class="followCount">2800</span>
                             <span class="textcount mt-5">{{
                                 $t('Followers')
@@ -230,7 +230,7 @@
                         <div class="img">
                             <button
                                 type="button"
-                                class="btn btn-warning sel light1"
+                                class="btn btn-light sel light1"
                             >
                                 <a>{{ $t('StoreOffers') }}</a>
                             </button>
@@ -265,8 +265,8 @@
                         <router-link to="/bodySection">{{
                             $t('More')
                         }}</router-link>
-                        <div class="ico-card">
-                            <img :src="catog.image" style="width: 60%" />
+                        <div class="ico-card mt-2">
+                            <img :src="catog.image" height="60%" width="80%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -289,8 +289,12 @@
             <div class="all-section">
                 <span class="text">{{ $t('TheFamousBrands') }}</span>
             </div>
-            <div class="show-market" v-for="item in brand" :key="item.id">
-                <img :src="item.image" />
+            <div
+                class="show-market"
+                v-for="item in brand.slice(0, 5)"
+                :key="item.id"
+            >
+                <img :src="item.image" height="20%" width="80%" />
             </div>
         </div>
         <!-- show  products -->
@@ -306,8 +310,6 @@
                     :image="items.image"
                     :long_des="items.long_des"
                     :short_des="items.short_des"
-                    :category="items.category"
-                    :store_product="items.store_product"
                 >
                 </BodyProductStore>
             </div>
@@ -339,30 +341,25 @@ Vue.use(VueAxios, axios);
 export default {
     name: 'visitStore',
     props: ['id', 'title', 'workingHours', 'section', 'Product', 'brand'],
-    data() {
-        return {
-            Categoriees: [],
-        };
-    },
     components: {
         BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        store() {
+        store () {
             return this.$store.state.Store;
         },
-        categories() {
-            return this.$store.state.categories;
-        },
-        brands() {
+        // categories () {
+        //     return this.$store.state.categories;
+        // },
+        brands () {
             return this.$store.state.brands;
         },
-        product() {
-            return this.$store.state.stores[0].products;
-        },
+        // product () {
+        //     return this.$store.state.stores[0].products;
+        // },
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadStore', this.id);
     },
     methods: {
@@ -384,29 +381,7 @@ export default {
         likebtn: function () {
             document.getElementById('likebtn').classList.toggle('');
         },
-
-        // fetch() {
-        //     // var self = this;
-        //     Vue.axios
-        //         .get('http://edalili.e-dalely.com/public/api/stores/getAll')
-        //         .then((res) => {
-        //             // self.Categoriees = res.data.Category;
-        //             console.warn(
-        //                 'Stores SUCCESS: ',
-        //                 res.data.Stores[0].section
-        //             );
-        //         }) //
-        //         .catch(function(error) {
-        //             console.warn('------ Error ------: ', error);
-        //         });
-        // },
     },
-    // mounted() {
-    //     this.$store.dispatch('loadCategories');
-    // },
-    // created() {
-    //     this.fetch();
-    // },
 };
 </script>
 <style lang="scss" scoped>
@@ -473,7 +448,7 @@ export default {
         color: rgb(134, 133, 133);
     }
     .drop-active {
-        height: 350px !important;
+        height: 400px !important;
         justify-content: center;
         margin-left: 18%;
     }
@@ -551,7 +526,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 60%;
+        top: 40%;
         left: 25%;
         transform: translate(-30%, -55%);
     }
@@ -828,15 +803,12 @@ export default {
     ///start brand market///
     .show-market {
         background-color: #fff;
+        width: 100%;
         border-radius: 7px;
-        height: 200px;
-    }
-    .mar .show-market:nth-child(2),
-    .mar .show-market:nth-child(3) {
-        display: none;
     }
     .show-market img {
-        width: 32%;
+        width: 50%;
+        height: 100px;
     }
     .mar {
         background-color: #fefefe;
@@ -928,7 +900,7 @@ export default {
         color: rgb(134, 133, 133);
     }
     .drop-active {
-        height: 350px !important;
+        height: 400px !important;
         justify-content: center;
         margin-left: 30%;
     }
@@ -1018,7 +990,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 55%;
+        top: 50%;
         left: 20%;
         transform: translate(-30%, -55%);
     }
@@ -1290,15 +1262,12 @@ export default {
     ///start brand market///
     .show-market {
         background-color: #fff;
+        width: 100%;
         border-radius: 7px;
-        height: 200px;
-    }
-    .mar .show-market:nth-child(2),
-    .mar .show-market:nth-child(3) {
-        display: none;
     }
     .show-market img {
-        width: 32%;
+        width: 50%;
+        height: 150px;
     }
     .mar {
         background-color: #fefefe;
@@ -1389,7 +1358,7 @@ export default {
         color: rgb(134, 133, 133);
     }
     .drop-active {
-        height: 350px !important;
+        height: 400px !important;
         justify-content: center;
         margin-left: 30%;
     }
@@ -1482,7 +1451,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 60%;
+        top: 50%;
         left: 20%;
         transform: translate(-30%, -55%);
     }
@@ -1745,15 +1714,12 @@ export default {
     ///start brand market///
     .show-market {
         background-color: #fff;
+        width: 100%;
         border-radius: 7px;
-        height: 200px;
-    }
-    .mar .show-market:nth-child(2),
-    .mar .show-market:nth-child(3) {
-        display: none;
     }
     .show-market img {
-        width: 32%;
+        width: 80%;
+        height: 200px;
     }
     .mar {
         background-color: #fefefe;
@@ -1892,8 +1858,8 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 30%;
-        left: 30%;
+        top: 20%;
+        left: 35%;
         transform: translate(-30%, -55%);
     }
     .follow {
@@ -2163,7 +2129,7 @@ export default {
     }
     .show-market img {
         width: 19%;
-        height: 100%;
+        height: 230px;
     }
     .show-prod {
         height: 410px;
@@ -2293,7 +2259,7 @@ export default {
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 30%;
+        top: 20%;
         left: 40%;
         transform: translate(-30%, -55%);
     }
@@ -2555,7 +2521,7 @@ export default {
     }
     .show-market img {
         width: 19%;
-        height: 100%;
+        height: 230px;
     }
     .show-prod {
         height: 410px;
@@ -2611,9 +2577,7 @@ export default {
         border: 2px solid rgb(231, 179, 102);
         margin-top: 40px;
         transition: all 0.5s;
-    }
-    .profile:hover {
-        transform: scale3d(1.05, 1.05, 3);
+        cursor: pointer;
     }
     .isActive {
         padding-left: 0;
@@ -2623,7 +2587,7 @@ export default {
         margin-right: 0;
         font-size: 4vh;
         background-color: rgb(144, 148, 147);
-        margin-left: 150px;
+        margin-left: 90px;
         border: 2px solid rgb(144, 148, 147);
     }
     .rowimg {
@@ -2649,18 +2613,23 @@ export default {
     }
     .phone {
         margin-left: 30px;
+        cursor: pointer;
     }
     .telephone {
         margin-left: 30px;
+        cursor: pointer;
     }
     .like {
         color: #2f7cc5;
+        cursor: pointer;
     }
     .dislike {
         color: #2f7cc5;
+        cursor: pointer;
     }
     .cart {
         color: #2f7cc5;
+        cursor: pointer;
     }
     .heart {
         color: red;
@@ -2692,13 +2661,13 @@ export default {
         margin-left: 10px;
     }
     .textFollow .heart {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         background: url('../../../../public/img/heart.png') no-repeat;
         background-position: left;
         background-size: 2900%;
         position: absolute;
-        top: 30%;
+        top: 15%;
         left: 18%;
         transform: translate(-30%, -55%);
     }
@@ -2951,7 +2920,7 @@ export default {
     }
     .show-market img {
         width: 19%;
-        height: 100%;
+        height: 230px;
     }
 
     ///end brand market
@@ -2985,5 +2954,44 @@ export default {
         border-radius: 10px;
     }
     //end visiter store
+}
+.profile:hover {
+    cursor: pointer;
+    transform: scale3d(1.05, 1.05, 3);
+}
+.like:hover {
+    cursor: pointer;
+    transform: scale3d(1.2, 1.2, 1);
+}
+.dislike:hover {
+    cursor: pointer;
+    transform: scale3d(1.2, 1.2, 1);
+}
+.cart:hover {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.isActive:hover {
+    cursor: pointer;
+    transform: scale3d(1.2, 1.2, 1);
+}
+.icons span:hover {
+    cursor: pointer;
+}
+.textFollow:hover {
+    background-color: #d3b85f;
+}
+.show-market {
+    background-color: #fff;
+    border-radius: 7px;
+    margin: 0 2px;
+}
+.show-market img {
+    border-radius: 5%;
+    margin: 10px 0;
+    transition: all 0.5s;
+}
+.show-market img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+    cursor: pointer;
 }
 </style>
