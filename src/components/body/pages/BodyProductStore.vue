@@ -45,9 +45,7 @@
                 </div>
             </div>
             <div class="product-bottom text-center">
-                <div class="name-prod mt-2">
-                    {{ name }}
-                </div>
+                <div class="name-prod mt-2">{{ name }}</div>
                 <div class="stars mb-2">
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star checked"></i>
@@ -76,17 +74,6 @@
 export default {
     name: 'BodyProductStore',
     props: ['id', 'name', 'image', 'short_des', 'long_des'],
-    data () {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                image: this.image,
-                short_des: this.short_des,
-                long_des: this.long_des,
-            },
-        };
-    },
     methods: {
         heartlike: function () {
             this.$el.lastChild.lastChild.lastChild.classList.toggle(
@@ -127,22 +114,10 @@ export default {
         count () {
             return this.$store.state.count;
         },
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
-        // categories() {
-        //     return this.$store.state.categories;
-        // },
-        // brands() {
-        //     return this.$store.state.brands;
-        // },
-        // product() {
-        //     return this.$store.state.stores[0].products;
-        // },
     },
-    mounted () {
-        this.$store.dispatch('loadStoreDetailsProduct', this.id);
-    },
+    // mounted () {
+    //     this.$store.dispatch('loadStoreDetailsProduct', this.id);
+    // },
 };
 </script>
 

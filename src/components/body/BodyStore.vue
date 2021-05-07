@@ -282,19 +282,18 @@ export default {
     },
     props: ['id', 'section', 'Product', 'brand'],
 
-    data() {
+    data () {
         return {
-            // Stores: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        categories() {
+        categories () {
             return this.$store.state.Categories;
         },
-        Stores() {
+        Stores () {
             return this.$store.state.Stores;
         },
         // Stores: function() {
@@ -314,7 +313,7 @@ export default {
         //     return Stores;
         // },
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadStores');
     },
     methods: {
@@ -325,10 +324,10 @@ export default {
         gotoview: function (i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch() {
+        fetch () {
             var self = this;
             Vue.axios
-                .get('http://edalili.e-dalely.com/public/api/sections/getAll')
+                .get('/api/sections/getAll')
                 .then((res) => {
                     self.Sections = res.data.Section;
                     console.warn('Data SUCCESS: ', res.data.Section);
@@ -338,7 +337,7 @@ export default {
                 });
         },
     },
-    created() {
+    created () {
         this.fetch();
     },
 };
@@ -1078,7 +1077,7 @@ export default {
     }
     .categorystore {
         list-style: none;
-        font-size: 15px;
+        font-size: 10px;
         color: #751aff;
         margin-top: 10px;
     }
@@ -1215,6 +1214,9 @@ body {
 .textcheck:hover {
     color: #5a5957;
     /* transform: translate(0, -5px); */
+}
+.categorystore {
+    font-size: 10px;
 }
 .categorystore:hover {
     transform: scale(1.3);

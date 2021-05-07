@@ -29,13 +29,13 @@ export default new Vuex.Store({
         cartItems: cartItems ? JSON.parse(cartItems) : [],
     },
     mutations: {
-        increment(state) {
+        increment (state) {
             state.count++;
         },
         cartItems: (state, connections) => {
             state.cartItems = connections;
         },
-        addToCart(state, payload) {
+        addToCart (state, payload) {
             let item = payload;
             item = { ...item, quantity: 1 };
             if (state.cartItems.length > 0) {
@@ -54,7 +54,7 @@ export default new Vuex.Store({
             state.cartItemCount++;
             this.commit('savedata');
         },
-        savedata(state) {
+        savedata (state) {
             window.localStorage.setItem(
                 'cartItems',
                 JSON.stringify(state.cartItems)
@@ -64,7 +64,7 @@ export default new Vuex.Store({
                 JSON.stringify(state.cartItemCount)
             );
         },
-        removeItem(state, payload) {
+        removeItem (state, payload) {
             if (state.cartItems.length > 0) {
                 let bool = state.cartItems.some((i) => i.id === payload.id);
                 if (bool) {
@@ -82,7 +82,7 @@ export default new Vuex.Store({
                 }
             }
         },
-        removeFromCart(state, item) {
+        removeFromCart (state, item) {
             let index = state.cartItems.indexOf(item);
 
             if (index > -1) {
@@ -93,16 +93,16 @@ export default new Vuex.Store({
                 this.commit('savedata');
             }
         },
-        SET_Stores(state, Stores) {
+        SET_Stores (state, Stores) {
             state.Stores = Stores;
         },
         // SET_PRODUCTS(state, products) {
         //     state.products = products;
         // },
-        SET_Store(state, Store) {
+        SET_Store (state, Store) {
             state.Store = Store;
         },
-        SET_DetailsProduct(state, DetailsProduct) {
+        SET_DetailsProduct (state, DetailsProduct) {
             state.DetailsProduct = DetailsProduct;
         },
     },
@@ -114,9 +114,9 @@ export default new Vuex.Store({
         removeItem: (context, payload) => {
             context.commit('removeItem', payload);
         },
-        loadStores({ commit }) {
+        loadStores ({ commit }) {
             axios
-                .get('http://edalili.e-dalely.com/public/api/stores/getAll')
+                .get('/api/stores/getAll')
                 .then((res) => {
                     console.warn(res.data.Stores);
                     let Stores = res.data.Stores;
@@ -126,11 +126,9 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        loadStore({ commit }, productId) {
+        loadStore ({ commit }, productId) {
             axios
-                .get(
-                    `http://edalili.e-dalely.com/public/api/stores/getById/${productId}`
-                )
+                .get(`/api/stores/getById/${productId}`)
                 .then((res) => {
                     console.warn(res.data.Stores);
                     let store = res.data.Stores;
@@ -140,11 +138,9 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        loadStoreDetailsProduct({ commit }, productId) {
+        loadStoreDetailsProduct ({ commit }, productId) {
             axios
-                .get(
-                    `http://edalili.e-dalely.com/public/api/products/getById/${productId}`
-                )
+                .get(`/api/products/getById/${productId}`)
                 .then((res) => {
                     console.warn(res.data);
                     let DetailsProduct = res.data;
@@ -154,30 +150,5 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        // loadSections({ commit }){
-        //     axios
-        //         .get(
-        //             `http://edalili.e-dalely.com/public/api/sections/getAll}`
-        //         )
-        //         .then((res) => {
-        //             console.warn(res.data.Section);
-        //             let Sections = res.data.Section;
-        //             commit('SET_Sections', Sections);
-        //         })
-        //         .catch(function(error) {
-        //             console.log('Error: ', error);
-        //         });
-        // },
     },
-    // getProducts({ commit }) {
-    //     axios
-    //         .get('http://localhost:8080/api/stores/getAll')
-    //         .then((res) => {
-    //             commit('SET_PRODUCTS', res.data);
-    //             console.warn('dataproduct', res.data);
-    //         })
-    //         .catch(function(error) {
-    //             console.log('Error: ', error);
-    //         });
-    // },
 });

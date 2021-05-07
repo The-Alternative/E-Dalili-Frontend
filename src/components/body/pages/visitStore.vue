@@ -305,7 +305,8 @@
             <div class="row mt-2">
                 <BodyProductStore
                     v-for="items in Product"
-                    :key="items.id"
+                    :key="items"
+                    :id="items.id"
                     :name="items.name"
                     :image="items.image"
                     :long_des="items.long_des"
@@ -349,18 +350,14 @@ export default {
         store () {
             return this.$store.state.Store;
         },
-        // categories () {
-        //     return this.$store.state.categories;
-        // },
         brands () {
             return this.$store.state.brands;
         },
-        // product () {
-        //     return this.$store.state.stores[0].products;
-        // },
     },
+
     mounted () {
         this.$store.dispatch('loadStore', this.id);
+        this.$store.dispatch('loadStoreDetailsProduct', this.id);
     },
     methods: {
         heart: function () {

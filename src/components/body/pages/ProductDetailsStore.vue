@@ -8,7 +8,7 @@
                     <div class="col-12">
                         <img :src="image" />
                     </div>
-                    <div class="col-4">
+                    <!-- <div class="col-4">
                         <img :src="image" />
                     </div>
                     <div class="col-4">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-4">
                         <img :src="image" />
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -27,7 +27,6 @@
                 <div class="category">
                     {{ long_des }}
                 </div>
-                {{ id }}
                 <div>
                     <span>80.00 S.P</span>
                     <div class="price" style="display: inline-block"></div>
@@ -63,27 +62,21 @@ export default {
     },
     props: ['id', 'name', 'image', 'short_des', 'long_des'],
     computed: {
-        count() {
+        count () {
             return this.$store.state.count;
         },
-        // stores() {
-        //     return this.$store.state.stores;
-        // },
-        // product() {
-        //     return this.$store.state.stores[0].products;
-        // },
     },
     methods: {
-        increment() {
+        increment () {
             this.$store.commit('increment');
         },
-        addItem(items) {
+        addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
         gotocart: function () {
             this.$router.push(`/Cart`);
         },
-        addToCart() {
+        addToCart () {
             this.$store.dispatch('addToCart', this.details);
             document.getElementById('cart').animate(
                 [
@@ -100,33 +93,21 @@ export default {
             );
         },
     },
-    // created() {
-    //     if (this.$route.params.id !== undefined)
-    //         localStorage.setItem('details', JSON.stringify(this.$route.params));
-    // },
-    // mounted() {
-    //     this.details = JSON.parse(localStorage.getItem('details'));
-    // },
+    mounted () {
+        this.$store.dispatch('loadStoreDetailsProduct', this.id);
+    },
 };
 </script>
 
-<style lang="scss" scoped></style>
 <style scoped>
 .row {
     justify-content: center;
+    align-items: center;
     margin: 0;
-}
-.show-prod .col-4 {
-    max-width: 21%;
 }
 .show-prod h2 {
     display: inline-block;
     margin: 0 20px 0 100px;
-}
-.col-4 img {
-    height: 100px;
-    width: 101px;
-    margin: 10px;
 }
 /* product style */
 .content-pro {
@@ -187,14 +168,6 @@ export default {
     .show-prod .col-12 img {
         width: 220px;
     }
-    .show-prod .col-4 {
-        padding: 0;
-        max-width: 24%;
-    }
-    .show-prod .col-4 img {
-        height: 55px;
-        width: 55px;
-    }
     .show-prod h2 {
         display: inline-block;
         margin: 22px;
@@ -211,10 +184,6 @@ export default {
     .show-prod .col-12 img {
         width: 300px;
     }
-    .show-prod .col-4 {
-        padding: 0;
-        max-width: 30%;
-    }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -222,23 +191,5 @@ export default {
         font-size: 20px;
         margin: 22px;
     }
-    .show-prod .col-4 {
-        padding: 0;
-        max-width: 30%;
-    }
-}
-.carousel-control-next,
-.carousel-control-prev {
-    height: 50px;
-}
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    border: 1px solid #fff;
-    border-radius: 50%;
-    width: 37px;
-    height: 60px;
-    background-color: #9b8282;
-    top: 100px;
-    position: absolute;
 }
 </style>
