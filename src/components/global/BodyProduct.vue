@@ -6,6 +6,7 @@
                 v-lazy="`${image}`"
                 class="new"
             />
+            <div class="flex-body-prod">
             <div @click="gotodetails(id, name, long_des,short_des)" class="name-prod">
                 {{ name }} 
             </div>
@@ -27,6 +28,7 @@
             <div class="row">
                 <button @click="gotoListView(id,name,short_des)">{{$t('Choose')}}</button>
                 <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
+            </div>
             </div>
              <!-- 
              <div class="stage row">
@@ -87,6 +89,13 @@
     border-radius: 5%;
     transition: all 0.5s;
 }
+.content-pro .flex-body-prod{
+    display: flex;
+    flex-flow: column;
+}
+.content-pro .flex-body-prod div{
+    margin-bottom: 10px;
+}
 .content-pro:hover {
     transform: scale3d(1.05, 1.05, 1);
 }
@@ -99,9 +108,6 @@
 .content-pro .name-prod,
 .content-pro .category {
     cursor: pointer;
-}
-.content-pro .stars {
-    margin-top: 20px;
 }
 .content-pro .checked {
     color: #dcd741;
