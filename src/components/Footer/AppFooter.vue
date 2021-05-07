@@ -2,7 +2,7 @@
     <!-- Start About-Us -->
     <div class="about-us">
         <div class="row">
-            <div class="col-sm-3 ">
+            <div class="col-sm-3">
                 <h3>{{ $t('GetKnowUs') }}</h3>
                 <ul>
                     <li>
@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2 col-sm-4  text-center">
+            <div class="col-md-2 col-sm-4 text-center">
                 <div class="dlely-card">
                     <div>E-DALELY Points</div>
                     <img src="../../../public/img/icon-card.png" />

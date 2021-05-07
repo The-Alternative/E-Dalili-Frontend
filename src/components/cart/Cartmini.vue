@@ -18,7 +18,7 @@
                         style="padding: 10px 0"
                     >
                         <div class="cart-items">
-                            <div class="row" style="width:100%">
+                            <div class="row" style="width: 100%">
                                 <div class="col-md-2 col-xs-12">
                                     <img
                                         class="img"
@@ -346,11 +346,11 @@ export default {
         return {};
     },
     methods: {
-        showcart: function() {
+        showcart: function () {
             var cart = document.getElementById('cartshop');
             cart.classList.toggle('vs');
         },
-        hidecart: function() {
+        hidecart: function () {
             var cart = document.getElementById('cartshop');
             cart.classList.remove('vs');
         },

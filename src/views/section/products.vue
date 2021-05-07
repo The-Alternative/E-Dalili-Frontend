@@ -16,7 +16,7 @@
         <!-- show  products -->
         <div class="show-prod">
             <div class="row reower">
-               <BodyProduct
+                <BodyProduct
                     v-for="items in Product.slice(0, 4)"
                     :key="items.id"
                     :id="items.id"
@@ -94,15 +94,15 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
-                    :key="items.id"
-                    :id="items.id"
-                    :short_des="items.short_des"
-                    :name="items.name"
-                    :image="items.image"
-                    @click="goto(items)"
-                >
-                </BodyProduct>
+                                        v-for="items in Product.slice(0, 4)"
+                                        :key="items.id"
+                                        :id="items.id"
+                                        :short_des="items.short_des"
+                                        :name="items.name"
+                                        :image="items.image"
+                                        @click="goto(items)"
+                                    >
+                                    </BodyProduct>
                                 </div>
                             </div>
                         </div>
@@ -111,15 +111,15 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
-                    :key="items.id"
-                    :id="items.id"
-                    :image="items.image"
-                    :short_des="items.short_des"
-                    :name="items.name"
-                    @click="goto(items)"
-                >
-                </BodyProduct>
+                                        v-for="items in Product.slice(0, 4)"
+                                        :key="items.id"
+                                        :id="items.id"
+                                        :image="items.image"
+                                        :short_des="items.short_des"
+                                        :name="items.name"
+                                        @click="goto(items)"
+                                    >
+                                    </BodyProduct>
                                 </div>
                             </div>
                         </div>
@@ -128,15 +128,15 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
-                    :key="items.id"
-                    :id="items.id"
-                    :image="items.image"
-                    :short_des="items.short_des"
-                    :name="items.name"
-                    @click="goto(items)"
-                >
-                </BodyProduct>
+                                        v-for="items in Product.slice(0, 4)"
+                                        :key="items.id"
+                                        :id="items.id"
+                                        :image="items.image"
+                                        :short_des="items.short_des"
+                                        :name="items.name"
+                                        @click="goto(items)"
+                                    >
+                                    </BodyProduct>
                                 </div>
                             </div>
                         </div>
@@ -191,24 +191,24 @@
             id="deno"
             class="carousel slide"
             data-ride="carousel"
-            style="margin-top: 40px;"
+            style="margin-top: 40px"
         >
-            <div class="col-sm-12" style="padding:0">
+            <div class="col-sm-12" style="padding: 0">
                 <div class="carousel-inner">
                     <!-- carousel item 1 -->
                     <div class="carousel-item active">
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
-                    :key="items.id"
-                    :id="items.id"
-                    :image="items.image"
-                    :short_des="items.short_des"
-                    :name="items.name"
-                    @click="goto(items)"
-                >
-                </BodyProduct>
+                                    v-for="items in Product.slice(0, 4)"
+                                    :key="items.id"
+                                    :id="items.id"
+                                    :image="items.image"
+                                    :short_des="items.short_des"
+                                    :name="items.name"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -217,15 +217,15 @@
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
-                    :key="items.id"
-                    :id="items.id"
-                    :image="items.image"
-                    :short_des="items.short_des"
-                    :name="items.name"
-                    @click="goto(items)"
-                >
-                </BodyProduct>
+                                    v-for="items in Product.slice(0, 4)"
+                                    :key="items.id"
+                                    :id="items.id"
+                                    :image="items.image"
+                                    :short_des="items.short_des"
+                                    :name="items.name"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -233,16 +233,16 @@
                     <div class="carousel-item">
                         <div class="show-prod">
                             <div class="row">
-                                 <BodyProduct
-                    v-for="items in Product.slice(0, 4)"
-                    :key="items.id"
-                    :id="items.id"
-                    :image="items.image"
-                    :short_des="items.short_des"
-                    :name="items.name"
-                    @click="goto(items)"
-                >
-                </BodyProduct>
+                                <BodyProduct
+                                    v-for="items in Product.slice(0, 4)"
+                                    :key="items.id"
+                                    :id="items.id"
+                                    :image="items.image"
+                                    :short_des="items.short_des"
+                                    :name="items.name"
+                                    @click="goto(items)"
+                                >
+                                </BodyProduct>
                             </div>
                         </div>
                     </div>
@@ -269,8 +269,8 @@
     margin-top: 2vh;
 }
 .show-prod {
-       padding: 0 10px;
-    }
+    padding: 0 10px;
+}
 .show-img .row .img {
     text-align: center;
     transition: all 0.5s;
@@ -473,18 +473,16 @@
     margin-top: 50px;
     border-radius: 7px;
     display: inline;
-    
 }
 .show-market img {
     width: 19%;
     height: 230px;
     border-radius: 5%;
     transition: all 0.5s;
-    
 }
-.show-market img:hover{
-transform: scale3d(1.05, 1.05, 1);
-cursor: pointer;
+.show-market img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+    cursor: pointer;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -497,7 +495,7 @@ cursor: pointer;
     }
     .show-market img {
         width: 32%;
-        height: 160px;  
+        height: 160px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -510,7 +508,7 @@ cursor: pointer;
         text-align: center;
     }
     .show-market img {
-        height: 180px;  
+        height: 180px;
     }
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
@@ -576,7 +574,7 @@ cursor: pointer;
     border-radius: 50%;
     width: 54px;
     height: 95px;
-    top:160px;
+    top: 160px;
     position: absolute;
 }
 /* Extra small devices (portrait phones, less than 576px) */
@@ -627,8 +625,8 @@ cursor: pointer;
         margin-left: 35px;
         font-size: 14px;
     }
-     .show-market img {
-        height: 180px;  
+    .show-market img {
+        height: 180px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -780,14 +778,14 @@ cursor: pointer;
 </style>
 
 <script>
- import axios from "axios";
+import axios from 'axios';
 export default {
-    data() {
+    data () {
         return {
             urll: '/img/',
-              Product: [] ,
+            Product: [],
             // lastStores:[],
-             Brand:[]
+            Brand: [],
             // categories:[]
         };
     },
@@ -799,30 +797,33 @@ export default {
     },
     computed: {
         //  Product() {
-       //    return this.$store.state.Product;
-       //  },
-        lastStores() {
+        //    return this.$store.state.Product;
+        //  },
+        lastStores () {
             return this.$store.state.lastStores;
         },
-        brands() {
+        brands () {
             return this.$store.state.brands;
         },
-        categories() {
+        categories () {
             return this.$store.state.categories;
         },
     },
-    created(){
-    axios.get("http://edalili.e-dalely.com/public/api/products/getAll")
-    .then(response => {
-      this.Product = response.data.Products
-    })
-    axios.get("http://edalili.e-dalely.com/public/api/brands/getAll")
-    .then(response => {
-     this.Brand = response.data.Brand
-    })
-    .catch(error => {console.log(error);})
-
-    }
+    created () {
+        axios
+            .get('http://edalili.e-dalely.com/public/api/products/getAll')
+            .then((response) => {
+                this.Product = response.data.Products;
+            });
+        axios
+            .get('http://edalili.e-dalely.com/public/api/brands/getAll')
+            .then((response) => {
+                this.Brand = response.data.Brand;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    },
     /*
     .then(response => {
       this.lastStores = response.data[0].lastStores;

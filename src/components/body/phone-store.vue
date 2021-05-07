@@ -16,7 +16,7 @@
 export default {
     name: 'phone-store',
     methods: {
-        clickEvent: function() {
+        clickEvent: function () {
             document.getElementById('callclick');
         },
     },

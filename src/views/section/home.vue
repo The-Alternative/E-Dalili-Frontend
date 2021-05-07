@@ -1,16 +1,16 @@
 <template>
     <div class="home">
         <div class="all-section">
-            <h3>{{$t('AllCategories')}}</h3>
+            <h3>{{ $t('AllCategories') }}</h3>
         </div>
         <div class="row align-middle">
             <div
-                class="col-md-6 col-lg-3 col-xs-6  column"
+                class="col-md-6 col-lg-3 col-xs-6 column"
                 v-for="catog in Category"
                 :key="catog.id"
                 :name="catog.name"
                 :image="catog.image"
-                style="width:50%"
+                style="width: 50%"
             >
                 <router-link :to="`/${catog.name}`">
                     <div class="card">
@@ -19,7 +19,7 @@
                         </div>
                         <a href="#">{{ $t('More') }}</a>
                         <div class="ico-card">
-                            <img v-lazy="image" style="width:60%" />
+                            <img v-lazy="image" style="width: 60%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <!-- __________________________________________________________________ -->
-        <h2 style="margin-top: 3vh;">Some Market</h2>
+        <h2 style="margin-top: 3vh">Some Market</h2>
         <div class="row align-middle cont-market">
             <div
                 v-for="bran in Brand.slice(0, 4)"
@@ -267,34 +267,36 @@
 }
 </style>
 <script>
-import axios from "axios";
+import axios from 'axios';
 export default {
     name: 'home',
-     props: ['image'],
-    data() {
+    props: ['image'],
+    data () {
         return {
             Category: [],
-            Brand: []
-        }
+            Brand: [],
+        };
     },
-    created(){
-       axios.get('http://edalili.e-dalely.com/public/api/categories/getAll')
-       .then(response => {
-           this.Category = response.data.Category
-       }) 
-   
-    axios.get("http://edalili.e-dalely.com/public/api/brands/getAll")
-    .then(response => {
-     this.Brand = response.data.Brand
-    })
-    .catch(error => {console.log(error);})
-   
+    created () {
+        axios
+            .get('http://edalili.e-dalely.com/public/api/categories/getAll')
+            .then((response) => {
+                this.Category = response.data.Category;
+            });
+
+        axios
+            .get('http://edalili.e-dalely.com/public/api/brands/getAll')
+            .then((response) => {
+                this.Brand = response.data.Brand;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     },
     computed: {
-      //  categories() {
-      //      return this.$store.state.categories;
-      //  },
-    
+        //  categories() {
+        //      return this.$store.state.categories;
+        //  },
     },
 };
 </script>

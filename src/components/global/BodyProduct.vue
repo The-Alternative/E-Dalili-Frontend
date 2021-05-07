@@ -2,19 +2,25 @@
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
             <img
-                @click="gotodetails(id, name, long_des,short_des)"
+                @click="gotodetails(id, name, long_des, short_des)"
                 v-lazy="`${image}`"
                 class="new"
             />
-            <div @click="gotodetails(id, name, long_des,short_des)" class="name-prod">
-                {{ name }} 
+            <div
+                @click="gotodetails(id, name, long_des, short_des)"
+                class="name-prod"
+            >
+                {{ name }}
             </div>
-            <div @click="gotodetails(id, name, long_des,short_des)" class="category">
-                {{short_des}}
+            <div
+                @click="gotodetails(id, name, long_des, short_des)"
+                class="category"
+            >
+                {{ short_des }}
             </div>
 
             <div class="stars">
-                <span class="fa fa-star  checked"></span>
+                <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -25,10 +31,14 @@
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
-                <button @click="gotoListView(id,name,short_des)">{{$t('Choose')}}</button>
-                <div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
+                <button @click="gotoListView(id, name, short_des)">
+                    {{ $t('Choose') }}
+                </button>
+                <div class="heart-conten">
+                    <div @click="heartlike()" id="heart" class="heart"></div>
+                </div>
             </div>
-             <!-- 
+            <!-- 
              <div class="stage row">
               <div @click="addToCart()" class="cart-ico">
                     <button class="cart-button">
@@ -113,13 +123,13 @@
     margin-right: 10px;
 }
 .content-pro button {
-width: 100px;
-height: 50px;
-font-size: 1.5vw;
-border: none;
-color: #5daaa6;
-margin: 15px auto;
-border-radius: 10px
+    width: 100px;
+    height: 50px;
+    font-size: 1.5vw;
+    border: none;
+    color: #5daaa6;
+    margin: 15px auto;
+    border-radius: 10px;
 }
 .content-pro button:hover {
     background-color: #d3b85f;
@@ -131,9 +141,9 @@ border-radius: 10px
         margin-top: 2vh;
         font-size: 4vw;
     }
-    .content-pro .row{
-        flex-wrap: nowrap
-}
+    .content-pro .row {
+        flex-wrap: nowrap;
+    }
     .content-pro .name-prod {
         margin-bottom: 10px;
     }
@@ -142,38 +152,37 @@ border-radius: 10px
         max-width: 50%;
     }
     .content-pro button {
-    font-size: 4vw;
-    width: 70px;
-    height: 40px;
-    margin: 16px 3px;
-}
-.heart-conten{
-    margin: 10px 0;
-}
+        font-size: 4vw;
+        width: 70px;
+        height: 40px;
+        margin: 16px 3px;
+    }
+    .heart-conten {
+        margin: 10px 0;
+    }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
- .content-pro {
-    font-size: 3.3vw;
-}  
-   .content-pro button {
-    font-size: 3.3vw;
-   } 
+    .content-pro {
+        font-size: 3.3vw;
+    }
+    .content-pro button {
+        font-size: 3.3vw;
+    }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .content-pro {
-    font-size: 1.8vw;
-}  
-   .content-pro button {
-    font-size: 1.8vw;
-   } 
+        font-size: 1.8vw;
+    }
+    .content-pro button {
+        font-size: 1.8vw;
+    }
 }
 </style>
 
 <style lang="scss" scoped>
-
-.heart-conten{
+.heart-conten {
     background-color: #f0f0f0;
     border-radius: 50%;
     width: 50px;
@@ -199,37 +208,37 @@ border-radius: 10px
     }
 }
 @media (max-width: 576.98px) {
-.heart-conten{
-    margin: 10px 0;
-}
+    .heart-conten {
+        margin: 10px 0;
+    }
 }
 </style>
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'name','image', 'short_des','long_des', 'price'],
-    data() {
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'price'],
+    data () {
         return {
             details: {
                 id: this.id,
                 name: this.name,
                 short_des: this.short_des,
-                long_des:this.long_des,
+                long_des: this.long_des,
             },
-            
         };
     },
     methods: {
-        
-        gotodetails: function(i, n, s,l) {
+        gotodetails: function (i, n, s, l) {
             this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
         },
-        gotoListView: function(i,n,s) {
+        gotoListView: function (i, n, s) {
             this.$router.push(`ListView/${i}/${n}/${s}`);
         },
-      heartlike: function() {      
-          this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle('is-active');
-        }
+        heartlike: function () {
+            this.$el.lastChild.lastChild.lastChild.lastChild.classList.toggle(
+                'is-active'
+            );
+        },
         /*  addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
@@ -262,9 +271,9 @@ export default {
         */
     },
     computed: {
-        count() {
+        count () {
             return this.$store.state.count;
-        }
+        },
     },
 };
 </script>

@@ -3,13 +3,13 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import router from './router/index';
 
-// Css 
+// Css
 import main from '../src/assets/css/main.css';
 // js
 import store from './store/Store';
 import i18n from './js/i18n';
 //libraries
-import "animate.css";
+import 'animate.css';
 import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import 'jquery';

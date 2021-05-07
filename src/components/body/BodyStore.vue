@@ -3,7 +3,7 @@
     <div
         class="card-group col-sm-12 wrapper"
         id="wrapper"
-        style="display: flex;"
+        style="display: flex"
     >
         <div class="card col-lg-8 col-md-8 col-sm-12 col-xs-12 stors">
             <!--          store 1-->
@@ -22,9 +22,7 @@
                                 height="40"
                             />
                         </div>
-                        <div class="col text-muted">
-                            يبعد 500 م
-                        </div>
+                        <div class="col text-muted">يبعد 500 م</div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
                                 <div class="title">
@@ -286,7 +284,6 @@ export default {
 
     data () {
         return {
-            // Stores: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
@@ -330,7 +327,7 @@ export default {
         fetch () {
             var self = this;
             Vue.axios
-                .get('http://edalili.e-dalely.com/public/api/sections/getAll')
+                .get('/api/sections/getAll')
                 .then((res) => {
                     self.Sections = res.data.Section;
                     console.warn('Data SUCCESS: ', res.data.Section);
@@ -1080,7 +1077,7 @@ export default {
     }
     .categorystore {
         list-style: none;
-        font-size: 15px;
+        font-size: 10px;
         color: #751aff;
         margin-top: 10px;
     }
@@ -1217,6 +1214,9 @@ body {
 .textcheck:hover {
     color: #5a5957;
     /* transform: translate(0, -5px); */
+}
+.categorystore {
+    font-size: 10px;
 }
 .categorystore:hover {
     transform: scale(1.3);
