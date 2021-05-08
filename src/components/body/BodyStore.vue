@@ -22,7 +22,7 @@
                                 height="40"
                             />
                         </div>
-                        <div class="col text-muted">يبعد 500 م</div>
+                        <div class="col text-muted">{{ $t('It500away') }}</div>
                         <div class="col">
                             <div class="row mt-3 divtitle">
                                 <div class="title">
@@ -162,19 +162,23 @@
                 }}</span>
                 <div class="checklist">
                     <div class="">
-                        <label class="textcheck" for="check1"
-                            >سوبر ماركت شوبيكو</label
+                        <label class="textcheck" for="check1">{{
+                            $t('ShopicoSupermarket')
+                        }}</label
                         >&nbsp;
                         <input class="categories" type="checkbox" id="check1" />
                     </div>
                     <div class="">
-                        <label class="textcheck" for="check2">أميرة سنتر</label
+                        <label class="textcheck" for="check2">{{
+                            $t('PrincessCenter')
+                        }}</label
                         >&nbsp;
                         <input class="categories" type="checkbox" id="check2" />
                     </div>
                     <div class="">
-                        <label class="textcheck" for="check3"
-                            >شركة الصفدي للإلكترونيات</label
+                        <label class="textcheck" for="check3">{{
+                            $t('ElectronicsCompany')
+                        }}</label
                         >&nbsp;
                         <input class="categories" type="checkbox" id="check3" />
                     </div>
@@ -326,8 +330,9 @@ export default {
         },
         fetch () {
             var self = this;
+            let lang = window.localStorage.getItem('lang');
             Vue.axios
-                .get('/api/sections/getAll')
+                .get(`/api/sections/getAll?lang=${lang}`)
                 .then((res) => {
                     self.Sections = res.data.Section;
                     console.warn('Data SUCCESS: ', res.data.Section);
