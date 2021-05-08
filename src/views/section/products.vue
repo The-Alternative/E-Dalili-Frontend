@@ -25,7 +25,6 @@
                     :long_des="items.long_des"
                     :name="items.name"
                     :range_price="items.range_price"
-                    @click="goto(items)"
                 >
                 </BodyProduct>
             </div>
@@ -50,7 +49,6 @@
                     :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
-                    @click="goto(items)"
                 >
                 </BodyProduct>
             </div>
@@ -100,7 +98,6 @@
                                         :short_des="items.short_des"
                                         :name="items.name"
                                         :image="items.image"
-                                        @click="goto(items)"
                                     >
                                     </BodyProduct>
                                 </div>
@@ -117,7 +114,6 @@
                                         :image="items.image"
                                         :short_des="items.short_des"
                                         :name="items.name"
-                                        @click="goto(items)"
                                     >
                                     </BodyProduct>
                                 </div>
@@ -134,7 +130,6 @@
                                         :image="items.image"
                                         :short_des="items.short_des"
                                         :name="items.name"
-                                        @click="goto(items)"
                                     >
                                     </BodyProduct>
                                 </div>
@@ -206,7 +201,6 @@
                                     :image="items.image"
                                     :short_des="items.short_des"
                                     :name="items.name"
-                                    @click="goto(items)"
                                 >
                                 </BodyProduct>
                             </div>
@@ -223,7 +217,6 @@
                                     :image="items.image"
                                     :short_des="items.short_des"
                                     :name="items.name"
-                                    @click="goto(items)"
                                 >
                                 </BodyProduct>
                             </div>
@@ -240,7 +233,6 @@
                                     :image="items.image"
                                     :short_des="items.short_des"
                                     :name="items.name"
-                                    @click="goto(items)"
                                 >
                                 </BodyProduct>
                             </div>
@@ -783,7 +775,7 @@ export default {
     data () {
         return {
             urll: '/img/',
-            Product: [],
+            // Product: [],
             // lastStores:[],
             Brand: [],
             // categories:[]
@@ -796,9 +788,9 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        //  Product() {
-        //    return this.$store.state.Product;
-        //  },
+        Product () {
+            return this.$store.state.Product;
+        },
         lastStores () {
             return this.$store.state.lastStores;
         },
@@ -810,11 +802,11 @@ export default {
         },
     },
     created () {
-        axios
-            .get('http://edalili.e-dalely.com/public/api/products/getAll')
-            .then((response) => {
-                this.Product = response.data.Products;
-            });
+        // axios
+        //     .get('http://edalili.e-dalely.com/public/api/products/getAll')
+        //     .then((response) => {
+        //         this.Product = response.data.Products;
+        //     });
         axios
             .get('http://edalili.e-dalely.com/public/api/brands/getAll')
             .then((response) => {
@@ -823,6 +815,10 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
+    },
+    mounted () {
+        this.$store.dispatch('loadProducts');
+        this.$store.dispatch('loadProduct', this.id);
     },
     /*
     .then(response => {
