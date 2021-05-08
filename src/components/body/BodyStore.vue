@@ -273,6 +273,8 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
@@ -288,18 +290,14 @@ export default {
 
     data () {
         return {
+            Sections: [],
             viewProductsInStore: [],
             rating: 0,
             selectedCategory: [],
         };
     },
     computed: {
-        categories () {
-            return this.$store.state.Categories;
-        },
-        Stores () {
-            return this.$store.state.Stores;
-        },
+        ...mapState(['categories', 'Stores']),
         // Stores: function() {
         //     if (this.selectedCategory.length == 0)
         //         return this.$store.state.stores;

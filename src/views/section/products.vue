@@ -33,7 +33,7 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="bran in Brand.slice(0, 5)"
+                v-for="bran in Brands.slice(0, 5)"
                 :key="bran.id"
             >
                 <img v-lazy="bran.image" />
@@ -77,10 +77,9 @@
                         <span class="last">اخر المشتركین</span>
                         <div class="last-subscriber">
                             <Subscriber
-                                v-for="Store in lastStores"
+                                v-for="Store in Stores"
                                 :key="Store.id"
                                 :title="Store.title"
-                                :location="Store.location"
                             />
                         </div>
                     </div>
@@ -778,13 +777,14 @@ cursor: pointer;
 </style>
 
 <script>
+
+=======
+import { mapState } from 'vuex';
+
 export default {
     data () {
         return {
             urll: '/img/',
-            // Product: [],
-            // lastStores:[],
-            // categories:[]
         };
     },
     name: 'products',
@@ -794,6 +794,7 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
+
         Product () {
             return this.$store.state.Product;
         },
@@ -809,20 +810,18 @@ export default {
         categories () {
             return this.$store.state.categories;
         },
+        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
+
     },
     mounted () {
         this.$store.dispatch('loadProducts');
         this.$store.dispatch('loadProduct', this.id);
+
         this.$store.dispatch('loadBrand');
+
+        this.$store.dispatch('loadStores');
+        this.$store.dispatch('loadBrands');
+
     },
-    /*
-    .then(response => {
-      this.lastStores = response.data[0].lastStores;
-    })
-    .then(response => {
-      this.brands = response.data[0].brands;
-    })
-  },
-  */
 };
 </script>
