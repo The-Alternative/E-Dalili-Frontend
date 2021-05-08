@@ -25,7 +25,6 @@
                     :long_des="items.long_des"
                     :name="items.name"
                     :range_price="items.range_price"
-                    @click="goto(items)"
                 >
                 </BodyProduct>
             </div>
@@ -50,7 +49,6 @@
                     :image="items.image"
                     :short_des="items.short_des"
                     :name="items.name"
-                    @click="goto(items)"
                 >
                 </BodyProduct>
             </div>
@@ -100,7 +98,6 @@
                                         :short_des="items.short_des"
                                         :name="items.name"
                                         :image="items.image"
-                                        @click="goto(items)"
                                     >
                                     </BodyProduct>
                                 </div>
@@ -117,7 +114,6 @@
                                         :image="items.image"
                                         :short_des="items.short_des"
                                         :name="items.name"
-                                        @click="goto(items)"
                                     >
                                     </BodyProduct>
                                 </div>
@@ -134,7 +130,6 @@
                                         :image="items.image"
                                         :short_des="items.short_des"
                                         :name="items.name"
-                                        @click="goto(items)"
                                     >
                                     </BodyProduct>
                                 </div>
@@ -206,7 +201,6 @@
                                     :image="items.image"
                                     :short_des="items.short_des"
                                     :name="items.name"
-                                    @click="goto(items)"
                                 >
                                 </BodyProduct>
                             </div>
@@ -223,7 +217,6 @@
                                     :image="items.image"
                                     :short_des="items.short_des"
                                     :name="items.name"
-                                    @click="goto(items)"
                                 >
                                 </BodyProduct>
                             </div>
@@ -240,7 +233,6 @@
                                     :image="items.image"
                                     :short_des="items.short_des"
                                     :name="items.name"
-                                    @click="goto(items)"
                                 >
                                 </BodyProduct>
                             </div>
@@ -786,14 +778,12 @@ cursor: pointer;
 </style>
 
 <script>
-import axios from 'axios';
 export default {
     data () {
         return {
             urll: '/img/',
-            Product: [],
+            // Product: [],
             // lastStores:[],
-            Brand: [],
             // categories:[]
         };
     },
@@ -804,51 +794,26 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        //  Product() {
-        //    return this.$store.state.Product;
-        //  },
+        Product () {
+            return this.$store.state.Product;
+        },
         lastStores () {
             return this.$store.state.lastStores;
         },
         brands () {
             return this.$store.state.brands;
         },
+        Brand () {
+            return this.$store.state.Brand;
+        },
         categories () {
             return this.$store.state.categories;
         },
     },
-    created () {
-         if(localStorage.getItem('lang') == "en"){
-        axios
-            .get(`/api/products/getAll?lang=en`)
-            .then((response) => {
-                this.Product = response.data.Products;
-            });
-        axios
-            .get('/api/brands/getAll?lang=en')
-            .then((response) => {
-                this.Brand = response.data.Brand;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-         }
-        else if(localStorage.getItem('lang') == "ar"){
-        axios
-            .get('/api/products/getAll?lang=ar')
-            .then((response) => {
-                this.Product = response.data.Products;
-            });
-        axios
-            .get('/api/brands/getAll?lang=ar')
-            .then((response) => {
-                this.Brand = response.data.Brand;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-         }
-
+    mounted () {
+        this.$store.dispatch('loadProducts');
+        this.$store.dispatch('loadProduct', this.id);
+        this.$store.dispatch('loadBrand');
     },
     /*
     .then(response => {

@@ -1,21 +1,49 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
-            <img
-                @click="gotodetails(id, name, long_des, short_des)"
-                v-lazy="`${image}`"
-                class="new"
-            />
-            <div class="flex-body-prod">
-            <div @click="gotodetails(id, name, long_des,short_des)" class="name-prod">
-                {{ name }} 
-            </div>
-            <div
-                @click="gotodetails(id, name, long_des, short_des)"
-                class="category"
+            <router-link class="link"
+                :to="{
+                    name: 'ProductDetails',
+                    params: {
+                        id: id,
+                        name: name,
+                        image: image,
+                        short_des: short_des,
+                        long_des: long_des,
+                    },
+                }"
+                ><img v-lazy="`${image}`" class="new"
+            /></router-link>
+            <router-link class="link"
+                :to="{
+                    name: 'ProductDetails',
+                    params: {
+                        id: id,
+                        name: name,
+                        image: image,
+                        short_des: short_des,
+                        long_des: long_des,
+                    },
+                }"
+                ><div class="name-prod">
+                    {{ name }}
+                </div></router-link
             >
-                {{ short_des }}
-            </div>
+            <router-link class="link"
+                :to="{
+                    name: 'ProductDetails',
+                    params: {
+                        id: id,
+                        name: name,
+                        image: image,
+                        short_des: short_des,
+                        long_des: long_des,
+                    },
+                }"
+                ><div class="category">
+                    {{ short_des }}
+                </div></router-link
+            >
 
             <div class="stars">
                 <span class="fa fa-star checked"></span>
@@ -49,7 +77,6 @@
             </div>
              -->
         </div>
-    </div>
 </template>
 <style scoped>
 @media (max-width: 575.98px) {
@@ -85,12 +112,12 @@
 .cartshop:hover {
     background-color: #d3b85f;
 }
-.coler .rot {
+.content-pro .link {
     color: #585b5e;
     text-decoration: none;
 }
 .content-pro {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10vh;
     margin-bottom: 10vh;
@@ -101,9 +128,7 @@
     display: flex;
     flex-flow: column;
 }
-.content-pro .flex-body-prod div{
-    margin-bottom: 10px;
-}
+
 .content-pro:hover {
     transform: scale3d(1.05, 1.05, 1);
 }
@@ -116,6 +141,7 @@
 .content-pro .name-prod,
 .content-pro .category {
     cursor: pointer;
+    margin-bottom: 10px;
 }
 .content-pro .checked {
     color: #dcd741;
@@ -224,20 +250,20 @@
 export default {
     name: 'Products',
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'price'],
-    data () {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                short_des: this.short_des,
-                long_des: this.long_des,
-            },
-        };
-    },
+    // data () {
+    //     return {
+    //         details: {
+    //             id: this.id,
+    //             name: this.name,
+    //             short_des: this.short_des,
+    //             long_des: this.long_des,
+    //         },
+    //     };
+    // },
     methods: {
-        gotodetails: function (i, n, s, l) {
-            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
-        },
+        // gotodetails: function (i, n, s, l) {
+        //     this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
+        // },
         gotoListView: function (i, n, s) {
             this.$router.push(`ListView/${i}/${n}/${s}`);
         },

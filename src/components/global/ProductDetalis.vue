@@ -6,7 +6,7 @@
                     <div class="content-pro text-center">
                         <img
                             class=""
-                            src="../../../public/img/w.jpg"
+                            :src="image"
                             style="
                                 width: 250px;
                                 height: 250px;
@@ -17,7 +17,7 @@
                             {{ name }}
                         </div>
                         <div class="category">
-                            {{ short_des }}
+                            {{ long_des }}
                         </div>
                         <div class="avilble">
                             <div style="display: inline-block">
@@ -216,19 +216,20 @@
 </style>
 <script>
 export default {
-    data() {
+    name: 'ProductDetails',
+    data () {
         return {};
     },
     components: {},
-    props: ['id', 'name', 'short_des', 'long_des', 'price'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des'],
     computed: {
-        count() {
+        count () {
             return this.$store.state.count;
         },
-        stores() {
+        stores () {
             return this.$store.state.stores;
         },
-        product() {
+        product () {
             return this.$store.state.stores[0].products;
         },
     },

@@ -3,13 +3,14 @@
         <Cartmini />
         <div class="row align-middle cont-market">
             <div
-                v-for="category in Categories.slice(0, 4)"
-                :key="category.id"
+                v-for="catog in Categories.slice(0, 4)"
+                :key="catog.id"
                 class="col-lg-3 col-md-3 col-sm-6 column"
             >
-                <div class="card card-market">{{ category }}</div>
+                <div class="card card-market">{{ catog }}</div>
             </div>
         </div>
+
         <div class="show-prod mt-5">
             <div class="all-section">
                 <span class="text">ALL PRODUCT</span>
@@ -33,22 +34,22 @@
 <script>
 export default {
     name: 'bodySection',
-    props: ['id', 'title', 'workingHours'],
+    props: ['id', 'name', 'image', 'category'],
     components: {
         BodyProductStore: () =>
             import('@/components/body/pages/BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        Categories() {
+        Categories () {
             return this.$store.state.Categories;
         },
-        product() {
+        product () {
             return this.$store.state.stores[0].products;
         },
     },
     methods: {
-        gotodetails(i, t, d, p) {
+        gotodetails (i, t, d, p) {
             this.$router.push(`ProductDetailsStore/${i}/${t}/${d}/${p}`);
         },
     },

@@ -256,15 +256,25 @@
                     :slug="catog.slug"
                     :image="catog.image"
                     :name="catog.name"
+                    :category="catog.category"
                     style="width: 50%"
                 >
                     <div class="card">
                         <div class="txt">
                             <h1>{{ catog.name }}</h1>
                         </div>
-                        <router-link to="/bodySection">{{
-                            $t('More')
-                        }}</router-link>
+                        <router-link
+                            :to="{
+                                name: 'bodySection',
+                                params: {
+                                    id: catog.id,
+                                    name: catog.name,
+                                    image: catog.image,
+                                    category: catog.category,
+                                },
+                            }"
+                            >{{ $t('More') }}</router-link
+                        >
                         <div class="ico-card mt-2">
                             <img :src="catog.image" height="60%" width="80%" />
                             <i class="fa fa-rebel"></i>
@@ -2824,11 +2834,11 @@ export default {
         font-family: 'Oswald', sans-serif;
         box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
         .txt {
-            margin-left: -3rem;
+            margin-left: 1rem;
             margin-top: 12rem;
             z-index: 1;
             h1 {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-weight: 300;
                 text-transform: uppercase;
             }

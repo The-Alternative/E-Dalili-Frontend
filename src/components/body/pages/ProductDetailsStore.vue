@@ -8,15 +8,6 @@
                     <div class="col-12">
                         <img :src="image" />
                     </div>
-                    <!-- <div class="col-4">
-                        <img :src="image" />
-                    </div>
-                    <div class="col-4">
-                        <img :src="image" />
-                    </div>
-                    <div class="col-4">
-                        <img :src="image" />
-                    </div> -->
                 </div>
             </div>
 
