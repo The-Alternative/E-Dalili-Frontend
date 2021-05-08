@@ -24,9 +24,7 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <div v-for="item in store" :key="item.id">
-               {{store.price}}
-            </div>
+            
             <div class="avilble">
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>
@@ -223,10 +221,6 @@
 }
 </style>
 <script>
-import Vue from 'vue';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
-Vue.use(VueAxios, axios);
 export default {
     name: 'Products',
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'price'],

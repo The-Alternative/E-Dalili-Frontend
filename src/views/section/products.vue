@@ -820,12 +820,12 @@ export default {
     created () {
          if(localStorage.getItem('lang') == "en"){
         axios
-            .get(`http://edalili.e-dalely.com/public/api/products/getAll?lang=en`)
+            .get(`/api/products/getAll?lang=en`)
             .then((response) => {
                 this.Product = response.data.Products;
             });
         axios
-            .get('http://edalili.e-dalely.com/public/api/brands/getAll?lang=en')
+            .get('/api/brands/getAll?lang=en')
             .then((response) => {
                 this.Brand = response.data.Brand;
             })
@@ -835,12 +835,12 @@ export default {
          }
         else if(localStorage.getItem('lang') == "ar"){
         axios
-            .get('http://edalili.e-dalely.com/public/api/products/getAll?lang=ar')
+            .get('/api/products/getAll?lang=ar')
             .then((response) => {
                 this.Product = response.data.Products;
             });
         axios
-            .get('http://edalili.e-dalely.com/public/api/brands/getAll?lang=ar')
+            .get('/api/brands/getAll?lang=ar')
             .then((response) => {
                 this.Brand = response.data.Brand;
             })
