@@ -777,8 +777,6 @@ cursor: pointer;
 </style>
 
 <script>
-
-=======
 import { mapState } from 'vuex';
 
 export default {
@@ -794,7 +792,6 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-
         Product () {
             return this.$store.state.Product;
         },
