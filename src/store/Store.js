@@ -17,8 +17,10 @@ export default new Vuex.Store({
         Sections: [],
         products: [],
         DetailsProduct: null,
+        Product: [],
+        ProductID: null,
         ////////////////
-        Product: jeson[0].Products,
+        // Product: jeson[0].Products,
         stores: data.stores,
         product: data.stores[0].products,
         Categories: data.categories,
@@ -102,6 +104,12 @@ export default new Vuex.Store({
         SET_DetailsProduct (state, DetailsProduct) {
             state.DetailsProduct = DetailsProduct;
         },
+        SET_Products (state, Product) {
+            state.Product = Product;
+        },
+        SET_ProductID (state, ProductID) {
+            state.ProductID = ProductID;
+        },
     },
 
     actions: {
@@ -142,6 +150,30 @@ export default new Vuex.Store({
                     console.warn(res.data);
                     let DetailsProduct = res.data;
                     commit('SET_DetailsProduct', DetailsProduct);
+                })
+                .catch(function (error) {
+                    console.log('Error: ', error);
+                });
+        },
+        loadProducts ({ commit }) {
+            axios
+                .get(`/api/products/getAll?lang=${lang}`)
+                .then((res) => {
+                    console.warn(res.data.Products);
+                    let Product = res.data.Products;
+                    commit('SET_Products', Product);
+                })
+                .catch(function (error) {
+                    console.log('Error: ', error);
+                });
+        },
+        loadProduct ({ commit }, productId) {
+            axios
+                .get(`/api/products/getById/${productId}?lang=${lang}`)
+                .then((res) => {
+                    console.warn(res.data.Product);
+                    let ProductID = res.data.Product;
+                    commit('SET_ProductID', ProductID);
                 })
                 .catch(function (error) {
                     console.log('Error: ', error);

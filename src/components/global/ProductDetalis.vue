@@ -6,7 +6,7 @@
                     <div class="content-pro text-center">
                         <img
                             class=""
-                            src="../../../public/img/w.jpg"
+                            :src="image"
                             style="
                                 width: 250px;
                                 height: 250px;
@@ -216,11 +216,12 @@
 </style>
 <script>
 export default {
+    name: 'ProductDetails',
     data () {
         return {};
     },
     components: {},
-    props: ['id', 'name', 'short_des', 'long_des', 'price'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des'],
     computed: {
         count () {
             return this.$store.state.count;

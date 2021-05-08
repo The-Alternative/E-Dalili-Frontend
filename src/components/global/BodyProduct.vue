@@ -1,23 +1,49 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
-            <img
-                @click="gotodetails(id, name, long_des, short_des)"
-                v-lazy="`${image}`"
-                class="new"
-            />
-            <div
-                @click="gotodetails(id, name, long_des, short_des)"
-                class="name-prod"
+            <router-link
+                :to="{
+                    name: 'ProductDetails',
+                    params: {
+                        id: id,
+                        name: name,
+                        image: image,
+                        short_des: short_des,
+                        long_des: long_des,
+                    },
+                }"
+                ><img v-lazy="`${image}`" class="new"
+            /></router-link>
+            <router-link
+                :to="{
+                    name: 'ProductDetails',
+                    params: {
+                        id: id,
+                        name: name,
+                        image: image,
+                        short_des: short_des,
+                        long_des: long_des,
+                    },
+                }"
+                ><div class="name-prod">
+                    {{ name }}
+                </div></router-link
             >
-                {{ name }}
-            </div>
-            <div
-                @click="gotodetails(id, name, long_des, short_des)"
-                class="category"
+            <router-link
+                :to="{
+                    name: 'ProductDetails',
+                    params: {
+                        id: id,
+                        name: name,
+                        image: image,
+                        short_des: short_des,
+                        long_des: long_des,
+                    },
+                }"
+                ><div class="category">
+                    {{ short_des }}
+                </div></router-link
             >
-                {{ short_des }}
-            </div>
 
             <div class="stars">
                 <span class="fa fa-star checked"></span>
@@ -217,20 +243,20 @@
 export default {
     name: 'Products',
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'price'],
-    data () {
-        return {
-            details: {
-                id: this.id,
-                name: this.name,
-                short_des: this.short_des,
-                long_des: this.long_des,
-            },
-        };
-    },
+    // data () {
+    //     return {
+    //         details: {
+    //             id: this.id,
+    //             name: this.name,
+    //             short_des: this.short_des,
+    //             long_des: this.long_des,
+    //         },
+    //     };
+    // },
     methods: {
-        gotodetails: function (i, n, s, l) {
-            this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
-        },
+        // gotodetails: function (i, n, s, l) {
+        //     this.$router.push(`ProductDetalis/${i}/${n}/${s}/${l}`);
+        // },
         gotoListView: function (i, n, s) {
             this.$router.push(`ListView/${i}/${n}/${s}`);
         },

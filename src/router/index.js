@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/bodySection',
+        path: '/bodySection/:id/:name',
         name: 'bodySection',
         component: () => import('../components/body/pages/bodySection'),
     },
@@ -30,6 +30,7 @@ const routes = [
     /* ProductDetalis */
     {
         path: '/ProductDetalis/:id/:name/:long_des/:short_des',
+        name: 'ProductDetails',
         component: () => import('../components/global/ProductDetalis.vue'),
         props: true,
     },
