@@ -10,20 +10,18 @@ let cartItemCount = window.localStorage.getItem('cartItemCount');
 let lang = window.localStorage.getItem('lang');
 export default new Vuex.Store({
     state: {
-        // MOCK_DATA json
-        // Stores: [],
+        // APi
         Stores: [],
         Store: null,
         Sections: [],
-        products: [],
         DetailsProduct: null,
         Product: [],
         ProductID: null,
+        Brand: [],
         Brands: [],
         ////////////////
         // Product: jeson[0].Products,
         stores: data.stores,
-        product: data.stores[0].products,
         Categories: data.categories,
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,

@@ -297,7 +297,7 @@
         display: none;
     }
     .show-img .img img {
-        width: 100vh;
+        width: 360px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -306,7 +306,7 @@
         height: 280px;
     }
     .show-img .img img {
-        width: 100vh;
+        width: 360px;
     }
     .row .content-pro {
         height: 416px;
@@ -404,6 +404,7 @@
     .show-der .img img {
         width: 80%;
         height: 180px;
+        margin-top: 50px;
     }
     .show-der .img:last-child {
         display: none;
@@ -438,6 +439,27 @@
 .mar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     background-color: #eee;
+    display: flex;
+    justify-content: space-around;
+}
+.show-market {
+    background-color: #fff;
+    width: 100%;
+    height: 250px;
+    margin-top: 50px;
+    width: calc(96% / 5);
+    
+}
+.show-market img {
+    height: 230px;
+    transition: all 0.5s;
+    width: 100%;
+    height: 100%;
+    
+}
+.show-market img:hover{
+transform: scale3d(1.05, 1.05, 1);
+cursor: pointer;
 }
 @media (max-width: 576.98px) {
     .mar {
@@ -457,38 +479,24 @@
         margin-bottom: 4vh;
     }
 }
-.show-market {
-    background-color: #fff;
-    width: 100%;
-    height: 250px;
-    margin-top: 50px;
-    border-radius: 7px;
-    display: inline;
-}
-.show-market img {
-    width: 19%;
-    height: 230px;
-    border-radius: 5%;
-    transition: all 0.5s;
-}
-.show-market img:hover {
-    transform: scale3d(1.05, 1.05, 1);
-    cursor: pointer;
-}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .show-market {
-        height: 140px;
-    }
+.show-market {
+    height: 180px;
+    width: calc(96% / 3);  
+}
     .mar .show-market:nth-child(2),
     .mar .show-market:nth-child(3) {
         display: none;
     }
-    .show-market img {
-        width: 32%;
-        height: 160px;
-    }
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+.show-market {
+    height: 180px;
+    width: calc(96% / 5);  
+}
+    }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .show-der .img img {
@@ -498,9 +506,10 @@
         margin-bottom: 100px;
         text-align: center;
     }
-    .show-market img {
-        height: 180px;
-    }
+.show-market {
+    height: 200px;
+    width: calc(96% / 5);  
+}
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
         .show-der .img img {
@@ -583,7 +592,9 @@
     }
     .carousel-inner {
         box-shadow: none;
+        overflow: visible;
     }
+    
     .last-subscriber .subscriber {
         width: 85%;
         margin: 10px 0 -4px 21px;
@@ -615,9 +626,6 @@
     .slide .last {
         margin-left: 35px;
         font-size: 14px;
-    }
-    .show-market img {
-        height: 180px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -769,7 +777,10 @@
 </style>
 
 <script>
+
+=======
 import { mapState } from 'vuex';
+
 export default {
     data () {
         return {
@@ -783,13 +794,34 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
+
+        Product () {
+            return this.$store.state.Product;
+        },
+        lastStores () {
+            return this.$store.state.lastStores;
+        },
+        brands () {
+            return this.$store.state.brands;
+        },
+        Brand () {
+            return this.$store.state.Brand;
+        },
+        categories () {
+            return this.$store.state.categories;
+        },
         ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
+
     },
     mounted () {
         this.$store.dispatch('loadProducts');
         this.$store.dispatch('loadProduct', this.id);
+
+        this.$store.dispatch('loadBrand');
+
         this.$store.dispatch('loadStores');
         this.$store.dispatch('loadBrands');
+
     },
 };
 </script>
