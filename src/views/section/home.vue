@@ -278,20 +278,39 @@ export default {
         };
     },
     created () {
+        if(localStorage.getItem('lang') == "en"){
         axios
-            .get('http://edalili.e-dalely.com/public/api/categories/getAll')
+            .get('http://edalili.e-dalely.com/public/api/categories/getAll?lang=en')
             .then((response) => {
                 this.Category = response.data.Category;
             });
 
         axios
-            .get('http://edalili.e-dalely.com/public/api/brands/getAll')
+            .get('http://edalili.e-dalely.com/public/api/brands/getAll?lang=en')
             .then((response) => {
                 this.Brand = response.data.Brand;
             })
             .catch((error) => {
                 console.log(error);
             });
+        }
+        else if(localStorage.getItem('lang') == "ar"){
+                    axios
+            .get('http://edalili.e-dalely.com/public/api/categories/getAll?lang=ar')
+            .then((response) => {
+                this.Category = response.data.Category;
+            });
+
+        axios
+            .get('http://edalili.e-dalely.com/public/api/brands/getAll?lang=ar')
+            .then((response) => {
+                this.Brand = response.data.Brand;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        }
+
     },
     computed: {
         //  categories() {

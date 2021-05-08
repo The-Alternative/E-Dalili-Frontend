@@ -1,7 +1,7 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
-            <router-link
+            <router-link class="link"
                 :to="{
                     name: 'ProductDetails',
                     params: {
@@ -14,7 +14,7 @@
                 }"
                 ><img v-lazy="`${image}`" class="new"
             /></router-link>
-            <router-link
+            <router-link class="link"
                 :to="{
                     name: 'ProductDetails',
                     params: {
@@ -29,7 +29,7 @@
                     {{ name }}
                 </div></router-link
             >
-            <router-link
+            <router-link class="link"
                 :to="{
                     name: 'ProductDetails',
                     params: {
@@ -52,6 +52,7 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
+            
             <div class="avilble">
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>
@@ -64,7 +65,8 @@
                     <div @click="heartlike()" id="heart" class="heart"></div>
                 </div>
             </div>
-            <!-- 
+            </div>
+             <!-- 
              <div class="stage row">
               <div @click="addToCart()" class="cart-ico">
                     <button class="cart-button">
@@ -75,7 +77,6 @@
             </div>
              -->
         </div>
-    </div>
 </template>
 <style scoped>
 @media (max-width: 575.98px) {
@@ -111,18 +112,23 @@
 .cartshop:hover {
     background-color: #d3b85f;
 }
-.coler .rot {
+.content-pro .link {
     color: #585b5e;
     text-decoration: none;
 }
 .content-pro {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10vh;
     margin-bottom: 10vh;
     border-radius: 5%;
     transition: all 0.5s;
 }
+.content-pro .flex-body-prod{
+    display: flex;
+    flex-flow: column;
+}
+
 .content-pro:hover {
     transform: scale3d(1.05, 1.05, 1);
 }
@@ -135,9 +141,7 @@
 .content-pro .name-prod,
 .content-pro .category {
     cursor: pointer;
-}
-.content-pro .stars {
-    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .content-pro .checked {
     color: #dcd741;
@@ -166,6 +170,9 @@
         height: auto;
         margin-top: 2vh;
         font-size: 4vw;
+    }
+    .carousel-inner .content-pro{
+  margin-top: -4vh;
     }
     .content-pro .row {
         flex-wrap: nowrap;

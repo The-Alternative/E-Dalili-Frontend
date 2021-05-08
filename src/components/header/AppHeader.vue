@@ -1,6 +1,5 @@
 <template>
     <div class="header">
-        <div>haidra</div>
         <div class="upper-bar">
             <div class="row">
                 <div @click="goto" class="col-md-2 col-sm-12 col-xs-12 imag">
@@ -220,7 +219,7 @@
     font-size: 17px;
 }
 .upper-bar .customer-select {
-    display: inline-block;
+    display: inline-flex;
     border: none;
     background-color: #878080;
     width: 110px;
@@ -283,9 +282,9 @@
     padding: 0 28px;
 }
 .upper-bar .sel2 select {
-    width: 140px;
-    padding: 0 18px;
-    font-size: 14px;
+width: 140px;
+padding: 0 16px;
+font-size: 13px;
 }
 .upper-bar .sel3 select {
     width: 100px;
@@ -332,7 +331,7 @@
         margin-left: -40px;
     }
     .upper-bar .customer-select select {
-        font-size: 4vw;
+        font-size: 13px;
         width: 115px;
         text-align: center;
     }

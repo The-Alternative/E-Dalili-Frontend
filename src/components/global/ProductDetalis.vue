@@ -17,7 +17,7 @@
                             {{ name }}
                         </div>
                         <div class="category">
-                            {{ short_des }}
+                            {{ long_des }}
                         </div>
                         <div class="avilble">
                             <div style="display: inline-block">

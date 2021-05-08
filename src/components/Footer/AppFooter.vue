@@ -242,7 +242,8 @@
         top: 64px;
     }
     .about-us .imag img {
-        left: 25px;
+        position: relative;
+        left: 0;
     }
 }
 /* Small devices (landscape phones, 576px and up) */
