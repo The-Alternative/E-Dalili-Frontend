@@ -5,7 +5,7 @@
             <div
                 v-for="category in Categories.slice(0, 4)"
                 :key="category.id"
-                class="col-lg-3 col-md-3 col-sm-6  column"
+                class="col-lg-3 col-md-3 col-sm-6 column"
             >
                 <div class="card card-market">{{ category }}</div>
             </div>

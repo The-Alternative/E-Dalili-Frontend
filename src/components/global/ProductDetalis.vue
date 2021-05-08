@@ -1,49 +1,60 @@
 <template>
-    <div class="ProductDetalis" style="background-color:#e9ecf2">
-            <div class="show-prod">
-                            <div class="row">
-                                <div
-                                    class="col-xs-12"
-                                    style="direction: rtl;"
-                                >
-                                    <div class="content-pro text-center">
-                                        <img class="" src="../../../public/img/w.jpg" style="width: 250px;height: 250px;border-radius: 10px;"/>
-                                        <div class="name-prod">
-                                            {{ name }}
-                                        </div>
-                                        <div class="category">
-                                            {{ short_des }}
-                                        </div>
-                                        <div class="avilble">
-                                            <div style="display: inline-block">متوفر في 5 متاجر</div>
-                                            <span class="fa fa-check-circle"></span>
-                                        </div>
-                                        <div>
-                                            <span>  80,00 ل.س  الى 100,00 ل.س</span>
-                                            <div
-                                                class="price"
-                                                style="display: inline-block"
-                                            ></div>
-                                        </div>
-<div class="heart-conten"><div @click="heartlike()" id="heart" class="heart"></div></div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <button
-                                                @click="gotoListView(id,name,short_des)"
-                                                    class="but1"
-                                                >
-                                                    <span>
-                                                        {{$t('Choose')}}
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="ProductDetalis" style="background-color: #e9ecf2">
+        <div class="show-prod">
+            <div class="row">
+                <div class="col-xs-12" style="direction: rtl">
+                    <div class="content-pro text-center">
+                        <img
+                            class=""
+                            src="../../../public/img/w.jpg"
+                            style="
+                                width: 250px;
+                                height: 250px;
+                                border-radius: 10px;
+                            "
+                        />
+                        <div class="name-prod">
+                            {{ name }}
                         </div>
-             </div>
-                        
-        
+                        <div class="category">
+                            {{ short_des }}
+                        </div>
+                        <div class="avilble">
+                            <div style="display: inline-block">
+                                متوفر في 5 متاجر
+                            </div>
+                            <span class="fa fa-check-circle"></span>
+                        </div>
+                        <div>
+                            <span> 80,00 ل.س الى 100,00 ل.س</span>
+                            <div
+                                class="price"
+                                style="display: inline-block"
+                            ></div>
+                        </div>
+                        <div class="heart-conten">
+                            <div
+                                @click="heartlike()"
+                                id="heart"
+                                class="heart"
+                            ></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button
+                                    @click="gotoListView(id, name, short_des)"
+                                    class="but1"
+                                >
+                                    <span>
+                                        {{ $t('Choose') }}
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <style scoped>
@@ -177,13 +188,12 @@
 }
 </style>
 <style lang="scss" scoped>
-
-.heart-conten{
+.heart-conten {
     background-color: #f0f0f0;
     border-radius: 20%;
     width: 50px;
     height: 50px;
-    margin:10px auto;
+    margin: 10px auto;
 }
 .content-pro .heart-conten:hover {
     background-color: #d3b85f;
@@ -203,18 +213,14 @@
         background-position: -2795px -23px;
     }
 }
-
 </style>
 <script>
 export default {
     data() {
-        return {
-        };
+        return {};
     },
-    components: {
-        
-    },
-      props: ['id', 'name', 'short_des','long_des', 'price'],
+    components: {},
+    props: ['id', 'name', 'short_des', 'long_des', 'price'],
     computed: {
         count() {
             return this.$store.state.count;
@@ -227,12 +233,12 @@ export default {
         },
     },
     methods: {
-      heartlike: function() {      
-          document.getElementById('heart').classList.toggle('is-active');
+        heartlike: function () {
+            document.getElementById('heart').classList.toggle('is-active');
         },
-        gotoListView: function(i,n,s) {
+        gotoListView: function (i, n, s) {
             this.$router.push(`/ListView/${i}/${n}/${s}`);
-        }
+        },
     },
 };
 </script>

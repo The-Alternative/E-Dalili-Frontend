@@ -5,9 +5,9 @@
                 <div @click="goto" class="col-md-2 col-sm-12 col-xs-12 imag">
                     <img src="../../../public/img/logo-4.png" />
                 </div>
-                <div class="col-md-10 col-sm-12  col-xs-12 text-center selo">
+                <div class="col-md-10 col-sm-12 col-xs-12 text-center selo">
                     <div class="customer-select sel4">
-                        <select v-model="lang"  @change="handleChange($event)">
+                        <select v-model="lang" @change="handleChange($event)">
                             <option value="en">English</option>
                             <option value="ar">العربية</option>
                         </select>
@@ -19,27 +19,26 @@
                             <option
                                 v-for="gover in governorates"
                                 :key="gover.id"
-                                >{{ gover.name }}</option
                             >
+                                {{ gover.name }}
+                            </option>
                         </select>
                     </div>
 
                     <div class="customer-select sel2">
                         <select v-model="sortType">
                             <option value="1" disabled>المدینة/القریة</option>
-                            <option v-for="city in cities" :key="city.id"
-                                >{{ city.name }}
+                            <option v-for="city in cities" :key="city.id">
+                                {{ city.name }}
                             </option>
                         </select>
                     </div>
                     <div class="customer-select sel3">
                         <select v-model="sortType">
                             <option value="1" disabled>الحي</option>
-                            <option 
-                                v-for="street in streets"
-                                :key="street.id"
-                                >{{ street.name }}</option
-                            >
+                            <option v-for="street in streets" :key="street.id">
+                                {{ street.name }}
+                            </option>
                         </select>
                     </div>
                     <span class="lang">اللغة</span
@@ -53,7 +52,13 @@
             <div class="bars" @click="showfut()">
                 <i class="fa fa-bars"></i>
             </div>
-            <div class="exit-fut animate__animated animate__heartBeat" id="exit-fut" @click="hidefut()">X</div>
+            <div
+                class="exit-fut animate__animated animate__heartBeat"
+                id="exit-fut"
+                @click="hidefut()"
+            >
+                X
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="search col-lg-12">
@@ -65,11 +70,14 @@
                         />
                     </div>
                     <div class="col-lg-12">
-                        <div class="featuers animate__animated animate__heartBeat" id="fut">
+                        <div
+                            class="featuers animate__animated animate__heartBeat"
+                            id="fut"
+                        >
                             <div>
                                 <router-link
                                     to="/addStore"
-                                    style="color: #635f5f;"
+                                    style="color: #635f5f"
                                     >{{ $t('AddPlatform') }}</router-link
                                 >
                             </div>
@@ -85,7 +93,7 @@
                             <i class="fa fa-map-marker"></i>
                             <div class="map">{{ $t('Selectlocation') }}</div>
 
-                            <i class="fa fa-user-circle "> </i>
+                            <i class="fa fa-user-circle"> </i>
                             <div class="user">{{ $t('signin') }}</div>
                         </div>
                     </div>
@@ -98,7 +106,7 @@
         <div id="nav" class="naver">
             <div class="container" lang="en">
                 <div class="row text-center">
-                    <div class=" col-lg-12" style="padding: 0">
+                    <div class="col-lg-12" style="padding: 0">
                         <div>
                             <router-link to="/instrc" exact>
                                 <button type="button" class="btn btn-light">
@@ -187,15 +195,15 @@
 <style scoped>
 /* ____________________________________ cart icon _______________________________ */
 .cart-count {
-font-size: 13px;
-color: #ba8b00;
-margin-left: -21px;
-background: #ffffff;
-height: 19px;
-border-radius: 50%;
-width: 17px;
-position: absolute;
-margin-top: -10px;
+    font-size: 13px;
+    color: #ba8b00;
+    margin-left: -21px;
+    background: #ffffff;
+    height: 19px;
+    border-radius: 50%;
+    width: 17px;
+    position: absolute;
+    margin-top: -10px;
 }
 /* ____________________________________app header _______________________________ */
 .upper-bar .imag img {
@@ -275,8 +283,8 @@ margin-top: -10px;
 }
 .upper-bar .sel2 select {
 width: 140px;
-padding: 0 18px;
-font-size: 14px;
+padding: 0 16px;
+font-size: 13px;
 }
 .upper-bar .sel3 select {
     width: 100px;
@@ -323,7 +331,7 @@ font-size: 14px;
         margin-left: -40px;
     }
     .upper-bar .customer-select select {
-        font-size: 4vw;
+        font-size: 13px;
         width: 115px;
         text-align: center;
     }
@@ -337,9 +345,9 @@ font-size: 14px;
         top: 57px;
     }
     .upper-bar .customer-select select:after {
-    left: 12px;
-    top: 7px;
-    font-size: 18px;
+        left: 12px;
+        top: 7px;
+        font-size: 18px;
     }
     .upper-bar .lang {
         position: absolute;
@@ -558,13 +566,12 @@ font-size: 14px;
         border-radius: 20px;
         overflow: hidden;
         display: none;
-       
     }
-    .jumbotron .show{
+    .jumbotron .show {
         margin-top: 60px;
         margin-left: auto;
         margin-right: auto;
-         display: block;
+        display: block;
     }
     .exit-fut {
         width: 25px;
@@ -837,10 +844,10 @@ export default {
         },
     },
     methods: {
-        gotocart: function() {
+        gotocart: function () {
             this.$router.push(`/Cart`);
         },
-        goto: function() {
+        goto: function () {
             this.$router.push(`/`);
         },
         showfut() {
@@ -848,7 +855,6 @@ export default {
             document.getElementById('exit-fut').style.display = 'block';
         },
         hidefut() {
-          
             document.getElementById('exit-fut').style.display = 'none';
             document.getElementById('fut').classList.remove('show');
         },
