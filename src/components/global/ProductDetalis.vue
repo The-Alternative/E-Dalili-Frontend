@@ -216,19 +216,19 @@
 </style>
 <script>
 export default {
-    data() {
+    data () {
         return {};
     },
     components: {},
     props: ['id', 'name', 'short_des', 'long_des', 'price'],
     computed: {
-        count() {
+        count () {
             return this.$store.state.count;
         },
-        stores() {
+        stores () {
             return this.$store.state.stores;
         },
-        product() {
+        product () {
             return this.$store.state.stores[0].products;
         },
     },
