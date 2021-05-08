@@ -7,7 +7,7 @@ Vue.use(Vuex, axios);
 
 let cartItems = window.localStorage.getItem('cartItems');
 let cartItemCount = window.localStorage.getItem('cartItemCount');
-
+let lang = window.localStorage.getItem('lang');
 export default new Vuex.Store({
     state: {
         // MOCK_DATA json
@@ -96,9 +96,6 @@ export default new Vuex.Store({
         SET_Stores (state, Stores) {
             state.Stores = Stores;
         },
-        // SET_PRODUCTS(state, products) {
-        //     state.products = products;
-        // },
         SET_Store (state, Store) {
             state.Store = Store;
         },
@@ -116,7 +113,7 @@ export default new Vuex.Store({
         },
         loadStores ({ commit }) {
             axios
-                .get('/api/stores/getAll')
+                .get(`/api/stores/getAll?lang=${lang}`)
                 .then((res) => {
                     console.warn(res.data.Stores);
                     let Stores = res.data.Stores;
@@ -128,7 +125,7 @@ export default new Vuex.Store({
         },
         loadStore ({ commit }, productId) {
             axios
-                .get(`/api/stores/getById/${productId}`)
+                .get(`/api/stores/getById/${productId}?lang=${lang}`)
                 .then((res) => {
                     console.warn(res.data.Stores);
                     let store = res.data.Stores;
@@ -140,7 +137,7 @@ export default new Vuex.Store({
         },
         loadStoreDetailsProduct ({ commit }, productId) {
             axios
-                .get(`/api/products/getById/${productId}`)
+                .get(`/api/products/getById/${productId}?lang=${lang}`)
                 .then((res) => {
                     console.warn(res.data);
                     let DetailsProduct = res.data;
