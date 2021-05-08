@@ -362,12 +362,6 @@ export default {
     },
     computed: {
         ...mapState(['store', 'brands']),
-        // store () {
-        //     return this.$store.state.Store;
-        // },
-        // brands () {
-        //     return this.$store.state.brands;
-        // },
     },
 
     mounted () {
