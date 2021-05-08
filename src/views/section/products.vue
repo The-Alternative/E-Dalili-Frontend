@@ -33,7 +33,7 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="bran in Brand.slice(0, 5)"
+                v-for="bran in Brands.slice(0, 5)"
                 :key="bran.id"
             >
                 <img v-lazy="bran.image" />
@@ -77,10 +77,9 @@
                         <span class="last">اخر المشتركین</span>
                         <div class="last-subscriber">
                             <Subscriber
-                                v-for="Store in lastStores"
+                                v-for="Store in Stores"
                                 :key="Store.id"
                                 :title="Store.title"
-                                :location="Store.location"
                             />
                         </div>
                     </div>
@@ -770,15 +769,11 @@
 </style>
 
 <script>
-import axios from 'axios';
+import { mapState } from 'vuex';
 export default {
     data () {
         return {
             urll: '/img/',
-            // Product: [],
-            // lastStores:[],
-            Brand: [],
-            // categories:[]
         };
     },
     name: 'products',
@@ -788,46 +783,13 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        Product () {
-            return this.$store.state.Product;
-        },
-        lastStores () {
-            return this.$store.state.lastStores;
-        },
-        brands () {
-            return this.$store.state.brands;
-        },
-        categories () {
-            return this.$store.state.categories;
-        },
-    },
-    created () {
-        // axios
-        //     .get('http://edalili.e-dalely.com/public/api/products/getAll')
-        //     .then((response) => {
-        //         this.Product = response.data.Products;
-        //     });
-        axios
-            .get('http://edalili.e-dalely.com/public/api/brands/getAll')
-            .then((response) => {
-                this.Brand = response.data.Brand;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
     },
     mounted () {
         this.$store.dispatch('loadProducts');
         this.$store.dispatch('loadProduct', this.id);
+        this.$store.dispatch('loadStores');
+        this.$store.dispatch('loadBrands');
     },
-    /*
-    .then(response => {
-      this.lastStores = response.data[0].lastStores;
-    })
-    .then(response => {
-      this.brands = response.data[0].brands;
-    })
-  },
-  */
 };
 </script>

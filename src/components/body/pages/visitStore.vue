@@ -351,6 +351,8 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
 
+import { mapState } from 'vuex';
+
 export default {
     name: 'visitStore',
     props: ['id', 'title', 'workingHours', 'section', 'Product', 'brand'],
@@ -359,12 +361,13 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        store () {
-            return this.$store.state.Store;
-        },
-        brands () {
-            return this.$store.state.brands;
-        },
+        ...mapState(['store', 'brands']),
+        // store () {
+        //     return this.$store.state.Store;
+        // },
+        // brands () {
+        //     return this.$store.state.brands;
+        // },
     },
 
     mounted () {
