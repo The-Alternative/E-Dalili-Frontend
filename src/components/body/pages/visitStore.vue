@@ -59,14 +59,14 @@
                         src="../../../../public/img/open.png"
                         height="40"
                     />
-                    <div class="mt-4">السبت - الجمعة</div>
+                    <div class="mt-4">{{ $t('SaturdayFriday') }}</div>
                     <div class="mt-3 row">
                         <div class="row">
                             <div class="mr-2">{{ workingHours }}</div>
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div>السويداء - طريق قنوات</div>
+                        <div>{{ $t('SweidaQanawatRoad') }}</div>
                     </div>
                     <hr class="hr" />
                     <div class="drop" id="drop-active" @click="dropactive()">
@@ -320,7 +320,9 @@
             class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"
         >
             <ul>
-                الزیارات
+                {{
+                    $t('Thevisits')
+                }}
                 <br />
                 <li>0</li>
                 <li>0</li>
