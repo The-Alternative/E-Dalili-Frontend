@@ -18,7 +18,6 @@ export default new Vuex.Store({
         Product: [],
         ProductID: null,
         Brand: [],
-        Brands: [],
         ////////////////
         // Product: jeson[0].Products,
         stores: data.stores,
@@ -109,9 +108,9 @@ export default new Vuex.Store({
         SET_ProductID (state, ProductID) {
             state.ProductID = ProductID;
         },
-        SET_Brands (state, Brands) {
-            state.Brands = Brands;
-        },
+        SET_Brand (state, Brand) {
+            state.Brand = Brand;
+        }
     },
 
     actions: {
@@ -169,9 +168,9 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        loadProduct ({ commit }, productId) {
+        loadProduct ({ commit }, id) {
             axios
-                .get(`/api/products/getById/${productId}?lang=${lang}`)
+                .get(`/api/products/getById/${id}?lang=${lang}`)
                 .then((res) => {
                     console.warn(res.data.Product);
                     let ProductID = res.data.Product;
@@ -181,17 +180,17 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        loadBrands ({ commit }) {
+        loadBrand({ commit }) {
             axios
                 .get(`/api/brands/getAll?lang=${lang}`)
                 .then((res) => {
                     console.warn(res.data.Brand);
-                    let Brands = res.data.Brand;
-                    commit('SET_Brands', Brands);
+                    let Brand = res.data.Brand;
+                    commit('SET_ProductID', Brand);
                 })
                 .catch(function (error) {
                     console.log('Error: ', error);
                 });
-        },
+        }
     },
 });

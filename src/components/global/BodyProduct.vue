@@ -52,7 +52,9 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            
+            <div class="price">
+                {{store}}
+            </div>
             <div class="avilble">
                 <div style="display: inline-block">متوفر في متاجر</div>
                 <span class="fa fa-check-circle"></span>

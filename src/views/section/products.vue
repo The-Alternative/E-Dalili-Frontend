@@ -24,7 +24,7 @@
                     :short_des="items.short_des"
                     :long_des="items.long_des"
                     :name="items.name"
-                    :range_price="items.range_price"
+                    
                 >
                 </BodyProduct>
             </div>
@@ -33,8 +33,8 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="bran in Brands.slice(0, 5)"
-                :key="bran.id"
+                v-for="item in Brand.slice(0, 5)"
+                :key="item.id"
             >
                 <img v-lazy="bran.image" />
             </div>
@@ -807,7 +807,7 @@ export default {
         categories () {
             return this.$store.state.categories;
         },
-        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
+        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brand']),
 
     },
     mounted () {
@@ -817,7 +817,6 @@ export default {
         this.$store.dispatch('loadBrand');
 
         this.$store.dispatch('loadStores');
-        this.$store.dispatch('loadBrands');
 
     },
 };
