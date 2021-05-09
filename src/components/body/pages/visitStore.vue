@@ -321,6 +321,10 @@
                     :image="items.image"
                     :long_des="items.long_des"
                     :short_des="items.short_des"
+                    :store_product="items.store_product"
+                    :is_appear="items.is_appear"
+                    :category="items.category"
+                    :store="items.store"
                 >
                 </BodyProductStore>
             </div>
@@ -364,19 +368,19 @@ export default {
         ...mapState(['store', 'brands']),
     },
 
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadStore', this.id);
-        this.$store.dispatch('loadStoreDetailsProduct', this.id);
+        // this.$store.dispatch('loadStoreDetailsProduct', this.id);
     },
     methods: {
-        heart: function () {
+        heart: function() {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function () {
+        dropactive: function() {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -384,7 +388,7 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function () {
+        likebtn: function() {
             document.getElementById('likebtn').classList.toggle('');
         },
     },

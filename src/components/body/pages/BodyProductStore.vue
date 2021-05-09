@@ -13,6 +13,8 @@
                                 image: image,
                                 short_des: short_des,
                                 long_des: long_des,
+                                is_appear: is_appear,
+                                store_product: store_product,
                             },
                         }"
                     >
@@ -27,7 +29,6 @@
                     <button
                         type="button"
                         class="btn btn-secondary"
-                        id="heart"
                         title="Add to wishlist"
                         @click="heartlike()"
                     >
@@ -53,6 +54,8 @@
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star"></i>
                 </div>
+                <div>{{ store_product }}</div>
+                <div>{{ is_appear }}</div>
                 <div class="category">
                     {{ short_des }}
                 </div>
@@ -73,14 +76,22 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'image', 'short_des', 'long_des'],
+    props: [
+        'id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+        'is_appear',
+    ],
     methods: {
-        heartlike: function () {
+        heartlike: function() {
             this.$el.lastChild.lastChild.lastChild.classList.toggle(
                 'is-active'
             );
         },
-        addToCart () {
+        addToCart() {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
                 [
@@ -110,14 +121,10 @@ export default {
             );
         },
     },
-    computed: {
-        count () {
-            return this.$store.state.count;
-        },
+    mounted() {
+        this.$store.dispatch('loadStore', this.id);
+        // this.$store.dispatch('loadProduct', this.id);
     },
-    // mounted () {
-    //     this.$store.dispatch('loadStoreDetailsProduct', this.id);
-    // },
 };
 </script>
 
