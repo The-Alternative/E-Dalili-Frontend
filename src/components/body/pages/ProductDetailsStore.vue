@@ -22,7 +22,7 @@
                     <span>80.00 S.P</span>
                     <div class="price" style="display: inline-block"></div>
                 </div>
-
+                <div>{{ is_appear }}</div>
                 <div class="row">
                     <div class="col">
                         <button @click="addToCart" class="but1">
@@ -51,23 +51,23 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id', 'name', 'image', 'short_des', 'long_des'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'is_appear'],
     computed: {
-        count () {
+        count() {
             return this.$store.state.count;
         },
     },
     methods: {
-        increment () {
+        increment() {
             this.$store.commit('increment');
         },
-        addItem (items) {
+        addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function () {
+        gotocart: function() {
             this.$router.push(`/Cart`);
         },
-        addToCart () {
+        addToCart() {
             this.$store.dispatch('addToCart', this.details);
             document.getElementById('cart').animate(
                 [
@@ -84,8 +84,8 @@ export default {
             );
         },
     },
-    mounted () {
-        this.$store.dispatch('loadStoreDetailsProduct', this.id);
+    mounted() {
+        this.$store.dispatch('loadProduct', this.id);
     },
 };
 </script>
