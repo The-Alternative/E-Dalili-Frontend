@@ -790,21 +790,6 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        Product () {
-            return this.$store.state.Product;
-        },
-        lastStores () {
-            return this.$store.state.lastStores;
-        },
-        brands () {
-            return this.$store.state.brands;
-        },
-        Brand () {
-            return this.$store.state.Brand;
-        },
-        categories () {
-            return this.$store.state.categories;
-        },
         ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
     },
     mounted () {
