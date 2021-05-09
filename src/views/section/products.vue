@@ -33,7 +33,7 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="item in Brand.slice(0, 5)"
+                v-for="item in Brands.slice(0, 5)"
                 :key="item.id"
             >
                 <img v-lazy="bran.image" />
@@ -448,18 +448,16 @@
     height: 250px;
     margin-top: 50px;
     width: calc(96% / 5);
-    
 }
 .show-market img {
     height: 230px;
     transition: all 0.5s;
     width: 100%;
     height: 100%;
-    
 }
-.show-market img:hover{
-transform: scale3d(1.05, 1.05, 1);
-cursor: pointer;
+.show-market img:hover {
+    transform: scale3d(1.05, 1.05, 1);
+    cursor: pointer;
 }
 @media (max-width: 576.98px) {
     .mar {
@@ -481,10 +479,10 @@ cursor: pointer;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-.show-market {
-    height: 180px;
-    width: calc(96% / 3);  
-}
+    .show-market {
+        height: 180px;
+        width: calc(96% / 3);
+    }
     .mar .show-market:nth-child(2),
     .mar .show-market:nth-child(3) {
         display: none;
@@ -492,11 +490,11 @@ cursor: pointer;
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-.show-market {
-    height: 180px;
-    width: calc(96% / 5);  
-}
+    .show-market {
+        height: 180px;
+        width: calc(96% / 5);
     }
+}
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .show-der .img img {
@@ -506,10 +504,10 @@ cursor: pointer;
         margin-bottom: 100px;
         text-align: center;
     }
-.show-market {
-    height: 200px;
-    width: calc(96% / 5);  
-}
+    .show-market {
+        height: 200px;
+        width: calc(96% / 5);
+    }
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
         .show-der .img img {
@@ -594,7 +592,7 @@ cursor: pointer;
         box-shadow: none;
         overflow: visible;
     }
-    
+
     .last-subscriber .subscriber {
         width: 85%;
         margin: 10px 0 -4px 21px;
@@ -801,23 +799,21 @@ export default {
         brands () {
             return this.$store.state.brands;
         },
-        Brand () {
-            return this.$store.state.Brand;
+        Brands () {
+            return this.$store.state.Brands;
         },
         categories () {
             return this.$store.state.categories;
         },
-        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brand']),
-
+        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
     },
     mounted () {
         this.$store.dispatch('loadProducts');
         this.$store.dispatch('loadProduct', this.id);
 
-        this.$store.dispatch('loadBrand');
 
         this.$store.dispatch('loadStores');
-
+        this.$store.dispatch('loadBrands');
     },
 };
 </script>
