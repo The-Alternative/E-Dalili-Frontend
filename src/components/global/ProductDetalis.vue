@@ -19,9 +19,9 @@
                         <div class="category">
                             {{ long_des }}
                         </div>
-                        <div class="avilble">
+                        <div class="avilble"  v-for="pri in ProductID[0].store.length" :key="pri">
                             <div style="display: inline-block">
-                                متوفر في 5 متاجر
+                                متوفر في {{pri}} متاجر
                             </div>
                             <span class="fa fa-check-circle"></span>
                         </div>
@@ -232,6 +232,9 @@ export default {
         product () {
             return this.$store.state.stores[0].products;
         },
+        ProductID(){
+            return this.$store.state.ProductID;
+        }
     },
     methods: {
         heartlike: function () {
@@ -241,5 +244,8 @@ export default {
             this.$router.push(`/ListView/${i}/${n}/${s}`);
         },
     },
+    mounted () {
+        this.$store.dispatch('loadProduct', this.id);
+    }
 };
 </script>

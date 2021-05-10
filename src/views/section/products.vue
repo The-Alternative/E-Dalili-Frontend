@@ -24,7 +24,7 @@
                     :short_des="items.short_des"
                     :long_des="items.long_des"
                     :name="items.name"
-                    
+                    :range_price="items.range_price"
                 >
                 </BodyProduct>
             </div>
@@ -33,8 +33,8 @@
         <div class="mar">
             <div
                 class="show-market"
-                v-for="item in Brands.slice(0, 5)"
-                :key="item.id"
+                v-for="bran in Brands.slice(0, 5)"
+                :key="bran.id"
             >
                 <img v-lazy="bran.image" />
             </div>
@@ -151,7 +151,7 @@
                         <span class="carousel-control-next-icon"></span>
                     </a>
                     <!-- ------------------------------------------------------------ -->
-                    <div class="row">
+                    <div class="row" style="margin: 30px 0 0 0;justify-content: space-around;">
                         <div
                             v-for="brand in brands.slice(9, 10)"
                             :key="brand.id"
@@ -160,6 +160,7 @@
                         >
                             <img v-lazy="brand.image" style="width: 100%" />
                         </div>
+                        <div class="two-img">
                         <div
                             v-for="brand in brands.slice(10, 11)"
                             :key="brand.id"
@@ -175,6 +176,7 @@
                             class="col-sm-1.5 imges2"
                         >
                             <img v-lazy="brand.image" />
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -273,7 +275,6 @@
     margin: 40px 0 40px 0;
 }
 /* Extra small devices (portrait phones, less than 576px) */
-
 @media (max-width: 575.98px) {
     .show-img {
         height: auto;
@@ -321,7 +322,6 @@
     }
 }
 /* ____________________________ Start Products ________________________________ */
-
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .row .coler:nth-child(1) {
@@ -344,7 +344,6 @@
         margin-bottom: 40px;
     }
 }
-
 /* Small devices (landscape phones, 576px and up)   */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .row .coler:nth-child(1) {
@@ -354,7 +353,6 @@
         display: none;
     }
 }
-
 /*  Medium devices (tablets, 768px and up)  */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .row .coler:last-child {
@@ -368,7 +366,6 @@
         max-width: 50%;
     }
 }
-
 /*  Large devices (desktops, 992px and up)  */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .carousel-inner1 .row .coler:nth-child(3) {
@@ -379,11 +376,9 @@
         max-width: 33.333333%;
     }
 }
-
 /* Extra large devices (large desktops, 1200px and up)  */
 @media (min-width: 1200px) {
 }
-
 /* End style for product */
 /* --------------------------------------------- */
 .show-der .img img {
@@ -548,7 +543,7 @@
     color: #5e4949;
 }
 .last-subscriber {
-    height: 990px;
+    height: 680px;
     background-color: #d4cccc;
     position: relative;
     padding-top: 10px;
@@ -592,7 +587,6 @@
         box-shadow: none;
         overflow: visible;
     }
-
     .last-subscriber .subscriber {
         width: 85%;
         margin: 10px 0 -4px 21px;
@@ -610,7 +604,7 @@
     .last-subscriber {
         width: 120%;
         margin-left: -20px;
-        height: 695px;
+        height: 475px;
         padding-top: 1px;
     }
     .last-subscriber .subscriber {
@@ -629,7 +623,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .last-subscriber {
-        height: 800px;
+        height: 545px;
     }
     .last-subscriber .subscriber {
         font-size: 15px;
@@ -649,26 +643,18 @@
     }
 }
 /* ------------------------------------------ */
-
-.imges1 {
-    position: absolute;
-    top: 630px;
-    right: 70px;
+.two-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
 }
-.imges2 {
-    position: absolute;
-    top: 820px;
-    right: 70px;
-}
-
 .imges1 img {
     width: 170px;
-    margin-bottom: 15px;
     transition: all 0.5s;
 }
 .imges2 img {
     width: 170px;
-    margin-bottom: 15px;
     transition: all 0.5s;
 }
 .imges1 img:hover {
@@ -678,8 +664,6 @@
     transform: scale3d(1.05, 1.05, 1);
 }
 .imgs {
-    margin-top: 40px;
-    margin-right: 290px;
     max-width: 600px;
 }
 .imgs img {
@@ -704,22 +688,12 @@
     .imges2 {
         display: none;
     }
-    .imgs {
-        margin: auto;
-        max-width: 600px;
-        margin-top: 10px;
-    }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .imges1 {
-        top: 640px;
-        right: 50px;
-    }
-    .imges2 {
-        top: 750px;
-        right: 50px;
-    }
+    .two-img{
+    height: 240px;
+}
     .imges1 img {
         width: 100px;
     }
@@ -727,21 +701,14 @@
         width: 100px;
     }
     .imgs {
-        margin-top: 40px;
-        margin-right: 200px;
-        max-width: 550px;
+    max-width: 550px;
     }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .imges1 {
-        top: 640px;
-        right: 70px;
-    }
-    .imges2 {
-        top: 800px;
-        right: 70px;
-    }
+    .two-img{
+    height: 335px;
+}
     .imges1 img {
         width: 150px;
     }
@@ -749,21 +716,11 @@
         width: 150px;
     }
     .imgs {
-        margin-top: 40px;
-        margin-right: 250px;
         max-width: 550px;
     }
 }
 /* Extra large devices (large desktops, 1200px and up)  */
 @media (min-width: 1200px) {
-    .imges1 {
-        top: 600px;
-        right: 100px;
-    }
-    .imges2 {
-        top: 800px;
-        right: 100px;
-    }
     .imges1 img {
         width: 180px;
     }
@@ -776,7 +733,6 @@
 
 <script>
 import { mapState } from 'vuex';
-
 export default {
     data () {
         return {
@@ -809,9 +765,7 @@ export default {
     },
     mounted () {
         this.$store.dispatch('loadProducts');
-        this.$store.dispatch('loadProduct', this.id);
-
-
+        this.$store.dispatch('loadBrand');
         this.$store.dispatch('loadStores');
         this.$store.dispatch('loadBrands');
     },

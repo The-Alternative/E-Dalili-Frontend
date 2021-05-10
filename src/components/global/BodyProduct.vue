@@ -52,11 +52,11 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <div class="price">
-                {{store}}
+            <div class="price" >
+            
             </div>
-            <div class="avilble">
-                <div style="display: inline-block">متوفر في متاجر</div>
+            <div class="avilble" v-for="pri in ProductID[0].store.length" :key="pri">
+                <div style="display: inline-block">متوفر في   {{pri}}متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
@@ -199,10 +199,13 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .content-pro {
-        font-size: 3.3vw;
+        font-size: 2.3vw;
     }
     .content-pro button {
-        font-size: 3.3vw;
+    font-size: 2.3vw;
+    width: 80px;
+    height: 40px;
+    margin: 15px 0 0 auto;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -251,7 +254,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'price'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des','price'],
     // data () {
     //     return {
     //         details: {
@@ -309,6 +312,12 @@ export default {
         count () {
             return this.$store.state.count;
         },
+        ProductID(){
+            return this.$store.state.ProductID;
+        }
     },
+        mounted () {
+        this.$store.dispatch('loadProduct', this.id);
+        }
 };
 </script>
