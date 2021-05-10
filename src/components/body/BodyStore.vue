@@ -87,11 +87,11 @@
                                         name: 'visitStore',
                                         params: {
                                             id: store.id,
-                                            title: store.title,
-                                            workingHours: store.workingHours,
-                                            section: store.section,
-                                            Product: store.product,
-                                            brand: store.brand,
+                                            // title: store.title,
+                                            // workingHours: store.workingHours,
+                                            // section: store.section,
+                                            // Product: store.product,
+                                            // brand: store.brand,
                                         },
                                     }"
                                     ><button type="button" class="btn">
@@ -288,7 +288,7 @@ export default {
     },
     props: ['id', 'section', 'Product', 'brand'],
 
-    data () {
+    data() {
         return {
             Sections: [],
             viewProductsInStore: [],
@@ -315,18 +315,18 @@ export default {
         //     return Stores;
         // },
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadStores');
     },
     methods: {
-        btnbar: function () {
+        btnbar: function() {
             document.getElementById('btn').classList.toggle('click');
             document.getElementById('menu').classList.toggle('show');
         },
-        gotoview: function (i, t, w) {
+        gotoview: function(i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch () {
+        fetch() {
             var self = this;
             let lang = window.localStorage.getItem('lang');
             Vue.axios
@@ -335,12 +335,12 @@ export default {
                     self.Sections = res.data.Section;
                     console.warn('Data SUCCESS: ', res.data.Section);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.warn('------ Error ------: ', error);
                 });
         },
     },
-    created () {
+    created() {
         this.fetch();
     },
 };

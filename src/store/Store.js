@@ -12,9 +12,8 @@ export default new Vuex.Store({
     state: {
         // APi
         Stores: [],
-        Store: null,
+        store: null,
         Sections: [],
-        // DetailsProduct: null,
         Product: [],
         ProductID: null,
         Brand: [],
@@ -30,13 +29,13 @@ export default new Vuex.Store({
         cartItems: cartItems ? JSON.parse(cartItems) : [],
     },
     mutations: {
-        increment (state) {
+        increment(state) {
             state.count++;
         },
         cartItems: (state, connections) => {
             state.cartItems = connections;
         },
-        addToCart (state, payload) {
+        addToCart(state, payload) {
             let item = payload;
             item = { ...item, quantity: 1 };
             if (state.cartItems.length > 0) {
@@ -55,7 +54,7 @@ export default new Vuex.Store({
             state.cartItemCount++;
             this.commit('savedata');
         },
-        savedata (state) {
+        savedata(state) {
             window.localStorage.setItem(
                 'cartItems',
                 JSON.stringify(state.cartItems)
@@ -65,7 +64,7 @@ export default new Vuex.Store({
                 JSON.stringify(state.cartItemCount)
             );
         },
-        removeItem (state, payload) {
+        removeItem(state, payload) {
             if (state.cartItems.length > 0) {
                 let bool = state.cartItems.some((i) => i.id === payload.id);
                 if (bool) {
@@ -83,7 +82,7 @@ export default new Vuex.Store({
                 }
             }
         },
-        removeFromCart (state, item) {
+        removeFromCart(state, item) {
             let index = state.cartItems.indexOf(item);
 
             if (index > -1) {
@@ -94,22 +93,19 @@ export default new Vuex.Store({
                 this.commit('savedata');
             }
         },
-        SET_Stores (state, Stores) {
+        SET_Stores(state, Stores) {
             state.Stores = Stores;
         },
-        SET_Store (state, Store) {
-            state.Store = Store;
+        SET_Store(state, store) {
+            state.store = store;
         },
-        // SET_DetailsProduct(state, DetailsProduct) {
-        //     state.DetailsProduct = DetailsProduct;
-        // },
-        SET_Products (state, Product) {
+        SET_Products(state, Product) {
             state.Product = Product;
         },
-        SET_ProductID (state, ProductID) {
+        SET_ProductID(state, ProductID) {
             state.ProductID = ProductID;
         },
-        SET_Brands (state, Brands) {
+        SET_Brands(state, Brands) {
             state.Brands = Brands;
         },
     },
@@ -120,7 +116,7 @@ export default new Vuex.Store({
         removeItem: (context, payload) => {
             context.commit('removeItem', payload);
         },
-        loadStores ({ commit }) {
+        loadStores({ commit }) {
             axios
                 .get(`/api/stores/getAll?lang=${lang}`)
                 .then((res) => {
@@ -128,23 +124,23 @@ export default new Vuex.Store({
                     let Stores = res.data.Stores;
                     commit('SET_Stores', Stores);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log('Error: ', error);
                 });
         },
-        loadStore ({ commit }, productId) {
+        loadstore({ commit }, productId) {
             axios
                 .get(`/api/stores/getById/${productId}?lang=${lang}`)
                 .then((res) => {
                     console.warn('StorebyId :', res.data.Store);
                     let store = res.data.Store;
-                    commit('SET_Stores', store);
+                    commit('SET_Store', store);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log('Error: ', error);
                 });
         },
-        loadProducts ({ commit }) {
+        loadProducts({ commit }) {
             axios
                 .get(`/api/products/getAll?lang=${lang}`)
                 .then((res) => {
@@ -152,11 +148,11 @@ export default new Vuex.Store({
                     let Product = res.data.Products;
                     commit('SET_Products', Product);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log('Error: ', error);
                 });
         },
-        loadProduct ({ commit }, productId) {
+        loadProduct({ commit }, productId) {
             axios
                 .get(`/api/products/getById/${productId}?lang=${lang}`)
                 .then((res) => {
@@ -164,11 +160,11 @@ export default new Vuex.Store({
                     let ProductID = res.data.Product;
                     commit('SET_ProductID', ProductID);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log('Error: ', error);
                 });
         },
-        loadBrands ({ commit }) {
+        loadBrands({ commit }) {
             axios
                 .get(`/api/brands/getAll?lang=${lang}`)
                 .then((res) => {
@@ -176,7 +172,7 @@ export default new Vuex.Store({
                     let Brands = res.data.Brand;
                     commit('SET_Brands', Brands);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log('Error: ', error);
                 });
         },
