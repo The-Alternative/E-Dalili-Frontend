@@ -359,7 +359,7 @@ a:hover {
         margin-bottom: 1vh;
     }
     .cart-items .img-fluid {
-        max-width: -1px;
+        /*max-width: -1px;*/
     }
     .fo {
         margin-top: 1vh;
@@ -374,6 +374,7 @@ a:hover {
 import EmptyCart from '@/components/cart/EmptyCart.vue';
 export default {
     name: 'Cart',
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
     data() {
         return {};
     },

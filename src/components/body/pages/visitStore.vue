@@ -1,5 +1,5 @@
 <template>
-    <div class="visitStore">
+    <div class="visitStore" v-if="store">
         <Cartmini />
         <div
             id="carouselExampleInterval"
@@ -62,7 +62,7 @@
                     <div class="mt-4">{{ $t('SaturdayFriday') }}</div>
                     <div class="mt-3 row">
                         <div class="row">
-                            <div class="mr-2">{{ workingHours }}</div>
+                            <div class="mr-2">{{ store.workingHours }}</div>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -79,7 +79,7 @@
                         src="../../../../public/img/market-logo.png"
                         height="100"
                     />
-                    <div class="mt-4 mb-4 title-profile">{{ title }}</div>
+                    <div class="mt-4 mb-4 title-profile">{{ store.title }}</div>
                 </div>
                 <div class="col-lg-3 mt-4 pr-0">
                     <div class="textRight">
@@ -251,7 +251,7 @@
             <div class="row align-middle" style="height: 80%">
                 <div
                     class="col-md-6 col-lg-3 col-xs-3 mb-4 column"
-                    v-for="catog in section"
+                    v-for="catog in store.section"
                     :key="catog.id"
                     :slug="catog.slug"
                     :image="catog.image"
@@ -301,7 +301,7 @@
             </div>
             <div
                 class="show-market"
-                v-for="item in brand.slice(0, 5)"
+                v-for="item in store.brand.slice(0, 5)"
                 :key="item.id"
             >
                 <img :src="item.image" height="20%" width="80%" />
@@ -314,38 +314,35 @@
             </div>
             <div class="row mt-2">
                 <BodyProductStore
-                    v-for="items in Product"
-                    :key="items"
+                    v-for="items in store.product"
+                    :key="items.pr"
                     :id="items.id"
                     :name="items.name"
                     :image="items.image"
                     :long_des="items.long_des"
                     :short_des="items.short_des"
                     :store_product="items.store_product"
-                    :is_appear="items.is_appear"
-                    :category="items.category"
-                    :store="items.store"
                 >
                 </BodyProductStore>
             </div>
         </div>
-        <!-- visit store -->
-        <div
-            class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"
-        >
-            <ul>
-                {{
-                    $t('Thevisits')
-                }}
-                <br />
-                <li>0</li>
-                <li>0</li>
-                <li>1</li>
-                <li>4</li>
-                <li>7</li>
-                <li>9</li>
-            </ul>
-        </div>
+        <!--        &lt;!&ndash; visit store &ndash;&gt;-->
+        <!--        <div-->
+        <!--            class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"-->
+        <!--        >-->
+        <!--            <ul>-->
+        <!--                {{-->
+        <!--                    $t('Thevisits')-->
+        <!--                }}-->
+        <!--                <br />-->
+        <!--                <li>0</li>-->
+        <!--                <li>0</li>-->
+        <!--                <li>1</li>-->
+        <!--                <li>4</li>-->
+        <!--                <li>7</li>-->
+        <!--                <li>9</li>-->
+        <!--            </ul>-->
+        <!--                </div>-->
     </div>
 </template>
 
@@ -356,21 +353,22 @@ import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
 
 import { mapState } from 'vuex';
-
 export default {
     name: 'visitStore',
-    props: ['id', 'title', 'workingHours', 'section', 'Product', 'brand'],
+    // <!--    // props: ['id', 'title', 'workingHours', 'section', 'Product', 'brand'],-->
+    props: ['id'],
     components: {
         BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
+
     computed: {
         ...mapState(['store', 'brands']),
     },
 
     mounted() {
-        this.$store.dispatch('loadStore', this.id);
-        // this.$store.dispatch('loadStoreDetailsProduct', this.id);
+        this.$store.dispatch('loadstore', this.id);
+        // <!--        this.$store.dispatch('loadStoreDetailsProduct', this.id);-->
     },
     methods: {
         heart: function() {
