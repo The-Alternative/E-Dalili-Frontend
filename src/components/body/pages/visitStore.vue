@@ -326,23 +326,22 @@
                 </BodyProductStore>
             </div>
         </div>
-        <!--        &lt;!&ndash; visit store &ndash;&gt;-->
-        <!--        <div-->
-        <!--            class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"-->
-        <!--        >-->
-        <!--            <ul>-->
-        <!--                {{-->
-        <!--                    $t('Thevisits')-->
-        <!--                }}-->
-        <!--                <br />-->
-        <!--                <li>0</li>-->
-        <!--                <li>0</li>-->
-        <!--                <li>1</li>-->
-        <!--                <li>4</li>-->
-        <!--                <li>7</li>-->
-        <!--                <li>9</li>-->
-        <!--            </ul>-->
-        <!--                </div>-->
+        <div
+            class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-5 visiter text-center"
+        >
+            <ul>
+                {{
+                    $t('Thevisits')
+                }}
+                <br />
+                <li>0</li>
+                <li>0</li>
+                <li>1</li>
+                <li>4</li>
+                <li>7</li>
+                <li>9</li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -355,7 +354,6 @@ Vue.use(VueAxios, axios);
 import { mapState } from 'vuex';
 export default {
     name: 'visitStore',
-    // <!--    // props: ['id', 'title', 'workingHours', 'section', 'Product', 'brand'],-->
     props: ['id'],
     components: {
         BodyProductStore: () => import('./BodyProductStore'),
@@ -366,19 +364,19 @@ export default {
         ...mapState(['store', 'brands']),
     },
 
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadstore', this.id);
         // <!--        this.$store.dispatch('loadStoreDetailsProduct', this.id);-->
     },
     methods: {
-        heart: function() {
+        heart: function () {
             document
                 .getElementById('textFollow')
                 .classList.toggle('heart-active');
             document.getElementById('follow').classList.toggle('heart-active');
             document.getElementById('heart').classList.toggle('heart-active');
         },
-        dropactive: function() {
+        dropactive: function () {
             document
                 .getElementById('drop-active')
                 .classList.toggle('drop-rotate');
@@ -386,7 +384,7 @@ export default {
                 .getElementById('description')
                 .classList.toggle('drop-active');
         },
-        likebtn: function() {
+        likebtn: function () {
             document.getElementById('likebtn').classList.toggle('');
         },
     },
