@@ -29,7 +29,7 @@ const routes = [
     },
     /* ProductDetalis */
     {
-        path: '/ProductDetalis/:id/:name/:long_des/:short_des',
+        path: '/ProductDetalis/:id',
         name: 'ProductDetails',
         component: () => import('../components/global/ProductDetalis.vue'),
         props: true,

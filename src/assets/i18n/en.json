@@ -86,5 +86,9 @@
     "YouGoHomePageViewFoodItems": "You can go to home page to view more food items",
 
     "//comment8": "product",
-    "Choose": "Choose"
+    "Choose": "Choose",
+
+    "//comment9": "minicart",
+    "Buynow": "Buy now",
+    "Gotocart": "Go to the cart"
 }

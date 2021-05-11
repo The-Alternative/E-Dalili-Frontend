@@ -6,10 +6,6 @@
                     name: 'ProductDetails',
                     params: {
                         id: id,
-                        name: name,
-                        image: image,
-                        short_des: short_des,
-                        long_des: long_des,
                     },
                 }"
                 ><img v-lazy="`${image}`" class="new"
@@ -19,10 +15,6 @@
                     name: 'ProductDetails',
                     params: {
                         id: id,
-                        name: name,
-                        image: image,
-                        short_des: short_des,
-                        long_des: long_des,
                     },
                 }"
                 ><div class="name-prod">
@@ -34,10 +26,6 @@
                     name: 'ProductDetails',
                     params: {
                         id: id,
-                        name: name,
-                        image: image,
-                        short_des: short_des,
-                        long_des: long_des,
                     },
                 }"
                 ><div class="category">
@@ -55,8 +43,8 @@
             <div class="price" >
             
             </div>
-            <div class="avilble" v-for="pri in ProductID[0].store.length" :key="pri">
-                <div style="display: inline-block">متوفر في   {{pri}}متاجر</div>
+            <div class="avilble" >
+                <div style="display: inline-block">متوفر في   متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
@@ -311,13 +299,8 @@ export default {
     computed: {
         count () {
             return this.$store.state.count;
-        },
-        ProductID(){
-            return this.$store.state.ProductID;
         }
     },
-        mounted () {
-        this.$store.dispatch('loadProduct', this.id);
-        }
+        
 };
 </script>

@@ -13,7 +13,6 @@
                                 image: image,
                                 short_des: short_des,
                                 long_des: long_des,
-                                is_appear: is_appear,
                                 store_product: store_product,
                             },
                         }"
@@ -54,10 +53,11 @@
                     <i class="fa fa-star checked"></i>
                     <i class="fa fa-star"></i>
                 </div>
-                <div>{{ store_product }}</div>
-                <div>{{ is_appear }}</div>
                 <div class="category">
                     {{ short_des }}
+                </div>
+                <div v-for="item in store_product" :key="item.id">
+                    {{ item.price }} s.p
                 </div>
                 <div class="row">
                     <div class="heart-conten">
@@ -76,15 +76,19 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: [
-        'id',
-        'name',
-        'image',
-        'short_des',
-        'long_des',
-        'store_product',
-        'is_appear',
-    ],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+    data() {
+        return {
+            details: {
+                id: this.id,
+                name: this.name,
+                image: this.image,
+                short_des: this.short_des,
+                long_des: this.long_des,
+                store_product: this.store_product,
+            },
+        };
+    },
     methods: {
         heartlike: function() {
             this.$el.lastChild.lastChild.lastChild.classList.toggle(

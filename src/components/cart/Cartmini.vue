@@ -20,10 +20,7 @@
                         <div class="cart-items">
                             <div class="row" style="width: 100%">
                                 <div class="col-md-2 col-xs-12">
-                                    <img
-                                        class="img"
-                                        src="../../../public/img/w.jpg"
-                                    />
+                                    <img class="img" :src="items.image" />
                                 </div>
                                 <div class="col-md-3 col-xs-12">
                                     {{ items.name }}
@@ -51,9 +48,12 @@
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-xs-12">
-                                    <span class="price">{{
-                                        items.price * items.quantity
-                                    }}</span>
+                                    <span
+                                        class="price"
+                                        v-for="item in items.store_product"
+                                        :key="item.id"
+                                        >{{ item.price * items.quantity }}</span
+                                    >
                                     <span
                                         @click="removeFromCart(items)"
                                         class="close fa fa-trash"
@@ -63,10 +63,12 @@
                         </div>
                     </div>
                     <div class="col">
-                        <button class="button"><span>اشتري الآن </span></button>
+                        <button class="button">
+                            <span>{{ $t('Buynow') }}</span>
+                        </button>
                         <router-link to="/Cart">
                             <button class="button but1">
-                                <span> الذهاب لعربة التسوق </span>
+                                <span>{{ $t('Gotocart') }}</span>
                             </button>
                         </router-link>
                     </div>
@@ -340,9 +342,13 @@ a:hover {
 </style>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     components: {},
-    data() {
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+
+    data () {
         return {};
     },
     methods: {
@@ -354,30 +360,34 @@ export default {
             var cart = document.getElementById('cartshop');
             cart.classList.remove('vs');
         },
-        addItem(items) {
+        addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
-        removeItem(items) {
+        removeItem (items) {
             this.$store.dispatch('removeItem', items);
         },
-        removeFromCart(item) {
+        removeFromCart (item) {
             this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
-        cartItems() {
+        cartItems () {
             return this.$store.state.cartItems;
         },
-        cartItemCount() {
+        cartItemCount () {
             return this.$store.state.cartItemCount;
         },
-        totalPrice() {
+        totalPrice () {
             let price = 0;
             this.$store.state.cartItems.map((el) => {
                 price += el['quantity'] * el['price'];
             });
             return price;
         },
+        ...mapState(['store']),
     },
+    // mounted () {
+    //     this.$store.dispatch('loadstore');
+    // },
 };
 </script>

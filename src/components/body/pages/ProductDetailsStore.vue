@@ -19,10 +19,11 @@
                     {{ long_des }}
                 </div>
                 <div>
-                    <span>80.00 S.P</span>
+                    <div v-for="item in store_product" :key="item.id">
+                        {{ item.price }} s.p
+                    </div>
                     <div class="price" style="display: inline-block"></div>
                 </div>
-                <div>{{ is_appear }}</div>
                 <div class="row">
                     <div class="col">
                         <button @click="addToCart" class="but1">
@@ -51,7 +52,7 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'is_appear'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
     computed: {
         count() {
             return this.$store.state.count;

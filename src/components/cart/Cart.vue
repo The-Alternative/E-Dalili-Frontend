@@ -23,7 +23,7 @@
                 >
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
-                            <img class="img" src="../../../public/img/w.jpg" />
+                            <img class="img" :src="items.image" />
                         </div>
                         <div class="col-sm-2 col-xs-3">
                             {{ items.name }}
@@ -46,9 +46,12 @@
                         </div>
                         <div class="col-sm-2 col-xs-3">
                             <span>{{ $t('price') }}: </span>
-                            <span class="price">{{
-                                items.price * items.quantity
-                            }}</span>
+                            <span
+                                class="price"
+                                v-for="item in items.store_product"
+                                :key="item.id"
+                                >{{ item.price * items.quantity }}</span
+                            >
                             <span
                                 @click="removeFromCart(items)"
                                 class="close fa fa-trash"
@@ -372,36 +375,44 @@ a:hover {
 
 <script>
 import EmptyCart from '@/components/cart/EmptyCart.vue';
+import { mapState } from 'vuex';
+
 export default {
     name: 'Cart',
-    data() {
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+    data () {
         return {};
     },
     components: {
         EmptyCart,
     },
     methods: {
-        addItem(items) {
+        addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
-        removeItem(items) {
+        removeItem (items) {
             this.$store.dispatch('removeItem', items);
         },
-        removeFromCart(item) {
+        removeFromCart (item) {
             this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
-        cartItems() {
+        cartItems () {
             return this.$store.state.cartItems;
         },
-        totalPrice() {
+        totalPrice () {
             let price = 0;
             this.$store.state.cartItems.map((el) => {
                 price += el['quantity'] * el['price'];
             });
             return price;
         },
+        ...mapState(['store', 'ProductID']),
+    },
+    mounted () {
+        this.$store.dispatch('loadstore');
+        this.$store.dispatch('loadProduct');
     },
 };
 </script>
