@@ -403,16 +403,16 @@ export default {
         },
         totalPrice () {
             let price = 0;
-            this.$store.state.cartItems.map((el) => {
+            this.$store.state.cartItems[0].store_product.map((el) => {
                 price += el['quantity'] * el['price'];
             });
             return price;
         },
-        ...mapState(['store', 'ProductID']),
+        ...mapState(['store']),
     },
     mounted () {
         this.$store.dispatch('loadstore');
-        this.$store.dispatch('loadProduct');
+        // this.$store.dispatch('loadProduct');
     },
 };
 </script>
