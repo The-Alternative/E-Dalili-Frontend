@@ -408,11 +408,11 @@ export default {
             });
             return price;
         },
-        ...mapState(['store', 'ProductID']),
+        ...mapState(['store']),
     },
     mounted () {
         this.$store.dispatch('loadstore');
-        this.$store.dispatch('loadProduct');
+        // this.$store.dispatch('loadProduct');
     },
 };
 </script>
