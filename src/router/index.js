@@ -23,7 +23,7 @@ const routes = [
     },
     /* cart shop */
     {
-        path: '/Cart',
+        path: '/Cart/:id',
         component: () => import('../components/cart/Cart.vue'),
         props: true,
     },

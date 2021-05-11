@@ -361,6 +361,7 @@ export default {
     },
 
     computed: {
+        
         ...mapState(['store', 'brands']),
     },
 

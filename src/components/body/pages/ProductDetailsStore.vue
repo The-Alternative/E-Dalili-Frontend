@@ -33,7 +33,7 @@
                         </button>
                     </div>
                     <div class="col">
-                        <button @click="gotocart" class="but1">
+                        <button @click="gotocart(id)" class="but1">
                             <span>
                                 {{ $t('GoToCart') }}
                             </span>
@@ -76,8 +76,8 @@ export default {
         addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function () {
-            this.$router.push(`/Cart`);
+        gotocart: function (i) {
+            this.$router.push(`/Cart/${i}`);
         },
         addToCart () {
             this.$store.dispatch('addToCart', this.details);
