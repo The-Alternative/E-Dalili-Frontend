@@ -395,7 +395,7 @@ export default {
         },
         removeFromCart (item) {
             this.$store.commit('removeFromCart', item);
-        },
+        }
     },
     computed: {
         cartItems () {
@@ -403,7 +403,7 @@ export default {
         },
         totalPrice () {
             let price = 0;
-            this.$store.state.cartItems.map((el) => {
+            this.$store.state.cartItems[0].store_product.map((el) => {
                 price += el['quantity'] * el['price'];
             });
             return price;

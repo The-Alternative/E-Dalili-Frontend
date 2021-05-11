@@ -86,6 +86,7 @@ export default {
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
+               
             },
         };
     },
