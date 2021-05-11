@@ -8,12 +8,8 @@
                         :to="{
                             name: 'ProductDetailsStore',
                             params: {
-                                id: id,
-                                name: name,
-                                image: image,
-                                short_des: short_des,
-                                long_des: long_des,
-                                store_product: store_product,
+                                id: $route.params.id ,
+                                
                             },
                         }"
                     >
