@@ -9,9 +9,9 @@
                                 <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
-                        <div class="store">
-                            <span>اسم المتجر</span>
-                        </div>
+                    <div class="store">
+                    <span>{{store.title}}</span>
+                    </div>
                     </div>
                 </div>
 
@@ -21,6 +21,7 @@
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
+
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
                             <img class="img" :src="items.image" />
@@ -63,7 +64,8 @@
             <div class="col-sm-3 col-xs-12 summary" v-if="totalPrice !== 0">
                 <div class="row">
                     <div :totalPrice="totalPrice" class="col text-right">
-                        <span class="price"> {{ totalPrice }}</span>
+                        <span class="price">
+                             {{ totalPrice }}</span>
                         ل.س
                     </div>
                     <div class="col" style="padding-left: 0">
@@ -281,7 +283,7 @@ input:focus::-webkit-input-placeholder {
     text-align: center;
     width: 100%;
     border: 2px solid #fff;
-    height: 50px;
+    height: auto;
     padding: 2vh;
     background-color: #73a580;
 }
@@ -395,7 +397,7 @@ export default {
         },
         removeFromCart (item) {
             this.$store.commit('removeFromCart', item);
-        },
+        }
     },
     computed: {
         cartItems () {
@@ -403,16 +405,19 @@ export default {
         },
         totalPrice () {
             let price = 0;
-            this.$store.state.cartItems[0].store_product.map((el) => {
-                price += el['quantity'] * el['price'];
-            });
-            return price;
+            let len = this.$store.state.cartItems.length
+            
+            for(var i=0; i < len; i++){
+
+price +=  this.$store.state.cartItems[i].quantity * this.$store.state.cartItems[i].store_product[0].price
+            }
+         
+            return price ; 
         },
-        ...mapState(['store']),
+        ...mapState(['store', 'ProductID']),
     },
     mounted () {
-        this.$store.dispatch('loadstore');
-        // this.$store.dispatch('loadProduct');
-    },
+        this.$store.dispatch('loadstore',this.id);
+            },
 };
 </script>

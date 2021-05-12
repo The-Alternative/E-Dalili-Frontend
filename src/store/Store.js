@@ -18,10 +18,11 @@ export default new Vuex.Store({
         ProductID: null,
         Brand: [],
         Brands: [],
+        Categories: [],
         ////////////////
         // Product: jeson[0].Products,
         stores: data.stores,
-        Categories: data.categories,
+
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,
         categories: jeson[0].categories,
@@ -90,6 +91,7 @@ export default new Vuex.Store({
                 state.cartItemCount -= product.quantity;
 
                 state.cartItems.splice(index, 1);
+                
                 this.commit('savedata');
             }
         },
@@ -108,6 +110,9 @@ export default new Vuex.Store({
         SET_Brands (state, Brands) {
             state.Brands = Brands;
         },
+        SET_Categories(state, Categories) {
+            state.Categories = Categories;
+        }
     },
     actions: {
         addToCart: (context, payload) => {
@@ -132,7 +137,7 @@ export default new Vuex.Store({
             axios
                 .get(`/api/stores/getById/${productId}?lang=${lang}`)
                 .then((res) => {
-                    console.warn('StorebyId :', res.data.Store);
+                    console.warn('StorebyId :', res.data);
                     let store = res.data.Store;
                     commit('SET_Store', store);
                 })
@@ -152,9 +157,9 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        loadProduct ({ commit }, productId) {
+        loadProduct({ commit }, ProductID) {
             axios
-                .get(`/api/products/getById/${productId}?lang=${lang}`)
+                .get(`/api/products/getById/${ProductID}?lang=${lang}`)
                 .then((res) => {
                     console.warn('productById :', res.data.Product);
                     let ProductID = res.data.Product;
@@ -168,11 +173,23 @@ export default new Vuex.Store({
             axios
                 .get(`/api/brands/getAll?lang=${lang}`)
                 .then((res) => {
-                    console.warn('Brand :', res.data.Brand);
+                    console.warn('Brands :', res.data.Brand);
                     let Brands = res.data.Brand;
                     commit('SET_Brands', Brands);
                 })
                 .catch(function (error) {
+                    console.log('Error: ', error);
+                });
+        },
+        loadCategories({ commit }) {
+            axios
+                .get(`/api/categories/getAll?lang=${lang}`)
+                .then((res) => {
+                    console.warn('Categories :', res.data.Category);
+                    let Categories = res.data.Category;
+                    commit('SET_Categories', Categories);
+                })
+                .catch(function(error) {
                     console.log('Error: ', error);
                 });
         },

@@ -23,13 +23,13 @@ const routes = [
     },
     /* cart shop */
     {
-        path: '/Cart',
+        path: '/Cart/:id',
         component: () => import('../components/cart/Cart.vue'),
         props: true,
     },
     /* ProductDetalis */
     {
-        path: '/ProductDetalis/:id/:name/:long_des/:short_des',
+        path: '/ProductDetalis/:id',
         name: 'ProductDetails',
         component: () => import('../components/global/ProductDetalis.vue'),
         props: true,

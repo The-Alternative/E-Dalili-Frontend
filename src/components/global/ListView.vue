@@ -52,10 +52,10 @@
             <div class="col-4">
                 <div class="row">
                     <div class="col-12">
-                        <h5 class="prod-name">{{ name }}</h5>
+                        <h5 class="prod-name">{{ ProductID[0].name }}</h5>
                     </div>
                     <div class="col-12">
-                        <h5 class="prod-dis">{{ short_des }}</h5>
+                        <h5 class="prod-dis">{{ ProductID[0].short_des}}</h5>
                     </div>
                 </div>
             </div>
@@ -63,10 +63,8 @@
         <div class="show-prod">
             <div
                 class="store animate__animated animate__fadeInUpBig"
-                v-for="store in stores.slice(7, 10)"
-                v-bind:store="store"
-                :key="store.id"
-                :address="store.address"
+                v-for="store in ProductID[0].store"
+                :key="store"
             >
                 <div class="row" style="direction: rtl">
                     <div class="col-2">
@@ -79,7 +77,7 @@
                         <h2>
                             {{ store.title }}
                         </h2>
-                        <span>{{ store.space }}متر</span>
+                        <span>{{500}}متر</span>
                     </div>
                     <div class="col-2">
                         <img
@@ -92,7 +90,7 @@
                     </div>
 
                     <div class="col-3">
-                        <h2>{{ store.price }}ل.س</h2>
+                        <h2>{{ store.pivot.price }} ل.س</h2>
                     </div>
                 </div>
             </div>
@@ -205,6 +203,7 @@ span {
 }
 </style>
 <script>
+import { mapState } from 'vuex';
 export default {
     data() {
         return {
@@ -216,16 +215,18 @@ export default {
                 price: this.price,
             },
             sortType: '1',
-            stores: this.$store.state.stores,
+            
         };
     },
     components: {},
 
     props: ['id', 'name', 'short_des', 'long_des', 'price'],
     computed: {
-        product() {
-            return this.$store.state.stores[0].products;
-        },
+        ...mapState(['ProductID']),
+    },
+    mounted () {
+        this.$store.dispatch('loadProduct', this.id);
+       
     },
     methods: {
         sortItem() {

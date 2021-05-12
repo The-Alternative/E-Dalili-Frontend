@@ -6,7 +6,7 @@
         <div class="row align-middle">
             <div
                 class="col-md-6 col-lg-3 col-xs-6 column"
-                v-for="catog in Category"
+                v-for="catog in Categories"
                 :key="catog.id"
                 :name="catog.name"
                 :image="catog.image"
@@ -27,14 +27,15 @@
             </div>
         </div>
         <!-- __________________________________________________________________ -->
+        <div class="contain">
         <h2 style="margin-top: 3vh">Some Market</h2>
         <div class="row align-middle cont-market">
             <div
-                v-for="bran in Brand.slice(0, 4)"
+                v-for="bran in Brands.slice(0, 4)"
                 :key="bran.id"
                 class=" col-md-3 col-sm-6  column"
             >
-                <div class="card card-market">
+                <div class=" card-market">
                     <img class="img-market" v-lazy="bran.image" />
                     <a href="#">more...</a>
                 </div>
@@ -42,15 +43,16 @@
         </div>
         <div class="row align-middle cont-market">
             <div
-                v-for="bran in Brand.slice(2, 6)"
+                v-for="bran in Brands.slice(2, 6)"
                 :key="bran.id"
                 class=" col-md-3 col-sm-6  column"
             >
-                <div class="card card-market">
+                <div class=" card-market">
                     <img class="img-market" v-lazy="bran.image" />
                     <a href="#">more...</a>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </template>
@@ -218,14 +220,23 @@
 }
 
 /* _____________________ market after slider _____________________________ */
+.contain{
+    margin-top: 40px;
+    width: 1275px;
+}
 .card-market {
-    border-radius: 50%;
+    display: flex;
+    align-items: end;
+    background-color: #eee;
+}
+.card-market a{
+    color: #3e3e3f;
 }
 .img-market {
-    border-radius: 50%;
-    margin: auto;
-    height: 150px;
-    width: 150px;
+border-radius: 5%;
+margin: auto;
+height: 180px;
+width: 185px;
 }
 .cont-market {
     height: 340px;
@@ -234,9 +245,6 @@
 @media (max-width: 575.98px) {
     .cont-market {
         height: auto;
-    }
-    .card {
-        min-height: 175px;
     }
     .landscape-text {
         font-size: 16vh;
@@ -267,55 +275,25 @@
 }
 </style>
 <script>
-import axios from 'axios';
 export default {
     name: 'home',
     props: ['image'],
     data () {
         return {
-            Category: [],
-            Brand: [],
         };
     },
-    created () {
-        if(localStorage.getItem('lang') == "en"){
-        axios
-            .get('http://edalili.e-dalely.com/public/api/categories/getAll?lang=en')
-            .then((response) => {
-                this.Category = response.data.Category;
-            });
-
-        axios
-            .get('http://edalili.e-dalely.com/public/api/brands/getAll?lang=en')
-            .then((response) => {
-                this.Brand = response.data.Brand;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        }
-        else if(localStorage.getItem('lang') == "ar"){
-                    axios
-            .get('http://edalili.e-dalely.com/public/api/categories/getAll?lang=ar')
-            .then((response) => {
-                this.Category = response.data.Category;
-            });
-
-        axios
-            .get('http://edalili.e-dalely.com/public/api/brands/getAll?lang=ar')
-            .then((response) => {
-                this.Brand = response.data.Brand;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        }
-
-    },
     computed: {
-        //  categories() {
-        //      return this.$store.state.categories;
-        //  },
+          Brands() {
+              return this.$store.state.Brands;
+          },
+        Categories() {
+              return this.$store.state.Categories;
+          },
+          
+    },
+    mounted () {
+    this.$store.dispatch('loadCategories');
+    this.$store.dispatch('loadBrands');
     },
 };
 </script>

@@ -8,12 +8,8 @@
                         :to="{
                             name: 'ProductDetailsStore',
                             params: {
-                                id: id,
-                                name: name,
-                                image: image,
-                                short_des: short_des,
-                                long_des: long_des,
-                                store_product: store_product,
+                                id: $route.params.id ,
+                                
                             },
                         }"
                     >
@@ -86,6 +82,7 @@ export default {
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
+               
             },
         };
     },
@@ -236,7 +233,6 @@ export default {
     transition: background-position 1s steps(28);
     transition-duration: 0s;
     margin: -22px 0px 0 -25px;
-
     &.is-active {
         transition-duration: 1s;
         background-position: -2800px 0;

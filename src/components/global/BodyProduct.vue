@@ -6,10 +6,6 @@
                     name: 'ProductDetails',
                     params: {
                         id: id,
-                        name: name,
-                        image: image,
-                        short_des: short_des,
-                        long_des: long_des,
                     },
                 }"
                 ><img v-lazy="`${image}`" class="new"
@@ -19,10 +15,6 @@
                     name: 'ProductDetails',
                     params: {
                         id: id,
-                        name: name,
-                        image: image,
-                        short_des: short_des,
-                        long_des: long_des,
                     },
                 }"
                 ><div class="name-prod">
@@ -34,10 +26,6 @@
                     name: 'ProductDetails',
                     params: {
                         id: id,
-                        name: name,
-                        image: image,
-                        short_des: short_des,
-                        long_des: long_des,
                     },
                 }"
                 ><div class="category">
@@ -52,9 +40,11 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
+            <div class="price" >
             
-            <div class="avilble">
-                <div style="display: inline-block">متوفر في متاجر</div>
+            </div>
+            <div class="avilble" >
+                <div style="display: inline-block">متوفر في   متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
@@ -197,10 +187,13 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .content-pro {
-        font-size: 3.3vw;
+        font-size: 2.3vw;
     }
     .content-pro button {
-        font-size: 3.3vw;
+    font-size: 2.3vw;
+    width: 80px;
+    height: 40px;
+    margin: 15px 0 0 auto;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -249,7 +242,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'price'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des','price'],
     // data () {
     //     return {
     //         details: {
@@ -306,7 +299,8 @@ export default {
     computed: {
         count () {
             return this.$store.state.count;
-        },
+        }
     },
+        
 };
 </script>

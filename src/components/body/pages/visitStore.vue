@@ -350,7 +350,6 @@ import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
-
 import { mapState } from 'vuex';
 export default {
     name: 'visitStore',
@@ -359,11 +358,10 @@ export default {
         BodyProductStore: () => import('./BodyProductStore'),
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-
     computed: {
+        
         ...mapState(['store', 'brands']),
     },
-
     mounted () {
         this.$store.dispatch('loadstore', this.id);
         // <!--        this.$store.dispatch('loadStoreDetailsProduct', this.id);-->

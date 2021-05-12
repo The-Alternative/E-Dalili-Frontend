@@ -2,11 +2,12 @@
     <div class="ProductDetalis" style="background-color: #e9ecf2">
         <div class="show-prod">
             <div class="row">
-                <div class="col-xs-12" style="direction: rtl">
+                <div class="col-xs-12" style="direction: rtl"  v-for="avilble in ProductID.slice(0,1)" 
+                :key="avilble">
                     <div class="content-pro text-center">
                         <img
                             class=""
-                            :src="image"
+                            :src="avilble.image"
                             style="
                                 width: 250px;
                                 height: 250px;
@@ -14,14 +15,16 @@
                             "
                         />
                         <div class="name-prod">
-                            {{ name }}
+                            {{ avilble.name }}
                         </div>
                         <div class="category">
-                            {{ long_des }}
+                            {{ avilble.long_des }}
+
                         </div>
                         <div class="avilble">
-                            <div style="display: inline-block">
-                                متوفر في 5 متاجر
+                            <div style="display: inline-block" v-for="avilble in ProductID[0].store.length" 
+                            :key="avilble">
+                                متوفر في {{avilble}} متاجر
                             </div>
                             <span class="fa fa-check-circle"></span>
                         </div>
@@ -223,15 +226,9 @@ export default {
     components: {},
     props: ['id', 'name', 'image', 'short_des', 'long_des'],
     computed: {
-        count () {
-            return this.$store.state.count;
-        },
-        stores () {
-            return this.$store.state.stores;
-        },
-        product () {
-            return this.$store.state.stores[0].products;
-        },
+        ProductID(){
+            return this.$store.state.ProductID;
+        }
     },
     methods: {
         heartlike: function () {
@@ -241,5 +238,8 @@ export default {
             this.$router.push(`/ListView/${i}/${n}/${s}`);
         },
     },
+    mounted () {
+        this.$store.dispatch('loadProduct', this.id);
+    }
 };
 </script>
