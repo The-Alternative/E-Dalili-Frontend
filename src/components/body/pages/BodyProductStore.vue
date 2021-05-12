@@ -9,7 +9,7 @@
                             name: 'ProductDetailsStore',
                             params: {
                                 id: this.id,
-                              
+
                             },
                         }"
                     >
@@ -17,6 +17,7 @@
                             type="button"
                             class="btn btn-secondary"
                             title="Quick Shop"
+                            @click="productDetalis()"
                         >
                             <i class="fa fa-eye"></i>
                         </button>
@@ -82,7 +83,6 @@ export default {
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
-               
             },
         };
     },
@@ -123,7 +123,7 @@ export default {
         },
     },
     mounted() {
-        this.$store.dispatch('loadStore', this.id);
+        // this.$store.dispatch('loadstore', this.id);
         // this.$store.dispatch('loadProduct', this.id);
     },
 };
