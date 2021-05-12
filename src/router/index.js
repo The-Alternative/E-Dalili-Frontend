@@ -23,7 +23,8 @@ const routes = [
     },
     /* cart shop */
     {
-        path: '/Cart/:id',
+        path: '/Cart',
+        name:'Cart',
         component: () => import('../components/cart/Cart.vue'),
         props: true,
     },
@@ -40,7 +41,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore',
+        path: '/ProductDetailsStore/:id',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,

@@ -33,11 +33,25 @@
                         </button>
                     </div>
                     <div class="col">
-                        <button @click="gotocart(id)" class="but1">
-                            <span>
-                                {{ $t('GoToCart') }}
-                            </span>
-                        </button>
+                        <router-link
+                            :to="{
+                                name: 'Cart',
+                                params: {
+                                    id: this.id,
+                                    name: this.name,
+                                    image: this.image,
+                                    short_des: this.short_des,
+                                    long_des: this.long_des,
+                                    store_product: this.store_product,
+                                },
+                            }"
+                        >
+                            <button class="but1">
+                                <span>
+                                    {{ $t('GoToCart') }}
+                                </span>
+                            </button>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -46,9 +60,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'ProductDetailsStore',
-    data() {
+    data () {
         return {
             details: {
                 id: this.id,
@@ -66,21 +82,22 @@ export default {
     // props: ['id'],
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
     computed: {
-        count() {
+        count () {
             return this.$store.state.count;
         },
+        ...mapState(['store']),
     },
     methods: {
-        increment() {
+        increment () {
             this.$store.commit('increment');
         },
-        addItem(items) {
+        addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function(i) {
-            this.$router.push(`/Cart/${i}`);
+        gotocart () {
+            this.$router.push(`/Cart`);
         },
-        addToCart() {
+        addToCart () {
             this.$store.dispatch('addToCart', this.details);
             document.getElementById('cart').animate(
                 [
@@ -97,8 +114,8 @@ export default {
             );
         },
     },
-    mounted() {
-        // this.$store.dispatch('loadstore', this.id);
+    mounted () {
+        this.$store.dispatch('loadstore', this.id);
     },
 };
 </script>

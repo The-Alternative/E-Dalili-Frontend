@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-            <!--  -->
+                <!--  -->
                 <div
                     v-for="items in cartItems"
                     :key="items.id"
@@ -384,21 +384,21 @@ export default {
         EmptyCart,
     },
     methods: {
-        addItem(items) {
+        addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
-        removeItem(items) {
+        removeItem (items) {
             this.$store.dispatch('removeItem', items);
         },
-        removeFromCart(item) {
+        removeFromCart (item) {
             this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
-        cartItems() {
+        cartItems () {
             return this.$store.state.cartItems;
         },
-        totalPrice() {
+        totalPrice () {
             let price = 0;
             let len = this.$store.state.cartItems.length;
 
@@ -412,7 +412,7 @@ export default {
         },
         ...mapState(['store']),
     },
-    mounted() {
+    mounted () {
         this.$store.dispatch('loadstore', this.id);
     },
 };

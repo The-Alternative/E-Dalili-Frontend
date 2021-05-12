@@ -9,7 +9,11 @@
                             name: 'ProductDetailsStore',
                             params: {
                                 id: this.id,
-
+                                name: this.name,
+                                image: this.image,
+                                short_des: this.short_des,
+                                long_des: this.long_des,
+                                store_product: this.store_product,
                             },
                         }"
                     >
@@ -74,7 +78,7 @@
 export default {
     name: 'BodyProductStore',
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
-    data() {
+    data () {
         return {
             details: {
                 id: this.id,
@@ -87,12 +91,12 @@ export default {
         };
     },
     methods: {
-        heartlike: function() {
+        heartlike: function () {
             this.$el.lastChild.lastChild.lastChild.classList.toggle(
                 'is-active'
             );
         },
-        addToCart() {
+        addToCart () {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
                 [
@@ -122,7 +126,7 @@ export default {
             );
         },
     },
-    mounted() {
+    mounted () {
         // this.$store.dispatch('loadstore', this.id);
         // this.$store.dispatch('loadProduct', this.id);
     },
