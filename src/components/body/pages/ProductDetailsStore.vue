@@ -48,7 +48,7 @@
 <script>
 export default {
     name: 'ProductDetailsStore',
-    data () {
+    data() {
         return {
             details: {
                 id: this.id,
@@ -63,23 +63,24 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
+    // props: ['id'],
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
     computed: {
-        count () {
+        count() {
             return this.$store.state.count;
         },
     },
     methods: {
-        increment () {
+        increment() {
             this.$store.commit('increment');
         },
-        addItem (items) {
+        addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function (i) {
+        gotocart: function(i) {
             this.$router.push(`/Cart/${i}`);
         },
-        addToCart () {
+        addToCart() {
             this.$store.dispatch('addToCart', this.details);
             document.getElementById('cart').animate(
                 [
@@ -96,8 +97,8 @@ export default {
             );
         },
     },
-    mounted () {
-        this.$store.dispatch('loadProduct', this.id);
+    mounted() {
+        // this.$store.dispatch('loadstore', this.id);
     },
 };
 </script>

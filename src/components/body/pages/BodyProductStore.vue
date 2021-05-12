@@ -8,8 +8,12 @@
                         :to="{
                             name: 'ProductDetailsStore',
                             params: {
-                                id: $route.params.id ,
-                                
+                                id: id,
+                                name: name,
+                                image: image,
+                                short_des: short_des,
+                                long_des: long_des,
+                                store_product: store_product,
                             },
                         }"
                     >
@@ -17,6 +21,7 @@
                             type="button"
                             class="btn btn-secondary"
                             title="Quick Shop"
+                            @click="productDetalis()"
                         >
                             <i class="fa fa-eye"></i>
                         </button>
@@ -82,7 +87,6 @@ export default {
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
-               
             },
         };
     },
@@ -123,7 +127,7 @@ export default {
         },
     },
     mounted() {
-        this.$store.dispatch('loadStore', this.id);
+        // this.$store.dispatch('loadstore', this.id);
         // this.$store.dispatch('loadProduct', this.id);
     },
 };
