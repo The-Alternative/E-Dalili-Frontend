@@ -29,7 +29,7 @@ const routes = [
     },
     /* ProductDetalis */
     {
-        path: '/ProductDetalis/:id',
+        path: '/ProductDetalis/:id/:ip',
         name: 'ProductDetails',
         component: () => import('../components/global/ProductDetalis.vue'),
         props: true,
