@@ -9,7 +9,9 @@
                                 <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
-
+                    <div class="store">
+                    <span>{{store.title}}</span>
+                    </div>
                     </div>
                 </div>
 
@@ -19,9 +21,7 @@
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-                    <div class="store">
-                    <span>{{store.title}}</span>
-                    </div>
+
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
                             <img class="img" :src="items.image" />

@@ -140,14 +140,12 @@ export default {
     cursor: pointer;
     margin: 5px;
 }
-
 .but1 span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-
 .but1 span:after {
     content: '\00bb';
     position: absolute;
@@ -157,11 +155,9 @@ export default {
     transition: 0.5s;
     font-size: 30px;
 }
-
 .but1:hover span {
     padding-right: 25px;
 }
-
 .but1:hover span:after {
     opacity: 1;
     right: 0;
