@@ -8,8 +8,8 @@
                         :to="{
                             name: 'ProductDetailsStore',
                             params: {
-                                store_id: $route.params.id,
                                 id: this.id,
+                                title: this.$route.params.title,
                                 name: this.name,
                                 image: this.image,
                                 short_des: this.short_des,
@@ -79,12 +79,12 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id','store_id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
     data() {
         return {
             details: {
                 id: this.id,
-                store_id: this.$route.params.id,
+                title: this.$route.params.title,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
