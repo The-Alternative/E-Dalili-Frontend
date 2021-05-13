@@ -9,19 +9,28 @@
                                 <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
+<<<<<<< HEAD
 
+=======
+                        <div class="store">
+                            <span>{{ store.title }}</span>
+                        </div>
+>>>>>>> 826fcb5f5a435173a868f7a02c592633a7d9f2fc
                     </div>
                 </div>
-            <!--  -->
+                <!--  -->
                 <div
                     v-for="items in cartItems"
                     :key="items.id"
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
+<<<<<<< HEAD
                     <div class="store">
                     <span>{{store.title}}</span>
                     </div>
+=======
+>>>>>>> 826fcb5f5a435173a868f7a02c592633a7d9f2fc
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
                             <img class="img" :src="items.image" />
@@ -64,8 +73,7 @@
             <div class="col-sm-3 col-xs-12 summary" v-if="totalPrice !== 0">
                 <div class="row">
                     <div :totalPrice="totalPrice" class="col text-right">
-                        <span class="price">
-                             {{ totalPrice }}</span>
+                        <span class="price"> {{ totalPrice }}</span>
                         ل.س
                     </div>
                     <div class="col" style="padding-left: 0">
@@ -382,9 +390,6 @@ import { mapState } from 'vuex';
 export default {
     name: 'Cart',
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
-    data () {
-        return {};
-    },
     components: {
         EmptyCart,
     },
@@ -397,7 +402,7 @@ export default {
         },
         removeFromCart (item) {
             this.$store.commit('removeFromCart', item);
-        }
+        },
     },
     computed: {
         cartItems () {
@@ -405,16 +410,17 @@ export default {
         },
         totalPrice () {
             let price = 0;
-            let len = this.$store.state.cartItems.length
-            
-            for(var i=0; i < len; i++){
+            let len = this.$store.state.cartItems.length;
 
-price +=  this.$store.state.cartItems[i].quantity * this.$store.state.cartItems[i].store_product[0].price
+            for (var i = 0; i < len; i++) {
+                price +=
+                    this.$store.state.cartItems[i].quantity *
+                    this.$store.state.cartItems[i].store_product[0].price;
             }
-         
-            return price ; 
+
+            return price;
         },
-        ...mapState(['store', 'ProductID']),
+        ...mapState(['store']),
     },
     mounted () {
         this.$store.dispatch('loadstore',this.cartItems.store_id);

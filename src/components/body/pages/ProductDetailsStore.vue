@@ -47,6 +47,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'ProductDetailsStore',
     data () {
@@ -101,7 +103,6 @@ export default {
             );
         },
     },
-
 };
 </script>
 

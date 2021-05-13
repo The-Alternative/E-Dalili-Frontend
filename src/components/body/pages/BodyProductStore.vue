@@ -22,6 +22,7 @@
                             type="button"
                             class="btn btn-secondary"
                             title="Quick Shop"
+                            @click="productDetalis()"
                         >
                             <i class="fa fa-eye"></i>
                         </button>
@@ -93,12 +94,12 @@ export default {
         };
     },
     methods: {
-        heartlike: function() {
+        heartlike: function () {
             this.$el.lastChild.lastChild.lastChild.classList.toggle(
                 'is-active'
             );
         },
-        addToCart() {
+        addToCart () {
             this.$store.dispatch('addToCart', this.details);
             this.$el.animate(
                 [
