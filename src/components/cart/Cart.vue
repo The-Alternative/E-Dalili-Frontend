@@ -9,9 +9,7 @@
                                 <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
-                    <div class="store">
-                    <span>{{store.title}}</span>
-                    </div>
+
                     </div>
                 </div>
             <!--  -->
@@ -21,7 +19,9 @@
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-
+                    <div class="store">
+                    <span>{{store.title}}</span>
+                    </div>
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
                             <img class="img" :src="items.image" />
@@ -417,7 +417,7 @@ price +=  this.$store.state.cartItems[i].quantity * this.$store.state.cartItems[
         ...mapState(['store', 'ProductID']),
     },
     mounted () {
-        this.$store.dispatch('loadstore',this.id);
+        this.$store.dispatch('loadstore',this.cartItems.store_id);
             },
 };
 </script>

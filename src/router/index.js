@@ -23,13 +23,13 @@ const routes = [
     },
     /* cart shop */
     {
-        path: '/Cart/:id',
+        path: '/Cart',
         component: () => import('../components/cart/Cart.vue'),
         props: true,
     },
     /* ProductDetalis */
     {
-        path: '/ProductDetalis/:id/:ip',
+        path: '/ProductDetalis/:id',
         name: 'ProductDetails',
         component: () => import('../components/global/ProductDetalis.vue'),
         props: true,
@@ -40,7 +40,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore/:id',
+        path: '/ProductDetailsStore/:store_id/:id',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,

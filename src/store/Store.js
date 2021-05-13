@@ -19,6 +19,7 @@ export default new Vuex.Store({
         Brand: [],
         Brands: [],
         Categories: [],
+        priceArray: [],
         ////////////////
         // Product: jeson[0].Products,
         stores: data.stores,
@@ -161,8 +162,8 @@ export default new Vuex.Store({
             axios
                 .get(`/api/products/getById/${ProductID}?lang=${lang}`)
                 .then((res) => {
-                    console.warn('productById :', res.data.Product);
-                    let ProductID = res.data.Product;
+                    console.warn('productById :', res.data.product);
+                    let ProductID = res.data.product;
                     commit('SET_ProductID', ProductID);
                 })
                 .catch(function (error) {
@@ -193,5 +194,19 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
+        
     },
+    getters: {
+        avalibleStore: (state) => {
+         let len =   state.Product[0].store.length;
+          return len -1 ;
+
+        },    
+        getStoreId: (state) => (id) => {
+            return state.Stores.find(prod => prod.id === id);
+        }
+          
+
+      } 
+    
 });
