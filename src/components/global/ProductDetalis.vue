@@ -2,12 +2,12 @@
     <div class="ProductDetalis" style="background-color: #e9ecf2">
         <div class="show-prod">
             <div class="row">
-                <div class="col-xs-12" style="direction: rtl"  v-for="avilble in ProductID.slice(0,1)" 
-                :key="avilble">
+                <div class="col-xs-12" style="direction: rtl"  v-for="prod in ProductID.slice(0,1)" 
+                :key="prod">
                     <div class="content-pro text-center">
                         <img
                             class=""
-                            :src="avilble.image"
+                            :src="prod.image"
                             style="
                                 width: 250px;
                                 height: 250px;
@@ -15,21 +15,22 @@
                             "
                         />
                         <div class="name-prod">
-                            {{ avilble.name }}
+                            {{ prod.name }}
                         </div>
                         <div class="category">
-                            {{ avilble.long_des }}
+                            {{ prod.long_des }}
 
                         </div>
                         <div class="avilble">
-                            <div style="display: inline-block" v-for="avilble in ProductID[0].store.length" 
-                            :key="avilble">
-                                متوفر في {{avilble}} متاجر
+                            <div style="display: inline-block"  
+                            >
+                                متوفر في {{ProductID[0].store.length -1}} متاجر
                             </div>
                             <span class="fa fa-check-circle"></span>
                         </div>
-                        <div>
-                            <span> 80,00 ل.س الى 100,00 ل.س</span>
+                        <div> 
+                            <span> {{minPrice}}  ل.س <span style="color:#ca0a0a">حتى</span> </span>
+                             <span> {{maxPrice}}  ل.س</span>
                             <div
                                 class="price"
                                 style="display: inline-block"
@@ -228,7 +229,31 @@ export default {
     computed: {
         ProductID(){
             return this.$store.state.ProductID;
-        }
+        },
+        maxPrice(){
+            let maxPrice = 0 ;
+            let len = this.$store.state.ProductID[0].store.length;
+               var priceArray = [];
+            for(var i=0; i < len; i++){
+                priceArray.push(this.$store.state.ProductID[0].store[i].pivot.price);
+            }
+            maxPrice = Math.max(...priceArray);
+            console.log(maxPrice);
+            return maxPrice;
+        },
+       minPrice(){
+            let minPrice = 0 ;
+            let len = this.$store.state.ProductID[0].store.length;
+            var priceArray = [];
+            for(var i=0; i < len; i++){
+               priceArray.push(this.$store.state.ProductID[0].store[i].pivot.price); 
+            }
+            minPrice = Math.min(...priceArray);
+            console.log(minPrice);
+          
+            return minPrice;
+        },
+
     },
     methods: {
         heartlike: function () {

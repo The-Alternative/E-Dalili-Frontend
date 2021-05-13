@@ -23,8 +23,7 @@
                     :image="items.image"
                     :short_des="items.short_des"
                     :long_des="items.long_des"
-                    :name="items.name"
-                    :range_price="items.range_price"
+                    :name="items.name"         
                 >
                 </BodyProduct>
             </div>
@@ -43,7 +42,7 @@
         <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
-                    v-for="items in Product.slice(2, 6)"
+                    v-for="items in Product.slice(4, 8)"
                     :key="items.id"
                     :id="items.id"
                     :image="items.image"
@@ -77,7 +76,7 @@
                         <span class="last">اخر المشتركین</span>
                         <div class="last-subscriber">
                             <Subscriber
-                                v-for="Store in Stores"
+                                v-for="Store in Stores.slice(0, 6)"
                                 :key="Store.id"
                                 :title="Store.title"
                             />
@@ -107,7 +106,7 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                                        v-for="items in Product.slice(0, 4)"
+                                        v-for="items in Product.slice(4, 8)"
                                         :key="items.id"
                                         :id="items.id"
                                         :image="items.image"
@@ -123,7 +122,7 @@
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
-                                        v-for="items in Product.slice(0, 4)"
+                                        v-for="items in Product.slice(8, 12)"
                                         :key="items.id"
                                         :id="items.id"
                                         :image="items.image"
@@ -196,7 +195,7 @@
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                                    v-for="items in Product.slice(0, 4)"
+                                    v-for="items in Product.slice(12, 16)"
                                     :key="items.id"
                                     :id="items.id"
                                     :image="items.image"
@@ -212,7 +211,7 @@
                         <div class="show-prod">
                             <div class="row">
                                 <BodyProduct
-                                    v-for="items in Product.slice(0, 4)"
+                                    v-for="items in Product.slice(16, 20)"
                                     :key="items.id"
                                     :id="items.id"
                                     :image="items.image"
@@ -746,26 +745,10 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        Product () {
-            return this.$store.state.Product;
-        },
-        lastStores () {
-            return this.$store.state.lastStores;
-        },
-        brands () {
-            return this.$store.state.brands;
-        },
-        Brands () {
-            return this.$store.state.Brands;
-        },
-        categories () {
-            return this.$store.state.categories;
-        },
-        ...mapState(['Product', 'brands', 'categories', 'Stores', 'Brands']),
+        ...mapState(['Product', 'brands','Brands' ,'categories', 'Stores', 'lastStores']),
     },
     mounted () {
         this.$store.dispatch('loadProducts');
-        this.$store.dispatch('loadBrand');
         this.$store.dispatch('loadStores');
         this.$store.dispatch('loadBrands');
     },

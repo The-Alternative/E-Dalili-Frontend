@@ -5,7 +5,7 @@
                 :to="{
                     name: 'ProductDetails',
                     params: {
-                        id: id,
+                        id: this.id,
                     },
                 }"
                 ><img v-lazy="`${image}`" class="new"
@@ -14,7 +14,7 @@
                 :to="{
                     name: 'ProductDetails',
                     params: {
-                        id: id,
+                        id: this.id,
                     },
                 }"
                 ><div class="name-prod">
@@ -25,7 +25,7 @@
                 :to="{
                     name: 'ProductDetails',
                     params: {
-                        id: id,
+                        id: this.id,
                     },
                 }"
                 ><div class="category">
@@ -40,11 +40,9 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <div class="price" >
-            
-            </div>
+            <div></div>
             <div class="avilble" >
-                <div style="display: inline-block">متوفر في   متاجر</div>
+                <div style="display: inline-block">متوفر في  {{ avalibleStore }} متاجر</div>
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
@@ -242,7 +240,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'name', 'image', 'short_des', 'long_des','price'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des'],
     // data () {
     //     return {
     //         details: {
@@ -297,9 +295,23 @@ export default {
         */
     },
     computed: {
-        count () {
-            return this.$store.state.count;
-        }
+        avalibleStore () {
+            return this.$store.getters.avalibleStore;
+        },
+        /* getProductById () {
+            return this.$store.getters.getProductById;
+        },
+        maxPrice(){
+            let maxPrice = 0 ;
+            let len = this.$store.state.Product[this.id].length;
+               var priceArray = [];
+            for(var i=0; i < len; i++){
+                priceArray.push(this.$store.state.Product[0].store[i].pivot.price);
+            }
+            maxPrice = Math.max(...priceArray);
+            console.log(len);
+            return maxPrice;
+        }*/
     },
         
 };

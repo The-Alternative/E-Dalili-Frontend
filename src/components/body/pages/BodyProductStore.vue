@@ -8,6 +8,7 @@
                         :to="{
                             name: 'ProductDetailsStore',
                             params: {
+                                store_id: $route.params.id,
                                 id: this.id,
                                 name: this.name,
                                 image: this.image,
@@ -45,6 +46,7 @@
                     </button>
                 </div>
             </div>
+            <div> {{ id }}</div>
             <div class="product-bottom text-center">
                 <div class="name-prod mt-2">{{ name }}</div>
                 <div class="stars mb-2">
@@ -77,11 +79,12 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
-    data () {
+    props: ['id','store_id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+    data() {
         return {
             details: {
                 id: this.id,
+                store_id: this.$route.params.id,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
@@ -125,10 +128,6 @@ export default {
                 }
             );
         },
-    },
-    mounted () {
-        // this.$store.dispatch('loadstore', this.id);
-        // this.$store.dispatch('loadProduct', this.id);
     },
 };
 </script>
