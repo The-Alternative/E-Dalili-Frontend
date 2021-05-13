@@ -9,13 +9,6 @@
                                 <b>{{ $t('ShoppingCart') }}</b>
                             </h4>
                         </div>
-<<<<<<< HEAD
-
-=======
-                        <div class="store">
-                            <span>{{ store.title }}</span>
-                        </div>
->>>>>>> 826fcb5f5a435173a868f7a02c592633a7d9f2fc
                     </div>
                 </div>
                 <!--  -->
@@ -25,12 +18,9 @@
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-<<<<<<< HEAD
                     <div class="store">
-                    <span>{{store.title}}</span>
+                        <span>{{ store.title }}</span>
                     </div>
-=======
->>>>>>> 826fcb5f5a435173a868f7a02c592633a7d9f2fc
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
                             <img class="img" :src="items.image" />
@@ -423,7 +413,7 @@ export default {
         ...mapState(['store']),
     },
     mounted () {
-        this.$store.dispatch('loadstore',this.cartItems.store_id);
-            },
+        this.$store.dispatch('loadstore', this.cartItems.store_id);
+    },
 };
 </script>
