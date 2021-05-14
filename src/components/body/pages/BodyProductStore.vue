@@ -9,6 +9,7 @@
                             name: 'ProductDetailsStore',
                             params: {
                                 id: this.id,
+                                id_store: this.$route.params.id,
                                 title: this.$route.params.title,
                                 name: this.name,
                                 image: this.image,
@@ -46,7 +47,6 @@
                     </button>
                 </div>
             </div>
-            <div>{{ id }}</div>
             <div class="product-bottom text-center">
                 <div class="name-prod mt-2">{{ name }}</div>
                 <div class="stars mb-2">
@@ -92,6 +92,7 @@ export default {
         return {
             details: {
                 id: this.id,
+                id_store: this.$route.params.id,
                 title: this.$route.params.title,
                 name: this.name,
                 image: this.image,
