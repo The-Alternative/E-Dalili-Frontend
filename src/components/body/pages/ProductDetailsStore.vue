@@ -2,7 +2,11 @@
     <div class="ProductDetalis" style="background-color: #e9ecf2">
         <Cartmini />
         <!-- ___________________________________________________ -->
-        <div class="col-12 row"  v-for="prod in ProductID.slice(0,1)"  :key="prod">
+        <div
+            class="col-12 row"
+            v-for="prod in ProductID.slice(0, 1)"
+            :key="prod"
+        >
             <div class="col-6">
                 <div class="row">
                     <div class="col-12">
@@ -20,9 +24,7 @@
                     {{ prod.long_des }}
                 </div>
                 <div>
-                    <div >
-                        {{ProductID[0].store[prod.id].pivot.price }} s.p
-                    </div>
+                    <div>{{ ProductID[0].store[prod.id].pivot.price }} s.p</div>
                     <div class="price" style="display: inline-block"></div>
                 </div>
                 <div class="row">
@@ -47,8 +49,6 @@
 </template>
 
 <script>
-// import { mapState } from 'vuex';
-
 export default {
     name: 'ProductDetailsStore',
     data () {
@@ -67,11 +67,19 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id','store_id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+    props: [
+        'id',
+        'store_id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+    ],
     computed: {
-        ProductID(){
+        ProductID () {
             return this.$store.state.ProductID;
-        }
+        },
     },
     mounted () {
         this.$store.dispatch('loadProduct', this.id);

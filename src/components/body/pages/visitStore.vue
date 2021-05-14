@@ -263,18 +263,7 @@
                         <div class="txt">
                             <h1>{{ catog.name }}</h1>
                         </div>
-                        <router-link
-                            :to="{
-                                name: 'bodySection',
-                                params: {
-                                    id: catog.id,
-                                    name: catog.name,
-                                    image: catog.image,
-                                    category: catog.category,
-                                },
-                            }"
-                            >{{ $t('More') }}</router-link
-                        >
+                        <router-link>{{ $t('More') }}</router-link>
                         <div class="ico-card mt-2">
                             <img :src="catog.image" height="60%" width="80%" />
                             <i class="fa fa-rebel"></i>

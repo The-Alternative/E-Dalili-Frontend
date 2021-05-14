@@ -12,6 +12,7 @@
                     </div>
                 </div>
                 <!--  -->
+
                 <div
                     v-for="items in cartItems"
                     :key="items.id"
