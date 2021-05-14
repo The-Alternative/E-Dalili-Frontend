@@ -47,27 +47,28 @@
 </template>
 
 <script>
-// import { mapState } from 'vuex';
+
 
 export default {
     name: 'ProductDetailsStore',
     data () {
         return {
-            details: {
+             details: {
+                title: this.$route.params.title,
                 id: this.id,
-                store_id: this.$route.params.id,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
+              
             },
         };
     },
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id','store_id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+   props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
     computed: {
         ProductID(){
             return this.$store.state.ProductID;
@@ -196,3 +197,4 @@ export default {
     }
 }
 </style>
+

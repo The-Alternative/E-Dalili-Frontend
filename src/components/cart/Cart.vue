@@ -13,13 +13,16 @@
                 </div>
                 <!--  -->
                 <div
-                    v-for="items in cartItems"
-                    :key="items.id"
+                    v-for="(items,index) in cartItems"
+                    :key="index"
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-                    <div class="store">
-                        <span>{{ store.title }}</span>
+    <div class="store" v-if="((index == 0) || items.title != cartItems[index-1].title)  ? items.title : ''"
+                       >
+                    <span>
+                        {{ items.title }}
+                    </span>
                     </div>
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
@@ -395,25 +398,35 @@ export default {
         },
     },
     computed: {
-        cartItems () {
-            return this.$store.state.cartItems;
-        },
+        ...mapState(['Stores','cartItems']),
+
         totalPrice () {
             let price = 0;
             let len = this.$store.state.cartItems.length;
-
             for (var i = 0; i < len; i++) {
                 price +=
                     this.$store.state.cartItems[i].quantity *
                     this.$store.state.cartItems[i].store_product[0].price;
             }
-
+             console.log(len);
             return price;
         },
-        ...mapState(['store']),
+    /*    totalTitle () {
+        let totalTitle = [];
+        let len = this.$store.state.cartItems.length;
+            for (var i = 0; i < len; i++) {
+             totalTitle.push( this.$store.state.cartItems[i].title);
+            }
+           var uniqe = [...new Set(totalTitle)];
+            
+            return uniqe;
+        },*/
+
+
+
     },
     mounted () {
-        this.$store.dispatch('loadstore', this.cartItems.store_id);
-    },
+        this.$store.dispatch('loadStores');
+            },
 };
 </script>
