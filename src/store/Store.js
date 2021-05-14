@@ -41,10 +41,10 @@ export default new Vuex.Store({
             let item = payload;
             item = { ...item, quantity: 1 };
             if (state.cartItems.length > 0) {
-                let bool = state.cartItems.some((i) => i.id === item.id);
+                let bool = state.cartItems.some((i) => i.id_store === item.id_store);
                 if (bool) {
                     let itemIndex = state.cartItems.findIndex(
-                        (el) => el.id === item.id
+                        (el) => el.id_store === item.id_store
                     );
                     state.cartItems[itemIndex]['quantity'] += 1;
                 } else {

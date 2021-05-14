@@ -9,6 +9,7 @@
                             name: 'ProductDetailsStore',
                             params: {
                                 id: this.id,
+                                id_store: this.$route.params.id,
                                 title: this.$route.params.title,
                                 name: this.name,
                                 image: this.image,
@@ -84,6 +85,7 @@ export default {
         return {
             details: {
                 id: this.id,
+                id_store: this.$route.params.id,
                 title: this.$route.params.title,
                 name: this.name,
                 image: this.image,
