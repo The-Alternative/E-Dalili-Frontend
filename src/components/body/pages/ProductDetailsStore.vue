@@ -54,13 +54,14 @@ export default {
     data () {
         return {
              details: {
+                title: this.$route.params.title,
                 id: this.id,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
-                title: this.$route.params.title,
+              
             },
         };
     },
@@ -196,3 +197,4 @@ export default {
     }
 }
 </style>
+

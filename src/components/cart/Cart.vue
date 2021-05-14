@@ -18,7 +18,8 @@
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-                    <div class="store" v-if="((index == 0) || items.title != cartItems[index-1].title) ? items.title : ''">
+    <div class="store" v-if="((index == 0) || items.title != cartItems[index-1].title)  ? items.title : ''"
+                       >
                     <span>
                         {{ items.title }}
                     </span>
