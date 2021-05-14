@@ -79,8 +79,16 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
-    data() {
+    props: [
+        'id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+        'title',
+    ],
+    data () {
         return {
             details: {
                 id: this.id,
@@ -101,7 +109,7 @@ export default {
             );
         },
         addToCart () {
-            this.$store.dispatch('addToCart', this.details);
+            this.$store.dispatch('addToCart', this.details, this.id);
             this.$el.animate(
                 [
                     // keyframes

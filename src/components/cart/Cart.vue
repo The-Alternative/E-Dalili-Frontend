@@ -12,17 +12,25 @@
                     </div>
                 </div>
                 <!--  -->
+
                 <div
-                    v-for="(items,index) in cartItems"
+                    v-for="(items, index) in cartItems"
                     :key="index"
                     class="row border-top border-bottom"
                     style="padding: 10px 0"
                 >
-    <div class="store" v-if="((index == 0) || items.title != cartItems[index-1].title)  ? items.title : ''"
-                       >
-                    <span>
-                        {{ items.title }}
-                    </span>
+                    <div
+                        class="store"
+                        v-if="
+                            index == 0 ||
+                            items.title != cartItems[index - 1].title
+                                ? items.title
+                                : ''
+                        "
+                    >
+                        <span>
+                            {{ items.title }}
+                        </span>
                     </div>
                     <div class="cart-items">
                         <div class="col-sm-2 col-xs-12">
@@ -398,7 +406,7 @@ export default {
         },
     },
     computed: {
-        ...mapState(['Stores','cartItems']),
+        ...mapState(['Stores', 'cartItems']),
 
         totalPrice () {
             let price = 0;
@@ -408,10 +416,10 @@ export default {
                     this.$store.state.cartItems[i].quantity *
                     this.$store.state.cartItems[i].store_product[0].price;
             }
-             console.log(len);
+            console.log(len);
             return price;
         },
-    /*    totalTitle () {
+        /*    totalTitle () {
         let totalTitle = [];
         let len = this.$store.state.cartItems.length;
             for (var i = 0; i < len; i++) {
@@ -421,12 +429,9 @@ export default {
             
             return uniqe;
         },*/
-
-
-
     },
     mounted () {
         this.$store.dispatch('loadStores');
-            },
+    },
 };
 </script>

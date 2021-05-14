@@ -6,11 +6,6 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/bodySection/:id/:name',
-        name: 'bodySection',
-        component: () => import('../components/body/pages/bodySection'),
-    },
-    {
         path: '/addStore',
         name: 'addStore',
         component: () => import('../components/body/addStore'),
