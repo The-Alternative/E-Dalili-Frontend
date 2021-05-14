@@ -54,8 +54,8 @@ export default {
     data () {
         return {
             details: {
+                title: this.$route.params.title,
                 id: this.id,
-                store_id: this.$route.params.id,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
@@ -69,12 +69,12 @@ export default {
     },
     props: [
         'id',
-        'store_id',
         'name',
         'image',
         'short_des',
         'long_des',
         'store_product',
+        'title',
     ],
     computed: {
         ProductID () {
@@ -95,7 +95,7 @@ export default {
             this.$router.push(`/Cart`);
         },
         addToCart () {
-            this.$store.dispatch('addToCart', this.details);
+            this.$store.dispatch('addToCart', this.details,this.id);
             document.getElementById('cart').animate(
                 [
                     // keyframes

@@ -11,7 +11,7 @@ const routes = [
         component: () => import('../components/body/addStore'),
     },
     {
-        path: '/visitStore/:id',
+        path: '/visitStore/:id/:title',
         name: 'visitStore',
         component: () => import('../components/body/pages/visitStore'),
         props: true,
@@ -35,7 +35,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore/:store_id/:id',
+        path: '/ProductDetailsStore/:title/:id',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,

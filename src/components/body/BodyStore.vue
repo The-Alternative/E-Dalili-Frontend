@@ -87,7 +87,7 @@
                                         name: 'visitStore',
                                         params: {
                                             id: store.id,
-                                            // title: store.title,
+                                            title: store.title,
                                             // workingHours: store.workingHours,
                                             // section: store.section,
                                             // Product: store.product,
@@ -286,7 +286,7 @@ export default {
         PhoneStore: () => import('@/components/body/phone-store'),
         LocationStore: () => import('@/components/body/location-store'),
     },
-    props: ['id', 'section', 'Product', 'brand'],
+    props: ['id', 'title','section', 'Product', 'brand'],
 
     data () {
         return {
