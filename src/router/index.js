@@ -40,7 +40,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore/:title/:id',
+        path: '/ProductDetailsStore/:title/:id_store/:id',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,

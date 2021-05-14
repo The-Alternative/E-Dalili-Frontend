@@ -53,22 +53,22 @@ export default {
     name: 'ProductDetailsStore',
     data () {
         return {
-             details: {
-                title: this.$route.params.title,
+            details: {
                 id: this.id,
+                id_store: this.$route.params.id,
+                title: this.$route.params.title,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
                 long_des: this.long_des,
                 store_product: this.store_product,
-              
             },
         };
     },
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-   props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
     computed: {
         ProductID(){
             return this.$store.state.ProductID;
