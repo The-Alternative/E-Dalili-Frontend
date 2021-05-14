@@ -47,7 +47,6 @@
                     </button>
                 </div>
             </div>
-            <div> {{ id }}</div>
             <div class="product-bottom text-center">
                 <div class="name-prod mt-2">{{ name }}</div>
                 <div class="stars mb-2">
