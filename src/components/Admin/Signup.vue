@@ -1,7 +1,7 @@
 <template>
     <div>
         <Nav />
-        <form action="action_page.php" style="border:1px solid #ccc">
+        <form action="action_page.php" style="border: 1px solid #ccc">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
@@ -36,14 +36,14 @@
                         type="checkbox"
                         checked="checked"
                         name="remember"
-                        style="margin-bottom:15px"
+                        style="margin-bottom: 15px"
                     />
                     Remember me
                 </label>
 
                 <p>
                     By creating an account you agree to our
-                    <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+                    <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
                 </p>
 
                 <div class="clearfix">

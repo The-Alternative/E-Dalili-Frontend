@@ -32,7 +32,6 @@ Vue.use(VueI18n);
 axios.defaults.baseURL = 'http://edalili.e-dalely.com/public';
 axios.defaults.headers['Accept-Language'] = lang;
 
-
 new Vue({
     main,
     router,
@@ -40,4 +39,3 @@ new Vue({
     i18n,
     render: (h) => h(Dashboard),
 }).$mount('#Dashboard');
-

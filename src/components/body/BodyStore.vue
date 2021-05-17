@@ -286,9 +286,9 @@ export default {
         PhoneStore: () => import('@/components/body/phone-store'),
         LocationStore: () => import('@/components/body/location-store'),
     },
-    props: ['id', 'title','section', 'Product', 'brand'],
+    props: ['id', 'title', 'section', 'Product', 'brand'],
 
-    data () {
+    data() {
         return {
             Sections: [],
             viewProductsInStore: [],
@@ -315,7 +315,7 @@ export default {
         //     return Stores;
         // },
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadStores');
     },
     methods: {
@@ -326,7 +326,7 @@ export default {
         gotoview: function (i, t, w) {
             this.$router.push(`visitStore/${i}/${t}/${w}`);
         },
-        fetch () {
+        fetch() {
             var self = this;
             let lang = window.localStorage.getItem('lang');
             Vue.axios
@@ -340,7 +340,7 @@ export default {
                 });
         },
     },
-    created () {
+    created() {
         this.fetch();
     },
 };

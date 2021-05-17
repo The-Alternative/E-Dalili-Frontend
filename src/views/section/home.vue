@@ -28,31 +28,31 @@
         </div>
         <!-- __________________________________________________________________ -->
         <div class="contain">
-        <h2 style="margin-top: 3vh">Some Market</h2>
-        <div class="row align-middle cont-market">
-            <div
-                v-for="bran in Brands.slice(0, 4)"
-                :key="bran.id"
-                class=" col-md-3 col-sm-6  column"
-            >
-                <div class=" card-market">
-                    <img class="img-market" v-lazy="bran.image" />
-                    <a href="#">more...</a>
+            <h2 style="margin-top: 3vh">Some Market</h2>
+            <div class="row align-middle cont-market">
+                <div
+                    v-for="bran in Brands.slice(0, 4)"
+                    :key="bran.id"
+                    class="col-md-3 col-sm-6 column"
+                >
+                    <div class="card-market">
+                        <img class="img-market" v-lazy="bran.image" />
+                        <a href="#">more...</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row align-middle cont-market">
-            <div
-                v-for="bran in Brands.slice(2, 6)"
-                :key="bran.id"
-                class=" col-md-3 col-sm-6  column"
-            >
-                <div class=" card-market">
-                    <img class="img-market" v-lazy="bran.image" />
-                    <a href="#">more...</a>
+            <div class="row align-middle cont-market">
+                <div
+                    v-for="bran in Brands.slice(2, 6)"
+                    :key="bran.id"
+                    class="col-md-3 col-sm-6 column"
+                >
+                    <div class="card-market">
+                        <img class="img-market" v-lazy="bran.image" />
+                        <a href="#">more...</a>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </template>
@@ -220,7 +220,7 @@
 }
 
 /* _____________________ market after slider _____________________________ */
-.contain{
+.contain {
     margin-top: 40px;
     width: 1275px;
 }
@@ -229,14 +229,14 @@
     align-items: end;
     background-color: #eee;
 }
-.card-market a{
+.card-market a {
     color: #3e3e3f;
 }
 .img-market {
-border-radius: 5%;
-margin: auto;
-height: 180px;
-width: 185px;
+    border-radius: 5%;
+    margin: auto;
+    height: 180px;
+    width: 185px;
 }
 .cont-market {
     height: 340px;
@@ -278,22 +278,20 @@ width: 185px;
 export default {
     name: 'home',
     props: ['image'],
-    data () {
-        return {
-        };
+    data() {
+        return {};
     },
     computed: {
-          Brands() {
-              return this.$store.state.Brands;
-          },
+        Brands() {
+            return this.$store.state.Brands;
+        },
         Categories() {
-              return this.$store.state.Categories;
-          },
-          
+            return this.$store.state.Categories;
+        },
     },
-    mounted () {
-    this.$store.dispatch('loadCategories');
-    this.$store.dispatch('loadBrands');
+    mounted() {
+        this.$store.dispatch('loadCategories');
+        this.$store.dispatch('loadBrands');
     },
 };
 </script>

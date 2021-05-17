@@ -395,20 +395,20 @@ export default {
         EmptyCart,
     },
     methods: {
-        addItem (items) {
+        addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        removeItem (items) {
+        removeItem(items) {
             this.$store.dispatch('removeItem', items);
         },
-        removeFromCart (item) {
+        removeFromCart(item) {
             this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
         ...mapState(['Stores', 'cartItems']),
 
-        totalPrice () {
+        totalPrice() {
             let price = 0;
             let len = this.$store.state.cartItems.length;
             for (var i = 0; i < len; i++) {
@@ -430,7 +430,7 @@ export default {
             return uniqe;
         },*/
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadStores');
     },
 };

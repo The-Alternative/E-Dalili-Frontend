@@ -350,7 +350,7 @@ export default {
     computed: {
         ...mapState(['store', 'brands']),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadstore', this.id);
         // <!--        this.$store.dispatch('loadStoreDetailsProduct', this.id);-->
     },

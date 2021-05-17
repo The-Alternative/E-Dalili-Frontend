@@ -2,8 +2,12 @@
     <div class="ProductDetalis" style="background-color: #e9ecf2">
         <div class="show-prod">
             <div class="row">
-                <div class="col-xs-12" style="direction: rtl"  v-for="prod in ProductID.slice(0,1)" 
-                :key="prod">
+                <div
+                    class="col-xs-12"
+                    style="direction: rtl"
+                    v-for="prod in ProductID.slice(0, 1)"
+                    :key="prod"
+                >
                     <div class="content-pro text-center">
                         <img
                             class=""
@@ -19,18 +23,20 @@
                         </div>
                         <div class="category">
                             {{ prod.long_des }}
-
                         </div>
                         <div class="avilble">
-                            <div style="display: inline-block"  
-                            >
-                                متوفر في {{ProductID[0].store.length -1}} متاجر
+                            <div style="display: inline-block">
+                                متوفر في
+                                {{ ProductID[0].store.length - 1 }} متاجر
                             </div>
                             <span class="fa fa-check-circle"></span>
                         </div>
-                        <div> 
-                            <span> {{minPrice}}  ل.س <span style="color:#ca0a0a">حتى</span> </span>
-                             <span> {{maxPrice}}  ل.س</span>
+                        <div>
+                            <span>
+                                {{ minPrice }} ل.س
+                                <span style="color: #ca0a0a">حتى</span>
+                            </span>
+                            <span> {{ maxPrice }} ل.س</span>
                             <div
                                 class="price"
                                 style="display: inline-block"
@@ -221,39 +227,42 @@
 <script>
 export default {
     name: 'ProductDetails',
-    data () {
+    data() {
         return {};
     },
     components: {},
     props: ['id', 'name', 'image', 'short_des', 'long_des'],
     computed: {
-        ProductID(){
+        ProductID() {
             return this.$store.state.ProductID;
         },
-        maxPrice(){
-            let maxPrice = 0 ;
+        maxPrice() {
+            let maxPrice = 0;
             let len = this.$store.state.ProductID[0].store.length;
-               var priceArray = [];
-            for(var i=0; i < len; i++){
-                priceArray.push(this.$store.state.ProductID[0].store[i].pivot.price);
+            var priceArray = [];
+            for (var i = 0; i < len; i++) {
+                priceArray.push(
+                    this.$store.state.ProductID[0].store[i].pivot.price
+                );
             }
             maxPrice = Math.max(...priceArray);
             console.log(maxPrice);
             return maxPrice;
         },
-       minPrice(){
-            let minPrice = 0 ;
+        minPrice() {
+            let minPrice = 0;
             let len = this.$store.state.ProductID[0].store.length;
             var priceArray = [];
-            for(var i=0; i < len; i++){
-               priceArray.push(this.$store.state.ProductID[0].store[i].pivot.price); 
+            for (var i = 0; i < len; i++) {
+                priceArray.push(
+                    this.$store.state.ProductID[0].store[i].pivot.price
+                );
             }
             minPrice = Math.min(...priceArray);
             console.log(minPrice);
-          
+
             return minPrice;
         },
-
     },
     methods: {
         heartlike: function () {
@@ -263,8 +272,8 @@ export default {
             this.$router.push(`/ListView/${i}/${n}/${s}`);
         },
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadProduct', this.id);
-    }
+    },
 };
 </script>

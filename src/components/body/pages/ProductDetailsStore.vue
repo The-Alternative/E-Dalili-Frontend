@@ -51,7 +51,7 @@
 <script>
 export default {
     name: 'ProductDetailsStore',
-    data () {
+    data() {
         return {
             details: {
                 id: this.id,
@@ -68,27 +68,35 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
+    props: [
+        'id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+        'title',
+    ],
     computed: {
-        ProductID () {
+        ProductID() {
             return this.$store.state.ProductID;
         },
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadProduct', this.id);
     },
     methods: {
-        increment () {
+        increment() {
             this.$store.commit('increment');
         },
-        addItem (items) {
+        addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
         gotocart: function () {
             this.$router.push(`/Cart`);
         },
-        addToCart () {
-            this.$store.dispatch('addToCart', this.details,this.id);
+        addToCart() {
+            this.$store.dispatch('addToCart', this.details, this.id);
             document.getElementById('cart').animate(
                 [
                     // keyframes
