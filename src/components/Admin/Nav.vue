@@ -2,7 +2,10 @@
     <nav class="navbar navbar-expand">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand a">LOGIN PAGE</a>
+                <router-link
+                                    to="/main_dash"
+                                    
+                                    ><a class="navbar-brand a">LOGIN PAGE</a></router-link>
             </div>
             <div class="login-container">
                 <ul class="nav navbar-nav navbar-right">

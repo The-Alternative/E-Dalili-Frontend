@@ -148,6 +148,33 @@ const routes = [
         name: 'child',
         component: () => import('../views/categories/child.vue'),
     },
+    /* dashboard */
+    {
+        path: '/main_dash',
+        name: 'main_dash',
+        component: () => import('../Dashboard/view/main_dash.vue'),
+    }, 
+    {
+        path: '/product_dash',
+        name: 'product_dash',
+        component: () => import('../Dashboard/view/product_dash.vue'),
+    }, 
+    {
+        path: '/categories_dash',
+        name: 'categories_dash',
+        component: () => import('../Dashboard/view/categories_dash.vue'),
+    }, 
+    {
+        path: '/brand_dash',
+        name: 'brand_dash',
+        component: () => import('../Dashboard/view/brand_dash.vue'),
+    },
+    {
+        path: '/new_product',
+        name: 'new_product',
+        component: () => import('../Dashboard/view/new_product.vue'),
+    }
+    
 ];
 
 const router = new VueRouter({
