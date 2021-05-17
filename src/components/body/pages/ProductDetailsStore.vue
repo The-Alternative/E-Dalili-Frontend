@@ -2,26 +2,29 @@
     <div class="ProductDetalis" style="background-color: #e9ecf2">
         <Cartmini />
         <!-- ___________________________________________________ -->
-        <div class="col-12 row">
+        <div
+            class="col-12 row"
+            v-for="prod in ProductID.slice(0, 1)"
+            :key="prod"
+        >
             <div class="col-6">
                 <div class="row">
                     <div class="col-12">
-                        <img :src="image" />
+                        <img :src="prod.image" />
                     </div>
                 </div>
             </div>
 
             <div class="content-pro text-center col-6">
+                <div>{{ prod.id }}</div>
                 <div class="name-prod">
-                    {{ name }}
+                    {{ prod.name }}
                 </div>
                 <div class="category">
-                    {{ long_des }}
+                    {{ prod.long_des }}
                 </div>
                 <div>
-                    <div v-for="item in store_product" :key="item.id">
-                        {{ item.price }} s.p
-                    </div>
+                    <div>{{ ProductID[0].store[prod.id].pivot.price }} s.p</div>
                     <div class="price" style="display: inline-block"></div>
                 </div>
                 <div class="row">
@@ -33,7 +36,7 @@
                         </button>
                     </div>
                     <div class="col">
-                        <button @click="gotocart(id)" class="but1">
+                        <button @click="gotocart" class="but1">
                             <span>
                                 {{ $t('GoToCart') }}
                             </span>
@@ -48,10 +51,12 @@
 <script>
 export default {
     name: 'ProductDetailsStore',
-    data() {
+    data () {
         return {
             details: {
                 id: this.id,
+                id_store: this.$route.params.id,
+                title: this.$route.params.title,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
@@ -63,25 +68,27 @@ export default {
     components: {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
-    // props: ['id'],
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product','title'],
     computed: {
-        count() {
-            return this.$store.state.count;
+        ProductID () {
+            return this.$store.state.ProductID;
         },
     },
+    mounted () {
+        this.$store.dispatch('loadProduct', this.id);
+    },
     methods: {
-        increment() {
+        increment () {
             this.$store.commit('increment');
         },
-        addItem(items) {
+        addItem (items) {
             this.$store.dispatch('addToCart', items);
         },
-        gotocart: function(i) {
-            this.$router.push(`/Cart/${i}`);
+        gotocart: function () {
+            this.$router.push(`/Cart`);
         },
-        addToCart() {
-            this.$store.dispatch('addToCart', this.details);
+        addToCart () {
+            this.$store.dispatch('addToCart', this.details,this.id);
             document.getElementById('cart').animate(
                 [
                     // keyframes
@@ -96,9 +103,6 @@ export default {
                 }
             );
         },
-    },
-    mounted() {
-        // this.$store.dispatch('loadstore', this.id);
     },
 };
 </script>

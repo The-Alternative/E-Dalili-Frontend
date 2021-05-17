@@ -8,12 +8,14 @@
                         :to="{
                             name: 'ProductDetailsStore',
                             params: {
-                                id: id,
-                                name: name,
-                                image: image,
-                                short_des: short_des,
-                                long_des: long_des,
-                                store_product: store_product,
+                                id: this.id,
+                                id_store: this.$route.params.id,
+                                title: this.$route.params.title,
+                                name: this.name,
+                                image: this.image,
+                                short_des: this.short_des,
+                                long_des: this.long_des,
+                                store_product: this.store_product,
                             },
                         }"
                     >
@@ -77,11 +79,21 @@
 <script>
 export default {
     name: 'BodyProductStore',
-    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
-    data() {
+    props: [
+        'id',
+        'name',
+        'image',
+        'short_des',
+        'long_des',
+        'store_product',
+        'title',
+    ],
+    data () {
         return {
             details: {
                 id: this.id,
+                id_store: this.$route.params.id,
+                title: this.$route.params.title,
                 name: this.name,
                 image: this.image,
                 short_des: this.short_des,
@@ -91,13 +103,13 @@ export default {
         };
     },
     methods: {
-        heartlike: function() {
+        heartlike: function () {
             this.$el.lastChild.lastChild.lastChild.classList.toggle(
                 'is-active'
             );
         },
-        addToCart() {
-            this.$store.dispatch('addToCart', this.details);
+        addToCart () {
+            this.$store.dispatch('addToCart', this.details, this.id);
             this.$el.animate(
                 [
                     // keyframes
@@ -125,10 +137,6 @@ export default {
                 }
             );
         },
-    },
-    mounted() {
-        // this.$store.dispatch('loadstore', this.id);
-        // this.$store.dispatch('loadProduct', this.id);
     },
 };
 </script>
@@ -237,6 +245,7 @@ export default {
     transition: background-position 1s steps(28);
     transition-duration: 0s;
     margin: -22px 0px 0 -25px;
+
     &.is-active {
         transition-duration: 1s;
         background-position: -2800px 0;

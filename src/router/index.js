@@ -10,24 +10,19 @@ const routes = [
         component: () => import('../components/Admin/Login.vue'),
     },
     {
-        path: '/bodySection/:id/:name',
-        name: 'bodySection',
-        component: () => import('../components/body/pages/bodySection'),
-    },
-    {
         path: '/addStore',
         name: 'addStore',
         component: () => import('../components/body/addStore'),
     },
     {
-        path: '/visitStore/:id',
+        path: '/visitStore/:id/:title',
         name: 'visitStore',
         component: () => import('../components/body/pages/visitStore'),
         props: true,
     },
     /* cart shop */
     {
-        path: '/Cart/:id',
+        path: '/Cart',
         component: () => import('../components/cart/Cart.vue'),
         props: true,
     },
@@ -44,7 +39,7 @@ const routes = [
         props: true,
     },
     {
-        path: '/ProductDetailsStore',
+        path: '/ProductDetailsStore/:title/:id_store/:id',
         component: () => import('../components/body/pages/ProductDetailsStore'),
         name: 'ProductDetailsStore',
         props: true,

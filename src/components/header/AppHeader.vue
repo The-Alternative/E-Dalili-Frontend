@@ -79,7 +79,7 @@
                                     $t('AddPlatform')
                                 }}</router-link>
                             </div>
-                            <div @click="gotocart($route.params.id)">
+                            <div @click="gotocart()">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="cart-count">{{
                                     cartItemCount
@@ -854,8 +854,8 @@ export default {
         },
     },
     methods: {
-        gotocart: function (i) {
-            this.$router.push(`/Cart/${i}`);
+        gotocart () {
+            this.$router.push(`/Cart`);
         },
         goto: function () {
             this.$router.push(`/`);

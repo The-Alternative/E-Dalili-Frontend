@@ -239,12 +239,12 @@ export default {
                     (prev, curr) => curr.space - prev.space
                 );
             } else if (this.sortType == 'price') {
-                this.stores = this.stores.sort(
-                    (prev, curr) => prev.price - curr.price
+                this.$store.state.ProductID[0].store =  this.$store.state.ProductID[0].store.sort(
+                    (prev, curr) => prev.pivot.price - curr.pivot.price
                 );
             } else if (this.sortType == 'prices') {
-                this.stores = this.stores.sort(
-                    (prev, curr) => curr.price - prev.price
+                this.$store.state.ProductID[0].store = this.$store.state.ProductID[0].store.sort(
+                    (prev, curr) => curr.pivot.price - prev.pivot.price
                 );
             }
         },
