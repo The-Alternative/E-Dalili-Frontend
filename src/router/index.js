@@ -6,8 +6,20 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/',
+        path: '/login',
         component: () => import('../components/Admin/Login.vue'),
+    },
+    {
+        path: '/signup',
+        component: () => import('../components/Admin/Signup.vue'),
+    },
+    {
+        path: '/forgotpassword',
+        component: () => import('../components/Admin/ForgetPassword.vue'),
+    },
+    {
+        path: '/',
+        component: () => import('../components/Admin/loginSettingPage.vue'),
     },
     {
         path: '/addStore',
