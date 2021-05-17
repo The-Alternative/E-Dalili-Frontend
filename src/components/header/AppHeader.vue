@@ -75,11 +75,9 @@
                             id="fut"
                         >
                             <div>
-                                <router-link
-                                    to="/addStore"
-                                    style="color: #635f5f"
-                                    >{{ $t('AddPlatform') }}</router-link
-                                >
+                                <router-link to="/addStore" class="link">{{
+                                    $t('AddPlatform')
+                                }}</router-link>
                             </div>
                             <div @click="gotocart()">
                                 <i class="fa fa-shopping-cart"></i>
@@ -94,10 +92,11 @@
                             <div class="map">{{ $t('Selectlocation') }}</div>
 
                             <i class="fa fa-user-circle"> </i>
-                                                            <router-link
-                                    to="/main_dash"
-                                    
-                                    ><div class="user">{{ $t('signin') }}</div></router-link>
+                            <div class="user">
+                                <router-link class="link" to="/">{{
+                                    $t('signin')
+                                }}</router-link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,7 +182,7 @@
                             >
                         </div>
                         <div>
-                            <router-link to="/">
+                            <router-link to="/allSection">
                                 <button type="button" class="btn btn-light">
                                     <a>{{ $t('Allsections') }}</a>
                                 </button></router-link
@@ -810,6 +809,14 @@
     .naver .img::before {
         top: -1px;
     }
+}
+.link {
+    color: #635f5f;
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: none;
+    color: aliceblue;
 }
 /* End Naver*/
 /* End header */

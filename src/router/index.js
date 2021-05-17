@@ -6,9 +6,20 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/bodySection/:id/:name',
-        name: 'bodySection',
-        component: () => import('../components/body/pages/bodySection'),
+        path: '/login',
+        component: () => import('../components/Admin/Login.vue'),
+    },
+    {
+        path: '/signup',
+        component: () => import('../components/Admin/Signup.vue'),
+    },
+    {
+        path: '/forgotpassword',
+        component: () => import('../components/Admin/ForgetPassword.vue'),
+    },
+    {
+        path: '/',
+        component: () => import('../components/Admin/loginSettingPage.vue'),
     },
     {
         path: '/addStore',
@@ -47,7 +58,7 @@ const routes = [
     },
     /* services or section */
     {
-        path: '/',
+        path: '/allSection',
         name: 'home',
         component: () => import('../views/section/home.vue'),
     },
