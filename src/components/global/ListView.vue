@@ -66,20 +66,19 @@
                 v-for="store in ProductID[0].store"
                 :key="store"
             >
-                <div class="row" style="direction: rtl">
-                    <div class="col-2">
+                    <div>
                         <img
                             class="rounded-circle store-logo"
                             src="../../../public/img/market-logo.png"
                         />
                     </div>
-                    <div class="col-5">
+                    <div>
                         <h2>
                             {{ store.title }}
                         </h2>
                         <span>{{500}}متر</span>
                     </div>
-                    <div class="col-2">
+                    <div>
                         <img
                             class="icon-delivery"
                             style="margin-right: 10px"
@@ -89,15 +88,20 @@
                         <span class="fa fa-check-circle"></span>
                     </div>
 
-                    <div class="col-3">
+                    <div>
                         <h2>{{ store.pivot.price }} ل.س</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </template>
 <style scoped>
+.show-prod .store {
+    width: 100%;
+    direction: rtl;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
 .sort input[type='radio'] {
     display: none;
 }

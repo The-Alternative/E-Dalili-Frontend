@@ -23,7 +23,7 @@
                     :image="items.image"
                     :short_des="items.short_des"
                     :long_des="items.long_des"
-                    :name="items.name"         
+                    :name="items.name"        
                 >
                 </BodyProduct>
             </div>

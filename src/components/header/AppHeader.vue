@@ -94,7 +94,10 @@
                             <div class="map">{{ $t('Selectlocation') }}</div>
 
                             <i class="fa fa-user-circle"> </i>
-                            <div class="user">{{ $t('signin') }}</div>
+                                                            <router-link
+                                    to="/main_dash"
+                                    
+                                    ><div class="user">{{ $t('signin') }}</div></router-link>
                         </div>
                     </div>
                 </div>

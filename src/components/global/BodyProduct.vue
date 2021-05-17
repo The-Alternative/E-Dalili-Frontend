@@ -240,7 +240,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'name', 'image', 'short_des', 'long_des'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des','store'],
     // data () {
     //     return {
     //         details: {
