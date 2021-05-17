@@ -75,11 +75,9 @@
                             id="fut"
                         >
                             <div>
-                                <router-link
-                                    to="/addStore"
-                                    style="color: #635f5f"
-                                    >{{ $t('AddPlatform') }}</router-link
-                                >
+                                <router-link to="/addStore" class="link">{{
+                                    $t('AddPlatform')
+                                }}</router-link>
                             </div>
                             <div @click="gotocart($route.params.id)">
                                 <i class="fa fa-shopping-cart"></i>
@@ -94,7 +92,11 @@
                             <div class="map">{{ $t('Selectlocation') }}</div>
 
                             <i class="fa fa-user-circle"> </i>
-                            <div class="user">{{ $t('signin') }}</div>
+                            <div class="user">
+                                <router-link class="link" to="/">{{
+                                    $t('signin')
+                                }}</router-link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,7 +182,7 @@
                             >
                         </div>
                         <div>
-                            <router-link to="/">
+                            <router-link to="/allSection">
                                 <button type="button" class="btn btn-light">
                                     <a>{{ $t('Allsections') }}</a>
                                 </button></router-link
@@ -282,9 +284,9 @@
     padding: 0 28px;
 }
 .upper-bar .sel2 select {
-width: 140px;
-padding: 0 16px;
-font-size: 13px;
+    width: 140px;
+    padding: 0 16px;
+    font-size: 13px;
 }
 .upper-bar .sel3 select {
     width: 100px;
@@ -808,6 +810,14 @@ font-size: 13px;
         top: -1px;
     }
 }
+.link {
+    color: #635f5f;
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: none;
+    color: aliceblue;
+}
 /* End Naver*/
 /* End header */
 </style>
@@ -819,7 +829,7 @@ import jeson from '@/jeson/MOCK_DATA.json';
 export default {
     name: 'AppHeader',
     props: ['title', 'description', 'id', 'price'],
-    data() {
+    data () {
         const lang = localStorage.getItem('lang') || 'en';
         return {
             lang: lang,
@@ -839,7 +849,7 @@ export default {
         };
     },
     computed: {
-        cartItemCount() {
+        cartItemCount () {
             return this.$store.state.cartItemCount;
         },
     },
@@ -850,15 +860,15 @@ export default {
         goto: function () {
             this.$router.push(`/`);
         },
-        showfut() {
+        showfut () {
             document.getElementById('fut').classList.toggle('show');
             document.getElementById('exit-fut').style.display = 'block';
         },
-        hidefut() {
+        hidefut () {
             document.getElementById('exit-fut').style.display = 'none';
             document.getElementById('fut').classList.remove('show');
         },
-        handleChange(event) {
+        handleChange (event) {
             localStorage.setItem('lang', event.target.value);
             window.location.reload();
         },

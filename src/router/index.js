@@ -6,6 +6,10 @@ Vue.use(VueRouter);
 
 const routes = [
     {
+        path: '/',
+        component: () => import('../components/Admin/Login.vue'),
+    },
+    {
         path: '/bodySection/:id/:name',
         name: 'bodySection',
         component: () => import('../components/body/pages/bodySection'),
@@ -47,7 +51,7 @@ const routes = [
     },
     /* services or section */
     {
-        path: '/',
+        path: '/allSection',
         name: 'home',
         component: () => import('../views/section/home.vue'),
     },
