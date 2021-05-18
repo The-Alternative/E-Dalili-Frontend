@@ -116,7 +116,7 @@ export default new Vuex.Store({
         SET_Categories(state, Categories) {
             state.Categories = Categories;
         },
-        newCategory:(state,Category) => state.Categories.push(Category),
+        // newCategory:(state,Category) => state.Categories.push(Category),
     },
     actions: {
         addToCart: (context, payload) => {
@@ -197,10 +197,10 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        async addCategory({commit}, Category) {
-            const response = await axios.post(`/api/categories/create?lang=${lang}`,Category);
-            commit('newCategory', response.data);
-        },
+        // async addCategory({commit}, Category) {
+        //     const response = await axios.post(`/api/categories/create?lang=${lang}`,Category);
+        //     commit('newCategory', response.data);
+        // },
     },
     getters: {
         avalibleStore: (state) => {

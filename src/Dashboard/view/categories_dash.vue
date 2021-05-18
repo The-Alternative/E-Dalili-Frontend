@@ -57,7 +57,17 @@
                                     <img v-lazy="`${items.image}`" />
                                 </td>
                                 <td>
-                                    {{ items.name }}
+                                    <div v-if="tagEditingId == items.id">
+                                        <input
+                                            type="text"
+                                            :id="`tag-edit-${items.id}`"
+                                            v-model="items.name"
+                                            @blur="updateTag(items)"
+                                        />
+                                    </div>
+                                    <div v-else @click="setToEditing(items)">
+                                        {{ items.name }}
+                                    </div>
                                 </td>
                                 <td>
                                     <i
@@ -86,7 +96,7 @@
                     </table>
                 </div>
                 <!-- Add new category -->
-                <div id="overlay" v-if="showAddModal">
+                <div id="overlay1" v-if="showAddModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -100,7 +110,11 @@
                                 </button>
                             </div>
                             <div class="modal-body p-4">
-                                <form action="" method="post">
+                                <form
+                                    action=""
+                                    @submit="onSubmit"
+                                    method="post"
+                                >
                                     <div class="form-group">
                                         <input
                                             type="text"
@@ -112,13 +126,14 @@
                                     <div class="form-group">
                                         <input
                                             type="text"
-                                            name="name"
+                                            name="status"
                                             class="form-control form-control-lg"
                                             placeholder="Status"
                                         />
                                     </div>
                                     <div class="form-group">
                                         <button
+                                            type="submit"
                                             class="btn btn-info btn-block btn-lg"
                                             @click="showAddModal = false"
                                         >
@@ -131,7 +146,7 @@
                     </div>
                 </div>
                 <!-- Edit category -->
-                <div id="overlay" v-if="showEditModal">
+                <div id="overlay2" v-if="showEditModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -176,7 +191,7 @@
                     </div>
                 </div>
                 <!-- Delete category -->
-                <div id="overlay" v-if="showDeleteModal">
+                <div id="overlay3" v-if="showDeleteModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -219,13 +234,15 @@
 
 <script>
 import { mapState } from 'vuex';
+// import uuid from 'uuid';
 export default {
     name: 'categories_dash',
     components: {
         // category: () => import('../components/category.vue'),
     },
-    data () {
+    data() {
         return {
+            tagEditingId: '2',
             selected: 'catlog',
             errorMsg: '',
             successMsg: '',
@@ -235,14 +252,34 @@ export default {
         };
     },
     methods: {
+        setToEditing(items) {
+            this.tagEditingId = items.id;
+            setTimeout(() => {
+                document.getElementById(`tag-edit-${items.id}`).focus();
+            }, 1);
+        },
+        updateTag() {
+            // this.$store.dispatch('updateCategoryName',{items})
+            this.tagEditingId = '';
+        },
         // newCategory () {
         //     this.$router.push(`/new_category`);
+        // },
+        // ...mapActions(['addCategory']),
+        // onSubmit(e) {
+        //     e.preventDefault();
+        //     const category = {
+        //         id: uuid.v4(),
+        //         name: this.name,
+        //         status: this.status,
+        //     };
+        //     this.addCategory(category);
         // },
     },
     computed: {
         ...mapState(['Categories']),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadCategories');
     },
 };
@@ -259,7 +296,6 @@ export default {
     margin: 10px;
     padding: 10px;
 }
-
 .selected {
     margin: 10px;
     padding: 10px;
@@ -280,7 +316,9 @@ export default {
     border-radius: 50%;
     margin: 10px 0;
 }
-#overlay {
+#overlay1,
+#overlay2,
+#overlay3 {
     position: fixed;
     top: 20px;
     bottom: 0;
