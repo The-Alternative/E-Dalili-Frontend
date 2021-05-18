@@ -159,11 +159,32 @@ const routes = [
         name: 'product_dash',
         component: () => import('../Dashboard/view/product_dash.vue'),
     },
+    //category dashboard
     {
         path: '/categories_dash',
         name: 'categories_dash',
-        component: () => import('../Dashboard/view/categories_dash.vue'),
+        component: () =>
+            import('../Dashboard/view/Category/categories_dash.vue'),
     },
+    {
+        path: '/newCategory',
+        name: 'addnewcategory',
+        component: () =>
+            import('../Dashboard/view/Category/addNewCategory.vue'),
+    },
+    {
+        path: '/categoryview/:id',
+        name: 'categoryview',
+        component: () => import('../Dashboard/view/Category/categoryView.vue'),
+        params: true,
+    },
+    {
+        path: '/categoryEdit/:id/edit',
+        name: 'categoryEdit',
+        component: () => import('../Dashboard/view/Category/categoryEdit.vue'),
+        params: true,
+    },
+    //
     {
         path: '/brand_dash',
         name: 'brand_dash',
