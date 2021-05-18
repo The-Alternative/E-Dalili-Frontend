@@ -88,7 +88,7 @@ export default {
         'store_product',
         'title',
     ],
-    data () {
+    data() {
         return {
             details: {
                 id: this.id,
@@ -108,7 +108,7 @@ export default {
                 'is-active'
             );
         },
-        addToCart () {
+        addToCart() {
             this.$store.dispatch('addToCart', this.details, this.id);
             this.$el.animate(
                 [

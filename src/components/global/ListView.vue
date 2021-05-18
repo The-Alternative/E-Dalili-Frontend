@@ -55,7 +55,7 @@
                         <h5 class="prod-name">{{ ProductID[0].name }}</h5>
                     </div>
                     <div class="col-12">
-                        <h5 class="prod-dis">{{ ProductID[0].short_des}}</h5>
+                        <h5 class="prod-dis">{{ ProductID[0].short_des }}</h5>
                     </div>
                 </div>
             </div>
@@ -66,41 +66,41 @@
                 v-for="store in ProductID[0].store"
                 :key="store"
             >
-                    <div>
-                        <img
-                            class="rounded-circle store-logo"
-                            src="../../../public/img/market-logo.png"
-                        />
-                    </div>
-                    <div>
-                        <h2>
-                            {{ store.title }}
-                        </h2>
-                        <span>{{500}}متر</span>
-                    </div>
-                    <div>
-                        <img
-                            class="icon-delivery"
-                            style="margin-right: 10px"
-                            src="../../../public/img/icon-delivery.png"
-                            height="40"
-                        />
-                        <span class="fa fa-check-circle"></span>
-                    </div>
+                <div>
+                    <img
+                        class="rounded-circle store-logo"
+                        src="../../../public/img/market-logo.png"
+                    />
+                </div>
+                <div>
+                    <h2>
+                        {{ store.title }}
+                    </h2>
+                    <span>{{ 500 }}متر</span>
+                </div>
+                <div>
+                    <img
+                        class="icon-delivery"
+                        style="margin-right: 10px"
+                        src="../../../public/img/icon-delivery.png"
+                        height="40"
+                    />
+                    <span class="fa fa-check-circle"></span>
+                </div>
 
-                    <div>
-                        <h2>{{ store.pivot.price }} ل.س</h2>
-                    </div>
+                <div>
+                    <h2>{{ store.pivot.price }} ل.س</h2>
                 </div>
             </div>
         </div>
+    </div>
 </template>
 <style scoped>
 .show-prod .store {
     width: 100%;
     direction: rtl;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 .sort input[type='radio'] {
     display: none;
@@ -219,7 +219,6 @@ export default {
                 price: this.price,
             },
             sortType: '1',
-            
         };
     },
     components: {},
@@ -228,9 +227,8 @@ export default {
     computed: {
         ...mapState(['ProductID']),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadProduct', this.id);
-       
     },
     methods: {
         sortItem() {
@@ -243,7 +241,7 @@ export default {
                     (prev, curr) => curr.space - prev.space
                 );
             } else if (this.sortType == 'price') {
-                this.$store.state.ProductID[0].store =  this.$store.state.ProductID[0].store.sort(
+                this.$store.state.ProductID[0].store = this.$store.state.ProductID[0].store.sort(
                     (prev, curr) => prev.pivot.price - curr.pivot.price
                 );
             } else if (this.sortType == 'prices') {

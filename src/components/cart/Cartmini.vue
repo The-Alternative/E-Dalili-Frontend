@@ -348,7 +348,7 @@ export default {
     components: {},
     props: ['id', 'name', 'image', 'short_des', 'long_des', 'store_product'],
 
-    data () {
+    data() {
         return {};
     },
     methods: {
@@ -360,24 +360,24 @@ export default {
             var cart = document.getElementById('cartshop');
             cart.classList.remove('vs');
         },
-        addItem (items) {
+        addItem(items) {
             this.$store.dispatch('addToCart', items);
         },
-        removeItem (items) {
+        removeItem(items) {
             this.$store.dispatch('removeItem', items);
         },
-        removeFromCart (item) {
+        removeFromCart(item) {
             this.$store.commit('removeFromCart', item);
         },
     },
     computed: {
-        cartItems () {
+        cartItems() {
             return this.$store.state.cartItems;
         },
-        cartItemCount () {
+        cartItemCount() {
             return this.$store.state.cartItemCount;
         },
-        totalPrice () {
+        totalPrice() {
             let price = 0;
             this.$store.state.cartItems.map((el) => {
                 price += el['quantity'] * el['price'];

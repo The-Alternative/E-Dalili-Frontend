@@ -23,7 +23,7 @@
                     :image="items.image"
                     :short_des="items.short_des"
                     :long_des="items.long_des"
-                    :name="items.name"        
+                    :name="items.name"
                 >
                 </BodyProduct>
             </div>
@@ -150,7 +150,13 @@
                         <span class="carousel-control-next-icon"></span>
                     </a>
                     <!-- ------------------------------------------------------------ -->
-                    <div class="row" style="margin: 30px 0 0 0;justify-content: space-around;">
+                    <div
+                        class="row"
+                        style="
+                            margin: 30px 0 0 0;
+                            justify-content: space-around;
+                        "
+                    >
                         <div
                             v-for="brand in brands.slice(9, 10)"
                             :key="brand.id"
@@ -160,22 +166,22 @@
                             <img v-lazy="brand.image" style="width: 100%" />
                         </div>
                         <div class="two-img">
-                        <div
-                            v-for="brand in brands.slice(10, 11)"
-                            :key="brand.id"
-                            :image="brand.image"
-                            class="col-sm-1.5 imges1"
-                        >
-                            <img v-lazy="brand.image" />
-                        </div>
-                        <div
-                            v-for="brand in brands.slice(11, 12)"
-                            :key="brand.id"
-                            :image="brand.image"
-                            class="col-sm-1.5 imges2"
-                        >
-                            <img v-lazy="brand.image" />
-                        </div>
+                            <div
+                                v-for="brand in brands.slice(10, 11)"
+                                :key="brand.id"
+                                :image="brand.image"
+                                class="col-sm-1.5 imges1"
+                            >
+                                <img v-lazy="brand.image" />
+                            </div>
+                            <div
+                                v-for="brand in brands.slice(11, 12)"
+                                :key="brand.id"
+                                :image="brand.image"
+                                class="col-sm-1.5 imges2"
+                            >
+                                <img v-lazy="brand.image" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -642,7 +648,7 @@
     }
 }
 /* ------------------------------------------ */
-.two-img{
+.two-img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -690,9 +696,9 @@
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .two-img{
-    height: 240px;
-}
+    .two-img {
+        height: 240px;
+    }
     .imges1 img {
         width: 100px;
     }
@@ -700,14 +706,14 @@
         width: 100px;
     }
     .imgs {
-    max-width: 550px;
+        max-width: 550px;
     }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .two-img{
-    height: 335px;
-}
+    .two-img {
+        height: 335px;
+    }
     .imges1 img {
         width: 150px;
     }
@@ -733,7 +739,7 @@
 <script>
 import { mapState } from 'vuex';
 export default {
-    data () {
+    data() {
         return {
             urll: '/img/',
         };
@@ -745,9 +751,16 @@ export default {
         Cartmini: () => import('@/components/cart/Cartmini.vue'),
     },
     computed: {
-        ...mapState(['Product', 'brands','Brands' ,'categories', 'Stores', 'lastStores']),
+        ...mapState([
+            'Product',
+            'brands',
+            'Brands',
+            'categories',
+            'Stores',
+            'lastStores',
+        ]),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadProducts');
         this.$store.dispatch('loadStores');
         this.$store.dispatch('loadBrands');
