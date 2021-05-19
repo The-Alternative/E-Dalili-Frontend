@@ -15,16 +15,16 @@
                                     v-model="Categories.category[0].name"
                                 />
                             </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="status"
+                                    class="form-control form-control-lg"
+                                    placeholder="Status"
+                                    v-model="Categories.sulg"
+                                />
+                            </div>
                             <!-- <div class="form-group">
-                                    <input
-                                        type="text"
-                                        name="status"
-                                        class="form-control form-control-lg"
-                                        placeholder="Status"
-                                        v-model="items.is_active"
-                                    />
-                                </div>
-                                <div class="form-group">
                                     <input
                                         type="text"
                                         name="image"
@@ -32,7 +32,7 @@
                                         placeholder="ImageURL"
                                         v-model="items.image"
                                     />
-                                </div> -->
+                                </div>  -->
                             <div class="form-group">
                                 <button
                                     class="btn btn-info btn-block btn-lg"
@@ -58,11 +58,11 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">
-                                {{ Categories.category.name }}
+                                {{ Categories.category[0].name }}
                             </h5>
-                            <!-- <p class="card-text">
-                                {{ items.is_active }}
-                            </p> -->
+                            <p class="card-text">
+                                {{ Categories.sulg }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ export default {
                         language_id: 1,
                     },
                 ],
-                sulg: 'bjhbh',
+                sulg: null,
                 is_active: 1,
                 parent_id: 3,
                 image: null,

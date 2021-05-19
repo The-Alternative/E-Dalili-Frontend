@@ -52,10 +52,7 @@ export default {
         },
     },
     methods: {
-        // async updateCategory () {
-        //     await this.$store.dispatch('UpdateCategory', this.items.id);
         //     this.$router.push({ name: 'categories_dash' });
-        // },
         updateCategory () {
             axios.put(
                 `http://edalili.e-dalely.com/public/api/categories/update/${this.items.id}`,

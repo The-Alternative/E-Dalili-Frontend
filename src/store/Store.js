@@ -116,21 +116,21 @@ export default new Vuex.Store({
         SET_Categories (state, Categories) {
             state.Categories = Categories;
         },
-        Update_Categories (state, items) {
-            state.Categories.forEach((v) => {
-                if (v.id == items.id) {
-                    v = items;
-                }
-            });
-        },
+        // Update_Categories (state, items) {
+        //     state.Categories.forEach((v) => {
+        //         if (v.id == items.id) {
+        //             v = items;
+        //         }
+        //     });
+        // },
         // Add_Category (state, items) {
         //     let Categories = state.Categories.concat(items);
         //     state.Categories = Categories;
         // },
-        // Delete_Category (state, itemsId) {
-        //     let Categories = state.Categories.filter((v) => v.id != itemsId);
-        //     state.Categories = Categories;
-        // },
+        Delete_Category (state, itemsId) {
+            let Categories = state.Categories.filter((v) => v.id != itemsId);
+            state.Categories = Categories;
+        },
     },
     actions: {
         addToCart: (context, payload) => {
@@ -179,7 +179,7 @@ export default new Vuex.Store({
             axios
                 .get(`/api/products/getById/${ProductID}?lang=${lang}`)
                 .then((res) => {
-                    console.warn('productById :', JSON.stringify(res.data.product));
+                    console.warn('productById :', res.data.product);
                     let ProductID = res.data.product;
                     commit('SET_ProductID', ProductID);
                 })
@@ -211,13 +211,8 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        UpdateCategory ({ commit }, items) {
-            axios.put(
-                `http://edalili.e-dalely.com/public/api/categories/update/${items.id}`,
-                items
-            );
-            commit('Update_Categories', items);
-            console.log(JSON.stringify(this.items));
+        async deleteCategory ({ commit }, items) {
+            commit('Delete_Category', items.id);
         },
         // UpdateCategory ({ commit }, items) {
         //     axios
@@ -243,9 +238,6 @@ export default new Vuex.Store({
         //         .catch(function (error) {
         //             console.log('Error: ', error);
         //         });
-        // },
-        // async deleteCategory ({ commit }, items) {
-        //     commit('Delete_Category', items.id);
         // },
     },
     getters: {
