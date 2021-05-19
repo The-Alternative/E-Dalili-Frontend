@@ -18,29 +18,22 @@
                 />
                 <br />
 
-                <input
-                    type="text"
-                    v-model="products.product[0].long_des"
-                    placeholder="long_des"
-                />
-                <br />
+                <select v-model="products.image">
+                        <option disabled value="">Please select img</option>
+                        <option style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU);" value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 1</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 2</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 3</option>
+                </select>
 
-                <input
-                    type="text"
-                    v-model="products.product[0].short_des"
-                    placeholder="short_des"
-                />
-                <br />
+            
+           
 
-                <input
-                    type="text"
-                    v-model="products.image"
-                    placeholder="img url"
-                />
-                <br />
-            </form>
+        </form>
 
-            <button @click="updateProduct()">save</button>
+        <button class="save" @click="updateProduct()">save</button>
+           
+        </div>
+
         </div>
     </div>
 </template>
@@ -148,6 +141,7 @@ export default {
 };
 </script>
 <style>
+
 .parent {
     width: 100%;
     height: auto;
@@ -172,5 +166,14 @@ export default {
 }
 form input {
     margin: 20px;
+}
+.parent .save{
+    background-color: #18ade8;
+    border: none;
+    padding: 10px;
+    width: 80px;
+    color: #fff;
+    margin: 20px;
+    border-radius: 10px;
 }
 </style>

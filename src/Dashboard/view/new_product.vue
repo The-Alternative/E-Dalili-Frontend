@@ -27,21 +27,17 @@
                 />
                 <br />
 
-                <div>short_dsicription</div>
-                <input
-                    type="text"
-                    v-model="products.product[0].short_des"
-                    placeholder="short_des"
-                />
-                <br />
-                <div>img</div>
-                <input
-                    type="text"
-                    v-model="products.image"
-                    placeholder="img url"
-                />
-                <br />
-            </form>
+            <div>short_dsicription</div>  
+            <input type="text" v-model='products.product[0].short_des' placeholder="short_des"> <br/>
+            <div>img</div> 
+                            <select v-model="products.image">
+                        <option disabled value="">Please select img</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 1</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 2</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 3</option>
+                </select>
+        </form>
+
 
             <button class="save" @click="postPost()">save</button>
         </div>
@@ -152,7 +148,7 @@ export default {
         'option selected selected new_product new_product . . . . .'
         'option contain contain contain contain contain contain contain contain contain';
 }
-.parent button {
+.parent .save{
     background-color: #18ade8;
     border: none;
     padding: 10px;
