@@ -159,7 +159,7 @@ const routes = [
         name: 'product_dash',
         component: () => import('../Dashboard/view/product_dash.vue'),
     },
-    //category dashboard
+    //category dashboard//
     {
         path: '/categories_dash',
         name: 'categories_dash',

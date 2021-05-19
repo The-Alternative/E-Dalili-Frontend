@@ -6,17 +6,16 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body p-4">
-                            <form>
-                                <div class="form-group">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        class="form-control form-control-lg"
-                                        placeholder="Name"
-                                        v-model="items.name"
-                                    />
-                                </div>
-                                <!-- <div class="form-group">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="form-control form-control-lg"
+                                    placeholder="Name"
+                                    v-model="Categories.category[0].name"
+                                />
+                            </div>
+                            <!-- <div class="form-group">
                                     <input
                                         type="text"
                                         name="status"
@@ -34,16 +33,14 @@
                                         v-model="items.image"
                                     />
                                 </div> -->
-                                <div class="form-group">
-                                    <button
-                                        type="submit"
-                                        class="btn btn-info btn-block btn-lg"
-                                        @click="createCategory"
-                                    >
-                                        Add Category
-                                    </button>
-                                </div>
-                            </form>
+                            <div class="form-group">
+                                <button
+                                    class="btn btn-info btn-block btn-lg"
+                                    @click="postCategory()"
+                                >
+                                    Add Category
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +57,9 @@
                     </div> -->
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">{{ items.name }}</h5>
+                            <h5 class="card-title">
+                                {{ Categories.category.name }}
+                            </h5>
                             <!-- <p class="card-text">
                                 {{ items.is_active }}
                             </p> -->
@@ -73,45 +72,54 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: 'addnewcategory',
     data () {
         return {
-            showAddModal: false,
-            Categories:{
-                "category":[
+            // showAddModal: false,
+            Categories: {
+                category: [
                     {
-                        "name":null,
-                        "local":"en",
-                        "language_id":1
+                        name: null,
+                        local: 'ar',
+                        language_id: 1,
                     },
                     {
-                        "name":null,
-                        "local":"fr",
-                        "language_id":1
+                        name: 'mdjndjf',
+                        local: 'en',
+                        language_id: 1,
                     },
                     {
-                        "name":null,
-                        "local":"ar",
-                        "language_id":1
+                        name: 'vghvhh',
+                        local: 'fr',
+                        language_id: 1,
                     },
                 ],
-                "sulg":"bjhbh",
-                "is_active":1,
-                "parent_id":3,
-                "image":null,
-                "lang_id":1,
-                "section_id":1,
-                "created_at":null,
-                "updated_at":null
+                sulg: 'bjhbh',
+                is_active: 1,
+                parent_id: 3,
+                image: null,
+                lang_id: 1,
+                section_id: 1,
+                created_at: null,
+                updated_at: null,
             },
-            items: {},
+            // items: {},
         };
     },
     methods: {
-        createCategory () {
-            this.$store.dispatch('CreateCategory', this.items);
+        postCategory () {
+            axios.post(
+                'http://edalili.e-dalely.com/public/api/categories/create',
+                this.Categories
+            );
+            console.log(JSON.stringify(this.Categories));
         },
+
+        // createCategory () {
+        //     this.$store.dispatch('CreateCategory', this.items);
+        // },
     },
 };
 </script>

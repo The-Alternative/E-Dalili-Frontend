@@ -123,10 +123,10 @@ export default new Vuex.Store({
                 }
             });
         },
-        Add_Category (state, items) {
-            let Categories = state.Categories.concat(items);
-            state.Categories = Categories;
-        },
+        // Add_Category (state, items) {
+        //     let Categories = state.Categories.concat(items);
+        //     state.Categories = Categories;
+        // },
         // Delete_Category (state, itemsId) {
         //     let Categories = state.Categories.filter((v) => v.id != itemsId);
         //     state.Categories = Categories;
@@ -212,30 +212,38 @@ export default new Vuex.Store({
                 });
         },
         UpdateCategory ({ commit }, items) {
-            axios
-                .put(`/api/categories/update/${items.id}?lang=${lang}`, items)
-                .then((res) => {
-                    console.warn('Categoriesdashedite :', res.data.Category);
-                    let newCategories = res.data.Category;
-                    commit('Update_Categories', newCategories);
-                    return newCategories;
-                })
-                .catch(function (error) {
-                    console.log('Error: ', error);
-                });
+            axios.put(
+                `http://edalili.e-dalely.com/public/api/categories/update/${items.id}`,
+                items
+            );
+            commit('Update_Categories', items);
+            console.log(JSON.stringify(this.items));
         },
-        CreateCategory ({ commit }, items) {
-            axios
-                .post(`/api/categories/create?lang=${lang}`, items)
-                .then((res) => {
-                    console.warn('addCategoriesdash :', res.data.Category);
-                    let saveitems = res.data.Category.attributes;
-                    commit('Add_Category', saveitems);
-                })
-                .catch(function (error) {
-                    console.log('Error: ', error);
-                });
-        },
+        // UpdateCategory ({ commit }, items) {
+        //     axios
+        //         .put(`/api/categories/update/${items.id}?lang=${lang}`, items)
+        //         .then((res) => {
+        //             console.warn('Categoriesdashedite :', res.data.Category);
+        //             let newCategories = res.data.Category;
+        //             commit('Update_Categories', newCategories);
+        //             return newCategories;
+        //         })
+        //         .catch(function (error) {
+        //             console.log('Error: ', error);
+        //         });
+        // },
+        // CreateCategory ({ commit }, items) {
+        //     axios
+        //         .post(`/api/categories/create?lang=${lang}`, items)
+        //         .then((res) => {
+        //             console.warn('addCategoriesdash :', res.data.Category);
+        //             let saveitems = res.data.Category.attributes;
+        //             commit('Add_Category', saveitems);
+        //         })
+        //         .catch(function (error) {
+        //             console.log('Error: ', error);
+        //         });
+        // },
         // async deleteCategory ({ commit }, items) {
         //     commit('Delete_Category', items.id);
         // },
