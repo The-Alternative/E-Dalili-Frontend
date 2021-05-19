@@ -9,21 +9,19 @@
                             <div class="form-group">
                                 <input
                                     type="text"
-                                    name="name"
                                     class="form-control form-control-lg"
                                     placeholder="Name"
                                     v-model="Categories.category[0].name"
                                 />
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <input
                                     type="text"
-                                    name="status"
                                     class="form-control form-control-lg"
                                     placeholder="Status"
                                     v-model="Categories.sulg"
                                 />
-                            </div>
+                            </div> -->
                             <!-- <div class="form-group">
                                     <input
                                         type="text"
@@ -60,9 +58,9 @@
                             <h5 class="card-title">
                                 {{ Categories.category[0].name }}
                             </h5>
-                            <p class="card-text">
+                            <!-- <p class="card-text">
                                 {{ Categories.sulg }}
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
@@ -79,33 +77,33 @@ export default {
         return {
             // showAddModal: false,
             Categories: {
-                category: [
-                    {
-                        name: null,
-                        local: 'ar',
-                        language_id: 1,
+ "category": [
+      {
+                        "name": null,
+                        "local": "en",
+                        "language_id": 1,
                     },
                     {
-                        name: 'mdjndjf',
-                        local: 'en',
-                        language_id: 1,
+                        "name": "vghvhh",
+                        "local": "fr",
+                        "language_id": 1,
                     },
                     {
-                        name: 'vghvhh',
-                        local: 'fr',
-                        language_id: 1,
+                        "name":"خضار" ,
+                        "local": "ar",
+                        "language_id": 1,
                     },
                 ],
-                sulg: null,
-                is_active: 1,
-                parent_id: 3,
-                image: null,
-                lang_id: 1,
-                section_id: 1,
-                created_at: null,
-                updated_at: null,
+                "sulg": "kmmkm",
+                "is_active": 1,
+                "parent_id": 3,
+                "image": 'cdfgcgf',
+                "lang_id": 1,
+                "section_id": 1,
+                "created_at": 1,
+                "updated_at": 1,
             },
-            // items: {},
+
         };
     },
     methods: {
@@ -116,10 +114,6 @@ export default {
             );
             console.log(JSON.stringify(this.Categories));
         },
-
-        // createCategory () {
-        //     this.$store.dispatch('CreateCategory', this.items);
-        // },
     },
 };
 </script>

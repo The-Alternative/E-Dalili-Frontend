@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Update Category {{ items.name }}
+                        Update Category {{ categories.category[0].name }}
                     </h5>
                 </div>
                 <div class="modal-body p-4">
@@ -13,7 +13,7 @@
                             type="text"
                             class="form-control form-control-lg"
                             placeholder="Name"
-                            v-model="items.name"
+                            v-model="categories.category[0].name"
                         />
                     </div>
                     <!-- <div class="form-group">
@@ -45,6 +45,37 @@ import axios from 'axios';
 export default {
     name: 'categoryEdit',
     props: ['id'],
+    data(){
+        return{
+            categories: {
+ "category": [
+      {
+                        "name": null,
+                        "local": "en",
+                        "language_id": 1,
+                    },
+                    {
+                        "name": "vghvhh",
+                        "local": "fr",
+                        "language_id": 1,
+                    },
+                    {
+                        "name":"خضار" ,
+                        "local": "ar",
+                        "language_id": 1,
+                    },
+                ],
+                "sulg": "kmmkm",
+                "is_active": 1,
+                "parent_id": 3,
+                "image": 'cdfgcgf',
+                "lang_id": 1,
+                "section_id": 1,
+                "created_at": 1,
+                "updated_at": 1,
+            },
+        }
+    },
     computed: {
         ...mapState(['Categories']),
         items () {
@@ -56,9 +87,9 @@ export default {
         updateCategory () {
             axios.put(
                 `http://edalili.e-dalely.com/public/api/categories/update/${this.items.id}`,
-                this.items
+                this.categories
             );
-            console.log(JSON.stringify(this.items));
+            console.log(JSON.stringify(this.categories));
         },
     },
 };
