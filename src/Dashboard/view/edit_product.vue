@@ -11,32 +11,36 @@
         </div>
         <div class="contain">
         <form>
-            <div>name</div> 
-            <input type="text" v-model='products.product[0].name'  placeholder="name product"> <br/>
+            <input type="text" v-model='products.product[0].name' placeholder="name"> <br/>
+            
+            <input type="text" v-model='products.product[0].long_des' placeholder="long_des">  <br/>
+           
+            <input type="text" v-model='products.product[0].short_des' placeholder="short_des">  <br/>
 
-             <div>long_dsicription</div> 
-            <input type="text" v-model='products.product[0].long_des' placeholder="long_des"> <br/>
-
-            <div>short_dsicription</div>  
-            <input type="text" v-model='products.product[0].short_des' placeholder="short_des"> <br/>
-            <div>img</div> 
             <input type="text" v-model='products.image' placeholder="img url">  <br/>
+
+            
+        
+
+           
+
         </form>
 
-        <button class="save" @click="postPost()">save</button>
+        <button @click="updateProduct()">save</button>
            
         </div>
         </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import axios from "axios";
 export default {
     name: 'new_product',
     components: {},
     data () {
         return {
-        products: {
+                    products: {
     "product": [
         {
             "local": "ar",
@@ -65,7 +69,7 @@ export default {
     "slug": "mobiles",
     "rating_id": 1,
     "offer_id": 1,
-    "image": 1,
+    "image": null,
     "custom_feild_id": 1,
     "is_active": 1,
     "is_appear": 1,
@@ -113,14 +117,21 @@ export default {
             
         }
         };
-    },  methods: {
+    },  
+    methods: {
     // Pushes posts to the server when called.
-    postPost() {
-    axios.post('http://edalili.e-dalely.com/public/api/products/create',this.products )
-         console.log(JSON.stringify(this.products));
-   
-    }
-  }
+      updateProduct () {
+            axios.put(`/api/products/update/${this.ProductID[0].id}`,this.products)
+              console.log(JSON.stringify(this.products));
+        },
+  },   
+  computed: {
+        ...mapState(['ProductID']),
+        
+    },
+    mounted() {
+        this.$store.dispatch('loadProduct', this.$route.params.id);
+    },
 };
 </script>
 <style>
@@ -131,15 +142,6 @@ export default {
     grid-template-areas:
         'option selected selected new_product new_product . . . . .'
         'option contain contain contain contain contain contain contain contain contain';
-}
-.parent button{
-    background-color: #18ade8;
-    border: none;
-    padding: 10px;
-    width: 80px;
-    color: #fff;
-    margin: 20px;
-    border-radius: 10px;
 }
 .option_dash {
     grid-area: option;
@@ -154,5 +156,7 @@ export default {
 .contain {
     width: 100%;
     grid-area: contain;
+} form input {
+    margin: 20px;
 }
 </style>
