@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './App.vue';
+import Dashboard from './Dashboard.vue';
 import VueRouter from 'vue-router';
 import router from './router/index';
 
@@ -37,5 +37,5 @@ new Vue({
     router,
     store,
     i18n,
-    render: (h) => h(App),
-}).$mount('#app');
+    render: (h) => h(Dashboard),
+}).$mount('#Dashboard');

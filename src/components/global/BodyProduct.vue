@@ -1,7 +1,8 @@
 <template>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 coler">
         <div class="content-pro text-center">
-            <router-link class="link"
+            <router-link
+                class="link"
                 :to="{
                     name: 'ProductDetails',
                     params: {
@@ -10,7 +11,8 @@
                 }"
                 ><img v-lazy="`${image}`" class="new"
             /></router-link>
-            <router-link class="link"
+            <router-link
+                class="link"
                 :to="{
                     name: 'ProductDetails',
                     params: {
@@ -21,7 +23,8 @@
                     {{ name }}
                 </div></router-link
             >
-            <router-link class="link"
+            <router-link
+                class="link"
                 :to="{
                     name: 'ProductDetails',
                     params: {
@@ -41,8 +44,10 @@
                 <span class="fa fa-star"></span>
             </div>
             <div></div>
-            <div class="avilble" >
-                <div style="display: inline-block">متوفر في  {{ avalibleStore }} متاجر</div>
+            <div class="avilble">
+                <div style="display: inline-block">
+                    متوفر في {{ avalibleStore }} متاجر
+                </div>
                 <span class="fa fa-check-circle"></span>
             </div>
             <div class="row">
@@ -53,8 +58,8 @@
                     <div @click="heartlike()" id="heart" class="heart"></div>
                 </div>
             </div>
-            </div>
-             <!-- 
+        </div>
+        <!-- 
              <div class="stage row">
               <div @click="addToCart()" class="cart-ico">
                     <button class="cart-button">
@@ -64,7 +69,7 @@
               
             </div>
              -->
-        </div>
+    </div>
 </template>
 <style scoped>
 @media (max-width: 575.98px) {
@@ -112,7 +117,7 @@
     border-radius: 5%;
     transition: all 0.5s;
 }
-.content-pro .flex-body-prod{
+.content-pro .flex-body-prod {
     display: flex;
     flex-flow: column;
 }
@@ -159,8 +164,8 @@
         margin-top: 2vh;
         font-size: 4vw;
     }
-    .carousel-inner .content-pro{
-  margin-top: -4vh;
+    .carousel-inner .content-pro {
+        margin-top: -4vh;
     }
     .content-pro .row {
         flex-wrap: nowrap;
@@ -188,10 +193,10 @@
         font-size: 2.3vw;
     }
     .content-pro button {
-    font-size: 2.3vw;
-    width: 80px;
-    height: 40px;
-    margin: 15px 0 0 auto;
+        font-size: 2.3vw;
+        width: 80px;
+        height: 40px;
+        margin: 15px 0 0 auto;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -240,7 +245,7 @@
 <script>
 export default {
     name: 'Products',
-    props: ['id', 'name', 'image', 'short_des', 'long_des','store'],
+    props: ['id', 'name', 'image', 'short_des', 'long_des', 'store'],
     // data () {
     //     return {
     //         details: {
@@ -295,7 +300,7 @@ export default {
         */
     },
     computed: {
-        avalibleStore () {
+        avalibleStore() {
             return this.$store.getters.avalibleStore;
         },
         /* getProductById () {
@@ -313,6 +318,5 @@ export default {
             return maxPrice;
         }*/
     },
-        
 };
 </script>
