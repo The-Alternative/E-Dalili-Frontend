@@ -12,15 +12,29 @@
         <div class="icon">
           <i class="fa fa-pencil-square"></i>
 
-            <i class="fa fa-trash"></i>
+            <i @click="Delete()" class="fa fa-trash"></i>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: 'product',
     props:['id','name','image','is_appear','quantity'],
+      data () {
+        return {
+            details:{
+                id : this.id
+            }
+        }
+        },
+    methods:{
+    Delete () {
+    axios.delete(`http://edalili.e-dalely.com/public/api/products/delete/${this.id}`,this.details )
+    console.log(this.details);
+    }
+    },
       computed: {
         maxPrice(){
             let maxPrice = 0 ;
