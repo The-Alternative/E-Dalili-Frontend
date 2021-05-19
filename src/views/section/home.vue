@@ -218,7 +218,6 @@
         z-index: 0;
     }
 }
-
 /* _____________________ market after slider _____________________________ */
 .contain {
     margin-top: 40px;
@@ -250,7 +249,6 @@
         font-size: 16vh;
     }
 }
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .cont-market {

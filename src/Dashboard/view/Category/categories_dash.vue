@@ -84,7 +84,10 @@
                                         ><i class="fa fa-edit"></i
                                     ></router-link>
                                     <a class="text-danger"
-                                        ><i class="fa fa-trash-alt"></i
+                                        ><i
+                                            @click="delettcategory(items)"
+                                            class="fa fa-trash-alt"
+                                        ></i
                                     ></a>
                                 </td>
                             </tr>
@@ -108,12 +111,15 @@ export default {
             successMsg: '',
             showEditModal: false,
             showDeleteModal: false,
+            details: {
+                id: this.id,
+            },
         };
     },
     methods: {
-        // delettcategory (items) {
-        //     this.$store.dispatch('deleteCategory', items);
-        // },
+        delettcategory (items) {
+            this.$store.dispatch('deleteCategory', items);
+        },
     },
     computed: {
         ...mapState(['Categories']),
