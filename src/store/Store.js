@@ -179,7 +179,7 @@ export default new Vuex.Store({
             axios
                 .get(`/api/products/getById/${ProductID}?lang=${lang}`)
                 .then((res) => {
-                    console.warn('productById :', res.data.product);
+                    console.warn('productById :', JSON.stringify(res.data.product));
                     let ProductID = res.data.product;
                     commit('SET_ProductID', ProductID);
                 })
