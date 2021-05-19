@@ -16,7 +16,7 @@
                                         v-model="items.name"
                                     />
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <input
                                         type="text"
                                         name="status"
@@ -33,7 +33,7 @@
                                         placeholder="ImageURL"
                                         v-model="items.image"
                                     />
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <button
                                         type="submit"
@@ -50,20 +50,20 @@
             </div>
             <div class="col-3 card ml-5" style="max-width: 540px;">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <img
                             :src="items.image"
                             width="50%"
                             height="100%"
                             class="card-img"
                         />
-                    </div>
+                    </div> -->
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">{{ items.name }}</h5>
-                            <p class="card-text">
+                            <!-- <p class="card-text">
                                 {{ items.is_active }}
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
@@ -78,6 +78,33 @@ export default {
     data () {
         return {
             showAddModal: false,
+            Categories:{
+                "category":[
+                    {
+                        "name":null,
+                        "local":"en",
+                        "language_id":1
+                    },
+                    {
+                        "name":null,
+                        "local":"fr",
+                        "language_id":1
+                    },
+                    {
+                        "name":null,
+                        "local":"ar",
+                        "language_id":1
+                    },
+                ],
+                "sulg":"bjhbh",
+                "is_active":1,
+                "parent_id":3,
+                "image":null,
+                "lang_id":1,
+                "section_id":1,
+                "created_at":null,
+                "updated_at":null
+            },
             items: {},
         };
     },
