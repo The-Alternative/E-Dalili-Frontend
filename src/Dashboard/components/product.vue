@@ -5,14 +5,17 @@
             href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
         />
         <div><input style="margin: 0px 10px" type="checkbox" />{{ id }}</div>
-        <img v-lazy="`${image}`" />
+        <div> <img v-lazy="`${image}`" /></div>
         <div>{{ name }}</div>
         <div>
             <i v-if="is_appear == 'Appear'" class="fa fa-check"></i>
             <i v-else class="fa fa-times"></i>
         </div>
         <div class="icon">
-            <i class="fa fa-pencil-square"></i>
+        <router-link :to="{ name: 'edit_product',params: { id: id },}"
+                    @click="showEditModal = true">
+                <i class="fa fa-pencil-square"></i>
+        </router-link>
 
             <i @click="Delete()" class="fa fa-trash"></i>
         </div>
@@ -34,7 +37,7 @@ export default {
     methods:{
     Delete () {
     axios.delete(`http://edalili.e-dalely.com/public/api/products/delete/${this.id}`,this.details )
-    console.log(this.details);
+    console.log(JSON.stringify(this.is_active));
     }
     },
       computed: {

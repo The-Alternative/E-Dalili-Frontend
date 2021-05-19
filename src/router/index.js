@@ -195,6 +195,11 @@ const routes = [
         name: 'new_product',
         component: () => import('../Dashboard/view/new_product.vue'),
     },
+    {
+        path: '/edit_product/:id',
+        name: 'edit_product',
+        component: () => import('../Dashboard/view/edit_product.vue'),
+    },
 ];
 
 const router = new VueRouter({
