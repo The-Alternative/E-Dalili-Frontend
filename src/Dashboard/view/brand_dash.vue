@@ -23,7 +23,7 @@ export default {
     computed: {},
 };
 </script>
-<style>
+<style scoped>
 .parent {
     width: 100%;
     height: auto;
