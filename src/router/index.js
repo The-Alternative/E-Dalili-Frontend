@@ -179,10 +179,9 @@ const routes = [
         params: true,
     },
     {
-        path: '/categoryEdit/:id/edit',
+        path: '/categoryEdit/:id',
         name: 'categoryEdit',
         component: () => import('../Dashboard/view/Category/categoryEdit.vue'),
-        params: true,
     },
     //
     {

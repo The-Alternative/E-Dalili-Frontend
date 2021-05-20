@@ -21,18 +21,23 @@
                 <select v-model="products.image">
                     <option disabled value="">Please select img</option>
                     <option
-                        style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU);"
+                        style="
+                            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU);
+                        "
                         value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
-                        >img 1</option
                     >
+                        img 1
+                    </option>
                     <option
                         value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
-                        >img 2</option
                     >
+                        img 2
+                    </option>
                     <option
                         value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
-                        >img 3</option
                     >
+                        img 3
+                    </option>
                 </select>
             </form>
 
@@ -47,7 +52,7 @@ import axios from 'axios';
 export default {
     name: 'new_product',
     components: {},
-    data () {
+    data() {
         return {
             products: {
                 product: [
@@ -126,8 +131,8 @@ export default {
         };
     },
     methods: {
-        // Pushes posts to the server when called.
-        updateProduct () {
+        // Pushes posts to the server when called.//
+        updateProduct() {
             axios.put(
                 `/api/products/update/${this.ProductID[0].id}`,
                 this.products
@@ -138,7 +143,7 @@ export default {
     computed: {
         ...mapState(['ProductID']),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadProduct', this.$route.params.id);
     },
 };
