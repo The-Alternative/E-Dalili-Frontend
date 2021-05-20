@@ -1,14 +1,6 @@
 <template>
     <div class="parent">
-        <div class="option_dash">
-            <select v-model="selected">
-                <option value="catlog" disabled>catlog</option>
-                <option value="Product">Product</option>
-                <option value="Catogeries">Catogeries</option>
-                <option value="Brands">Brands</option>
-                <option value="Custom field">Custom field</option>
-            </select>
-        </div>
+         <dash />
         <div class="selected">{{ selected }}</div>
         <div class="new_product">
             <button @click="newProduct">New Product</button>
@@ -48,16 +40,19 @@
 </template>
 
 <script>
+import dash from '../view/dash';
 import Product from '../components/product.vue';
 import { mapState } from 'vuex';
 export default {
     name: 'product_dash',
     components: {
         Product,
+        dash
     },
     data() {
+         
         return {
-            selected: 'catlog',
+            selected: localStorage.getItem('selected'),
         };
     },
     methods: {
@@ -82,11 +77,6 @@ export default {
     grid-template-areas:
         'option selected selected new_product new_product . . . . .'
         'option contain contain contain contain contain contain contain contain contain';
-}
-
-.option_dash {
-    grid-area: option;
-    background-color: #ccc;
 }
 .new_product {
     border-radius: 5px;

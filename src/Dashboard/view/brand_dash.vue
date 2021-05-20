@@ -1,22 +1,15 @@
 <template>
     <div class="parent">
-        <div class="option_dash">
-            <select v-model="selected">
-                <option value="catlog" disabled>catlog</option>
-                <option value="Product">Product</option>
-                <option value="Catogeries">Catogeries</option>
-                <option value="Brands">Brands</option>
-                <option value="Custom field">Custom field</option>
-            </select>
-        </div>
+        <dash />
         <div class="contain">brand_dash</div>
     </div>
 </template>
 
 <script>
+import dash from '../view/dash';
 export default {
     name: 'brand_dash',
-    components: {},
+    components: {dash},
     data() {
         return {};
     },

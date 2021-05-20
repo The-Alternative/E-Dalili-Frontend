@@ -1,14 +1,7 @@
 <template>
     <div class="parent">
-        <div class="option_dash">
-            <select>
-                <option value="catlog" disabled>catlog</option>
-                <option value="Product">Product</option>
-                <option value="Catogeries">Catogeries</option>
-                <option value="Brands">Brands</option>
-                <option value="Custom field">Custom field</option>
-            </select>
-        </div>
+        <dash />
+         <div class="selected">{{ selected }} <span style="color:red">/</span> Edit Product</div>
         <div class="contain">
             <form>
                 <input
@@ -17,43 +10,48 @@
                     placeholder="name"
                 />
                 <br />
+                                <input
+                    type="text"
+                    v-model="products.product[0].short_des"
+                    placeholder="short_des"
+                />
+                <br />
+                                <input
+                    type="text"
+                    v-model="products.product[0].long_des"
+                    placeholder="long_des"
+                />
+                <br />
 
                 <select v-model="products.image">
-                    <option disabled value="">Please select img</option>
-                    <option
-                        style="
-                            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU);
-                        "
-                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
-                    >
-                        img 1
-                    </option>
-                    <option
-                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
-                    >
-                        img 2
-                    </option>
-                    <option
-                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
-                    >
-                        img 3
-                    </option>
+                        <option disabled value="">Please select img</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 1</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 2</option>
+                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 3</option>
                 </select>
-            </form>
 
-            <button class="save" @click="updateProduct()">save</button>
+            
+           
+
+        </form>
+
+        <button class="save" @click="updateProduct()">save</button>
+           
         </div>
-    </div>
+        </div>
+    
 </template>
 
 <script>
+import dash from '../view/dash';
 import { mapState } from 'vuex';
 import axios from 'axios';
 export default {
     name: 'new_product',
-    components: {},
-    data() {
+    components: {dash},
+    data () {
         return {
+             selected: localStorage.getItem('selected'),
             products: {
                 product: [
                     {
@@ -174,7 +172,7 @@ export default {
 form input {
     margin: 20px;
 }
-.parent .save {
+.parent .save{
     background-color: #18ade8;
     border: none;
     padding: 10px;
