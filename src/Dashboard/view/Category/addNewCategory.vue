@@ -83,7 +83,7 @@ export default {
                         language_id: 1,
                     },
                     {
-                        name: 'رهف',
+                        name: 'خضار',
                         local: 'ar',
                         language_id: 1,
                     },
