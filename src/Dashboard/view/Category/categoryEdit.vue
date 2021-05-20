@@ -40,17 +40,17 @@ export default {
             categories: {
                 category: [
                     {
-                        name: null,
+                        name: 'mknkn',
                         local: 'en',
                         language_id: 1,
                     },
                     {
-                        name: ',ljlkjlkj',
+                        name: 'ljlkjlkj',
                         local: 'fr',
                         language_id: 1,
                     },
                     {
-                        name: 'رهف',
+                        name: null,
                         local: 'ar',
                         language_id: 1,
                     },
