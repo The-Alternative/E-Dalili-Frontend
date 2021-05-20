@@ -101,10 +101,11 @@
 
 <script>
 import { mapState } from 'vuex';
+// import axios from 'axios';
 export default {
     name: 'categories_dash',
     components: {},
-    data () {
+    data() {
         return {
             selected: 'catlog',
             errorMsg: '',
@@ -112,19 +113,26 @@ export default {
             showEditModal: false,
             showDeleteModal: false,
             details: {
-                id: this.id,
+                id: this.items.id,
             },
         };
     },
     methods: {
-        delettcategory (items) {
+        delettcategory(items) {
             this.$store.dispatch('deleteCategory', items);
         },
+        // delettcategory() {
+        //     axios.put(
+        //         `http://edalili.e-dalely.com/public/api/categories/trash/${this.id}`,
+        //         this.details
+        //     );
+        //     // console.log(JSON.stringify(this.is_active));
+        // },
     },
     computed: {
         ...mapState(['Categories']),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadCategories');
     },
 };
