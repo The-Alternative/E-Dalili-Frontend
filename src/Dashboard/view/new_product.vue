@@ -1,5 +1,6 @@
 <template>
     <div class="parent">
+        <div class="selected">{{ selected }} <span style="color:red">/</span> New Product</div>
         <div class="option_dash">
             <select>
                 <option value="catlog" disabled>catlog</option>
@@ -10,12 +11,22 @@
             </select>
         </div>
         <div class="contain">
-        <form>
-            <div>name</div> 
-            <input type="text" v-model='products.product[0].name'  placeholder="name product"> <br/>
+            <form>
+                <div>name</div>
+                <input
+                    type="text"
+                    v-model="products.product[0].name"
+                    placeholder="name product"
+                />
+                <br />
 
-             <div>long_dsicription</div> 
-            <input type="text" v-model='products.product[0].long_des' placeholder="long_des"> <br/>
+                <div>long_dsicription</div>
+                <input
+                    type="text"
+                    v-model="products.product[0].long_des"
+                    placeholder="long_des"
+                />
+                <br />
 
             <div>short_dsicription</div>  
             <input type="text" v-model='products.product[0].short_des' placeholder="short_des"> <br/>
@@ -28,104 +39,105 @@
                 </select>
         </form>
 
-        <button class="save" @click="postPost()">save</button>
-           
+            <button class="save" @click="postPost()">save</button>
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 export default {
     name: 'new_product',
     components: {},
     data () {
         return {
-        products: {
-    "product": [
-        {
-            "local": "ar",
-            "name": null,
-            "meta": "arefe",
-            "short_des": null,
-            "long_des": null
-        },
-        {
-            "local": "en",
-            "name": "efen",
-            "meta": "efefen",
-            "short_des": "en en",
-            "long_des": "en en"
-        },
-        {
-            "local": "fr",
-            "name": "ffer",
-            "meta": "ffefr",
-            "short_des": "fr fr",
-            "long_des": "fr fr"
-        }
-    ],
-    "brand_id": "1",
-    "barcode": "mobiles",
-    "slug": "mobiles",
-    "rating_id": 1,
-    "offer_id": 1,
-    "image": 1,
-    "custom_feild_id": 1,
-    "is_active": 1,
-    "is_appear": 1,
-    "category_id": 2,
-    "category": [
-        {
-            "category_id": 1
-        },
-        {
-            "category_id": 2
-        },
-        {
-            "category_id": 3
-        }
-    ],
-    "customFeild": [
-        {
-            "customfield_id": 1
-        },
-        {
-            "customfield_id": 2
-        },
-        {
-            "customfield_id": 3
-        }
-    ],
-    "images": [
-        {
-            "product_id": 1,
-            "image":"asdasd",
-            "is_cover":1
-        },
-                {
-            "product_id": 1,
-            "image":"asdasd",
-            "is_cover":0
-        },
-                {
-            "product_id": 1,
-            "image":"asdasd",
-            "is_cover":0
-        }
-    ]
-    
-            
-        }
+             selected: localStorage.getItem('selected'),
+            products: {
+                product: [
+                    {
+                        local: 'ar',
+                        name: null,
+                        meta: 'arefe',
+                        short_des: null,
+                        long_des: null,
+                    },
+                    {
+                        local: 'en',
+                        name: 'efen',
+                        meta: 'efefen',
+                        short_des: 'en en',
+                        long_des: 'en en',
+                    },
+                    {
+                        local: 'fr',
+                        name: 'ffer',
+                        meta: 'ffefr',
+                        short_des: 'fr fr',
+                        long_des: 'fr fr',
+                    },
+                ],
+                brand_id: '1',
+                barcode: 'mobiles',
+                slug: 'mobiles',
+                rating_id: 1,
+                offer_id: 1,
+                image: 1,
+                custom_feild_id: 1,
+                is_active: 1,
+                is_appear: 1,
+                category_id: 2,
+                category: [
+                    {
+                        category_id: 1,
+                    },
+                    {
+                        category_id: 2,
+                    },
+                    {
+                        category_id: 3,
+                    },
+                ],
+                customFeild: [
+                    {
+                        customfield_id: 1,
+                    },
+                    {
+                        customfield_id: 2,
+                    },
+                    {
+                        customfield_id: 3,
+                    },
+                ],
+                images: [
+                    {
+                        product_id: 1,
+                        image: 'asdasd',
+                        is_cover: 1,
+                    },
+                    {
+                        product_id: 1,
+                        image: 'asdasd',
+                        is_cover: 0,
+                    },
+                    {
+                        product_id: 1,
+                        image: 'asdasd',
+                        is_cover: 0,
+                    },
+                ],
+            },
         };
-    },  methods: {
-    // Pushes posts to the server when called.
-    postPost() {
-    axios.post('http://edalili.e-dalely.com/public/api/products/create',this.products )
-         console.log(JSON.stringify(this.products));
-   
-    }
-  }
+    },
+    methods: {
+        // Pushes posts to the server when called.
+        postPost () {
+            axios.post(
+                'http://edalili.e-dalely.com/public/api/products/create',
+                this.products
+            );
+            console.log(JSON.stringify(this.products));
+        },
+    },
 };
 </script>
 <style>

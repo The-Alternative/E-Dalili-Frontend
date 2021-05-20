@@ -116,21 +116,21 @@ export default new Vuex.Store({
         SET_Categories (state, Categories) {
             state.Categories = Categories;
         },
-        Update_Categories (state, items) {
-            state.Categories.forEach((v) => {
-                if (v.id == items.id) {
-                    v = items;
-                }
-            });
-        },
-        Add_Category (state, items) {
-            let Categories = state.Categories.concat(items);
-            state.Categories = Categories;
-        },
-        // Delete_Category (state, itemsId) {
-        //     let Categories = state.Categories.filter((v) => v.id != itemsId);
+        // Update_Categories (state, items) {
+        //     state.Categories.forEach((v) => {
+        //         if (v.id == items.id) {
+        //             v = items;
+        //         }
+        //     });
+        // },
+        // Add_Category (state, items) {
+        //     let Categories = state.Categories.concat(items);
         //     state.Categories = Categories;
         // },
+        Delete_Category (state, itemsId) {
+            let Categories = state.Categories.filter((v) => v.id != itemsId);
+            state.Categories = Categories;
+        },
     },
     actions: {
         addToCart: (context, payload) => {
@@ -179,7 +179,7 @@ export default new Vuex.Store({
             axios
                 .get(`/api/products/getById/${ProductID}?lang=${lang}`)
                 .then((res) => {
-                    console.warn('productById :', JSON.stringify(res.data.product));
+                    console.warn('productById :', res.data.product);
                     let ProductID = res.data.product;
                     commit('SET_ProductID', ProductID);
                 })
@@ -211,33 +211,33 @@ export default new Vuex.Store({
                     console.log('Error: ', error);
                 });
         },
-        UpdateCategory ({ commit }, items) {
-            axios
-                .put(`/api/categories/update/${items.id}?lang=${lang}`, items)
-                .then((res) => {
-                    console.warn('Categoriesdashedite :', res.data.Category);
-                    let newCategories = res.data.Category;
-                    commit('Update_Categories', newCategories);
-                    return newCategories;
-                })
-                .catch(function (error) {
-                    console.log('Error: ', error);
-                });
+        async deleteCategory ({ commit }, items) {
+            commit('Delete_Category', items.id);
         },
-        CreateCategory ({ commit }, items) {
-            axios
-                .post(`/api/categories/create?lang=${lang}`, items)
-                .then((res) => {
-                    console.warn('addCategoriesdash :', res.data.Category);
-                    let saveitems = res.data.Category.attributes;
-                    commit('Add_Category', saveitems);
-                })
-                .catch(function (error) {
-                    console.log('Error: ', error);
-                });
-        },
-        // async deleteCategory ({ commit }, items) {
-        //     commit('Delete_Category', items.id);
+        // UpdateCategory ({ commit }, items) {
+        //     axios
+        //         .put(`/api/categories/update/${items.id}?lang=${lang}`, items)
+        //         .then((res) => {
+        //             console.warn('Categoriesdashedite :', res.data.Category);
+        //             let newCategories = res.data.Category;
+        //             commit('Update_Categories', newCategories);
+        //             return newCategories;
+        //         })
+        //         .catch(function (error) {
+        //             console.log('Error: ', error);
+        //         });
+        // },
+        // CreateCategory ({ commit }, items) {
+        //     axios
+        //         .post(`/api/categories/create?lang=${lang}`, items)
+        //         .then((res) => {
+        //             console.warn('addCategoriesdash :', res.data.Category);
+        //             let saveitems = res.data.Category.attributes;
+        //             commit('Add_Category', saveitems);
+        //         })
+        //         .catch(function (error) {
+        //             console.log('Error: ', error);
+        //         });
         // },
     },
     getters: {

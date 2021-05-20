@@ -1,15 +1,7 @@
 <template>
     <div class="parent">
+         <dash />
         <div class="col-12">
-            <div class="option_dash col-2 mr-4">
-                <select v-model="selected">
-                    <option value="catlog" disabled>catlog</option>
-                    <option value="Product">Product</option>
-                    <option value="Catogeries">Catogeries</option>
-                    <option value="Brands">Brands</option>
-                    <option value="Custom field">Custom field</option>
-                </select>
-            </div>
             <div class="contain m-4 col-10">
                 <div class="container">
                     <div class="float-right row m-6">
@@ -84,7 +76,10 @@
                                         ><i class="fa fa-edit"></i
                                     ></router-link>
                                     <a class="text-danger"
-                                        ><i class="fa fa-trash-alt"></i
+                                        ><i
+                                            @click="delettcategory(items)"
+                                            class="fa fa-trash-alt"
+                                        ></i
                                     ></a>
                                 </td>
                             </tr>
@@ -97,10 +92,11 @@
 </template>
 
 <script>
+import dash from '../dash';
 import { mapState } from 'vuex';
 export default {
     name: 'categories_dash',
-    components: {},
+    components: {dash},
     data () {
         return {
             selected: 'catlog',
@@ -108,12 +104,15 @@ export default {
             successMsg: '',
             showEditModal: false,
             showDeleteModal: false,
+            details: {
+                id: this.id,
+            },
         };
     },
     methods: {
-        // delettcategory (items) {
-        //     this.$store.dispatch('deleteCategory', items);
-        // },
+        delettcategory (items) {
+            this.$store.dispatch('deleteCategory', items);
+        },
     },
     computed: {
         ...mapState(['Categories']),

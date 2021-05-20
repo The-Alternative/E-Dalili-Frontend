@@ -1,13 +1,16 @@
 <template>
+    <div>
     <div id="app">
         <!-- Header -->
-        <AppHeader />
+        <AppHeader/>
         <transition name="view">
             <router-view />
         </transition>
         <!-- Footer -->
         <AppFooter />
     </div>
+    </div>
+
 </template>
 
 <script>

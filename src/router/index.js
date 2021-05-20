@@ -150,16 +150,16 @@ const routes = [
     },
     /* dashboard */
     {
-        path: '/main_dash',
-        name: 'main_dash',
-        component: () => import('../Dashboard/view/main_dash.vue'),
+        path: '/Admin',
+        name: 'Admin',
+        component: () => import('../Dashboard/view/Admin.vue'),
     },
     {
-        path: '/product_dash',
+        path: '/Admin/product_dash',
         name: 'product_dash',
         component: () => import('../Dashboard/view/product_dash.vue'),
     },
-    //category dashboard
+    //category dashboard//
     {
         path: '/categories_dash',
         name: 'categories_dash',
