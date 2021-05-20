@@ -1,6 +1,5 @@
 <template>
-  
-        <div class="option_dash">
+    <!-- <div class="option_dash">
             <select v-model="selected" @change="handleChange($event)">
                 <option value="catlog" disabled>catlog</option>
 
@@ -11,12 +10,16 @@
                 </option>
                 <option @click="gotoBrandAll" value="Brands">Brands</option>
                 <option value="Custom field">Custom field</option>
-            </select>
-     
-        <!-- <div class="selected">{{selected}}</div>  -->
+            </select> -->
 
+    <!-- <div class="selected">{{selected}}</div>  -->
 
-
+    <div>
+        <button class="btn btn-info mr-3" @click="gotoProductAll">
+            Product
+        </button>
+        <button class="btn btn-info mr-3" @click="gotoBrandAll">Brands</button>
+        <button class="btn btn-info">Custom field</button>
     </div>
 </template>
 
@@ -26,9 +29,8 @@ export default {
 
     components: {},
     data() {
-         
         return {
-           selected: localStorage.getItem('selected'),
+            selected: localStorage.getItem('selected'),
         };
     },
     methods: {
@@ -43,7 +45,6 @@ export default {
         },
         handleChange(event) {
             localStorage.setItem('selected', event.target.value);
-           
         },
     },
     computed: {},
