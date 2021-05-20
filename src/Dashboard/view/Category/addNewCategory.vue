@@ -9,22 +9,27 @@
                             <div class="form-group">
                                 <input
                                     type="text"
-                                    name="name"
                                     class="form-control form-control-lg"
                                     placeholder="Name"
                                     v-model="Categories.category[0].name"
                                 />
                             </div>
-
-                            <!-- <div class="form-group">
-                                    <input
-                                        type="text"
-                                        name="image"
-                                        class="form-control form-control-lg"
-                                        placeholder="ImageURL"
-                                        v-model="items.image"
-                                    />
-                                </div>  -->
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control form-control-lg"
+                                    placeholder="Status"
+                                    v-model="Categories.sulg"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control form-control-lg"
+                                    placeholder="ImageURL"
+                                    v-model="Categories.image"
+                                />
+                            </div>
                             <div class="form-group">
                                 <button
                                     class="btn btn-info btn-block btn-lg"
@@ -37,16 +42,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 card ml-5" style="max-width: 540px;">
+            <div class="col-3 card ml-5" style="max-width: 540px">
                 <div class="row no-gutters">
-                    <!-- <div class="col-md-4">
-                        <img
-                            :src="items.image"
-                            width="50%"
-                            height="100%"
-                            class="card-img"
-                        />
-                    </div> -->
+                    <div class="col-md-4">
+                        <img :src="Categories.image" class="card-img" />
+                    </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">
@@ -67,51 +67,55 @@
 import axios from 'axios';
 export default {
     name: 'addnewcategory',
-    data () {
+    data() {
         return {
             // showAddModal: false,
             Categories: {
-    "category": [
-        {
-            "name": null,
-            "local": "en",
-            "language_id": 1
-        },
-        {
-            "name": "fahed",
-            "local": "fr",
-            "language_id": 1
-        },
-        {
-            "name": "فهد",
-            "local": "ar",
-            "language_id": 1
-        }
-    ],
-    "slug": "فهد",
-    "is_active": 1,
-    "parent_id": 3,
-    "image": "fafaffafa",
-    "lang_id": 1,
-    "section_id":1,
-    "created_at": 1,
-    "updated_at": 1
-}
-            // items: {},
+                category: [
+                    {
+                        name: null,
+                        local: 'en',
+                        language_id: 1,
+                    },
+                    {
+                        name: 'vghvhh',
+                        local: 'fr',
+                        language_id: 1,
+                    },
+                    {
+                        name: 'خضار',
+                        local: 'ar',
+                        language_id: 1,
+                    },
+                ],
+                sulg: null,
+                is_active: 1,
+                parent_id: 3,
+                image: null,
+                lang_id: 1,
+                section_id: 1,
+                created_at: 1,
+                updated_at: 1,
+            },
         };
     },
     methods: {
-        postCategory () {
+        postCategory() {
             axios.post(
                 'http://edalili.e-dalely.com/public/api/categories/create',
                 this.Categories
             );
             console.log(JSON.stringify(this.Categories));
+            this.$router.push({ name: 'categories_dash' });
         },
-
-        // createCategory () {
-        //     this.$store.dispatch('CreateCategory', this.items);
-        // },
     },
 };
 </script>
+<style scoped>
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto;
+}
+</style>

@@ -49,7 +49,7 @@ import axios from 'axios';
 export default {
     name: 'new_product',
     components: {},
-    data () {
+    data() {
         return {
              selected: localStorage.getItem('selected'),
             products: {
@@ -130,7 +130,7 @@ export default {
     },
     methods: {
         // Pushes posts to the server when called.
-        postPost () {
+        postPost() {
             axios.post(
                 'http://edalili.e-dalely.com/public/api/products/create',
                 this.products
@@ -140,7 +140,7 @@ export default {
     },
 };
 </script>
-<style>
+<style scoped>
 .parent {
     width: 100%;
     height: auto;

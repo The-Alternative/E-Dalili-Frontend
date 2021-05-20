@@ -7,12 +7,25 @@
         </div>
         <div class="contain">
             <div class="nav_Product">
-                <div style=" background-color: #ddd;padding: 20px;" class="id">id</div>
-               <div style=" background-color: #ddd;padding: 20px;"> img<img class="img" src="" /></div>
-                <div style=" background-color: #ddd;padding: 20px;" class="name">name</div>
+                <div style="background-color: #ddd; padding: 20px" class="id">
+                    id
+                </div>
+                <div style="background-color: #ddd; padding: 20px">
+                    img<img class="img" src="" />
+                </div>
+                <div style="background-color: #ddd; padding: 20px" class="name">
+                    name
+                </div>
 
-                <div style=" background-color: #ddd;padding: 20px;" class="status">status</div>
-                <div style=" background-color: #ddd;padding: 20px;" class="edit">edit</div>
+                <div
+                    style="background-color: #ddd; padding: 20px"
+                    class="status"
+                >
+                    status
+                </div>
+                <div style="background-color: #ddd; padding: 20px" class="edit">
+                    edit
+                </div>
                 <product
                     v-for="items in Product"
                     :key="items"
@@ -22,7 +35,6 @@
                     :is_appear="items.is_appear"
                 />
             </div>
-
         </div>
     </div>
 </template>
@@ -56,7 +68,7 @@ export default {
     },
 };
 </script>
-<style>
+<style scoped>
 .parent {
     font-size: 18px;
     width: 100%;
@@ -64,20 +76,19 @@ export default {
     display: grid;
     grid-template-areas:
         'option selected selected new_product new_product . . . . .'
-        'option contain contain contain contain contain contain contain contain contain' ;
+        'option contain contain contain contain contain contain contain contain contain';
 }
 .new_product {
-	border-radius: 5px;
+    border-radius: 5px;
     grid-area: new_product;
     margin: 10px;
 }
-.new_product button{
+.new_product button {
     border: none;
-	background-color: #0eacc6;
-	padding: 10px;
-	color: #fff;
+    background-color: #0eacc6;
+    padding: 10px;
+    color: #fff;
 }
-
 
 .selected {
     grid-area: selected;
@@ -90,7 +101,6 @@ export default {
     grid-area: contain;
 }
 .nav_Product {
-
     display: grid;
     grid-template-areas:
         'id img name status edit'

@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Update Category {{ items.name }}
+                        Update Category {{ categories.category[0].name }}
                     </h5>
                 </div>
                 <div class="modal-body p-4">
@@ -13,18 +13,9 @@
                             type="text"
                             class="form-control form-control-lg"
                             placeholder="Name"
-                            v-model="items.name"
+                            v-model="categories.category[0].name"
                         />
                     </div>
-                    <!-- <div class="form-group">
-                            <input
-                                type="text"
-                                name="is_active"
-                                class="form-control form-control-lg"
-                                placeholder="Status"
-                                v-model="items.is_active"
-                            />
-                        </div> -->
                     <div class="form-group">
                         <button
                             class="btn btn-info btn-block btn-lg"
@@ -44,21 +35,51 @@ import { mapState } from 'vuex';
 import axios from 'axios';
 export default {
     name: 'categoryEdit',
-    props: ['id'],
+    data() {
+        return {
+            categories: {
+                category: [
+                    {
+                        name: 'mknkn',
+                        local: 'en',
+                        language_id: 1,
+                    },
+                    {
+                        name: 'ljlkjlkj',
+                        local: 'fr',
+                        language_id: 1,
+                    },
+                    {
+                        name: null,
+                        local: 'ar',
+                        language_id: 1,
+                    },
+                ],
+                slug: 'hbhjb',
+                is_active: 1,
+                parent_id: 1,
+                image: 'https://img.lovepik.com/photo/50015/8348.jpg_wh860.jpg',
+                lang_id: 1,
+                section_id: 1,
+                created_at: null,
+                updated_at: null,
+            },
+        };
+    },
     computed: {
-        ...mapState(['Categories']),
-        items () {
-            return this.Categories.find((v) => v.id == this.$route.params.id);
-        },
+        ...mapState(['CategoryID']),
+    },
+    mounted() {
+        this.$store.dispatch('loadCategory', this.$route.params.id);
     },
     methods: {
-        //     this.$router.push({ name: 'categories_dash' });
-        updateCategory () {
+        updateCategory() {
             axios.put(
-                `http://edalili.e-dalely.com/public/api/categories/update/${this.items.id}`,
-                this.items
+                `http://edalili.e-dalely.com/public/api/categories/update/${this.CategoryID.id}`,
+                this.categories
             );
-            console.log(JSON.stringify(this.items));
+            console.log(JSON.stringify(this.categories));
+            this.$router.push({ name: 'categories_dash' });
         },
     },
 };

@@ -129,8 +129,8 @@ export default {
         };
     },
     methods: {
-        // Pushes posts to the server when called.
-        updateProduct () {
+        // Pushes posts to the server when called.//
+        updateProduct() {
             axios.put(
                 `/api/products/update/${this.ProductID[0].id}`,
                 this.products
@@ -141,13 +141,12 @@ export default {
     computed: {
         ...mapState(['ProductID']),
     },
-    mounted () {
+    mounted() {
         this.$store.dispatch('loadProduct', this.$route.params.id);
     },
 };
 </script>
-<style>
-
+<style scoped>
 .parent {
     width: 100%;
     height: auto;

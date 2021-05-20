@@ -18,7 +18,7 @@ const routes = [
         component: () => import('../components/Admin/ForgetPassword.vue'),
     },
     {
-        path: '/',
+        path: '/settinglogin',
         component: () => import('../components/Admin/loginSettingPage.vue'),
     },
     {
@@ -58,7 +58,7 @@ const routes = [
     },
     /* services or section */
     {
-        path: '/allSection',
+        path: '/',
         name: 'home',
         component: () => import('../views/section/home.vue'),
     },
@@ -179,10 +179,9 @@ const routes = [
         params: true,
     },
     {
-        path: '/categoryEdit/:id/edit',
+        path: '/categoryEdit/:id',
         name: 'categoryEdit',
         component: () => import('../Dashboard/view/Category/categoryEdit.vue'),
-        params: true,
     },
     //
     {
