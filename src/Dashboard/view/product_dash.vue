@@ -28,7 +28,7 @@
                 </div>
                 <product
                     v-for="items in Product"
-                    :key="items"
+                    :key="items.pr"
                     :id="items.id"
                     :name="items.name"
                     :image="items.image"

@@ -1,9 +1,5 @@
 <template>
     <div class="product">
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
-        />
         <div><input style="margin: 0px 10px" type="checkbox" />{{ id }}</div>
         <div><img v-lazy="`${image}`" /></div>
         <div>{{ name }}</div>
@@ -16,7 +12,7 @@
                 :to="{ name: 'edit_product', params: { id: id } }"
                 @click="showEditModal = true"
             >
-                <i class="fa fa-pencil-square"></i>
+                <i class="fas fa-edit"></i>
             </router-link>
 
             <i @click="Delete()" class="fa fa-trash"></i>

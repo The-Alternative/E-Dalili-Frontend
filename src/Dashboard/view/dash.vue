@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         gotoProductAll() {
-            this.$router.push(`/Admin/product_dash`);
+            this.$router.push(`/admin/product_dash`);
         },
         gotoCategoriesAll() {
             this.$router.push(`/categories_dash`);
