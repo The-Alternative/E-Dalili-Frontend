@@ -43,18 +43,6 @@
                                             params: {
                                                 id: item.id,
                                                 title: item.title,
-                                            },
-                                        }"
-                                        ><button class="button">
-                                            <span>Visit </span>
-                                        </button></router-link
-                                    >
-                                    <!-- <router-link
-                                        :to="{
-                                            name: 'visitRestaurant',
-                                            params: {
-                                                id: item.id,
-                                                title: item.title,
                                                 image: item.image,
                                                 short_des: item.short_des,
                                                 long_des: item.long_des,
@@ -62,10 +50,10 @@
                                                 Menu: item.Menu,
                                             },
                                         }"
-                                        ><button class="button" @click="goto()">
+                                        ><button class="button">
                                             <span>Visit </span>
                                         </button></router-link
-                                    > -->
+                                    >
                                 </p>
                             </div>
                         </div>
@@ -73,7 +61,7 @@
                 </div>
             </div>
             <!-- col 2 -->
-            <div class="col-sm-2">
+            <div class="col-sm-2 bannerimage">
                 <img
                     src="../../../public/img/img5.jpg"
                     height="50%"
@@ -192,57 +180,8 @@ export default {
 input[type='checkbox'] {
     right: 40px;
 }
-/*
-label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    margin-right: 5px;
-}
-input[type='checkbox']:checked + label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-} */
-/* input[type='checkbox'] {
-    display: block;
-    padding-right: 0;
-}
-
-input[type='checkbox'] + label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-}
-input[type='checkbox']:checked + label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-} */
-/* Links on mouse-over */
 .sidebar ul li:hover {
     color: #555;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
 }
 .button {
     border-radius: 4px;
@@ -277,9 +216,26 @@ input[type='checkbox']:checked + label {
 .button:hover span {
     padding-right: 25px;
 }
-
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+@media (max-width: 991px) {
+    .bannerimage {
+        display: none;
+    }
+    input[type='checkbox'] {
+        right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .bannerimage {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .bannerimage {
+        display: none;
+    }
 }
 </style>
