@@ -1,35 +1,86 @@
 <template>
     <div class="parent">
+        <dash />
         <div class="selected">{{ selected }} <span style="color:red">/</span> New Product</div>
-        <div class="option_dash">
-            <select>
-                <option value="catlog" disabled>catlog</option>
-                <option value="Product">Product</option>
-                <option value="Catogeries">Catogeries</option>
-                <option value="Brands">Brands</option>
-                <option value="Custom field">Custom field</option>
-            </select>
-        </div>
+        
+         <div class="custom">
+               <div class="custom_Gender">Gender</div>
+              <div >
+                <input 
+                id="radio1" 
+                name="radios" 
+                type="radio" 
+                value= 1 
+                v-model="products.customFeild[0].Gender[0].Male"/>
+                <label for="radio1">Male</label>
+            </div>
+            <div>
+                <input 
+                id="radio2"
+                name="radios" 
+                type="radio"
+                value= 1
+                v-model="products.customFeild[0].Gender[0].Female" />
+                <label for="radio2">Female</label>
+            </div>
+            <hr />    
+            <div class="custom_Size">Size</div>
+              <div >
+                <input 
+                id="radio3" 
+                name="radios"
+                type="radio"
+                value= 1 
+                v-model="products.customFeild[1].Size[0].Large"
+                  />
+                <label for="radio3">Large</label>
+            </div>
+            <div>
+                <input 
+                id="radio4" 
+                name="radios" 
+                type="radio" 
+                value= 1 
+                v-model="products.customFeild[1].Size[0].Medium"
+                />
+                <label for="radio4">Medium</label>
+            </div>
+            <div>
+                <input 
+                id="radio5" 
+                name="radios" 
+                type="radio" 
+                value= 1 
+                v-model="products.customFeild[1].Size[0].Small"
+                />
+                <label for="radio5">Small</label>
+            </div>
+            <hr />  
+            <div class="custom_Brand"> Brand </div>
+            <div v-for="item in Brands" :key="item.id">
+               <input type="checkbox"> {{item.name}}
+            </div>
+         </div>
         <div class="contain">
             <form>
-                <div>name</div>
+
                 <input
                     type="text"
                     v-model="products.product[0].name"
-                    placeholder="name product"
-                />
-                <br />
+                    placeholder="name"
+                /><hr/>
+                <br /> <br />
 
-                <div>long_dsicription</div>
+
                 <input
                     type="text"
                     v-model="products.product[0].long_des"
                     placeholder="long_des"
-                />
-                <br />
+                /><hr/>
+                <br /> <br />
 
-            <div>short_dsicription</div>  
-            <input type="text" v-model='products.product[0].short_des' placeholder="short_des"> <br/>
+            <div></div>  
+            <input type="text" v-model='products.product[0].short_des' placeholder="short_des"><hr/> <br/>
             <div>img</div> 
                             <select v-model="products.image">
                         <option disabled value="">Please select img</option>
@@ -45,12 +96,15 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapState } from 'vuex';
+//import axios from 'axios';
+import dash from '../view/dash';
 export default {
     name: 'new_product',
-    components: {},
+    components: {dash},
     data() {
         return {
+            
              selected: localStorage.getItem('selected'),
             products: {
                 product: [
@@ -98,15 +152,24 @@ export default {
                     },
                 ],
                 customFeild: [
-                    {
-                        customfield_id: 1,
+                   {
+                    Gender :[ 
+                        {
+                        Male: 0, 
+                        Female: 0
+                        }
+                    ]
                     },
-                    {
-                        customfield_id: 2,
+                                       {
+                    Size :[ 
+                        {
+                        Large: 0,
+                        Medium: 0,
+                        Small: 0
+                        }
+                    ]
                     },
-                    {
-                        customfield_id: 3,
-                    },
+
                 ],
                 images: [
                     {
@@ -131,13 +194,22 @@ export default {
     methods: {
         // Pushes posts to the server when called.
         postPost() {
-            axios.post(
-                'http://edalili.e-dalely.com/public/api/products/create',
-                this.products
-            );
+          //  axios.post(
+           //     'http://edalili.e-dalely.com/public/api/products/create',
+           //     this.products
+           // );
+
             console.log(JSON.stringify(this.products));
+            
         },
     },
+    computed: {
+        ...mapState(['Brands']),
+    },
+    mounted() {
+        this.$store.dispatch('loadBrands');
+
+    }
 };
 </script>
 <style scoped>
@@ -146,8 +218,8 @@ export default {
     height: auto;
     display: grid;
     grid-template-areas:
-        'option selected selected new_product new_product . . . . .'
-        'option contain contain contain contain contain contain contain contain contain';
+        'option selected selected new_product new_product . . . custom custom'
+        'option contain contain contain contain contain contain contain custom custom';
 }
 .parent .save{
     background-color: #18ade8;
@@ -158,18 +230,38 @@ export default {
     margin: 20px;
     border-radius: 10px;
 }
-.option_dash {
-    grid-area: option;
-    background-color: #ccc;
+.custom {
+    width: 100%;
+    background-color: #ddd;
+    grid-area: custom;
 }
-
+.custom_Gender,.custom_Size,.custom_Brand{
+    margin: 10px;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    background-color: #dec;
+}
 .selected {
     grid-area: selected;
-    margin: 10px;
+    margin: auto;
     padding: 10px;
+    background-color: #eee;
 }
 .contain {
     width: 100%;
     grid-area: contain;
+}
+form input {
+    border: none;
+}
+form input:focus {
+   outline: none;
+}
+form input:focus::placeholder  {
+    color: transparent;
+}
+form hr {
+    width: 200px;
+    margin: 0 auto;
 }
 </style>
