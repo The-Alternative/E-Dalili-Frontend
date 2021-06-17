@@ -24,7 +24,7 @@ export default new Vuex.Store({
         ////////////////
         // Product: jeson[0].Products,
         stores: data.stores,
-
+        restaurants: data.restaurants,
         lastStores: jeson[0].lastStores,
         brands: jeson[0].brands,
         categories: jeson[0].categories,
