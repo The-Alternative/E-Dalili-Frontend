@@ -1712,7 +1712,139 @@
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
-            "is_approved": 1
+            "is_approved": 1,
+            "Meals": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Pizza",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Salad",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Meat",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Chicken",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 5,
+                    "image": "img/S1.png",
+                    "title": "Indian Meals",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 6,
+                    "image": "img/S1.png",
+                    "title": "Pastry",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 7,
+                    "image": "img/S1.png",
+                    "title": "Manakesh",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 8,
+                    "image": "img/S1.png",
+                    "title": "Rice",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ],
+            "Menu": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Dinner",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Breakfast",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Lunch",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Dessert",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ]
         },
         {
             "id": 2,
@@ -1722,7 +1854,139 @@
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
-            "is_approved": 1
+            "is_approved": 1,
+            "Meals": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Pizza",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Salad",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Meat",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Chicken",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 5,
+                    "image": "img/S1.png",
+                    "title": "Indian Meals",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 6,
+                    "image": "img/S1.png",
+                    "title": "Pastry",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 7,
+                    "image": "img/S1.png",
+                    "title": "Manakesh",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 8,
+                    "image": "img/S1.png",
+                    "title": "Rice",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ],
+            "Menu": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Dinner",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Breakfast",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Lunch",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Dessert",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ]
         },
         {
             "id": 3,
@@ -1732,7 +1996,139 @@
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
-            "is_approved": 1
+            "is_approved": 1,
+            "Meals": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Pizza",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Salad",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Meat",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Chicken",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 5,
+                    "image": "img/S1.png",
+                    "title": "Indian Meals",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 6,
+                    "image": "img/S1.png",
+                    "title": "Pastry",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 7,
+                    "image": "img/S1.png",
+                    "title": "Manakesh",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 8,
+                    "image": "img/S1.png",
+                    "title": "Rice",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ],
+            "Menu": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Dinner",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Breakfast",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Lunch",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Dessert",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ]
         },
         {
             "id": 4,
@@ -1742,7 +2138,139 @@
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
-            "is_approved": 1
+            "is_approved": 1,
+            "Meals": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Pizza",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Salad",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Meat",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Chicken",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 5,
+                    "image": "img/S1.png",
+                    "title": "Indian Meals",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 6,
+                    "image": "img/S1.png",
+                    "title": "Pastry",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 7,
+                    "image": "img/S1.png",
+                    "title": "Manakesh",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 8,
+                    "image": "img/S1.png",
+                    "title": "Rice",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ],
+            "Menu": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Dinner",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Breakfast",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Lunch",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Dessert",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ]
         },
         {
             "id": 5,
@@ -1752,7 +2280,139 @@
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
-            "is_approved": 1
+            "is_approved": 1,
+            "Meals": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Pizza",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Salad",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Meat",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Chicken",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 5,
+                    "image": "img/S1.png",
+                    "title": "Indian Meals",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 6,
+                    "image": "img/S1.png",
+                    "title": "Pastry",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 7,
+                    "image": "img/S1.png",
+                    "title": "Manakesh",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 8,
+                    "image": "img/S1.png",
+                    "title": "Rice",
+                    "rating": 0,
+                    "price": 150,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ],
+            "Menu": [
+                {
+                    "id": 1,
+                    "image": "img/S1.png",
+                    "title": "Dinner",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 2,
+                    "image": "img/S1.png",
+                    "title": "Breakfast",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 3,
+                    "image": "img/S1.png",
+                    "title": "Lunch",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                },
+                {
+                    "id": 4,
+                    "image": "img/S1.png",
+                    "title": "Dessert",
+                    "rating": 0,
+                    "short_des": "This is a wider card with supporting text.",
+                    "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+                    "is_active": true,
+                    "is_approved": 1
+                }
+            ]
         }
     ],
     "Menu": [
@@ -1803,6 +2463,7 @@
             "image": "img/S1.png",
             "title": "Pizza",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1813,6 +2474,7 @@
             "image": "img/S1.png",
             "title": "Salad",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1823,6 +2485,7 @@
             "image": "img/S1.png",
             "title": "Meat",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1833,6 +2496,7 @@
             "image": "img/S1.png",
             "title": "Chicken",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1843,6 +2507,7 @@
             "image": "img/S1.png",
             "title": "Indian Meals",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1853,6 +2518,7 @@
             "image": "img/S1.png",
             "title": "Pastry",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1863,6 +2529,7 @@
             "image": "img/S1.png",
             "title": "Manakesh",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,
@@ -1873,6 +2540,7 @@
             "image": "img/S1.png",
             "title": "Rice",
             "rating": 0,
+            "price": 150,
             "short_des": "This is a wider card with supporting text.",
             "long_des": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
             "is_active": true,

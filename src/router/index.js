@@ -201,13 +201,13 @@ const routes = [
     },
     //restaurant
     {
-        path: '/visitrestaurant',
+        path: '/visit_restaurant/:id/:title',
         name: 'visitRestaurant',
         component: () =>
             import('../components/body/restaurant/visitRestaurant.vue'),
+        params: true,
     },
 ];
-
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,

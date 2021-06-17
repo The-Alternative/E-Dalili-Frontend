@@ -3,7 +3,7 @@
         <!-- home section -->
         <section class="home">
             <div class="content">
-                <h3>we bleive good food</h3>
+                <h3>{{ title }} $</h3>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Perferendis sunt veniam, fugiat necessitatibus repellendus
@@ -19,7 +19,7 @@
                 />
             </div>
         </section>
-        <!-- details section -->
+
         <section class="about">
             <img class="image" src="../../../../public/img/img4.jpg" />
             <div class="content">
@@ -40,23 +40,83 @@
         </section>
         <section class="menu">
             <h1 class="heading">our delicious <span>menu</span></h1>
+            <div class="column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img
+                                src="../../../../public/img/img2.jpg"
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                            />
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /// -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img
+                                src="../../../../public/img/img2.jpg"
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                            />
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="meals">
+            <h1 class="heading">our delicious <span>Meals</span></h1>
+            <div class="column">
+                <div class="card">
+                    <img
+                        src="../../../../public/img/img5.jpg"
+                        alt="Denim Jeans"
+                        style="width: 100%"
+                    />
+                    <h1>Tailored Jeans</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans..</p>
+                </div>
+                <!--  -->
+                <div class="card">
+                    <img
+                        src="../../../../public/img/img5.jpg"
+                        alt="Denim Jeans"
+                        style="width: 100%"
+                    />
+                    <h1>Tailored Jeans</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans..</p>
+                </div>
+            </div>
         </section>
     </div>
 </template>
 
 <script>
+import data from '../../../jeson/data';
 export default {
     name: 'visitRestaurant',
+    props: ['id', 'title', 'image', 'short_des', 'long_des', 'Meals', 'Menu'],
     data() {
         return {
             rating: 0,
+            restaurants: data.restaurants,
         };
     },
-    methods: {
-        btn() {
-            document.getElementById('btn').classList.toggle('.active');
-        },
-    },
+    methods: {},
 };
 </script>
 
@@ -205,4 +265,88 @@ section {
         font-size: 50%;
     }
 }
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+/* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column .flip-card {
+    margin: 10px;
+}
+/* meala */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(197, 157, 23, 0.753);
+    max-width: 200px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+.card:hover {
+    transform: scale3d(1.05, 1.05, 1);
+}
+.column .card {
+    margin: 10px;
+}
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+/* .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+} */
 </style>

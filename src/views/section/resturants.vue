@@ -37,9 +37,35 @@
                                     longer.
                                 </p>
                                 <p class="card-text">
-                                    <button class="button" @click="goto()">
-                                        <span>Visit </span>
-                                    </button>
+                                    <router-link
+                                        :to="{
+                                            name: 'visitRestaurant',
+                                            params: {
+                                                id: item.id,
+                                                title: item.title,
+                                            },
+                                        }"
+                                        ><button class="button">
+                                            <span>Visit </span>
+                                        </button></router-link
+                                    >
+                                    <!-- <router-link
+                                        :to="{
+                                            name: 'visitRestaurant',
+                                            params: {
+                                                id: item.id,
+                                                title: item.title,
+                                                image: item.image,
+                                                short_des: item.short_des,
+                                                long_des: item.long_des,
+                                                Meals: item.Meals,
+                                                Menu: item.Menu,
+                                            },
+                                        }"
+                                        ><button class="button" @click="goto()">
+                                            <span>Visit </span>
+                                        </button></router-link
+                                    > -->
                                 </p>
                             </div>
                         </div>
@@ -74,7 +100,7 @@
                         <div>
                             <div class="form-check">
                                 <ul>
-                                    <li v-for="items in Menu" :key="items.id">
+                                    <li v-for="items in Menus" :key="items.id">
                                         <input
                                             class="form-check-input"
                                             type="checkbox"
@@ -97,7 +123,7 @@
                         <div>Meals</div>
                         <div class="form-check">
                             <ul>
-                                <li v-for="items in Meals" :key="items.id">
+                                <li v-for="items in Meal" :key="items.id">
                                     <input
                                         class="form-check-input"
                                         type="checkbox"
@@ -123,29 +149,19 @@
 
 <script>
 import data from '../../jeson/data';
-// import { mapState, Store } from 'vuex';
 export default {
     name: 'resturants',
+    props: ['id', 'title', 'image', 'short_des', 'long_des', 'Meals', 'Menu'],
     data() {
         return {
-            // restaurants: data.restaurants,
-
             restaurants: data.restaurants,
-            Menu: data.Menu,
-            Meals: data.Meals,
+            Menus: data.Menu,
+            Meal: data.Meals,
         };
     },
-    computed: {
-        // ...mapState(['restaurants']),
-    },
     methods: {
-        goto() {
-            this.$router.push(`/visitrestaurant`);
-            // this.$router.push({name:''})
-        },
-        // restaurants() {
-        // return this.data.restaurants;
-        //     return this.$store.state.restaurants;
+        // goto() {
+        //     this.$router.push(`/visitrestaurant`);
         // },
     },
 };
