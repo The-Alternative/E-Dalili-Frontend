@@ -1,6 +1,5 @@
 <template>
-    <div>
-    <div id="app">
+  <div id="app">
         <!-- Header -->
         <AppHeader/>
         <transition name="view">
@@ -8,7 +7,6 @@
         </transition>
         <!-- Footer -->
         <AppFooter />
-    </div>
     </div>
 
 </template>

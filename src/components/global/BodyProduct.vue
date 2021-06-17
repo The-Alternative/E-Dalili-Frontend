@@ -20,7 +20,7 @@
                     },
                 }"
                 ><div class="name-prod">
-                    {{ name }}
+                    {{ name }} 
                 </div></router-link
             >
             <router-link

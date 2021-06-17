@@ -150,12 +150,12 @@ const routes = [
     },
     /* dashboard */
     {
-        path: '/Admin',
-        name: 'Admin',
+        path: '/admin',
+        name: 'admin',
         component: () => import('../Dashboard/view/Admin.vue'),
     },
     {
-        path: '/Admin/product_dash',
+        path: '/admin/product_dash',
         name: 'product_dash',
         component: () => import('../Dashboard/view/product_dash.vue'),
     },

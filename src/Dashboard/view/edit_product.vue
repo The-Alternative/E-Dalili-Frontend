@@ -2,6 +2,12 @@
     <div class="parent">
         <dash />
          <div class="selected">{{ selected }} <span style="color:red">/</span> Edit Product</div>
+         <div class="custom">
+            <div> Brand </div>
+            <div v-for="brand in Brands" :key="brand.id">
+               <input type="checkbox"> {{brand.name}}
+            </div>
+         </div>
         <div class="contain">
             <form>
                 <input
@@ -139,10 +145,12 @@ export default {
         },
     },
     computed: {
-        ...mapState(['ProductID']),
+        ...mapState(['ProductID','Brands']),
     },
     mounted() {
         this.$store.dispatch('loadProduct', this.$route.params.id);
+        this.$store.dispatch('loadBrands');
+
     },
 };
 </script>
@@ -152,18 +160,20 @@ export default {
     height: auto;
     display: grid;
     grid-template-areas:
-        'option selected selected new_product new_product . . . . .'
-        'option contain contain contain contain contain contain contain contain contain';
-}
-.option_dash {
-    grid-area: option;
-    background-color: #ccc;
+        'option selected selected new_product new_product . . . custom custom'
+        'option contain contain contain contain contain contain contain custom custom';
 }
 
 .selected {
     grid-area: selected;
-    margin: 10px;
+    margin: auto;
     padding: 10px;
+    background-color: #eee;
+}
+.custom {
+    width: 100%;
+    background-color: #ddd;
+    grid-area: custom;
 }
 .contain {
     width: 100%;
