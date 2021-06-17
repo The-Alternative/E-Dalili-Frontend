@@ -199,6 +199,13 @@ const routes = [
         name: 'edit_product',
         component: () => import('../Dashboard/view/edit_product.vue'),
     },
+    //restaurant
+    {
+        path: '/visitrestaurant',
+        name: 'visitRestaurant',
+        component: () =>
+            import('../components/body/restaurant/visitRestaurant.vue'),
+    },
 ];
 
 const router = new VueRouter({
