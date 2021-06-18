@@ -3,7 +3,7 @@
         <!-- home section -->
         <section class="home">
             <div class="content">
-                <h3>{{ title }} $</h3>
+                <h3>{{ this.$route.params.title }} $</h3>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Perferendis sunt veniam, fugiat necessitatibus repellendus
