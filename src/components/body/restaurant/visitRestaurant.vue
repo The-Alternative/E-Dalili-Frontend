@@ -3,12 +3,9 @@
         <!-- home section -->
         <section class="home">
             <div class="content">
-                <h3>{{ title }} $</h3>
+                <h3>{{ this.$route.params.title }}</h3>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Perferendis sunt veniam, fugiat necessitatibus repellendus
-                    sequi nemo voluptatum sint deleniti consequatur eaque odit
-                    adipisci fuga magni, harum nisi excepturi et similique?
+                    {{ this.$route.params.short_des }}
                 </p>
             </div>
             <div class="image">
@@ -23,84 +20,52 @@
         <section class="about">
             <img class="image" src="../../../../public/img/img4.jpg" />
             <div class="content">
-                <h3>a word about us</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio vitae quaerat tempore fugiat ea expedita deleniti ipsa
-                    neque aperiam, minima reiciendis rerum sapiente porro
-                    voluptatibus. Quidem, molestiae aliquam. Iste, ullam?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Expedita, amet suscipit! Nemo modi doloremque, obcaecati hic
-                    consequuntur, accusantium vel veritatis facere amet aperiam
-                    veniam porro quam eligendi in temporibus sed.
-                </p>
+                <h3>{{ this.$route.params.title }}</h3>
+                <p>{{ this.$route.params.long_des }}</p>
             </div>
         </section>
         <section class="menu">
             <h1 class="heading">our delicious <span>menu</span></h1>
-            <div class="column">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img
-                                src="../../../../public/img/img2.jpg"
-                                alt="Avatar"
-                                style="width: 300px; height: 300px"
-                            />
-                        </div>
-                        <div class="flip-card-back">
-                            <h1>John Doe</h1>
-                            <p>Architect & Engineer</p>
-                            <p>We love that guy</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /// -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img
-                                src="../../../../public/img/img2.jpg"
-                                alt="Avatar"
-                                style="width: 300px; height: 300px"
-                            />
-                        </div>
-                        <div class="flip-card-back">
-                            <h1>John Doe</h1>
-                            <p>Architect & Engineer</p>
-                            <p>We love that guy</p>
-                        </div>
-                    </div>
+            <div class="box-container">
+                <div
+                    class="box"
+                    v-for="item in this.$route.params.Menu"
+                    :key="item.id"
+                >
+                    <img src="../../../../public/img/img2.jpg" alt="" />
+                    <h3>{{ item.title }}</h3>
                 </div>
             </div>
         </section>
         <section class="meals">
             <h1 class="heading">our delicious <span>Meals</span></h1>
-            <div class="column">
-                <div class="card">
-                    <img
-                        src="../../../../public/img/img5.jpg"
-                        alt="Denim Jeans"
-                        style="width: 100%"
-                    />
-                    <h1>Tailored Jeans</h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                </div>
-                <!--  -->
-                <div class="card">
-                    <img
-                        src="../../../../public/img/img5.jpg"
-                        alt="Denim Jeans"
-                        style="width: 100%"
-                    />
-                    <h1>Tailored Jeans</h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
+            <div class="box-container">
+                <div
+                    class="box"
+                    v-for="item in this.$route.params.Meals"
+                    :key="item.id"
+                >
+                    <img src="../../../../public/img/img6.jpg" alt="" />
+                    <h3>{{ item.title }}</h3>
+                    <div class="price">s.p{{ item.price }}</div>
+                    <p>{{ item.short_des }}</p>
                 </div>
             </div>
+            <!-- <div class="column">
+                <div
+                    class="card"
+                    
+                >
+                    <img
+                        src="../../../../public/img/img6.jpg"
+                        alt="Denim Jeans"
+                        style="width: 100%"
+                    />
+                    <h1>{{ item.title }}</h1>
+                    <p class="price">s.p{{ item.price }}</p>
+                    <p>{{ item.short_des }}</p>
+                </div>
+            </div> -->
         </section>
     </div>
 </template>
@@ -261,92 +226,93 @@ section {
     }
 }
 @media (max-width: 500px) {
-    html {
+    .html {
         font-size: 50%;
     }
 }
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-/* Position the front and back side */
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-}
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-}
-/* Style the back side */
-.flip-card-back {
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
-}
-.column {
+.menu .box-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
-
-.column .flip-card {
-    margin: 10px;
-}
-/* meala */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(197, 157, 23, 0.753);
-    max-width: 200px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-}
-.card:hover {
-    transform: scale3d(1.05, 1.05, 1);
-}
-.column .card {
-    margin: 10px;
-}
-.price {
-    color: grey;
-    font-size: 22px;
-}
-
-/* .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
+.menu .box-container .box {
+    height: 20rem;
+    width: 30rem;
+    margin: 2rem;
     cursor: pointer;
-    width: 100%;
-    font-size: 18px;
+    overflow: hidden;
+    position: relative;
 }
-
-.card button:hover {
-    opacity: 0.7;
-} */
+.menu .box-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.menu .box-container .box h3 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(204, 162, 24);
+    text-align: center;
+    font-size: 3rem;
+    opacity: 0;
+}
+.menu .box-container .box:hover h3 {
+    top: 50%;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+.menu .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, rgba(197, 157, 23, 0.753));
+    transition: 0.2s linear;
+}
+.menu .box-container .box:hover:before {
+    top: 0;
+}
+.meals .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.meals .box-container .box {
+    background: #fff;
+    width: 25rem;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(184, 126, 20, 0.767);
+    text-align: center;
+}
+.meals .box-container .box img {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+.meals .box-container .box h3 {
+    color: #333;
+    font-size: 3rem;
+    font-weight: normal;
+}
+.meals .box-container .box p {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+.meals .box-container .box .price {
+    color: #666;
+    font-size: 2.5rem;
+}
+.meals .box-container .box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1rem 1rem rgba(184, 126, 20, 0.767);
+}
 </style>

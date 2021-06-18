@@ -2,8 +2,12 @@
     <div class="container">
         <div class="row">
             <!-- col 1 -->
-
-            <div class="col-sm-6">
+            <span class="slide" id="btn">
+                <a>
+                    <i class="fa fa-bars" @click="btnbar()"></i>
+                </a>
+            </span>
+            <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 stors">
                 <div
                     v-for="item in restaurants"
                     :key="item.id"
@@ -43,18 +47,6 @@
                                             params: {
                                                 id: item.id,
                                                 title: item.title,
-                                            },
-                                        }"
-                                        ><button class="button">
-                                            <span>Visit </span>
-                                        </button></router-link
-                                    >
-                                    <!-- <router-link
-                                        :to="{
-                                            name: 'visitRestaurant',
-                                            params: {
-                                                id: item.id,
-                                                title: item.title,
                                                 image: item.image,
                                                 short_des: item.short_des,
                                                 long_des: item.long_des,
@@ -62,10 +54,10 @@
                                                 Menu: item.Menu,
                                             },
                                         }"
-                                        ><button class="button" @click="goto()">
+                                        ><button class="button">
                                             <span>Visit </span>
                                         </button></router-link
-                                    > -->
+                                    >
                                 </p>
                             </div>
                         </div>
@@ -73,21 +65,21 @@
                 </div>
             </div>
             <!-- col 2 -->
-            <div class="col-sm-2">
+            <div class="col-sm-2 bannerimage">
                 <img
                     src="../../../public/img/img5.jpg"
-                    height="50%"
+                    height="45%"
                     width="100%"
                 />
                 <img
                     src="../../../public/img/img6.jpg"
-                    height="50%"
+                    height="45%"
                     width="100%"
                 />
             </div>
-
             <!-- col 3 -->
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 sidenav" id="menu">
+                <div class="backdrop"></div>
                 <div class="sidebar">
                     <div>
                         <input
@@ -111,9 +103,11 @@
                                                 display: block;
                                             "
                                         />
-                                        <label for="flexCheckChecked">{{
-                                            items.title
-                                        }}</label>
+                                        <label
+                                            class="mr-5"
+                                            for="flexCheckChecked"
+                                            >{{ items.title }}</label
+                                        >
                                     </li>
                                 </ul>
                             </div>
@@ -160,9 +154,10 @@ export default {
         };
     },
     methods: {
-        // goto() {
-        //     this.$router.push(`/visitrestaurant`);
-        // },
+        btnbar: function () {
+            document.getElementById('btn').classList.toggle('click');
+            document.getElementById('menu').classList.toggle('show');
+        },
     },
 };
 </script>
@@ -192,57 +187,8 @@ export default {
 input[type='checkbox'] {
     right: 40px;
 }
-/*
-label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    margin-right: 5px;
-}
-input[type='checkbox']:checked + label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-} */
-/* input[type='checkbox'] {
-    display: block;
-    padding-right: 0;
-}
-
-input[type='checkbox'] + label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-}
-input[type='checkbox']:checked + label {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-} */
-/* Links on mouse-over */
 .sidebar ul li:hover {
     color: #555;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
 }
 .button {
     border-radius: 4px;
@@ -277,9 +223,118 @@ input[type='checkbox']:checked + label {
 .button:hover span {
     padding-right: 25px;
 }
-
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+/* @media (max-width: 1199px) {
+    .slide {
+        display: none;
+    }
+    .backdrop {
+        display: none;
+    }
+} */
+@media (min-width: 1200px) {
+    .slide {
+        display: none;
+    }
+    .backdrop {
+        display: none;
+    }
+}
+@media (max-width: 1199px) {
+    .bannerimage {
+        display: none;
+    }
+    input[type='checkbox'] {
+        right: 20px;
+    }
+    label {
+        left: 0px;
+    }
+    .slide {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .bannerimage {
+        display: none;
+    }
+    .slide {
+        display: none;
+    }
+    /* .sidenav {
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .sidebar {
+        position: absolute;
+        width: 200px;
+        right: -15px;
+        height: 50%;
+        transition: right 0.4s ease;
+    }
+    .slide {
+        position: absolute;
+        top: 0;
+        margin-left: 50%;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        transition: right 0.4s ease-in-out;
+    }
+    .slide.click {
+        right: 100px;
+    }
+    .slide .fa-bars {
+        color: #000000;
+    }
+    .slide.click .fa-bars:before {
+        content: '\f00d';
+    }
+    .stors {
+        width: 100%;
+    } */
+}
+@media (max-width: 500px) {
+    .bannerimage {
+        display: none;
+    }
+    .sidenav {
+        display: none;
+    }
+    .slide {
+        display: none;
+    }
+    /* .sidenav {
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .sidebar {
+        position: absolute;
+        width: 200px;
+        right: -15px;
+        height: 50%;
+        transition: right 0.4s ease;
+    }
+    .slide {
+        position: absolute;
+        top: 0;
+        margin-left: 50%;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        transition: right 0.4s ease-in-out;
+    }
+    .slide.click {
+        right: 100px;
+    }
+    .slide .fa-bars {
+        color: #000000;
+    }
+    .slide.click .fa-bars:before {
+        content: '\f00d';
+    } */
 }
 </style>
