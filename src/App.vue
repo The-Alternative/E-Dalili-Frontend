@@ -1,7 +1,7 @@
 <template>
   <div id="app">
         <!-- Header -->
-        <AppHeader/>
+        <AppHeader />
         <transition name="view">
             <router-view />
         </transition>

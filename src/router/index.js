@@ -1,25 +1,59 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 /* import services */
+import DashboardLayout from "../views/pages/Layout/DashboardLayout.vue";
 
+import Dashboard from "../views/pages/Dashboard.vue";
+// Products
+import AllProducts from "../views/pages/Product/View/AllProducts.vue";
+import NewProduct from "../views/pages/Product/View/NewProduct.vue";
+import EditProduct from "../views/pages/Product/View/EditProduct.vue";
+// Stores
+import AllStores from "../views/pages/Store/View/AllStores.vue";
+import NewStore from "../views/pages/Store/View/NewStore.vue";
+import EditStore from "../views/pages/Store/View/EditStore.vue";
+// Ctegories
+import AllCategories from "../views/pages/Categories/View/AllCategories.vue";
+import NewCategory from "../views/pages/Categories/View/NewCategory.vue";
+import EditCategory from "../views/pages/Categories/View/EditCategory.vue";
+// Brands
+import AllBrands from "../views/pages/Brands/View/AllBrands.vue";
+import NewBrand from "../views/pages/Brands/View/NewBrand.vue";
+import EditBrand from "../views/pages/Brands/View/EditBrand.vue";
+// Store Products
+import StoreProducts from "../views/pages/Product_Store/View/StoreProducts.vue";
+import NewProductStor from "../views/pages/Product_Store/View/NewProductStor.vue";
+import EditProductStor from "../views/pages/Product_Store/View/EditProductStor.vue";
+//Doctors
+import AllDoctors from "../views/pages/Doctor/View/AllDoctors.vue";
+import NewDoctors from "../views/pages/Doctor/View/NewDoctors.vue";
+import EditDoctors from "../views/pages/Doctor/View/EditDoctors.vue";
+//Restaurant
+import AllRestaurant from "../views/pages/Restaurant/View/restaurants/AllRestaurant.vue";
+import NewRestaurant from "../views/pages/Restaurant/View/restaurants/NewRestaurant.vue";
+import EditRestaurant from "../views/pages/Restaurant/View/restaurants/EditRestaurant.vue";
+//Restaurant meals
+import AllMeals from "../views/pages/Restaurant/View/Meals/AllMeals.vue"
+import NewMeals from "../views/pages/Restaurant/View/Meals/NewMeals.vue";
+import EditMeals from "../views/pages/Restaurant/View/Meals/EditMeals.vue";
+//Restaurant users
+import AllUsers from "../views/pages/Restaurant/View/Users/AllUsers.vue"
+import NewUser from "../views/pages/Restaurant/View/Users/NewUser.vue";
+import EditUser from "../views/pages/Restaurant/View/Users/EditUser.vue";
+//Restauran Menus
+import AllMenu from "../views/pages/Restaurant/View/Menus/AllMenu.vue"
+import NewMenu from "../views/pages/Restaurant/View/Menus/NewMenu.vue";
+import EditMenu from "../views/pages/Restaurant/View/Menus/EditMenu.vue";
+// Offer 
+import allOffers from "../views/pages/Offers/View/allOffers.vue";
 Vue.use(VueRouter);
 
 const routes = [
+    // Sign
     {
-        path: '/login',
-        component: () => import('../components/Admin/Login.vue'),
-    },
-    {
-        path: '/signup',
-        component: () => import('../components/Admin/Signup.vue'),
-    },
-    {
-        path: '/forgotpassword',
-        component: () => import('../components/Admin/ForgetPassword.vue'),
-    },
-    {
-        path: '/settinglogin',
-        component: () => import('../components/Admin/loginSettingPage.vue'),
+        path: '/',
+        name: 'sign',
+        component: () => import('../views/sign'),
     },
     {
         path: '/addStore',
@@ -58,7 +92,7 @@ const routes = [
     },
     /* services or section */
     {
-        path: '/',
+        path: '/home',
         name: 'home',
         component: () => import('../views/section/home.vue'),
     },
@@ -148,57 +182,6 @@ const routes = [
         name: 'child',
         component: () => import('../views/categories/child.vue'),
     },
-    /* dashboard */
-    {
-        path: '/admin',
-        name: 'admin',
-        component: () => import('../Dashboard/view/Admin.vue'),
-    },
-    {
-        path: '/admin/product_dash',
-        name: 'product_dash',
-        component: () => import('../Dashboard/view/product_dash.vue'),
-    },
-    //category dashboard//
-    {
-        path: '/categories_dash',
-        name: 'categories_dash',
-        component: () =>
-            import('../Dashboard/view/Category/categories_dash.vue'),
-    },
-    {
-        path: '/newCategory',
-        name: 'addnewcategory',
-        component: () =>
-            import('../Dashboard/view/Category/addNewCategory.vue'),
-    },
-    {
-        path: '/categoryview/:id',
-        name: 'categoryview',
-        component: () => import('../Dashboard/view/Category/categoryView.vue'),
-        params: true,
-    },
-    {
-        path: '/categoryEdit/:id',
-        name: 'categoryEdit',
-        component: () => import('../Dashboard/view/Category/categoryEdit.vue'),
-    },
-    //
-    {
-        path: '/brand_dash',
-        name: 'brand_dash',
-        component: () => import('../Dashboard/view/brand_dash.vue'),
-    },
-    {
-        path: '/new_product',
-        name: 'new_product',
-        component: () => import('../Dashboard/view/new_product.vue'),
-    },
-    {
-        path: '/edit_product/:id',
-        name: 'edit_product',
-        component: () => import('../Dashboard/view/edit_product.vue'),
-    },
     //restaurant
     {
         path: '/visit_restaurant/:id/:title',
@@ -207,6 +190,187 @@ const routes = [
             import('../components/body/restaurant/visitRestaurant.vue'),
         params: true,
     },
+    // Dashboard
+ {
+    path: "/",
+    component:  DashboardLayout ,
+    redirect: "/dashboard",
+    children: [
+      {
+        path: "dashboard",
+        name: "Dashboard",
+        component: Dashboard,
+      },
+      // Products
+      {
+        path: "allproducts",
+        name: "All Products",
+        component: AllProducts,
+      },
+
+      {
+        path: "newproduct",
+        name: "New Product",
+        component: NewProduct,
+      },
+
+      {
+        path: "products/:id",
+        name: "Products",
+        component: EditProduct,
+      },
+      // Stores
+      {
+        path: "allstores",
+        name: "All Stores",
+        component: AllStores,
+      },
+      {
+        path: "newstore",
+        name: "New Store",
+        component: NewStore,
+      },
+      {
+        path: "stores/:id",
+        name: "Stores",
+        component: EditStore,
+      },
+      // Stores => Products
+      {
+        path: "store/:id/Products",
+        name: "Store/Products",
+        component: StoreProducts,
+      },
+      {
+        path: "/store/:id/newproduct",
+        name: "New Product in_Store",
+        component: NewProductStor,
+      },
+      {
+        path: "/store/:id/product/:id_product",
+        name: "Edit Product in Store",
+        component: EditProductStor,
+      },
+      // Categories
+      {
+        path: "allcategories",
+        name: "allCategories",
+        component: AllCategories,
+      },
+      {
+        path: "editcategory/:id",
+        name: "EditCategory",
+        component: EditCategory,
+      },
+      {
+        path: "newcategory",
+        name: "NewCategory",
+        component: NewCategory,
+      },
+      // Brands
+      {
+        path: "allbrands",
+        name: "allBrands",
+        component: AllBrands,
+      },
+      {
+        path: "newbrand",
+        name: "newbrand",
+        component: NewBrand,
+      },
+      {
+        path: "editbrand/:id",
+        name: "editbrand",
+        component: EditBrand,
+      },
+      // Doctors
+      {
+        path: "alldoctors",
+        name: "allDoctors",
+        component: AllDoctors,
+      },
+      {
+        path: "newdoctor",
+        name: "newdoctor",
+        component: NewDoctors,
+      },
+      {
+        path: "editdoctors/:id",
+        name: "editdoctors",
+        component: EditDoctors,
+      },
+      //Restaurant
+      {
+        path: "allrestaurant",
+        name: "AllRestaurant",
+        component: AllRestaurant,
+      },
+      {
+        path: "newrestaurant",
+        name: "NewRestaurant",
+        component: NewRestaurant,
+      },
+      {
+        path: "editrestaurant",
+        name: "EditRestaurant",
+        component: EditRestaurant,
+      },
+      // Restaurant meals
+      {
+        path: "allmeals",
+        name: "AllMeals",
+        component: AllMeals,
+      },
+      {
+        path: "newmeals",
+        name: "NewMeals",
+        component: NewMeals,
+      },
+      {
+        path: "editmeals",
+        name: "EditMeals",
+        component: EditMeals,
+      },
+        //Restaurant user
+      {
+        path: "allusers",
+        name: "AllUsers",
+        component: AllUsers,
+      },
+      {
+        path: "newuser",
+        name: "NewUser",
+        component: NewUser,
+      },
+      {
+        path: "edituser",
+        name: "EditUser",
+        component: EditUser,
+      },
+        //Restaurant Menu
+      {
+        path: "allmenus",
+        name: "AllMenu",
+        component: AllMenu,
+      },
+      {
+        path: "newmenu",
+        name: "NewMenu",
+        component: NewMenu,
+      },
+      {
+        path: "editmenu",
+        name: "EditMenu",
+        component: EditMenu,
+      },
+      // Offers 
+      {
+      path: "allOffers",
+      name: "All Offers",
+      component: allOffers,
+      }
+    ],
+  },
 ];
 const router = new VueRouter({
     mode: 'history',
