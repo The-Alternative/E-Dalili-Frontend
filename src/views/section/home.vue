@@ -6,7 +6,7 @@
         <div class="row align-middle">
             <div
                 class="col-md-6 col-lg-3 col-xs-6 column"
-                v-for="catog in Categories.slice(0,8)"
+                v-for="catog in Categories.slice(0, 8)"
                 :key="catog.id"
                 :name="catog.name"
                 :image="catog.image"

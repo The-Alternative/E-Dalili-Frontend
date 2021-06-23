@@ -1,8 +1,4 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-/* import services */
-
-Vue.use(VueRouter);
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
     {
@@ -21,17 +17,17 @@ const routes = [
         path: '/settinglogin',
         component: () => import('../components/Admin/loginSettingPage.vue'),
     },
-    {
-        path: '/addStore',
-        name: 'addStore',
-        component: () => import('../components/body/addStore'),
-    },
-    {
-        path: '/visitStore/:id/:title',
-        name: 'visitStore',
-        component: () => import('../components/body/pages/visitStore'),
-        props: true,
-    },
+    // {
+    //     path: '/addStore',
+    //     name: 'addStore',
+    //     component: () => import('../components/body/addStore'),
+    // },
+    // {
+    //     path: '/visitStore/:id/:title',
+    //     name: 'visitStore',
+    //     component: () => import('../components/body/pages/visitStore'),
+    //     props: true,
+    // },
     /* cart shop */
     {
         path: '/Cart',
@@ -50,12 +46,12 @@ const routes = [
         component: () => import('../components/global/ListView.vue'),
         props: true,
     },
-    {
-        path: '/ProductDetailsStore/:title/:id_store/:id',
-        component: () => import('../components/body/pages/ProductDetailsStore'),
-        name: 'ProductDetailsStore',
-        props: true,
-    },
+    // {
+    //     path: '/ProductDetailsStore/:title/:id_store/:id',
+    //     component: () => import('../components/body/pages/ProductDetailsStore'),
+    //     name: 'ProductDetailsStore',
+    //     props: true,
+    // },
     /* services or section */
     {
         path: '/',
@@ -208,9 +204,8 @@ const routes = [
         params: true,
     },
 ];
-const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
+const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
     routes,
 });
 

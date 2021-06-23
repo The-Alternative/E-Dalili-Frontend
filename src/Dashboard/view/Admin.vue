@@ -1,14 +1,13 @@
 <template>
-  <dash />
+    <dash />
 </template>
 
 <script>
 import dash from '../view/dash';
 export default {
     name: 'Admin',
-        components: {
-        dash
+    components: {
+        dash,
     },
-   
 };
 </script>

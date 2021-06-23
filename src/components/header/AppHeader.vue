@@ -829,7 +829,7 @@ import jeson from '@/jeson/MOCK_DATA.json';
 export default {
     name: 'AppHeader',
     props: ['title', 'description', 'id', 'price'],
-    data () {
+    data() {
         const lang = localStorage.getItem('lang') || 'en';
         return {
             lang: lang,
@@ -849,26 +849,26 @@ export default {
         };
     },
     computed: {
-        cartItemCount () {
+        cartItemCount() {
             return this.$store.state.cartItemCount;
         },
     },
     methods: {
-        gotocart () {
+        gotocart() {
             this.$router.push(`/Cart`);
         },
         goto: function () {
             this.$router.push(`/`);
         },
-        showfut () {
+        showfut() {
             document.getElementById('fut').classList.toggle('show');
             document.getElementById('exit-fut').style.display = 'block';
         },
-        hidefut () {
+        hidefut() {
             document.getElementById('exit-fut').style.display = 'none';
             document.getElementById('fut').classList.remove('show');
         },
-        handleChange (event) {
+        handleChange(event) {
             localStorage.setItem('lang', event.target.value);
             window.location.reload();
         },

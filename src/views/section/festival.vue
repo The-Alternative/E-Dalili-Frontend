@@ -1,79 +1,114 @@
 <template>
     <div class="parent">
-      <div class="child1"><div class="colum_baner"><img src="../../../public/img/fistival_baner.png"></div></div>
-      <div class="child2">
-            <div  v-for="store in Stores.slice(0,10)"
+        <div class="child1">
+            <div class="colum_baner">
+                <img src="../../../public/img/fistival_baner.png" />
+            </div>
+        </div>
+        <div class="child2">
+            <div
+                v-for="store in Stores.slice(0, 10)"
                 :key="store.pr"
-                :store="store" style="margin-bottom: 50px;">
+                :store="store"
+                style="margin-bottom: 50px"
+            >
                 <div class="ch2">
-                    <div class="date"><div>15/8/2021</div>08:30 AM<div></div></div>       
-                    <div class="title">     الریم سنتر- سوبر ماركت
-                        <img class="rounded-circle" src="../../../public/img/market-logo.png" height="70" />
+                    <div class="date">
+                        <div>15/8/2021</div>
+                        08:30 AM
+                        <div></div>
+                    </div>
+                    <div class="title">
+                        الریم سنتر- سوبر ماركت
+                        <img
+                            class="rounded-circle"
+                            src="../../../public/img/market-logo.png"
+                            height="70"
+                        />
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 40px">
+                    <div>
+                        الشامبو الأفضل لمعالجة القشرة یحتوي على كربونات الزنك ,
+                        یساعد على محاربة القشور عن طریق ترطیب فروة الرأس حسم 10
+                        % على جمیع أنواع الشامبو
+                    </div>
+                    <span>head & shoulders</span>
+                    <hr class="hr" />
+                    <div class="conten_price">
+                        <div>
+                            <span
+                                style="
+                                    text-decoration-line: line-through;
+                                    opacity: 0.5;
+                                "
+                                >5500</span
+                            >
+                            <span>4900 ل.س</span>
+                        </div>
+
+                        <div>
+                            <div class="tofer">توفير</div>
                         </div>
                     </div>
-                <div class="card" style="margin-top:40px">
-                    <div>الشامبو الأفضل لمعالجة القشرة یحتوي على كربونات الزنك , یساعد على محاربة القشور عن طریق   ترطیب فروة الرأس حسم 10 % على جمیع أنواع الشامبو </div><span>head & shoulders</span>
-                    <hr class="hr"/>
-                <div class="conten_price">
-                    <div>
-                        <span style="text-decoration-line: line-through;opacity: .5;">5500</span>
-                        <span>4900 ل.س</span>
+                    <div class="img_content">
+                        <img src="../../../public/img/fistival_img.png" />
                     </div>
-
-                    <div>
-                        <div class="tofer">توفير</div>
+                    <div class="Remaining_time">
+                        <h4>الزمن المتبقي للعرض</h4>
+                        <div class="time_progress">
+                            <span class="progress"></span>
+                            <span class="time">7ساعات و 5 دقائق</span>
+                        </div>
+                    </div>
+                    <div class="action">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div
+                            class="textFollow"
+                            id="textFollow"
+                            @click="heart()"
+                        >
+                            <span class="share heart" id="heart"></span>
+                            <i
+                                class="fas fa-share fa-2x"
+                                style="color: #d7cfcf"
+                            ></i>
+                            <span class="follow" id="follow">مشاركة العرض</span>
+                        </div>
+                        <div
+                            class="textFollow"
+                            id="textFollow"
+                            @click="heart()"
+                        >
+                            <span class="heart" id="heart"></span>
+                            <span class="follow" id="follow"
+                                >الأعجاب بالعرض</span
+                            >
+                        </div>
+                    </div>
+                    <div class="action">
+                        <h5>70.000</h5>
+                        <h5>30</h5>
+                        <h5>120.000</h5>
+                    </div>
+                    <div class="contact">
+                        <div></div>
+                        <div class="get_offer">أطلب العرض</div>
+                        <div class="icon_contact">
+                            <whatsapp-store></whatsapp-store>
+                            <phone-store></phone-store>
+                            <location-store></location-store>
+                        </div>
                     </div>
                 </div>
-                <div class="img_content">
-                    <img src="../../../public/img/fistival_img.png">
-                </div>
-                <div class="Remaining_time">
-                    <h4>الزمن المتبقي للعرض</h4>
-                    <div class="time_progress">
-                        <span class="progress"></span>
-                        <span class="time">7ساعات و 5 دقائق</span>
-                    </div>
-                </div>
-             <div class="action">
-
-            <div class="stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
             </div>
-                    <div class="textFollow" id="textFollow" @click="heart()">
-                        <span class="share heart " id="heart"></span>
-                     <i class="fas fa-share fa-2x" style="color: #d7cfcf;"></i>
-                        <span class="follow" id="follow">مشاركة العرض</span>
-                    </div>
-                    <div class="textFollow" id="textFollow" @click="heart()">
-                        <span class="heart" id="heart"></span>
-                        <span class="follow " id="follow">الأعجاب بالعرض</span>
-                    </div>
-
-                </div>
-            <div class="action">
-                <h5>70.000</h5>
-                <h5>30</h5>
-                <h5>120.000</h5>
-                </div>
-                <div class="contact" >
-                    <div></div>          
-                    <div class="get_offer">أطلب العرض</div>
-                    <div class="icon_contact">
-                        <whatsapp-store></whatsapp-store>
-                        <phone-store></phone-store>
-                        <location-store></location-store>
-                    </div>
-
-                </div>
-
-                </div>
-   
-            </div>
-      </div>
-      <div class="child3">   
+        </div>
+        <div class="child3">
             <div class="backdrop"></div>
             <div class="card text-right checked-all open" id="all">
                 <span class="text-center span-text text">{{
@@ -219,8 +254,8 @@
                         ></span>
                     </div>
                 </div>
-        
-        </div></div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -263,7 +298,7 @@ export default {
         //             Stores.push(store);
         //         }
         //     });
-        //     return Stores;   
+        //     return Stores;
         // },
     },
     mounted() {
@@ -304,155 +339,155 @@ export default {
 };
 </script>
 <style scoped>
-.parent{
+.parent {
     display: flex;
-    
 }
-.parent .child1,.parent .child3{
+.parent .child1,
+.parent .child3 {
     width: 20%;
 }
-.parent .child2{
+.parent .child2 {
     width: 50%;
     display: grid;
     grid-template-columns: 1fr;
     margin: auto;
 }
-.parent .child2 .ch2{
-display: inline-flex;
-justify-content: space-between;
-width: 95%;
+.parent .child2 .ch2 {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 95%;
 }
-.parent .child2 .title{
+.parent .child2 .title {
     font-weight: bold;
     opacity: 0.8;
     position: relative;
 }
-.parent .child2 .ch2 .title::after{
-   content: "السويداء-طريق القنوات";
-   position: absolute;
-   opacity: .4;
-   top: 46px;
-   right: 70px;
-}
-.parent .child2 .ch2 .title::before{
-    content: "الجمال والعناية بالبشرة";
+.parent .child2 .ch2 .title::after {
+    content: 'السويداء-طريق القنوات';
     position: absolute;
-    opacity: .4;
+    opacity: 0.4;
+    top: 46px;
+    right: 70px;
+}
+.parent .child2 .ch2 .title::before {
+    content: 'الجمال والعناية بالبشرة';
+    position: absolute;
+    opacity: 0.4;
     top: 68px;
     right: 70px;
-    }
+}
 
-.parent .child2 .date{
+.parent .child2 .date {
     opacity: 0.5;
 }
-.parent .card{
+.parent .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
-.parent .card .hr{
+.parent .card .hr {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
-.parent .card .conten_price{
+.parent .card .conten_price {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
     font-weight: bold;
 }
-.parent .card .conten_price .tofer{
+.parent .card .conten_price .tofer {
     background-color: #f6ef19;
     padding: 2px 20px;
     color: red;
 }
-.parent .card .conten_price .tofer::after{
+.parent .card .conten_price .tofer::after {
     content: url(../../../public/img/icon_tofer.png);
     position: absolute;
     top: 87px;
     right: 54px;
 }
-.parent .card .conten_price .tofer::before{
-    content: "ل.س 550";
+.parent .card .conten_price .tofer::before {
+    content: 'ل.س 550';
     position: absolute;
     right: 100px;
     color: black;
     font-size: 18px;
-    opacity: .8;
+    opacity: 0.8;
 }
-.parent .card .img_content{
+.parent .card .img_content {
     margin: 40px 0 10px 0;
     width: 96%;
     margin-left: auto;
     margin-right: auto;
 }
-.parent .card .img_content img{
+.parent .card .img_content img {
     width: 100%;
 }
-.parent .card .conten_price div span{
+.parent .card .conten_price div span {
     margin: 0 5px;
 }
-.parent .card .Remaining_time{
+.parent .card .Remaining_time {
     width: 95%;
     margin: 0 auto 50px auto;
 }
-.parent .card .Remaining_time .time_progress{
+.parent .card .Remaining_time .time_progress {
     width: 100%;
     height: 20px;
     background-color: #f6f1f1;
     position: relative;
 }
-.parent .card .Remaining_time .time_progress .progress{
+.parent .card .Remaining_time .time_progress .progress {
     position: absolute;
     left: 2px;
     top: 2px;
     width: 70%;
     height: 80%;
-    background-color: #19e653 ;
+    background-color: #19e653;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-.parent .card .Remaining_time .time_progress .time{
+.parent .card .Remaining_time .time_progress .time {
     font-size: 12px;
-    opacity: .5s;
-    opacity: .5;
+    opacity: 0.5s;
+    opacity: 0.5;
     position: absolute;
     right: 15px;
 }
-.parent .child1 .colum_baner{
+.parent .child1 .colum_baner {
     display: flex;
     flex-direction: column;
 }
-.parent .action{
+.parent .action {
     display: flex;
     width: 100%;
     justify-content: space-around;
     margin-top: 20px;
 }
-.parent .icon_contact{
+.parent .icon_contact {
     display: flex;
     margin: 15px;
     justify-content: space-around;
     width: 25%;
 }
 
-.parent .action .stars span{
+.parent .action .stars span {
     margin: 0 5px;
     font-size: 30px;
 }
 .parent .action h5 {
-    opacity: .8;
+    opacity: 0.8;
     text-shadow: 3px 5px 10px #909090;
 }
-.parent .contact{
+.parent .contact {
     display: flex;
     width: 100%;
     justify-content: space-between;
     flex-flow: row-reverse;
     direction: rtl;
 }
-.parent .contact .get_offer{
+.parent .contact .get_offer {
     background-color: #f6ef19;
     padding: 9px 30px;
     color: red;
@@ -461,9 +496,8 @@ width: 95%;
     box-shadow: 0 5px 2px -2px #dadada;
     position: relative;
     margin: 15px;
- 
 }
-.parent .contact .get_offer::before{
+.parent .contact .get_offer::before {
     content: url(../../../public/img/getoffer.png);
     position: absolute;
     top: -4px;
@@ -477,7 +511,7 @@ width: 95%;
     position: relative;
     padding: 10px 10px 10px 50px;
 }
-.textFollow i{
+.textFollow i {
     position: absolute;
     left: 5px;
 }
@@ -503,7 +537,7 @@ width: 95%;
 }
 @keyframes animate {
     0% {
-         background-position: left;
+        background-position: left;
     }
     100% {
         background-position: right;
@@ -516,122 +550,119 @@ width: 95%;
 .follow.heart-active {
     color: black;
 }
-.share{
+.share {
     display: none;
 }
-.checked{
+.checked {
     color: #f6ef19;
 }
 /* small devices (portrait phones, less than 767px) */
 @media (max-width: 767.98px) {
- 
-.parent .child2{
-    width: 90%;
-}   
-.parent .child3,.parent .child1{
-    display: none;
-}
+    .parent .child2 {
+        width: 90%;
+    }
+    .parent .child3,
+    .parent .child1 {
+        display: none;
+    }
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 576.98px) {
-
 }
 /* ____________________________________________________  */
 
-    .btn {
-        font-weight: bold;
-        font-size: 1rem;
-        height: 30px;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 50px;
-    }
-    .checked-all {
-        font-size: 16px;
-        color: #000000;
-        overflow-y: auto;
-        white-space: nowrap;
-    }
-    .categories {
-        height: 14px;
-        font-size: 16px;
-        color: #000000;
-        list-style: none;
-        margin-bottom: 10px;
-        transition: all 0.8s;
-        margin-left: 10px;
-    }
-    .textcheck {
-        list-style: none;
-        margin-bottom: 10px;
-        font-size: 16px;
-        color: #000000;
-        transition: all 0.8s;
-    }
-    .checked-all .listcategories .categories {
-        color: #000000;
-        margin-right: 10px;
-    }
-    .span-text {
-        font-size: 16px;
-    }
-    .bgcolor {
-        background-color: #e0e0d1;
-        border-radius: 3px;
-        border: 1px solid #e0e0d1;
-        font-size: 16px;
-        margin-top: 5px;
-    }
+.btn {
+    font-weight: bold;
+    font-size: 1rem;
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.checked-all {
+    font-size: 16px;
+    color: #000000;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.categories {
+    height: 14px;
+    font-size: 16px;
+    color: #000000;
+    list-style: none;
+    margin-bottom: 10px;
+    transition: all 0.8s;
+    margin-left: 10px;
+}
+.textcheck {
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #000000;
+    transition: all 0.8s;
+}
+.checked-all .listcategories .categories {
+    color: #000000;
+    margin-right: 10px;
+}
+.span-text {
+    font-size: 16px;
+}
+.bgcolor {
+    background-color: #e0e0d1;
+    border-radius: 3px;
+    border: 1px solid #e0e0d1;
+    font-size: 16px;
+    margin-top: 5px;
+}
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-.parent .card .conten_price .tofer::after{
-    top: 108px;
-}
+    .parent .card .conten_price .tofer::after {
+        top: 108px;
+    }
 }
 /* Extra small devices (portrait phones, less than 576px) */
-@media (min-width: 340px) and (max-width: 576.98px)  {
-.parent .child2 .ch2 .title{
-    display: flex;
-    flex-direction: inherit;
-}
-.parent .child2 .ch2 .title::after{
-   top: 46px;
-   right: 66px;
-}
-.parent .child2 .ch2 .title::before{
-    top: 68px;
-    right: 70px;
+@media (min-width: 340px) and (max-width: 576.98px) {
+    .parent .child2 .ch2 .title {
+        display: flex;
+        flex-direction: inherit;
     }
-.parent .card .conten_price .tofer::after{
-    top: 108px;
+    .parent .child2 .ch2 .title::after {
+        top: 46px;
+        right: 66px;
     }
-.parent .card .conten_price .tofer::before{
-    font-size: 15px;
+    .parent .child2 .ch2 .title::before {
+        top: 68px;
+        right: 70px;
     }
-.parent .card .stars{
-    display: none;
-}
-.textFollow {
-    max-width: 40%;
-    padding: 10px 0px 10px 28px;
-}
-
+    .parent .card .conten_price .tofer::after {
+        top: 108px;
+    }
+    .parent .card .conten_price .tofer::before {
+        font-size: 15px;
+    }
+    .parent .card .stars {
+        display: none;
+    }
+    .textFollow {
+        max-width: 40%;
+        padding: 10px 0px 10px 28px;
+    }
 }
 @media (min-width: 200px) and (max-width: 339.98px) {
-.parent .child2 .ch2 .title{
-    display: flex;
-    flex-direction: inherit;
-}
-.parent .card .conten_price .tofer::after{
-    top: 129px;
+    .parent .child2 .ch2 .title {
+        display: flex;
+        flex-direction: inherit;
     }
-.parent .card .stars{
-    display: none;
+    .parent .card .conten_price .tofer::after {
+        top: 129px;
+    }
+    .parent .card .stars {
+        display: none;
+    }
+    .textFollow {
+        max-width: 40%;
+        padding: 10px 0px 10px 28px;
+    }
 }
-.textFollow {
-    max-width: 40%;
-    padding: 10px 0px 10px 28px;
-}
-}
-
 </style>

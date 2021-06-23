@@ -1,13 +1,15 @@
 <template>
     <div class="parent">
         <dash />
-         <div class="selected">{{ selected }} <span style="color:red">/</span> Edit Product</div>
-         <div class="custom">
-            <div> Brand </div>
+        <div class="selected">
+            {{ selected }} <span style="color: red">/</span> Edit Product
+        </div>
+        <div class="custom">
+            <div>Brand</div>
             <div v-for="brand in Brands" :key="brand.id">
-               <input type="checkbox"> {{brand.name}}
+                <input type="checkbox" /> {{ brand.name }}
             </div>
-         </div>
+        </div>
         <div class="contain">
             <form>
                 <input
@@ -16,13 +18,13 @@
                     placeholder="name"
                 />
                 <br />
-                                <input
+                <input
                     type="text"
                     v-model="products.product[0].short_des"
                     placeholder="short_des"
                 />
                 <br />
-                                <input
+                <input
                     type="text"
                     v-model="products.product[0].long_des"
                     placeholder="long_des"
@@ -30,22 +32,28 @@
                 <br />
 
                 <select v-model="products.image">
-                        <option disabled value="">Please select img</option>
-                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 1</option>
-                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 2</option>
-                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 3</option>
+                    <option disabled value="">Please select img</option>
+                    <option
+                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
+                    >
+                        img 1
+                    </option>
+                    <option
+                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
+                    >
+                        img 2
+                    </option>
+                    <option
+                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
+                    >
+                        img 3
+                    </option>
                 </select>
+            </form>
 
-            
-           
-
-        </form>
-
-        <button class="save" @click="updateProduct()">save</button>
-           
+            <button class="save" @click="updateProduct()">save</button>
         </div>
-        </div>
-    
+    </div>
 </template>
 
 <script>
@@ -54,10 +62,10 @@ import { mapState } from 'vuex';
 import axios from 'axios';
 export default {
     name: 'new_product',
-    components: {dash},
-    data () {
+    components: { dash },
+    data() {
         return {
-             selected: localStorage.getItem('selected'),
+            selected: localStorage.getItem('selected'),
             products: {
                 product: [
                     {
@@ -145,12 +153,11 @@ export default {
         },
     },
     computed: {
-        ...mapState(['ProductID','Brands']),
+        ...mapState(['ProductID', 'Brands']),
     },
     mounted() {
         this.$store.dispatch('loadProduct', this.$route.params.id);
         this.$store.dispatch('loadBrands');
-
     },
 };
 </script>
@@ -182,7 +189,7 @@ export default {
 form input {
     margin: 20px;
 }
-.parent .save{
+.parent .save {
     background-color: #18ade8;
     border: none;
     padding: 10px;

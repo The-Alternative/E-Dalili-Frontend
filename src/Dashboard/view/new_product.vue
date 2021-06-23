@@ -1,94 +1,118 @@
 <template>
     <div class="parent">
         <dash />
-        <div class="selected">{{ selected }} <span style="color:red">/</span> New Product</div>
-        
-         <div class="custom">
-               <div class="custom_Gender">Gender</div>
-              <div >
-                <input 
-                id="radio1" 
-                name="radios" 
-                type="radio" 
-                value= 1 
-                v-model="products.customFeild[0].Gender[0].Male"/>
+        <div class="selected">
+            {{ selected }} <span style="color: red">/</span> New Product
+        </div>
+
+        <div class="custom">
+            <div class="custom_Gender">Gender</div>
+            <div>
+                <input
+                    id="radio1"
+                    name="radios"
+                    type="radio"
+                    value="1"
+                    v-model="products.customFeild[0].Gender[0].Male"
+                />
                 <label for="radio1">Male</label>
             </div>
             <div>
-                <input 
-                id="radio2"
-                name="radios" 
-                type="radio"
-                value= 1
-                v-model="products.customFeild[0].Gender[0].Female" />
+                <input
+                    id="radio2"
+                    name="radios"
+                    type="radio"
+                    value="1"
+                    v-model="products.customFeild[0].Gender[0].Female"
+                />
                 <label for="radio2">Female</label>
             </div>
-            <hr />    
+            <hr />
             <div class="custom_Size">Size</div>
-              <div >
-                <input 
-                id="radio3" 
-                name="radios"
-                type="radio"
-                value= 1 
-                v-model="products.customFeild[1].Size[0].Large"
-                  />
+            <div>
+                <input
+                    id="radio3"
+                    name="radios"
+                    type="radio"
+                    value="1"
+                    v-model="products.customFeild[1].Size[0].Large"
+                />
                 <label for="radio3">Large</label>
             </div>
             <div>
-                <input 
-                id="radio4" 
-                name="radios" 
-                type="radio" 
-                value= 1 
-                v-model="products.customFeild[1].Size[0].Medium"
+                <input
+                    id="radio4"
+                    name="radios"
+                    type="radio"
+                    value="1"
+                    v-model="products.customFeild[1].Size[0].Medium"
                 />
                 <label for="radio4">Medium</label>
             </div>
             <div>
-                <input 
-                id="radio5" 
-                name="radios" 
-                type="radio" 
-                value= 1 
-                v-model="products.customFeild[1].Size[0].Small"
+                <input
+                    id="radio5"
+                    name="radios"
+                    type="radio"
+                    value="1"
+                    v-model="products.customFeild[1].Size[0].Small"
                 />
                 <label for="radio5">Small</label>
             </div>
-            <hr />  
-            <div class="custom_Brand"> Brand </div>
+            <hr />
+            <div class="custom_Brand">Brand</div>
             <div v-for="item in Brands" :key="item.id">
-               <input type="checkbox"> {{item.name}}
+                <input type="checkbox" /> {{ item.name }}
             </div>
-         </div>
+        </div>
         <div class="contain">
             <form>
-
                 <input
                     type="text"
                     v-model="products.product[0].name"
                     placeholder="name"
-                /><hr/>
-                <br /> <br />
-
+                />
+                <hr />
+                <br />
+                <br />
 
                 <input
                     type="text"
                     v-model="products.product[0].long_des"
                     placeholder="long_des"
-                /><hr/>
-                <br /> <br />
+                />
+                <hr />
+                <br />
+                <br />
 
-            <div></div>  
-            <input type="text" v-model='products.product[0].short_des' placeholder="short_des"><hr/> <br/>
-            <div>img</div> 
-                            <select v-model="products.image">
-                        <option disabled value="">Please select img</option>
-                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 1</option>
-                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 2</option>
-                        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU">img 3</option>
+                <div></div>
+                <input
+                    type="text"
+                    v-model="products.product[0].short_des"
+                    placeholder="short_des"
+                />
+                <hr />
+                <br />
+                <div>img</div>
+                <select v-model="products.image">
+                    <option disabled value="">Please select img</option>
+                    <option
+                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
+                    >
+                        img 1
+                    </option>
+                    <option
+                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
+                    >
+                        img 2
+                    </option>
+                    <option
+                        value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6iZq7N0bOew1ttlwpQRgf-SmI4MHbWZU3Q&usqp=CAU"
+                    >
+                        img 3
+                    </option>
                 </select>
-        </form>
+            </form>
 
             <button class="save" @click="postPost()">save</button>
         </div>
@@ -101,11 +125,10 @@ import { mapState } from 'vuex';
 import dash from '../view/dash';
 export default {
     name: 'new_product',
-    components: {dash},
+    components: { dash },
     data() {
         return {
-            
-             selected: localStorage.getItem('selected'),
+            selected: localStorage.getItem('selected'),
             products: {
                 product: [
                     {
@@ -152,24 +175,23 @@ export default {
                     },
                 ],
                 customFeild: [
-                   {
-                    Gender :[ 
-                        {
-                        Male: 0, 
-                        Female: 0
-                        }
-                    ]
+                    {
+                        Gender: [
+                            {
+                                Male: 0,
+                                Female: 0,
+                            },
+                        ],
                     },
-                                       {
-                    Size :[ 
-                        {
-                        Large: 0,
-                        Medium: 0,
-                        Small: 0
-                        }
-                    ]
+                    {
+                        Size: [
+                            {
+                                Large: 0,
+                                Medium: 0,
+                                Small: 0,
+                            },
+                        ],
                     },
-
                 ],
                 images: [
                     {
@@ -194,13 +216,12 @@ export default {
     methods: {
         // Pushes posts to the server when called.
         postPost() {
-          //  axios.post(
-           //     'http://edalili.e-dalely.com/public/api/products/create',
-           //     this.products
-           // );
+            //  axios.post(
+            //     'http://edalili.e-dalely.com/public/api/products/create',
+            //     this.products
+            // );
 
             console.log(JSON.stringify(this.products));
-            
         },
     },
     computed: {
@@ -208,8 +229,7 @@ export default {
     },
     mounted() {
         this.$store.dispatch('loadBrands');
-
-    }
+    },
 };
 </script>
 <style scoped>
@@ -221,7 +241,7 @@ export default {
         'option selected selected new_product new_product . . . custom custom'
         'option contain contain contain contain contain contain contain custom custom';
 }
-.parent .save{
+.parent .save {
     background-color: #18ade8;
     border: none;
     padding: 10px;
@@ -235,7 +255,9 @@ export default {
     background-color: #ddd;
     grid-area: custom;
 }
-.custom_Gender,.custom_Size,.custom_Brand{
+.custom_Gender,
+.custom_Size,
+.custom_Brand {
     margin: 10px;
     border: 1px solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
@@ -255,9 +277,9 @@ form input {
     border: none;
 }
 form input:focus {
-   outline: none;
+    outline: none;
 }
-form input:focus::placeholder  {
+form input:focus::placeholder {
     color: transparent;
 }
 form hr {

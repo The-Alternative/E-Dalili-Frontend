@@ -1,6 +1,6 @@
 <template>
     <div class="parent">
-         <dash />
+        <dash />
         <div class="selected">{{ selected }}</div>
         <div class="new_product">
             <button @click="newProduct">New Product</button>
@@ -47,10 +47,9 @@ export default {
     name: 'product_dash',
     components: {
         Product,
-        dash
+        dash,
     },
     data() {
-         
         return {
             selected: localStorage.getItem('selected'),
         };

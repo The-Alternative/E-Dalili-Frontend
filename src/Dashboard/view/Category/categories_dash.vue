@@ -1,6 +1,6 @@
 <template>
     <div class="parent">
-         <dash />
+        <dash />
         <div class="col-12">
             <div class="contain m-4 col-10">
                 <div class="container">
@@ -97,8 +97,8 @@ import { mapState } from 'vuex';
 // import axios from 'axios';
 export default {
     name: 'categories_dash',
-    components: {dash},
-    data () {
+    components: { dash },
+    data() {
         return {
             selected: 'catlog',
             errorMsg: '',
