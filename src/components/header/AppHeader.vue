@@ -822,10 +822,9 @@
 /* End header */
 </style>
 <!--<script src="../../js/proj.js"></script>-->
+
 <script>
 import jeson from '@/jeson/MOCK_DATA.json';
-// import axios from "axios";
-
 export default {
     name: 'AppHeader',
     props: ['title', 'description', 'id', 'price'],

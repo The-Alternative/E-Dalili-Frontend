@@ -1,11 +1,19 @@
 <template>
-    <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+    <div id="app" >
+    <AppHeader  />
     </div>
     <router-view />
 </template>
-
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import AppHeader from '@/components/header/AppHeader.vue'; // @ is an alias to /src
+@Options({
+    components: {
+          AppHeader
+    },
+})
+export default class App extends Vue {}
+</script>
 <style lang="scss">
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;

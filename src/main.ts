@@ -1,7 +1,11 @@
 import { createApp } from 'vue';
 import App from './App.vue';
- import router from './router/index';
- import store from './store/index';
+import router from './router/index';
+import store from './store/index';
+import i18n from './js/i18n';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 // import 'animate.css';
 // import 'jquery';
 // import 'vue-lazyload';
@@ -15,11 +19,8 @@ import App from './App.vue';
 
 // js
 
-// import i18n from './js/i18n';
 // //libraries
-// import VueI18n from 'vue-i18n';
 // import axios from 'axios';
-
 
 // const lang = localStorage.getItem('lang') || 'en';
 // document.documentElement.lang = lang;
@@ -27,9 +28,12 @@ import App from './App.vue';
 // App.use(VueI18n);
 // axios.defaults.baseURL = 'http://edalili.e-dalely.com/public';
 // axios.defaults.headers['Accept-Language'] = lang;
+
 createApp(App)
- .use(router)
- .use(store)
-// .use(BootstrapVue)
-// .use(IconsPlugin)
-.mount('#app');
+    .use(router)
+    .use(store)
+    .use(i18n)
+    .use(VueAxios, axios)
+    // .use(BootstrapVue)
+    // .use(IconsPlugin)
+    .mount('#app');
