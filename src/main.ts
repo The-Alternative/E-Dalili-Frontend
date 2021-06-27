@@ -1,39 +1,31 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router/index';
-import store from './store/index';
+import store from './store/Store';
 import i18n from './js/i18n';
 import axios from 'axios'
-import VueAxios from 'vue-axios'
 
-// import 'animate.css';
-// import 'jquery';
-// import 'vue-lazyload';
-// import 'bootstrap';
-// import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap-vue/dist/bootstrap-vue.css';
-// import 'normalize.css';
-// import '../public/fontawesome-free-5.15.1-web/css/all.css';
-// // Css
+import 'animate.css';
+import 'vue-lazyload';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'normalize.css';
+import '../public/fontawesome-free-5.15.1-web/css/all.css';
 
-// js
+//  axios.defaults.headers['Accept-Language'] = lang;
+//  const string(lang) = localStorage.getItem('lang') || 'en';
+//  document.documentElement.lang = lang;
+axios.defaults.baseURL = 'http://edalili.e-dalely.com/public';
 
-// //libraries
-// import axios from 'axios';
+const app = createApp(App)
+.use(store)
+.use(router,axios)
+.use(i18n)
 
-// const lang = localStorage.getItem('lang') || 'en';
-// document.documentElement.lang = lang;
+app.config.globalProperties.axios=axios
 
-// App.use(VueI18n);
-// axios.defaults.baseURL = 'http://edalili.e-dalely.com/public';
-// axios.defaults.headers['Accept-Language'] = lang;
+app.mount('#app')
 
-createApp(App)
-    .use(router)
-    .use(store)
-    .use(i18n)
-    .use(VueAxios, axios)
-    // .use(BootstrapVue)
-    // .use(IconsPlugin)
-    .mount('#app');
+
+    

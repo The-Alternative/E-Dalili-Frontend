@@ -19,7 +19,7 @@
                         </div>
                         <a href="#">{{ $t('More') }}</a>
                         <div class="ico-card">
-                            <img v-lazy="image" style="width: 60%" />
+                            <img :src="image" style="width: 60%" />
                             <i class="fa fa-rebel"></i>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <!-- __________________________________________________________________ -->
-        <div class="contain">
+        <!-- <div class="contain">
             <h2 style="margin-top: 3vh">Some Market</h2>
             <div class="row align-middle cont-market">
                 <div
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <style lang="scss" scoped>
@@ -273,23 +273,23 @@
 }
 </style>
 <script>
+import { mapState } from 'vuex';
 export default {
     name: 'home',
     props: ['image'],
-    data() {
-        return {};
+     data() {
+    return {
+    }
     },
-    computed: {
-        Brands() {
-            return this.$store.state.Brands;
-        },
-        Categories() {
-            return this.$store.state.Categories;
-        },
+
+      computed: {
+        ...mapState(['Categories',]),
     },
     mounted() {
         this.$store.dispatch('loadCategories');
-        this.$store.dispatch('loadBrands');
     },
+
+
+  
 };
 </script>

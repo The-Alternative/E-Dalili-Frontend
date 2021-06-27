@@ -1,6 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
+
     {
         path: '/login',
         component: () => import('../components/Admin/Login.vue'),
@@ -17,17 +18,16 @@ const routes = [
         path: '/settinglogin',
         component: () => import('../components/Admin/loginSettingPage.vue'),
     },
-    // {
-    //     path: '/addStore',
-    //     name: 'addStore',
-    //     component: () => import('../components/body/addStore'),
-    // },
-    // {
-    //     path: '/visitStore/:id/:title',
-    //     name: 'visitStore',
-    //     component: () => import('../components/body/pages/visitStore'),
-    //     props: true,
-    // },
+    {
+        path: '/addstore',
+        component: () => import('../components/body/addstore.vue'),
+    },
+    
+      {
+        path: '/visitStore/:id/:title',
+        component: () => import('../components/body/pages/visitStore.vue'),
+         
+     },
     /* cart shop */
     {
         path: '/Cart',
@@ -46,12 +46,11 @@ const routes = [
         component: () => import('../components/global/ListView.vue'),
         props: true,
     },
-    // {
-    //     path: '/ProductDetailsStore/:title/:id_store/:id',
-    //     component: () => import('../components/body/pages/ProductDetailsStore'),
-    //     name: 'ProductDetailsStore',
-    //     props: true,
-    // },
+     {
+         path: '/ProductDetailsStore/:title/:id_store/:id',
+        component: () => import('../components/body/pages/ProductDetailsStore.vue'),
+         
+     },
     /* services or section */
     {
         path: '/',
@@ -172,7 +171,7 @@ const routes = [
         path: '/categoryview/:id',
         name: 'categoryview',
         component: () => import('../Dashboard/view/Category/categoryView.vue'),
-        params: true,
+        
     },
     {
         path: '/categoryEdit/:id',
@@ -201,7 +200,7 @@ const routes = [
         name: 'visitRestaurant',
         component: () =>
             import('../components/body/restaurant/visitRestaurant.vue'),
-        params: true,
+      
     },
 ];
 const router = createRouter({

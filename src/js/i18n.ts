@@ -9,6 +9,7 @@ const i18n = createI18n({
     },
     locale: localStorage.getItem('lang') || 'en',
     silentTranslationWarn: process.env.NODE_ENV === 'production',
+    
 });
 
 export default i18n;

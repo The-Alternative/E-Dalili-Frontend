@@ -6,13 +6,12 @@
 </template>
 
 <script>
-import BodyStore from '../../components/body/BodyStore';
-import Cartmini from '@/components/cart/Cartmini.vue';
+import { defineAsyncComponent } from "vue";
 export default {
     name: 'stores',
     components: {
-        BodyStore,
-        Cartmini,
+        BodyStore: defineAsyncComponent(() =>import(`@/components/body/BodyStore.vue`),),
+        Cartmini: defineAsyncComponent(() =>import(`@/components/cart/Cartmini.vue`),),
     },
 };
 </script>

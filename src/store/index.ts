@@ -1,251 +1,230 @@
-import { createStore } from 'vuex';
+/* 
 import axios from 'axios';
-//  import jeson from '@/jeson/MOCK_DATA.json';
-//  import data from '@/jeson/data';
+import {
+  createStore,
+  MutationTree,
+  ActionContext,
+  ActionTree,
+  GetterTree,
+  Store as VuexStore,
+  CommitOptions,
+  DispatchOptions,
+  createLogger
+} from "vuex";
+const cartItems = window.localStorage.getItem('cartItems');
+const cartItemCount = window.localStorage.getItem('cartItemCount');
+const lang = window.localStorage.getItem('lang');
+//declare state
+export type State = { 
+    counter: number,
+    Stores: string[],
+    store: null,
+    Sections: string[],
+    Product: string[],
+    ProductID: null,
+    Brand: string[],
+    Brands: string[],
+    Categories: string[],
+    CategoryID: null,
+    priceArray: string[], 
+    cartItemCount: number,
+    cartItems: string[],
+    lang:string,
+    count:number,
+
+    };
+
+//set state
+const state: State = {
+      count: 0,
+      counter: 0,
+      Stores: [],
+      store: null,
+      Sections: [],
+      Product: [],
+      ProductID: null,
+      Brand: [],
+      Brands: [],
+      Categories: [],
+      CategoryID: null,
+      priceArray: [], 
+      cartItemCount: cartItemCount ? JSON.parse(cartItemCount) : 0,
+      cartItems: cartItems ? JSON.parse(cartItems) : [],
+      lang: ''
+    };
+
+// mutations and action enums
+
+export enum MutationTypes {
+  INC_COUNTER = "SET_COUNTER",
+  SET_Stores = "SET_Stores",
+  SET_Store = "SET_Store",
+  SET_Products = "SET_Products",
+  SET_ProductID = "SET_ProductID",
+  SET_Brands = "SET_Brands",
+  SET_Categories = "SET_Categories",
+  SET_CategoryID = "SET_CategoryID",
+}
 
 
- const cartItems = window.localStorage.getItem('cartItems');
- const cartItemCount = window.localStorage.getItem('cartItemCount');
- const lang = window.localStorage.getItem('lang');
- const store = createStore({
 
+//Mutation Types 
+export type Mutations<S = State> = {
+  [MutationTypes.INC_COUNTER](state: S, payload: number): void;
+  [MutationTypes.SET_Stores](state: S, Stores: string[]): void;
+  [MutationTypes.SET_Store](state: S, store: null): void;
+  [MutationTypes.SET_Products](state: State, Product: string[]): void;
+  [MutationTypes.SET_ProductID](state: S, ProductID: null): void;
+  [MutationTypes.SET_Brands](state: S, Brands: string[]): void;
+  [MutationTypes.SET_Categories](state: S, Categories: string[]): void;
+  [MutationTypes.SET_CategoryID](state: S, CategoryID: null): void;
+};
+
+//define mutations
+const mutations: MutationTree<State> & Mutations = {
+  [MutationTypes.INC_COUNTER](state: State, payload: number) {
+    state.counter += payload;
+  },
+  [MutationTypes.SET_Stores](state: State, Stores: string[]) {
+    state.Stores = Stores;
+  },
+  [MutationTypes.SET_Store](state: State, store: null) {
+    state.store = store;
+  },
+  [MutationTypes.SET_Products](state: State, Product: string[]) {
+    state.Product = Product;
+  },
+  [MutationTypes.SET_ProductID](state: State, ProductID: null) {
+    state.ProductID = ProductID
+  },
+  [MutationTypes.SET_Brands](state: State, Brands: string[]) {
+    state.Brands = Brands;
+  },
+  [MutationTypes.SET_Categories](state: State, Categories: string[]) {
+    state.Categories = Categories;
+  },
+  [MutationTypes.SET_CategoryID](state: State, CategoryID: null) {
+    state.CategoryID = CategoryID;
+  }
+};
+
+//actions
+export enum ActionTypes {
+  INC_COUNTER = "SET_COUNTER",
+  SET_Stores = "SET_Stores",
+  SET_Store = "SET_Store",
+  SET_Products = "SET_Products",
+  SET_ProductID = "SET_ProductID",
+  SET_Brands = "SET_Brands",
+  SET_Categories = "SET_Categories",
+  SET_CategoryID = "SET_CategoryID",
+}
+
+type AugmentedActionContext = {
+  commit<K extends keyof Mutations>(
+    key: K,
+    payload: Parameters<Mutations[K]>[1]
+  ): ReturnType<Mutations[K]>;
+} & Omit<ActionContext<State, State>, "commit">;
+
+// actions interface
+
+export interface Actions {
+  [ActionTypes.INC_COUNTER]({ commit }: AugmentedActionContext,payload: number): void;
+  [ActionTypes.SET_Stores]({ commit }: AugmentedActionContext, Stores: string[]): void;
+}
+
+export const actions: ActionTree<State, State> & Actions = {
+  [ActionTypes.INC_COUNTER]({ commit }, payload: number) {commit(MutationTypes.INC_COUNTER, payload);},
+  [ActionTypes.SET_Stores]({ commit },Stores: string[]) {commit(MutationTypes.SET_Stores, Stores);},
+
+};
+
+// Getters types
+export type Getters = {
+  doubleCounter(state: State): number;
+  loadStores(state: State): string[];
+};
+
+//getters
+
+export const getters: GetterTree<State, State> & Getters = {
+  doubleCounter: state => {
+    console.log("state", state.counter);
+    return state.counter * 2;
+  },
+  loadStores(state:State): Promise<any> {
+    return axios.get(`/api/stores/getAll?lang=${lang}`)
+    .then((res) => {
+         console.warn('Store :', res.data.Stores);
+         state.Stores = res.data.Stores;
+      
+     }) .catch(function (error) {
+      console.log('Error: ', error);
+  });
   
-        // module assets
-        state: () => ({
-            // APi
-            Stores: [],
-            store: null,
-            Sections: [],
-            Product: [],
-            ProductID: null,
-            Brand: [],
-            Brands: [],
-            Categories: [],
-            CategoryID: null,
-            priceArray: [],
-            ////////////////
-            // Product: jeson[0].Products,
-            // stores: data.stores,
-            // restaurants: data.restaurants,
-            // lastStores: jeson[0].lastStores,
-            // brands: jeson[0].brands,
-            // categories: jeson[0].categories,
-            cartItemCount: cartItemCount ? JSON.parse(cartItemCount) : 0,
-            cartItems: cartItems ? JSON.parse(cartItems) : [],
-        }), // module state is already nested and not affected by namespace option
-        getters: {
-            // interface Images {
-            //     main: string;
-            //     [key:string]: string;
-            // }
-            
-            // function getMainImageUrl(images: Images): string {
-            //     return images.main;
-            // }
-            avalibleStore: (state) => {
-                const len = state.Product[0].store.length;
-                return len - 1;
-            },
-            getStoreId: (state) => (id) => {
-                return state.Stores.find((prod) => prod.id === id);
-            },
-        },
-        actions: {
-            addToCart: (context, payload) => {
-                context.commit('addToCart', payload);
-            },
-            removeItem: (context, payload) => {
-                context.commit('removeItem', payload);
-            },
-            loadStores({ commit }) {
-                axios
-                    .get(`/api/stores/getAll?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('Store :', res.data.Stores);
-                        const Stores = res.data.Stores;
-                        commit('SET_Stores', Stores);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            loadstore({ commit }, productId) {
-                axios
-                    .get(`/api/stores/getById/${productId}?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('StorebyId :', res.data);
-                        const store = res.data.Store;
-                        commit('SET_Store', store);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            loadProducts({ commit }) {
-                axios
-                    .get(`/api/products/getAll?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('Product :', res.data.Products);
-                        const Product = res.data.Products;
-                        commit('SET_Products', Product);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            loadProduct({ commit }, ProductID) {
-                axios
-                    .get(`/api/products/getById/${ProductID}?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('productById :', res.data.product);
-                        const ProductID = res.data.product;
-                        commit('SET_ProductID', ProductID);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            loadBrands({ commit }) {
-                axios
-                    .get(`/api/brands/getAll?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('Brands :', res.data.Brand);
-                        const Brands = res.data.Brand;
-                        commit('SET_Brands', Brands);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            loadCategories({ commit }) {
-                axios
-                    .get(`/api/categories/getAll?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('Categories :', res.data.Category);
-                        const Categories = res.data.Category;
-                        commit('SET_Categories', Categories);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            loadCategory({ commit }, CategoryID) {
-                axios
-                    .get(`/api/categories/getById/${CategoryID}?lang=${lang}`)
-                    .then((res) => {
-                        console.warn('CategoryID :', res.data.Category);
-                        const CategoryID = res.data.Category;
-                        commit('SET_CategoryID', CategoryID);
-                    })
-                    .catch(function (error) {
-                        console.log('Error: ', error);
-                    });
-            },
-            async deleteCategory({ commit }, items) {
-                axios.put(
-                    `http://edalili.e-dalely.com/public/api/categories/trash/${items.id}`,
-                    commit('Delete_Category', items.id)
-                );
-            },
-        },
-        mutations: {
-            increment(state) {
-                state.count++;
-            },
-            cartItems: (state, connections) => {
-                state.cartItems = connections;
-            },
-            addToCart(state, payload) {
-                let item = payload;
-                item = { ...item, quantity: 1 };
-                if (state.cartItems.length > 0) {
-                    const bool = state.cartItems.some(
-                        (i) => i.id_store === item.id_store
-                    );
-                    if (bool) {
-                        const itemIndex = state.cartItems.findIndex(
-                            (el) => el.id_store === item.id_store
-                        );
-                        state.cartItems[itemIndex]['quantity'] += 1;
-                    } else {
-                        state.cartItems.push(item);
-                    }
-                } else {
-                    state.cartItems.push(item);
-                }
-                state.cartItemCount++;
-                this.commit('savedata');
-            },
-            savedata(state) {
-                window.localStorage.setItem(
-                    'cartItems',
-                    JSON.stringify(state.cartItems)
-                );
-                window.localStorage.setItem(
-                    'cartItemCount',
-                    JSON.stringify(state.cartItemCount)
-                );
-            },
-            removeItem(state, payload) {
-                if (state.cartItems.length > 0) {
-                    const bool = state.cartItems.some((i) => i.id === payload.id);
-                    if (bool) {
-                        const index = state.cartItems.findIndex(
-                            (el) => el.id === payload.id
-                        );
-                        if (state.cartItems[index]['quantity'] !== 0) {
-                            state.cartItems[index]['quantity'] -= 1;
-                            state.cartItemCount--;
-                            this.commit('savedata');
-                        }
-                        if (state.cartItems[index]['quantity'] === 0) {
-                            state.cartItems.splice(index, 1);
-                        }
-                    }
-                }
-            },
-            removeFromCart(state, item) {
-                const index = state.cartItems.indexOf(item);
-    
-                if (index > -1) {
-                    const product = state.cartItems[index];
-                    state.cartItemCount -= product.quantity;
-    
-                    state.cartItems.splice(index, 1);
-    
-                    this.commit('savedata');
-                }
-            },
-            SET_Stores(state, Stores) {
-                state.Stores = Stores;
-            },
-            SET_Store(state, store) {
-                state.store = store;
-            },
-            SET_Products(state, Product) {
-                state.Product = Product;
-            },
-            SET_ProductID(state, ProductID) {
-                state.ProductID = ProductID;
-            },
-            SET_Brands(state, Brands) {
-                state.Brands = Brands;
-            },
-            SET_Categories(state, Categories) {
-                state.Categories = Categories;
-            },
-            SET_CategoryID(state, CategoryID) {
-                state.CategoryID = CategoryID;
-            },
-            Delete_Category(state, itemsId) {
-                const Categories = state.Categories.filter((v) => v.id != itemsId);
-                state.Categories = Categories;
-            },
-        },
-  
-        // nested modules
+  },
+  const val = await axios
+  .get<Array<Book & { body: string }>>(
+    `https://jsonplaceholder.typicode.com/posts`
+  )
+  .then(res => res.data.map(
+    ({ body, ...props }) => Object.assign({ content: body }, props)
+  ));
+ 
+};
 
-     
-  })
-  
-export default store;
+//setup store type
+export type Store = Omit<
+  VuexStore<State>,
+  "commit" | "getters" | "dispatch"
+> & {
+  commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
+    key: K,
+    payload: P,
+    options?: CommitOptions
+  ): ReturnType<Mutations[K]>;
+} & {
+  getters: {
+    [K in keyof Getters]: ReturnType<Getters[K]>;
+  };
+} & {
+  dispatch<K extends keyof Actions>(
+    key: K,
+    payload: Parameters<Actions[K]>[1],
+    options?: DispatchOptions
+  ): ReturnType<Actions[K]>;
+};
+
+export const store = createStore({
+  state,
+  mutations,
+  actions,
+  getters,
+  plugins: [createLogger()]
+});
+
+export function useStore() {
+  return store as Store;
+}
+// export const store = createStore({
+//   state,
+//   mutations: {
+//     increment(state, payload) {
+//       state.counter++;
+//     }
+//   },
+//   actions: {
+//     increment({ commit }) {
+//       commit("increment");
+//     }
+//   },
+
+//   getters: {
+//     counter(state) {
+//       return state.counter;
+//     }
+//   },
+//   modules: {}
+// });
+*/

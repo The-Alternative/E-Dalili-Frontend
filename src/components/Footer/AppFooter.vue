@@ -331,8 +331,13 @@
 /* End About-Us */
 </style>
 
-<script>
-export default {
-    name: 'AppFooter',
-};
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+
+@Options({
+   
+})
+export default class AppFooter extends Vue {
+   
+}
 </script>

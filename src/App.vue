@@ -1,15 +1,20 @@
 <template>
+   <AppHeader />
     <div id="app" >
-    <AppHeader  />
+ 
+    
     </div>
     <router-view />
+<AppFooter />
 </template>
 <script lang="ts">
+
 import { Options, Vue } from 'vue-class-component';
 import AppHeader from '@/components/header/AppHeader.vue'; // @ is an alias to /src
+import AppFooter from '@/components/Footer/AppFooter.vue';
 @Options({
     components: {
-          AppHeader
+          AppHeader,AppFooter
     },
 })
 export default class App extends Vue {}

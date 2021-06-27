@@ -261,12 +261,7 @@
 
 <script>
 import { mapState } from 'vuex';
-
-import Vue from 'vue';
 import axios from 'axios';
-import VueAxios from 'vue-axios';
-Vue.use(VueAxios, axios);
-
 export default {
     props: ['id', 'title', 'section', 'Product', 'brand'],
     components: {
@@ -322,7 +317,7 @@ export default {
         fetch() {
             var self = this;
             let lang = window.localStorage.getItem('lang');
-            Vue.axios
+            axios
                 .get(`/api/sections/getAll?lang=${lang}`)
                 .then((res) => {
                     self.Sections = res.data.Section;

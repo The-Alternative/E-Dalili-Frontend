@@ -2,19 +2,19 @@
     <div class="products">
         <Cartmini />
         <!--  show img  -->
-        <div class="show-img">
+         <div class="show-img">
             <div class="row">
                 <div
                     class="col-md-6 img"
                     v-for="brand in brands.slice(0, 2)"
                     :key="brand.id"
                 >
-                    <img v-lazy="brand.image" />
+                    <img :src="brand.image" />
                 </div>
             </div>
-        </div>
+        </div> 
         <!-- show  products -->
-        <div class="show-prod">
+         <!-- <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
                     v-for="items in Product.slice(0, 4)"
@@ -27,9 +27,9 @@
                 >
                 </BodyProduct>
             </div>
-        </div>
+        </div>  -->
         <!-- show market-->
-        <div class="mar">
+        <!-- <div class="mar">
             <div
                 class="show-market"
                 v-for="bran in Brands.slice(0, 5)"
@@ -37,9 +37,9 @@
             >
                 <img v-lazy="bran.image" />
             </div>
-        </div>
+        </div> -->
         <!-- show  products -->
-        <div class="show-prod">
+        <!-- <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
                     v-for="items in Product.slice(4, 8)"
@@ -51,10 +51,10 @@
                 >
                 </BodyProduct>
             </div>
-        </div>
+        </div> -->
 
         <!-- show der -->
-        <div class="show-der">
+         <div class="show-der">
             <div class="row">
                 <div
                     class="col-lg-6 img text-center"
@@ -62,14 +62,13 @@
                     :key="brand.id"
                     :image="brand.image"
                 >
-                    <img v-lazy="brand.image" />
+                    <img :src="brand.image" />
                 </div>
             </div>
-        </div>
+        </div> 
         <!-- --------------------------------------------- -->
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <!-- The slideshow -->
+         <div id="demo" class="carousel slide" data-ride="carousel">
+          
             <div class="row">
                 <div class="col-lg-3 col-sm-4 col-xs-12">
                     <div>
@@ -77,7 +76,7 @@
                         <div class="last-subscriber">
                             <Subscriber
                                 v-for="Store in Stores.slice(0, 6)"
-                                :key="Store.id"
+                                :key="Store.pr"
                                 :title="Store.title"
                             />
                         </div>
@@ -85,8 +84,8 @@
                 </div>
                 <div class="col-lg-9 col-sm-8 col-xs-12">
                     <div class="carousel-inner carousel-inner1">
-                        <!-- carousel item 1 -->
-                        <div class="carousel-item active">
+                       
+                        <!-- <div class="carousel-item active">
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
@@ -101,8 +100,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- carousel item 2 -->
-                        <div class="carousel-item">
+                        -->
+                        <!-- <div class="carousel-item">
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
@@ -116,9 +115,9 @@
                                     </BodyProduct>
                                 </div>
                             </div>
-                        </div>
-                        <!-- carousel item 3 -->
-                        <div class="carousel-item">
+                        </div> -->
+                      
+                        <!-- <div class="carousel-item">
                             <div class="show-prod">
                                 <div class="row">
                                     <BodyProduct
@@ -132,9 +131,9 @@
                                     </BodyProduct>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                    <!-- Left and right controls -->
+                   
                     <a
                         class="carousel-control-prev"
                         href="#demo"
@@ -149,7 +148,7 @@
                     >
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <!-- ------------------------------------------------------------ -->
+               
                     <div
                         class="row"
                         style="
@@ -163,7 +162,7 @@
                             :image="brand.image"
                             class="col-sm-9 imgs"
                         >
-                            <img v-lazy="brand.image" style="width: 100%" />
+                            <img :src="brand.image" style="width: 100%" />
                         </div>
                         <div class="two-img">
                             <div
@@ -172,7 +171,7 @@
                                 :image="brand.image"
                                 class="col-sm-1.5 imges1"
                             >
-                                <img v-lazy="brand.image" />
+                                <img :src="brand.image" />
                             </div>
                             <div
                                 v-for="brand in brands.slice(11, 12)"
@@ -180,15 +179,15 @@
                                 :image="brand.image"
                                 class="col-sm-1.5 imges2"
                             >
-                                <img v-lazy="brand.image" />
+                                <img :src="brand.image" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
         <!-- second Carousel -->
-        <div
+        <!-- <div
             id="deno"
             class="carousel slide"
             data-ride="carousel"
@@ -196,7 +195,7 @@
         >
             <div class="col-sm-12" style="padding: 0">
                 <div class="carousel-inner">
-                    <!-- carousel item 1 -->
+                 
                     <div class="carousel-item active">
                         <div class="show-prod">
                             <div class="row">
@@ -212,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- carousel item 2 -->
+                
                     <div class="carousel-item">
                         <div class="show-prod">
                             <div class="row">
@@ -228,7 +227,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- carousel item 3 -->
+                   
                     <div class="carousel-item">
                         <div class="show-prod">
                             <div class="row">
@@ -246,7 +245,7 @@
                     </div>
                 </div>
 
-                <!-- Left and right controls -->
+              
                 <a class="carousel-control-prev" href="#deno" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
@@ -254,7 +253,7 @@
                     <span class="carousel-control-next-icon"></span>
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <style scoped>
@@ -737,7 +736,8 @@
 </style>
 
 <script>
-import { mapState } from 'vuex';
+ import { mapState } from 'vuex';
+import { defineAsyncComponent } from "vue";
 export default {
     data() {
         return {
@@ -746,24 +746,29 @@ export default {
     },
     name: 'products',
     components: {
-        BodyProduct: () => import('@/components/global/BodyProduct.vue'),
-        Subscriber: () => import('@/components/global/Subscriber.vue'),
-        Cartmini: () => import('@/components/cart/Cartmini.vue'),
+        
+       // BodyProduct: defineAsyncComponent(() =>import(`@/components/global/BodyProduct.vue`),),
+        Subscriber: defineAsyncComponent(() =>import(`@/components/global/Subscriber.vue`),),
+        Cartmini: defineAsyncComponent(() =>import(`@/components/cart/Cartmini.vue`),),
     },
-    computed: {
-        ...mapState([
-            'Product',
-            'brands',
-            'Brands',
-            'categories',
-            'Stores',
-            'lastStores',
-        ]),
+        props: {
+        type: String
     },
-    mounted() {
-        this.$store.dispatch('loadProducts');
-        this.$store.dispatch('loadStores');
-        this.$store.dispatch('loadBrands');
-    },
+  
+     computed: {
+         ...mapState([
+             'Product',
+             'brands',
+             'Brands',
+             'categories',
+             'Stores',
+             'lastStores',
+         ]),
+     },
+     mounted() {
+         this.$store.dispatch('loadProducts');
+         this.$store.dispatch('loadStores');
+         this.$store.dispatch('loadBrands');
+     },
 };
 </script>

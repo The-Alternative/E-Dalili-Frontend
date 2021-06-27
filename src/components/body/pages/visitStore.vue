@@ -335,17 +335,14 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
-Vue.use(VueAxios, axios);
 import { mapState } from 'vuex';
+import { defineAsyncComponent } from "vue";
 export default {
     name: 'visitStore',
     props: ['id'],
     components: {
-        BodyProductStore: () => import('./BodyProductStore'),
-        Cartmini: () => import('@/components/cart/Cartmini.vue'),
+        BodyProductStore: defineAsyncComponent(() =>import(`./BodyProductStore.vue`),),
+        Cartmini: defineAsyncComponent(() =>import(`@/components/cart/Cartmini.vue`),),
     },
     computed: {
         ...mapState(['store', 'brands']),

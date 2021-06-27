@@ -82,22 +82,21 @@
                                 /></span>
                             </div>
                             <div class="col btnsmall">
-                                <router-link
+                                <!-- <router-link 
                                     :to="{
                                         name: 'visitStore',
                                         params: {
                                             id: store.id,
                                             title: store.title,
-                                            // workingHours: store.workingHours,
-                                            // section: store.section,
-                                            // Product: store.product,
-                                            // brand: store.brand,
-                                        },
-                                    }"
-                                    ><button type="button" class="btn">
+                                             workingHours: store.workingHours,
+                                             section: store.section,
+                                             Product: store.product,
+                                             brand: store.brand,},}">-->
+                                    <router-link :to="`/visitStore/${store.id}/${store.title}`">
+                                      <button type="button" class="btn">
                                         <b class="">{{ $t('visit') }}</b>
-                                    </button></router-link
-                                >
+                                    </button></router-link>
+                                
                             </div>
                             <div class="col team-social">
                                 <div class="row">
@@ -143,7 +142,7 @@
                     <ul>
                         <li
                             class="textcheck"
-                            v-for="category in Sections"
+                            v-for="category in Sections.slice(0,12)"
                             :key="category"
                         >
                             {{ category.name }}
@@ -274,17 +273,13 @@
 </template>
 <script>
 import { mapState } from 'vuex';
-
-import Vue from 'vue';
 import axios from 'axios';
-import VueAxios from 'vue-axios';
-Vue.use(VueAxios, axios);
-
+import { defineAsyncComponent } from "vue";
 export default {
     components: {
-        WhatsappStore: () => import('@/components/body/whatsapp-store.vue'),
-        PhoneStore: () => import('@/components/body/phone-store'),
-        LocationStore: () => import('@/components/body/location-store'),
+        WhatsappStore: defineAsyncComponent(() =>import(`@/components/body/whatsapp-store.vue`),),
+        PhoneStore: defineAsyncComponent(() =>import(`@/components/body/phone-store`),),
+        LocationStore: defineAsyncComponent(() =>import(`@/components/body/location-store`),),
     },
     props: ['id', 'title', 'section', 'Product', 'brand'],
 
@@ -329,7 +324,7 @@ export default {
         fetch() {
             var self = this;
             let lang = window.localStorage.getItem('lang');
-            Vue.axios
+            axios
                 .get(`/api/sections/getAll?lang=${lang}`)
                 .then((res) => {
                     self.Sections = res.data.Section;
