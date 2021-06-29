@@ -92,11 +92,14 @@
                             <div class="map">{{ $t('Selectlocation') }}</div>
 
                             <i class="fa fa-user-circle"> </i>
-                            <div class="user">
-                                <router-link class="link" to="/">{{
+                            <template v-if="authenticated" class="user">
+                                <a href="#" class="link">Signout</a>
+                            </template>
+                            <template v-else class="user">
+                                <router-link class="link" to="/signin">{{
                                     $t('signin')
                                 }}</router-link>
-                            </div>
+                            </template>
                         </div>
                     </div>
                 </div>
@@ -824,6 +827,7 @@
 <!--<script src="../../js/proj.js"></script>-->
 
 <script>
+import { mapGetters } from 'vuex';
 import jeson from '@/jeson/MOCK_DATA.json';
 export default {
     name: 'AppHeader',
@@ -851,6 +855,10 @@ export default {
         cartItemCount() {
             return this.$store.state.cartItemCount;
         },
+        ...mapGetters({
+            authenticated: 'authenticated',
+            // user: 'user',
+        }),
     },
     methods: {
         gotocart() {

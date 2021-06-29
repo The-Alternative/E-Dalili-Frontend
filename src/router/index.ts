@@ -1,33 +1,30 @@
-import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
+import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
-
+    // {
+    //     path: '/login',
+    //     component: () => import('../components/Admin/Login.vue'),
+    // },
+    // {
+    //     path: '/signup',
+    //     component: () => import('../components/Admin/Signup.vue'),
+    // },
+    // {
+    //     path: '/forgotpassword',
+    //     component: () => import('../components/Admin/ForgetPassword.vue'),
+    // },
+    // {
+    //     path: '/settinglogin',
+    //     component: () => import('../components/Admin/loginSettingPage.vue'),
+    // },
     {
-        path: '/login',
-        component: () => import('../components/Admin/Login.vue'),
+        path: '/signin',
+        component: () => import('../components/Admin/Sign.vue'),
     },
     {
-        path: '/signup',
-        component: () => import('../components/Admin/Signup.vue'),
-    },
-    {
-        path: '/forgotpassword',
-        component: () => import('../components/Admin/ForgetPassword.vue'),
-    },
-    {
-        path: '/settinglogin',
-        component: () => import('../components/Admin/loginSettingPage.vue'),
-    },
-    {
-        path: '/addstore',
-        component: () => import('../components/body/addstore.vue'),
-    },
-    
-      {
         path: '/visitStore/:id/:title',
         component: () => import('../components/body/pages/visitStore.vue'),
-         
-     },
+    },
     /* cart shop */
     {
         path: '/Cart',
@@ -46,11 +43,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../components/global/ListView.vue'),
         props: true,
     },
-     {
-         path: '/ProductDetailsStore/:title/:id_store/:id',
-        component: () => import('../components/body/pages/ProductDetailsStore.vue'),
-         
-     },
+    {
+        path: '/ProductDetailsStore/:title/:id_store/:id',
+        component: () =>
+            import('../components/body/pages/ProductDetailsStore.vue'),
+    },
     /* services or section */
     {
         path: '/',
@@ -171,7 +168,6 @@ const routes: Array<RouteRecordRaw> = [
         path: '/categoryview/:id',
         name: 'categoryview',
         component: () => import('../Dashboard/view/Category/categoryView.vue'),
-        
     },
     {
         path: '/categoryEdit/:id',
@@ -200,7 +196,6 @@ const routes: Array<RouteRecordRaw> = [
         name: 'visitRestaurant',
         component: () =>
             import('../components/body/restaurant/visitRestaurant.vue'),
-      
     },
 ];
 const router = createRouter({

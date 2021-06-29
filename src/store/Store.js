@@ -1,11 +1,10 @@
-import {createStore,} from "vuex";
+import { createStore } from 'vuex';
 import axios from 'axios';
 import jeson from '@/jeson/MOCK_DATA.json';
 import data from '@/jeson/data';
 let cartItems = window.localStorage.getItem('cartItems');
 let cartItemCount = window.localStorage.getItem('cartItemCount');
 let lang = window.localStorage.getItem('lang');
-
 const store = createStore({
     state: {
         // APi
@@ -28,7 +27,9 @@ const store = createStore({
         categories: jeson[0].categories,
         cartItemCount: cartItemCount ? JSON.parse(cartItemCount) : 0,
         cartItems: cartItems ? JSON.parse(cartItems) : [],
-        
+        //auth
+        token: null,
+        user: null,
     },
     mutations: {
         increment(state) {
@@ -122,6 +123,17 @@ const store = createStore({
         Delete_Category(state, itemsId) {
             let Categories = state.Categories.filter((v) => v.id != itemsId);
             state.Categories = Categories;
+        },
+        //auth
+        SET_TOKEN(state, token) {
+            state.token = token;
+        },
+        SET_USER(state, data) {
+            state.user = data;
+        },
+        //register
+        SET_TOKEN1(state, token) {
+            state.token = token;
         },
     },
     actions: {
@@ -221,6 +233,55 @@ const store = createStore({
                 commit('Delete_Category', items.id)
             );
         },
+        //auth
+        async signIn({ dispatch }, Credentials) {
+            let res = await axios.post(
+                'http://edalili.e-dalely.com/public/api/auth/login',
+                Credentials
+            );
+            console.log(res.data);
+            return dispatch('attempt', res.data.access_token);
+        },
+        async attempt({ commit }, token) {
+            console.log(token);
+            commit('SET_TOKEN', token);
+            //     // try {
+            //     // let res = await axios.get('auth/me');
+            //     //   let res = await axios.get("auth/me", {
+            //     //     headers: {
+            //     //       Authorization: "Bearer" + token,
+            //     //     },});
+            //     //     commit('SET_USER', res.data);
+            //     // } catch (e) {
+            //     //     commit('SET_TOKEN', null);
+            //     //     commit('SET_USER', null);
+            //     // }
+        },
+
+        //Register
+        async register({ dispatch }, Credentials) {
+            let res = await axios.post(
+                'http://edalili.e-dalely.com/public/api/auth/register',
+                Credentials
+            );
+            console.log(res.data);
+            return dispatch('attempt1', res.data.access_token);
+        },
+        async attempt1({ commit }, token) {
+            console.log(token);
+            commit('SET_TOKEN1', token);
+            // try {
+            //   let res = await axios.get("auth/me", {
+            //     headers: {
+            //       Authorization: "Bearer" + token,
+            //     },
+            //   });
+            //   commit("SET_USER", res.data);
+            // } catch (e) {
+            //   commit("SET_TOKEN", null);
+            //   commit("SET_USER", null);
+            // }
+        },
     },
     getters: {
         avalibleStore: (state) => {
@@ -229,6 +290,14 @@ const store = createStore({
         },
         getStoreId: (state) => (id) => {
             return state.Stores.find((prod) => prod.id === id);
+        },
+        //auth
+        authenticated(state) {
+            return state.token;
+            // return state.token && state.user;
+        },
+        user(state) {
+            return state.user;
         },
     },
 });

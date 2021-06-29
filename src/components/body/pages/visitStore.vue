@@ -336,13 +336,17 @@
 
 <script>
 import { mapState } from 'vuex';
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent } from 'vue';
 export default {
     name: 'visitStore',
     props: ['id'],
     components: {
-        BodyProductStore: defineAsyncComponent(() =>import(`./BodyProductStore.vue`),),
-        Cartmini: defineAsyncComponent(() =>import(`@/components/cart/Cartmini.vue`),),
+        BodyProductStore: defineAsyncComponent(() =>
+            import(`./BodyProductStore.vue`)
+        ),
+        Cartmini: defineAsyncComponent(() =>
+            import(`@/components/cart/Cartmini.vue`)
+        ),
     },
     computed: {
         ...mapState(['store', 'brands']),

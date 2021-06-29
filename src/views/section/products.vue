@@ -2,7 +2,7 @@
     <div class="products">
         <Cartmini />
         <!--  show img  -->
-         <div class="show-img">
+        <div class="show-img">
             <div class="row">
                 <div
                     class="col-md-6 img"
@@ -12,9 +12,9 @@
                     <img :src="brand.image" />
                 </div>
             </div>
-        </div> 
+        </div>
         <!-- show  products -->
-         <!-- <div class="show-prod">
+        <!-- <div class="show-prod">
             <div class="row reower">
                 <BodyProduct
                     v-for="items in Product.slice(0, 4)"
@@ -54,7 +54,7 @@
         </div> -->
 
         <!-- show der -->
-         <div class="show-der">
+        <div class="show-der">
             <div class="row">
                 <div
                     class="col-lg-6 img text-center"
@@ -65,10 +65,9 @@
                     <img :src="brand.image" />
                 </div>
             </div>
-        </div> 
+        </div>
         <!-- --------------------------------------------- -->
-         <div id="demo" class="carousel slide" data-ride="carousel">
-          
+        <div id="demo" class="carousel slide" data-ride="carousel">
             <div class="row">
                 <div class="col-lg-3 col-sm-4 col-xs-12">
                     <div>
@@ -84,7 +83,6 @@
                 </div>
                 <div class="col-lg-9 col-sm-8 col-xs-12">
                     <div class="carousel-inner carousel-inner1">
-                       
                         <!-- <div class="carousel-item active">
                             <div class="show-prod">
                                 <div class="row">
@@ -116,7 +114,7 @@
                                 </div>
                             </div>
                         </div> -->
-                      
+
                         <!-- <div class="carousel-item">
                             <div class="show-prod">
                                 <div class="row">
@@ -133,7 +131,7 @@
                             </div>
                         </div> -->
                     </div>
-                   
+
                     <a
                         class="carousel-control-prev"
                         href="#demo"
@@ -148,7 +146,7 @@
                     >
                         <span class="carousel-control-next-icon"></span>
                     </a>
-               
+
                     <div
                         class="row"
                         style="
@@ -185,7 +183,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <!-- second Carousel -->
         <!-- <div
             id="deno"
@@ -736,8 +734,8 @@
 </style>
 
 <script>
- import { mapState } from 'vuex';
-import { defineAsyncComponent } from "vue";
+import { mapState } from 'vuex';
+import { defineAsyncComponent } from 'vue';
 export default {
     data() {
         return {
@@ -746,29 +744,32 @@ export default {
     },
     name: 'products',
     components: {
-        
-       // BodyProduct: defineAsyncComponent(() =>import(`@/components/global/BodyProduct.vue`),),
-        Subscriber: defineAsyncComponent(() =>import(`@/components/global/Subscriber.vue`),),
-        Cartmini: defineAsyncComponent(() =>import(`@/components/cart/Cartmini.vue`),),
+        // BodyProduct: defineAsyncComponent(() =>import(`@/components/global/BodyProduct.vue`),),
+        Subscriber: defineAsyncComponent(() =>
+            import(`@/components/global/Subscriber.vue`)
+        ),
+        Cartmini: defineAsyncComponent(() =>
+            import(`@/components/cart/Cartmini.vue`)
+        ),
     },
-        props: {
-        type: String
+    props: {
+        type: String,
     },
-  
-     computed: {
-         ...mapState([
-             'Product',
-             'brands',
-             'Brands',
-             'categories',
-             'Stores',
-             'lastStores',
-         ]),
-     },
-     mounted() {
-         this.$store.dispatch('loadProducts');
-         this.$store.dispatch('loadStores');
-         this.$store.dispatch('loadBrands');
-     },
+
+    computed: {
+        ...mapState([
+            'Product',
+            'brands',
+            'Brands',
+            'categories',
+            'Stores',
+            'lastStores',
+        ]),
+    },
+    mounted() {
+        this.$store.dispatch('loadProducts');
+        this.$store.dispatch('loadStores');
+        this.$store.dispatch('loadBrands');
+    },
 };
 </script>

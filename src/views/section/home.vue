@@ -277,19 +277,15 @@ import { mapState } from 'vuex';
 export default {
     name: 'home',
     props: ['image'],
-     data() {
-    return {
-    }
+    data() {
+        return {};
     },
 
-      computed: {
-        ...mapState(['Categories',]),
+    computed: {
+        ...mapState(['Categories']),
     },
     mounted() {
         this.$store.dispatch('loadCategories');
     },
-
-
-  
 };
 </script>

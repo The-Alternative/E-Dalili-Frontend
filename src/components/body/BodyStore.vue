@@ -92,11 +92,13 @@
                                              section: store.section,
                                              Product: store.product,
                                              brand: store.brand,},}">-->
-                                    <router-link :to="`/visitStore/${store.id}/${store.title}`">
-                                      <button type="button" class="btn">
+                                <router-link
+                                    :to="`/visitStore/${store.id}/${store.title}`"
+                                >
+                                    <button type="button" class="btn">
                                         <b class="">{{ $t('visit') }}</b>
-                                    </button></router-link>
-                                
+                                    </button></router-link
+                                >
                             </div>
                             <div class="col team-social">
                                 <div class="row">
@@ -142,7 +144,7 @@
                     <ul>
                         <li
                             class="textcheck"
-                            v-for="category in Sections.slice(0,12)"
+                            v-for="category in Sections.slice(0, 12)"
                             :key="category"
                         >
                             {{ category.name }}
@@ -274,12 +276,18 @@
 <script>
 import { mapState } from 'vuex';
 import axios from 'axios';
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent } from 'vue';
 export default {
     components: {
-        WhatsappStore: defineAsyncComponent(() =>import(`@/components/body/whatsapp-store.vue`),),
-        PhoneStore: defineAsyncComponent(() =>import(`@/components/body/phone-store`),),
-        LocationStore: defineAsyncComponent(() =>import(`@/components/body/location-store`),),
+        WhatsappStore: defineAsyncComponent(() =>
+            import(`@/components/body/whatsapp-store.vue`)
+        ),
+        PhoneStore: defineAsyncComponent(() =>
+            import(`@/components/body/phone-store`)
+        ),
+        LocationStore: defineAsyncComponent(() =>
+            import(`@/components/body/location-store`)
+        ),
     },
     props: ['id', 'title', 'section', 'Product', 'brand'],
 

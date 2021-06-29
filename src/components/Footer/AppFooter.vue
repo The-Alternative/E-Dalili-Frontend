@@ -334,10 +334,6 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 
-@Options({
-   
-})
-export default class AppFooter extends Vue {
-   
-}
+@Options({})
+export default class AppFooter extends Vue {}
 </script>
